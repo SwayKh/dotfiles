@@ -1,0 +1,157 @@
+#! /bin/bash
+# 
+# Install Micro Text editor and set it as default editor to open every file
+# need to create desktop entry for micro editor
+
+# Basic Settings
+
+set hidden true # Hidden Files
+set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
+set ignorecase true # Ignore case when searching
+set scrolloff 10 # Leaves space on Top and Bottom of the screen
+set drawbox true # Shows the box around the panes
+set preview true
+
+# set previewer ~/.config/lf/preview
+
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+
+#Trash Files
+
+# Make sure trash folder exists
+%mkdir -p ~/.trash
+
+# Func that doesn't deletes file but just moves them to .trash folder
+cmd trash %set -f; mv "$fx" ~/.trash
+
+
+# Custom Function
+
+cmd open ${{
+	case $(file --mime-type "$f" -bL) in
+		text/*|application/json) $EDITOR "$f" ;;
+		*) xdg-open "$f" ;;
+	esac
+}}
+
+cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
+
+cmd mkfile %printf "File Name: "; read ans; touch $ans;
+
+
+# cmd mkdir ${{
+	# printf "Directory Name: "
+	# read ans
+	# mkdir $ans
+# }}
+
+# cmd mkfile ${{
+	# printf "File Name: "
+	# read ans
+	# $EDITOR $ans
+# }}
+
+
+cmd chmod ${{
+	printf "Mode Bits: "
+	read ans
+
+	for file in "$fx"
+	do
+		chmod $ans $file
+	done
+	lf -remote 'send reload'
+}}
+
+cmd Unarchive ${{
+	case "$f" in
+		*.zip) unzip "$f" ;;
+		*.tar.gz) tar -xzvf "$f" ;;
+		*.tar.bz2) tar -xjvf "$f" ;;
+		*.tar) tar -xvf "$f" ;;
+		*) echo "Unsupported Format" ;;
+	esac
+}}
+
+cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
+
+cmd directory_size ${{
+	ncdu "$f"
+}}
+
+# Jump to directories using fzf
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 2 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
+
+# Default Keybinds(If I forget)
+
+# <c-u> Go Up half page
+# <c-d> Go down half page
+# <c-r> Relaod the files and directories
+# <Space> Select
+# u Unselect
+# v Invert selection
+# r Rename a file
+# e Open editor
+# w Open shell
+# q Quit
+
+
+# Remove some default keybindings
+
+map m #gets in the way of mkdir, mkfile
+map n #gets in the way of unarchive
+map u #used for unselect, gets in the way of unarchive
+map d #used for cut, get in way of trash func
+map e #opens editor, not needed
+map y #used for copy
+
+
+# Custom Key mappings
+
+map ` shell
+map x cut
+map c copy
+map p paste
+map <delete> delete
+map <esc> unselect
+map e $$f # #Execute the selected file, must be executable
+
+# Function Bindings
+map md mkdir
+map mf mkfile
+map mp chmod #use 664, 777 notation rather than u+x
+map dd trash
+map ua Unarchive
+map <c-f> :fzf_jump
+map <enter> open
+map bg setwallpaper # Doesn't work
+map du directory_size # Requires ncdu utility
+
+# Movement Bindings
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map g. cd ~/dotfiles
+map gc cd ~/.config
+map gw cd ~/Wallpapers
+map gt cd ~/Test
+map gr cd ~/.trash
+map gs cd ~/Scripts
+map gpy cd ~/Python-Projects
+map gb cd ~/bin
+
+map gh cd ~ # This is default
