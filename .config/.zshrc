@@ -26,6 +26,7 @@ alias pokescript='pokemon-colorscripts -r'
 alias bat='batcat'
 alias pipes='pipes.sh'
 alias vim='nvim'
+alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.135:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
 
 my_alias() {
     alias ls='exa -alh --color=always --group-directories-first'
