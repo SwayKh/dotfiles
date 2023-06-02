@@ -15,7 +15,7 @@ italic_font      auto
 bold_italic_font auto
 
 # Font size (in pts)
-font_size        12.0
+font_size        13.0
 
 #Transparency
 background_opacity         0.65
@@ -249,6 +249,6 @@ allow_remote_control yes
 include ./theme.conf
 
 # BEGIN_KITTY_THEME
-# Zenburn
+# Gruvbox Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
