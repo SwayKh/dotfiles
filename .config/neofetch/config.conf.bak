@@ -1,27 +1,26 @@
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
+
 print_info() {
-    info title
-    info underline
+    # info title
+    # info underline
+    prin "$(color 1) L I N U X"
+    prin "______________________"
+    # prin ""
+    info "$(color 1) " users
+    info "$(color 2) " distro
+    info "$(color 3)󰍹 " de
+    # info "  " wm
+    info "$(color 4) " shell
+    # info "  " term
+	info "$(color 5) " packages
+    # info "$(color 6)神" uptime
+    info "$(color 7) " memory
+    # info "$(color 10) " cpu
+    # info "$(color 9) " gpu
 
-    info "OS" distro
-    info "Host" model
-    info "Kernel" kernel
-    info "Uptime" uptime
-    info "Packages" packages
-    info "Shell" shell
-    info "Resolution" resolution
-    info "DE" de
-    info "WM" wm
-    info "WM Theme" wm_theme
-    info "Theme" theme
-    info "Icons" icons
-    info "Terminal" term
-    info "Terminal Font" term_font
-    info "CPU" cpu
-    info "GPU" gpu
-    info "Memory" memory
-
+    # info "" locale
+    # info "" uptime
     # info "GPU Driver" gpu_driver  # Linux/macOS only
     # info "CPU Usage" cpu_usage
     # info "Disk" disk
@@ -34,7 +33,10 @@ print_info() {
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
 
-    info cols
+    # info cols
+    # prin ""
+    prin "$(color 1) $(color 2)  $(color 3)   $(color 4)  $(color 5)  $(color 6)  $(color 7)  $(color 8)  $(color 9)"
+    prin "______________________"
 }
 
 # Title
@@ -195,7 +197,7 @@ speed_type="bios_limit"
 # Example:
 # on:    'i7-6500U (4) @ 3.1GHz'
 # off:   'i7-6500U (4) @ 3.100GHz'
-speed_shorthand="off"
+speed_shorthand="on"
 
 # Enable/Disable CPU brand in output.
 #
@@ -206,7 +208,7 @@ speed_shorthand="off"
 # Example:
 # on:   'Intel i7-6500U'
 # off:  'i7-6500U (4)'
-cpu_brand="on"
+cpu_brand="off"
 
 # CPU Speed
 # Hide/Show CPU speed.
@@ -347,7 +349,8 @@ gtk3="on"
 # Default: 'http://ident.me'
 # Values:  'url'
 # Flag:    --ip_host
-public_ip_host="http://ident.me"
+#public_ip_host="http://ident.me"
+
 
 # Public IP timeout.
 #
@@ -563,7 +566,7 @@ underline_char="-"
 # Example:
 # separator="->":   'Shell-> bash'
 # separator=" =":   'WM = dwm'
-separator=":"
+separator=""
 
 
 # Color Blocks
@@ -694,7 +697,7 @@ disk_display="off"
 # Values:   'ascii', 'caca', 'chafa', 'jp2a', 'iterm2', 'off',
 #           'pot', 'termpix', 'pixterm', 'tycat', 'w3m', 'kitty'
 # Flag:     --backend
-image_backend="ascii"
+image_backend="kitty"
 
 # Image Source
 #
@@ -708,8 +711,8 @@ image_backend="ascii"
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-image_source="auto"
-
+# image_source="auto"
+image_source="${HOME}/.config/neofetch/images/shiny"
 
 # Ascii Options
 
@@ -760,7 +763,7 @@ image_source="auto"
 #       Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian,
 #       postmarketOS, and Void have a smaller logo variant.
 #       Use '{distro name}_small' to use the small variants.
-ascii_distro="auto"
+ascii_distro="POP_OS_small"
 
 # Ascii Colors
 #
@@ -792,7 +795,7 @@ ascii_bold="on"
 # Default:  'off'
 # Values:   'on', 'off'
 # Flag:     --loop
-image_loop="off"
+image_loop="on"
 
 # Thumbnail directory
 #

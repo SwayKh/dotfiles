@@ -147,10 +147,10 @@ map gD cd ~/Documents
 map gd cd ~/Downloads
 map g. cd ~/dotfiles
 map gc cd ~/.config
-map gw cd ~/Wallpapers
+map gw cd ~/wallpapers
 map gt cd ~/Test
 map gr cd ~/.trash
-map gs cd ~/Scripts
+map gs cd ~/scripts
 map gpy cd ~/Python-Projects
 map gb cd ~/bin
 
