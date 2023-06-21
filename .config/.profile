@@ -26,4 +26,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 . "$HOME/.cargo/env"
+
 export EDITOR=/usr/bin/micro
+export VISUAL=/usr/bin/nvim

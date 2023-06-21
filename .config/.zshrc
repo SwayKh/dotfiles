@@ -21,11 +21,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/go/bin/:$PATH"
 export PATH="$HOME/.local/kitty.app/bin/:$PATH"
 export EDITOR=/usr/bin/micro
+export VISUAL=/usr/bin/nvim
 
 alias pokescript='pokemon-colorscripts -r'
-alias bat='batcat'
+# alias bat='batcat'
 alias pipes='pipes.sh'
 alias vim='nvim'
+alias vi='nvim'
 alias update='sudo pacman -Syu'
 alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.135:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
 
@@ -71,11 +73,11 @@ sudo() {
     fi
 }
 
-
-PATH="/home/sumit/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/sumit/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/sumit/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/sumit/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/sumit/perl5"; export PERL_MM_OPT;
+ 
+# PATH="/home/sumit/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="/home/sumit/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/sumit/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/home/sumit/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/home/sumit/perl5"; export PERL_MM_OPT;
 
 my_alias

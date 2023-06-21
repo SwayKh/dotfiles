@@ -1,24 +1,24 @@
 #! /bin/bash
-# 
 # Install Micro Text editor and set it as default editor to open every file
 # need to create desktop entry for micro editor
 
 # Basic Settings
 
+# set shell bash
 set hidden true # Hidden Files
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
+set info size
 set ignorecase true # Ignore case when searching
 set scrolloff 10 # Leaves space on Top and Bottom of the screen
 set drawbox true # Shows the box around the panes
 set preview true
-
+# set EDITOR=/usr/bin/micro
 # set previewer ~/.config/lf/preview
 
 set previewer ctpv
 set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
-
 
 #Trash Files
 
@@ -38,10 +38,13 @@ cmd open ${{
 	esac
 }}
 
+
+
 cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
 
 cmd mkfile %printf "File Name: "; read ans; touch $ans;
-
+ 
+cmd editor %printf "$echo $VISUAL || $echo $EDITOR"
 
 # cmd mkdir ${{
 	# printf "Directory Name: "
@@ -93,6 +96,7 @@ cmd fzf_jump ${{
     else
         exit 0
     fi
+     
     lf -remote "send $id $cmd \"$res\""
 }}
 
@@ -119,6 +123,7 @@ map u #used for unselect, gets in the way of unarchive
 map d #used for cut, get in way of trash func
 map e #opens editor, not needed
 map y #used for copy
+map f #used for find (Not sure how it worked)
 
 
 # Custom Key mappings
@@ -129,7 +134,9 @@ map c copy
 map p paste
 map <delete> delete
 map <esc> unselect
-map e $$f # #Execute the selected file, must be executable
+map e $$f # Execute the selected file, must be executabl
+map <backspace2> clear # Clears any cut/copy highlighter
+
 
 # Function Bindings
 map md mkdir
@@ -141,6 +148,8 @@ map <c-f> :fzf_jump
 map <enter> open
 map bg setwallpaper # Doesn't work
 map du directory_size # Requires ncdu utility
+map t editor
+map f calcdirsize # Calculate the directory size in the editor without NCDU
 
 # Movement Bindings
 map gD cd ~/Documents
