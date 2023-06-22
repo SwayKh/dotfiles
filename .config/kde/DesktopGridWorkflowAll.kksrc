@@ -12,7 +12,7 @@ Activate Next Tab=Ctrl+]; Ctrl+PgDown
 Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
-Back=Alt+Left; Back
+Back=Back; Alt+Left
 BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
@@ -20,7 +20,7 @@ Clear=
 Close=Ctrl+W; Ctrl+Esc
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+C; Ctrl+Ins
+Copy=Ctrl+Ins; Ctrl+C
 CreateFolder=F10
 Cut=Shift+Del; Ctrl+X
 DeleteFile=Shift+Del
@@ -46,7 +46,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Alt+Home; Home Page
+Home=Home Page; Alt+Home
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -125,7 +125,7 @@ toggle_spiral_layout=
 toggle_spread_layout=
 toggle_stair_layout=
 toggle_three_column_layout=
-toggle_tile_layout=
+toggle_tile_layout=Meta+T
 toggle_window_floating=
 
 [kaccess][Global Shortcuts]
@@ -134,11 +134,11 @@ Toggle Screen Reader On and Off=Meta+Alt+S
 [kcm_touchpad][Global Shortcuts]
 Disable Touchpad=Touchpad Off
 Enable Touchpad=Touchpad On
-Toggle Touchpad=Touchpad Toggle; Meta+Ctrl+Zenkaku Hankaku
+Toggle Touchpad=Meta+Ctrl+Zenkaku Hankaku; Touchpad Toggle
 
 [kded5][Global Shortcuts]
 Show System Activity=Ctrl+Esc
-display=Meta+P; Display
+display=Display; Meta+P
 
 [khotkeys][Global Shortcuts]
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
@@ -151,7 +151,7 @@ decrease_microphone_volume=Microphone Volume Down
 decrease_volume=Volume Down
 increase_microphone_volume=Microphone Volume Up
 increase_volume=Volume Up
-mic_mute=Microphone Mute; Meta+Volume Mute
+mic_mute=Meta+Volume Mute; Microphone Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
@@ -191,7 +191,7 @@ Switch Window Down=Meta+Alt+Down
 Switch Window Left=Meta+Alt+Left
 Switch Window Right=Meta+Alt+Right
 Switch Window Up=Meta+Alt+Up
-Switch to Desktop 1=Meta+Ctrl+F; Ctrl+F1
+Switch to Desktop 1=Ctrl+F1; Meta+Ctrl+F
 Switch to Desktop 10=
 Switch to Desktop 11=
 Switch to Desktop 12=
@@ -205,9 +205,9 @@ Switch to Desktop 19=
 Switch to Desktop 2=Ctrl+F2; Meta+Ctrl+B
 Switch to Desktop 20=
 Switch to Desktop 3=Ctrl+F3; Meta+Ctrl+T
-Switch to Desktop 4=Meta+Ctrl+S; Ctrl+F4
+Switch to Desktop 4=Ctrl+F4; Meta+Ctrl+S
 Switch to Desktop 5=Meta+Ctrl+O
-Switch to Desktop 6=Meta+Ctrl+E
+Switch to Desktop 6=Meta+Ctrl+G
 Switch to Desktop 7=
 Switch to Desktop 8=
 Switch to Desktop 9=
@@ -318,8 +318,51 @@ view_actual_size=
 view_zoom_in=Meta++
 view_zoom_out=Meta+-
 
+[lattedock][Global Shortcuts]
+activate entry 1=
+activate entry 10=
+activate entry 11=Meta+Z
+activate entry 12=Meta+X
+activate entry 13=Meta+C
+activate entry 14=
+activate entry 15=Meta+B
+activate entry 16=Meta+N
+activate entry 17=
+activate entry 18=Meta+,
+activate entry 19=
+activate entry 2=
+activate entry 3=
+activate entry 4=
+activate entry 5=
+activate entry 6=
+activate entry 7=
+activate entry 8=
+activate entry 9=
+new instance for entry 1=Meta+Ctrl+1
+new instance for entry 10=Meta+Ctrl+0
+new instance for entry 11=Meta+Ctrl+Z
+new instance for entry 12=
+new instance for entry 13=Meta+Ctrl+C
+new instance for entry 14=Meta+Ctrl+V
+new instance for entry 15=
+new instance for entry 16=Meta+Ctrl+N
+new instance for entry 17=Meta+Ctrl+M
+new instance for entry 18=Meta+Ctrl+,
+new instance for entry 19=Meta+Ctrl+.
+new instance for entry 2=Meta+Ctrl+2
+new instance for entry 3=Meta+Ctrl+3
+new instance for entry 4=Meta+Ctrl+4
+new instance for entry 5=Meta+Ctrl+5
+new instance for entry 6=Meta+Ctrl+6
+new instance for entry 7=Meta+Ctrl+7
+new instance for entry 8=Meta+Ctrl+8
+new instance for entry 9=Meta+Ctrl+9
+show latte global settings=
+show latte view=Meta+`
+show view settings=Meta+A
+
 [lf.desktop][Global Shortcuts]
-_launch=Meta+Ctrl+L
+_launch=Ctrl+Alt+L
 
 [mediacontrol][Global Shortcuts]
 mediavolumedown=
@@ -341,10 +384,10 @@ _launch=
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Alt+F2; Search; Alt+Space; Ctrl+Space
+_launch=Search; Alt+F2; Alt+Space; Ctrl+Space
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
-_launch=Meta+.; Meta+Ctrl+Alt+Shift+Space
+_launch=Meta+Ctrl+Alt+Shift+Space; Meta+.
 
 [org.kde.spectacle.desktop][Global Shortcuts]
 ActiveWindowScreenShot=Meta+Print
@@ -381,6 +424,7 @@ activate task manager entry 9=Meta+9
 activate widget 29=
 activate widget 3=
 activate widget 51=
+activate widget 89=
 clear-history=
 clipboard_action=Meta+Ctrl+X
 cycle-panels=Meta+Alt+P
