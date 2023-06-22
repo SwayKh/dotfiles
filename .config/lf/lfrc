@@ -7,12 +7,11 @@
 # set shell bash
 set hidden true # Hidden Files
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
-set info size
+# set info size
 set ignorecase true # Ignore case when searching
 set scrolloff 10 # Leaves space on Top and Bottom of the screen
 set drawbox true # Shows the box around the panes
 set preview true
-# set EDITOR=/usr/bin/micro
 # set previewer ~/.config/lf/preview
 
 set previewer ctpv
@@ -33,7 +32,7 @@ cmd trash %set -f; mv "$fx" ~/.trash
 
 cmd open ${{
 	case $(file --mime-type "$f" -bL) in
-		text/*|application/json) $EDITOR "$f" ;;
+		text/*|application/json) nvim "$f" ;;
 		*) xdg-open "$f" ;;
 	esac
 }}
