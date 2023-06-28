@@ -1,7 +1,3 @@
-#! /bin/bash
-# Install Micro Text editor and set it as default editor to open every file
-# need to create desktop entry for micro editor
-
 # Basic Settings
 
 # set shell bash
@@ -58,7 +54,7 @@ cmd editor %printf "$echo $VISUAL || $echo $EDITOR"
 # }}
 
 
-cmd chmod ${{
+cmd chmod %{{
 	printf "Mode Bits: "
 	read ans
 
