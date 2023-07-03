@@ -8,8 +8,8 @@ Switch to Next Keyboard Layout=Meta+Alt+K
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Next Tab=Ctrl+PgDown; Ctrl+]
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
 Back=Back; Alt+Left
@@ -17,12 +17,12 @@ BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
 Clear=
-Close=Ctrl+W; Ctrl+Esc
+Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+Ins; Ctrl+C
+Copy=Ctrl+C; Ctrl+Ins
 CreateFolder=F10
-Cut=Shift+Del; Ctrl+X
+Cut=Ctrl+X; Shift+Del
 DeleteFile=Shift+Del
 DeleteWordBack=Ctrl+Backspace
 DeleteWordForward=Ctrl+Del
@@ -64,7 +64,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=F5; Refresh
+Reload=Refresh; F5
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -138,7 +138,7 @@ Toggle Touchpad=Meta+Ctrl+Zenkaku Hankaku; Touchpad Toggle
 
 [kded5][Global Shortcuts]
 Show System Activity=Ctrl+Esc
-display=Display; Meta+P
+display=Meta+P; Display
 
 [khotkeys][Global Shortcuts]
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
@@ -151,7 +151,7 @@ decrease_microphone_volume=Microphone Volume Down
 decrease_volume=Volume Down
 increase_microphone_volume=Microphone Volume Up
 increase_volume=Volume Up
-mic_mute=Meta+Volume Mute; Microphone Mute
+mic_mute=Microphone Mute; Meta+Volume Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
@@ -191,7 +191,7 @@ Switch Window Down=Meta+Alt+Down
 Switch Window Left=Meta+Alt+Left
 Switch Window Right=Meta+Alt+Right
 Switch Window Up=Meta+Alt+Up
-Switch to Desktop 1=Ctrl+F1; Meta+Ctrl+F
+Switch to Desktop 1=Meta+Ctrl+F; Ctrl+F1
 Switch to Desktop 10=
 Switch to Desktop 11=
 Switch to Desktop 12=
@@ -202,15 +202,15 @@ Switch to Desktop 16=
 Switch to Desktop 17=
 Switch to Desktop 18=
 Switch to Desktop 19=
-Switch to Desktop 2=Ctrl+F2; Meta+Ctrl+B
+Switch to Desktop 2=Meta+Ctrl+B; Ctrl+F2
 Switch to Desktop 20=
-Switch to Desktop 3=Ctrl+F3; Meta+Ctrl+T
-Switch to Desktop 4=Ctrl+F4; Meta+Ctrl+S
+Switch to Desktop 3=Meta+Ctrl+T; Ctrl+F3
+Switch to Desktop 4=Meta+Ctrl+C; Ctrl+F4
 Switch to Desktop 5=Meta+Ctrl+O
 Switch to Desktop 6=Meta+Ctrl+G
-Switch to Desktop 7=
+Switch to Desktop 7=Meta+Ctrl+S
 Switch to Desktop 8=
-Switch to Desktop 9=
+Switch to Desktop 9=Meta+Ctrl+E
 Switch to Next Desktop=
 Switch to Next Screen=
 Switch to Previous Desktop=
@@ -342,7 +342,7 @@ new instance for entry 1=Meta+Ctrl+1
 new instance for entry 10=Meta+Ctrl+0
 new instance for entry 11=Meta+Ctrl+Z
 new instance for entry 12=
-new instance for entry 13=Meta+Ctrl+C
+new instance for entry 13=
 new instance for entry 14=Meta+Ctrl+V
 new instance for entry 15=
 new instance for entry 16=Meta+Ctrl+N
@@ -384,7 +384,7 @@ _launch=
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Search; Alt+F2; Alt+Space; Ctrl+Space
+_launch=Search; Alt+Space; Ctrl+Space; Alt+F2
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
 _launch=Meta+Ctrl+Alt+Shift+Space; Meta+.
@@ -425,6 +425,7 @@ activate widget 29=
 activate widget 3=
 activate widget 51=
 activate widget 89=
+activate widget 95=
 clear-history=
 clipboard_action=Meta+Ctrl+X
 cycle-panels=Meta+Alt+P

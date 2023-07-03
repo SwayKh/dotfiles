@@ -20,17 +20,17 @@ export LANG=en_US.UTF-8
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/go/bin/:$PATH"
 export PATH="$HOME/.local/kitty.app/bin/:$PATH"
-export EDITOR=/usr/bin/micro
+export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
 alias pokescript='pokemon-colorscripts -r'
 # alias bat='batcat'
 alias pipes='pipes.sh'
 alias vim='nvim'
-alias update='sudo pacman -Syu'
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.135:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
 
+alias update='sudo pacman -Syu'
 my_alias() {
     alias ls='exa -alh --color=always --group-directories-first'
 }
@@ -53,23 +53,23 @@ plugins=(git
 source $ZSH/oh-my-zsh.sh
 
 #neofetch
-
-pokemon-colorscripts -r
+#pokemon-colorscripts -r
+pfetch
 
 
 # Remove duplicates from $PATH
 typeset -U PATH
 
 #Replace Apt with Nala
-apt() {
-    command nala "$@"
-}
-sudo() {
-    if [ "$1" = "apt" ]; then
-        shift
-        command sudo nala "$@"
-    else
-        command sudo "$@"
-    fi
-}
+# apt() {
+#     command nala "$@"
+# }
+# sudo() {
+#     if [ "$1" = "apt" ]; then
+#         shift
+#         command sudo nala "$@"
+#     else
+#         command sudo "$@"
+#     fi
+# }
 my_alias

@@ -3,7 +3,7 @@
 # set shell bash
 set hidden true # Hidden Files
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
-# set info size
+set info size
 set ignorecase true # Ignore case when searching
 set scrolloff 10 # Leaves space on Top and Bottom of the screen
 set drawbox true # Shows the box around the panes
@@ -23,8 +23,11 @@ set cleaner ctpvclear
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
 
-
 # Custom Function
+
+cmd lfrc ${{
+  cd "$HOME"/.config/lf
+}}
 
 cmd open ${{
 	case $(file --mime-type "$f" -bL) in
@@ -32,8 +35,6 @@ cmd open ${{
 		*) xdg-open "$f" ;;
 	esac
 }}
-
-
 
 cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
 
@@ -155,7 +156,9 @@ map gw cd ~/wallpapers
 map gt cd ~/Test
 map gr cd ~/.trash
 map gs cd ~/scripts
-map gpy cd ~/Python-Projects
+map gpr cd ~/Projects
 map gb cd ~/bin
+
+map ga cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
 
 map gh cd ~ # This is default
