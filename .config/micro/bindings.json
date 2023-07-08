@@ -1,5 +1,5 @@
 {
-    "Alt-/": 			"lua:comment.comment",
-    "CtrlUnderscore": 	"lua:comment.comment",
-    "Tab": 				"Autocomplete|IndentSelection|InsertTab"
+    "Alt-/": "lua:comment.comment",
+    "CtrlUnderscore": "lua:comment.comment",
+    "Tab": "Autocomplete|IndentSelection|InsertTab"
 }
