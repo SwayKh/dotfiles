@@ -19,14 +19,16 @@ set cleaner ctpvclear
 
 # Make sure trash folder exists
 %mkdir -p ~/.trash
+%mkdir -p ~/Android
 
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
 
 # Custom Function
 
+# Open the lfrc config file from anywhere
 cmd lfrc ${{
-  cd "$HOME"/.config/lf
+  nvim "$HOME"/.config/lf/lfrc
 }}
 
 cmd open ${{
@@ -40,20 +42,20 @@ cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans
 
 cmd mkfile %printf "File Name: "; read ans; touch $ans;
  
-cmd editor %printf "$echo $VISUAL || $echo $EDITOR"
+cmd test %{{
+   # printf "$echo $VISUAL || $echo $EDITOR"
+  a=${f%.*}
+  mkdir -p "$a"
 
-# cmd mkdir ${{
-	# printf "Directory Name: "
-	# read ans
-	# mkdir $ans
-# }}
-
-# cmd mkfile ${{
-	# printf "File Name: "
-	# read ans
-	# $EDITOR $ans
-# }}
-
+  case "$f" in 
+    *.zip) unzip -d "$a" "$f" ;;
+    *.tar.gz) tar -xzvf "$f" -c "$a" ;;
+  	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
+	*.tar) tar -xvf "$f" -c "$a" ;;
+    *.rar) unrar x "$f" "$a" ;;
+    *) echo "Unsupported Format" ;;
+	esac
+}}
 
 cmd chmod %{{
 	printf "Mode Bits: "
@@ -67,12 +69,17 @@ cmd chmod %{{
 }}
 
 cmd Unarchive ${{
-	case "$f" in
-		*.zip) unzip "$f" ;;
-		*.tar.gz) tar -xzvf "$f" ;;
-		*.tar.bz2) tar -xjvf "$f" ;;
-		*.tar) tar -xvf "$f" ;;
-		*) echo "Unsupported Format" ;;
+# This part creates the directory for extracting files
+  a=${f%.*} 
+  mkdir -p "$a"
+
+  case "$f" in 
+    *.zip) unzip -d "$a" "$f" ;;
+    *.tar.gz) tar -xzvf "$f" -c "$a" ;;
+  	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
+	*.tar) tar -xvf "$f" -c "$a" ;;
+    *.rar) unrar x "$f" "$a" ;;
+    *) echo "Unsupported Format" ;;
 	esac
 }}
 
@@ -80,6 +87,11 @@ cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
 
 cmd directory_size ${{
 	ncdu "$f"
+}}
+
+cmd androidFs %{{
+	sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android
+	
 }}
 
 # Jump to directories using fzf
@@ -132,6 +144,7 @@ map <delete> delete
 map <esc> unselect
 map e $$f # Execute the selected file, must be executabl
 map <backspace2> clear # Clears any cut/copy highlighter
+map oc lfrc
 
 
 # Function Bindings
@@ -144,7 +157,7 @@ map <c-f> :fzf_jump
 map <enter> open
 map bg setwallpaper # Doesn't work
 map du directory_size # Requires ncdu utility
-map t editor
+map t test
 map f calcdirsize # Calculate the directory size in the editor without NCDU
 
 # Movement Bindings
@@ -158,7 +171,8 @@ map gr cd ~/.trash
 map gs cd ~/scripts
 map gpr cd ~/Projects
 map gb cd ~/bin
+map ga cd /home/sumit/Android
 
-map ga cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
+# map gak cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
 
 map gh cd ~ # This is default

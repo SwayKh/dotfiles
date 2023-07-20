@@ -28,7 +28,8 @@ alias pokescript='pokemon-colorscripts -r'
 alias pipes='pipes.sh'
 alias vim='nvim'
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
-alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.135:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
+# alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.199:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
+alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
 
 alias update='sudo pacman -Syu'
 my_alias() {
