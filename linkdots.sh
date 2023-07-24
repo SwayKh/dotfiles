@@ -28,6 +28,11 @@ sudo ln -sfn $path/.config/kitty $HOME/.config/
 [ -d $HOME/.config/neofetch ] && rm -rf $HOME/.config/neofetch
 sudo ln -sfn $path/.config/neofetch $HOME/.config/
 
+[ -d $HOME/.config/hypr ] && rm -rf $HOME/.config/hypr
+sudo ln -sfn $path/.config/hypr $HOME/.config/
+
+[ -d $HOME/.config/waybar ] && rm -rf $HOME/.config/waybar
+sudo ln -sfn $path/.config/waybar $HOME/.config/
 
 [ -f $HOME/.config/retroarch/retroarch.cfg ] && rm -rf $HOME/.config/retroarch/retroarch.cfg
 sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg 

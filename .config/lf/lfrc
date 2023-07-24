@@ -44,17 +44,17 @@ cmd mkfile %printf "File Name: "; read ans; touch $ans;
  
 cmd test %{{
    # printf "$echo $VISUAL || $echo $EDITOR"
-  a=${f%.*}
-  mkdir -p "$a"
-
-  case "$f" in 
-    *.zip) unzip -d "$a" "$f" ;;
-    *.tar.gz) tar -xzvf "$f" -c "$a" ;;
-  	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
-	*.tar) tar -xvf "$f" -c "$a" ;;
-    *.rar) unrar x "$f" "$a" ;;
-    *) echo "Unsupported Format" ;;
-	esac
+ #  a=${f%.*}
+ #  mkdir -p "$a"
+	#
+ #  case "$f" in 
+ #    *.zip) unzip -d "$a" "$f" ;;
+ #    *.tar.gz) tar -xzvf "$f" -c "$a" ;;
+ #  	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
+ #  	*.tar) tar -xvf "$f" -c "$a" ;;
+ #    *.rar) unrar x "$f" "$a" ;;
+ #    *) echo "Unsupported Format" ;;
+	# esac
 }}
 
 cmd chmod %{{
@@ -77,7 +77,7 @@ cmd Unarchive ${{
     *.zip) unzip -d "$a" "$f" ;;
     *.tar.gz) tar -xzvf "$f" -c "$a" ;;
   	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
-	*.tar) tar -xvf "$f" -c "$a" ;;
+  	*.tar) tar -xvf "$f" -c "$a" ;;
     *.rar) unrar x "$f" "$a" ;;
     *) echo "Unsupported Format" ;;
 	esac
