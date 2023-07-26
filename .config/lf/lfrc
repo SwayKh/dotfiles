@@ -21,12 +21,23 @@ set cleaner ctpvclear
 %mkdir -p ~/.trash
 %mkdir -p ~/Android
 
-# Func that doesn't deletes file but just moves them to .trash folder
-cmd trash %set -f; mv "$fx" ~/.trash
-
 # Custom Function
 
 # Open the lfrc config file from anywhere
+
+cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
+
+cmd mkfile %printf "File Name: "; read ans; touch $ans;
+ 
+# Func that doesn't deletes file but just moves them to .trash folder
+cmd trash %set -f; mv "$fx" ~/.trash
+
+cmd clear_trash %trash-empty
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
 cmd lfrc ${{
   nvim "$HOME"/.config/lf/lfrc
 }}
@@ -38,12 +49,17 @@ cmd open ${{
 	esac
 }}
 
-cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
+cmd directory_size ${{
+	ncdu "$f"
+}}
 
-cmd mkfile %printf "File Name: "; read ans; touch $ans;
- 
+cmd androidFs %{{
+	sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android
+	
+}}
+
 cmd test %{{
-   # printf "$echo $VISUAL || $echo $EDITOR"
+   printf "$echo $VISUAL || $echo $EDITOR"
  #  a=${f%.*}
  #  mkdir -p "$a"
 	#
@@ -83,15 +99,9 @@ cmd Unarchive ${{
 	esac
 }}
 
-cmd setwallpaper %cp "$f" ~/.config/wall.png && xwallpaper --zoom "$f"
-
-cmd directory_size ${{
-	ncdu "$f"
-}}
-
-cmd androidFs %{{
-	sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android
-	
+cmd setwallpaper ${{
+  cp "$f" ~/.config/wall.png; wallbg "$f" 
+  lf -remote 'send reload'
 }}
 
 # Jump to directories using fzf
@@ -163,14 +173,14 @@ map f calcdirsize # Calculate the directory size in the editor without NCDU
 # Movement Bindings
 map gD cd ~/Documents
 map gd cd ~/Downloads
-map g. cd ~/dotfiles
+map g. cd ~/dotfiles/.config/
 map gc cd ~/.config
 map gw cd ~/wallpapers
 map gt cd ~/Test
 map gr cd ~/.trash
 map gs cd ~/scripts
 map gpr cd ~/Projects
-map gb cd ~/bin
+map gb cd ~/.local/bin
 map ga cd /home/sumit/Android
 
 # map gak cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/

@@ -27,5 +27,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 . "$HOME/.cargo/env"
 
-export EDITOR=/usr/bin/micro
-export VISUAL=/usr/bin/nvim
+export EDITOR=nvim
+export VISUAL=micro

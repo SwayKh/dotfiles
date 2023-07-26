@@ -20,8 +20,8 @@ export LANG=en_US.UTF-8
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/go/bin/:$PATH"
 export PATH="$HOME/.local/kitty.app/bin/:$PATH"
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR=nvim
+export VISUAL=micro
 
 alias pokescript='pokemon-colorscripts -r'
 # alias bat='batcat'
@@ -32,6 +32,7 @@ alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
 
 alias update='sudo pacman -Syu'
+
 my_alias() {
     alias ls='exa -alh --color=always --group-directories-first'
 }

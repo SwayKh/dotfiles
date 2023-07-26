@@ -117,7 +117,8 @@ if ! shopt -oq posix; then
 fi
 neofetch
 #alias python='python3'
-export EDITOR=/usr/bin/micro
+export EDITOR=nvim
+export VISUAL=micro
 export PATH="/home/sumit/.local/bin:$PATH"
 . "$HOME/.cargo/env"
 export PATH="/home/sumit/bin:/home/sumit/perl5/bin:/home/sumit/.local/kitty.app/bin/:/home/sumit/.local/bin:/home/sumit/bin:/usr/local/go/bin/:/home/sumit/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
