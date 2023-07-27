@@ -1,280 +1,191 @@
-* {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+/* Catppuccin Mocha */
+
+/*
+*
+* Catppuccin Mocha palette
+* Maintainer: rubyowo
+*
+*/
+
+*{
+	font-family: Product Sans;
+	/* font-family: "Product Sans"; "Font Awesome 6 Duotone";*/
+	/* font-size: 15px; */
+	font-weight: bold;
 }
 
+@define-color background #11092D;
+@define-color background-alt #281657;
+@define-color foreground #FFFFFF;
+@define-color selected #DF5296;
+@define-color active #6E77FF;
+@define-color urgent #8E3596;
+
+@keyframes border_critical {
+	from {
+		border-color: @active;
+		border-width: 2px;
+		border-radius: 8px;		 		
+	}
+	to {
+		border-width: 2px; 
+		border-radius: 8px;
+		border-color: @selected;
+	}
+}
+
+@keyframes border_warning {
+	from {
+		border-color: @selected;
+		border-width: 2px;
+		border-radius: 8px;		
+	}
+	to {
+		border-radius: 8px;
+		border-width: 2px; 
+		border-color: @active;
+	}
+}
+
+.warning {
+	animation-name: border_warning;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode:forwards;
+}
+
+.critical {
+	animation-name: border_critical;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode:forwards;
+}
+
+/* * { */
+	/* font-family: Product Sans Regular; */
+	/* font-size: 15px; */
+	/* font-weight: bold; */
+/* } */
+
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+	background-color: @background;	/* Keep transparent to blur */
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+	opacity: 0.5;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
+window > box {
+	/*border-bottom-width: 2px;*/ 
+	border-color: @crust; 
+	border-radius: 12px;
+	/*margin: 0 10px;*/
+	border-style: solid; 
+	background-color: transparent;	/* Keep transparent to blur */
+	/*background: rgba(22, 24, 32, .8);*/
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+#memory, #cpu, #temperature, #clock, #network , #pulseaudio, #backlight, #battery, #workspaces, #window, #tray, #mpris{
+	padding: 3px 10px 3px;
+	margin: 0 0px;
+	color: @text;
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: @active;
+	background-color: transparent;
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+#custom-bluetooth-battery, #custom-mpris-media, #custom-power-menu, #custom-recording {
+	padding: 3px 10px 3px;
+	margin: 3 3px;
+	color: @text;
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: @active;
+	background-color: transparent;
 }
 
 #clock {
-    background-color: #64727D;
+	padding: 3px 0px 3px 10px;
+	margin: 0 0px;
+	color: @text;
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: @active;
+	background-color: @background;	
 }
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
-
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
+#custom-weather {
+	padding: 3px 10px 3px 0px;
+	margin: 0 0px;
+	color: @text;
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: @active;
 	background-color: transparent;
+}
+
+#custom-song-previous, #custom-song-toggle, #custom-song-next {
+	padding: 3px 10px 3px;
+	margin: 0 0px;
+	color: @text;
+	border-radius: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: @active;
+	background-color: transparent;
+}
+
+#workspaces button {
+	transition: none;
+	color: #ffffff;
+	background: transparent;
+	font-size: 14px;
+}
+
+#workspaces button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	color: @selected;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background-color: @selected;
+    border-radius: 10px;
+}
+
+.modules-left, .modules-center, .modules-right {
+	/* padding: 5px 0 3px; */
+	padding: 3px 0;
+	margin: 0 10px;
+}
+
+tooltip { 
+	padding: 0px 0px;
+	margin: 0 3px;
+	color: @foreground;
+	border-radius: 8px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: @selected;
+	background-color: @background;
+} 
+
+tooltip label {
+	color: @text;
+	font-size: small;
+}
+
+#battery.charging {
+	animation-name: border_critical;
 }

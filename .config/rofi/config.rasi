@@ -1,0 +1,130 @@
+/* shift + del -> del most used */
+
+configuration {
+    display-drun: "";
+} 
+
+* {
+    font:                           "JetBrainsMono NF 12";
+    foreground:                     #A7B5CD;
+    background:                     #101216;
+    highlight:	             		    #F8F8F2;
+    red:                            #973D46;
+    darkred:                        #973D46;
+    blue:                           #517BA5;
+    darkblue:                       #517BA5;
+    yellow:                         #E0AE4A;
+    darkyellow:                     #E0AE4A;
+    border:                         #1B1E25;
+}
+
+window {
+    border: 			 	0px;
+    border-radius:	0px;
+    padding: 				0;
+    width: 		  		30%;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+textbox {
+    text-color: @foreground;
+}
+
+listview {
+    lines:	      8;
+    columns:      1;
+    border:       0px 0px 0px 0px;
+    border-color: @separatorcolor;
+    spacing:      4px;
+    scrollbar:    false;
+    padding:      0px 8px 8px;
+}
+
+element {
+    border:       0;
+    padding:      8px; 
+}
+
+element normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element normal.urgent {
+    background-color: @red;
+    text-color:       @background;
+}
+
+element normal.active {
+    background-color: @border;
+    text-color:       @background;
+}
+
+element selected.normal {
+    background-color: @blue;
+    text-color:       @background;
+    border-radius:    2px;
+}
+
+element selected.urgent {
+    background-color: @red;
+    text-color:       @background;
+}
+
+element selected.active {
+    background-color: @yellow;
+    text-color:       @background;
+}
+
+element alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element alternate.urgent {
+    background-color: @border;
+    text-color:       @background;
+}
+
+element alternate.active {
+    background-color: @border;
+    text-color:       @background;
+}
+
+element-text {
+    cursor:           inherit;
+    highlight:        inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    size:             1.0em;
+    cursor:           inherit;
+    text-color:       inherit;
+}
+
+entry {
+    spacing:           0;
+    padding:	         8px;
+    text-color:        #F8F8F2;
+    placeholder:       "";
+    placeholder-color: @foreground;
+}
+
+prompt {
+    padding: 0px 0px ;
+    text-color: @foreground;
+}
+
+inputbar {
+    background-color: #282A36;
+    margin:           0px 0px 0px 0px;
+    border:           8px;
+    border-radius:    6px;
+    border-color:     @background;
+    children:         [entry];
+}

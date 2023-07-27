@@ -34,8 +34,8 @@ sudo ln -sfn $path/.config/hypr $HOME/.config/
 [ -d $HOME/.config/waybar ] && rm -rf $HOME/.config/waybar
 sudo ln -sfn $path/.config/waybar $HOME/.config/
 
-[ -d $HOME/.config/wofi ] && rm -rf $HOME/.config/wofi
-sudo ln -sfn $path/.config/wofi $HOME/.config/
+[ -d $HOME/.config/rofi ] && rm -rf $HOME/.config/rofi
+sudo ln -sfn $path/.config/rofi $HOME/.config/
 
 [ -f $HOME/.config/retroarch/retroarch.cfg ] && rm -rf $HOME/.config/retroarch/retroarch.cfg
 sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg 
