@@ -1,0 +1,117 @@
+{
+     "layer": "top",
+     "position": "top",
+     "margin-top": 5,
+     "margin-left": 5,
+     "margin-right": 5,
+    "height": 25,
+    "spacing": 0,
+    "modules-left": ["custom/launcher","wlr/workspaces"],
+    "modules-center": ["custom/song_name","custom/pre","custom/spotify","custom/next"],
+    "modules-right": ["tray","network", "pulseaudio","clock","custom/powermenu"],
+
+    "wlr/workspaces": {
+	"on-click": "activate",
+	"format": "{icon}",
+	"format-icons": {
+		"default": "",
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"active": "󱓻",
+		"urgent": "󱓻",
+	},
+	"persistent_workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+	}
+    },
+    "memory": {
+    "interval": 3,
+    "format": "   {}% ",
+    "max-length": 10
+    },
+    "cpu": {
+    "interval": 1,
+    "format": "   {}% ",
+    "max-length": 10
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": "  {:%a, %d %b %Y} ",
+	"format": "   {:%H:%M} ",
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-disconnected": "󰤭 ",
+        "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤥 ","󰤨 "],
+	"tooltip-format-wifi": "{essid}",
+        "tooltip-format-disconnected": "Disconnected",
+	"nospacing": 1,
+	"on-click": "$HOME/.config/waybar/scripts/network/rofi-network-manager.sh",
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+	"nospacing": 1,
+	"tooltip-format": "Volume : {volume}%",
+        "format-muted": "󰝟 ",
+        "format-icons": {
+            "headphone": " ",
+            "default": ["󰕿 ", "󰖀 ", "󰕾 "]
+        },
+        "on-click": "pamixer -t",
+	"on-click-right": "pavucontrol",
+	"scroll-step": 5,
+    },
+    "custom/launcher": {
+	"format": "  ",
+	"tooltip": false,
+	"on-click": "$HOME/.config/rofi/launchers/misc/launcher.sh &"
+    },
+    "custom/next": {
+        "exec": "python3 ~/.config/waybar/scripts/next.py --player spotify",
+	"format": "{}",
+	"tooltip": false,
+	"on-click": "playerctl next",
+        "return-type": "json",
+    },
+    "custom/pre": {
+        "exec": "python3 ~/.config/waybar/scripts/pre.py --player spotify",
+	"format": "{}",
+	"tooltip": false,
+	"on-click": "playerctl previous",
+        "return-type": "json",
+    },
+    "custom/powermenu": {
+	"format": "⏻ ",
+	"tooltip": false,
+	"on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh &"
+    },
+    "custom/ibus": {
+	"format": "{}",
+	"exec": "$HOME/.config/waybar/scripts/input.sh &",
+	"interval": 1,
+	"tooltip": false,
+	"tooltip-format": "{}",
+	"on-click": "$HOME/.config/waybar/scripts/ibus.sh &",
+    },
+   "custom/spotify": {
+        "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+    },
+   "custom/song_name": {
+        "exec": "python3 ~/.config/waybar/scripts/spotify.py --player spotify",
+        "format": "{}",
+        "return-type": "json",
+    },
+}
+

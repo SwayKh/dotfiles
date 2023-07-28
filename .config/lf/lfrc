@@ -34,7 +34,7 @@ cmd mkfile %printf "File Name: "; read ans; touch $ans;
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
 
-cmd clear_trash %trash-empty
+cmd clear_trash % rm -rf ~/.trash/*
 
 cmd restore_trash ${{
   trash-restore
