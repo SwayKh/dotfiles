@@ -15,6 +15,9 @@ sudo ln -sfn $path/.config/btop $HOME/.config/
 [ -d $HOME/.config/lf ] && rm -rf $HOME/.config/lf
 sudo ln -sfn $path/.config/lf $HOME/.config/
 
+[ -d $HOME/.config/ctpv/ ] && rm -rf $HOME/.config/ctpv
+sudo ln -sfn $path/.config/ctpv $HOME/.config/
+
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
 sudo ln -sfn $path/.config/nvim $HOME/.config/
 
@@ -40,4 +43,3 @@ sudo ln -sfn $path/.config/rofi $HOME/.config/
 [ -f $HOME/.config/retroarch/retroarch.cfg ] && rm -rf $HOME/.config/retroarch/retroarch.cfg
 sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg 
 
-#sudo ln -sfn $path/.local/applications $HOME/.local/share/applications

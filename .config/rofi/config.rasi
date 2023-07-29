@@ -5,22 +5,25 @@ configuration {
 } 
 
 * {
-    font:                           "JetBrainsMono NF 12";
-    foreground:                     #A7B5CD;
-    background:                     #101216;
+    font:                           "GoMono Nerd Font 12";
+    foreground:                     #BBCCDD;
+    background:                     #37383a;
     highlight:	             		    #F8F8F2;
     red:                            #973D46;
     darkred:                        #973D46;
-    blue:                           #517BA5;
-    darkblue:                       #517BA5;
+    blue:                           #bbccdd;
+    darkblue:                       #bbccdd;
     yellow:                         #E0AE4A;
     darkyellow:                     #E0AE4A;
     border:                         #1B1E25;
+    darkblack:                      #090A0F;
+    darkgray:                       #333333;
 }
 
 window {
-    border: 			 	0px;
-    border-radius:	0px;
+    border: 			 	2px;
+    border-color:   @foreground;
+    border-radius:	4px;
     padding: 				0;
     width: 		  		30%;
 }
@@ -97,7 +100,7 @@ element alternate.active {
 
 element-text {
     cursor:           inherit;
-    highlight:        inherit;
+    highlight:        blue;
     text-color:       inherit;
 }
 
@@ -121,7 +124,7 @@ prompt {
 }
 
 inputbar {
-    background-color: #282A36;
+    background-color: @background;
     margin:           0px 0px 0px 0px;
     border:           8px;
     border-radius:    6px;

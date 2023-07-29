@@ -179,12 +179,13 @@ map g. cd ~/dotfiles/.config/
 map gc cd ~/.config
 map gw cd ~/wallpapers
 map gt cd ~/Test
-map gr cd ~/.trash
+map gT cd ~/.trash
 map gs cd ~/scripts
 map gpr cd ~/Projects
 map gb cd ~/.local/bin
-map ga cd /home/sumit/Android
-
+map gr cd ~/repos/configs/
+map ga cd ~/Android
+map g/ cd /
 # map gak cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
 
 map gh cd ~ # This is default
