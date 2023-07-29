@@ -1,10 +1,10 @@
 {
     "layer": "top",
     "position": "top",
-    // "height": 30,
+    "height": 30,
     "margin-left": 10,
     "margin-right": 10,
-   
+    "margin-top": 5, 
     
     // Choose the order of the modules
 
