@@ -100,7 +100,7 @@ element alternate.active {
 
 element-text {
     cursor:           inherit;
-    highlight:        blue;
+    highlight:        #000000;
     text-color:       inherit;
 }
 
