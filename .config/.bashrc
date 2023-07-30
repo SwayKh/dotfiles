@@ -71,7 +71,3 @@ if ! shopt -oq posix; then
   fi
 fi
 neofetch
-export EDITOR=nvim
-export VISUAL=micro
-export PATH="/home/sumit/.local/bin:$PATH"
-. "$HOME/.cargo/env"

@@ -15,7 +15,7 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
-source ~/.local/bin/wallbg
+#source ~/.local/bin/wallbg
 
 #Trash Files
 
@@ -62,17 +62,6 @@ cmd androidFs %{{
 
 cmd test %{{
    printf "$echo $VISUAL || $echo $EDITOR"
- #  a=${f%.*}
- #  mkdir -p "$a"
-	#
- #  case "$f" in 
- #    *.zip) unzip -d "$a" "$f" ;;
- #    *.tar.gz) tar -xzvf "$f" -c "$a" ;;
- #  	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
- #  	*.tar) tar -xvf "$f" -c "$a" ;;
- #    *.rar) unrar x "$f" "$a" ;;
- #    *) echo "Unsupported Format" ;;
-	# esac
 }}
 
 cmd chmod %{{
@@ -102,7 +91,9 @@ cmd Unarchive ${{
 }}
 
 cmd setwallpaper ${{
-  cp "$f" ~/.config/wall.png; wallbg "$f" 
+  cp "$f" ~/.config/wall.png; 
+  swaybg -m fill -i ~/.config/wall.png &
+  #wallbg "$f" 
   lf -remote 'send reload'
 }}
 
