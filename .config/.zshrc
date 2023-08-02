@@ -29,6 +29,10 @@ my_alias() {
     alias ls='exa -alh --color=always --group-directories-first'
 }
 
+check_history(){
+  awk -F ";" '{print $2}' $HISTFILE | grep "$1" | bat 
+}
+
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
