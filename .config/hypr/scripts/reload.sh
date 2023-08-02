@@ -1,7 +1,9 @@
+#!/bin/bash
+
 killall waybar
 pulseaudio -k
+pulseaudio --start
 
 waybar &
-pulseaudio --start
 
 hyprctl reload

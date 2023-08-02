@@ -1,9 +1,11 @@
 # Basic Settings
 
-# set shell bash
+set shell zsh
+set shellopts '-euy'
+set ifs "\n"
+
 set hidden true # Hidden Files
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
-set info size
 set ignorecase true # Ignore case when searching
 set scrolloff 10 # Leaves space on Top and Bottom of the screen
 set drawbox true # Shows the box around the panes
@@ -15,7 +17,8 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
-#source ~/.local/bin/wallbg
+# source ~/.zshrc
+# source ~/.local/bin/wallbg
 
 #Trash Files
 
@@ -36,17 +39,15 @@ cmd trash %set -f; mv "$fx" ~/.trash
 
 cmd clear_trash % rm -rf ~/.trash/*
 
-cmd restore_trash ${{
-  trash-restore
-}}
-
 cmd lfrc ${{
   nvim "$HOME"/.config/lf/lfrc
+  lf -remote "send $id source ~/.config/lf/lfrc"
+
 }}
 
 cmd open ${{
 	case $(file --mime-type "$f" -bL) in
-		text/*|application/json) nvim "$f" ;;
+		text/*|application/json) $EDITOR "$f" ;;
 		*) xdg-open "$f" ;;
 	esac
 }}
@@ -60,8 +61,15 @@ cmd androidFs %{{
 	
 }}
 
-cmd test %{{
-   printf "$echo $VISUAL || $echo $EDITOR"
+cmd test ${{
+   printf "$echo $VISUAL"
+   printf "After VISUAL"
+
+   printf "$echo $EDITOR"
+   printf "After EDITOR"
+
+   printf "$echo $OPENER"
+   printf "After OPENER"
 }}
 
 cmd chmod %{{
@@ -91,9 +99,10 @@ cmd Unarchive ${{
 }}
 
 cmd setwallpaper ${{
+  wallbg="$HOME/.local/bin/wallbg"
   cp "$f" ~/.config/wall.png; 
-  swaybg -m fill -i ~/.config/wall.png &
-  #wallbg "$f" 
+  # swaybg -m fill -i ~/.config/wall.png &
+  $wallbg "$f" 
   lf -remote 'send reload'
 }}
 
@@ -148,6 +157,8 @@ map <esc> unselect
 map e $$f # Execute the selected file, must be executabl
 map <backspace2> clear # Clears any cut/copy highlighter
 map oc lfrc
+map sf set info size
+
 
 
 # Function Bindings
@@ -173,6 +184,7 @@ map gt cd ~/Test
 map gT cd ~/.trash
 map gs cd ~/scripts
 map gpr cd ~/Projects
+map gpc cd ~/Pictures
 map gb cd ~/.local/bin
 map gr cd ~/repos/configs/
 map ga cd ~/Android
