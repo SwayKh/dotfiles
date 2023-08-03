@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dunstify "Color: \"$(hyprpicker)\" " | xclip -selection clipboard
+dunstify "Color: \"$(hyprpicker -a)\" "
