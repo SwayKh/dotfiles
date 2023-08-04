@@ -9,8 +9,8 @@
     // Choose the order of the modules
 
     "modules-left": ["wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["backlight", "pulseaudio", "network", "tray", "battery", "clock"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "backlight", "pulseaudio", "tray", "battery"],
 
     // Modules configuration
     "wlr/workspaces": {
@@ -108,9 +108,9 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{volume}% {icon}", //{format_source}",
+        "format-bluetooth": "{volume}% {icon}", //{format_source}",
+        "format-bluetooth-muted": " {icon}", //{format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
