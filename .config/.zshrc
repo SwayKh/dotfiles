@@ -17,6 +17,7 @@ export EDITOR=nvim
 
 alias pokescript='pokemon-colorscripts -r'
 # alias bat='batcat'
+alias color='colorscript -r'
 alias pipes='pipes.sh'
 alias vim='nvim'
 alias :q='exit'
@@ -50,7 +51,8 @@ source $ZSH/oh-my-zsh.sh
 
 #neofetch
 #pokemon-colorscripts -r
-pfetch
+# pfetch
+colorscript -r
 
 
 # Remove duplicates from $PATH
