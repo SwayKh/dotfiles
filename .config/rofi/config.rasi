@@ -1,7 +1,18 @@
 /* shift + del -> del most used */
 
 configuration {
-    display-drun: "";
+    modi:                       "drun,run,filebrowser,ssh";
+    show-icons:                 true;
+    font: "FiraCode Nerd Font";
+    display-drun:               "💽 Apps";
+    display-run:                " Run";
+    display-filebrowser:        " Files";
+/*    display-window:             " Windows"; */
+	  display-ssh:                " SSH";
+	  drun-display-format:        "{name}";
+/*	  window-format:              "{w} · {c} · {t}";*/
+
+
 } 
 
 * {
