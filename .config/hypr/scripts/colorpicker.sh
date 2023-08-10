@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dunstify "Color: \"$(hyprpicker -a)\" "
+dunstify "Color: \"$(hyprpicker)\" "

@@ -99,7 +99,7 @@ cmd Unarchive ${{
 	esac
 }}
 
-cmd setwallpaper ${{
+cmd setwallpaper &{{
   wallbg="$HOME/.local/bin/wallbg"
   cp "$f" ~/.config/wall.png; 
   # swaybg -m fill -i ~/.config/wall.png &

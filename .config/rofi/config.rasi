@@ -2,7 +2,7 @@
 
 configuration {
     modi:                       "drun,run,filebrowser,ssh";
-    show-icons:                 true;
+    show-icons:                 false;
     font: "FiraCode Nerd Font";
     display-drun:               "💽 Apps";
     display-run:                " Run";
@@ -15,6 +15,7 @@ configuration {
 
 } 
 
+/* foreground, blue, darkblue, are set to BBCCDD*/
 * {
     font:                           "GoMono Nerd Font 12";
     foreground:                     #BBCCDD;
