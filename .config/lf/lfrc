@@ -1,7 +1,7 @@
 # Basic Settings
 
-set shell zsh
-set shellopts '-euy'
+set shell sh
+# set shellopts '-euy'
 set ifs "\n"
 
 set hidden true # Hidden Files
@@ -40,7 +40,7 @@ cmd trash %set -f; mv "$fx" ~/.trash
 cmd clear_trash % rm -rf ~/.trash/*
 
 cmd lfrc ${{
-  nvim "$HOME"/.config/lf/lfrc
+  $EDITOR "$HOME"/.config/lf/lfrc
   lf -remote "send $id source ~/.config/lf/lfrc"
 
 }}
