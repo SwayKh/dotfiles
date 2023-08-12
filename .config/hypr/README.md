@@ -144,6 +144,36 @@ Enable Pulseaudio service as a user, and `start` them
 Graphical File Manager in case you need it
 Install `gvfs` to access the file systems on the computer like USB stick and Ventoy.
 
+## Theming Hyprland
+Standalone apps can be themed within themselves like 
+- Kitty
+- Firefox
+- Btop
+- Neovim
+- VsCode
+- Obsidian
+
+Some apps require Manual Theming like `rofi and waybar Hyprland`
+
+For Qt Applications
+Install `Kvantum` and `qt5ct` to apply themes to qt apps
+
+For `qt5ct` this ENV variable needs to be in the `/etc/environment` file
+> `QT_QPA_PLATFORMTHEME=qt5ct`
+
+Download themes from pling.com. Extract them anywhere.
+Select the theme directory and install the kvantum theme and apply it with Kvantum.
+Go to qt5ct select the widget kvantum and apply, maybe change the font.
+
+For GTK Applications
+Install `nwg-look` app from the AUR or install `lxappearance` from extra repo
+Put the themes in `/usr/share/themes` directory. Inside nwg-look select the theme your installed.
+
+That Should be It for the theming. Right Now I have the hyprland_kitty.png wallpaper.
+Rofi and waybar have the Primary color #BBCCDD And GTK and Qt Apps have the nord theme.
+And Kitty has Monokai theme Applied.
+
+
 ## Chaning default applications
 Change default text editor to nvim
 `xdg-mime default nvim.desktop text/plain`
