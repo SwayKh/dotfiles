@@ -1,7 +1,9 @@
 ## Installation
+Installed Hyprland And removed KDE Plasma
+What I removed can be found in [[Removing Plasma]]
 
 #### Base Arch Install - 
-`base base-devel linux linux-lts linux-firmware grub amd-ucode ntfs-3g os-prober vim ufw`
+`base base-devel linux linux-lts linux-firmware grub amd-ucode ntfs-3g os-prober vim ufw git openssh rsync`
 
 #### Some tools, utilities needed for Hyprland to function are
 ```
@@ -51,23 +53,25 @@ lf
 zsh 
 bat 
 fzf 
-git 
 curl 
 wget 
 tldr 
 pacman-contrib 
+docker
 gparted 
 net-tool 
 github-cli 
-openssh 
+gvfs
 sshfs 
 zathura-pdf-mupdf 
 man 
 neofetch 
 unzip 
 unrar 
+preload
 qt5ct 
 lxappearance 
+nwg-look
 python-pip 
 python-pipx
 ```
@@ -128,12 +132,17 @@ powertop
 **Feh** - CLI Image viewer. Very lightweight. Not customisable, Can be configured via the Exec option is feh.desktop file in /usr/share/application.
 **Zathura** - Lightweight PDF viewer. Install `zathura-pdf-mupdf` for pdf, docx support.
 **Swaylock-effects** - Screen locking utility. config is in dotfiles. Different from swaylock, in the aur.
-**Qt5ct, LxAppearance** - Theme changer and customiser for gtk and qt applications
+**Qt5ct, LxAppearance, nwg-look** - Theme changer and customiser for gtk and qt applications
+**Preload** - A system service that monitors frequently used apps into RAM to make their start-up faster
 
 ## Audio not working?
 Enable Pulseaudio service as a user, and `start` them
 `systemctl --user enable pulseaudio.service`
 `systemctl --user enable pulseaudio.socket`
+
+## Thunar
+Graphical File Manager in case you need it
+Install `gvfs` to access the file systems on the computer like USB stick and Ventoy.
 
 ## Chaning default applications
 Change default text editor to nvim

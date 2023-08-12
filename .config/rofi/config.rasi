@@ -1,16 +1,16 @@
 /* shift + del -> del most used */
 
 configuration {
-    modi:                       "drun,run,filebrowser,ssh";
+    modi:                       "drun";
     show-icons:                 false;
-    font: "FiraCode Nerd Font";
-    display-drun:               "💽 Apps";
+    font: "GoMono Nerd Font";
+    display-drun:               "Apps >";
     display-run:                " Run";
     display-filebrowser:        " Files";
-/*    display-window:             " Windows"; */
-	  display-ssh:                " SSH";
-	  drun-display-format:        "{name}";
-/*	  window-format:              "{w} · {c} · {t}";*/
+/*  display-window:             " Windows"; 💽*/
+    display-ssh:                " SSH";
+    drun-display-format:        "{name}";
+/*	window-format:              "{w} · {c} · {t}";*/
 
 
 } 
@@ -47,7 +47,9 @@ mainbox {
 
 textbox {
     text-color: @foreground;
+    background-color: @background;
 }
+
 
 listview {
     lines:	      8;
@@ -126,7 +128,7 @@ entry {
     spacing:           0;
     padding:	         8px;
     text-color:        #F8F8F2;
-    placeholder:       "";
+/*    placeholder:       "";*/
     placeholder-color: @foreground;
 }
 

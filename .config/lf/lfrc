@@ -92,6 +92,7 @@ cmd Unarchive ${{
   case "$f" in 
     *.zip) unzip -d "$a" "$f" ;;
     *.tar.gz) tar -xzvf "$f" -c "$a" ;;
+    *.tar.xz) tar -xvf "$f" -c "$a" ;;
   	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
   	*.tar) tar -xvf "$f" -c "$a" ;;
     *.rar) unrar x "$f" "$a" ;;
@@ -189,6 +190,7 @@ map gpc cd ~/Pictures
 map gb cd ~/.local/bin
 map gr cd ~/repos/configs/
 map ga cd ~/Android
+map gv cd /run/media/sumit/Ventoy/
 map g/ cd /
 # map gak cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
 
