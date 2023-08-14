@@ -31,11 +31,22 @@ my_alias() {
 }
 
 check_history(){
-  awk -F ";" '{print $2}' $HISTFILE | grep "$1" | bat 
+  awk -F ";" '{print $2}' $HISTFILE | grep "$1" | tac | bat 
 }
 
 convertToPng(){
   find . -name "*.jpg" -exec mogrify -format png {} \;
+}
+
+# This needs to be defined in root user.
+ recovery-pacman() {
+    pacman "$@"  \
+    --log /dev/null   \
+    --noscriptlet     \
+    --dbonly          \
+    --overwrite "*"   \
+    --nodeps          \
+    --needed
 }
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
