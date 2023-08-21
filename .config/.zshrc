@@ -38,6 +38,12 @@ convertToPng(){
   find . -name "*.jpg" -exec mogrify -format png {} \;
 }
 
+turnWifi(){
+  sudo ip link set wlo1 down
+  sudo iw wlo1 set type managed
+  sudo ip link set wlo1 up
+}
+
 # This needs to be defined in root user.
  recovery-pacman() {
     pacman "$@"  \
