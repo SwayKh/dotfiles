@@ -43,6 +43,9 @@ sudo ln -sfn $path/.config/rofi $HOME/.config/
 [ -d $HOME/.config/swaylock ] && rm -rf $HOME/.config/swaylock
 sudo ln -sfn $path/.config/swaylock $HOME/.config/
 
+[ -d $HOME/.config/swayidle ] && rm -rf $HOME/.config/swayidle
+sudo ln -sfn $path/.config/swayidle $HOME/.config/
+
 [ -f $HOME/.config/retroarch/retroarch.cfg ] && rm -rf $HOME/.config/retroarch/retroarch.cfg
 sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg 
 

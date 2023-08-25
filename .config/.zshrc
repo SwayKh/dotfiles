@@ -36,6 +36,9 @@ check_history(){
 
 convertToPng(){
   find . -name "*.jpg" -exec mogrify -format png {} \;
+  find . -name "*.jpg" -exec rm {} \;
+  find . -name "*.webp" -exec mogrify -format png {} \;
+  find . -name "*.webp" -exec rm {} \;
 }
 
 turnWifi(){
@@ -45,15 +48,15 @@ turnWifi(){
 }
 
 # This needs to be defined in root user.
- recovery-pacman() {
-    pacman "$@"  \
-    --log /dev/null   \
-    --noscriptlet     \
-    --dbonly          \
-    --overwrite "*"   \
-    --nodeps          \
-    --needed
-}
+#  recovery-pacman() {
+#     pacman "$@"  \
+#     --log /dev/null   \
+#     --noscriptlet     \
+#     --dbonly          \
+#     --overwrite "*"   \
+#     --nodeps          \
+#     --needed
+# }
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
