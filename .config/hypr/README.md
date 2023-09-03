@@ -16,6 +16,7 @@ hyprpicker
 xdg-desktop-portal-hyprland
 swaybg 
 ly 
+fwupd
 playerctl 
 brightnessctl 
 pamixer 
@@ -72,6 +73,7 @@ preload
 qt5ct 
 lxappearance 
 nwg-look
+kcalc
 python-pip 
 python-pipx
 ```
@@ -83,7 +85,6 @@ btop
 exa 
 vnstat 
 ripgrep 
-tldr 
 tree 
 ncdu 
 raindrop 
@@ -113,6 +114,7 @@ powertop
 **Waybar** - Status bar, configuration is in the dotfiles. Use `waybar-hyprland-git` from the AUR for some hyprland patches like on-click active workspaces
 **Rofi** - App Launcher, configuration are in dotfiles. Useful for creating menus for scripts. Use `rofi-lbonn-wayland` fork to use on wayland, the fork doesn't have window and dmenu mode.
 **Swaybg** - Wallpaper utility, useful for setting up scripts. Can change wallpaper from the command line. Works great with Hyprland and Hyprpaper.
+**Fwupd** - a firmware daemon. Can check device for firmware update and upgrade them.
 **Playerctl** - Software used for mapping functionality to the play, pause, next, previous Fn buttons.
 **BrightnessCtl** - Software used to change screen brightness.
 **Pamixer, Pavucontrol** - Utility to control Pulseaudio and used for changing Volume.
@@ -144,6 +146,9 @@ Enable Pulseaudio service as a user, and `start` them
 Graphical File Manager in case you need it
 Install `gvfs` to access the file systems on the computer like USB stick and Ventoy.
 
+## Godot 4
+Godot 4 need `vulkan-radeon` to be installed, In case it doesn't run after the project select screen.
+
 ## Theming Hyprland
 Standalone apps can be themed within themselves like 
 - Kitty
@@ -155,7 +160,7 @@ Standalone apps can be themed within themselves like
 
 Some apps require Manual Theming like `rofi and waybar Hyprland`
 
-For Qt Applications
+#### For Qt Applications
 Install `Kvantum` and `qt5ct` to apply themes to qt apps
 
 For `qt5ct` this ENV variable needs to be in the `/etc/environment` file
@@ -165,7 +170,7 @@ Download themes from pling.com. Extract them anywhere.
 Select the theme directory and install the kvantum theme and apply it with Kvantum.
 Go to qt5ct select the widget kvantum and apply, maybe change the font.
 
-For GTK Applications
+#### For GTK Applications
 Install `nwg-look` app from the AUR or install `lxappearance` from extra repo
 Put the themes in `/usr/share/themes` directory. Inside nwg-look select the theme your installed.
 
@@ -191,3 +196,13 @@ Change default pdf viewer to Zathura
 
 Change default markdown view/editor to Mark-text
 `xdg-mime default marktext.desktop text/markdown`
+
+## Swayidle
+Put this in `.config/swayidle/config`
+```bash
+timeout 1800 'swaylock -f'
+timeout 1805 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
+before-sleep 'swaylock -f'
+```
+
+and use `exec-once=swayidle -w` in hyprland.conf
