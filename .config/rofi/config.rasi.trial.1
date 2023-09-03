@@ -1,0 +1,129 @@
+/* shift + del -> del most used */
+
+
+configuration {
+    modi: ["drun", "ssh", "run"];
+    icon-theme: "candy-icons";
+    show-icons: true;
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    sidebar-mode: false;
+    display-drun: " ";
+    display-run: " ";
+    display-ssh: " ";
+
+    // Vim keybindings
+    kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+    kb-row-down: "Down,Control+j";
+    kb-row-left: "Left,Control+h";
+    kb-row-right: "Right,Control+l";
+
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-to-eol: "Control+Shift+e";
+    kb-move-char-back: "Control+b";
+    kb-move-char-forward: "Control+f";
+    kb-mode-complete: "";
+    kb-remove-char-back: "BackSpace";
+}
+
+ 
+
+/* foreground, blue, darkblue, are set to BBCCDD*/
+* {
+    font:                           "Hack Nerd Font 12";
+    foreground:                     #BBCCDD;
+    background:                     #37383a;
+    highlight:	             		    #F8F8F2;
+    red:                            #973D46;
+    darkred:                        #973D46;
+    blue:                           #bbccdd;
+    darkblue:                       #bbccdd;
+    yellow:                         #E0AE4A;
+    darkyellow:                     #E0AE4A;
+    border:                         #1B1E25;
+    darkblack:                      #090A0F;
+    darkgray:                       #333333;
+}
+
+window {
+  width: 48%;
+  height: 48%;
+
+  orientation: horizontal;
+  location: center;
+  anchor: center;
+  border: 3px;
+  border-color: @border;
+  border-radius: 10px;
+  spacing: 0;
+  children: [ mainbox ];
+}
+
+mainbox {
+  spacing: 0;
+  children: [ inputbar, message, listview ];
+}
+
+inputbar {
+  color: @foreground;
+  margin: 10px;
+  padding: 10px;
+  border: 3px;
+  border-color: @border;
+  border-radius: 10px;
+  
+}
+
+message {
+  border: 0;
+  padding: 0;
+}
+
+entry,
+prompt,
+case-indicator {
+  text-font: inherit;
+  text-color: @background;
+}
+
+entry {
+  cursor: pointer;
+  horizontal-align: 0.5;
+}
+
+listview {
+  layout: vertical;
+  padding: 10px;
+  lines: 12;
+  columns: 6;
+  border: 0;
+}
+
+element {
+  color: @foreground;
+  orientation: vertical;
+}
+
+element-text,
+element-icon {
+  background-color: inherit;
+  text-color: #333333;
+  horizontal-align: 0.5;
+}
+
+element-icon {
+  size: 64;
+}
+
+element selected.normal {
+  background-color: @foreground;
+  border: 2px;
+  border-color: @border;
+  border-radius: 10px;
+}
+
+scrollbar {
+  enabled: false;
+}

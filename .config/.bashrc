@@ -71,3 +71,5 @@ if ! shopt -oq posix; then
   fi
 fi
 neofetch
+
+source /home/sumit/.config/broot/launcher/bash/br

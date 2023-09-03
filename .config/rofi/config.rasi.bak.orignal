@@ -2,14 +2,14 @@
 
 configuration {
     modi:                       "drun";
-    show-icons:                 true;
+    show-icons:                 false;
     font: "Hack Nerd Font";
     display-drun:               "Apps >";
     display-run:                " Run";
     display-filebrowser:        " Files";
 /*  display-window:             " Windows"; 💽*/
     display-ssh:                " SSH";
-    drun-display-format: "{icon} {name}";
+    drun-display-format:        "{name}";
 /*	window-format:              "{w} · {c} · {t}";*/
 
 
@@ -33,30 +33,16 @@ configuration {
 }
 
 window {
-  width: 48%;
-  height: 48%;
-
-  orientation: horizontal;
-  location: center;
-  anchor: center;
-  border: 3px;
-  border-color: @border;
-  border-radius: 10px;
-  spacing: 0;
-  children: [ mainbox ];
+    border: 			 	2px;
+    border-color:   @foreground;
+    border-radius:	4px;
+    padding: 				0;
+    width: 		  		30%;
 }
 
 mainbox {
-  spacing: 0;
-  children: [ inputbar, message, listview ];
-}
-
-listview {
-  layout: vertical;
-  padding: 10px;
-  lines: 12;
-  columns: 6;
-  border: 0;
+    border:  0;
+    padding: 0;
 }
 
 textbox {
@@ -64,14 +50,20 @@ textbox {
     background-color: @background;
 }
 
-element {
-    orientation: vertical;
-    border:       0;
-    padding:      8px; 
+
+listview {
+    lines:	      8;
+    columns:      1;
+    border:       0px 0px 0px 0px;
+    border-color: @separatorcolor;
+    spacing:      4px;
+    scrollbar:    false;
+    padding:      0px 8px 8px;
 }
 
-element-icon {
-  size: 64;
+element {
+    border:       0;
+    padding:      8px; 
 }
 
 element normal.normal {
@@ -126,6 +118,11 @@ element-text {
     text-color:       inherit;
 }
 
+element-icon {
+    size:             1.0em;
+    cursor:           inherit;
+    text-color:       inherit;
+}
 
 entry {
     spacing:           0;

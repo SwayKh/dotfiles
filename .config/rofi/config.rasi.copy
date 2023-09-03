@@ -1,0 +1,28 @@
+configuration {
+    modi: ["drun", "window", "run"];
+    icon-theme: "Reversal-purple-dark";
+    show-icons: true;
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    sidebar-mode: false;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+
+    // Vim keybindings
+    kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+    kb-row-down: "Down,Control+j";
+    kb-row-left: "Left,Control+h";
+    kb-row-right: "Right,Control+l";
+
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-to-eol: "Control+Shift+e";
+    kb-move-char-back: "Control+b";
+    kb-move-char-forward: "Control+f";
+    kb-mode-complete: "";
+    kb-remove-char-back: "BackSpace";
+}
+
+@theme "blacklotus.rasi"

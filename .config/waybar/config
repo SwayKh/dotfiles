@@ -8,12 +8,12 @@
     
     // Choose the order of the modules
 
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "backlight", "pulseaudio", "tray", "battery"],
+    "modules-right": ["network", "cpu", "backlight", "pulseaudio", "tray", "battery"],
 
     // Modules configuration
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
@@ -25,6 +25,7 @@
             "6": "",
             "7": "",
             "8": "",
+            "9": "",
             "urgent": "",
             "active": "",
             "default": ""
@@ -38,6 +39,7 @@
             "6": [],
             "7": [],
             "8": [],
+            "9": [],
          }
     },
     "hyprland/window": {
@@ -74,6 +76,10 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
     },
     "backlight": {
         // "device": "acpi_video1",

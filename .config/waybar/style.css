@@ -2,12 +2,12 @@
     /* `otf-font-awesome` is required to be installed for icons */
     border: #33ccff;
     border-radius: 4px;
-    font-family: "GoMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family:  "Hack Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
    }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0);
+    background-color: rgba(43, 48, 59, .5);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #FFFFFF;
     transition-property: background-color;
