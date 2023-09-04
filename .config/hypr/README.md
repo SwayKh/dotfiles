@@ -57,6 +57,7 @@ fzf
 curl 
 wget 
 tldr 
+glow
 pacman-contrib 
 docker
 gparted 
