@@ -32,7 +32,7 @@ set cleaner ctpvclear
 
 cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
 
-cmd mkfile %printf "File Name: "; read ans; touch $ans;
+cmd mkfile %printf "File Name: "; read ans; touch $ans
  
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
@@ -63,14 +63,14 @@ cmd androidFs %{{
 }}
 
 cmd test ${{
-   printf "$echo $VISUAL"
-   printf "After VISUAL"
+   printf "Visual: $echo $VISUAL "
+   # printf "After VISUAL"
 
-   printf "$echo $EDITOR"
-   printf "After EDITOR"
+   printf "Editor: $echo $EDITOR "
+   # printf "After EDITOR"
 
-   printf "$echo $OPENER"
-   printf "After OPENER"
+   printf "Opener: $echo $OPENER "
+   # printf "After OPENER"
 }}
 
 cmd chmod %{{
