@@ -65,12 +65,13 @@ github-cli
 gvfs
 sshfs 
 zathura-pdf-mupdf 
+Hack-nerd-font
 man 
 neofetch 
 unzip 
 unrar 
 preload
-qt5ct 
+qt6ct 
 lxappearance 
 nwg-look
 kcalc
@@ -134,7 +135,7 @@ powertop
 **Feh** - CLI Image viewer. Very lightweight. Not customisable, Can be configured via the Exec option is feh.desktop file in /usr/share/application.
 **Zathura** - Lightweight PDF viewer. Install `zathura-pdf-mupdf` for pdf, docx support.
 **Swaylock-effects** - Screen locking utility. config is in dotfiles. Different from swaylock, in the aur.
-**Qt5ct, LxAppearance, nwg-look** - Theme changer and customiser for gtk and qt applications
+**Qt6ct, LxAppearance, nwg-look** - Theme changer and customiser for gtk and qt applications
 **Preload** - A system service that monitors frequently used apps into RAM to make their start-up faster
 
 ## Audio not working?

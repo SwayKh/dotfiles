@@ -10,7 +10,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "backlight", "pulseaudio", "tray", "battery"],
+    "modules-right": ["cpu", "network", "backlight", "pulseaudio", "tray", "battery"],
 
     // Modules configuration
     "hyprland/workspaces": {
