@@ -1,147 +1,106 @@
 /* shift + del -> del most used */
 
 configuration {
-    modi:                       "drun";
-    show-icons:                 false;
-    font: "Hack Nerd Font";
-    display-drun:               "Apps >";
-    display-run:                " Run";
-    display-filebrowser:        " Files";
-/*  display-window:             " Windows"; 💽*/
-    display-ssh:                " SSH";
-    drun-display-format:        "{name}";
-/*	window-format:              "{w} · {c} · {t}";*/
+	/*---------- General setting ----------*/
+	modi: "drun,window";
+	case-sensitive: false;
+	cycle: true;
+	filter: "";
+	scroll-method: 0;
+	normalize-match: true;
+	show-icons: true;
+	icon-theme: "Zafiro-Nord-Black";
+/*	cache-dir: ;*/
+	steal-focus: false;
+/*	dpi: -1;*/
+
+	/*---------- Matching setting ----------*/
+	matching: "normal";
+	tokenize: true;
+
+	/*---------- SSH settings ----------*/
+	ssh-client: "ssh";
+	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+	parse-hosts: true;
+	parse-known-hosts: true;
+
+	/*---------- Drun settings ----------*/
+	drun-categories: "";
+	drun-match-fields: "name,generic,exec,categories,keywords";
+	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-show-actions: false;
+	drun-url-launcher: "xdg-open";
+	drun-use-desktop-cache: false;
+	drun-reload-desktop-cache: false;
+	drun {
+		/** Parse user desktop files. */
+		parse-user:   true;
+		/** Parse system desktop files. */
+		parse-system: true;
+    }
+
+	/*---------- Run settings ----------*/
+	run-command: "{cmd}";
+	run-list-command: "";
+	run-shell-command: "{terminal} -e {cmd}";
+
+	/*---------- Fallback Icon ----------*/
+	run {
+		fallback-icon: "application-x-addon";
+	}
+	drun {
+		fallback-icon: "application-x-addon";
+	}
+
+	/*---------- Window switcher settings ----------*/
+	window-match-fields: "title,class,role,name,desktop";
+	window-command: "wmctrl -i -R {window}";
+	window-format: "{w} - {c} - {t:0}";
+	window-thumbnail: false;
+
+	/*---------- Combi settings ----------*/
+/*	combi-modi: "window,run";*/
+/*	combi-hide-mode-prefix: false;*/
+/*	combi-display-format: "{mode} {text}";*/
+
+	/*---------- History and Sorting ----------*/
+	disable-history: false;
+	sorting-method: "normal";
+	max-history-size: 25;
+
+	/*---------- Display setting ----------*/
+	display-window: "Windows";
+	display-windowcd: "Window CD";
+	display-run: "Run";
+	display-ssh: "SSH";
+	display-drun: "Apps";
+	display-combi: "Combi";
+	display-keys: "Keys";
+	display-filebrowser: "Files";
+
+	/*---------- Misc setting ----------*/
+	terminal: "rofi-sensible-terminal";
+	font: "Hack Nerd Mono 12";
+	sort: false;
+	threads: 0;
+	click-to-exit: true;
+	hover-select: true;
+/*	ignored-prefixes: "";*/
+/*	pid: "/run/user/1000/rofi.pid";*/
+
+	/*---------- File browser settings ----------*/
+    filebrowser {
+/*	  directory: "/home";*/
+      directories-first: true;
+      sorting-method:    "name";
+    }
+
+	/*---------- Other settings ----------*/
+    timeout {
+      action: "kb-cancel";
+      delay:  0;
+    }
 
 
 } 
-
-/* foreground, blue, darkblue, are set to BBCCDD*/
-* {
-    font:                           "Hack Nerd Font 12";
-    foreground:                     #BBCCDD;
-    background:                     #37383a;
-    highlight:	             		    #F8F8F2;
-    red:                            #973D46;
-    darkred:                        #973D46;
-    blue:                           #bbccdd;
-    darkblue:                       #bbccdd;
-    yellow:                         #E0AE4A;
-    darkyellow:                     #E0AE4A;
-    border:                         #1B1E25;
-    darkblack:                      #090A0F;
-    darkgray:                       #333333;
-}
-
-window {
-    border: 			 	2px;
-    border-color:   @foreground;
-    border-radius:	4px;
-    padding: 				0;
-    width: 		  		30%;
-}
-
-mainbox {
-    border:  0;
-    padding: 0;
-}
-
-textbox {
-    text-color: @foreground;
-    background-color: @background;
-}
-
-
-listview {
-    lines:	      8;
-    columns:      1;
-    border:       0px 0px 0px 0px;
-    border-color: @separatorcolor;
-    spacing:      4px;
-    scrollbar:    false;
-    padding:      0px 8px 8px;
-}
-
-element {
-    border:       0;
-    padding:      8px; 
-}
-
-element normal.normal {
-    background-color: @background;
-    text-color:       @foreground;
-}
-
-element normal.urgent {
-    background-color: @red;
-    text-color:       @background;
-}
-
-element normal.active {
-    background-color: @border;
-    text-color:       @background;
-}
-
-element selected.normal {
-    background-color: @blue;
-    text-color:       @background;
-    border-radius:    2px;
-}
-
-element selected.urgent {
-    background-color: @red;
-    text-color:       @background;
-}
-
-element selected.active {
-    background-color: @yellow;
-    text-color:       @background;
-}
-
-element alternate.normal {
-    background-color: @background;
-    text-color:       @foreground;
-}
-
-element alternate.urgent {
-    background-color: @border;
-    text-color:       @background;
-}
-
-element alternate.active {
-    background-color: @border;
-    text-color:       @background;
-}
-
-element-text {
-    cursor:           inherit;
-    highlight:        #000000;
-    text-color:       inherit;
-}
-
-element-icon {
-    size:             1.0em;
-    cursor:           inherit;
-    text-color:       inherit;
-}
-
-entry {
-    spacing:           0;
-    padding:	         8px;
-    text-color:        #F8F8F2;
-/*    placeholder:       "";*/
-    placeholder-color: @foreground;
-}
-
-prompt {
-    padding: 0px 0px ;
-    text-color: @foreground;
-}
-
-inputbar {
-    background-color: @background;
-    margin:           0px 0px 0px 0px;
-    border:           8px;
-    border-radius:    6px;
-    border-color:     @background;
-    children:         [entry];
-}
+@import "almostNord"

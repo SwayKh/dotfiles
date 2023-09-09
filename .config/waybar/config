@@ -8,9 +8,9 @@
     
     // Choose the order of the modules
 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "network", "backlight", "pulseaudio", "tray", "battery"],
+    "modules-left": ["custom/power", "custom/media", "clock", "cpu"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["network", "backlight", "pulseaudio", "battery", "tray"],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -26,7 +26,7 @@
             "7": "",
             "8": "",
             "9": "",
-            "urgent": "",
+            "urgent": "",
             "active": "",
             "default": ""
          },
@@ -78,6 +78,7 @@
         "format-icons": ["", "", ""]
     },
     "cpu": {
+        "interval": 5,
         "format": "{usage}% ",
         "tooltip": false
     },
@@ -105,8 +106,9 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ", //({signalStrength}%) 
+        "format-wifi": "", //({essid} {signalStrength}%) 
         "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
@@ -142,6 +144,12 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+      "format": "{icon}",
+      "format-icons": "",// 󰣇
+      "exec-on-event": "true",
+      "on-click": "~/.config/hypr/scripts/sessionMenu.sh",
     }
 }
 

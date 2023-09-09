@@ -1,0 +1,134 @@
+
+/* foreground, blue, darkblue, are set to BBCCDD*/
+* {
+    font:                           "Hack Nerd Font 12";
+    foreground:                     #BBCCDD;
+    background:                     #37383a;
+    highlight:	             		    #F8F8F2;
+    red:                            #973D46;
+    darkred:                        #973D46;
+    blue:                           #bbccdd;
+    darkblue:                       #bbccdd;
+    yellow:                         #E0AE4A;
+    darkyellow:                     #E0AE4A;
+    border:                         #1B1E25;
+    darkblack:                      #090A0F;
+    darkgray:                       #333333;
+}
+
+window {
+  width: 48%;
+  height: 48%;
+
+  orientation: horizontal;
+  location: center;
+  anchor: center;
+  border: 3px;
+  border-color: @border;
+  border-radius: 10px;
+  spacing: 0;
+  children: [ mainbox ];
+}
+
+mainbox {
+  spacing: 0;
+  children: [ inputbar, message, listview, mode-switcher ];
+}
+
+listview {
+  layout: vertical;
+  padding: 10px;
+  lines: 12;
+  columns: 6;
+  border: 0;
+}
+
+textbox {
+    text-color: @foreground;
+    background-color: @background;
+}
+
+element {
+    orientation: vertical;
+    border:       0;
+    padding:      8px; 
+}
+
+element-icon {
+  size: 64;
+}
+
+element normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element normal.urgent {
+    background-color: @red;
+    text-color:       @background;
+}
+
+element normal.active {
+    background-color: @border;
+    text-color:       @background;
+}
+
+element selected.normal {
+    background-color: @blue;
+    text-color:       @background;
+    border-radius:    2px;
+}
+
+element selected.urgent {
+    background-color: @red;
+    text-color:       @background;
+}
+
+element selected.active {
+    background-color: @yellow;
+    text-color:       @background;
+}
+
+element alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element alternate.urgent {
+    background-color: @border;
+    text-color:       @background;
+}
+
+element alternate.active {
+    background-color: @border;
+    text-color:       @background;
+}
+
+element-text {
+    cursor:           inherit;
+    highlight:        #000000;
+    text-color:       inherit;
+}
+
+
+entry {
+    spacing:           0;
+    padding:	         8px;
+    text-color:        #F8F8F2;
+/*    placeholder:       "";*/
+    placeholder-color: @foreground;
+}
+
+prompt {
+    padding: 0px 0px ;
+    text-color: @foreground;
+}
+
+inputbar {
+    background-color: @background;
+    margin:           0px 0px 0px 0px;
+    border:           8px;
+    border-radius:    6px;
+    border-color:     @background;
+    children:         [entry];
+}

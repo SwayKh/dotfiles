@@ -86,15 +86,15 @@ cmd chmod %{{
 
 cmd Unarchive ${{
 # This part creates the directory for extracting files
-  a=${f%.*} 
+  a="${f%%.*}" 
   mkdir -p "$a"
 
   case "$f" in 
     *.zip) unzip -d "$a" "$f" ;;
-    *.tar.gz) tar -xzvf "$f" -c "$a" ;;
-    *.tar.xz) tar -xvf "$f" -c "$a" ;;
-  	*.tar.bz2) tar -xjvf "$f" -c "$a" ;;
-  	*.tar) tar -xvf "$f" -c "$a" ;;
+    *.tar.gz) tar -xzvf "$f" -C "$a" ;;
+    *.tar.xz) tar -xvf "$f" -C "$a" ;;
+  	*.tar.bz2) tar -xjvf "$f" -C "$a" ;;
+  	*.tar) tar -xvf "$f" -C "$a" ;;
     *.rar) unrar x "$f" "$a" ;;
     *) echo "Unsupported Format" ;;
 	esac

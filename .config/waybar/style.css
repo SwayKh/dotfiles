@@ -66,7 +66,23 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    /* background-color: #BBCCDD; */
+    border-radius: 50%;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#workspaces,
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.focused,
+#workspaces button.urgent {
+    padding-right: 0px;
+    padding: 0px 6px;
+    padding-left: 2px;
 }
 
 #mode {
@@ -89,15 +105,12 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#custom-power,
 #mpd {
-    padding: 0 10px;
+    padding: 0px 9px;
+    padding-right: 13px;
     margin: 3px 3px;
     color: #333333;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -210,6 +223,10 @@ label:focus {
 
 #tray {
     background-color: #bbccdd;
+}
+#custom-power {
+  background-color: #BBCCDD;
+  padding-right: 13px;
 }
 
 #tray > .passive {
