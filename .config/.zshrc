@@ -42,7 +42,7 @@ alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u
 alias update='sudo pacman -Syu'
 
 my_alias() {
-    alias ls='exa -alh --color=always --group-directories-first'
+    alias ls='eza -alh --color=always --group-directories-first'
 }
 
 check_history(){
