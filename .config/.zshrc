@@ -62,6 +62,11 @@ turnWifi(){
   sudo ip link set wlo1 up
 }
 
+ch() {
+  query=$1
+  curl cheat.sh/$query
+}
+
 # This needs to be defined in root user.
 #  recovery-pacman() {
 #     pacman "$@"  \
