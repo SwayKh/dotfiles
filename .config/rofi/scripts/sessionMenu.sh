@@ -3,10 +3,10 @@
 uptime=$(uptime -p | sed -e 's/up //g')
 
 # Rofi dmenu mode, -i make search case-insensitive, -l is the number of line
-THEME="/home/sumit/.config/rofi/scripts/power.rasi"
+THEME="/home/sumit/.config/rofi/scripts/powerconfig.rasi"
 rofi_command() {
   rofi -dmenu \
-        -theme ${THEME} \
+        -theme /home/sumit/.config/rofi/scripts/powerconfig.rasi \
         -i \ 
         -l 5 
 }

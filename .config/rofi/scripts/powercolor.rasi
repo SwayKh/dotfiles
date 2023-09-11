@@ -2,8 +2,8 @@
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
     font:                           "Hack Nerd Font 12";
-    foreground:                     #000000;
-    background:                     #37383a;
+    foreground:                     #BBCCDD;
+    background:                     #000000;
     highlight:	             		    #F8F8F2;
     red:                            #973D46;
     darkred:                        #973D46;
