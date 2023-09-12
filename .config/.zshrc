@@ -67,6 +67,9 @@ ch() {
   curl cheat.sh/$query
 }
 
+cn() {
+  clear && neofetch
+}
 # This needs to be defined in root user.
 #  recovery-pacman() {
 #     pacman "$@"  \
@@ -115,3 +118,4 @@ typeset -U PATH
 # }
 my_alias
 
+eval "$(starship init zsh)"

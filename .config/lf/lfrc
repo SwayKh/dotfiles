@@ -175,6 +175,7 @@ map bg setwallpaper # Doesn't work
 map du directory_size # Requires ncdu utility
 map t test
 map f calcdirsize # Calculate the directory size in the editor without NCDU
+map afs androidFs
 
 # Movement Bindings
 map gD cd ~/Documents
