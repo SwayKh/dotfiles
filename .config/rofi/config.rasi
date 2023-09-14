@@ -9,7 +9,11 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Zafiro-Nord-Black";
+	display-drun:                "";
+  display-run:                 "";
+  display-filebrowser:         "";
+  display-window:              "";
+  icon-theme: "Zafiro-Nord-Black";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/

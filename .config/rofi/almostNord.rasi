@@ -112,11 +112,9 @@ element-text {
 
 
 entry {
-    spacing:           0;
+    enabled:           true;
     padding:	         8px;
     text-color:        #F8F8F2;
-/*    placeholder:       "";*/
-    placeholder-color: @foreground;
 }
 
 prompt {
