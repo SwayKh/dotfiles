@@ -13,7 +13,7 @@ configuration {
   display-run:                 "";
   display-filebrowser:         "";
   display-window:              "";
-  icon-theme: "Zafiro-Nord-Black";
+  icon-theme: "Papirus";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
