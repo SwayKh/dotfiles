@@ -18,7 +18,7 @@
 
 Follow these steps (Beware that this will remove all your old configs. So Prepare a back-up beforehand)
 
->     git clone https://github.com/SumitKhatri712/dotfiles.git
+>     git clone https://github.com/SwayKh/dotfiles.git
 >     cd dotfiles
 >     ./linkdots.sh
 
@@ -85,7 +85,7 @@ yay -S shell-color-scripts
 ***
 
 There is a custom LF install script that i made to install LF and setup my configs with it
-You can find it in my [Scripts](https://github.com/SumitKhatri712/Scripts) repository
+You can find it in my [Scripts](https://github.com/SwayKh/Scripts) repository
 
 Some Requirements for using LF file manager
 
