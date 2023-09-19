@@ -4,14 +4,16 @@ configuration {
     modi:                       ["drun", "ssh", "run", "combi", "window"];
 /*    modi:                       "drun"; */
     show-icons:                 true;
-    font: "Hack Nerd Font";
+    font:                       "Hack Nerd Font";
+    icon-theme: "Papirus";
     display-drun:               "Apps >";
     display-run:                " Run";
     display-filebrowser:        " Files";
     display-window:             " Windows"; /* 💽*/
     display-ssh:                " SSH";
     drun-display-format:        "{name}";
-  	window-format:              "{w} · {c} · {t}";
+    window-format:              "{w} · {c} · {t}";
+    steal-focus: true;
 
 
 } 
@@ -146,3 +148,4 @@ inputbar {
     border-color:     @background;
     children:         [entry];
 }
+@import "almostNord"

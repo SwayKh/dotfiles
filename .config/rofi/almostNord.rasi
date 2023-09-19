@@ -4,7 +4,7 @@
     font:                           "Hack Nerd Font 12";
     foreground:                     #BBCCDD;
     background:                     #37383a;
-    highlight:	             		    #F8F8F2;
+    highlight:	                    #F8F8F2;
     red:                            #973D46;
     darkred:                        #973D46;
     blue:                           #bbccdd;
@@ -17,10 +17,10 @@
 }
 
 window {
-  width: 48%;
-  height: 48%;
+  width: 50%;
+  height: 50%;
 
-  orientation: horizontal;
+  orientation: vertical;
   location: center;
   anchor: center;
   border: 3px;
@@ -32,15 +32,16 @@ window {
 
 mainbox {
   spacing: 0;
-  children: [ inputbar, message, listview, mode-switcher ];
+  children: [ inputbar, listview, mode-switcher ];
 }
 
 listview {
   layout: vertical;
-  padding: 10px;
-  lines: 12;
-  columns: 6;
+  padding: 3px;
+  lines: 8;
+  columns: 2;
   border: 0;
+  scrollbar: false;
 }
 
 textbox {
@@ -49,9 +50,9 @@ textbox {
 }
 
 element {
-    orientation: vertical;
+    orientation: horizontal;
     border:       0;
-    padding:      8px; 
+    padding:      3px; 
 }
 
 element-icon {
