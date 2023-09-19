@@ -42,15 +42,6 @@
             "9": [],
          }
     },
-    "hyprland/window": {
-      "format": "{title}",
-      "max-length": 50,
-      "rewrite": {
-       "(.*) - Mozilla Firefox": "🌎 $1",
-       "(.*) - vim": " $1",
-       "(.*) - zsh": " [$1]"
-          }
-    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

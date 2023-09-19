@@ -6,6 +6,7 @@ path=$(pwd)
 sudo ln -sfn $path/.config/.zshrc $HOME/.zshrc 
 sudo ln -sfn $path/.config/.profile $HOME/.profile
 sudo ln -sfn $path/.config/.bashrc $HOME/.bashrc
+sudo ln -sfn $path/.config/starship.toml $HOME/.config/starship.toml
 
 # .config Directory
 

@@ -126,11 +126,11 @@ button:hover {
 }
 
 #clock {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #battery {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
     color: #333333;
 }
 
@@ -161,24 +161,24 @@ label:focus {
 }
 
 #cpu {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
     color: #000000;
 }
 
 #memory {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #disk {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #backlight {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #network {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #network.disconnected {
@@ -186,15 +186,15 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #pulseaudio.muted {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #wireplumber {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #wireplumber.muted {
@@ -216,15 +216,16 @@ label:focus {
 }
 
 #temperature {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
-
+#tray menu,
 #tray {
-    background-color: #bbccdd;
+    color: #BBCCDD;
+    background-color: #333333;
 }
 #custom-power {
   background-color: #BBCCDD;
@@ -241,7 +242,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #idle_inhibitor.activated {
@@ -250,7 +251,7 @@ label:focus {
 }
 
 #mpd {
-    background-color: #bbccdd;
+    background-color: #BBCCDD;
 }
 
 #mpd.disconnected {
@@ -266,7 +267,7 @@ label:focus {
 }
 
 #language {
-    background: #bbccdd;
+    background: #BBCCDD;
     color: #333333;
     padding: 0 5px;
     margin: 0 5px;
@@ -274,7 +275,7 @@ label:focus {
 }
 
 #keyboard-state {
-    background: #bbccdd;
+    background: #BBCCDD;
     color: #333333;
     padding: 0 0px;
     margin: 0 5px;
