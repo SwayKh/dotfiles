@@ -30,9 +30,9 @@ set cleaner ctpvclear
 
 # Open the lfrc config file from anywhere
 
-cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans 
+cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans; lf -remote 'send reload'
 
-cmd mkfile %printf "File Name: "; read ans; touch $ans
+cmd mkfile %printf "File Name: "; read ans; touch $ans; lf -remote 'send reload'
  
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
