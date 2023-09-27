@@ -180,7 +180,6 @@ map afs androidFs
 # Movement Bindings
 map gD cd ~/Documents
 map gd cd ~/Downloads
-map g. cd ~/dotfiles/.config/
 map gc cd ~/.config
 map gw cd ~/wallpapers
 map gt cd ~/Test
@@ -189,10 +188,12 @@ map gs cd ~/scripts
 map gpr cd ~/Projects
 map gpc cd ~/Pictures
 map gb cd ~/.local/bin
-map gr cd ~/repos/configs/
-map ga cd ~/Android
-map gv cd /run/media/sumit/Ventoy/
 map g/ cd /
+map ga cd ~/Android
+map g. cd ~/dotfiles/.config/
+map gv cd /run/media/sumit/Ventoy/
+map gr cd ~/repos/configs/
+map go cd ~/Projects/Web/TheOdinProject/
 # map gak cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
 
 map gh cd ~ # This is default
