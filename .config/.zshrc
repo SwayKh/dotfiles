@@ -120,3 +120,4 @@ typeset -U PATH
 my_alias
 
 eval "$(starship init zsh)"
+source /usr/share/nvm/init-nvm.sh
