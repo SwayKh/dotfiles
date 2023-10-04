@@ -32,7 +32,7 @@ window {
 
 mainbox {
   spacing: 0;
-  children: [ inputbar ];
+  children: [listview];
 }
 
 listview {

@@ -17,11 +17,11 @@
 }
 
 window {
-  width: 50%;
-  height: 50%;
+  width: 20%;
+  height: 100%;
 
   orientation: vertical;
-  location: center;
+  location: west;
   anchor: center;
   border: 3px;
   border-color: @border;
@@ -39,7 +39,7 @@ listview {
   layout: vertical;
   padding: 3px;
   lines: 8;
-  columns: 2;
+  columns: 1;
   border: 0;
   scrollbar: false;
 }
@@ -56,7 +56,7 @@ element {
 }
 
 element-icon {
-  size: 64;
+  size: 48;
 }
 
 element normal.normal {

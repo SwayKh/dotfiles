@@ -13,6 +13,9 @@ configuration {
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
+  searchbar {
+    enabled: false;
+  }
 
 	/*---------- Matching setting ----------*/
 	matching: "normal";
