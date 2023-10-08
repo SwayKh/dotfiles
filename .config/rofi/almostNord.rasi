@@ -17,11 +17,16 @@
 }
 
 window {
-  width: 20%;
-  height: 100%;
-
+  //width: 20%;
+  //height: 100%;
+  //orientation: vertical;
+  //location: west;
+  
+  height: 50%;
+  width: 30%;
   orientation: vertical;
-  location: west;
+  location: center;
+
   anchor: center;
   border: 3px;
   border-color: @border;
