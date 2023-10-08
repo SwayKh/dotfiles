@@ -40,7 +40,7 @@ alias yeet="sudo pacman -Rnsc"
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 # alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.199:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
-alias update='sudo pacman -Syu'
+alias up='sudo pacman -Syu'
 
 my_alias() {
     alias ls='eza -alh --color=always --group-directories-first'
