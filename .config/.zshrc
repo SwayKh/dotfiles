@@ -25,7 +25,6 @@ export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/go/bin/:$PATH"
-export PATH="$HOME/.local/kitty.app/bin/:$PATH"
 export EDITOR=nvim
 # export VISUAL=micro
 
@@ -40,7 +39,7 @@ alias yeet="sudo pacman -Rnsc"
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 # alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.199:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
-alias up='sudo pacman -Syu'
+alias up='paru -Syu'
 
 my_alias() {
     alias ls='eza -alh --color=always --group-directories-first'
@@ -63,6 +62,9 @@ turnWifi(){
   sudo ip link set wlo1 up
 }
 
+refreshMirrors() {
+  sudo reflector --country 'India' -l 10 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+}
 ch() {
   query=$1
   curl cheat.sh/$query
