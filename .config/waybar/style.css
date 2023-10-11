@@ -115,6 +115,12 @@ button:hover {
     color: #333333;
 }
 
+#taskbar {
+  margin: 3px 3px;
+  background-color: #BBCCDD;
+  padding: 0px 5px;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;

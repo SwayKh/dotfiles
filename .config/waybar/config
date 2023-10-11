@@ -8,23 +8,26 @@
     
     // Choose the order of the modules
 
-    "modules-left": ["custom/power", "custom/media", "clock", "cpu"],
+    "modules-left": ["custom/power", "clock", "wlr/taskbar"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["network", "backlight", "pulseaudio", "battery", "tray"],
 
     // Modules configuration
     "hyprland/workspaces": {
         "on-click": "activate",
-         "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
+        "active-only": false, 
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "*": 9,
+            //"1": [],
+            //"2": [],
+            //"3": [],
+            //"4": [],
+            //"5": [],
+            //"6": [],
+            //"7": [],
+            //"8": [],
+            //"9": [],
          },
         "format": "{icon}",
         "format-icons": {
@@ -51,7 +54,16 @@
             "unlocked": ""
         }
     },
-
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "kitty"
+        ],
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
