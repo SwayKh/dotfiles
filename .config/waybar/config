@@ -138,23 +138,11 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "custom/power": {
       "format": "{icon}",
       "format-icons": "",// 󰣇
       "exec-on-event": "true",
-      "on-click": "~/.config/hypr/scripts/sessionMenu.sh",
+      "on-click": "~/scripts/hyprland/sessionMenu.sh",
     }
 }
 
