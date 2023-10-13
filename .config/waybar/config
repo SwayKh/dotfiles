@@ -62,7 +62,8 @@
         "on-click-middle": "close",
         "ignore-list": [
            "kitty",
-           "foot"
+           "foot",
+           "footclient"
         ],
     },
     "tray": {

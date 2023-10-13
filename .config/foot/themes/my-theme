@@ -1,0 +1,86 @@
+#! /bin/bash
+# Monekai theme from NvChad
+
+[colors]
+background = 222222 #222222
+foreground = F8F8F2 #F8F8F2
+#
+# regular0=F4BF75 #DONE #F4BF75
+# regular1=CC6633 #DONE #CC6633
+# regular2=A6E22E #DONE #A6E22E
+# regular3=F92672 #DONE #F92672
+# regular4=A1EFE4 #DONE #A1EFE4
+# regular5=FD971F #DONE #FD971F
+# regular6=AE81FF #DONE #AE81FF
+# regular7=66D9EF #DONE #66D9EF
+#
+# bright0=727072 #727072
+# bright1=F9F8F5 #F92672 #DONE
+# bright2=A9DC76 #A9DC76
+# bright3=FFD866 #FFD866
+# bright4=FC9867 #FC9867
+# bright5=AB9DF2 #AB9DF2
+# bright6=78DCE8 #78DCE8
+# bright7=FCFCFA #FCFCFA
+
+bright0=75715E 
+bright1=F92672 
+bright2=A6E22E
+bright3=E6DB74 
+bright4=66D9EF
+bright5=FD971F 
+bright6=AE81FF
+bright7=F8F8F2 
+
+regular0=272822 #272822
+regular1=F92672 #F92672
+regular2=A6E22E #A6E22E 
+regular3=E6DB74 #E6DB74 
+regular4=66D9EF #66D9EF
+regular5=FD971F #FD971F
+regular6=AE81FF #AE81FF
+regular7=F8F8F2 #F8F8F2
+
+
+
+# Monekai colors
+# base00 = "#272822",
+# base01 = "#383830",
+# base02 = "#49483e",
+# base03 = "#75715E",
+# base04 = "#A59F85",
+# base05 = "#F8F8F2",
+# base06 = "#F5F4F1",
+# base07 = "#F9F8F5",
+#
+# base08 = "#FD971F",
+# base09 = "#AE81FF",
+# base0A = "#F4BF75",
+# base0B = "#A6E22E",
+# base0C = "#A1EFE4",
+# base0D = "#66D9EF",
+# base0E = "#F92672",
+# base0F = "#CC6633",
+
+
+## Monokai theme from foot
+#background=#2D2A2E
+#foreground=#FCFCFA
+#regular0=#403E41
+#regular1=#FF6188
+#regular2=#A9DC76
+#regular3=#FFD866
+#regular4=#FC9867
+#regular5=#AB9DF2
+#regular6=#78DCE8
+#regular7=#FCFCFA
+#bright0=#727072
+#bright1=#FF6188
+#bright2=#A9DC76
+#bright3=#FFD866
+#bright4=#FC9867
+#bright5=#AB9DF2
+#bright6=#78DCE8
+#bright7=#FCFCFA
+
+
