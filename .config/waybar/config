@@ -61,7 +61,8 @@
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": [
-           "kitty"
+           "kitty",
+           "foot"
         ],
     },
     "tray": {
