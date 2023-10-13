@@ -2,11 +2,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-LFCD="/path/to/lfcd.sh"
-if [ -f "$LFCD" ]; then 
-  source "$LFCD"
-fi
-
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
@@ -18,7 +13,6 @@ lfcd () {
 }
 
 export ZSH=$HOME/.oh-my-zsh
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # You may need to manually set your language environment
@@ -26,7 +20,6 @@ export LANG=en_US.UTF-8
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/go/bin/:$PATH"
 export EDITOR=nvim
-# export VISUAL=micro
 
 alias pokescript='pokemon-colorscripts -r'
 # alias bat='batcat'
@@ -37,9 +30,9 @@ alias :q='exit'
 alias lf=lfcd
 alias yeet="sudo pacman -Rnsc"
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
+alias up='paru -Syu'
 # alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.199:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
-alias up='paru -Syu'
 
 my_alias() {
     alias ls='eza -alh --color=always --group-directories-first'
@@ -63,7 +56,7 @@ turnWifi(){
 }
 
 refreshMirrors() {
-  sudo reflector --country 'India' -l 10 --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector --verbose -l 15 --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 }
 ch() {
   query=$1
