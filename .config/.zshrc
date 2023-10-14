@@ -1,7 +1,3 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
@@ -13,6 +9,17 @@ lfcd () {
 }
 
 export ZSH=$HOME/.oh-my-zsh
+plugins=(git
+    extract
+    web-search
+    yum
+    git-extras
+    docker
+    vagrant
+    zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
 
 
 # You may need to manually set your language environment
@@ -28,14 +35,47 @@ alias vim='nvim'
 alias :q='exit'
 alias lf=lfcd
 alias yeet="sudo pacman -Rnsc"
-alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 alias up='paru -Syu'
-# alias androidfs='sudo sshfs -o allow_other,follow_symlinks u0_a533@192.168.29.199:/data/data/com.termux/files/home -p 8022 /mnt/Android/'
+alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
+
+# Git Aliases
+alias gs='git status'
+alias ga='git add'
+alias ga.='git add --all'
+alias gc='git commit'
+alias gl='git log --oneline'
+alias gb='git checkout -b'
+alias gd='git diff'
+alias gp='git push'
+
+eval "$(starship init zsh)"
+source /usr/share/nvm/init-nvm.sh
+
+# This needs to be defined in root user.
+#  recovery-pacman() {
+#     pacman "$@"  \
+#     --log /dev/null   \
+#     --noscriptlet     \
+#     --dbonly          \
+#     --overwrite "*"   \
+#     --nodeps          \
+#     --needed
+# }
+
+# neofetch
+# pokemon-colorscripts -r
+# pfetch
+colorscript -r
+
+
+# Remove duplicates from $PATH
+typeset -U PATH
 
 my_alias() {
     alias ls='eza -alh --color=always --group-directories-first'
 }
+my_alias
 
 check_history(){
   awk -F ";" '{print $2}' $HISTFILE | grep "$1" | tac | bat 
@@ -57,6 +97,7 @@ turnWifi(){
 refreshMirrors() {
   sudo reflector --verbose -l 15 --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 }
+
 ch() {
   query=$1
   curl cheat.sh/$query
@@ -65,53 +106,7 @@ ch() {
 cn() {
   clear && neofetch
 }
-# This needs to be defined in root user.
-#  recovery-pacman() {
-#     pacman "$@"  \
-#     --log /dev/null   \
-#     --noscriptlet     \
-#     --dbonly          \
-#     --overwrite "*"   \
-#     --nodeps          \
-#     --needed
-# }
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-plugins=(git
-    extract
-    web-search
-    yum
-    git-extras
-    docker
-    vagrant
-    zsh-autosuggestions)
-
-source $ZSH/oh-my-zsh.sh
-
-#neofetch
-#pokemon-colorscripts -r
-# pfetch
-colorscript -r
-
-
-# Remove duplicates from $PATH
-typeset -U PATH
-
-#Replace Apt with Nala
-# apt() {
-#     command nala "$@"
-# }
-# sudo() {
-#     if [ "$1" = "apt" ]; then
-#         shift
-#         command sudo nala "$@"
-#     else
-#         command sudo "$@"
-#     fi
-# }
-my_alias
-
-eval "$(starship init zsh)"
-source /usr/share/nvm/init-nvm.sh
+pacPreviewAll() {
+pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+}

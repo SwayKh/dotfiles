@@ -51,13 +51,13 @@ micro
 nano 
 visual-studio-code 
 lf 
+chafa
 zsh 
 bat 
 fzf 
 curl 
 wget 
 tldr 
-glow
 pacman-contrib 
 docker
 gparted 
@@ -66,13 +66,12 @@ github-cli
 gvfs
 sshfs 
 zathura-pdf-mupdf 
-Hack-nerd-font
 man 
 neofetch 
 unzip 
 unrar 
 preload
-qt6ct 
+qt5ct 
 lxappearance 
 nwg-look
 kcalc
@@ -83,14 +82,18 @@ python-pipx
 #### Extras (Install as needed)- 
 ```
 thunar 
+tumbler
 btop 
-exa 
+eza 
 vnstat 
 ripgrep 
 tree 
 ncdu 
 raindrop 
 godot 
+fdupes
+Discord
+Font-manager
 google-chrome 
 citra 
 retroarch 
@@ -136,7 +139,7 @@ powertop
 **Feh** - CLI Image viewer. Very lightweight. Not customisable, Can be configured via the Exec option is feh.desktop file in /usr/share/application.
 **Zathura** - Lightweight PDF viewer. Install `zathura-pdf-mupdf` for pdf, docx support.
 **Swaylock-effects** - Screen locking utility. config is in dotfiles. Different from swaylock, in the aur.
-**Qt6ct, LxAppearance, nwg-look** - Theme changer and customiser for gtk and qt applications
+**Qt5ct, LxAppearance, nwg-look** - Theme changer and customiser for gtk and qt applications
 **Preload** - A system service that monitors frequently used apps into RAM to make their start-up faster
 
 ## Audio not working?
@@ -147,6 +150,7 @@ Enable Pulseaudio service as a user, and `start` them
 ## Thunar
 Graphical File Manager in case you need it
 Install `gvfs` to access the file systems on the computer like USB stick and Ventoy.
+Also install `tumbler` for image and video thumbnails in thunar
 
 ## Godot 4
 Godot 4 need `vulkan-radeon` to be installed, In case it doesn't run after the project select screen.
@@ -208,3 +212,17 @@ before-sleep 'swaylock -f'
 ```
 
 and use `exec-once=swayidle -w` in hyprland.conf
+
+## LF
+Previously I was using many small tools to get LF to work with image previews -
+
+Like using horriblename's LF fork with sixel support
+Using Chafa for image preview
+compiling ctpv-git fir the preview script
+and setting various setting in lfrc to accomodate ctpv
+
+BUT NOW, LF supports sixel graphic in-built, So I can use the CTPV preview script
+with base lf
+Just set `set sixel true` in lfrc, and Install `chafa`
+
+I will soon update the lfInstall script
