@@ -68,6 +68,7 @@ sshfs
 zathura-pdf-mupdf 
 man 
 neofetch 
+zip
 unzip 
 unrar 
 preload
