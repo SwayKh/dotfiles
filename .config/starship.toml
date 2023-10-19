@@ -8,12 +8,28 @@ $git_status\
 $git_metrics\
 $fill\
 $nodejs\
+$golang\
+$python\
 $cmd_duration $jobs $time\
 $line_break\
+$os\
 $character"""
 
 [nodejs]
 format = "[$symbol($version )]($style)"
+
+[golang]
+symbol = " "
+format = 'via [$symbol($version )($mod_version )]($style)'
+
+[python]
+symbol = " "
+
+[os]
+disabled = false
+
+[os.symbols]
+Arch = " "
 
 [fill]
 symbol = " "
