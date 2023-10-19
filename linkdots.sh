@@ -3,7 +3,7 @@
 path=$(pwd)
 
 # HOME Directory
-sudo ln -sfn $path/.config/.zshrc $HOME/.zshrc 
+sudo ln -sfn $path/.config/.zshrc $HOME/.zshrc
 sudo ln -sfn $path/.config/.profile $HOME/.profile
 sudo ln -sfn $path/.config/.bashrc $HOME/.bashrc
 sudo ln -sfn $path/.config/starship.toml $HOME/.config/starship.toml
@@ -24,7 +24,6 @@ sudo ln -sfn $path/.config/nvim $HOME/.config/
 
 [ -d $HOME/.config/micro ] && rm -rf $HOME/.config/micro
 sudo ln -sfn $path/.config/micro $HOME/.config/
-
 
 [ -d $HOME/.config/kitty ] && rm -rf $HOME/.config/kitty
 sudo ln -sfn $path/.config/kitty $HOME/.config/
@@ -51,5 +50,4 @@ sudo ln -sfn $path/.config/swaylock $HOME/.config/
 sudo ln -sfn $path/.config/swayidle $HOME/.config/
 
 [ -f $HOME/.config/retroarch/retroarch.cfg ] && rm -rf $HOME/.config/retroarch/retroarch.cfg
-sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg 
-
+sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg
