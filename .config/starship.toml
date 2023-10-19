@@ -1,40 +1,73 @@
 format = """
-[$directory](bold cyan)($git_branch$git_state$git_status)
-$time $hostname $username [»](bold green) """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
 
-[git_branch]
-style = "bold green"
-format = "[\\[[$branch$tag](bold green)\\]](bold white)"
+[nodejs]
+format = "[$symbol($version )]($style)"
 
-[git_status]
-format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
+[fill]
+symbol = " "
 
 [directory]
-style = "bold cyan"
+style = "blue"
+read_only = " "
+truncation_length = 4
 truncate_to_repo = false
-truncation_length = 1
-fish_style_pwd_dir_length = 1
 
-[python]
-scan_for_pyfiles = false
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
 
-[ruby]
-disabled = true
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
 
-[swift]
-disabled = true
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
 
-[hostname]
-ssh_only = false
-format = "[$hostname]($style)"
-style = "bold white"
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
 
-[username]
-show_always = true
-style_user = "bold white"
-format = "[$user]($style)"
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
 
 [time]
 disabled = false
+style = "bold white"
 format = "[$time]($style)"
-time_format = "%H:%M"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
