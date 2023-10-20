@@ -59,8 +59,6 @@ format = "[$symbol]($style)"
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "cyan"
-scan_timeout = 60
-command_timeout = 1000
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
