@@ -109,6 +109,16 @@ cmd setwallpaper &{{
   lf -remote 'send reload'
 }}
 
+
+cmd convertToJpg &{{
+  for file in "$fx"
+	do
+    mogrify -format jpg "$file"
+    convert "$file" -resize 2560x1440 -quality 90 "$file"
+	done
+  lf -remote 'send reload'
+}}
+
 # Jump to directories using fzf
 cmd fzf_jump ${{
     res="$(find . -maxdepth 2 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
@@ -174,11 +184,11 @@ map dd trash
 map ua Unarchive
 map <c-f> :fzf_jump
 map <enter> open
-map bg setwallpaper # Doesn't work
+map bg setwallpaper 
 map du directory_size # Requires ncdu utility
 map t test
 map f calcdirsize # Calculate the directory size in the editor without NCDU
-map afs androidFs
+map <a-i> convertToJpg
 
 # Movement Bindings
 map g/ cd /
