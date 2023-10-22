@@ -16,9 +16,6 @@ sudo ln -sfn $path/.config/btop $HOME/.config/
 [ -d $HOME/.config/lf ] && rm -rf $HOME/.config/lf
 sudo ln -sfn $path/.config/lf $HOME/.config/
 
-[ -d $HOME/.config/ctpv/ ] && rm -rf $HOME/.config/ctpv
-sudo ln -sfn $path/.config/ctpv $HOME/.config/
-
 [ -d $HOME/.config/nvim ] && rm -rf $HOME/.config/nvim
 sudo ln -sfn $path/.config/nvim $HOME/.config/
 
@@ -49,5 +46,5 @@ sudo ln -sfn $path/.config/swaylock $HOME/.config/
 [ -d $HOME/.config/swayidle ] && rm -rf $HOME/.config/swayidle
 sudo ln -sfn $path/.config/swayidle $HOME/.config/
 
-[ -f $HOME/.config/retroarch/retroarch.cfg ] && rm -rf $HOME/.config/retroarch/retroarch.cfg
+[ -f $HOME/.config/retroarch/retroarch.cfg ] && rm $HOME/.config/retroarch/retroarch.cfg
 sudo ln -sfn $path/.config/retroarch.cfg $HOME/.config/retroarch/retroarch.cfg
