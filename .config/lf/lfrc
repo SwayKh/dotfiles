@@ -47,11 +47,15 @@ cmd lfrc ${{
 }}
 
 cmd open ${{
-	case $(file --mime-type "$f" -bL) in
-		text/*|application/json) $EDITOR "$f" ;;
-    text/javascript) $EDITOR "$f" ;;
-		*) xdg-open "$f" ;;
-	esac
+  case $(file --mime-type "$f" -bL) in
+    text/plain) $EDITOR "$f" ;;
+    text/x-shellscript) $EDITOR "$f" ;; # Executable shell scripts
+    application/javascript) $EDITOR "$f" ;; # Needed for json files
+    inode/x-empty) $EDITOR "$f" ;; # All empty files, that are created using mkfile
+    application/octet-stream) xdg-open "$f" ;;
+    text/*) $EDITOR "$f" ;;
+    *) xdg-open "$f" ;;
+  esac
 }}
 
 cmd directory_size ${{
