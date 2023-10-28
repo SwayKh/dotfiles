@@ -28,7 +28,7 @@
             "8": [],
             "9": [],
          },
-        "format": "{icon}",
+        "format": "{name}",
         "format-icons": {
             "1": "",
             "2": "",
