@@ -1,6 +1,6 @@
 * {
     border: #333333;
-    border-radius: 10px;
+    border-radius: 0px;
     font-family:  "Hack Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
     background-color: rgba(43, 48, 59, .0);
@@ -38,7 +38,7 @@ button:hover {
 
 #workspaces button.active {
   color: #333333;
-  background-color: #FFFFFF;
+  background-color: #BBCCDD;
   /* border-radius: 5px; */
 }
 
@@ -135,23 +135,33 @@ label:focus {
     background-color: #f53c3c;
 }
 
+#custom-power {
+  background-color: #BBCCDD;
+  color : #333333;
+  padding-right: 13px;
+}
+
 #tray menu,
 #tray {
     color: #BBCCDD;
     background-color: #333333;
 }
-#custom-power {
-  background-color: #BBCCDD;
-  padding-right: 13px;
-}
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+    /* -gtk-icon-effect: dim; */
+    color : #BBCCDD;
+    background-color: #333333;
+}
+
+#tray > .active {
+    color: #BBCCDD;
+    background-color: #333333;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    /* -gtk-icon-effect: highlight; */
+    color : #BBCCDD;
+    background-color: #333333;
 }
 
 #language {
@@ -187,5 +197,3 @@ label:focus {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
-
