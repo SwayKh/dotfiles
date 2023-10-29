@@ -3,18 +3,13 @@
     border-radius: 0px;
     font-family:  "Hack Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    background-color: rgba(43, 48, 59, .0);
+    background-color: rgba(43, 48, 59, 0);
    }
 
 window#waybar {
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #FFFFFF;
+    color: #F5F5F5;
     transition-property: background-color;
     transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
 }
 
 button {
@@ -33,28 +28,23 @@ button:hover {
 
 #workspaces button {
     background-color: transparent;
-    color: #FFFFFF;
+    color: #F5F5F5;
 }
 
 #workspaces button.active {
   color: #333333;
-  background-color: #BBCCDD;
+  background-color: #F5F5F5;
   /* border-radius: 5px; */
 }
 
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
+/* #workspaces button:hover { */
+/*     background: rgba(0, 0, 0, 1); */
+/* } */
 
 #workspaces button.focused {
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     color: #333333;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#window,
-#workspaces {
-    margin: 0 5px;
+    box-shadow: inset 0 -3px #F5F5F5;
 }
 
 /* Uncomment If using icons instead of number for workspaces*/ 
@@ -68,16 +58,9 @@ button:hover {
 /*     padding-right: 0px;  */
 /*     padding: 0px 6px;  */
 /*     padding-left: 3px; */
-/*     color: #FFFFFF; */
+/*     color: #F5F5F5; */
 /*     background-color: rgba(0, 0, 0, 0); */
 /* }  */
-
-
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
 
 #clock,
 #battery,
@@ -88,38 +71,29 @@ button:hover {
 #backlight,
 #network,
 #pulseaudio,
+#pulseaudio.muted,
 #wireplumber,
 #custom-media,
+#taskbar,
 #tray,
+#tray menu,
+#tray > .needs-attention,
+#tray > .passive,
+#tray > .active,
 #mode,
 #idle_inhibitor,
 #scratchpad,
 #custom-power,
 #mpd {
-    padding: 0px 9px;
-    padding-right: 13px;
+    padding: 0px 5px;
+    padding-right: 10px;
     margin: 3px 3px;
-}
-
-#taskbar {
-  margin: 3px 3px;
-  background-color: #BBCCDD;
-  padding: 0px 5px;
+    color: #F5F5F5;
+    background-color: #333333;
 }
 
 label:focus {
     background-color: #000000;
-}
-
-#battery,
-#clock,
-#network, 
-#pulseaudio,
-#pulseaudio.muted,
-#backlight,
-#wireplumber {
-    color: #333333;
-    background-color: #BBCCDD;
 }
 
 #network.disconnected {
@@ -127,41 +101,12 @@ label:focus {
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #F5F5F5;
     background-color: #26A65B;
 }
 
 #wireplumber.muted {
     background-color: #f53c3c;
-}
-
-#custom-power {
-  background-color: #BBCCDD;
-  color : #333333;
-  padding-right: 13px;
-}
-
-#tray menu,
-#tray {
-    color: #BBCCDD;
-    background-color: #333333;
-}
-
-#tray > .passive {
-    /* -gtk-icon-effect: dim; */
-    color : #BBCCDD;
-    background-color: #333333;
-}
-
-#tray > .active {
-    color: #BBCCDD;
-    background-color: #333333;
-}
-
-#tray > .needs-attention {
-    /* -gtk-icon-effect: highlight; */
-    color : #BBCCDD;
-    background-color: #333333;
 }
 
 #language {
@@ -183,14 +128,14 @@ label:focus {
 }
 @keyframes blink {
     to {
-        background-color: #ffffff;
+        background-color: #F5F5F5;
         color: #000000;
     }
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: #F5F5F5;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
