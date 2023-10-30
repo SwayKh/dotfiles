@@ -1,13 +1,17 @@
+@define-color fg_color #F5F5F5;
+@define-color bg_color #333333;
+
 * {
     border: #333333;
     border-radius: 0px;
     font-family:  "Hack Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
     background-color: rgba(43, 48, 59, 0);
-   }
+    
+}
 
 window#waybar {
-    color: #F5F5F5;
+    color: @fg_color;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -28,22 +32,26 @@ button:hover {
 
 #workspaces button {
     background-color: transparent;
-    color: #F5F5F5;
+    color: @fg_color;
 }
 
 #workspaces button.active {
-  color: #333333;
-  background-color: #F5F5F5;
+  color: @bg_color;
+  background-color: @fg_color;
   /* border-radius: 5px; */
 }
 
+#workspaces button.urgent {
+  color: @fg_color;
+  background-color: grey;
+}
 /* #workspaces button:hover { */
 /*     background: rgba(0, 0, 0, 1); */
 /* } */
 
 #workspaces button.focused {
-    background-color: #F5F5F5;
-    color: #333333;
+    background-color: @fg_color;
+    color: @bg_color;
     box-shadow: inset 0 -3px #F5F5F5;
 }
 
@@ -58,7 +66,7 @@ button:hover {
 /*     padding-right: 0px;  */
 /*     padding: 0px 6px;  */
 /*     padding-left: 3px; */
-/*     color: #F5F5F5; */
+/*     color: @fg_color; */
 /*     background-color: rgba(0, 0, 0, 0); */
 /* }  */
 
@@ -88,8 +96,8 @@ button:hover {
     padding: 0px 5px;
     padding-right: 10px;
     margin: 3px 3px;
-    color: #F5F5F5;
-    background-color: #333333;
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 label:focus {
@@ -110,8 +118,8 @@ label:focus {
 }
 
 #language {
-    background: #BBCCDD;
-    color: #333333;
+    background: @fg_color;
+    color: @bg_color;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
@@ -128,8 +136,8 @@ label:focus {
 }
 @keyframes blink {
     to {
-        background-color: #F5F5F5;
-        color: #000000;
+        background-color: @fg_color;
+        color: @bg_color;
     }
 }
 
