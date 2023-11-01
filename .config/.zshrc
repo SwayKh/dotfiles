@@ -90,6 +90,11 @@ convertToJpg(){
   find . -type f -name "*.jpg" -exec convert {} -resize 2560x1440 -quality 90 {} \;
 }
 
+updateRom() {
+  sudo mount -t auto -v /dev/sda3 /mnt/Roms
+  sudo rsync -avhP ~/Roms/ /mnt/Roms/
+  tree -L 2 ~/Roms/ > ~/Obsidian/Vault/Archive/RomsList.md 
+}
 turnWifi(){
   sudo ip link set wlo1 down
   sudo iw wlo1 set type managed
