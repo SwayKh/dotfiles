@@ -2,6 +2,10 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- vim.o.disable_netrw = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set highlight on search
 vim.o.hlsearch = false
 vim.o.incsearch = true

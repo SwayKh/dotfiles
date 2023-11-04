@@ -9,7 +9,7 @@ map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
-map("n", "<leader>e", vim.cmd.Ex)
+map("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
