@@ -13,24 +13,6 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
-  {
-    -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
-    },
-  },
 
   {
     -- Autocompletion
@@ -50,44 +32,6 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
-  {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-      on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
-
-        -- don't override the built-in and fugitive keymaps
-        local gs = package.loaded.gitsigns
-        vim.keymap.set({ 'n', 'v' }, ']c', function()
-          if vim.wo.diff then
-            return ']c'
-          end
-          vim.schedule(function()
-            gs.next_hunk()
-          end)
-          return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
-        vim.keymap.set({ 'n', 'v' }, '[c', function()
-          if vim.wo.diff then
-            return '[c'
-          end
-          vim.schedule(function()
-            gs.prev_hunk()
-          end)
-          return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
-      end,
-    },
-  },
 
 
   {
@@ -144,71 +88,13 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   { "ThePrimeagen/vim-be-good" },
   {"nvim-tree/nvim-web-devicons"},
-  {"kyazdani42/nvim-tree.lua",
-    config = function()
-      require("nvim-tree").setup()
-      require("nvim-tree").setup({
-        sort_by = "case_sensitive",
-        open_on_tab = true,
-        disable_netrw = true,
-        hijack_netrw = true,
-        update_cwd = true,
-        hijack_cursor = true,
-        view = {
-          width = 30,
-        },
-        filters = {
-          dotfiles = true,
-        },
-        git = {
-          ignore = false,
-        },
-        actions = {
-          open_file = {
-            resize_window = true,
-          },
-        },
-        renderer = {
-          group_empty = true,
-          highlight_git = true,
-          root_folder_modifier = ':t',
-          icons = {
-            glyphs = {
-              default = '',
-              symlink = '',
-              bookmark = '◉',
-              -- git = {
-              --   unstaged = '',
-              --   staged = '',
-              --   unmerged = '',
-              --   renamed = '',
-              --   deleted = '',
-              --   untracked = '',
-              --   ignored = '',
-              -- },
-              folder = {
-                default = '',
-                open = '',
-                symlink = '',
-              },
-            },
-            show = {
-              git = true,
-              file = true,
-              folder = true,
-              folder_arrow = false,
-            },
-          },
-          indent_markers = {
-            enable = true,
-          },
-        },
-      })
-    end,
-  },
+  {"ms-jpq/chadtree"},
+  {"akinsho/toggleterm.nvim"},
+  {"lmburns/lf.nvim"},
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   {
     -- Theme inspired by Atom
     "tanvirtin/monokai.nvim",
