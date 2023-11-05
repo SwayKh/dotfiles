@@ -10,10 +10,16 @@ vim.g.loaded_netrwPlugin = 1
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
+vim.o.cursorline = true
+vim.o.autowrite = true
+vim.o.autoread = true
+vim.o.colorcolumn = 80
+
 -- Fix Tab length
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
+vim.o.shiftround = true
 
 -- Make line numbers default and add relative line numbers
 vim.wo.number = true
