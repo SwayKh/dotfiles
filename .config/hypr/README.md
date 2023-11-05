@@ -44,11 +44,12 @@ ffmpegthumbnailer
 
 #### Important Apps - 
 ```
-firefox 
+firefox/Thorium
 obsidian 
 neovim 
 micro 
 nano 
+foot
 visual-studio-code 
 lf 
 chafa
@@ -99,6 +100,7 @@ google-chrome
 citra 
 retroarch 
 yuzu 
+dolphin-emu
 gimp 
 tiled 
 cava 
@@ -133,6 +135,7 @@ powertop
 **Wireplumber Pamixer Pipewire Pulseaudio** - Wayland audio managers. Needed for Hyprland.
 **Blueman** - Bluetooth utility. Can be used as applet similar to nm-applet
 **Kitty** - Cross platform terminal. Works great, Very customisable, config is in dotfiles. Comes with useful plugins called kittens.
+**Foot** - Wayland terminal. written in C, very lightweight, quite customisable.
 **Neofetch, pfetch** - System information utility.
 **LF** - TUI File manager. Very customisable with shell scripting. Can integrate any/all CLI tools. config is in dotfiles.
 **Grim** - Wayland Screenshot Utility. Takes screenshot of entire screen.
@@ -189,6 +192,8 @@ And Kitty has Monokai theme Applied.
 ## Chaning default applications
 Change default text editor to nvim
 `xdg-mime default nvim.desktop text/plain`
+OR
+`xdg-mime default nvim.desktop text/*` for LF
 
 Change default image viewer to feh
 `xdg-mime default feh.desktop image/png`
@@ -218,7 +223,7 @@ and use `exec-once=swayidle -w` in hyprland.conf
 Previously I was using many small tools to get LF to work with image previews -
 
 Like using horriblename's LF fork with sixel support
-Using Chafa for image preview
+Using `chafa` for image preview
 compiling ctpv-git fir the preview script
 and setting various setting in lfrc to accomodate ctpv
 
