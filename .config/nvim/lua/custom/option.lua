@@ -6,7 +6,7 @@ vim.opt.incsearch = true
 vim.opt.cursorline = true
 vim.opt.autowrite = true
 vim.opt.autoread = true
-vim.opt.colorcolumn = 80
+vim.opt.colorcolumn = "120"
 vim.opt.laststatus = 3
 
 -- Fix Tab length
