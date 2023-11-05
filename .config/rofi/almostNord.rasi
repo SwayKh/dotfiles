@@ -1,14 +1,14 @@
 
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
-    font:                           "Hack Nerd Font 12";
-    foreground:                     #BBCCDD;
-    background:                     #37383a;
-    highlight:	                    #F8F8F2;
+    font:                           "Hack Nerd Font 14";
+    foreground:                     #F5F5F5;
+    background:                     #333333;
+    highlight:	                    #F5F5F5;
     red:                            #973D46;
     darkred:                        #973D46;
-    blue:                           #bbccdd;
-    darkblue:                       #bbccdd;
+    blue:                           #BBCCDD;
+    darkblue:                       #BBCCDD;
     yellow:                         #E0AE4A;
     darkyellow:                     #E0AE4A;
     border:                         #1B1E25;
@@ -23,13 +23,13 @@ window {
   //location: west;
   
   height: 50%;
-  width: 30%;
+  width: 25%;
   orientation: vertical;
   location: center;
 
   anchor: center;
-  border: 3px;
-  border-color: @border;
+  border: 2px;
+  border-color: @foreground;
   border-radius: 10px;
   spacing: 0;
   children: [ mainbox ];
@@ -47,17 +47,20 @@ listview {
   columns: 1;
   border: 0;
   scrollbar: false;
+  background-color : @darkgray;
 }
 
 textbox {
     text-color: @foreground;
-    background-color: @background;
+    background-color: @darkgray;
 }
 
 element {
     orientation: horizontal;
     border:       0;
     padding:      3px; 
+    text-color: @foreground;
+    background-color: @darkgray;
 }
 
 element-icon {
@@ -65,54 +68,54 @@ element-icon {
 }
 
 element normal.normal {
-    background-color: @background;
+    background-color: @darkgray;
     text-color:       @foreground;
 }
 
 element normal.urgent {
     background-color: @red;
-    text-color:       @background;
+    text-color:       @darkgray;
 }
 
 element normal.active {
     background-color: @border;
-    text-color:       @background;
+    text-color:       @darkgray;
 }
 
 element selected.normal {
-    background-color: @blue;
-    text-color:       @background;
+    text-color: @darkgray;
+    background-color: @foreground;
     border-radius:    2px;
 }
 
 element selected.urgent {
     background-color: @red;
-    text-color:       @background;
+    text-color:       @darkgray;
 }
 
 element selected.active {
     background-color: @yellow;
-    text-color:       @background;
+    text-color:       @darkgray;
 }
 
 element alternate.normal {
-    background-color: @background;
+    background-color: @darkgray;
     text-color:       @foreground;
 }
 
 element alternate.urgent {
     background-color: @border;
-    text-color:       @background;
+    text-color:       @darkgray;
 }
 
 element alternate.active {
     background-color: @border;
-    text-color:       @background;
+    text-color:       @darkgray;
 }
 
 element-text {
     cursor:           inherit;
-    highlight:        #000000;
+    highlight:        @background;
     text-color:       inherit;
 }
 
@@ -120,7 +123,8 @@ element-text {
 entry {
     enabled:           true;
     padding:	         8px;
-    text-color:        #F8F8F2;
+    text-color:        @foreground;
+    background-color:  @background;
 }
 
 prompt {
@@ -129,10 +133,10 @@ prompt {
 }
 
 inputbar {
-    background-color: @background;
+    background-color: @darkgray;
     margin:           0px 0px 0px 0px;
     border:           8px;
     border-radius:    6px;
-    border-color:     @background;
+    border-color:     @darkgray;
     children:         [entry];
 }

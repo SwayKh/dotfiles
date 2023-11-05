@@ -8,7 +8,7 @@ configuration {
 	filter: "";
 	scroll-method: 0;
 	normalize-match: true;
-	show-icons: true;
+	show-icons: false;
 	display-drun:                "";
   display-run:                 "";
   display-filebrowser:         "";
