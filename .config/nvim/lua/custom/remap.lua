@@ -15,6 +15,7 @@ map("n", "<C-j>", "<C-w>j", {desc = "Move Between splits with HJKL"})
 map("n", "<C-k>", "<C-w>k", {desc = "Move Between splits with HJKL"})
 map("n", "<C-h>", "<C-w>h", {desc = "Move Between splits with HJKL"})
 map("n", "<C-l>", "<C-w>l", {desc = "Move Between splits with HJKL"})
+map({ 'n', 'i' , 'v'}, "<C-s>", "<ESC>:w<CR>", {desc = "[S]ave file"})
 
 
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
