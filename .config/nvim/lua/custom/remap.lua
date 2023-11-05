@@ -9,7 +9,12 @@ map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
-map("n", "<leader>e", ":NvimTreeToggle<CR>")
+map("n", "<leader>e", ":CHADopen<CR>")
+map("n", "<C-t>", ":tabnew<CR>")
+map("n", "<C-j>", "<C-w>j", {desc = "Move Between splits with HJKL"})
+map("n", "<C-k>", "<C-w>k", {desc = "Move Between splits with HJKL"})
+map("n", "<C-h>", "<C-w>h", {desc = "Move Between splits with HJKL"})
+map("n", "<C-l>", "<C-w>l", {desc = "Move Between splits with HJKL"})
 
 
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
