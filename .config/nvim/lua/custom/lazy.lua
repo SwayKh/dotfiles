@@ -10,10 +10,6 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
-
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -90,9 +86,8 @@ require('lazy').setup({
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
   { "ThePrimeagen/vim-be-good" },
-  {"nvim-tree/nvim-web-devicons"},
   {"ms-jpq/chadtree"},
-  {"akinsho/toggleterm.nvim"},
+  {"nvim-tree/nvim-web-devicons"},
   {"lmburns/lf.nvim"},
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   {
@@ -101,6 +96,8 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'monokai'
+      vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+      vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
     end,
   },
   {
