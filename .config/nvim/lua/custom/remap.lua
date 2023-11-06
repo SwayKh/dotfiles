@@ -7,21 +7,21 @@ local map = vim.keymap.set
 
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
-map("n", "<leader>e", ":CHADopen<CR>")
-map("n", "<C-t>", ":tabnew<CR>")
-map("n", "<C-j>", "<C-w>j", {desc = "Move Between splits with HJKL"})
-map("n", "<C-k>", "<C-w>k", {desc = "Move Between splits with HJKL"})
-map("n", "<C-h>", "<C-w>h", {desc = "Move Between splits with HJKL"})
-map("n", "<C-l>", "<C-w>l", {desc = "Move Between splits with HJKL"})
-map({ 'n', 'i' , 'v'}, "<C-s>", "<ESC>:w<CR>", {desc = "[S]ave file"})
+map('v', 'J', ":m '>+1<CR>gv=gv")
+map('v', 'K', ":m '<-2<CR>gv=gv")
+map('n', '<leader>e', ':CHADopen<CR>')
+map('n', '<C-t>', ':tabnew<CR>')
+map('n', '<C-j>', '<C-w>j', { desc = 'Move Between splits with HJKL' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Move Between splits with HJKL' })
+map('n', '<C-h>', '<C-w>h', { desc = 'Move Between splits with HJKL' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Move Between splits with HJKL' })
+map({ 'n', 'i', 'v' }, '<C-s>', '<ESC>:w<CR>', { desc = '[S]ave file' })
+map('n', '<leader>v', ':vsplit<CR>', { desc = 'Split [V]ertically' })
+map('n', '<leader>h', ':hsplit<CR>', { desc = 'Split [H]orizontally' })
 
-
-map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
-map("n", "<C-u>", "<C-u>zz", { desc = "Better half down scroll", remap = true })
-map("x", "<leader>p", '"_dP', { desc = "Don't replace paste register when replacing something" })
-
+map('n', '<C-d>', '<C-d>zz', { desc = 'Better half down scroll', remap = true })
+map('n', '<C-u>', '<C-u>zz', { desc = 'Better half down scroll', remap = true })
+map('x', '<leader>p', '"_dP', { desc = "Don't replace paste register when replacing something" })
 
 -- Remap for dealing with word wrap
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -193,13 +193,12 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-
 -- document existing key chains
 require('which-key').register {
   ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
   ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
   ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
+  -- ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
