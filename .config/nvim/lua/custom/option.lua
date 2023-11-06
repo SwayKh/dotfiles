@@ -6,12 +6,12 @@ vim.opt.incsearch = true
 vim.opt.cursorline = true
 vim.opt.autowrite = true
 vim.opt.autoread = true
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = '120'
 vim.opt.laststatus = 3
 
 -- Fix Tab length
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 
@@ -43,5 +43,5 @@ vim.opt.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = 'menuone,noselect'
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
