@@ -21,6 +21,14 @@ return {
         graphql = { 'prettier' },
         lua = { 'stylua' },
         python = { 'isort', 'black' },
+        go = { 'goimports', 'gofmt' },
+
+        -- Use the "*" filetype to run formatters on all filetypes.
+        ['*'] = { 'codespell' },
+        -- Use the "_" filetype to run formatters on filetypes that don't
+        -- have other formatters configured.
+
+        ['_'] = { 'trim_whitespace' },
       },
       format_on_save = {
         lsp_fallback = true,
