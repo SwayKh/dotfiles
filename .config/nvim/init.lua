@@ -14,10 +14,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-require("custom.lazy")
-require("custom.remap")
-require("custom.option")
+require 'custom.lazy'
+require 'custom.remap'
+require 'custom.option'
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
