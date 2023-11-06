@@ -1,3 +1,6 @@
+if true then
+        return {}
+end
 return {
   {"kyazdani42/nvim-tree.lua",
     config = function()
