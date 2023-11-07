@@ -43,5 +43,11 @@ vim.opt.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = 'menuone,noselect'
 
+local function theme()
+  vim.cmd.colorscheme 'gruvbox'
+  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+end
+theme()
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
