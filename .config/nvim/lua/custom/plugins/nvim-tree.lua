@@ -1,6 +1,6 @@
 return {
   {
-    'kyazdani42/nvim-tree.lua',
+    'nvim-tree/nvim-tree.lua',
     config = function()
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
@@ -10,6 +10,7 @@ return {
         local function opts(desc)
           return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
         end
+        api.tree.expand_all()
 
         -- default mappings
         api.config.mappings.default_on_attach(bufnr)
@@ -19,6 +20,7 @@ return {
         vim.keymap.set('n', '?', api.tree.toggle_help, opts 'Help')
       end
       require('nvim-tree').setup()
+
       require('nvim-tree').setup {
         on_attach = my_on_attach,
         sort_by = 'case_sensitive',
@@ -28,7 +30,7 @@ return {
         update_cwd = true,
         hijack_cursor = true,
         view = {
-          width = 40,
+          width = 30,
         },
         filters = {
           dotfiles = true,
@@ -41,7 +43,7 @@ return {
             resize_window = true,
           },
           expand_all = {
-            max_folder_discovery = 300,
+            max_folder_discovery = 500,
             exclude = { '.git', 'target', 'build' },
           },
         },
