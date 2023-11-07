@@ -20,7 +20,6 @@ return {
       end
       require('nvim-tree').setup()
 
-      require('nvim-tree.api').tree.expand_all()
       require('nvim-tree').setup {
         on_attach = my_on_attach,
         sort_by = 'case_sensitive',
@@ -31,6 +30,8 @@ return {
         hijack_cursor = true,
         view = {
           width = 30,
+          number = true,
+          relativenumber = true,
         },
         filters = {
           dotfiles = true,
@@ -40,6 +41,7 @@ return {
         },
         actions = {
           open_file = {
+            quit_on_open = true,
             resize_window = true,
           },
           expand_all = {
