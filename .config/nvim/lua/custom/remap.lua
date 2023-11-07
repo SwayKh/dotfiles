@@ -4,18 +4,25 @@
 -- See `:help map()`
 
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-map('v', 'J', ":m '>+1<CR>gv=gv")
-map('v', 'K', ":m '<-2<CR>gv=gv")
 map('n', '<leader>e', ':NvimTreeToggle<CR> <BAR> <S-e>')
+
 map('n', '<C-t>', ':tabnew<CR>')
+map('n', '<leader>tt', ':tabnew<CR>')
+map('n', '<leader>tq', ':tabclose<CR>')
+
+map('n', '<leader>th', ':Telescope colorscheme<CR>')
+
 map('n', '<C-j>', '<C-w>j', { desc = 'Move Between splits with HJKL' })
 map('n', '<C-k>', '<C-w>k', { desc = 'Move Between splits with HJKL' })
 map('n', '<C-h>', '<C-w>h', { desc = 'Move Between splits with HJKL' })
 map('n', '<C-l>', '<C-w>l', { desc = 'Move Between splits with HJKL' })
+
 map({ 'n', 'i', 'v' }, '<C-s>', '<ESC>:w<CR>', { desc = '[S]ave file' })
+
 map('n', '<leader>v', ':vsplit<CR>', { desc = 'Split [V]ertically' })
 map('n', '<leader>h', ':hsplit<CR>', { desc = 'Split [H]orizontally' })
 
@@ -23,9 +30,49 @@ map('n', '<C-d>', '<C-d>zz', { desc = 'Better half down scroll', remap = true })
 map('n', '<C-u>', '<C-u>zz', { desc = 'Better half down scroll', remap = true })
 map('x', '<leader>p', '"_dP', { desc = "Don't replace paste register when replacing something" })
 
+map('v', 'J', ":m '>+1<CR>gv=gv")
+map('v', 'K', ":m '<-2<CR>gv=gv")
 -- Remap for dealing with word wrap
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Barbar.nvim keymaps
+-- Move to previous/next
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+-- Goto buffer in position...
+map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
+map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
+map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
+map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
+map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
+map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
+map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
+map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
+map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
+map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
+-- Pin/unpin buffer
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
+-- Close buffer
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+-- Magic buffer-picking mode
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
+-- Sort automatically by...
+map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
+map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
+map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
