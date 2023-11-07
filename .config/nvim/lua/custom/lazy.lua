@@ -6,6 +6,8 @@ require('lazy').setup({
   { 'nvim-tree/nvim-web-devicons' },
   { 'rcarriga/nvim-notify' },
   { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+
+  -- Colorschemes
   { 'tanvirtin/monokai.nvim' },
   { 'navarasu/onedark.nvim' },
   { 'sainnhe/gruvbox-material' },
@@ -13,12 +15,9 @@ require('lazy').setup({
   { 'shaunsingh/nord.nvim' },
   { 'rebelot/kanagawa.nvim' },
   { 'Mofiqul/dracula.nvim' },
-  {
-    -- Theme inspired by Atom
-    'tanvirtin/monokai.nvim',
-    priority = 1000,
-  },
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  { 'tanvirtin/monokai.nvim' },
+  { 'catppuccin/nvim', name = 'catppuccin' },
+
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
