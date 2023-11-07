@@ -8,9 +8,8 @@ local opts = { noremap = true, silent = true }
 
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-map('n', '<leader>e', ':NvimTreeToggle<CR> <BAR> <S-e>')
+map('n', '<leader>e', ':NvimTreeToggle<CR>')
 
-map('n', '<C-t>', ':tabnew<CR>')
 map('n', '<leader>tt', ':tabnew<CR>')
 map('n', '<leader>tq', ':tabclose<CR>')
 

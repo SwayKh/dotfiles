@@ -10,7 +10,6 @@ return {
         local function opts(desc)
           return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
         end
-        api.tree.expand_all()
 
         -- default mappings
         api.config.mappings.default_on_attach(bufnr)
@@ -21,6 +20,7 @@ return {
       end
       require('nvim-tree').setup()
 
+      require('nvim-tree.api').tree.expand_all()
       require('nvim-tree').setup {
         on_attach = my_on_attach,
         sort_by = 'case_sensitive',
@@ -43,7 +43,7 @@ return {
             resize_window = true,
           },
           expand_all = {
-            max_folder_discovery = 500,
+            -- max_folder_discovery = 300,
             exclude = { '.git', 'target', 'build' },
           },
         },
