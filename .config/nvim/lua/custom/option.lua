@@ -10,10 +10,10 @@ vim.opt.colorcolumn = '120'
 vim.opt.laststatus = 3
 
 -- Fix Tab length
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
-vim.opt.shiftround = true
+-- vim.opt.tabstop = 4
+-- vim.opt.softtabstop = 4
+-- vim.opt.expandtab = false
+-- vim.opt.shiftround = true
 
 vim.opt.termguicolors = true
 vim.wo.number = true
@@ -44,7 +44,7 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = 'menuone,noselect'
 
 local function theme()
-  vim.cmd.colorscheme 'gruvbox'
+  vim.cmd.colorscheme 'monokai_pro'
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
   -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
