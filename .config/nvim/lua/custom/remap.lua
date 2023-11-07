@@ -21,6 +21,7 @@ map('n', '<C-h>', '<C-w>h', { desc = 'Move Between splits with HJKL' })
 map('n', '<C-l>', '<C-w>l', { desc = 'Move Between splits with HJKL' })
 
 map({ 'n', 'i', 'v' }, '<C-s>', '<ESC>:w<CR>', { desc = '[S]ave file' })
+map({ 'n', 'v' }, '<leader>q', '<ESC>:wqa!<CR>', { desc = 'Save all files [Q]uit' })
 
 map('n', '<leader>v', ':vsplit<CR>', { desc = 'Split [V]ertically' })
 map('n', '<leader>h', ':hsplit<CR>', { desc = 'Split [H]orizontally' })
@@ -192,7 +193,7 @@ end, 0)
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 -- map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+-- map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
