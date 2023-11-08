@@ -11,21 +11,20 @@ require('lazy').setup({
   -- NOTE:First, some plugins that don't require any configuration
 
   { 'ThePrimeagen/vim-be-good' },
-  { 'ms-jpq/chadtree' },
+  -- { 'ms-jpq/chadtree' },
   { 'nvim-tree/nvim-web-devicons' },
   { 'rcarriga/nvim-notify' },
   { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
 
   -- Colorschemes
   { 'tanvirtin/monokai.nvim' },
-  { 'navarasu/onedark.nvim' },
-  { 'sainnhe/gruvbox-material' },
-  { 'ellisonleao/gruvbox.nvim' },
-  { 'shaunsingh/nord.nvim' },
-  { 'rebelot/kanagawa.nvim' },
-  { 'Mofiqul/dracula.nvim' },
-  { 'tanvirtin/monokai.nvim' },
-  { 'catppuccin/nvim', name = 'catppuccin' },
+  -- { 'navarasu/onedark.nvim' },
+  -- { 'sainnhe/gruvbox-material' },
+  -- { 'ellisonleao/gruvbox.nvim' },
+  -- { 'shaunsingh/nord.nvim' },
+  -- { 'rebelot/kanagawa.nvim' },
+  -- { 'Mofiqul/dracula.nvim' },
+  -- { 'catppuccin/nvim', name = 'catppuccin' },
 
   -- Git related plugins
   'tpope/vim-fugitive',
