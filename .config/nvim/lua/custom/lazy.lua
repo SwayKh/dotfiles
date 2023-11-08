@@ -1,4 +1,13 @@
 require('lazy').setup({
+  { import = 'custom.plugins' },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+
   -- NOTE:First, some plugins that don't require any configuration
 
   { 'ThePrimeagen/vim-be-good' },
@@ -35,6 +44,4 @@ require('lazy').setup({
   },
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
-
-  { import = 'custom.plugins' },
 }, {})
