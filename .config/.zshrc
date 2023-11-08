@@ -20,7 +20,7 @@ plugins=(git
 
 source $ZSH/oh-my-zsh.sh
 
-
+set -o vi
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -79,7 +79,7 @@ my_alias() {
 my_alias
 
 check_history(){
-  awk -F ";" '{print $2}' $HISTFILE | grep "$1" | tac | bat 
+  awk -F ";" '{print $2}' $HISTFILE | grep "$1" | tac | bat
 }
 
 convertToJpg(){
@@ -93,7 +93,7 @@ convertToJpg(){
 updateRom() {
   sudo mount -t auto -v /dev/sda3 /mnt/Roms
   sudo rsync -avhP ~/Roms/ /mnt/Roms/
-  tree -L 2 ~/Roms/ > ~/Obsidian/Vault/Archive/RomsList.md 
+  tree -L 2 ~/Roms/ > ~/Obsidian/Vault/Archive/RomsList.md
 }
 turnWifi(){
   sudo ip link set wlo1 down
