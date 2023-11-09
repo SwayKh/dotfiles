@@ -1,39 +1,40 @@
 return {
   -- Fuzzy Finder (files, lsp, etc)
-  'nvim-telescope/telescope.nvim',
-  branch = '0.1.x',
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
   dependencies = {
-    'nvim-lua/plenary.nvim',
+    "nvim-lua/plenary.nvim",
     -- Fuzzy Finder Algorithm which requires local dependencies to be built.
     -- Only load if `make` is available. Make sure you have the system
     -- requirements installed.
     {
-      'nvim-telescope/telescope-fzf-native.nvim',
+      "nvim-telescope/telescope-fzf-native.nvim",
       -- NOTE: If you are having trouble with this installation,
       --       refer to the README for telescope-fzf-native for more instructions.
-      build = 'make',
+      build = "make",
       cond = function()
-        return vim.fn.executable 'make' == 1
+        return vim.fn.executable("make") == 1
       end,
     },
     config = function()
-      local telescope = require 'telescope'
-      local actions = require 'telescope.actions'
+      local telescope = require("telescope")
+      local actions = require("telescope.actions")
 
-      telescope.setup {
+      telescope.setup({
         defaults = {
-          path_display = { 'truncate ' },
+          path_display = { "truncate " },
           mappings = {
             i = {
-              ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-              ['<C-j>'] = actions.move_selection_next, -- move to next result
-              ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+              ["<C-,>"] = actions.move_selection_previous, -- move to prev result
+              ["<C-;>"] = actions.move_selection_next, -- move to next result
+              ["<esc>"] = actions.close,
+              ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             },
           },
         },
-      }
+      })
 
-      telescope.load_extension 'fzf'
+      telescope.load_extension("fzf")
     end,
   },
 }
