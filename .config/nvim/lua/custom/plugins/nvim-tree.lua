@@ -24,10 +24,6 @@ return {
 
       require("nvim-tree").setup({
         on_attach = my_on_attach,
-        set_expand_all = function()
-          local api = require("nvim-tree.api")
-          api.tree.expand_all()
-        end,
         view = {
           width = 30,
           number = true,
@@ -63,6 +59,12 @@ return {
           },
         },
       })
+
+      local api = require("nvim-tree.api")
+      local Event = api.events.Event
+      api.events.subscribe(Event.TreeOpen, function()
+        api.tree.expand_all()
+      end)
     end,
   },
 }
