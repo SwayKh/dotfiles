@@ -20,8 +20,6 @@ plugins=(git
 
 source $ZSH/oh-my-zsh.sh
 
-set -o vi
-
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
