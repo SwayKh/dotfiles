@@ -6,7 +6,7 @@ vim.opt.incsearch = true
 vim.opt.cursorline = true
 vim.opt.autowrite = true
 vim.opt.autoread = true
-vim.opt.colorcolumn = '120'
+vim.opt.colorcolumn = "120"
 vim.opt.laststatus = 3
 
 -- Fix Tab length
@@ -19,8 +19,8 @@ vim.opt.termguicolors = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.numberwidth = 2
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.mouse = "a"
+vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.smartindent = true
 vim.opt.undofile = true
@@ -34,20 +34,29 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 10
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = "menuone,noselect"
 
 local function theme()
-  vim.cmd.colorscheme 'monokai_pro'
-  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  vim.cmd.colorscheme("monokai_pro")
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
 theme()
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+
+-- Open help window in a vertical split to the right.
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = vim.api.nvim_create_augroup("help_window_right", {}),
+  pattern = { "*.txt" },
+  callback = function()
+    if vim.o.filetype == "help" then
+      vim.cmd.wincmd("L")
+    end
+  end,
+})
