@@ -50,6 +50,12 @@ return {
               folder = true,
               folder_arrow = false,
             },
+            glyphs = {
+              folder = {
+                arrow_closed = "", -- arrow when folder is closed
+                arrow_open = "", -- arrow when folder is open
+              },
+            },
           },
           indent_markers = {
             enable = true,
