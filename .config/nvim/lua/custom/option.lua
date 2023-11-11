@@ -44,7 +44,7 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = "menuone,noselect"
 
 local function theme()
-  vim.cmd.colorscheme("monokai")
+  vim.cmd.colorscheme("sonokai")
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
