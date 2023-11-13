@@ -5,7 +5,6 @@
 
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
-map("i", "<C-;", ":Telescope colorscheme")
 
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
@@ -15,7 +14,13 @@ map("n", "-", ":Oil --float<CR>")
 map("n", "<leader>tt", ":tabnew<CR>")
 map("n", "<leader>tq", ":tabclose<CR>")
 
-map("n", "<leader>th", ":Telescope colorscheme<CR>")
+map("n", "<leader>th", ":Telescope colorscheme<CR>", { desc = "Telescope show [TH]eme" })
+map("n", "<leader>ch", ":Telescope keymaps<CR>", { desc = "Telescope show Keymaps" })
+
+map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
+map("i", "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
+map("i", "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
+map("i", "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
 
 map("n", "<C-j>", "<C-w>j", { desc = "Move Between splits with HJKL" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move Between splits with HJKL" })
@@ -24,7 +29,7 @@ map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
 
 map({ "n", "i", "v" }, "<C-s>", "<ESC>:w<CR>", { desc = "[S]ave file" })
 map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit" })
-map({ "n", "v" }, "qq", "<ESC>:q<CR>", { desc = "[Q]uit" })
+map({ "n", "v" }, "qq", "<ESC>:q!<CR>", { desc = "[Q]uit" })
 
 map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })
 map("n", "<leader>h", ":hsplit<CR>", { desc = "Split [H]orizontally" })
