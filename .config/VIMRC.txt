@@ -1,0 +1,43 @@
+syntax on
+
+set noerrorbells
+set exrc
+set hidden
+set nohlsearch
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu relativenumber
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+set signcolumn=yes
+set colorcolumn=120
+highlight ColorColumn ctermbg=white guibg=lightgray
+set backspace=indent,eol,start
+au GUIEnter * simalt ~x
+
+
+if has('python3')
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'gruvbox-community/gruvbox'
+Plug 'scrooloose/nerdtree'
+Plug 'mbbill/undotree'
+Plug 'jreybert/vimagit'
+
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
+let mapleader = ' '
+
+
