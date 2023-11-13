@@ -1,8 +1,8 @@
 
 configuration {
     modi: "drun,window,run,filebrowser";
-    icon-theme: "candy";
-    show-icons: false;
+    icon-theme: "Papirus";
+    show-icons: true;
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;

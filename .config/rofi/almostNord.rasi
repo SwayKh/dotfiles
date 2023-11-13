@@ -21,7 +21,7 @@ window {
   //height: 100%;
   //orientation: vertical;
   //location: west;
-  
+
   height: 50%;
   width: 25%;
   orientation: vertical;
@@ -58,13 +58,13 @@ textbox {
 element {
     orientation: horizontal;
     border:       0;
-    padding:      3px; 
+    padding:      3px;
     text-color: @foreground;
     background-color: @darkgray;
 }
 
 element-icon {
-  size: 48;
+  size: 32;
 }
 
 element normal.normal {
