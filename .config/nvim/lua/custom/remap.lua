@@ -5,11 +5,12 @@
 
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+map("i", "<C-;", ":Telescope colorscheme")
 
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
-map("n", "<leader>o", ":Oil --float<CR>")
+map("n", "-", ":Oil --float<CR>")
 
 map("n", "<leader>tt", ":tabnew<CR>")
 map("n", "<leader>tq", ":tabclose<CR>")
@@ -23,6 +24,7 @@ map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
 
 map({ "n", "i", "v" }, "<C-s>", "<ESC>:w<CR>", { desc = "[S]ave file" })
 map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit" })
+map({ "n", "v" }, "qq", "<ESC>:q<CR>", { desc = "[Q]uit" })
 
 map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })
 map("n", "<leader>h", ":hsplit<CR>", { desc = "Split [H]orizontally" })
@@ -68,7 +70,7 @@ map("n", "<A-c>", ":BufferClose<CR>", opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 -- Magic buffer-picking mode
-map("n", "<C-p>", ":BufferPick<CR>", opts)
+-- map("n", "<C-p>", ":BufferPick<CR>", opts)
 -- Sort automatically by...
 map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
 map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
@@ -238,7 +240,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-  nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+  -- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
   -- Lesser used LSP functionality
   nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")

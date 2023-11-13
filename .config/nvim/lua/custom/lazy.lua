@@ -20,7 +20,7 @@ require("lazy").setup({
 
   -- Useful plugin to show you pending keybinds.
   { "folke/which-key.nvim", opts = {} },
-  { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+  -- { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
 
   {
     -- Add indentation guides even on blank lines
