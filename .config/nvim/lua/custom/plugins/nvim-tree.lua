@@ -45,20 +45,35 @@ return {
           root_folder_modifier = ":t",
           icons = {
             show = {
-              git = true,
               file = true,
               folder = true,
-              folder_arrow = false,
+              folder_arrow = true,
+              git = false,
             },
+
             glyphs = {
+              default = "󰈚",
+              symlink = "",
               folder = {
-                arrow_closed = "", -- arrow when folder is closed
-                arrow_open = "", -- arrow when folder is open
+                default = "",
+                empty = "",
+                empty_open = "",
+                open = "",
+                symlink = "",
+                symlink_open = "",
+                arrow_open = "",
+                arrow_closed = "",
+              },
+              git = {
+                unstaged = "✗",
+                staged = "✓",
+                unmerged = "",
+                renamed = "➜",
+                untracked = "★",
+                deleted = "",
+                ignored = "◌",
               },
             },
-          },
-          indent_markers = {
-            enable = true,
           },
         },
       })
