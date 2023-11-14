@@ -42,7 +42,7 @@ mainbox {
 
 listview {
   layout: vertical;
-  padding: 3px;
+  padding:      0px 8px 8px;
   lines: 8;
   columns: 1;
   border: 0;
