@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+    { "j-hui/fidget.nvim", opts = {} },
 
     "folke/neodev.nvim",
   },
