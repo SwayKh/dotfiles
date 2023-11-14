@@ -1,3 +1,4 @@
+vim.opt.termguicolors = true
 require("lazy").setup({
   { import = "custom.plugins" },
   checker = {
@@ -11,8 +12,6 @@ require("lazy").setup({
   -- NOTE:First, some plugins that don't require any configuration
 
   "nvim-tree/nvim-web-devicons",
-  "rcarriga/nvim-notify",
-
   -- Git related plugins
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
