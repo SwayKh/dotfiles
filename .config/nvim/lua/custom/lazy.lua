@@ -1,4 +1,3 @@
-vim.opt.termguicolors = true
 require("lazy").setup({
   { import = "custom.plugins" },
   checker = {

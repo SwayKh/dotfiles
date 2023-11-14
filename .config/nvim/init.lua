@@ -14,6 +14,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--Need this to be loaded before some plugins, but option.lua needs colorscheme to be loaded
+vim.opt.termguicolors = true
+
 require("custom.lazy")
 require("custom.option")
 require("custom.remap")
