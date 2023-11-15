@@ -4,7 +4,6 @@
 -- See `:help map()`
 
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
@@ -44,44 +43,6 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Barbar.nvim keymaps
--- Move to previous/next
-map("n", "<A-,>", ":BufferPrevious<CR>", opts)
-map("n", "<A-;>", ":BufferNext<CR>", opts)
--- Re-order to previous/next
-map("n", "<A-<>", ":BufferMovePrevious<CR>", opts)
-map("n", "<A->>", ":BufferMoveNext<CR>", opts)
--- Goto buffer in position...
-map("n", "<A-1>", ":BufferGoto 1<CR>", opts)
-map("n", "<A-2>", ":BufferGoto 2<CR>", opts)
-map("n", "<A-3>", ":BufferGoto 3<CR>", opts)
-map("n", "<A-4>", ":BufferGoto 4<CR>", opts)
-map("n", "<A-5>", ":BufferGoto 5<CR>", opts)
-map("n", "<A-6>", ":BufferGoto 6<CR>", opts)
-map("n", "<A-7>", ":BufferGoto 7<CR>", opts)
-map("n", "<A-8>", ":BufferGoto 8<CR>", opts)
-map("n", "<A-9>", ":BufferGoto 9<CR>", opts)
-map("n", "<A-0>", ":BufferLast<CR>", opts)
--- Pin/unpin buffer
-map("n", "<A-p>", ":BufferPin<CR>", opts)
--- Close buffer
-map("n", "<A-c>", ":BufferClose<CR>", opts)
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
--- map("n", "<C-p>", ":BufferPick<CR>", opts)
--- Sort automatically by...
-map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
-map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
-map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
-map("n", "<Space>bw", ":BufferOrderByWindowNumber<CR>", opts)
-
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
@@ -101,32 +62,14 @@ require("telescope").setup({
       i = {
         ["<C-u>"] = false,
         ["<C-d>"] = false,
+        ["<esc>"] = require("telescope.actions").close,
+        ["<C-p>"] = require("telescope.actions").move_selection_previous,
+        ["<C-n>"] = require("telescope.actions").move_selection_next,
+        -- ["<C-q>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions"j.open_qflist,
       },
     },
   },
 })
-
--- Enable telescope fzf native, if installed
-pcall(require("telescope").load_extension, "fzf")
-
--- See `:help telescope.builtin`
-map("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-map("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
-map("n", "<leader>/", function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    winblend = 10,
-    previewer = false,
-  }))
-end, { desc = "[/] Fuzzily search in current buffer" })
-
-map("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-map("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-map("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-map("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-map("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-map("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
-map("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
