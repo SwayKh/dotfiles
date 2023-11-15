@@ -3,7 +3,9 @@ return {
   --  The configuration is done below. Search for lspconfig to find it below.
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  lazy = true,
+  -- event = { "BufReadPre", "BufNewFile" },
+  event = "InsertEnter",
   dependencies = {
 
     "williamboman/mason.nvim",
