@@ -31,7 +31,7 @@ map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit
 map({ "n", "v" }, "qq", "<ESC>:q!<CR>", { desc = "[Q]uit" })
 
 map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })
-map("n", "<leader>h", ":hsplit<CR>", { desc = "Split [H]orizontally" })
+-- map("n", "<leader>h", ":split<CR>", { desc = "Split [H]orizontally" })
 
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Better half down scroll", remap = true })
@@ -140,15 +140,15 @@ vim.defer_fn(function()
           ["[]"] = "@class.outer",
         },
       },
-      swap = {
-        enable = true,
-        swap_next = {
-          ["<leader>a"] = "@parameter.inner",
-        },
-        swap_previous = {
-          ["<leader>A"] = "@parameter.inner",
-        },
-      },
+      -- swap = {
+      --   enable = true,
+      --   swap_next = {
+      --     ["<leader>a"] = "@parameter.inner",
+      --   },
+      --   swap_previous = {
+      --     ["<leader>A"] = "@parameter.inner",
+      --   },
+      -- },
     },
   })
 end, 0)
