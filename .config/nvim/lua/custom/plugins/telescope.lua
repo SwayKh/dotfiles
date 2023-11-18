@@ -15,11 +15,12 @@ return {
         mappings = {
           path_display = { "truncate " },
           i = {
-            ["<esc>"] = actions.close,
-            ["<C-p>"] = actions.move_selection_previous,
-            ["<C-n>"] = actions.move_selection_next,
-            -- ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-n>"] = actions.cycle_history_next,
+            ["<C-p>"] = actions.cycle_history_prev,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
           },
+          n = { q = actions.close },
         },
       },
     })
