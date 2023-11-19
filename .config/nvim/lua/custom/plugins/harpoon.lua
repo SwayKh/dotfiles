@@ -3,8 +3,6 @@ return {
   lazy = true,
   config = function()
     local harpoon = require("harpoon")
-    local mark = require("harpoon.mark")
-    local ui = require("harpoon.ui")
     harpoon.setup({
       global_settings = {
         save_on_toggle = false,
@@ -18,12 +16,6 @@ return {
         tabline_suffix = "   ",
       },
     })
-    vim.keymap.set("n", "<leader>h", function()
-      ui.toggle_quick_menu()
-    end)
-    vim.key.set("n", "<leader>a", function()
-      mark.add_file()
-    end)
     require("telescope").load_extension("harpoon")
   end,
 }
