@@ -7,13 +7,15 @@ local map = vim.keymap.set
 
 -- My Keybinds
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+map("i", "jj", "<Esc>")
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "-", ":Oil --float<CR>")
-map("n", "<leader>tt", ":tabnew<CR>")
-map("n", "<leader>tq", ":tabclose<CR>")
 map("n", "<leader>th", ":Telescope colorscheme<CR>", { desc = "Telescope show [TH]eme" })
 map("n", "<leader>ch", ":Telescope keymaps<CR>", { desc = "Telescope show Keymaps" })
+
+-- map("n", "<leader>tt", ":tabnew<CR>") --Better open a VSplit
+-- map("n", "<leader>tq", ":tabclose<CR>") --BarBar provide keymap to close buffer
 
 map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
 map("i", "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
@@ -30,7 +32,7 @@ map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit
 map({ "n", "v" }, "qq", "<ESC>:q!<CR>", { desc = "[Q]uit" })
 
 map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })
-map("n", "<leader>h", ":split<CR>", { desc = "Split [H]orizontally" })
+map("n", "<leader>h", ":split<CR>", { desc = "Split [H]orizontally (Default behaviour)" })
 
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Better half down scroll", remap = true })
@@ -40,142 +42,6 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
-})
-
--- Barbar.nvim keymaps
-local opts = { noremap = true, silent = true }
-map("n", "<A-,>", ":BufferPrevious<CR>", opts)
-map("n", "<A-;>", ":BufferNext<CR>", opts)
-
-map("n", "<A-<>", ":BufferMovePrevious<CR>", opts)
-map("n", "<A->>", ":BufferMoveNext<CR>", opts)
-
-map("n", "<A-1>", ":BufferGoto 1<CR>", opts)
-map("n", "<A-2>", ":BufferGoto 2<CR>", opts)
-map("n", "<A-3>", ":BufferGoto 3<CR>", opts)
-map("n", "<A-4>", ":BufferGoto 4<CR>", opts)
-map("n", "<A-5>", ":BufferGoto 5<CR>", opts)
-map("n", "<A-6>", ":BufferGoto 6<CR>", opts)
-map("n", "<A-7>", ":BufferGoto 7<CR>", opts)
-map("n", "<A-8>", ":BufferGoto 8<CR>", opts)
-map("n", "<A-9>", ":BufferGoto 9<CR>", opts)
-map("n", "<A-0>", ":BufferLast<CR>", opts)
--- Pin/unpin buffer
-map("n", "<A-p>", ":BufferPin<CR>", opts)
--- Close buffer
-map("n", "<A-c>", ":BufferClose<CR>", opts)
--- Wipeout buffer,
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
--- map("n", "<C-p>", ":BufferPick<CR>", opts)
--- Sort automatically by...
-map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
-map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
-map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
-map("n", "<Space>bw", ":BufferOrderByWindowNumber<CR>", opts)
-
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
-local actions = require("telescope.actions")
-require("telescope").setup({
-  defaults = {
-
-    mappings = {
-      path_display = { "truncate " },
-      i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-        ["<esc>"] = actions.close,
-        ["<C-u>"] = false,
-        ["<C-d>"] = false,
-        -- ["<C-q>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions"j.open_qflist,
-      },
-      n = { q = actions.close },
-    },
-  },
-})
-
--- See `:help telescope.builtin`,
-vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
-vim.keymap.set("n", "<leader>/", function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-    previewer = false,
-    winblend = 10,
-  }))
-end, { desc = "[/] Fuzzily search in current buffer" })
-
-vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
-vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
-vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
-
--- [[ Configure Harpoon ]]
-
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
-vim.keymap.set("n", "<leader>h", function()
-  ui.toggle_quick_menu()
-end)
-vim.key.set("n", "<leader>a", function()
-  mark.add_file()
-end)
-
--- [[ Configure nvim-cmp ]]
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-cmp.setup({
-  mapping = cmp.mapping.preset.insert({
-    ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-    ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-    ["<CR>"] = cmp.mapping.confirm({ select = false }),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-  }),
-})
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
