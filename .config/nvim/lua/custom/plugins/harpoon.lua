@@ -21,10 +21,10 @@ return {
 
     vim.keymap.set("n", "<leader>h", function()
       ui.toggle_quick_menu()
-    end)
-    vim.keymap.set("n", "<leader>a", function()
+    end, { desc = "Show harpoon quick menu" })
+    vim.keymap.set("n", "<leader>.", function()
       mark.add_file()
-    end)
+    end, { desc = "Add file to harpoon" })
     require("telescope").load_extension("harpoon")
   end,
 }

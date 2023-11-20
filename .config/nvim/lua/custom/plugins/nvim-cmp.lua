@@ -3,7 +3,7 @@
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
-  lazy = true,
+  -- lazy = true,
   -- event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   event = "InsertEnter",
   dependencies = {
