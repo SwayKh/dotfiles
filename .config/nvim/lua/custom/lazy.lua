@@ -1,5 +1,20 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
 require("lazy").setup({
   { import = "custom.plugins" },
+}, {
   checker = {
     enabled = true,
     notify = false,
@@ -7,25 +22,4 @@ require("lazy").setup({
   change_detection = {
     notify = false,
   },
-
-  -- NOTE:First, some plugins that don't require any configuration
-
-  "nvim-tree/nvim-web-devicons",
-  -- Git related plugins
-  "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
-
-  -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim", opts = {} },
-
-  {
-    -- Add indentation guides even on blank lines
-    "lukas-reineke/indent-blankline.nvim",
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = "ibl",
-    opts = {},
-  },
-  -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {} },
-}, {})
+})
