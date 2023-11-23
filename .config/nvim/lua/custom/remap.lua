@@ -11,8 +11,11 @@ map("i", "jj", "<Esc>")
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "-", ":Oil --float<CR>")
-map("n", "<leader>th", ":Telescope colorscheme<CR>", { desc = "Telescope show [TH]eme" })
+map("n", "<leader>cs", ":Telescope colorscheme<CR>", { desc = "Telescope show [C]olor[s]cheme" })
 map("n", "<leader>ch", ":Telescope keymaps<CR>", { desc = "Telescope show Keymaps" })
+map("n", "<leader>tf", ":ToggleTerm direction=float<CR>", { desc = "[T]oggleTerm [F]loating" })
+map("n", "<leader>th", ":ToggleTerm<CR>", { desc = "[T]oggleTerm [H]orizontal" })
+map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", { desc = "[T]oggleTerm [V]ertical" })
 
 -- map("n", "<leader>tt", ":tabnew<CR>") --Better open a VSplit
 -- map("n", "<leader>tq", ":tabclose<CR>") --BarBar provide keymap to close buffer
