@@ -22,32 +22,35 @@ window {
   //orientation: vertical;
   //location: west;
 
-  height: 50%;
-  width: 25%;
+  height: 60%;
+  width: 50%;
   orientation: vertical;
   location: center;
 
   anchor: center;
-  border: 2px;
+  border: 1px;
   border-color: @foreground;
   border-radius: 10px;
   spacing: 0;
   children: [ mainbox ];
 }
 
+
 mainbox {
   spacing: 0;
-  children: [ inputbar, listview, mode-switcher ];
+  children: [ inputbar, listview ];
 }
 
+
 listview {
-  layout: vertical;
-  padding:      0px 8px 8px;
-  lines: 8;
-  columns: 1;
-  border: 0;
-  scrollbar: false;
-  background-color : @darkgray;
+    layout: vertical;
+    padding:	       0px 5px;
+    lines: 8;
+    columns: 1;
+    border: 0px;
+    margin: 0px;
+    scrollbar: false;
+    background-color : @darkgray;
 }
 
 textbox {
@@ -55,10 +58,44 @@ textbox {
     background-color: @darkgray;
 }
 
+entry {
+    enabled:           true;
+    padding:	       0px 5px;
+    text-color:        @foreground;
+    background-color:  @background;
+}
+
+prompt {
+    padding:	       0px 5px;
+    text-color: @foreground;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    margin: 0px;
+    str: " ";
+}
+
+inputbar {
+    background-color: @darkgray;
+    spacing:          8px;
+    padding:          8px;
+    margin:           0px;
+    border:           0px;
+    border-radius:    0px;
+    border-color:     @darkgray;
+    children:         ["textbox-prompt-colon", entry];
+}
+
+mode-switcher {
+    text-color: @foreground;
+    background-color: @darkgray;
+}
+
 element {
     orientation: horizontal;
     border:       0;
-    padding:      3px;
+    padding:      5px;
     text-color: @foreground;
     background-color: @darkgray;
 }
@@ -117,26 +154,4 @@ element-text {
     cursor:           inherit;
     highlight:        @background;
     text-color:       inherit;
-}
-
-
-entry {
-    enabled:           true;
-    padding:	         8px;
-    text-color:        @foreground;
-    background-color:  @background;
-}
-
-prompt {
-    padding: 0px 0px ;
-    text-color: @foreground;
-}
-
-inputbar {
-    background-color: @darkgray;
-    margin:           0px 0px 0px 0px;
-    border:           8px;
-    border-radius:    6px;
-    border-color:     @darkgray;
-    children:         [entry];
 }

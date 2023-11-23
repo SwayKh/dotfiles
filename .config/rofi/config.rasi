@@ -2,16 +2,16 @@
 configuration {
     modi: "drun,window,run,filebrowser";
     icon-theme: "Papirus";
-    show-icons: true;
-    terminal: "kitty";
-    drun-display-format: "{icon} {name}";
+    show-icons: false;
+    terminal: "foot";
+    /*drun-display-format: "{icon} {name}";*/
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "   Apps ";/* */
-    display-run: "   Run ";
-    display-window: " 󰖲 Window";
-    display-filebrowser: "  Files";
+    /*display-drun: "   Apps "; */
+    /*display-run: "   Run ";*/
+    /*display-window: " 󰖲 Window";*/
+    /*display-filebrowser: "  Files";*/
     sidebar-mode: true;
 
     case-sensitive: false;
