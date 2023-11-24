@@ -6,10 +6,5 @@ return {
   build = function()
     vim.fn["mkdp#util#install"]()
   end,
-  config = function()
-    local markdown = require("markdown-preview")
-    markdown.setup({
-      vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>"),
-    })
-  end,
+  vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>"),
 }
