@@ -3,7 +3,6 @@
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
-  -- lazy = true,
   -- event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   event = "InsertEnter",
   dependencies = {
@@ -65,14 +64,17 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets
+        { name = "codeium" },
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
+          mode = "symbol",
           maxwidth = 50,
           ellipsis_char = "...",
+          symbol_map = { Codeium = "" },
         }),
       },
     })
