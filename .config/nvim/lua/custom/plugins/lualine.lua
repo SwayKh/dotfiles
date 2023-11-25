@@ -122,30 +122,46 @@ return {
         }
         return { fg = mode_color[vim.fn.mode()] }
       end,
-      padding = { right = 1 },
+      padding = { left = 0, right = 1 }, -- We don't need space before this
     })
 
     ins_left({
-      -- filesize component
-      "filesize",
-      cond = conditions.buffer_not_empty,
+      "location",
+      padding = { left = 0, right = 1 }, -- We don't need space before this
     })
 
     ins_left({
+      "progress",
+      color = { fg = colors.fg, gui = "bold" },
+      padding = { left = 0, right = 1 }, -- We don't need space before this
+    })
 
-      -- lualine_c = {
-      --   function()
-      --     return vim.fn.getcwd()
-      --   end,
-      -- },
-      "filename",
-      cond = conditions.buffer_not_empty,
+    ins_left({
+      function()
+        -- Get the relative path of the current file
+        local relative_path = vim.fn.fnamemodify(vim.fn.expand("%"), ":h")
+
+        -- Get the file name of the current file
+        local file_name = vim.fn.fnamemodify(vim.fn.expand("%"), ":t")
+
+        -- Concatenate the directory and file name
+        local full_path = relative_path .. "/" .. file_name
+        return full_path
+
+        -- return vim.fn.fnamemodify(vim.fn.expand("%"), ":p:h")
+        -- return vim.api.nvim_buf_get_name(0) --same as '%:p'
+        -- return vim.fn.expand("%:p") -- fullpath
+        -- return vim.fn.expand('%') --equivalent of @% in vimscript
+        -- return vim.fn.getcwd()
+      end,
       color = { fg = colors.magenta, gui = "bold" },
     })
 
-    ins_left({ "location" })
-
-    ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
+    -- ins_left({
+    --   "filename",
+    --   cond = conditions.buffer_not_empty,
+    --   color = { fg = colors.magenta, gui = "bold" },
+    -- })
 
     ins_left({
       "diagnostics",
@@ -185,6 +201,12 @@ return {
       end,
       icon = " LSP:",
       color = { fg = "#ffffff", gui = "bold" },
+    })
+
+    ins_right({
+      "filesize",
+      cond = conditions.buffer_not_empty,
+      -- color = { fg = colors.green, gui = "bold" },
     })
 
     -- Add components to right sections
