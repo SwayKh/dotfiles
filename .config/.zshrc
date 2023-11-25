@@ -26,7 +26,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
 
 alias pokescript='pokemon-colorscripts -r'
-# alias bat='batcat'
 alias color='colorscript -r'
 alias pipes='pipes.sh'
 alias vim='nvim'
@@ -65,7 +64,7 @@ source /usr/share/nvm/init-nvm.sh
 # neofetch
 # pokemon-colorscripts -r
 # pfetch
-colorscript -r
+# colorscript -r
 
 
 # Remove duplicates from $PATH

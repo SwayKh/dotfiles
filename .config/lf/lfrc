@@ -31,10 +31,10 @@ set previewer ~/.config/lf/preview
 
 # Open the lfrc config file from anywhere
 
-cmd mkdir %printf "Directory Name: "; read ans; mkdir $ans; lf -remote 'send reload'
+cmd mkdir %printf "Directory Name: "; read and; mkdir $and; lf -remote 'send reload'
 
-cmd mkfile %printf "File Name: "; read ans; touch $ans; lf -remote 'send reload'
- 
+cmd mkfile %printf "File Name: "; read and; touch $and; lf -remote 'send reload'
+
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
 
@@ -64,7 +64,7 @@ cmd directory_size ${{
 
 cmd androidFs %{{
 	sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android
-	
+
 }}
 
 cmd test ${{
@@ -80,21 +80,21 @@ cmd test ${{
 
 cmd chmod %{{
 	printf "Mode Bits: "
-	read ans
+	read and
 
 	for file in "$fx"
 	do
-		chmod $ans "$file"
+		chmod $and "$file"
 	done
 	lf -remote 'send reload'
 }}
 
 cmd Unarchive ${{
 # This part creates the directory for extracting files
-  a="${f%%.*}" 
+  a="${f%%.*}"
   mkdir -p "$a"
 
-  case "$f" in 
+  case "$f" in
     *.zip) unzip -d "$a" "$f" ;;
     *.tar.gz) tar -xzvf "$f" -C "$a" ;;
     *.tar.xz) tar -xvf "$f" -C "$a" ;;
@@ -107,9 +107,9 @@ cmd Unarchive ${{
 
 cmd setwallpaper &{{
   wallbg="$HOME/.local/bin/wallbg"
-  cp "$f" ~/.config/wall.png; 
+  cp "$f" ~/.config/wall.png;
   # swaybg -m fill -i ~/.config/wall.png &
-  $wallbg "$f" 
+  $wallbg "$f"
   lf -remote 'send reload'
 }}
 
@@ -133,7 +133,7 @@ cmd fzf_jump ${{
     else
         exit 0
     fi
-     
+
     lf -remote "send $id $cmd \"$res\""
 }}
 
@@ -142,7 +142,7 @@ cmd fzf_jump ${{
 
 # <c-u> Go Up half page
 # <c-d> Go down half page
-# <c-r> Relaod the files and directories
+# <c-r> Reload the files and directories
 # <Space> Select
 # u Unselect
 # v Invert selection
@@ -188,7 +188,7 @@ map dd trash
 map ua Unarchive
 map <c-f> :fzf_jump
 map <enter> open
-map bg setwallpaper 
+map bg setwallpaper
 map du directory_size # Requires ncdu utility
 map t test
 map f calcdirsize # Calculate the directory size in the editor without NCDU
@@ -216,6 +216,6 @@ map gpg cd ~/Projects/Go/
 map gpw cd ~/Projects/Web/
 map go cd ~/Projects/Web/TheOdinProject/
 
-# map gak cd /run/user/1001/e9732ae6_71e9_47cb_adca_fe5296eda054/storage/emulated/0/
+map gA cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/
 
 map gh cd ~ # This is default
