@@ -111,6 +111,10 @@ cn() {
   clear && neofetch
 }
 
+pf() {
+  pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse
+}
+
 pacPreviewAll() {
-pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+  pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }

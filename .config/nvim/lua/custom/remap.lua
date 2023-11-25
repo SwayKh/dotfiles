@@ -14,9 +14,6 @@ map("n", "-", ":Oil <CR>")
 
 -- Plugin specific keymaps are in the plugin configs
 
--- map("n", "<leader>tt", ":tabnew<CR>") --Better open a VSplit
--- map("n", "<leader>tq", ":tabclose<CR>") --BarBar provide keymap to close buffer
-
 map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
 map("i", "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
 map("i", "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
@@ -28,7 +25,7 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
 
 map({ "n", "i", "v" }, "<C-s>", "<ESC>:w<CR>", { desc = "[S]ave file" })
-map({ "n", "v" }, "qq", "<ESC>:q<CR>", { desc = "[Q]uit" })
+map({ "n", "v" }, "qq", "<ESC>:bd<CR>", { desc = "[Q]uit, Actually runs :bd buffer delete" })
 map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit" })
 
 map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })
@@ -42,11 +39,6 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
--- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
-vim.defer_fn(function() end, 0)
 
 -- Diagnostic keymaps
 -- Don't need these right now
