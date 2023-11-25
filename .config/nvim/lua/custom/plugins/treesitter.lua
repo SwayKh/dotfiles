@@ -1,12 +1,12 @@
 return {
   -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
-  lazy = true,
   event = { "BufReadPre", "BufNewFile" },
+  build = ":TSUpdate",
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    "windwp/nvim-ts-autotag",
   },
-  build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
       -- Add languages to be installed here that you want installed for treesitter
@@ -17,19 +17,37 @@ return {
         "lua",
         "python",
         "rust",
-        "tsx",
+        "bash",
+        "html",
+        "css",
         "javascript",
         "typescript",
-        "vimdoc",
+        "tsx",
+        "json",
         "vim",
-        "bash",
+        "vimdoc",
+        "yaml",
+        "prisma",
+        "markdown",
+        "markdown_inline",
+        "dockerfile",
+        "gitignore",
+        "query",
       },
 
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-      auto_install = true,
+      auto_install = false,
 
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+      },
+      -- enable indentation
       indent = { enable = true },
+      -- enable autotagging (w/ nvim-ts-autotag plugin)
+      autotag = {
+        enable = true,
+      },
+
       incremental_selection = {
         enable = true,
         keymaps = {
