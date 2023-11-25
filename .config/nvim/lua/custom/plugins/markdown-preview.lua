@@ -1,6 +1,6 @@
 return {
   "iamcco/markdown-preview.nvim",
-  enabled = false,
+  enabled = true,
   lazy = true,
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   ft = { "markdown" },
