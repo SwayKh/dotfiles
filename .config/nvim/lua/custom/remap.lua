@@ -40,13 +40,6 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Diagnostic keymaps
--- Don't need these right now
--- map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
--- map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
--- map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
--- map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
 -- document existing key chains
 require("which-key").register({
   ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
