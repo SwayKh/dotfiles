@@ -6,6 +6,7 @@ vim.opt.termguicolors = true
 require("custom.lazy")
 require("custom.option")
 require("custom.remap")
+require("custom.plugins.lsp")
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -95,7 +96,5 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = "Format current buffer with LSP" })
 end
-
-return { on_attach = on_attach }
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

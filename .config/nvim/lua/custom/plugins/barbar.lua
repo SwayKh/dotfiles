@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 return {
   "romgrk/barbar.nvim",
+    lazy = true,
   enabled = true,
   dependencies = {
     "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status

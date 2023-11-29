@@ -1,5 +1,3 @@
-local prettier = { "prettierd", "prettier" }
-
 return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
@@ -22,18 +20,18 @@ return {
   },
   opts = {
     formatters_by_ft = {
-      javascript = { prettier },
-      typescript = { prettier },
-      javascriptreact = { prettier },
-      typescriptreact = { prettier },
-      css = { prettier },
-      html = { prettier },
-      json = { prettier },
-      jsonc = { prettier },
-      yaml = { prettier },
-      markdown = { prettier, "injected" },
+      javascript = { "prettierd", "prettier" },
+      typescript = { "prettierd", "prettier" },
+      javascriptreact = { "prettierd", "prettier" },
+      typescriptreact = { "prettierd", "prettier" },
+      css = { "prettierd", "prettier" },
+      html = { "prettierd", "prettier" },
+      json = { "prettierd", "prettier" },
+      jsonc = { "prettierd", "prettier" },
+      yaml = { "prettierd", "prettier" },
+      markdown = { "prettierd", "prettier", "injected" },
       norg = { "injected" },
-      graphql = { prettier },
+      graphql = { "prettierd", "prettier" },
       lua = { "stylua" },
       go = { "goimports", "gofmt" },
       sh = { "shfmt" },

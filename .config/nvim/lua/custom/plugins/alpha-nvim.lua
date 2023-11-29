@@ -1,6 +1,7 @@
 return {
   "goolord/alpha-nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
   config = function()
     require("alpha").setup(require("alpha.themes.dashboard").config)
     local alpha = require("alpha")

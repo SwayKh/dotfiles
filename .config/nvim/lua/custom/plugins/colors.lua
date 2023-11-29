@@ -197,7 +197,7 @@ return {
   {
     --28
     "sainnhe/sonokai",
-    lazy = true,
+    event = "VeryLazy",
     priority = 1000,
   },
   {
