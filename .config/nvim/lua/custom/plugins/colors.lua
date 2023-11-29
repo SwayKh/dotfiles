@@ -1,6 +1,5 @@
 return {
   {
-
     --1
     "catppuccin/nvim",
     lazy = true,
@@ -15,7 +14,6 @@ return {
     priority = 1000,
     enabled = false,
   },
-
   {
     --3
     "hoprr/calvera-dark.nvim",

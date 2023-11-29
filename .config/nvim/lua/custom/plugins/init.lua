@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  { "nvim-tree/nvim-web-devicons" },
+  { "nvim-tree/nvim-web-devicons", lazy = true },
   -- Git related plugins
   { "tpope/vim-fugitive", lazy = true },
   { "tpope/vim-rhubarb", lazy = true },
@@ -14,10 +14,30 @@ return {
   {
     -- Add indentation guides even on blank lines
     "lukas-reineke/indent-blankline.nvim",
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
+    lazy = true,
+    opts = {
+      indent = {
+        char = "│",
+        tab_char = "│",
+      },
+      scope = { enabled = false },
+      exclude = {
+        filetypes = {
+          "help",
+          "alpha",
+          "dashboard",
+          "neo-tree",
+          "Trouble",
+          "trouble",
+          "lazy",
+          "mason",
+          "notify",
+          "toggleterm",
+          "lazyterm",
+        },
+      },
+    },
     main = "ibl",
-    opts = {},
   },
   -- "gc" to comment visual regions/lines
   { "numToStr/Comment.nvim", opts = {} },

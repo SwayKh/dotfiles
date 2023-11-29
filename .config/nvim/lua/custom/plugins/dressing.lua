@@ -1,4 +1,4 @@
 return {
-  'stevearc/dressing.nvim',
-    lazy = true,
+  "stevearc/dressing.nvim",
+  lazy = true,
 }

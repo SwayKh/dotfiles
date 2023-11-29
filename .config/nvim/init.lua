@@ -6,7 +6,6 @@ vim.opt.termguicolors = true
 require("custom.lazy")
 require("custom.option")
 require("custom.remap")
-require("custom.plugins.lsp")
 
 require("mason").setup()
 require("mason-lspconfig").setup()
