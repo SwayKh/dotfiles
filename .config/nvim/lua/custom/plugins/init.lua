@@ -8,6 +8,14 @@ return {
   { "tpope/vim-fugitive", lazy = true },
   { "tpope/vim-rhubarb", lazy = true },
 
+  { "stevearc/dressing.nvim", lazy = true, enabled = false },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = { "BufReadPre", "BufNewFile" },
+    config = true,
+    enabled = false,
+  },
   -- Useful plugin to show you pending keybinds.
   { "folke/which-key.nvim", opts = {} },
 
@@ -15,6 +23,7 @@ return {
     -- Add indentation guides even on blank lines
     "lukas-reineke/indent-blankline.nvim",
     lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       indent = {
         char = "│",
@@ -40,5 +49,5 @@ return {
     main = "ibl",
   },
   -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {} },
+  { "numToStr/Comment.nvim", opts = {}, event = { "BufReadPre", "BufNewFile" } },
 }

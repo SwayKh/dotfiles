@@ -24,6 +24,11 @@ return {
           },
         },
       },
+      pickers = {
+        colorscheme = {
+          enable_preview = true,
+        },
+      },
     })
 
     vim.keymap.set("n", "<leader>?", ":Telescope oldfiles<CR>", { desc = "[?] Find recently opened files" })

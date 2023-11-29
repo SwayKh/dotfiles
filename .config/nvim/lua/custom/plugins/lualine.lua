@@ -1,7 +1,6 @@
 return {
   -- Set lualine as statusline
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
   -- See `:help lualine.txt`
   -- Eviline config for lualine
   -- Author: shadmansaleh

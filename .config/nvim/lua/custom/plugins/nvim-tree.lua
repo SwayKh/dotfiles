@@ -2,6 +2,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       vim.g.loaded_netrw = 1
