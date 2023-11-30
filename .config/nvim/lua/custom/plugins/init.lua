@@ -8,8 +8,6 @@ return {
   { "tpope/vim-fugitive", lazy = true },
   { "tpope/vim-rhubarb", lazy = true },
 
-  { "stevearc/dressing.nvim", lazy = true, enabled = false },
-
   {
     "NvChad/nvim-colorizer.lua",
     event = { "BufReadPre", "BufNewFile" },

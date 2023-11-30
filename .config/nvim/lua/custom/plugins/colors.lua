@@ -160,7 +160,7 @@ return {
     --23
     "rebelot/kanagawa.nvim",
     lazy = true,
-    enabled = true,
+    enabled = false,
     priority = 1000,
   },
   {
@@ -195,7 +195,7 @@ return {
   {
     --28
     "sainnhe/sonokai",
-    enabled = false,
+    enabled = true,
     lazy = true,
     priority = 1000,
   },
