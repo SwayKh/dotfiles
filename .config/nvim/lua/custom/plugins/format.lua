@@ -50,7 +50,7 @@ return {
       },
     },
     log_level = vim.log.levels.TRACE,
-    format_after_save = { timeout_ms = 5000, lsp_fallback = true },
+    format_after_save = { timeout_ms = 500, lsp_fallback = true },
   },
   init = function()
     vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
