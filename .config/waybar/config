@@ -4,18 +4,18 @@
     "height": 30,
     "margin-left": 10,
     "margin-right": 10,
-    "margin-top": 5, 
-    
+    "margin-top": 10,
+
     // Choose the order of the modules
 
     "modules-left": ["custom/power", "clock", "wlr/taskbar"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["network", "backlight", "pulseaudio", "tray", "battery"],
+    "modules-right": ["cpu", "temperature", "memory", "disk", "backlight", "pulseaudio", "tray", "battery"],
 
     // Modules configuration
     "hyprland/workspaces": {
         "on-click": "activate",
-        //"active-only": false, 
+        //"active-only": false,
         "all-outputs": true,
         "persistent-workspaces": {
             "1": [],
@@ -77,15 +77,24 @@
    "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        "critical-threshold": 80,
+        "interval": 15,
+        "format": "{temperatureC}°C ",
         "format-icons": ["", "", ""]
     },
     "cpu": {
-        "interval": 5,
+        "interval": 15,
         "format": "{usage}% ",
         "tooltip": false
+    },
+    "memory": {
+        "interval": 15,
+        "format": "{}% "
+    },
+   "disk": {
+        "interval": 15,
+        "format": "{percentage_used}% 󰋊",
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -111,7 +120,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " :{ipaddr}", //({essid} {signalStrength}%) 
+        "format-wifi": " :{ipaddr}", //({essid} {signalStrength}%)
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -145,4 +154,3 @@
       "on-click": "~/scripts/hyprland/sessionMenu.sh",
     }
 }
-

@@ -1,61 +1,57 @@
-@define-color fg_color #F5F5F5;
-@define-color bg_color #333333;
-
 * {
-    border: #333333;
-    border-radius: 0px;
-    font-family:  "Hack Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    background-color: rgba(43, 48, 59, 0);
-    
+  border: #000000;
+  border-radius: 0px;
+  font-family: "Hack Nerd Font", FontAwesome, Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  /* background-color: rgba(43, 48, 59, 1); */
+  background-color: #333333;
 }
 
 window#waybar {
-    color: @fg_color;
-    transition-property: background-color;
-    transition-duration: .5s;
+  color: #F5F5F5;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px transparent;
+  background: inherit;
+  box-shadow: inset 0 -3px transparent;
 }
 
 #workspaces button {
-    background-color: transparent;
-    color: @fg_color;
+  background-color: #333333;
+  color: #F5F5F5;
 }
 
 #workspaces button.active {
-  color: @bg_color;
-  background-color: @fg_color;
-  /* border-radius: 5px; */
+  color: #F5F5F5;
+  background-color: #333333;
+  border : 2px solid #98D8D8; 
+  padding: 5px;
 }
 
 #workspaces button.urgent {
-  color: @fg_color;
+  color: #F5F5F5;
   background-color: grey;
 }
-/* #workspaces button:hover { */
-/*     background: rgba(0, 0, 0, 1); */
-/* } */
+
 
 #workspaces button.focused {
-    background-color: @fg_color;
-    color: @bg_color;
-    box-shadow: inset 0 -3px #F5F5F5;
+  background-color: #F5F5F5;
+  color: #333333;
 }
 
-/* Uncomment If using icons instead of number for workspaces*/ 
+/* Uncomment If using icons instead of number for workspaces*/
 
 /* #workspaces, */
 /* #workspaces button,  */
@@ -66,7 +62,7 @@ button:hover {
 /*     padding-right: 0px;  */
 /*     padding: 0px 6px;  */
 /*     padding-left: 3px; */
-/*     color: @fg_color; */
+/*     color: #F5F5F5; */
 /*     background-color: rgba(0, 0, 0, 0); */
 /* }  */
 
@@ -93,60 +89,99 @@ button:hover {
 #scratchpad,
 #custom-power,
 #mpd {
-    padding: 0px 5px;
-    padding-right: 10px;
-    margin: 3px 3px;
-    color: @fg_color;
-    background-color: @bg_color;
+  padding: 0px 5px;
+  padding-right: 10px;
+  margin: 3px 3px;
+  color: #F5F5F5;
+  background-color: #333333;
 }
 
+
+#custom-power {
+    color: #F53C3C;
+}
+
+#cpu {
+    color : #A8A878;
+}
+
+#temperature {
+    color : #98D8D8;
+}
+
+#memory {
+    color : #9ED072;
+}
+
+#disk {
+    color : #A890F0;
+}
+
+#backlight {
+    color : #F8D030;
+}
+
+#pulseaudio {
+    color : #5CC084;
+}
+
+#battery {
+    color : #48AA4C;
+}
+
+#network {
+    color : #5CC084;
+}
+
+
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+  background-color: #F53C3C;
 }
 
-#battery.charging, #battery.plugged {
-    color: #F5F5F5;
-    background-color: #26A65B;
+#battery.charging,
+#battery.plugged {
+  color: #f5f5f5;
+  background-color: #26A65B;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+  background-color: #F53C3C;
 }
 
 #language {
-    background: @fg_color;
-    color: @bg_color;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
+  background: #F5F5F5;
+  color: #333333;
+  padding: 0 5px;
+  margin: 0 5px;
+  min-width: 16px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+  margin-right: 0;
 }
 @keyframes blink {
-    to {
-        background-color: @fg_color;
-        color: @bg_color;
-    }
+  to {
+    background-color: #F5F5F5;
+    color: #333333;
+  }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #F5F5F5;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #f5f5f5;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
