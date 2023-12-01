@@ -22,7 +22,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- LSP
-        "bash-language-server", -- Bash
+        "bash_ls", -- Bash
         "clangd", -- C/C++
         "gopls", -- Golang
         "pyright", -- Python

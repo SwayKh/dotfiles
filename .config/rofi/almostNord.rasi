@@ -120,18 +120,18 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: @foreground;
     text-color: @darkgray;
+    background-color: @foreground;
 }
 
 element selected.urgent {
-    background-color: @darkgray;
-    text-color:       @foreground;
+    background-color: @red;
+    text-color:       @darkgray;
 }
 
 element selected.active {
-    background-color: @darkgray;
-    text-color:       @foreground;
+    background-color: @yellow;
+    text-color:       @darkgray;
 }
 
 element alternate.normal {
@@ -151,6 +151,6 @@ element alternate.active {
 
 element-text {
     cursor:           inherit;
-    highlight:        @background;
+    highlight:        #A1D077;
     text-color:       inherit;
 }

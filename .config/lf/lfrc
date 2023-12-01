@@ -208,7 +208,7 @@ map ga cd ~/Android
 map gs cd ~/scripts
 map g. cd ~/dotfiles/.config/
 
-map gr cd ~/repos/configs/
+map gr cd ~/repos/
 map gv cd /run/media/sumit/Ventoy/
 map gn cd ~/Obsidian/Vault/
 map gpp cd ~/Projects/Python/
