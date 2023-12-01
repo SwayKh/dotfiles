@@ -4,15 +4,26 @@
 -- See the kickstart.nvim README for more information
 return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
+
   -- Git related plugins
-  { "tpope/vim-fugitive", lazy = true },
-  { "tpope/vim-rhubarb", lazy = true },
+  {
+    "tpope/vim-fugitive",
+    lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
+  },
 
   {
+    "tpope/vim-rhubarb",
+    lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
+  },
+
+  {
+    -- Need this for css color highlighting, Can't get treesitter to work
     "NvChad/nvim-colorizer.lua",
     event = { "BufReadPre", "BufNewFile" },
     config = true,
-    enabled = false,
+    enabled = true,
   },
   -- Useful plugin to show you pending keybinds.
   { "folke/which-key.nvim", opts = {} },
