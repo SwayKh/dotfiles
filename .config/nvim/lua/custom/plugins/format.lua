@@ -33,7 +33,7 @@ return {
       norg = { "injected" },
       graphql = { "prettierd", "prettier" },
       lua = { "stylua" },
-      go = { "goimports", "gofmt" },
+      go = { "goimports", "gofumpt" },
       sh = { "shfmt" },
       python = { "isort", "black" },
       zig = { "zigfmt" },
