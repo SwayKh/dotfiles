@@ -22,7 +22,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- LSP
-        "bash_ls", -- Bash
+        "bash-language-server", -- Bash
         "clangd", -- C/C++
         "gopls", -- Golang
         "pyright", -- Python
@@ -43,7 +43,6 @@ return {
       ensure_installed = {
         -- FORMATTERS
         "black",
-        "djlint",
         "gofumpt",
         "goimports",
         "isort",
@@ -55,8 +54,6 @@ return {
         "codespell",
         "eslint_d",
         "pylint",
-        "gofmt",
-        "goimports",
         "shellcheck",
 
         --DAP
