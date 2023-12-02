@@ -13,7 +13,7 @@
     darkyellow:                     #E0AE4A;
     border:                         #1B1E25;
     darkblack:                      #090A0F;
-    darkgray:                       #333333;
+    darkgray:                       #252428;
 }
 
 window {
@@ -23,11 +23,12 @@ window {
   //location: west;
 
   height: 60%;
-  width: 50%;
+  width: 30%;
   orientation: vertical;
   location: center;
 
   anchor: center;
+  padding : 0px;
   border: 1px;
   border-color: @foreground;
   border-radius: 10px;
@@ -62,7 +63,7 @@ entry {
     enabled:           true;
     padding:	       0px 5px;
     text-color:        @foreground;
-    background-color:  @background;
+    background-color:  @darkgray;
 }
 
 prompt {
@@ -151,6 +152,6 @@ element alternate.active {
 
 element-text {
     cursor:           inherit;
-    highlight:        #A1D077;
+    highlight:        #F1594F;
     text-color:       inherit;
 }

@@ -184,7 +184,8 @@ map K :updir; up; open
 map md mkdir
 map mf mkfile
 map mp chmod #use 664, 777 notation rather than u+x
-map dd trash
+map dt trash
+map dd delete
 map ua Unarchive
 map <c-f> :fzf_jump
 map <enter> open
