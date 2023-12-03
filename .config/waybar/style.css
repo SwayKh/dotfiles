@@ -5,7 +5,7 @@
     sans-serif;
   font-size: 16px;
   /* background-color: rgba(43, 48, 59, 1); */
-  background-color: #333333;
+  background-color: #252428;
 }
 
 window#waybar {
@@ -29,26 +29,26 @@ button:hover {
 }
 
 #workspaces button {
-  background-color: #333333;
+  background-color: #252428;
   color: #f5f5f5;
 }
 
 #workspaces button.active {
   color: #f5f5f5;
-  background-color: #333333;
+  background-color: #252428;
   border: 3px solid #a8a878;
   padding: 4px;
 }
 
 #workspaces button.urgent {
   color: #f5f5f5;
-  background-color: #333333;
+  background-color: #252428;
   border: 2px solid #f53c3c;
 }
 
 #workspaces button.focused {
   background-color: #f5f5f5;
-  color: #333333;
+  color: #252428;
 }
 
 /* Uncomment If using icons instead of number for workspaces*/
@@ -93,7 +93,7 @@ button:hover {
   padding-right: 10px;
   margin: 3px 3px;
   color: #f5f5f5;
-  background-color: #333333;
+  background-color: #252428;
 }
 
 #custom-power {
@@ -152,7 +152,7 @@ label:focus {
 
 #language {
   background: #f5f5f5;
-  color: #333333;
+  color: #252428;
   padding: 0 5px;
   margin: 0 5px;
   min-width: 16px;
@@ -170,7 +170,7 @@ label:focus {
 @keyframes blink {
   to {
     background-color: #f5f5f5;
-    color: #333333;
+    color: #252428;
   }
 }
 

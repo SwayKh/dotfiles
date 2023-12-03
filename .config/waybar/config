@@ -151,6 +151,6 @@
       "format": "{icon}",
       "format-icons": "",// 󰣇
       "exec-on-event": "true",
-      "on-click": "~/scripts/hyprland/sessionMenu.sh",
+      "on-click": "wlogout",
     }
 }

@@ -31,8 +31,9 @@ return {
           "go run",
         },
       },
-      mode = "term",
+      mode = "term", -- Setting this to toggleterm remove the key bind effects
       focus = true,
+      -- startinsert = true, -- Sets the term to insert mode, which exists by default on any keypress
       before_run_filetype = function()
         vim.cmd(":w")
       end,
@@ -59,7 +60,7 @@ return {
     vim.keymap.set("n", "<leader>rf", ":RunFile<CR>", { noremap = true, silent = false })
     vim.keymap.set("n", "<leader>rft", ":RunFile tab<CR>", { noremap = true, silent = false })
     vim.keymap.set("n", "<leader>rp", ":RunProject<CR>", { noremap = true, silent = false })
-    vim.keymap.set("n", "<leader>rc", ":RunClose<CR>", { noremap = true, silent = false })
+    vim.keymap.set("n", "<leader>rq", ":RunClose<CR>", { noremap = true, silent = false })
     vim.keymap.set("n", "<leader>crf", ":CRFiletype<CR>", { noremap = true, silent = false })
     vim.keymap.set("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent = false })
   end,

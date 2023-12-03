@@ -2,9 +2,10 @@
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
     font:                           "Hack Nerd Font 14";
-    foreground:                     #F5F5F5;
+    foreground:                     #87A2AA;
     background:                     #333333;
     highlight:	                    #F5F5F5;
+    old-highlight:                  #F1594F;
     red:                            #973D46;
     darkred:                        #973D46;
     blue:                           #BBCCDD;
@@ -152,6 +153,6 @@ element alternate.active {
 
 element-text {
     cursor:           inherit;
-    highlight:        #F1594F;
+    highlight:        #F1EDEE;
     text-color:       inherit;
 }
