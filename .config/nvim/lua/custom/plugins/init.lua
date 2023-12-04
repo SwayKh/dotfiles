@@ -58,5 +58,19 @@ return {
     main = "ibl",
   },
   -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {}, event = { "BufReadPre", "BufNewFile" } },
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+      sticky = true,
+      padding = true,
+      toggler = {
+        line = "<C-/>",
+      },
+      mappings = {
+        basic = true,
+        extra = true,
+      },
+    },
+    event = { "BufReadPre", "BufNewFile" },
+  },
 }

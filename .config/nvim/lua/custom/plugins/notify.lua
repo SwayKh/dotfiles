@@ -2,8 +2,16 @@ return {
   "rcarriga/nvim-notify",
   lazy = true,
   config = function()
-    require("notify").setup({
-      background_colour = "#3F67CF",
+    vim.opt.termguicolors = true
+    vim.notify = require("notify")
+    local notify = require("notify")
+
+    notify.setup({
+      minimum_width = 50,
+      -- background_colour = "#1d2021",
+      stages = "fade",
+      timeout = 2000,
+      fps = 60,
     })
   end,
 }
