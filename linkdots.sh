@@ -40,6 +40,9 @@ sudo ln -sfn $path/.config/rofi $HOME/.config/
 [ -d $HOME/.config/foot ] && rm -rf $HOME/.config/foot
 sudo ln -sfn $path/.config/foot $HOME/.config/
 
+[ -d $HOME/.config/dunst ] && rm -rf $HOME/.config/dunst
+sudo ln -sfn $path/.config/dunst $HOME/.config/
+
 [ -d $HOME/.config/tmux ] && rm -rf $HOME/.config/tmux
 sudo ln -sfn $path/.config/tmux $HOME/.config/
 

@@ -8,9 +8,9 @@
 
     // Choose the order of the modules
 
-    "modules-left": ["custom/power", "clock", "wlr/taskbar"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["cpu", "temperature", "memory", "disk", "backlight", "pulseaudio", "tray", "battery"],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["cpu", "temperature", "memory", "disk", "backlight", "pulseaudio", "clock", "tray"],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -28,20 +28,20 @@
             "8": [],
             "9": [],
          },
-        "format": "{name}",
+        "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "",
-            "7": "",
-            "8": "",
-            "9": "",
-            "urgent": "",
-            "active": "",
-            "default": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "󰚀",
+            "6": "󰚀",
+            "7": "",
+            "8": "󰙯",
+            "9": "",
+            // "urgent": "",
+            // "active": "",
+            // "default": ""
          },
     },
     "keyboard-state": {
@@ -71,6 +71,8 @@
         "show-passive-items": true,
     },
     "clock": {
+        "interval": 60,
+        "format": "{:%a %I:%M %p   %b %d %Y }",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
