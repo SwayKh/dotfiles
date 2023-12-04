@@ -66,6 +66,9 @@ return {
       toggler = {
         line = "<C-/>",
       },
+      opleader = {
+        line = "<C-/>",
+      },
       mappings = {
         basic = true,
         extra = true,

@@ -10,7 +10,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["cpu", "temperature", "memory", "disk", "backlight", "pulseaudio", "clock", "tray"],
+    "modules-right": ["cpu", "temperature", "memory", "backlight", "pulseaudio", "clock", "tray"],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -72,7 +72,7 @@
     },
     "clock": {
         "interval": 60,
-        "format": "{:%a %I:%M %p   %b %d %Y }",
+        "format": "{:%a %I:%M %p  }", // %b %d %Y  --Date formatting
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },

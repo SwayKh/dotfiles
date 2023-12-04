@@ -206,4 +206,10 @@ return {
     lazy = true,
     priority = 1000,
   },
+  {
+    "dylanaraps/wal.vim",
+    enabled = true,
+    lazy = true,
+    priority = 1000,
+  },
 }

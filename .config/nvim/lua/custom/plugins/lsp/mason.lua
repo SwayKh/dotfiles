@@ -24,7 +24,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- LSP
-        "bash_ls", -- Bash
+        -- "bash_ls", -- Bash
         "clangd", -- C/C++
         "gopls", -- Golang
         "pyright", -- Python
@@ -43,6 +43,7 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
+        "bash-language-server",
         -- FORMATTERS
         "black",
         "gofumpt",

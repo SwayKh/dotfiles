@@ -4,8 +4,8 @@ vim.g.maplocalleader = " "
 vim.opt.termguicolors = true
 
 require("custom.lazy")
-require("custom.option")
 require("custom.remap")
+require("custom.option")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
