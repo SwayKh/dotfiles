@@ -3,7 +3,7 @@
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   /* background-color: rgba(43, 48, 59, 1); */
   background-color: #252428;
 }
@@ -40,9 +40,9 @@ button:hover {
 }
 
 #workspaces button.urgent {
-  color: #f5f5f5;
+  color: #f53c3c;
   background-color: #252428;
-  border: 2px solid #f53c3c;
+  /* border: 3px solid #f53c3c; */
 }
 
 #workspaces button.focused {
