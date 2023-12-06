@@ -1,7 +1,7 @@
 
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
-    font:                           "Hack Nerd Font 14";
+    font:                           "Hack Nerd Font 10";
     foreground:                     #87A2AA;
     background:                     #333333;
     highlight:	                    #F5F5F5;
@@ -47,7 +47,7 @@ mainbox {
 listview {
     layout: vertical;
     padding:	       0px 5px;
-    lines: 8;
+    lines: 11;
     columns: 1;
     border: 0px;
     margin: 0px;
