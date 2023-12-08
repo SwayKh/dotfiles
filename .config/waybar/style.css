@@ -33,12 +33,6 @@ button:hover {
   color: #f5f5f5;
 }
 
-#workspaces button.active {
-  color: #8fb666;
-  background-color: #252428;
-  /* border: 3px solid #7bcbd5; */
-}
-
 #workspaces button.urgent {
   color: #f53c3c;
   background-color: #252428;
@@ -47,6 +41,12 @@ button:hover {
 #workspaces button.empty {
   color: #a5a5a5;
   background-color: #252428;
+}
+
+#workspaces button.active {
+  color: #8fb666;
+  background-color: #252428;
+  /* border: 3px solid #7bcbd5; */
 }
 
 #workspaces button.focused {
