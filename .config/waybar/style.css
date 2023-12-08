@@ -44,6 +44,10 @@ button:hover {
   background-color: #252428;
   /* border: 3px solid #f53c3c; */
 }
+#workspaces button.empty {
+  color: #a5a5a5;
+  background-color: #252428;
+}
 
 #workspaces button.focused {
   background-color: #f5f5f5;
