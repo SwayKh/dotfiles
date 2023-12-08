@@ -64,7 +64,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets
-        -- { name = "codeium" },
+        { name = "codeium" },
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
       }),
