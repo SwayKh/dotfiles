@@ -7,7 +7,11 @@ local map = vim.keymap.set
 
 -- My Keybinds
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Easy way to get back to normal mode from home row
 map("i", "jj", "<Esc>")
+-- map("i", "kj", "<Esc>") -- kj simulates ESC
+-- map("i", "jk", "<Esc>") -- jk simulates ESC
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "-", ":Oil <CR>")
@@ -24,7 +28,15 @@ map("n", "<C-k>", "<C-w>k", { desc = "Move Between splits with HJKL" })
 map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
 
-map({ "n", "i", "v" }, "<C-s>", "<ESC>:w<CR>", { desc = "[S]ave file" })
+-- Split Resize
+map("n", "<C-S-Left>", ":vertical resize +3<CR>") -- Control+Left resizes vertical split +
+map("n", "<C-S-Right>", ":vertical resize -3<CR>") -- Control+Right resizes vertical split -
+map("n", "<C-S-h>", "<C-w><") -- resize window to left
+map("n", "<C-S-l>", "<C-w>>") -- resize window to right
+map("n", "<C-S-k>", "<C-w>+") -- resize window to up
+map("n", "<C-S-j>", "<C-w>-") -- resize window to down
+
+map({ "n", "i", "v" }, "<C-s>", "<ESC>:w!<CR>", { desc = "[S]ave file" })
 map({ "n", "v" }, "qq", "<ESC>:bd<CR>", { desc = "[Q]uit, Actually runs :bd buffer delete" })
 map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit" })
 
@@ -39,6 +51,24 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Autocomplete brackets and quotes
+map("i", "'", "''<left>")
+map("i", '"', '""<left>')
+map("i", "(", "()<left>")
+map("i", "[", "[]<left>")
+map("i", "{", "{}<left>")
+map("i", "{;", "{};<left><left>")
+map("i", "/*", "/**/<left><left>")
+
+vim.cmd("cnoreabbrev Q  q")
+vim.cmd("cnoreabbrev q1  q!")
+vim.cmd("cnoreabbrev Q1  q!")
+vim.cmd("cnoreabbrev Qa1 qa!")
+vim.cmd("cnoreabbrev Qa qa")
+vim.cmd("cnoreabbrev W  w")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev WQ wq")
 
 -- document existing key chains
 require("which-key").register({

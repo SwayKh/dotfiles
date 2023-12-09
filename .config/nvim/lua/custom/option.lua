@@ -9,19 +9,12 @@ vim.opt.autoread = true
 vim.opt.colorcolumn = "120"
 vim.opt.laststatus = 3
 vim.o.pumheight = 10 -- Max items to show in pop up menu
-vim.o.cmdheight = 5 -- Max items to show in command menu
-
--- Fix Tab length
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.showtabline = 2
-vim.opt.autoindent = true
-vim.opt.expandtab = true
+vim.o.cmdheight = 0 -- Max items to show in command menu
+vim.opt.spell = true -- set spell on
+vim.opt.spelllang = "en_us"
+vim.opt.wrap = true -- enable text wrapping
 vim.opt.breakindent = true
-vim.opt.smartindent = false
--- vim.opt.softtabstop = 4
--- vim.opt.shiftround = true
+vim.opt.textwidth = 80
 
 vim.opt.termguicolors = true
 vim.wo.number = true
@@ -32,19 +25,23 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
--- Keep scape above and below when scrolling
 vim.opt.scrolloff = 10
-
--- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
-
 -- Decrease update time
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
+
+-- Fix Tab length
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.showtabline = 2
+vim.opt.autoindent = true
+vim.opt.expandtab = true
+vim.opt.breakindent = true
+vim.opt.smartindent = false
 
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = "menuone,noselect"
