@@ -1,6 +1,5 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
   enabled = true,
   opts = {
     -- add any options here
@@ -24,8 +23,10 @@ return {
         },
       },
       presets = {
-        -- command_palette = false,
+        command_palette = true,
         long_message_to_split = false,
+        bottom_search = true,
+        lsp_doc_border = true,
       },
       views = {
         cmdline_popup = {
@@ -40,6 +41,7 @@ return {
         },
         popupmenu = {
           relative = "editor",
+          backend = "cmp",
           position = {
             row = 8,
             col = "50%",

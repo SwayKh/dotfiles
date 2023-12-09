@@ -11,6 +11,7 @@ return {
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-cmdline", -- For cmdline suggestions
     "onsails/lspkind.nvim", -- vs-code like pictograms
     "rafamadriz/friendly-snippets", -- useful snippets
   },
@@ -18,6 +19,7 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
+    -- local cmdline = require("cmp_cmdline")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -80,6 +82,27 @@ return {
           symbol_map = { Codeium = "" },
         }),
       },
+    })
+    -- `/` cmdline setup.
+    cmp.setup.cmdline("/", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    })
+    -- `:` cmdline setup.
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "path" },
+      }, {
+        {
+          name = "cmdline",
+          option = {
+            ignore_cmds = { "Man", "!" },
+          },
+        },
+      }),
     })
   end,
 }
