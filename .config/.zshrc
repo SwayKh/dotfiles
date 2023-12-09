@@ -49,6 +49,7 @@ alias gp='git push'
 
 eval "$(starship init zsh)"
 source /usr/share/nvm/init-nvm.sh
+# (cat ~/.cache/wal/sequences &)
 
 # This needs to be defined in root user.
 #  recovery-pacman() {
