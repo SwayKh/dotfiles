@@ -1,22 +1,13 @@
 -- [[ Basic Keymaps ]]
 
--- Keymaps for better default experience
--- See `:help map()`
-
 local map = vim.keymap.set
 
 -- My Keybinds
+-- Plugin specific keymaps are in the plugin configs
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-
--- Easy way to get back to normal mode from home row
 map("i", "jj", "<Esc>")
--- map("i", "kj", "<Esc>") -- kj simulates ESC
--- map("i", "jk", "<Esc>") -- jk simulates ESC
-
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "-", ":Oil <CR>")
-
--- Plugin specific keymaps are in the plugin configs
 
 map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
 map("i", "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
@@ -60,15 +51,6 @@ map("i", "[", "[]<left>")
 map("i", "{", "{}<left>")
 map("i", "{;", "{};<left><left>")
 map("i", "/*", "/**/<left><left>")
-
-vim.cmd("cnoreabbrev Q  q")
-vim.cmd("cnoreabbrev q1  q!")
-vim.cmd("cnoreabbrev Q1  q!")
-vim.cmd("cnoreabbrev Qa1 qa!")
-vim.cmd("cnoreabbrev Qa qa")
-vim.cmd("cnoreabbrev W  w")
-vim.cmd("cnoreabbrev Wq wq")
-vim.cmd("cnoreabbrev WQ wq")
 
 -- document existing key chains
 require("which-key").register({
