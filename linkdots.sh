@@ -7,7 +7,7 @@ sudo ln -sfn "$path"/.config/.zshrc "$HOME"/.zshrc
 sudo ln -sfn "$path"/.config/.profile "$HOME"/.profile
 sudo ln -sfn "$path"/.config/.bashrc "$HOME"/.bashrc
 sudo ln -sfn "$path"/.config/starship.toml "$HOME"/.config/starship.toml
-sudo ln -sfn "$path"/.config/.tmux.conf "$HOME"/.tmux.conf
+# sudo ln -sfn "$path"/.config/.tmux.conf "$HOME"/.tmux.conf
 
 # .config Directory
 
@@ -44,8 +44,8 @@ sudo ln -sfn "$path"/.config/foot "$HOME"/.config/
 [ -d "$HOME"/.config/dunst ] && rm -rf "$HOME"/.config/dunst
 sudo ln -sfn "$path"/.config/dunst "$HOME"/.config/
 
-# [ -d "$HOME"/.config/tmux ] && rm -rf "$HOME"/.config/tmux
-# sudo ln -sfn "$path"/.config/tmux "$HOME"/.config/
+[ -d "$HOME"/.config/tmux ] && rm -rf "$HOME"/.config/tmux
+sudo ln -sfn "$path"/.config/tmux "$HOME"/.config/
 
 [ -d "$HOME"/.config/swaylock ] && rm -rf "$HOME"/.config/swaylock
 sudo ln -sfn "$path"/.config/swaylock "$HOME"/.config/
