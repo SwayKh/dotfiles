@@ -5,7 +5,7 @@ return {
     lazy = true,
     priority = 1000,
     name = "catppuccin",
-    enabled = false,
+    enabled = true,
   },
   {
     --2
