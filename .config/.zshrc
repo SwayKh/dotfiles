@@ -31,6 +31,7 @@ alias pipes='pipes.sh'
 alias vim='nvim'
 alias :q='exit'
 alias lf=lfcd
+alias pm="sudo pacman"
 alias yeet="sudo pacman -Rnsc"
 alias up='paru -Syu'
 alias lg='lazygit'
