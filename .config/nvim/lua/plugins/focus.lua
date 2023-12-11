@@ -1,6 +1,7 @@
 return {
   "nvim-focus/focus.nvim",
   lazy = true,
+  enabled = false,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("focus").setup({
