@@ -5,9 +5,14 @@ local map = vim.keymap.set
 -- My Keybinds
 -- Plugin specific keymaps are in the plugin configs
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-map("i", "jj", "<Esc>")
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "-", ":Oil <CR>")
+
+map("i", "jj", "<Esc>")
+map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file" })
+map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
+map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
+map({ "n", "v" }, "M", "gm", { desc = "Move to the middle of the line" })
 
 map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
 map("i", "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
@@ -28,7 +33,7 @@ map("n", "<C-S-k>", "<C-w>+") -- resize window to up
 map("n", "<C-S-j>", "<C-w>-") -- resize window to down
 
 map({ "n", "i", "v" }, "<C-s>", "<ESC>:w!<CR>", { desc = "[S]ave file" })
-map({ "n", "v" }, "qq", "<ESC>:bd<CR>", { desc = "[Q]uit, Actually runs :bd buffer delete" })
+map({ "n", "v" }, "qq", ":q<CR>", { desc = "[Q]uit, Actually runs :bd buffer delete" })
 map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit" })
 
 map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })

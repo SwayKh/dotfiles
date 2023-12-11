@@ -28,7 +28,7 @@ return {
       dashboard.button("f", "󰱼  > Find file", ":Telescope find_files<CR>"),
       dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
       dashboard.button("e", "  > File Tree", ":NvimTreeToggle<CR>"),
-      dashboard.button("s", "  > Settings", ":e ~/.config/nvim/init.lua<CR> <BAR> <CMD>NvimTreeToggle<CR>"),
+      dashboard.button("s", "  > Settings", ":Oil ~/dotfiles/.config/nvim/<CR> "),
       dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
     }
     local fortune = require("alpha.fortune")
