@@ -1,6 +1,7 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 vim.cmd.colorscheme("catppuccin-macchiato")
+-- vim.cmd.colorscheme("sonokai")
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "" })
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -13,14 +14,11 @@ vim.opt.autowrite = true
 vim.opt.autoread = true
 vim.opt.colorcolumn = "120"
 vim.opt.laststatus = 3
-vim.o.pumheight = 10 -- Max items to show in pop up menu
-vim.o.cmdheight = 0 -- Max items to show in command menu
 vim.opt.spell = false -- set spell on
 vim.opt.spelllang = "en_us"
 vim.opt.wrap = true -- enable text wrapping
 vim.opt.breakindent = true
 vim.opt.textwidth = 80
-vim.o.fileencoding = "utf-8"
 vim.opt.termguicolors = true
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -34,9 +32,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 10
 vim.wo.signcolumn = "yes"
--- Decrease update time
-vim.opt.updatetime = 50
-vim.opt.timeoutlen = 300
+vim.opt.pumheight = 10 -- Max items to show in pop up menu
+vim.opt.cmdheight = 0 -- Max items to show in command menu
+vim.opt.fileencoding = "utf-8"
+vim.opt.updatetime = 100
+vim.opt.timeoutlen = 500
 
 -- Fix Tab length
 vim.opt.tabstop = 2
