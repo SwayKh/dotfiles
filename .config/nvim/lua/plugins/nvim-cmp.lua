@@ -19,7 +19,6 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
-    -- local cmdline = require("cmp_cmdline")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -72,19 +71,24 @@ return {
       }),
       window = {
         documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        -- documentation = {
+        --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        --   winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        -- },
       },
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
           mode = "symbol",
-          maxwidth = 50,
+          maxwidth = 80,
           ellipsis_char = "...",
           symbol_map = { Codeium = "" },
         }),
       },
     })
     -- `/` cmdline setup.
-    cmp.setup.cmdline("/", {
+    cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = "buffer" },

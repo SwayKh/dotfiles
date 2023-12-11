@@ -13,6 +13,7 @@ return {
 
     mason.setup({
       ui = {
+        border = "rounded",
         icons = {
           package_installed = "✓",
           package_pending = "➜",
@@ -63,6 +64,9 @@ return {
         "delve",
         "debugpy",
       },
+      auto_update = true,
+      run_on_start = true,
+      start_delay = 3000, -- 3 second delay
     })
   end,
 }
