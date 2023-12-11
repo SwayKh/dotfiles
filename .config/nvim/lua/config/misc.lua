@@ -1,12 +1,3 @@
--- local function theme()
--- vim.cmd.colorscheme("catppuccin")
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
--- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
--- vim.opt.fillchars = { eob = ""}
--- end
--- theme()
-
 vim.cmd("cnoreabbrev Q  q")
 vim.cmd("cnoreabbrev q1  q!")
 vim.cmd("cnoreabbrev Q1  q!")
@@ -37,3 +28,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
+
+-- local function theme()
+-- vim.cmd.colorscheme("catppuccin")
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+-- vim.opt.fillchars = { eob = ""}
+-- end
+-- theme()
