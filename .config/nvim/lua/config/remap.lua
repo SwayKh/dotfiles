@@ -10,6 +10,10 @@ map("n", "-", ":Oil <CR>")
 
 map("i", "jj", "<Esc>")
 map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file" })
+
+-- Can't use K, needed for documentation
+-- map({ "n", "v" }, "J", "<C-d>zz", { desc = "Move Down smoothly" })
+-- map({ "n", "v" }, "K", "<C-u>zz", { desc = "Move Up smoothly" })
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 map({ "n", "v" }, "M", "gm", { desc = "Move to the middle of the line" })
