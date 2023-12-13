@@ -17,6 +17,9 @@ return {
     lazy = true,
     event = { "BufReadPre", "BufNewFile" },
   },
+  {
+    "christoomey/vim-tmux-navigator",
+  },
 
   {
     -- Need this for css color highlighting, Can't get treesitter to work

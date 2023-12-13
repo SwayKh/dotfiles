@@ -24,7 +24,8 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
-export TERM=xterm-256color
+export VISUAL=nvim
+[ -z "$TMUX" ] && export TERM=xterm-256color
 
 alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'

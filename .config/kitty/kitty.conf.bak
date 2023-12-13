@@ -9,7 +9,7 @@
 # bold_italic_font Operator Mono Medium
 # font_family      Input Mono
 
-font_family      Hack Nerd Font
+font_family      JetBrainsMono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -249,6 +249,6 @@ allow_remote_control yes
 include ./theme.conf
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Monokai Classic
 include current-theme.conf
 # END_KITTY_THEME
