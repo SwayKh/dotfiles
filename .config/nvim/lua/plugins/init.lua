@@ -4,14 +4,12 @@
 -- See the kickstart.nvim README for more information
 return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
-
   -- Git related plugins
   {
     "tpope/vim-fugitive",
     lazy = true,
     event = { "BufReadPre", "BufNewFile" },
   },
-
   {
     "tpope/vim-rhubarb",
     lazy = true,
@@ -20,7 +18,6 @@ return {
   {
     "christoomey/vim-tmux-navigator",
   },
-
   {
     -- Need this for css color highlighting, Can't get treesitter to work
     "NvChad/nvim-colorizer.lua",
@@ -67,10 +64,10 @@ return {
       sticky = true,
       padding = true,
       toggler = {
-        line = "<C-/>",
+        line = "<M-/>",
       },
       opleader = {
-        line = "<C-/>",
+        line = "<M-/>",
       },
       mappings = {
         basic = true,

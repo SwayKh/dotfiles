@@ -7,15 +7,16 @@ vim.cmd("cnoreabbrev W  w")
 vim.cmd("cnoreabbrev Wq wq")
 vim.cmd("cnoreabbrev WQ wq")
 
-vim.cmd([[
-if &term =~ '^screen'
-" tmux will send xterm-style keys when its xterm-keys option is on
-execute "set <xUp>=\e[1;*A"
-execute "set <xDown>=\e[1;*B"
-execute "set <xRight>=\e[1;*C"
-execute "set <xLeft>=\e[1;*D"
-endif
-]])
+-- Put this in for working with TMUX, Don't know if I'll need it
+-- vim.cmd([[
+-- if &term =~ '^screen'
+-- " tmux will send xterm-style keys when its xterm-keys option is on
+-- execute "set <xUp>=\e[1;*A"
+-- execute "set <xDown>=\e[1;*B"
+-- execute "set <xRight>=\e[1;*C"
+-- execute "set <xLeft>=\e[1;*D"
+-- endif
+-- ]])
 
 -- Open help window in a vertical split to the right.
 vim.api.nvim_create_autocmd("BufWinEnter", {
