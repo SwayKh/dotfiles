@@ -37,6 +37,7 @@ alias pm="sudo pacman"
 alias yeet="sudo pacman -Rnsc"
 alias up='paru -Syu'
 alias lg='lazygit'
+alias ls='eza -alh --color=always --group-directories-first'
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
 
@@ -73,11 +74,6 @@ source /usr/share/nvm/init-nvm.sh
 
 # Remove duplicates from $PATH
 typeset -U PATH
-
-my_alias() {
-    alias ls='eza -alh --color=always --group-directories-first'
-}
-my_alias
 
 check_history(){
   awk -F ";" '{print $2}' $HISTFILE | grep "$1" | tac | bat
