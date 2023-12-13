@@ -6,3 +6,7 @@
 2023/12/03 (16:24:13) | ===> btop++ v.1.2.13
 2023/12/03 (16:24:13) | ERROR: Stall in Runner thread, restarting!
 2023/12/03 (16:24:55) | WARNING: Failed to join _runner thread on exit!
+
+2023/12/13 (20:26:20) | ===> btop++ v.1.2.13
+2023/12/13 (20:26:20) | ERROR: No tty detected!
+btop++ needs an interactive shell to run.
