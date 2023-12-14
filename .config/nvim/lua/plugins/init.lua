@@ -1,33 +1,17 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
 return {
+  -- {
+  --   "plugin/shorthand",
+  --   lazy = true,
+  --   event = { "BufReadPre", "BufNewFile" },
+  -- },
   { "nvim-tree/nvim-web-devicons", lazy = true },
-  -- Git related plugins
-  {
-    "tpope/vim-fugitive",
-    lazy = true,
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "tpope/vim-rhubarb",
-    lazy = true,
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-  },
-  {
-    -- Need this for css color highlighting, Can't get treesitter to work
-    "NvChad/nvim-colorizer.lua",
-    event = { "BufReadPre", "BufNewFile" },
-    config = true,
-    enabled = true,
-  },
-  -- Useful plugin to show you pending keybinds.
+  { "tpope/vim-fugitive", lazy = true },
+  { "tpope/vim-rhubarb", lazy = true },
+  { "tpope/vim-sleuth", lazy = true },
+  { "christoomey/vim-tmux-navigator", lazy = false },
   { "folke/which-key.nvim", opts = {} },
-
+  { "NvChad/nvim-colorizer.lua", config = true },
+  { "kevinhwang91/nvim-bqf" },
   {
     -- Add indentation guides even on blank lines
     "lukas-reineke/indent-blankline.nvim",
@@ -57,24 +41,28 @@ return {
     },
     main = "ibl",
   },
-  -- "gc" to comment visual regions/lines
   {
     "numToStr/Comment.nvim",
-    opts = {
-      sticky = true,
-      padding = true,
-      toggler = {
-        line = "<M-/>",
-      },
-      opleader = {
-        line = "<M-/>",
-      },
-      mappings = {
-        basic = true,
-        extra = true,
-      },
-    },
+    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+    opts = {},
     event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("Comment").setup({
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+        sticky = true,
+        padding = true,
+        toggler = {
+          line = "<M-/>",
+        },
+        opleader = {
+          line = "<M-/>",
+        },
+        mappings = {
+          basic = true,
+          extra = true,
+        },
+      })
+    end,
   },
   {
     "kylechui/nvim-surround",
