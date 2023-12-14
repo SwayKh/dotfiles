@@ -7,6 +7,7 @@ sudo ln -sfn "$path"/.config/.zshrc "$HOME"/.zshrc
 sudo ln -sfn "$path"/.config/.profile "$HOME"/.profile
 sudo ln -sfn "$path"/.config/.bashrc "$HOME"/.bashrc
 sudo ln -sfn "$path"/.config/starship.toml "$HOME"/.config/starship.toml
+sudo ln -Sfn "$path"/.config/settings.json "$HOME"/.config/Code/User/settings.json
 # sudo ln -sfn "$path"/.config/tmux/tmux.conf "$HOME"/.tmux.conf
 
 # .config Directory

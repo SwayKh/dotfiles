@@ -70,9 +70,9 @@ map <enter> open
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
 map f calcdirsize # Calculate the directory size in the editor without NCDU
-map <a-i> convertToJpg
 
 # Movement Bindings
+map gh cd ~ # This is default
 map g/ cd /
 map gD cd ~/Documents
 map gd cd ~/Downloads
@@ -95,7 +95,6 @@ map got cd ~/Projects/Web/TheOdinProject/
 
 map gA cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/
 
-map gh cd ~ # This is default
 
 # Custom Function
 
@@ -110,7 +109,6 @@ cmd clear_trash % rm -rf ~/.trash/*
 cmd lfrc ${{
   $EDITOR "$HOME"/.config/lf/lfrc
   lf -remote "send $id source ~/.config/lf/lfrc"
-
 }}
 
 cmd open ${{
@@ -118,6 +116,7 @@ cmd open ${{
     text/plain) $EDITOR "$f" ;;
     text/x-shellscript) $EDITOR "$f" ;; # Executable shell scripts
     application/javascript) $EDITOR "$f" ;; # Needed for json files
+    application/json) $EDITOR "$f" ;; # Apparrently This is needed for json files
     inode/x-empty) $EDITOR "$f" ;; # All empty files, that are created using mkfile
     application/octet-stream) xdg-open "$f" ;;
     text/*) $EDITOR "$f" ;;
@@ -162,9 +161,9 @@ cmd Unarchive ${{
 }}
 
 cmd setwallpaper &{{
+  # cp "$f" ~/.config/wall.jpg;
+  # swaybg -m fill -i ~/.config/wall.jpg &
   wallbg="$HOME/.local/bin/wallbg"
-  cp "$f" ~/.config/wall.jpg;
-  # swaybg -m fill -i ~/.config/wall.png &
   $wallbg "$f"
   lf -remote 'send reload'
 }}
