@@ -16,7 +16,7 @@ configuration {
     case-sensitive: false;
     cycle: true;
 	  max-history-size: 50;
-	  font: "Hack Nerd Mono 12";
+	  font: "JetBrainsMono Nerd Font 12";
 
     filebrowser {
       directory: "/home/sumit/";
