@@ -3,9 +3,9 @@
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   /* background-color: rgba(43, 48, 59, 1); */
-  background-color: #252428;
+  background-color: #04142d;
 }
 
 window#waybar {
@@ -29,23 +29,23 @@ button:hover {
 }
 
 #workspaces button {
-  background-color: #252428;
+  /* background-color: #252428; */
   color: #f5f5f5;
 }
 
 #workspaces button.urgent {
   color: #f53c3c;
-  background-color: #252428;
+  /* background-color: #252428; */
   /* border: 3px solid #f53c3c; */
 }
 #workspaces button.empty {
   color: #a5a5a5;
-  background-color: #252428;
+  /* background-color: #252428; */
 }
 
 #workspaces button.active {
   color: #8fb666;
-  background-color: #252428;
+  /* background-color: #252428; */
   /* border: 3px solid #7bcbd5; */
 }
 
@@ -96,7 +96,7 @@ button:hover {
   padding-right: 10px;
   margin: 3px 3px;
   color: #f5f5f5;
-  background-color: #252428;
+  /* background-color: #252428; */
 }
 
 #custom-power {

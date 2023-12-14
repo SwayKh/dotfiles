@@ -68,7 +68,7 @@
         ],
     },
     "tray": {
-        "icon-size": 22,
+        "icon-size": 18,
         "spacing": 5,
         "show-passive-items": true,
     },
