@@ -84,7 +84,7 @@ map gt cd ~/Test
 map gT cd ~/.trash
 map ga cd ~/Android
 map gs cd ~/scripts
-map g. cd ~/dotfiles/.config/
+map g. cd ~/dotfiles/
 
 map gr cd ~/repos/
 map gn cd ~/Obsidian/Vault/
