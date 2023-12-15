@@ -35,8 +35,8 @@ vim.wo.signcolumn = "yes"
 vim.opt.pumheight = 10 -- Max items to show in pop up menu
 vim.opt.cmdheight = 0 -- Max items to show in command menu
 vim.opt.fileencoding = "utf-8"
-vim.opt.updatetime = 100
-vim.opt.timeoutlen = 500
+vim.opt.updatetime = 400
+vim.opt.timeoutlen = 100
 
 -- Fix Tab length
 vim.opt.tabstop = 2
