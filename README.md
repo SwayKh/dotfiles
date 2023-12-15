@@ -4,17 +4,17 @@
     | |_| | |_| || | |  _|  | || |___| |___ ___) |
     |____/ \___/ |_| |_|   |___|_____|_____|____/
 
-***
+---
 
 ## Screenshot
 
-***
+---
 
-![Screenshot](./Screenshot.png)
+![Screenshot](./Screenshot.jpg)
 
 ## Installation
 
-***
+---
 
 Follow these steps (Beware that this will remove all your old configs. So Prepare a back-up beforehand)
 
@@ -24,36 +24,45 @@ Follow these steps (Beware that this will remove all your old configs. So Prepar
 
 ## What does it contain?
 
-***
+---
 
 I have put the following configs in the repo
 
-> - [Hyprland](.config/hypr)
-> - [Waybar](.config/waybar)
-> - [Rofi](.config/rofi)
-> - [Kitty](.config/kitty)
-> - [LF Config](.config/lf)
-> - [Neovim](.config/nvim)
-> - [Btop](.config/btop)
-> - [Neofetch](.config/neofetch)
-> - [Micro](.config/micro)
-> - [Swaylock](.config/swaylock)
-> - [.profile](.config/.profile)
-> - [.bashrc](.config/.bashrc)
-> - [.zshrc](.config/.zshrc)
-> - [Scripts](.config/hypr/scripts)
-> - [ly Config](.config/ly_config.ini)
+> - [Hyprland](./hypr)
+> - [Waybar](./waybar)
+> - [Rofi](./rofi)
+> - [Kitty](./kitty)
+> - [Foot](./foot)
+> - [LF Config](./lf)
+> - [Neovim](./nvim)
+> - [Btop](./btop)
+> - [Neofetch](./neofetch)
+> - [Micro](./micro)
+> - [Swaylock](./swaylock)
+> - [Tmux](./tmux)
+> - [profile](./.profile)
+> - [bashrc](./.bashrc)
+> - [zshrc](./.zshrc)
+> - [Startship](./starship.toml)
+> - [ly Config](./ly_config.ini)
+> - [Scripts](https://github.com/swaykh/scripts)
+
+There's also some configs, I've kept as backup. For eg
+
+> - [Retroarch Config](./retroarch.cfg)
+> - [Old Vim Config](./init.vim.backup)
+> - [KDE shortcuts file](./kde)
+> - [VS Code Settings.json](./settings.json)
 
 ### Hyprland
 
-***
+---
 
 My Hyprland Configs and keybinds. I'll put the list of programs I have installed in a note to make it easier to setup or choose some alternatives to use.
 
-
 ### Details
 
-***
+---
 
 Added useful scripts with hyprland config for Screenshots, Colorpicker, Powermenu with Rofi.
 
@@ -67,7 +76,7 @@ ctpv - [ctpv](https://github.com/NikitaIvanovV/ctpv) is tool for image preview w
 
 ### [Pokemon-colorscripts](https://github.com/nuke-dash/pokemon-colorscripts-mac) or [Shell-Color-Scripts](https://gitlab.com/dwt1/shell-color-scripts)
 
-***
+---
 
 My .zshrc starts up with pokemon-colorscripts or Shell-color-scripts, So be sure to install it. Or remove it from .zshrc
 
@@ -82,7 +91,7 @@ yay -S shell-color-scripts
 
 ### LF File Manager
 
-***
+---
 
 There is a custom LF install script that i made to install LF and setup my configs with it
 You can find it in my [Scripts](https://github.com/SwayKh/Scripts) repository
