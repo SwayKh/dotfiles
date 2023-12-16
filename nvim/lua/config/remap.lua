@@ -22,7 +22,7 @@ map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
 -- map({ "n", "v" }, "K", "<C-u>zz", { desc = "Move Up smoothly" })
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
-map({ "n", "v" }, "M", "gm", { desc = "Move to the middle of the line" })
+map({ "n", "v" }, "M", ":call cursor(0, virtcol('$')/2)<CR>", { desc = "Move to the middle of the line" })
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
