@@ -30,13 +30,13 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 vim.wo.signcolumn = "yes"
 vim.opt.pumheight = 10 -- Max items to show in pop up menu
 vim.opt.cmdheight = 0 -- Max items to show in command menu
 vim.opt.fileencoding = "utf-8"
 vim.opt.updatetime = 400
-vim.opt.timeoutlen = 100
+-- vim.opt.timeoutlen = 100
 
 -- Fix Tab length
 vim.opt.tabstop = 2
