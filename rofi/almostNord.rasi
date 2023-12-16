@@ -2,7 +2,8 @@
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
     font:                           "JetBrainsMono Nerd Font 12";
-    foreground:                     #87A2AA;
+    foreground:                     #D99887; //#F2C395;
+    oldforeground:                  #87A2AA;
     background:                     #333333;
     highlight:	                    #F5F5F5;
     old-highlight:                  #F1594F;
@@ -15,6 +16,7 @@
     border:                         #1B1E25;
     darkblack:                      #090A0F;
     darkgray:                       #252428;
+    darkBlue:                       #04142D;
 }
 
 window {
@@ -52,19 +54,19 @@ listview {
     border: 0px;
     margin: 0px;
     scrollbar: false;
-    background-color : @darkgray;
+    background-color : @darkBlue;
 }
 
 textbox {
     text-color: @foreground;
-    background-color: @darkgray;
+    background-color: @darkBlue;
 }
 
 entry {
     enabled:           true;
     padding:	       0px 5px;
     text-color:        @foreground;
-    background-color:  @darkgray;
+    background-color:  @darkBlue;
 }
 
 prompt {
@@ -79,19 +81,19 @@ textbox-prompt-colon {
 }
 
 inputbar {
-    background-color: @darkgray;
+    background-color: @darkBlue;
     spacing:          8px;
     padding:          8px;
     margin:           0px;
     border:           0px;
     border-radius:    0px;
-    border-color:     @darkgray;
+    border-color:     @darkBlue;
     children:         ["textbox-prompt-colon", entry];
 }
 
 mode-switcher {
     text-color: @foreground;
-    background-color: @darkgray;
+    background-color: @darkBlue;
 }
 
 element {
@@ -99,7 +101,7 @@ element {
     border:       0;
     padding:      5px;
     text-color: @foreground;
-    background-color: @darkgray;
+    background-color: @darkBlue;
 }
 
 element-icon {
@@ -107,7 +109,7 @@ element-icon {
 }
 
 element normal.normal {
-    background-color: @darkgray;
+    background-color: @darkBlue;
     text-color:       @foreground;
 }
 
@@ -117,37 +119,37 @@ element normal.urgent {
 }
 
 element normal.active {
-    background-color: @darkgray;
+    background-color: @darkBlue;
     text-color:       @foreground;
 }
 
 element selected.normal {
-    text-color: @darkgray;
+    text-color: @darkBlue;
     background-color: @foreground;
 }
 
 element selected.urgent {
     background-color: @red;
-    text-color:       @darkgray;
+    text-color:       @darkBlue;
 }
 
 element selected.active {
     background-color: @yellow;
-    text-color:       @darkgray;
+    text-color:       @darkBlue;
 }
 
 element alternate.normal {
-    background-color: @darkgray;
+    background-color: @darkBlue;
     text-color:       @foreground;
 }
 
 element alternate.urgent {
-    background-color: @darkgray;
+    background-color: @darkBlue;
     text-color:       @foreground;
 }
 
 element alternate.active {
-    background-color: @darkgray;
+    background-color: @darkBlue;
     text-color:       @foreground;
 }
 
