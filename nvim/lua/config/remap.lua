@@ -51,13 +51,14 @@ map("n", "<C-S-k>", "<C-w>+") -- resize window to up
 map("n", "<C-S-j>", "<C-w>-") -- resize window to down
 
 -- Autocomplete brackets and quotes
-map("i", "'", "''<left>")
-map("i", '"', '""<left>')
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
-map("i", "{;", "{};<left><left>")
-map("i", "/*", "/**/<left><left>")
+-- Feels annoying somehow, autopair plugin is better
+-- map("i", "'", "''<left>")
+-- map("i", '"', '""<left>')
+-- map("i", "(", "()<left>")
+-- map("i", "[", "[]<left>")
+-- map("i", "{", "{}<left>")
+-- map("i", "{;", "{};<left><left>")
+-- map("i", "/*", "/**/<left><left>")
 
 -- document existing key chains
 require("which-key").register({
