@@ -49,8 +49,8 @@ return {
     vim.keymap.set("n", "<leader>sd", ":Telescope diagnostics<CR>", { desc = "[S]earch [D]iagnostics" }) --diagnostics
     vim.keymap.set("n", "<leader>sr", ":Telescope resume<CR>", { desc = "[S]earch [R]esume" }) --resume
 
-    vim.keymap.set("n", "<leader>cs", ":Telescope colorscheme<CR>", { desc = "Telescope show [C]olor[s]cheme" })
-    vim.keymap.set("n", "<leader>ch", ":Telescope keymaps<CR>", { desc = "Telescope show Keymaps" })
+    vim.keymap.set("n", "<leader>sc", ":Telescope colorscheme<CR>", { desc = "Telescope [S]how [C]olorscheme" })
+    vim.keymap.set("n", "<leader>sk", ":Telescope keymaps<CR>", { desc = "Telescope [S]how [K]eymaps" })
 
     telescope.load_extension("fzf")
   end,
