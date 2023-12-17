@@ -2,7 +2,7 @@ configuration {
     modi: "drun,window,run,filebrowser";
     icon-theme: "Papirus";
     show-icons: false;
-    terminal: "foot";
+    terminal: "kitty";
     /*drun-display-format: "{icon} {name}";*/
     location: 0;
     disable-history: false;
