@@ -63,6 +63,7 @@
         "on-click-middle": "close",
         "ignore-list": [
            "kitty",
+           "wezterm",
            "foot",
            "footclient"
         ],
