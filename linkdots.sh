@@ -48,6 +48,9 @@ sudo ln -sfn "$path"/dunst "$HOME"/.config/
 [ -d "$HOME"/.config/tmux ] && rm -rf "$HOME"/.config/tmux
 sudo ln -sfn "$path"/tmux "$HOME"/.config/
 
+[ -d "$HOME"/.config/wezterm ] && rm -rf "$HOME"/.config/wezterm
+sudo ln -sfn "$path"/wezterm "$HOME"/.config/
+
 [ -d "$HOME"/.config/swaylock ] && rm -rf "$HOME"/.config/swaylock
 sudo ln -sfn "$path"/swaylock "$HOME"/.config/
 
