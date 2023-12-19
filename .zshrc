@@ -34,7 +34,7 @@ alias vim='nvim'
 alias :q='exit'
 alias lf=lfcd
 alias pm="sudo pacman"
-alias yeet="sudo pacman -Rnsc"
+alias yeet="sudo pacman -Rns"
 alias up='paru -Syu'
 alias lg='lazygit'
 alias ls='eza -alh --color=always --group-directories-first'
