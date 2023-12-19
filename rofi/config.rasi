@@ -12,14 +12,11 @@ configuration {
     /*display-window: " 󰖲 Window";*/
     /*display-filebrowser: "  Files";*/
     sidebar-mode: true;
-
     case-sensitive: false;
     cycle: true;
 	  max-history-size: 50;
-	  font: "JetBrainsMono Nerd Font 12";
-
     filebrowser {
       directory: "/home/sumit/";
     }
 }
-@import "almostNord"
+@import "color"
