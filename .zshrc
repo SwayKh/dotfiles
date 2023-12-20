@@ -99,7 +99,7 @@ turnWifi(){
 }
 
 refreshMirrors() {
-  sudo reflector --verbose -l 15 --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+  sudo reflector --verbose --latest 15 --fastest 15 --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 }
 
 ch() {
