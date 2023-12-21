@@ -9,31 +9,11 @@ set ignorecase true # Ignore case when searching
 set scrolloff 10 # Leaves space on Top and Bottom of the screen
 set drawbox true # Shows the box around the panes
 set mouse true
-
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
 set preview true
 set sixel true
+set dircounts false # shows number of files in dir instead of total size
 set previewer ~/.config/lf/preview
-
-# set previewer ctpv
-# set cleaner ctpvclear
-# &ctpv -s $id
-# &ctpvquit $id
-
-%mkdir -p ~/.trash
-%mkdir -p ~/Android
-
-# Default Keybinds(If I forget)
-# <c-u> Go Up half page
-# <c-d> Go down half page
-# <c-r> Reload the files and directories
-# <Space> Select
-# u Unselect
-# v Invert selection
-# r Rename a file
-# e Open editor
-# w Open shell
-# q Quit
 
 # Remove some default keybindings
 map m #gets in the way of mkdir, mkfile
@@ -54,6 +34,7 @@ map <esc> unselect
 map e $$f # Execute the selected file, must be executabl
 map <backspace2> clear # Clears any cut/copy highlighter
 map oc lfrc
+map op &xdg-open $f
 map sf set info size
 map J :updir; down; open # Move down in parent directory
 map K :updir; up; open # Move up in parent directory
@@ -63,7 +44,7 @@ map md mkdir
 map mf mkfile
 map mp chmod #use 664, 777 notation rather than u+x
 map dd trash
-map D $IFS=':'; rm -rf "$fx"
+map D $rm -rf $fx
 map ua Unarchive
 map <c-f> :fzf_jump
 map <enter> open
@@ -95,8 +76,10 @@ map got cd ~/Projects/Web/TheOdinProject/
 
 map gA cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/
 
-
 # Custom Function
+
+%mkdir -p ~/.trash
+%mkdir -p ~/Android
 
 cmd mkdir %printf "Directory Name: "; read and; mkdir $and; lf -remote 'send reload'
 cmd mkfile %printf "File Name: "; read and; touch $and; lf -remote 'send reload'
@@ -153,11 +136,11 @@ cmd Unarchive ${{
     *.zip) unzip -d "$a" "$f" ;;
     *.tar.gz) tar -xzvf "$f" -C "$a" ;;
     *.tar.xz) tar -xvf "$f" -C "$a" ;;
-  	*.tar.bz2) tar -xjvf "$f" -C "$a" ;;
-  	*.tar) tar -xvf "$f" -C "$a" ;;
+    *.tar.bz2) tar -xjvf "$f" -C "$a" ;;
+    *.tar) tar -xvf "$f" -C "$a" ;;
     *.rar) unrar x "$f" "$a" ;;
     *) echo "Unsupported Format" ;;
-	esac
+  esac
 }}
 
 cmd setwallpaper &{{
