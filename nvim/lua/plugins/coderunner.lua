@@ -33,7 +33,7 @@ return {
       },
       mode = "term", -- Setting this to toggleterm remove the key bind effects
       focus = true,
-      -- startinsert = true, -- Sets the term to insert mode, which exists by default on any keypress
+      startinsert = true, -- Sets the term to insert mode, which exists by default on any keypress
       before_run_filetype = function()
         vim.cmd(":w")
       end,
