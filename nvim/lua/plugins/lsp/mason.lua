@@ -13,7 +13,9 @@ return {
 
     mason.setup({
       ui = {
-        border = "rounded",
+        border = "double",
+        width = 0.8,
+        height = 0.8,
         icons = {
           package_installed = "✓",
           package_pending = "➜",
@@ -25,7 +27,7 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- LSP
-        -- "bash_ls", -- Bash
+        -- "bash-language-server", -- Bash
         "clangd", -- C/C++
         "gopls", -- Golang
         "pyright", -- Python
@@ -44,25 +46,25 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "bash-language-server",
+        { "bash-language-server" },
         -- FORMATTERS
-        "black",
-        "gofumpt",
-        "goimports",
-        "isort",
-        "prettier",
-        "shfmt",
-        "stylua",
+        { "black" },
+        { "gofumpt" },
+        { "goimports" },
+        { "isort" },
+        { "prettier" },
+        { "shfmt" },
+        { "stylua" },
 
         -- LINTERS
-        "codespell",
-        "eslint_d",
-        "pylint",
-        "shellcheck",
+        { "codespell" },
+        { "eslint_d" },
+        { "pylint" },
+        { "shellcheck" },
 
         --DAP
-        "delve",
-        "debugpy",
+        { "delve" },
+        { "debugpy" },
       },
       auto_update = true,
       run_on_start = true,
