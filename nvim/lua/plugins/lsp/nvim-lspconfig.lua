@@ -15,11 +15,13 @@ return {
   },
   config = function()
     local lspconfig = require("lspconfig")
+    local lspui = require("lspconfig.ui.windows")
     local mason_lspconfig = require("mason-lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local util = require("lspconfig.util")
 
     require("neodev").setup()
+    lspui.default_options.border = "double"
 
     -- [[ Configure LSP ]]
     local on_attach = function(_, bufnr)

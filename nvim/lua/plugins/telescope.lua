@@ -13,6 +13,9 @@ return {
     telescope.setup({
       defaults = {
         path_display = { "truncate " },
+        winblend = 0,
+        border = {},
+        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
