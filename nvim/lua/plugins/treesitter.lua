@@ -43,18 +43,16 @@ return {
       },
 
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+      sync_install = false,
       auto_install = true,
-
+      autopairs = { enable = true },
+      rainbow = { enable = true },
+      indent = { enable = true },
+      autotag = { enable = true },
       highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false,
       },
-      -- enable indentation
-      indent = { enable = true },
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = {
-        enable = true,
-      },
-
       incremental_selection = {
         enable = true,
         keymaps = {
