@@ -9,7 +9,6 @@ return {
   { "tpope/vim-rhubarb", lazy = false },
   { "tpope/vim-sleuth", lazy = false },
   { "christoomey/vim-tmux-navigator", lazy = false },
-  { "folke/which-key.nvim", opts = {} },
   { "NvChad/nvim-colorizer.lua", config = true },
   { "kevinhwang91/nvim-bqf" },
   {
