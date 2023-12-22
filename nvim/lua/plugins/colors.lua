@@ -1,15 +1,25 @@
 return {
   {
     "catppuccin/nvim",
-    lazy = true,
     priority = 1000,
     name = "catppuccin",
     enabled = true,
+    config = function()
+      -- vim.cmd.colorscheme("sonokai")
+      vim.cmd.colorscheme("catppuccin-macchiato")
+      vim.opt.background = "dark"
+      vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+      vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+      -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+    end,
   },
   {
     "sainnhe/sonokai",
-    lazy = true,
     priority = 1000,
+    name = "sonokai",
+    enabled = false,
   },
   --   {
   --     "dylanaraps/wal.vim",
