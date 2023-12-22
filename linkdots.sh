@@ -57,5 +57,5 @@ sudo ln -sfn "$path"/swaylock "$HOME"/.config/
 [ -d "$HOME"/.config/swayidle ] && rm -rf "$HOME"/.config/swayidle
 sudo ln -sfn "$path"/swayidle "$HOME"/.config/
 
-[ -f "$HOME"/.config/retroarch/retroarch.cfg ] && rm $HOME/.config/retroarch/retroarch.cfg
-sudo ln -sfn "$path"/retroarch.cfg "$HOME"/.config/retroarch/retroarch.cfg
+[ -f "$HOME"/.config/retroarch/retroarch.cfg ] && rm "$HOME"/.config/retroarch/retroarch.cfg
+sudo ln -sfn "$path"/RetroArch/retroarch.cfg "$HOME"/.config/retroarch/retroarch.cfg
