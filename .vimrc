@@ -36,7 +36,7 @@ Plug 'scrooloose/nerdtree'
 "For undo
 Plug 'mbbill/undotree'
 
-"Git Intergration
+"Git Integration
 Plug 'jreybert/vimagit'
 
 "Most Recently Used Files
@@ -99,7 +99,7 @@ let g:minimap_close='<leader>gc'
 let g:minimap_toggle='<leader>gt'
 
 
-"Paste Code without formating
+"Paste Code without formatting
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
@@ -110,7 +110,7 @@ function! XTermPasteBegin()
     set paste
     return ""
 endfunction
-"Paste code with formating
+"Paste code with formatting
 
 
 "Reloads vimrc after saving but keep cursor position
