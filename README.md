@@ -10,7 +10,7 @@
 
 ---
 
-![Screenshot](./Screenshot.jpg)
+![Screenshot](./img/Screenshot.jpg)
 
 ## Installation
 
