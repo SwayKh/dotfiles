@@ -27,16 +27,19 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         -- LSP
-        -- "bash-language-server", -- Bash
+        "bashls", -- Bash
         "clangd", -- C/C++
         "gopls", -- Golang
         "pyright", -- Python
         "lua_ls", -- Lua
         "html", -- HTML
-        "emmet_ls", -- HTML
+        "htmx", -- HTMX
+        "emmet_language_server", -- HTML
         "cssls", -- CSS
+        "tailwindcss", -- Tailwind CSS
         "tsserver", -- Javascript, TypeScript
-        "biome", -- Json, and JS
+        "eslint", -- React/NextJS/Svelte
+        -- "biome", -- Json, and JS
         "marksman", -- Markdown lsp
         "sqlls", -- SQL
       },
@@ -46,19 +49,19 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        { "bash-language-server" },
+        -- { "bash-language-server" },
         -- FORMATTERS
-        { "black" },
-        { "gofumpt" },
-        { "goimports" },
-        { "isort" },
-        { "prettier" },
-        { "shfmt" },
-        { "stylua" },
+        { "gofumpt" }, -- GO
+        { "goimports" }, -- GO
+        { "black" }, -- Python
+        { "isort" }, -- Python
+        { "prettierd" }, -- JS and Many More
+        { "shfmt" }, -- Shell Script
+        { "stylua" }, -- Lua
 
         -- LINTERS
         { "codespell" },
-        { "eslint_d" },
+        -- { "eslint_d" },
         { "pylint" },
         { "shellcheck" },
 
