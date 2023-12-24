@@ -1,6 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  -- lazy = true,
+  lazy = true,
   -- event = { "BufReadPre", "BufNewFile" },
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
