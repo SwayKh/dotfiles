@@ -75,7 +75,7 @@
     },
     "clock": {
         "interval": 60,
-        "format": "{:%a %I:%M %p  }", // %b %d %Y  --Date formatting
+        "format": "{ :%I:%M %p %a %b %d }", // %b %d %Y  --Date formatting
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
