@@ -1,0 +1,18 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+font pango:  JetBrainsMono Nerd Font 10
+
+default_border pixel 2
+default_floating_border pixel 2
+gaps outer 3px
+gaps inner 3px
+smart_gaps inverse_outer
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+include ./bind
+include ./rules
+include ./autostart

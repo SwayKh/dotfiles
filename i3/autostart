@@ -1,0 +1,17 @@
+
+# ░█▀█░█▀█░█▀█░░░█▀▀░▀█▀░█▀█░█▀▄░▀█▀░█░█░█▀█
+# ░█▀█░█▀▀░█▀▀░░░▀▀█░░█░░█▀█░█▀▄░░█░░█░█░█▀▀
+# ░▀░▀░▀░░░▀░░░░░▀▀▀░░▀░░▀░▀░▀░▀░░▀░░▀▀▀░▀░░
+
+exec --no-startup-id dex --autostart --environment i3
+
+exec_always --no-startup-id dunst
+exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id pulseaudio --start
+exec_always --no-startup-id nm-applet --indicator
+exec_always --no-startup-id /usr/lib/kdeconnectd
+exec_always --no-startup-id /usr/bin/kdeconnect-indicator
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
