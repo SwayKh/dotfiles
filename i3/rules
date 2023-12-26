@@ -1,0 +1,14 @@
+
+# ░░█▀▄░█░█░█░░░█▀▀░█▀▀
+# ░░█▀▄░█░█░█░░░█▀▀░▀▀█
+# ░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+
+assign [class="firefox"] 1
+assign [class="Code"] 2
+assign [class="nvim"] 2
+assign [class="thunar"] 5
+assign [class="retroarch"] 6
+assign [class="Spotify"] 7
+assign [class="Ferdium"] 8
+assign [class="webcord"] 9
+assign [class="obsidian"] 10
