@@ -5,6 +5,7 @@
 
 exec --no-startup-id dex --autostart --environment i3
 
+exec_always --no-startup-id xrandr --output eDP-1 --scale 1.2
 exec_always --no-startup-id dunst
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id autotiling
