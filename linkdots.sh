@@ -36,6 +36,15 @@ sudo ln -sfn "$path"/hypr "$HOME"/.config/
 [ -d "$HOME"/.config/waybar ] && rm -rf "$HOME"/.config/waybar
 sudo ln -sfn "$path"/waybar "$HOME"/.config/
 
+[ -d "$HOME"/.config/i3 ] && rm -rf "$HOME"/.config/i3
+sudo ln -sfn "$path"/i3 "$HOME"/.config/
+
+[ -d "$HOME"/.config/sway ] && rm -rf "$HOME"/.config/sway
+sudo ln -sfn "$path"/sway "$HOME"/.config/
+
+[ -d "$HOME"/.config/polybar ] && rm -rf "$HOME"/.config/polybar
+sudo ln -sfn "$path"/polybar "$HOME"/.config/
+
 [ -d "$HOME"/.config/rofi ] && rm -rf "$HOME"/.config/rofi
 sudo ln -sfn "$path"/rofi "$HOME"/.config/
 
