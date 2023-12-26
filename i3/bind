@@ -1,17 +1,21 @@
 
 set $mod Mod4
 set $term wezterm
+set $left h
+set $right l
+set $up k
+set $down j
 floating_modifier $mod
 
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec i3-msg exit
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Ctrl+f fullscreen
+
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# toggle tiling / floating
+bindsym $mod+Ctrl+f fullscreen
 bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+t exec $term
@@ -110,5 +114,5 @@ bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 # Brightness control
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set -5%
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
