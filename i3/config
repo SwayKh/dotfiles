@@ -2,14 +2,18 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
-font pango:  JetBrainsMono Nerd Font 10
+font pango:  JetBrainsMono Nerd Font 12
 
 default_border pixel 2
 default_floating_border pixel 2
 gaps outer 3px
 gaps inner 3px
 smart_gaps inverse_outer
+focus_follows_mouse yes
+
+# class                 border  backgr. text    indicator child_border
+client.unfocused        #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          #D99887 #D99887 #D99887 #D99887   #D99887
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
