@@ -1,0 +1,14 @@
+
+# ░░█▀▄░█░█░█░░░█▀▀░█▀▀
+# ░░█▀▄░█░█░█░░░█▀▀░▀▀█
+# ░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+
+assign [class="Firefox"] workspace 1
+assign [class="code"] workspace 2
+assign [class="nvim"] workspace 2
+assign [class="thunar"] workspace 5
+assign [class="RetroArch"] workspace 6
+assign [class="Spotify"] workspace 7
+assign [class="Ferdium"] workspace 8
+assign [class="Webcord"] workspace 9
+assign [class="Obsidian"] workspace 10
