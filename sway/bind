@@ -1,0 +1,104 @@
+
+set $mod Mod4
+set $term wezterm
+floating_modifier $mod normal
+
+bindsym $mod+q kill
+bindsym $mod+Shift+q exec swaymsg exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Ctrl+f fullscreen
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+bindsym $mod+t exec $term
+bindsym $mod+f exec thunar
+bindsym $mod+b exec firefox
+bindsym $mod+n exec obsidian
+bindsym $mod+w exec ferdium
+bindsym $mod+d exec webcord
+bindsym $mod+s exec spotify-launcher
+bindsym $mod+KP_ADD exec kcalc
+bindsym $mod+r exec rofi -show drun
+bindsym $mod+TAB exec rofi -show window
+
+bindsym $mod+l exec $term -e lf
+bindsym $mod+m exec $term -e btop
+
+bindsym $mod+space exec "$HOME/scripts/randomWallBg.sh"
+bindsym Print exec "$HOME/scripts/screenshots/captureAll.sh"
+bindsym Ctrl+Print exec "$HOME/scripts/screenshots/captureScreen.sh"
+bindsym Ctrl+Shift+Print exec "$HOME/scripts/screenshots/captureArea.sh"
+bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# Move your focus around
+bindsym $mod+Ctrl+$left focus left
+bindsym $mod+Ctrl+$down focus down
+bindsym $mod+Ctrl+$up focus up
+bindsym $mod+Ctrl+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym Mod1+r mode "resize"
+
+# Volume control
+bindsym --locked XF86AudioRaiseVolume exec  pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym --locked XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym --locked XF86AudioMute exec  pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Media control
+bindsym --locked XF86AudioPrev exec playerctl previous
+bindsym --locked XF86AudioPlay exec playerctl play
+bindsym --locked XF86AudioPause exec playerctl pause
+bindsym --locked XF86AudioNext exec playerctl next
+
+# Brightness control
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set -5%
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%

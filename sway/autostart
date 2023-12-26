@@ -1,0 +1,16 @@
+
+# ░█▀█░█▀█░█▀█░░░█▀▀░▀█▀░█▀█░█▀▄░▀█▀░█░█░█▀█
+# ░█▀█░█▀▀░█▀▀░░░▀▀█░░█░░█▀█░█▀▄░░█░░█░█░█▀▀
+# ░▀░▀░▀░░░▀░░░░░▀▀▀░░▀░░▀░▀░▀░▀░░▀░░▀▀▀░▀░░
+
+exec_always /usr/lib/polkit-kde-authentication-agent-1
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec_always swaybg -m fill -i ~/.config/wall.jpg
+exec_always pulseaudio --start && waybar
+exec_always autotiling
+exec_always dunst
+exec_always nm-applet --indicator
+exec_always blueman-applet
+exec_always swayidle -w
+exec_always /usr/lib/kdeconnectd
+exec_always /usr/bin/kdeconnect-indicator
