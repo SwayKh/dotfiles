@@ -8,9 +8,9 @@
 
 window#waybar {
   color: #f5f5f5;
-  background: #04142d;
+  background: rgba(4, 20, 45, 0.75);
   border: 2px solid #29c8e5;
-  border-radius: 8px;
+  border-radius: 20px;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
