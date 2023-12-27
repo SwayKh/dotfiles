@@ -2,9 +2,10 @@
     "layer": "top",
     "position": "top",
     "height": 25,
-    "margin-left": 0,
-    "margin-right": 0,
-    "margin-top": 0,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-top": 5,
+    "spacing": 1,
 
     // Choose the order of the modules
 
@@ -75,7 +76,7 @@
     },
     "clock": {
         "interval": 60,
-        "format": "  {:%I:%M %p %a %b %d} ", // %b %d %Y  --Date formatting
+        "format": "  {:%a %b %d %I:%M %p}", // %b %d %Y  --Date formatting
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -84,7 +85,7 @@
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         // "format-critical": "{temperatureC}°C {icon}",
         "critical-threshold": 80,
-        "interval": 15,
+        "interval": 2,
         "format": "{temperatureC}°C ",
         "format-icons": ["", "", ""]
     },
@@ -94,8 +95,8 @@
         "tooltip": false
     },
     "memory": {
-        "interval": 15,
-        "format": "{}% "
+        "interval": 2,
+        "format": "{}% "
     },
    "disk": {
         "interval": 15,
@@ -156,6 +157,6 @@
       "format": "{icon}",
       "format-icons": "",// 󰣇
       "exec-on-event": "true",
-      "on-click": "wlogout",
+      "on-click": "~/scripts/sessionMenu.sh",
     }
 }

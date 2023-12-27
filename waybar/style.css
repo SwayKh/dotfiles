@@ -1,17 +1,21 @@
 * {
-  border: #000000;
-  border-radius: 0px;
+  min-height: 0;
   font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
     Helvetica, Arial, sans-serif;
   font-size: 14px;
-  /* background-color: rgba(43, 48, 59, 1); */
-  background-color: #04142d;
+  /* background-color: #04142d; */
 }
 
 window#waybar {
   color: #f5f5f5;
+  background: #04142d;
+  border: 2px solid #29c8e5;
+  border-radius: 8px;
   transition-property: background-color;
   transition-duration: 0.5s;
+}
+window#waybar.empty {
+  opacity: 0.3;
 }
 
 button {
