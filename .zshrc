@@ -102,22 +102,43 @@ refreshMirrors() {
   sudo reflector --verbose --latest 15 --fastest 15 --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 }
 
-ch() {
+cheatSheet() {
   query=$1
   curl cheat.sh/$query
 }
 
-cn() {
+clearNeofetch() {
   clear && neofetch
 }
 
-pf() {
-  pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse
+fzfconf() {
+  find ~/dotfiles \
+    -maxdepth 3 \
+    -type f \
+    -not -path '*/foot/themes/*' \
+    -not -path '*/.git/*' \
+    | fzf --cycle --border=rounded --preview 'bat $LINES {}' \
+    | xargs -r -o nvim
+}
+
+fzfscripts() {
+  find ~/scripts \
+    -maxdepth 3 \
+    -type f \
+    -not -path '*/foot/themes/*' \
+    -not -path '*/.git/*' \
+    | fzf --cycle --border=rounded --preview 'bat $LINES {}' \
+    | xargs -r -o nvim
 }
 
 mostUsed() {
   history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n"$1"
 }
+
 pacPreviewAll() {
+  pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse
+}
+
+pacPreviewInstalled() {
   pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
