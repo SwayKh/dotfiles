@@ -112,17 +112,7 @@ clearNeofetch() {
 }
 
 fzfconf() {
-  find ~/dotfiles \
-    -maxdepth 3 \
-    -type f \
-    -not -path '*/foot/themes/*' \
-    -not -path '*/.git/*' \
-    | fzf --cycle --border=rounded --preview 'bat $LINES {}' \
-    | xargs -r -o nvim
-}
-
-fzfscripts() {
-  find ~/scripts \
+  find ~/dotfiles ~/scripts \
     -maxdepth 3 \
     -type f \
     -not -path '*/foot/themes/*' \
