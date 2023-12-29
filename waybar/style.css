@@ -1,3 +1,11 @@
+@define-color bg rgba(4, 20, 45, 0.75);
+@define-color bg-alt #252428;
+@define-color fg #f5f5f5;
+@define-color alert #f53c3c;
+@define-color disabled #a5a5a5;
+@define-color bordercolor #29c8e5;
+@define-color highlight #FBD47F;
+@define-color activegreen #8fb666;
 * {
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
@@ -8,8 +16,8 @@
 
 window#waybar {
   color: #f5f5f5;
-  background: rgba(4, 20, 45, 0.75);
-  border: 2px solid #29c8e5;
+  background: @bg;
+  border: 2px solid @bordercolor;
   border-radius: 20px;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -34,28 +42,28 @@ button:hover {
 
 #workspaces button {
   /* background-color: #252428; */
-  color: #f5f5f5;
+  color: @fg;
 }
 
 #workspaces button.urgent {
-  color: #f53c3c;
+  color: @alert;
   /* background-color: #252428; */
   /* border: 3px solid #f53c3c; */
 }
 #workspaces button.empty {
-  color: #a5a5a5;
+  color: @disabled;
   /* background-color: #252428; */
 }
 
 #workspaces button.active {
-  color: #8fb666;
+  color: @activegreen;
   /* background-color: #252428; */
   /* border: 3px solid #7bcbd5; */
 }
 
 #workspaces button.focused {
-  background-color: #f5f5f5;
-  color: #252428;
+  background-color: @fg;
+  color: @bg-alt;
 }
 
 /* Uncomment If using icons instead of number for workspaces*/
@@ -99,7 +107,7 @@ button:hover {
   padding: 0px 5px;
   padding-right: 10px;
   margin: 3px 3px;
-  color: #f5f5f5;
+  color: @fg;
   /* background-color: #252428; */
 }
 
@@ -148,7 +156,7 @@ label:focus {
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: @alert;
 }
 
 #battery.charging,
@@ -158,12 +166,12 @@ label:focus {
 }
 
 #wireplumber.muted {
-  background-color: #f53c3c;
+  background-color: @alert;
 }
 
 #language {
-  background: #f5f5f5;
-  color: #252428;
+  background: @fg;
+  color: @bg-alt;
   padding: 0 5px;
   margin: 0 5px;
   min-width: 16px;
@@ -180,14 +188,14 @@ label:focus {
 }
 @keyframes blink {
   to {
-    background-color: #f5f5f5;
-    color: #252428;
+    background-color: @fg;
+    color: @bg-alt;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #f5f5f5;
+  background-color: @alert;
+  color: @fg;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
