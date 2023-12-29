@@ -1,6 +1,6 @@
 
 set $mod Mod4
-set $term wezterm
+set $term foot
 floating_modifier $mod normal
 
 bindsym $mod+q kill
