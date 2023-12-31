@@ -1,4 +1,4 @@
-@define-color bg rgba(4, 20, 45, 0.75);
+@define-color bg rgba(4, 20, 45, 0.50);
 @define-color bg-alt #252428;
 @define-color fg #f5f5f5;
 @define-color alert #f53c3c;
@@ -6,6 +6,7 @@
 @define-color bordercolor #29c8e5;
 @define-color highlight #FBD47F;
 @define-color activegreen #8fb666;
+
 * {
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
@@ -16,14 +17,40 @@
 
 window#waybar {
   color: #f5f5f5;
-  background: @bg;
-  border: 2px solid @bordercolor;
-  border-radius: 20px;
+  background: @bg00;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
+
 window#waybar.empty {
   opacity: 0.3;
+}
+
+.modules-left {
+  background: @bg;
+  border: 2px solid @bordercolor;
+  border-radius: 20px;
+
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.modules-right {
+  background: @bg;
+  border: 2px solid @bordercolor;
+  border-radius: 20px;
+
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.modules-center {
+  background: @bg;
+  border: 2px solid @bordercolor;
+  border-radius: 20px;
+
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 button {
