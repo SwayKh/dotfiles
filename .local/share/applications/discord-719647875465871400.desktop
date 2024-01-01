@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Game 719647875465871400
+Exec=/usr/bin/citra-qt %u
+Type=Application
+NoDisplay=true
+Categories=Discord;Games;
+MimeType=x-scheme-handler/discord-719647875465871400;

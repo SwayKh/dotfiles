@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=LF
+GenericName=File Manager
+Comment=Terminal-based file manager
+Exec=wezterm -e lf
+Terminal=false
+StartupNotify=false
+Encoding=UTF-8
+Type=Application
+Icon=utilities-terminal
+X-KDE-GlobalAccel-CommandShortcut=true
