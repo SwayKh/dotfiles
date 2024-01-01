@@ -12,6 +12,8 @@ sudo ln -Sfn "$path"/settings.json "$HOME"/.config/Code/User/settings.json
 
 # .config Directory
 
+sudo ln -sfn "$path"/.local/share/applications "$HOME"/.local/share/
+
 [ -d "$HOME"/.config/btop ] && rm -rf "$HOME"/.config/btop
 sudo ln -sfn "$path"/btop "$HOME"/.config/
 

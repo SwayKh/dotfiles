@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Minecraft
+Name[en_US]=Minecraft
+GenericName=Legacy Launcher for Minecraft
+GenericName[en_US]=Legacy Launcher for Minecraft
+Comment=Minecraft launcher
+Exec=java -jar ~/.local/bin/LegacyLauncher_legacy.jar
+Terminal=false
+Type=Application
+Icon=Minecraft
