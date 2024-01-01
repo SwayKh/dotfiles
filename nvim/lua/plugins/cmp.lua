@@ -8,12 +8,13 @@ return {
   dependencies = {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
+    "onsails/lspkind.nvim", -- vs-code like pictograms
+    "rafamadriz/friendly-snippets", -- useful snippets
+
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-cmdline", -- For cmdline suggestions
-    "onsails/lspkind.nvim", -- vs-code like pictograms
-    "rafamadriz/friendly-snippets", -- useful snippets
   },
   config = function()
     local cmp = require("cmp")
@@ -65,9 +66,9 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "buffer" }, -- text within current buffer
         { name = "luasnip" }, -- snippets
         { name = "codeium" },
+        { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
       }),
       window = {
