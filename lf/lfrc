@@ -139,6 +139,7 @@ cmd Unarchive ${{
     *.tar.bz2) tar -xjvf "$f" -C "$a" ;;
     *.tar) tar -xvf "$f" -C "$a" ;;
     *.rar) unrar x "$f" "$a" ;;
+    *.7z) 7z x "$f" -o"$a" ;;
     *) echo "Unsupported Format" ;;
   esac
 }}
