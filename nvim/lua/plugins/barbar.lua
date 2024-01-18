@@ -2,7 +2,7 @@ local opts = { noremap = true, silent = true }
 return {
   "romgrk/barbar.nvim",
   event = { "BufReadPre", "BufNewFile" },
-  enabled = true,
+  enabled = false,
   dependencies = {
     "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
     "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
