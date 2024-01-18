@@ -11,8 +11,8 @@ set drawbox true # Shows the box around the panes
 set mouse true
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
 set preview true
-set sixel true
 set dircounts false # shows number of files in dir instead of total size
+set sixel true
 set previewer ~/.config/lf/preview
 
 # Remove some default keybindings
