@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
   # start:b7,x:b2,y:b3,"
 export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/scripts:$PATH"
 export EDITOR=nvim
 export VISUAL=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
