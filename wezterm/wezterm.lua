@@ -17,7 +17,7 @@ return {
 	-- 	saturation = 0.5,
 	-- },
 	-- window_background_opacity = 0.92,
-	window_background_opacity = 0.6,
+	window_background_opacity = 0.5,
 	-- window_background_opacity = 0.78,
 	-- window_background_opacity = 0.20,
 	window_decorations = "RESIZE",
