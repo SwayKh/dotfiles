@@ -1,7 +1,8 @@
 return {
   "williamboman/mason.nvim",
   lazy = true,
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
+  -- event = "VeryLazy",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
