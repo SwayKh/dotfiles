@@ -50,7 +50,7 @@ map <c-f> :fzf_jump
 map <enter> open
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
-map f calcdirsize # Calculate the directory size in the editor without NCDU
+map f calcdirsize; down; # Calculate the directory size in the editor without NCDU
 
 # Movement Bindings
 map gh cd ~ # This is default
