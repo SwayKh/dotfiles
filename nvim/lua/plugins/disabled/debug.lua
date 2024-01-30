@@ -1,7 +1,8 @@
 return {
   "mfussenegger/nvim-dap",
   lazy = true,
-  event = { "BufReadPre", "BufNewFile" },
+  event = "VeryLazy",
+  -- event = { "BufReadPre", "BufNewFile" },
 
   dependencies = {
     "rcarriga/nvim-dap-ui",
