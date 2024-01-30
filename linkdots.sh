@@ -70,3 +70,6 @@ sudo ln -sfn "$path"/swayidle "$HOME"/.config/
 
 [ -f "$HOME"/.config/retroarch/retroarch.cfg ] && rm "$HOME"/.config/retroarch/retroarch.cfg
 sudo ln -sfn "$path"/RetroArch/retroarch.cfg "$HOME"/.config/retroarch/retroarch.cfg
+
+[ -f "$HOME"~/.config/retroarch/retroarch-core-options.cfg ] && rm "$HOME"/.config/retroarch/retroarch-core-options.cfg
+sudo ln -sfn "$path"/RetroArch/retroarch-core-options.cfg "$HOME"/.config/retroarch/retroarch-core-options.cfg
