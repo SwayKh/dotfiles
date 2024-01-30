@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 return {
   "romgrk/barbar.nvim",
-  event = { "BufReadPre", "BufNewFile" },
   enabled = false,
   dependencies = {
     "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status

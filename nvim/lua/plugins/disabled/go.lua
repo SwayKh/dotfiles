@@ -1,5 +1,6 @@
 return {
   "ray-x/go.nvim",
+  event = "VeryLazy",
   enabled = false,
   dependencies = { -- optional packages
     "ray-x/guihua.lua",
