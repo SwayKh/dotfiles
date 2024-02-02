@@ -9,6 +9,7 @@ return {
   config = function()
     local oil = require("oil")
     oil.setup({
+      default_file_explorer = true,
       skip_confirm_for_simple_edits = true,
       view_options = {
         -- Show files and directories that start with "."
@@ -24,7 +25,7 @@ return {
         ["<C-h>"] = "actions.select_split",
         ["<C-t>"] = "actions.select_tab",
         ["<Tab>"] = "actions.preview",
-        ["<C-c>"] = "actions.close",
+        ["<Esc>"] = "actions.close",
         ["<C-l>"] = "actions.refresh",
         ["-"] = "actions.parent",
         ["_"] = "actions.open_cwd",
