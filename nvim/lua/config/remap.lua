@@ -6,7 +6,7 @@ local map = vim.keymap.set
 -- Plugin specific keymaps are in the plugin configs
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("i", "jj", "<Esc>")
-map("n", "-", ":Oil <CR>")
+map("n", "-", ":Oil --float<CR>")
 map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { desc = "Don't replace paste register when replacing something" })
@@ -45,8 +45,8 @@ map("n", "<leader>s", ":split<CR>", { desc = "[S]plit Horizontally (Default beha
 map("n", "<C-S-Left>", ":vertical resize +3<CR>") -- Control+Left resizes vertical split +
 map("n", "<C-S-Right>", ":vertical resize -3<CR>") -- Control+Right resizes vertical split -
 
-map("n", "<C-S-h>", "<C-w><") -- resize window to left
-map("n", "<C-S-l>", "<C-w>>") -- resize window to right
+map("n", "<C-S-h>", "<C-w>>") -- resize window to left
+map("n", "<C-S-l>", "<C-w><") -- resize window to right
 map("n", "<C-S-k>", "<C-w>+") -- resize window to up
 map("n", "<C-S-j>", "<C-w>-") -- resize window to down
 
