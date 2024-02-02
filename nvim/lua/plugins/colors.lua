@@ -1,12 +1,11 @@
 return {
   {
-    "catppuccin/nvim",
+    "dracula/vim",
+    name = "dracula",
     priority = 1000,
     enabled = true,
-    name = "catppuccin",
     config = function()
-      -- vim.cmd.colorscheme("sonokai")
-      vim.cmd.colorscheme("catppuccin-macchiato")
+      vim.cmd.colorscheme("dracula")
       vim.opt.background = "dark"
       vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
       vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
@@ -15,6 +14,10 @@ return {
       -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     end,
   },
+  --    {
+  --      "catppuccin/nvim",
+  --      name = "catppuccin"
+  --    }
   --    {
   --      "sainnhe/sonokai",
   --    },
@@ -65,7 +68,7 @@ return {
   --     "ku1ik/vim-monokai",
   --   },
   --   {
-  --     "lifepillar/vim-solarized8",
+  --     "lifepillar/vim-solarized",
   --   },
   --   {
   --     "marko-cerovac/material.nvim",
