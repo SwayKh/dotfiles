@@ -2,14 +2,14 @@ return {
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
   lazy = true,
-  event = { "VeryLazy", "InsertEnter", "BufReadPre", "BufNewFile" },
-  -- event = "InsertEnter",
+  -- event = { "VeryLazy", "InsertEnter", "BufReadPre", "BufNewFile" },
+  event = "InsertEnter",
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "j-hui/fidget.nvim", opts = {}, enabled = false },
+    -- { "j-hui/fidget.nvim", opts = {}, enabled = false },
     "folke/neodev.nvim",
   },
   config = function()

@@ -1,8 +1,8 @@
 return {
   "CRAG666/code_runner.nvim",
   lazy = true,
-  -- event = "VeryLazy",
-  event = { "BufReadPre", "BufNewFile", "InsertEnter" },
+  event = "VeryLazy",
+  -- event = { "BufReadPre", "BufNewFile", "InsertEnter" },
 
   config = function()
     require("code_runner").setup({

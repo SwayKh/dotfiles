@@ -1,6 +1,7 @@
 return {
   "akinsho/toggleterm.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
+  event = "VeryLazy",
   version = "*",
   opts = {--[[ things you want to change go here]]
   },
@@ -8,7 +9,7 @@ return {
     require("toggleterm").setup({
       size = 13,
       shade_filetypes = {},
-      open_mapping = [[<c-\>]],
+      open_mapping = [[<c-/>]],
       shade_terminal = true,
       shading_factor = 1,
       start_in_insert = true,
