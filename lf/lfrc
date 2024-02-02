@@ -1,7 +1,7 @@
 # Basic Settings
 
-set shell sh
-# set shellopts '-euy'
+set shell zsh
+set shellopts '-euy'
 set ifs "\n"
 
 set hidden true # Hidden Files
@@ -14,6 +14,8 @@ set preview true
 set dircounts false # shows number of files in dir instead of total size
 set sixel true
 set previewer ~/.config/lf/preview
+set ratios 1:2:2
+set cursorpreviewfmt "\033[7m"
 
 # Remove some default keybindings
 map m #gets in the way of mkdir, mkfile
@@ -28,7 +30,8 @@ map f #used for find (Not sure how it worked)
 map ` shell
 map x cut
 map c copy
-map p paste
+map P :paste; clear
+map p :paste-async
 map <delete> delete
 map <esc> unselect
 map e $$f # Execute the selected file, must be executabl
@@ -46,7 +49,7 @@ map mp chmod #use 664, 777 notation rather than u+x
 map dd trash
 map D $rm -rf $fx
 map ua Unarchive
-map <c-f> :fzf_jump
+map F :fzf_jump
 map <enter> open
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
@@ -163,6 +166,18 @@ cmd convertToJpg &{{
   lf -remote 'send reload'
 }}
 
+cmd paste-async &{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy) cp -rn -- "$@" .;;
+        move) mv -n -- "$@" .;;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+
 # Jump to directories using fzf
 cmd fzf_jump ${{
     res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
@@ -175,4 +190,14 @@ cmd fzf_jump ${{
     fi
 
     lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd on-redraw %{{
+    if [ $lf_width -le 80 ]; then
+        lf -remote "send $id set ratios 1:2"
+    elif [ $lf_width -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:5"
+    fi
 }}
