@@ -17,6 +17,11 @@ set previewer ~/.config/lf/preview
 set ratios 1:2:2
 set cursorpreviewfmt "\033[7m"
 
+# Sort Downloads directory by creation time, reverse
+setlocal ~/Downloads/ sortby ctime
+setlocal ~/Downloads/ info ctime
+setlocal ~/Downloads/ reverse
+
 # Remove some default keybindings
 map m #gets in the way of mkdir, mkfile
 map n #gets in the way of unarchive
@@ -32,28 +37,30 @@ map x cut
 map c copy
 map P :paste; clear
 map p :paste-async
+map f search # Works like vim / search
+map D $rm -rf $fx
 map <delete> delete
 map <esc> unselect
-map e $$f # Execute the selected file, must be executabl
 map <backspace2> clear # Clears any cut/copy highlighter
+map e $$f # Execute the selected file, must be executable
 map oc lfrc
 map op &xdg-open $f
-map sf set info size
 map J :updir; down; open # Move down in parent directory
 map K :updir; up; open # Move up in parent directory
+map sf :set info size
+map . :calcdirsize; down; # Calculate the directory size in the editor without NCDU
 
 # Function Bindings
 map md mkdir
 map mf mkfile
 map mp chmod #use 664, 777 notation rather than u+x
 map dd trash
-map D $rm -rf $fx
+map <enter> open
 map ua Unarchive
 map F :fzf_jump
-map <enter> open
+map R bulk-rename
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
-map f calcdirsize; down; # Calculate the directory size in the editor without NCDU
 
 # Movement Bindings
 map gh cd ~ # This is default
@@ -200,4 +207,28 @@ cmd on-redraw %{{
     else
         lf -remote "send $id set ratios 1:2:3:5"
     fi
+}}
+
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
 }}
