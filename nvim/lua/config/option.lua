@@ -10,6 +10,7 @@ vim.opt.colorcolumn = "120"
 vim.opt.laststatus = 3
 vim.opt.spell = false -- set spell on
 vim.opt.spelllang = "en_us"
+vim.opt.filetype = "on"
 vim.opt.wrap = true -- enable text wrapping
 vim.opt.breakindent = true
 vim.opt.textwidth = 80
