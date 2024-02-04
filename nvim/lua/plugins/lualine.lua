@@ -22,6 +22,7 @@ return {
                 magenta  = '#c678dd',
                 blue     = '#51afef',
                 red      = '#ec5f67',
+                white    = '#ffffff',
         }
 
     local conditions = {
@@ -89,14 +90,19 @@ return {
         return "▊"
       end,
       color = { fg = colors.blue }, -- Sets highlighting of component
-      padding = { left = 0, right = 1 }, -- We don't need space before this
+      padding = { right = 1 },
     })
 
+    -- ins_left({
+    --   -- mode component
+    --   padding = { right = 1 },
+    --   function()
+    --     return "󰣇"
+    --   end,
+    -- })
+
     ins_left({
-      -- mode component
-      function()
-        return "󰣇"
-      end,
+      "mode",
       color = function()
         -- auto change color according to neovims mode
         local mode_color = {
@@ -121,26 +127,9 @@ return {
           ["!"] = colors.red,
           t = colors.red,
         }
-        return { fg = mode_color[vim.fn.mode()] }
+        return { fg = mode_color[vim.fn.mode()], gui = "bold" }
       end,
-    })
-
-    ins_left({
-      "location",
-      padding = { left = 1, right = 1 }, -- We don't need space before this
-    })
-
-    ins_left({
-      "progress",
-      color = { fg = colors.fg, gui = "bold" },
-      padding = { left = 1, right = 1 }, -- We don't need space before this
-    })
-
-    ins_left({
-      "filesize",
-      cond = conditions.buffer_not_empty,
-      padding = { left = 1, right = 1 }, -- We don't need space before this
-      -- color = { fg = colors.green, gui = "bold" },
+      padding = { left = 1, right = 1 },
     })
 
     ins_left({
@@ -161,14 +150,24 @@ return {
         -- return vim.fn.expand('%') --equivalent of @% in vimscript
         -- return vim.fn.getcwd()
       end,
-      color = { fg = colors.magenta, gui = "bold" },
+      cond = conditions.buffer_not_empty,
+      color = { fg = colors.yellow, gui = "bold" },
+      padding = { left = 1, right = 1 },
     })
 
     -- ins_left({
     --   "filename",
     --   cond = conditions.buffer_not_empty,
     --   color = { fg = colors.magenta, gui = "bold" },
+    --   padding = { left = 1, right = 1 },
     -- })
+
+    ins_left({
+      "filesize",
+      cond = conditions.buffer_not_empty,
+      padding = { left = 1, right = 1 },
+      color = { fg = colors.green, gui = "bold" },
+    })
 
     ins_left({
       "diagnostics",
@@ -179,6 +178,7 @@ return {
         color_warn = { fg = colors.yellow },
         color_info = { fg = colors.cyan },
       },
+      padding = { left = 1, right = 1 },
     })
 
     -- Insert mid section. You can make any number of sections in neovim :)
@@ -189,38 +189,70 @@ return {
       end,
     })
 
+    local function show_macro_recording()
+      local recording_register = vim.fn.reg_recording()
+      if recording_register == "" then
+        return ""
+      else
+        return "Recording @" .. recording_register
+      end
+    end
+
+    ins_right({
+      "macro-recording",
+      fmt = show_macro_recording,
+      color = { fg = colors.fg, gui = "bold" },
+      padding = { left = 1, right = 1 },
+    })
+
+    ins_right({
+      "location",
+      color = { fg = colors.fg, gui = "bold" },
+      padding = { left = 1, right = 1 },
+    })
+
+    ins_right({
+      "progress",
+      color = { fg = "#ffffff", gui = "bold" },
+      padding = { left = 1, right = 1 },
+    })
+
     -- Add components to right sections
     ins_right({
       "o:encoding", -- option component same as &encoding in viml
       fmt = string.upper, -- I'm not sure why it's upper case either ;)
       cond = conditions.hide_in_width,
-      color = { fg = colors.green, gui = "bold" },
+      color = { fg = colors.magenta, gui = "bold" },
+      padding = { left = 1, right = 1 },
     })
 
     ins_right({
       "fileformat",
       fmt = string.upper,
       icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-      color = { fg = colors.green, gui = "bold" },
+      color = { fg = colors.yellow, gui = "bold" },
+      padding = { left = 1, right = 1 },
     })
 
     ins_right({
       "branch",
       icon = "",
-      color = { fg = colors.violet, gui = "bold" },
+      color = { fg = colors.green, gui = "bold" },
+      padding = { left = 1, right = 1 },
     })
 
-    ins_right({
-      "diff",
-      -- Is it me or the symbol for modified us really weird
-      symbols = { added = " ", modified = "󰝤 ", removed = " " },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-    })
+    -- ins_right({
+    --   "diff",
+    --   -- Is it me or the symbol for modified us really weird
+    --   symbols = { added = " ", modified = "󰝤 ", removed = " " },
+    --   diff_color = {
+    --     added = { fg = colors.green },
+    --     modified = { fg = colors.orange },
+    --     removed = { fg = colors.red },
+    --   },
+    --   cond = conditions.hide_in_width,
+    -- padding = { left = 1 },
+    -- })
 
     ins_right({
       -- Lsp server name .
@@ -240,7 +272,8 @@ return {
         return msg
       end,
       icon = " LSP:",
-      color = { fg = "#ffffff", gui = "bold" },
+      color = { fg = colors.white, gui = "bold" },
+      padding = { left = 1, right = 1 },
     })
 
     ins_right({
