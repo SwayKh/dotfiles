@@ -30,6 +30,20 @@ return {
         bottom_search = true,
         lsp_doc_border = true,
       },
+      routes = {
+        -- {
+        --   view = "notify",
+        --   filter = { event = "msg_showmode" },
+        -- },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "written",
+          },
+          opts = { skip = true },
+        },
+      },
       views = {
         cmdline_popup = {
           position = {
