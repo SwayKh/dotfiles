@@ -23,6 +23,8 @@ return {
                 blue     = '#51afef',
                 red      = '#ec5f67',
                 white    = '#ffffff',
+                black    = '#333333',
+                gray     = '#424450',
         }
 
     local conditions = {
@@ -42,10 +44,12 @@ return {
     -- Config
     local config = {
       options = {
+        icons_enabled = true,
         -- Disable sections and component separators
+        -- component_separators = { left = "", right = "" },
         component_separators = "",
         section_separators = "",
-        theme = "auto",
+        theme = "dracula",
         -- theme = {
         --   -- We are going to use lualine_c an lualine_x as left and
         --   -- right section. Both are highlighted by c theme .  So we
@@ -85,24 +89,26 @@ return {
       table.insert(config.sections.lualine_x, component)
     end
 
-    ins_left({
-      function()
-        return "▊"
-      end,
-      color = { fg = colors.blue }, -- Sets highlighting of component
-      padding = { right = 1 },
-    })
+    -- ins_left({
+    --   function()
+    --     return "▊"
+    --   end,
+    --   color = { fg = colors.blue }, -- Sets highlighting of component
+    --   padding = { right = 0 },
+    -- })
 
     -- ins_left({
-    --   -- mode component
+    --   mode component
     --   padding = { right = 1 },
     --   function()
     --     return "󰣇"
     --   end,
+    -- 
     -- })
 
     ins_left({
       "mode",
+      icon = "󰣇",
       color = function()
         -- auto change color according to neovims mode
         local mode_color = {
@@ -127,9 +133,10 @@ return {
           ["!"] = colors.red,
           t = colors.red,
         }
-        return { fg = mode_color[vim.fn.mode()], gui = "bold" }
+        return { fg = colors.gray, bg = mode_color[vim.fn.mode()], gui = "bold" }
       end,
-      padding = { left = 1, right = 1 },
+      padding = { left = 0, right = 1 },
+      separator = { left = "", right = "" },
     })
 
     ins_left({
@@ -150,9 +157,11 @@ return {
         -- return vim.fn.expand('%') --equivalent of @% in vimscript
         -- return vim.fn.getcwd()
       end,
+      icons_enabled = true,
       cond = conditions.buffer_not_empty,
-      color = { fg = colors.yellow, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.yellow, gui = "bold" },
       padding = { left = 1, right = 1 },
+      separator = { right = "" },
     })
 
     -- ins_left({
@@ -164,13 +173,16 @@ return {
 
     ins_left({
       "filesize",
+      icons_enabled = true,
       cond = conditions.buffer_not_empty,
+      color = { fg = colors.gray, bg = colors.green, gui = "bold" },
+      separator = { right = "" },
       padding = { left = 1, right = 1 },
-      color = { fg = colors.green, gui = "bold" },
     })
 
     ins_left({
       "diagnostics",
+      icons_enabled = true,
       sources = { "nvim_diagnostic" },
       symbols = { error = " ", warn = " ", info = " " },
       diagnostics_color = {
@@ -200,59 +212,70 @@ return {
 
     ins_right({
       "macro-recording",
+      icons_enabled = true,
       fmt = show_macro_recording,
       color = { fg = colors.fg, gui = "bold" },
       padding = { left = 1, right = 1 },
     })
 
     ins_right({
+      "diff",
+      icons_enabled = true,
+      -- Is it me or the symbol for modified us really weird
+      symbols = { added = " ", modified = "󰜥 ", removed = " " },
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+      cond = conditions.hide_in_width,
+      padding = { left = 1, right = 1 },
+    })
+
+    ins_right({
       "location",
-      color = { fg = colors.fg, gui = "bold" },
+      icons_enabled = true,
+      color = { fg = colors.gray, bg = colors.fg, gui = "bold" },
+      separator = { left = "" },
       padding = { left = 1, right = 1 },
     })
 
     ins_right({
       "progress",
-      color = { fg = "#ffffff", gui = "bold" },
+      icons_enabled = true,
+      color = { fg = colors.gray, bg = colors.violet, gui = "bold" },
+      separator = { left = "" },
       padding = { left = 1, right = 1 },
     })
 
     -- Add components to right sections
     ins_right({
       "o:encoding", -- option component same as &encoding in viml
+      icons_enabled = true,
       fmt = string.upper, -- I'm not sure why it's upper case either ;)
       cond = conditions.hide_in_width,
-      color = { fg = colors.magenta, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.magenta, gui = "bold" },
       padding = { left = 1, right = 1 },
+      separator = { left = "" },
     })
 
     ins_right({
       "fileformat",
       fmt = string.upper,
       icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-      color = { fg = colors.yellow, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.yellow, gui = "bold" },
       padding = { left = 1, right = 1 },
+      separator = { left = "" },
     })
 
     ins_right({
       "branch",
       icon = "",
-      color = { fg = colors.green, gui = "bold" },
+      icons_enabled = true,
+      color = { fg = colors.gray, bg = colors.green, gui = "bold" },
       padding = { left = 1, right = 1 },
+      separator = { left = "" },
     })
-
-    -- ins_right({
-    --   "diff",
-    --   -- Is it me or the symbol for modified us really weird
-    --   symbols = { added = " ", modified = "󰝤 ", removed = " " },
-    --   diff_color = {
-    --     added = { fg = colors.green },
-    --     modified = { fg = colors.orange },
-    --     removed = { fg = colors.red },
-    --   },
-    --   cond = conditions.hide_in_width,
-    -- padding = { left = 1 },
-    -- })
 
     ins_right({
       -- Lsp server name .
@@ -272,17 +295,23 @@ return {
         return msg
       end,
       icon = " LSP:",
-      color = { fg = colors.white, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.white, gui = "bold" },
+
       padding = { left = 1, right = 1 },
+      separator = { left = "", right = "" },
     })
 
-    ins_right({
-      function()
-        return "▊"
-      end,
-      color = { fg = colors.blue },
-      padding = { left = 1 },
-    })
+    -- ins_right({
+    --   function()
+    --     return "▊"
+    --   end,
+    --   color = { fg = colors.blue },
+    --   padding = { left = 0 },
+    --   component_separators = { left = "" },
+    -- })
+
+    -- Separaters
+    --   ▊     ▊  
 
     -- Now don't forget to initialize lualine
     lualine.setup(config)
