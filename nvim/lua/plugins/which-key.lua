@@ -9,7 +9,7 @@ return {
     local wk = require("which-key")
     wk.setup({
       window = {
-        border = "double",
+        border = "single",
       },
     })
   end,

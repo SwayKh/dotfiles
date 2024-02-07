@@ -17,7 +17,7 @@ require("lazy").setup({
   { import = "plugins.lsp" },
 }, {
   ui = {
-    border = "double",
+    border = "rounded",
     size = {
       width = 0.8,
       height = 0.8,
