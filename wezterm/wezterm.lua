@@ -3,7 +3,7 @@ return {
 	-- color_scheme = 'termnial.sexy',
 	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
-	font_size = 12.0,
+	font_size = 11.0,
 	enable_wayland = false,
 	font = wezterm.font("JetBrainsMono Nerd Font"),
 
