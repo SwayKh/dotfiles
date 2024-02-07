@@ -10,8 +10,8 @@ set scrolloff 10 # Leaves space on Top and Bottom of the screen
 set drawbox true # Shows the box around the panes
 set mouse true
 set icons true # Icons(Needs a Icons file or LF_ICONS env variable)
-set preview true
 set dircounts false # shows number of files in dir instead of total size
+set preview true
 set sixel true
 set previewer ~/.config/lf/preview
 set ratios 1:2:2
@@ -39,6 +39,7 @@ map P :paste; clear
 map p :paste-async
 map f search # Works like vim / search
 map D $rm -rf $fx
+map n $nvim .
 map <delete> delete
 map <esc> unselect
 map <backspace2> clear # Clears any cut/copy highlighter
