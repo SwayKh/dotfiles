@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 vim.opt.termguicolors = true
 
 require("config.lazy")
-require("config.remap")
+require("config.keybinds")
 require("config.option")
 require("config.misc")
 
