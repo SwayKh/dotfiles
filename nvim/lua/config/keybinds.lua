@@ -7,7 +7,6 @@ local map = vim.keymap.set
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("i", "jj", "<Esc>")
 map("n", "-", ":Oil --float<CR>")
-map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { desc = "Don't replace paste register when replacing something" })
 
@@ -70,3 +69,12 @@ require("which-key").register({
   ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
   ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
 })
+
+vim.cmd("cnoreabbrev Q  q")
+vim.cmd("cnoreabbrev q1  q!")
+vim.cmd("cnoreabbrev Q1  q!")
+vim.cmd("cnoreabbrev Qa1 qa!")
+vim.cmd("cnoreabbrev Qa qa")
+vim.cmd("cnoreabbrev W  w")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev WQ wq")
