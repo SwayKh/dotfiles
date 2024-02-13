@@ -22,6 +22,11 @@ setlocal ~/Downloads/ sortby ctime
 setlocal ~/Downloads/ info ctime
 setlocal ~/Downloads/ reverse
 
+# Sort Screenshots directory by creation time, reverse
+setlocal ~/Pictures/Screenshots/ sortby ctime
+setlocal ~/Pictures/Screenshots/ info ctime
+setlocal ~/Pictures/Screenshots/ reverse
+
 # Remove some default keybindings
 map m #gets in the way of mkdir, mkfile
 map n #gets in the way of unarchive
@@ -70,7 +75,8 @@ map gD cd ~/Documents
 map gd cd ~/Downloads
 map gc cd ~/.config
 map gw cd ~/wallpapers/Images/
-map gps cd ~/Pictures
+map gpc cd ~/Pictures
+map gps cd ~/Pictures/Screenshots/
 map gb cd ~/.local/bin
 map gt cd ~/Test
 map gT cd ~/.trash
