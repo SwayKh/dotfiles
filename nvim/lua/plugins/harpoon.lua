@@ -2,6 +2,9 @@ return {
   "ThePrimeagen/harpoon",
   lazy = true,
   event = "VeryLazy",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
   config = function()
     local harpoon = require("harpoon")
     local mark = require("harpoon.mark")
@@ -20,10 +23,10 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>h", ":Telescope harpoon marks<CR>", { desc = "Show harpoon quick menu" })
-    vim.keymap.set("n", "<leader>h.", mark.add_file, { desc = "Add file to harpoon" })
-    vim.keymap.set("n", "<leader>ho", ui.toggle_quick_menu, { desc = "Show regular Harpoon quick menu" })
+    -- vim.keymap.set("n", "<leader>h", ":Telescope harpoon marks<CR>", { desc = "Show harpoon quick menu" })
+    vim.keymap.set("n", "<leader>h.", mark.add_file, { silent = true, desc = "Add file to harpoon" })
+    vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu, { silent = true, desc = "Show regular Harpoon quick menu" })
 
-    require("telescope").load_extension("harpoon")
+    -- require("telescope").load_extension("harpoon")
   end,
 }

@@ -6,22 +6,31 @@ local map = vim.keymap.set
 -- Plugin specific keymaps are in the plugin configs
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("i", "jj", "<Esc>")
-map("n", "-", ":Oil --float<CR>")
-map("n", "<leader>y", ":%y+<CR>", { desc = "Copy whole file" })
-map("x", "<leader>p", '"_dP', { desc = "Don't replace paste register when replacing something" })
+map("n", "<leader>.", ":source $MYVIMRC<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
 
-map({ "n", "i", "v" }, "<C-s>", "<ESC>:w!<CR>", { desc = "[S]ave file" })
-map({ "n", "v" }, "qq", ":q<CR>", { desc = "[Q]uit, Actually runs :bd buffer delete" })
-map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { desc = "Save all files [Q]uit" })
+map("n", "<leader>y", ":%y+<CR>", { silent = true, desc = "Copy whole file" })
+map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
+
+map({ "n", "i", "v" }, "<C-s>", "<ESC>:w!<CR>", { silent = true, desc = "[S]ave file" })
+map({ "n", "v" }, "qq", ":q<CR>", { silent = true, desc = "[Q]uit" })
+map({ "n", "v" }, "<leader>q", "<ESC>:wqa!<CR>", { silent = true, desc = "Save all files [Q]uit" })
+map("n", "<leader>bd", ":bd<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
+
 map("n", "<C-u>", "<C-u>zz", { desc = "Better half down scroll", remap = true })
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
 
+map("n", "<leader>lr", ":Lazy reload", { desc = "[L]azy [R]eload plugin of choice" })
+map("n", "-", ":Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
+
 -- Can't use K, needed for documentation
--- map({ "n", "v" }, "J", "<C-d>zz", { desc = "Move Down smoothly" })
--- map({ "n", "v" }, "K", "<C-u>zz", { desc = "Move Up smoothly" })
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
-map({ "n", "v" }, "M", ":call cursor(0, virtcol('$')/2)<CR>", { desc = "Move to the middle of the line" })
+map(
+  { "n", "v" },
+  "M",
+  ":call cursor(0, virtcol('$')/2)<CR>",
+  { silent = true, desc = "Move to the middle of the line" }
+)
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
