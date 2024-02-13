@@ -104,11 +104,13 @@ return {
     --     return "󰣇"
     --   end,
     -- 
+    -- 
+    -- 
     -- })
 
     ins_left({
       "mode",
-      icon = "󰣇",
+      icon = "",
       color = function()
         -- auto change color according to neovims mode
         local mode_color = {
