@@ -1,5 +1,6 @@
 return {
 
+  { "j-hui/fidget.nvim", opts = {}, enabled = false },
   { "tpope/vim-fugitive", lazy = false, enabled = false },
   { "tpope/vim-rhubarb", lazy = false, enabled = false },
   { "tpope/vim-sleuth", lazy = false, enabled = false },
