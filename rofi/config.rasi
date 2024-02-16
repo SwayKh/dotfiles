@@ -1,5 +1,5 @@
 configuration {
-    modi: "drun,window,run,filebrowser";
+    modi: "drun,nerdy,run,filebrowser,window";
     icon-theme: "Papirus";
     show-icons: false;
     terminal: "kitty";
