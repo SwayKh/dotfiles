@@ -15,7 +15,7 @@ return {
         title_pos = "center",
         height = 0.80, -- window height
         width = 0.80, -- window width
-        row = 0.50, -- window row position (0=top, 1=bottom)
+        row = 0.45, -- window row position (0=top, 1=bottom)
         col = 0.50, -- window col position (0=left, 1=right)
         preview = {
           layout = "horizontal",

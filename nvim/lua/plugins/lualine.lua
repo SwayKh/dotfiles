@@ -25,6 +25,7 @@ return {
                 white    = '#ffffff',
                 black    = '#333333',
                 gray     = '#424450',
+                pblue    = '#BBCDEE',
         }
 
     local conditions = {
@@ -245,7 +246,7 @@ return {
     ins_right({
       "progress",
       icons_enabled = true,
-      color = { fg = colors.gray, bg = colors.violet, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.pblue, gui = "bold" },
       separator = { left = "" },
       padding = { left = 1, right = 1 },
     })
@@ -256,7 +257,7 @@ return {
       icons_enabled = true,
       fmt = string.upper, -- I'm not sure why it's upper case either ;)
       cond = conditions.hide_in_width,
-      color = { fg = colors.gray, bg = colors.magenta, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.violet, gui = "bold" },
       padding = { left = 1, right = 1 },
       separator = { left = "" },
     })
@@ -265,7 +266,7 @@ return {
       "fileformat",
       fmt = string.upper,
       icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-      color = { fg = colors.gray, bg = colors.yellow, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.magenta, gui = "bold" },
       padding = { left = 1, right = 1 },
       separator = { left = "" },
     })
@@ -274,7 +275,7 @@ return {
       "branch",
       icon = "",
       icons_enabled = true,
-      color = { fg = colors.gray, bg = colors.green, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.yellow, gui = "bold" },
       padding = { left = 1, right = 1 },
       separator = { left = "" },
     })
@@ -297,7 +298,7 @@ return {
         return msg
       end,
       icon = " LSP:",
-      color = { fg = colors.gray, bg = colors.white, gui = "bold" },
+      color = { fg = colors.gray, bg = colors.green, gui = "bold" },
 
       padding = { left = 1, right = 1 },
       separator = { left = "", right = "" },
