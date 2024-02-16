@@ -136,3 +136,11 @@ pacPreviewAll() {
 pacPreviewInstalled() {
   pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
+
+listSize() {
+  command ls | xargs -d '\n' du -sh | sort -hr
+}
+
+fman() {
+  compgen -c | fzf | xargs man
+}
