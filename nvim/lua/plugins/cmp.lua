@@ -4,9 +4,8 @@ return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
   lazy = true,
-  -- event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+  -- event = { "BufReadPre", "BufNewFile", "VeryLazy" }, -- to disable, comment this out
   event = "InsertEnter",
-  -- event = "VeryLazy",
   dependencies = {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
