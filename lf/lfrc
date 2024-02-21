@@ -19,7 +19,7 @@ set cursorpreviewfmt "\033[7m"
 
 # Sort Downloads directory by creation time, reverse
 setlocal ~/Downloads/ sortby ctime
-setlocal ~/Downloads/ info ctime
+# setlocal ~/Downloads/ info size
 setlocal ~/Downloads/ reverse
 
 # Sort Screenshots directory by creation time, reverse

@@ -28,7 +28,7 @@ return {
     cmp.setup({
       enabled = true,
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,preview,noselect,noinsert",
       },
       preselect = cmp.PreselectMode.None,
       snippet = { -- configure how nvim-cmp interacts with snippet engine
@@ -84,7 +84,7 @@ return {
       formatting = {
         format = lspkind.cmp_format({
           mode = "symbol_text",
-          maxwidth = 80,
+          maxwidth = 120,
           ellipsis_char = "...",
           symbol_map = { Codeium = "" },
         }),
