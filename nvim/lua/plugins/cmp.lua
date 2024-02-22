@@ -9,7 +9,7 @@ return {
   dependencies = {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "onsails/lspkind.nvim", -- vs-code like pictograms
+    -- "onsails/lspkind.nvim", -- vs-code like pictograms
     "rafamadriz/friendly-snippets", -- useful snippets
 
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
@@ -20,7 +20,7 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
+    -- local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -82,12 +82,12 @@ return {
       },
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
-        format = lspkind.cmp_format({
-          mode = "symbol_text",
-          maxwidth = 120,
-          ellipsis_char = "...",
-          symbol_map = { Codeium = "" },
-        }),
+        -- format = lspkind.cmp_format({
+        --   mode = "symbol_text",
+        --   maxwidth = 80,
+        --   ellipsis_char = "...",
+        --   symbol_map = { Codeium = "" },
+        -- }),
       },
     })
     -- `/` cmdline setup.
