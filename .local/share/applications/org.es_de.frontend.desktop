@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Exec=es-de
+Icon=org.es_de.frontend
+Terminal=false
+Type=Application
+StartupNotify=true
+Hidden=false
+Categories=Game;Emulator;
+Name=Emulation Station DE
+GenericName=Emulator Frontend
+Keywords=emulator;emulation;front-end;frontend;

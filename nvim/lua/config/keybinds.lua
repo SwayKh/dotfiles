@@ -12,7 +12,7 @@ map("n", "<leader>,", "@@", { silent = true, desc = "Run last macro, @@ is hard 
 map("n", "<leader>y", ":%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
-map("n", "qq", ":q<CR>", { silent = true, desc = "[Q]uit" })
+map("n", "qq", ":q!<CR>", { silent = true, desc = "[Q]uit" })
 map("n", "<leader>bd", ":bd<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
 map("n", "<leader>q", "<ESC>:wqa!<CR>", { silent = true, desc = "Save all files [Q]uit" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC>:w!<CR>", { silent = true, desc = "[S]ave file" })
