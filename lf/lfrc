@@ -45,7 +45,6 @@ map p :paste-async
 map f search # Works like vim / search
 # map f fzf_search
 map D $rm -rf $fx
-map n $nvim .
 map <delete> delete
 map <esc> unselect
 map <backspace2> clear # Clears any cut/copy highlighter
@@ -85,7 +84,7 @@ map ga cd ~/Android
 map gs cd ~/scripts
 map g. cd ~/dotfiles/
 
-map gr cd ~/repos/
+map gr cd ~/Roms/
 map gn cd ~/Obsidian/Vault/
 map gpp cd ~/Projects/Python/
 map gpg cd ~/Projects/Go/
