@@ -13,10 +13,10 @@ return {
   },
   config = function()
     local lspconfig = require("lspconfig")
-    local lspui = require("lspconfig.ui.windows")
     local mason_lspconfig = require("mason-lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local util = require("lspconfig.util")
+    -- local lspui = require("lspconfig.ui.windows")
 
     require("neodev").setup()
     -- lspui.default_options.border = "double"
@@ -49,7 +49,7 @@ return {
       -- Don't need these right now
       nmap("[d", vim.diagnostic.goto_prev, "Go to previous diagnostic message")
       nmap("]d", vim.diagnostic.goto_next, "Go to next diagnostic message")
-      -- nmap('<leader>e', vim.diagnostic.open_float, 'Open floating diagnostic message')
+      nmap("<leader>e", vim.diagnostic.open_float, "Open floating diagnostic message")
       -- nmap('<leader>q', vim.diagnostic.setloclist, 'Open diagnostics list')
 
       -- Lesser used LSP functionality
