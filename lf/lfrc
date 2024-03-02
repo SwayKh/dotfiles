@@ -67,6 +67,8 @@ map F :fzf_jump
 map R bulk-rename
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
+map ml moveToTopLevel
+map mt touchM3U
 
 # Movement Bindings
 map gh cd ~ # This is default
@@ -251,4 +253,23 @@ cmd bulk-rename ${{
     done
     rm -- "$old" "$new"
     lf -remote "send $id unselect"
+}}
+
+cmd DeleteAllFiles ${{
+    find "$PWD" -maxdepth 1 -type f -delete
+}}
+cmd moveToTopLevel ${{
+  IFS=$'\n' read -r -A file_directories <<< "$fx"
+  for directory in "${file_directories[@]}"; do
+    find "$directory" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cp {} "$PWD" \;
+  done
+}}
+
+cmd yank-path $printf '%s' "$fx" | wl-copy
+
+cmd touchM3U ${{
+  for file in "$fx"; do
+    dname="$(basename -a $file)"
+    touch "$file"/"$dname".m3u
+  done
 }}
