@@ -145,3 +145,25 @@ listSize() {
 fman() {
   compgen -c | fzf | xargs man
 }
+
+
+makeM3U() {
+    local directory="$1"
+
+    # Check if directory argument is provided
+    if [ -z "$directory" ]; then
+        echo "Usage: make_m3u <directory>"
+        return 1
+    fi
+
+    local subdirs=("$directory"/*/)
+
+    for subdir in "${subdirs[@]}"; do
+        local subdir_name=$(basename "$subdir")
+        local m3u_file="$subdir/$subdir_name.m3u"
+        local files=("$subdir"*)
+        for file in "${files[@]}"; do
+          echo "${file##*/}" > "$m3u_file"
+        done
+    done
+}
