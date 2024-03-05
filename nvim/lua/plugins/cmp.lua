@@ -4,23 +4,26 @@ return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
   lazy = true,
-  -- event = { "BufReadPre", "BufNewFile", "VeryLazy" }, -- to disable, comment this out
-  event = "InsertEnter",
+  -- event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+  -- event = "VeryLazy",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "onsails/lspkind.nvim", -- vs-code like pictograms
     "rafamadriz/friendly-snippets", -- useful snippets
 
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-cmdline", -- For cmdline suggestions
+
+    -- "onsails/lspkind.nvim", -- vs-code like pictograms
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
+
+    -- local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -28,7 +31,7 @@ return {
     cmp.setup({
       enabled = true,
       completion = {
-        completeopt = "menu,menuone,preview,noselect,noinsert",
+        completeopt = "menu,menuone,noinsert,preview,noselect",
       },
       -- preselect = cmp.PreselectMode.None,
       snippet = { -- configure how nvim-cmp interacts with snippet engine
@@ -40,11 +43,13 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
@@ -73,22 +78,22 @@ return {
         { name = "path" }, -- file system paths
       }),
       window = {
-        documentation = cmp.config.window.bordered(),
         completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
         -- documentation = {
         --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         --   winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
         -- },
       },
       -- configure lspkind for vs-code like pictograms in completion menu
-      formatting = {
-        format = lspkind.cmp_format({
-          mode = "symbol_text",
-          maxwidth = 80,
-          ellipsis_char = "...",
-          symbol_map = { Codeium = "" },
-        }),
-      },
+      -- formatting = {
+      --   format = lspkind.cmp_format({
+      --     mode = "symbol_text",
+      --     maxwidth = 80,
+      --     ellipsis_char = "...",
+      --     symbol_map = { Codeium = "" },
+      --   }),
+      -- },
     })
     -- `/` cmdline setup.
     cmp.setup.cmdline({ "/", "?" }, {
