@@ -41,7 +41,7 @@ return {
       dashboard.button("f", "󰱼  > Find file", ":FzfLua files<CR>"),
       dashboard.button("r", "  > Recent", ":FzfLua oldfiles<CR>"),
       dashboard.button("e", "  > File Tree", ":Oil<CR>"),
-      dashboard.button("s", "  > Settings", ":Oil ~/dotfiles/nvim/<CR> "),
+      dashboard.button("s", "  > Settings", ":FzfLua files cwd=~/.config/nvim/<CR>"),
       dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
     }
     local fortune = require("alpha.fortune")
