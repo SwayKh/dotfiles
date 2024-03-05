@@ -31,13 +31,15 @@ vim.wo.signcolumn = "yes"
 vim.opt.pumheight = 0 -- Max items to show in pop up menu
 vim.opt.cmdheight = 0 -- Max items to show in command menu
 vim.opt.fileencoding = "utf-8"
-vim.opt.updatetime = 400
-vim.opt.timeoutlen = 400
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 vim.opt.ttimeoutlen = 0
 vim.opt.conceallevel = 0
 vim.opt.showmode = true
 vim.opt.swapfile = false
 vim.opt.completeopt = "menuone,menu,noselect"
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Fix Tab length
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
