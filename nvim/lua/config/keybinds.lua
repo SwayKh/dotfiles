@@ -5,20 +5,20 @@ local map = vim.keymap.set
 -- My Keybinds
 -- Plugin specific keymaps are in the plugin configs
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+map("n", "<Esc>", "<Cmd>nohlsearch<CR>", { silent = true })
 map("i", "jj", "<Esc>")
-map("n", "<leader>.", ":source $MYVIMRC<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
-map("n", "<leader>,", "@@", { silent = true, desc = "Run last macro, @@ is hard to do" })
+map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is hard to do" })
 
-map("n", "<leader>y", ":%y+<CR>", { silent = true, desc = "Copy whole file" })
+map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
-map("n", "qq", ":q!<CR>", { silent = true, desc = "[Q]uit" })
-map("n", "<leader>bd", ":bd<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
-map("n", "<leader>q", "<ESC>:wqa!<CR>", { silent = true, desc = "Save all files [Q]uit" })
-map({ "n", "i", "v" }, "<C-s>", "<ESC>:w!<CR>", { silent = true, desc = "[S]ave file" })
+map("n", "qq", "<Cmd>q!<CR>", { silent = true, desc = "[Q]uit" })
+map("n", "<leader>bd", "<Cmd>bd<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
+map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "Save all files [Q]uit" })
+map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave file" })
 
 map("n", "<leader>lr", ":Lazy reload", { desc = "[L]azy [R]eload plugin of choice" })
-map("n", "-", ":Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
+map("n", "-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
 
 -- Can't use K, needed for documentation
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
@@ -26,8 +26,14 @@ map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 map(
   { "n", "v" },
   "M",
-  ":call cursor(0, virtcol('$')/2)<CR>",
+  "<Cmd>call cursor(0, virtcol('$')/2)<CR>",
   { silent = true, desc = "Move to the middle of the line" }
+)
+map(
+  "n",
+  "<leader>.",
+  "<Cmd>source $MYVIMRC<CR>",
+  { silent = true, desc = "Source nvim config, and reload all plugins" }
 )
 
 map("n", "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
@@ -49,10 +55,10 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
 
 -- Split Resize
-map("n", "<leader>v", ":vsplit<CR>", { desc = "Split [V]ertically" })
-map("n", "<leader>s", ":split<CR>", { desc = "[S]plit Horizontally (Default behaviour)" })
-map("n", "<C-S-Left>", ":vertical resize +3<CR>") -- Control+Left resizes vertical split +
-map("n", "<C-S-Right>", ":vertical resize -3<CR>") -- Control+Right resizes vertical split -
+map("n", "<leader>v", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
+map("n", "<leader>s", "<Cmd>split<CR>", { desc = "[S]plit Horizontally (Default behaviour)" })
+map("n", "<C-S-Left>", "<Cmd>vertical resize +3<CR>") -- Control+Left resizes vertical split +
+map("n", "<C-S-Right>", "<Cmd>vertical resize -3<CR>") -- Control+Right resizes vertical split -
 
 map("n", "<C-S-h>", "<C-w>>") -- resize window to left
 map("n", "<C-S-l>", "<C-w><") -- resize window to right
@@ -68,6 +74,11 @@ map("n", "<C-S-j>", "<C-w>-") -- resize window to down
 -- map("i", "{", "{}<left>")
 -- map("i", "{;", "{};<left><left>")
 -- map("i", "/*", "/**/<left><left>")
+
+vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 vim.cmd("cnoreabbrev Q  q")
 vim.cmd("cnoreabbrev q1  q!")
