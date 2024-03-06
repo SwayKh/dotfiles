@@ -3,7 +3,7 @@ return {
   "neovim/nvim-lspconfig",
   lazy = true,
   -- event = { "VeryLazy", "InsertEnter", "BufReadPre", "BufNewFile" },
-  event = "BufReadPre",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -34,12 +34,13 @@ return {
       nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
       nmap("<leader>rs", ":LspRestart", "LSP [R]e[S]tart")
 
-      nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-      nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-      nmap("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-      nmap("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-      nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]symbols")
-      nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]symbols")
+      nmap("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]efinition")
+      nmap("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
+      nmap("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
+      nmap("gD", require("fzf-lua").declarations, "[G]oto [D]eclaration")
+      nmap("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]efinition")
+      nmap("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]symbols")
+      nmap("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]symbols")
 
       -- See `:help K` for why this keymap
       nmap("K", vim.lsp.buf.hover, "Hover Documentation")
@@ -50,10 +51,9 @@ return {
       nmap("[d", vim.diagnostic.goto_prev, "Go to previous diagnostic message")
       nmap("]d", vim.diagnostic.goto_next, "Go to next diagnostic message")
       nmap("<leader>e", vim.diagnostic.open_float, "Open floating diagnostic message")
-      -- nmap('<leader>q', vim.diagnostic.setloclist, 'Open diagnostics list')
+      nmap("<leader>q", vim.diagnostic.setloclist, "Open diagnostics list")
 
       -- Lesser used LSP functionality
-      nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
       nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
       nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
       nmap("<leader>wl", function()
@@ -145,22 +145,31 @@ return {
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = { -- custom settings for lua
+
+      settings = {
         Lua = {
-          -- make the language server recognize "vim" global
           diagnostics = {
             globals = { "vim" },
             disable = { "missing-fields" },
           },
           telemetry = { enable = false },
+          runtime = { version = "LuaJIT" },
           workspace = {
             checkThirdParty = false,
-            -- make language server aware of runtime files
+            -- Tells lua_ls where to find all the Lua files that you have loaded
+            -- for your neovim configuration.
             library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
+              "${3rd}/luv/library",
+              unpack(vim.api.nvim_get_runtime_file("", true)),
             },
+            -- If lua_ls is really slow on your computer, you can try this instead:
+            -- library = { vim.env.VIMRUNTIME },
           },
+          completion = {
+            callSnippet = "Replace",
+          },
+          -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+          -- diagnostics = { disable = { 'missing-fields' } },
         },
       },
     })
