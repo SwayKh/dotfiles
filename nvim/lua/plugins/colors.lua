@@ -3,6 +3,7 @@ return {
     "sainnhe/edge",
     priority = 1000,
     enabled = true,
+    -- event = "VimEnter", -- Sets the loading event to 'VimEnter'
     config = function()
       vim.cmd.colorscheme("edge")
       vim.opt.background = "dark"

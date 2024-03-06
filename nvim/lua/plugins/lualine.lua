@@ -5,6 +5,7 @@ return {
   -- Eviline config for lualine
   -- Author: shadmansaleh
   -- Credit: glepnir
+  event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
     local lualine = require("lualine")
 
