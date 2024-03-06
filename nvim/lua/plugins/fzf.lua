@@ -44,7 +44,25 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>/", function()
+    vim.keymap.set("n", "<leader>gf", fzf.git_files, { silent = true, desc = "Search [G]it [F]iles" }) --git_files
+    vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { silent = true, desc = "[?] Find recently opened files" })
+    vim.keymap.set("n", "<leader>sf", fzf.files, { silent = true, desc = "[S]earch [F]iles" }) --find_files
+    vim.keymap.set("n", "<leader>sg", fzf.live_grep, { silent = true, desc = "[S]earch by [G]rep" }) --live_grep
+    vim.keymap.set("n", "<leader>sh", fzf.help_tags, { silent = true, desc = "[S]earch [H]elp" }) --help_tags
+    vim.keymap.set("n", "<leader>sw", fzf.grep_cWORD, { silent = true, desc = "[S]earch current [W]ord" }) --grep_string
+    vim.keymap.set("n", "<leader>sr", fzf.resume, { silent = true, desc = "[S]earch [R]esume" }) --resume
+    vim.keymap.set("n", "<leader>sk", fzf.keymaps, { silent = true, desc = "Fzf [S]earch [K]eymaps" })
+    vim.keymap.set("n", "<leader>sb", fzf.builtin, { silent = true, desc = "[S]earch [B]uiltin FzfLua commands" })
+    vim.keymap.set("n", "<leader>st", fzf.colorschemes, { silent = true, desc = "Fzf [S]earch [T]hemes/Colorscheme" })
+    vim.keymap.set("n", "<leader>sc", fzf.commands, { silent = true, desc = "Fzf [S]earch [C]ommands" })
+    vim.keymap.set("n", "<leader>sd", fzf.diagnostics_document, { silent = true, desc = "[S]earch [D]iagnostics" }) --diagnostics
+
+    vim.keymap.set("n", "<leader><leader>", fzf.buffers, { silent = true, desc = "[ ] Find existing buffers" })
+    vim.keymap.set("n", "<leader>sn", function()
+      require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
+    end, { silent = true, desc = "Fzf [S]earch [N]vim config" })
+
+    vim.keymap.set("n", "<leader>s/", function()
       require("fzf-lua").grep_curbuf({
         winopts = {
           preview = { hidden = "hidden" },
@@ -54,38 +72,8 @@ return {
           col = 0.50, -- window col position (0=left, 1=right)
         },
       })
-    end, { desc = "[/] Fuzzily search in current buffer" })
+    end, { desc = "[S]earch [/] in current buffer" })
 
-    vim.keymap.set("n", "<leader>?", ":FzfLua oldfiles<CR>", { silent = true, desc = "[?] Find recently opened files" })
-    vim.keymap.set("n", "<leader><space>", ":FzfLua buffers<CR>", { silent = true, desc = "[ ] Find existing buffers" })
-
-    vim.keymap.set("n", "<leader>gf", ":FzfLua git_files<CR>", { silent = true, desc = "Search [G]it [F]iles" }) --git_files
-    vim.keymap.set("n", "<leader>sf", ":FzfLua files<CR>", { silent = true, desc = "[S]earch [F]iles" }) --find_files
-    vim.keymap.set("n", "<leader>sh", ":FzfLua help_tags<CR>", { silent = true, desc = "[S]earch [H]elp" }) --help_tags
-    vim.keymap.set("n", "<leader>sw", ":FzfLua grep_cword<CR>", { silent = true, desc = "[S]earch current [W]ord" }) --grep_string
-    vim.keymap.set("n", "<leader>sg", ":FzfLua live_grep<CR>", { silent = true, desc = "[S]earch by [G]rep" }) --live_grep
-    vim.keymap.set(
-      "n",
-      "<leader>sd",
-      ":FzfLua diagnostics_document<CR>",
-      { silent = true, desc = "[S]earch [D]iagnostics" }
-    ) --diagnostics
-    vim.keymap.set("n", "<leader>sr", ":FzfLua resume<CR>", { silent = true, desc = "[S]earch [R]esume" }) --resume
-    vim.keymap.set(
-      "n",
-      "<leader>sb",
-      ":FzfLua builtin<CR>",
-      { silent = true, desc = "[S]earch [B]uiltin FzfLua commands" }
-    ) --resume
-
-    vim.keymap.set(
-      "n",
-      "<leader>st",
-      ":FzfLua colorschemes<CR>",
-      { silent = true, desc = "Fzf [S]earch [T]hemes/Colorscheme" }
-    )
-    vim.keymap.set("n", "<leader>sk", ":FzfLua keymaps<CR>", { silent = true, desc = "Fzf [S]earch [K]eymaps" })
-    vim.keymap.set("n", "<leader>sc", ":FzfLua commands<CR>", { silent = true, desc = "Fzf [S]earch [C]ommands" })
     -- vim.keymap.set("n", "<leader>l", fzf.fzf_exec(require("lazy").plugins()), { desc = "Test commands" })
 
     --[[telescope.lua
