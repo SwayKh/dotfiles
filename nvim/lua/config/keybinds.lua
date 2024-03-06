@@ -55,8 +55,8 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
 
 -- Split Resize
-map("n", "<leader>v", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
-map("n", "<leader>s", "<Cmd>split<CR>", { desc = "[S]plit Horizontally (Default behaviour)" })
+map("n", "<leader>V", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
+map("n", "<leader>S", "<Cmd>split<CR>", { desc = "[S]plit Horizontally (Default behaviour)" })
 map("n", "<C-S-Left>", "<Cmd>vertical resize +3<CR>") -- Control+Left resizes vertical split +
 map("n", "<C-S-Right>", "<Cmd>vertical resize -3<CR>") -- Control+Right resizes vertical split -
 
