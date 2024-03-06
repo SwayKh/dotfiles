@@ -4,6 +4,10 @@ return {
   --
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
+
+  lazy = true,
+  -- event = { "VeryLazy", "InsertEnter", "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
     "williamboman/mason.nvim",
@@ -137,10 +141,21 @@ return {
             completion = {
               callSnippet = "Replace",
             },
-            diagnostics = { disable = { "missing-fields" } },
+            -- diagnostics = { disable = { "missing-fields" } },
           },
         },
       },
+    }
+
+    local border = {
+      { "╭", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╮", "FloatBorder" },
+      { "│", "FloatBorder" },
+      { "╯", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╰", "FloatBorder" },
+      { "│", "FloatBorder" },
     }
 
     mason.setup({
@@ -185,6 +200,12 @@ return {
       start_delay = 3000, -- 3 second delay
     })
 
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
     mason_lspconfig.setup({
       handlers = {
         function(server_name)
