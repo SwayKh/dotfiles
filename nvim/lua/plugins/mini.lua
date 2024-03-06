@@ -1,5 +1,9 @@
 return { -- Collection of various small independent plugins/modules
   "echasnovski/mini.nvim",
+  version = false,
+
+  lazy = true,
+  event = "VeryLazy",
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -15,22 +19,30 @@ return { -- Collection of various small independent plugins/modules
     -- - sd'   - [S]urround [D]elete [']quotes
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require("mini.surround").setup()
+    require("mini.pairs").setup()
+    -- require("mini.indentscope").setup()
 
-    -- Simple and easy statusline.
-    --  You could remove this setup call if you don't like it,
-    --  and try some other statusline plugin
+    require("mini.hipatterns").setup({
+      highlighters = {
+        hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+      },
+    })
+
+    require("mini.comment").setup({
+      mappings = {
+        comment = "gc",
+        comment_line = "gcc",
+        comment_visual = "gc",
+        textobject = "gc",
+      },
+    })
+
     local statusline = require("mini.statusline")
     statusline.setup()
 
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we disable the section for
-    -- cursor information because line numbers are already enabled
     ---@diagnostic disable-next-line: duplicate-set-field
     statusline.section_location = function()
       return ""
     end
-
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
   end,
 }
