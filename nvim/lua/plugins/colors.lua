@@ -1,15 +1,14 @@
 return {
   {
-    "sainnhe/edge",
+    "folke/tokyonight.nvim",
     priority = 1000,
-    enabled = true,
-    -- event = "VimEnter", -- Sets the loading event to 'VimEnter'
     config = function()
-      vim.cmd.colorscheme("edge")
-      vim.opt.background = "dark"
-      vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+      vim.cmd.colorscheme("tokyonight-night")
+      vim.cmd.hi("Comment gui=none")
+      -- vim.opt.background = "dark"
       vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
       vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+      vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
       -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
       -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     end,
