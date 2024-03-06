@@ -21,7 +21,7 @@ return {
           "javac $fileName &&",
           "java $fileNameWithoutExt",
         },
-        python = "python3 -u",
+        python = "cd '$dir' && python3 $fileName",
         typescript = "deno run",
         javascript = "node $fullFilePath",
         rust = {
@@ -45,7 +45,7 @@ return {
       },
       float = {
         close_key = "<ESC>",
-        border = "none",
+        border = "rounded",
 
         -- Num from `0 - 1` for measurements
         height = 0.8,
