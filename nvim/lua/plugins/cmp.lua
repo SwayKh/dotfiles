@@ -23,6 +23,7 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
+    luasnip.config.setup({})
     -- local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
