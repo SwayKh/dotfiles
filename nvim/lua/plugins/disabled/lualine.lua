@@ -1,10 +1,8 @@
 return {
   -- Set lualine as statusline
   "nvim-lualine/lualine.nvim",
-  -- See `:help lualine.txt`
-  -- Eviline config for lualine
-  -- Author: shadmansaleh
-  -- Credit: glepnir
+  -- If you enabled lualine, uncomment the autocmd for macro recording in
+  -- config/misc
   event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
     local lualine = require("lualine")

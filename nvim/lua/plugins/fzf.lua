@@ -26,7 +26,7 @@ return {
 
       args = { prompt = " ❯ " },
       oldfiles = { prompt = " Recents ❯ " },
-      buffers = { prompt = " Buffers ❯ " },
+      buffers = { prompt = " Buffers ❯ ", no_header_i = true },
       colorschemes = { prompt = " Themes ❯ " },
       keymaps = { prompt = " Keymaps ❯ " },
       grep = { prompt = " Find ❯ ", no_header_i = true },
@@ -58,6 +58,7 @@ return {
     vim.keymap.set("n", "<leader>sd", fzf.diagnostics_document, { silent = true, desc = "[S]earch [D]iagnostics" }) --diagnostics
 
     vim.keymap.set("n", "<leader><leader>", fzf.buffers, { silent = true, desc = "[ ] Find existing buffers" })
+
     vim.keymap.set("n", "<leader>sn", function()
       require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
     end, { silent = true, desc = "[S]earch [N]vim config" })
@@ -66,8 +67,8 @@ return {
       require("fzf-lua").grep_curbuf({
         winopts = {
           preview = { hidden = "hidden" },
-          height = 0.45, -- window height
-          width = 0.60, -- window width
+          height = 0.50, -- window height
+          width = 0.70, -- window width
           row = 0.50, -- window row position (0=top, 1=bottom)
           col = 0.50, -- window col position (0=left, 1=right)
         },
