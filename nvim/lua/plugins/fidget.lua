@@ -1,6 +1,7 @@
 return {
   "j-hui/fidget.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
   opts = {},
   config = function()
     require("fidget").setup({
