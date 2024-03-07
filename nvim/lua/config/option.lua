@@ -30,7 +30,6 @@ vim.opt.sidescrolloff = 5
 vim.wo.signcolumn = "yes"
 vim.opt.pumheight = 0 -- Max items to show in pop up menu
 vim.opt.cmdheight = 0 -- Max items to show in command menu
-vim.opt.fileencoding = "utf-8"
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.ttimeoutlen = 0

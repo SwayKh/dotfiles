@@ -39,13 +39,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("RecordingEnter", {
-  callback = function()
-    require("lualine").refresh({
-      place = { "statusline" },
-    })
-  end,
-})
+-- vim.api.nvim_create_autocmd("RecordingEnter", {
+--   callback = function()
+--     require("lualine").refresh({
+--       place = { "statusline" },
+--     })
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd("RecordingLeave", {
   callback = function()
