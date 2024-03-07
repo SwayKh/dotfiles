@@ -1,8 +1,6 @@
 return {
   "CRAG666/code_runner.nvim",
   lazy = true,
-  -- event = "VeryLazy",
-  -- event = { "BufReadPre", "BufNewFile", "InsertEnter" },
   ft = { "c", "c++", "java", "python", "typescript", "javascript", "rust", "go" },
 
   config = function()

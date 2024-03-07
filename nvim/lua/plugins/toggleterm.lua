@@ -1,6 +1,5 @@
 return {
   "akinsho/toggleterm.nvim",
-  -- event = { "BufReadPre", "BufNewFile" },
   event = "VeryLazy",
   version = "*",
   opts = {--[[ things you want to change go here]]

@@ -4,7 +4,6 @@ return {
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    -- local actions = require("fzf-lua.actions")
     local fzf = require("fzf-lua")
     fzf.setup({
       "fzf-native", -- profiles, options {"default", "telescope", "fzf-native", "fzf-tmux", "fzf-vim"} + :fzflua profiles

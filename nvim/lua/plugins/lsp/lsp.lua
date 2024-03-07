@@ -6,7 +6,6 @@ return {
   "neovim/nvim-lspconfig",
 
   lazy = true,
-  -- event = { "VeryLazy", "InsertEnter", "BufReadPre", "BufNewFile" },
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
