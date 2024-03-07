@@ -16,9 +16,19 @@ return {
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
+  --   lazy = true,
   -- },
   -- {
   --   "sainnhe/sonokai",
+  --   lazy = true,
+  -- },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = true,
+  -- },
+  -- {
+  --   "sainnhe/edge",
+  --   lazy = true,
   -- },
   -- {
   --   "dracula/vim",
@@ -29,12 +39,6 @@ return {
   -- },
   -- {
   --   "folke/tokyonight.nvim",
-  -- },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  -- },
-  -- {
-  --   "sainnhe/edge",
   -- },
   -- {
   --   "navarasu/onedark.nvim",
