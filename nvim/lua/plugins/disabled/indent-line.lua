@@ -1,8 +1,8 @@
 return {
   -- Add indentation guides even on blank lines
   "lukas-reineke/indent-blankline.nvim",
-  -- lazy = true,
-  -- event = { "BufReadPre", "BufNewFile" },
+  lazy = true,
+  event = { "BufReadPre", "BufNewFile" },
   opts = {
     indent = {
       char = "│",
