@@ -131,17 +131,20 @@ return {
             runtime = { version = "LuaJIT" },
             workspace = {
               checkThirdParty = false,
-              library = {
-                "${3rd}/luv/library",
-                unpack(vim.api.nvim_get_runtime_file("", true)),
-              },
+              -- library = {
+              --   "${3rd}/luv/library",
+              --   unpack(vim.api.nvim_get_runtime_file("", true)),
+              -- },
               -- If lua_ls is really slow on your computer, you can try this instead:
-              -- library = { vim.env.VIMRUNTIME },
+              library = { vim.env.VIMRUNTIME },
             },
             completion = {
               callSnippet = "Replace",
             },
-            -- diagnostics = { disable = { "missing-fields" } },
+            diagnostics = {
+              globals = { "vim" },
+              disable = { "missing-fields" },
+            },
           },
         },
       },
