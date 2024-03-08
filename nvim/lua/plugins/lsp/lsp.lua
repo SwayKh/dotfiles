@@ -12,6 +12,7 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "j-hui/fidget.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
