@@ -29,10 +29,11 @@ return {
     cmp.setup({
       enabled = true,
       completion = {
-        completeopt = "menu,menuone,noinsert,preview,noselect",
+        completeopt = "menu,menuone,preview", -- ,noinsert,noselect",
       },
+      -- The completeopt 'noselect' option does this
       -- preselect = cmp.PreselectMode.None,
-      snippet = { -- configure how nvim-cmp interacts with snippet engine
+      snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
