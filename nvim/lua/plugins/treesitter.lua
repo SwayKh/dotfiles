@@ -3,11 +3,11 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = true,
   event = "VeryLazy",
+  -- event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   dependencies = {
     {
       "windwp/nvim-ts-autotag",
-      event = { "BufReadPre", "BufNewFile" },
     },
   },
   config = function()
