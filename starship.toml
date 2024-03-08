@@ -15,6 +15,8 @@ $line_break\
 $os\
 $character"""
 
+command_timeout = 10000
+
 [nodejs]
 format = "[$symbol($version )]($style)"
 
