@@ -28,6 +28,7 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 2
 vim.opt.sidescrolloff = 5
 vim.wo.signcolumn = "yes"
+vim.opt.pumwidth = 50
 vim.opt.pumheight = 0 -- Max items to show in pop up menu
 vim.opt.cmdheight = 0 -- Max items to show in command menu
 vim.opt.updatetime = 250
