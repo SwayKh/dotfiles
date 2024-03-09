@@ -15,7 +15,10 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   pattern = { "*.txt" },
   callback = function()
     if vim.o.filetype == "help" then
-      vim.cmd.wincmd("L")
+      vim.cmd([[ 
+        wincmd L  
+        vert resize 90
+      ]])
     end
   end,
 })
@@ -81,12 +84,3 @@ end, { nargs = "+", complete = "command" })
 --     end
 --   end),
 -- })
-
--- local function theme()
--- vim.cmd.colorscheme("catppuccin")
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
--- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
--- vim.opt.fillchars = { eob = ""}
--- end
--- theme()
