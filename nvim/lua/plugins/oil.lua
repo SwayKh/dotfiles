@@ -48,6 +48,8 @@ return {
         ["g\\"] = "actions.toggle_trash",
       },
     })
+
+    vim.keymap.set("n", "-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
     -- vcs.setup({
     --   status_symbol = {
     --     [StatusType.Added] = "",
