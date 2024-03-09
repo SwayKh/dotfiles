@@ -10,7 +10,8 @@
 
 ---
 
-![Screenshot](./img/Screenshot.jpg)
+![Screenshot](./img/screenshot.png)
+![Neovim](./img/nvim.png)
 
 ## Installation
 
