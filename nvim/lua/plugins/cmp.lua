@@ -14,14 +14,14 @@ return {
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-cmdline", -- For cmdline suggestions
 
-    -- "onsails/lspkind.nvim", -- vs-code like pictograms
+    "onsails/lspkind.nvim", -- vs-code like pictograms
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
     luasnip.config.setup({})
-    -- local lspkind = require("lspkind")
+    local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -29,10 +29,11 @@ return {
     cmp.setup({
       enabled = true,
       completion = {
-        completeopt = "menu,menuone,preview", -- ,noinsert,noselect",
+        autocompletion = true,
+        completeopt = "menu,menuone,preview,noinsert,noselect",
       },
       -- The completeopt 'noselect' option does this
-      -- preselect = cmp.PreselectMode.None,
+      preselect = cmp.PreselectMode.Item,
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -77,20 +78,24 @@ return {
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
-        -- documentation = {
-        --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        --   winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-        -- },
       },
       -- configure lspkind for vs-code like pictograms in completion menu
-      -- formatting = {
-      --   format = lspkind.cmp_format({
-      --     mode = "symbol_text",
-      --     maxwidth = 80,
-      --     ellipsis_char = "...",
-      --     symbol_map = { Codeium = "" },
-      --   }),
-      -- },
+      formatting = {
+        format = lspkind.cmp_format({
+          before = function(_, vim_item)
+            vim_item.abbr = string.sub(vim_item.abbr, 1, 45)
+            return vim_item
+          end,
+          mode = "symbol_text",
+          maxwidth = 80,
+          ellipsis_char = "...",
+          symbol_map = { Codeium = "" },
+        }),
+      },
+      experimental = {
+        native_menu = false,
+        ghost_text = false,
+      },
     })
     -- `/` cmdline setup.
     cmp.setup.cmdline({ "/", "?" }, {
