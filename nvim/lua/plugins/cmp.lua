@@ -33,7 +33,7 @@ return {
         completeopt = "menu,menuone,preview,noinsert,noselect",
       },
       -- The completeopt 'noselect' option does this
-      preselect = cmp.PreselectMode.Item,
+      preselect = cmp.PreselectMode.None,
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
