@@ -1,6 +1,7 @@
 return {
   "folke/flash.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
+  event = "VeryLazy",
   opts = {},
   -- stylua: ignore
   keys = {
