@@ -77,21 +77,23 @@ map gD cd ~/Documents
 map gd cd ~/Downloads
 map gc cd ~/.config
 map gw cd ~/wallpapers/Images/
-map gpc cd ~/Pictures
-map gps cd ~/Pictures/Screenshots/
-map gb cd ~/.local/bin
 map gt cd ~/Test
 map gT cd ~/.trash
 map ga cd ~/Android
 map gs cd ~/scripts
 map g. cd ~/dotfiles/
-
 map gr cd ~/Roms/
-map gn cd ~/Obsidian/Vault/
+map go cd ~/Obsidian/Vault/
+map gb cd ~/.local/bin
+map gla cd ~/.local/share/applications/
+map gpc cd ~/Pictures
+map gps cd ~/Pictures/Screenshots/
+
 map gpp cd ~/Projects/Python/
 map gpg cd ~/Projects/Go/
 map gpw cd ~/Projects/Web/
-map got cd ~/Projects/Web/TheOdinProject/
+map gpo cd ~/Projects/Web/TheOdinProject/
+map gpi cd '~/Projects/Python/Web Scraping/ImageDownload/'
 
 map gA cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/
 
@@ -106,6 +108,8 @@ cmd mkfile %printf "File Name: "; read and; touch $and; lf -remote 'send reload'
 # Func that doesn't deletes file but just moves them to .trash folder
 cmd trash %set -f; mv "$fx" ~/.trash
 cmd clear_trash % rm -rf ~/.trash/*
+
+cmd yank-path $printf '%s' "$fx" | wl-copy
 
 # Open the lfrc config file from anywhere
 cmd lfrc ${{
@@ -258,14 +262,13 @@ cmd bulk-rename ${{
 cmd DeleteAllFiles ${{
     find "$PWD" -maxdepth 1 -type f -delete
 }}
+
 cmd moveToTopLevel ${{
   IFS=$'\n' read -r -A file_directories <<< "$fx"
   for directory in "${file_directories[@]}"; do
     find "$directory" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cp {} "$PWD" \;
   done
 }}
-
-cmd yank-path $printf '%s' "$fx" | wl-copy
 
 cmd touchM3U ${{
   for file in "$fx"; do
