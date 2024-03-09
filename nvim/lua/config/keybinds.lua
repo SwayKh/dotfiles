@@ -17,11 +17,13 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
 map("n", "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
 
-map("n", "<leader>V", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
-map("n", "<leader>S", "<Cmd>split<CR>", { desc = "[S]plit Horizontally (Default behaviour)" })
+map("n", "<leader>v", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
+map("n", "<leader>H", "<Cmd>split<CR>", { desc = "[S]plit Horizontally (Default behaviour)" })
 
+map("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
+map("n", "<leader>.", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
 
 map("n", "qq", "<Cmd>q!<CR>", { silent = true, desc = "[Q]uit" })
 map("n", "<leader>bd", "<Cmd>bd<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
@@ -31,7 +33,6 @@ map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "S
 map("n", "<leader>;l", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
 map("n", "<leader>;m", "<Cmd>Mason<CR>", { silent = true, desc = "Open [M]ason" })
 map("n", "<leader>lr", ":Lazy reload", { desc = "[L]azy [R]eload plugin of choice" })
-map("n", "-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
 
 -- Can't use K, needed for documentation
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
@@ -41,12 +42,6 @@ map(
   "M",
   "<Cmd>call cursor(0, virtcol('$')/2)<CR>",
   { silent = true, desc = "Move to the middle of the line" }
-)
-map(
-  "n",
-  "<leader>.",
-  "<Cmd>source $MYVIMRC<CR>",
-  { silent = true, desc = "Source nvim config, and reload all plugins" }
 )
 
 map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
