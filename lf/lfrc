@@ -54,12 +54,14 @@ map op &xdg-open $f
 map J :updir; down; open # Move down in parent directory
 map K :updir; up; open # Move up in parent directory
 map sf :set info size
-map . :calcdirsize; down; # Calculate the directory size in the editor without NCDU
+map \ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
+map . selectRandom
 
 # Function Bindings
 map md mkdir
 map mf mkfile
 map mp chmod #use 664, 777 notation rather than u+x
+map mc mark-save
 map dd trash
 map <enter> open
 map ua Unarchive
@@ -275,4 +277,16 @@ cmd touchM3U ${{
     dname="$(basename -a $file)"
     touch "$file"/"$dname".m3u
   done
+}}
+
+cmd selectRandom %{{
+  res="$(find . -maxdepth 1 | shuf -n 1 )"
+  if [ -d "$res" ] ; then
+      cmd="cd"
+  elif [ -f "$res" ] ; then
+      cmd="select"
+  else
+      exit 0
+  fi
+  lf -remote "send $id $cmd \"$res\""
 }}
