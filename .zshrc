@@ -31,6 +31,7 @@ alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'
 alias pipes='pipes.sh'
 # alias vim='nvim'
+alias c.='cd ~/dotfiles'
 alias :q='exit'
 alias lf=lfcd
 alias yeet="sudo pacman -Rns"
