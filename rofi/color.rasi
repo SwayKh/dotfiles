@@ -1,22 +1,28 @@
-
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
-    font:                           "JetBrainsMono Nerd Font 12";
-    foreground:                     #D99887; //#F2C395;
-    oldforeground:                  #87A2AA;
-    background:                     #333333;
-    highlight:	                    #F5F5F5;
-    old-highlight:                  #F1594F;
-    red:                            #973D46;
-    darkred:                        #973D46;
-    blue:                           #BBCCDD;
-    darkblue:                       #BBCCDD;
-    yellow:                         #E0AE4A;
-    darkyellow:                     #E0AE4A;
-    border:                         #1B1E25;
-    darkblack:                      #090A0F;
-    darkgray:                       #252428;
-    darkBlue:                       #04142D;
+  font: "JetBrainsMono Nerd Font 12";
+  foreground: #D99887; //#F2C395;
+  oldforeground: #87A2AA;
+  background: #333333;
+  highlight: #F5F5F5;
+  old-highlight: #F1594F;
+  red: #973D46;
+  darkRed: #973D46;
+  blue: #BBCCDD;
+  yellow: #E0AE4A;
+  darkYellow: #E0AE4A;
+  border: #1B1E25;
+  darkBlue: #04142D;
+
+  altBlue: #ACBAF9;
+  altDarkBlue: #1F1E2E;
+  altWhite: #F1D8D4;
+
+  lightGray: #6B6B6B;
+  mediumGray: #454545;
+  darkGray: #232323;
+  black: #090A0F;
+  darkBlack: #000000;
 }
 
 window {
@@ -31,77 +37,78 @@ window {
   location: center;
 
   anchor: center;
-  padding : 0px;
-  border: 1px;
-  border-color: @foreground;
+  padding: 0px;
+  border: 2px;
+  border-color: @altWhite;
   border-radius: 10px;
   spacing: 0;
-  children: [ mainbox ];
+  children: [ mainbox];
 }
 
 
 mainbox {
   spacing: 0;
-  children: [ inputbar, listview ];
+  children: [ inputbar, listview];
 }
 
 
 listview {
-    layout: vertical;
-    padding:	       0px 5px;
-    lines: 11;
-    columns: 1;
-    border: 0px;
-    margin: 0px;
-    scrollbar: false;
-    background-color : @darkBlue;
+  layout: vertical;
+  padding: 0px 5px;
+  lines: 11;
+  columns: 1;
+  border: 0px;
+  margin: 0px;
+  scrollbar: false;
+  background-color: @altDarkBlue;
 }
 
 textbox {
-    text-color: @foreground;
-    background-color: @darkBlue;
+  text-color: @altBlue;
+  background-color: @altDarkBlue;
 }
 
 entry {
-    enabled:           true;
-    padding:	       0px 5px;
-    text-color:        @foreground;
-    background-color:  @darkBlue;
+  enabled: true;
+  padding: 0px 5px;
+  text-color: @altBlue;
+  background-color: @altDarkBlue;
 }
 
 prompt {
-    padding:	       0px 5px;
-    text-color: @foreground;
+  padding: 0px 5px;
+  text-color: @altBlue;
 }
 
 textbox-prompt-colon {
-    expand: false;
-    margin: 0px;
-    str: " ";
+  expand: false;
+  margin: 0px;
+  str: " ";
+  text-color: @altBlue;
 }
 
 inputbar {
-    background-color: @darkBlue;
-    spacing:          8px;
-    padding:          8px;
-    margin:           0px;
-    border:           0px;
-    border-radius:    0px;
-    border-color:     @darkBlue;
-    children:         ["textbox-prompt-colon", entry];
+  background-color: @altDarkBlue;
+  spacing: 8px;
+  padding: 8px;
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px;
+  border-color: @altDarkBlue;
+  children: ["textbox-prompt-colon", entry];
 }
 
 mode-switcher {
-    text-color: @foreground;
-    background-color: @darkBlue;
+  text-color: @altBlue;
+  background-color: @altDarkBlue;
 }
 
 element {
-    orientation: horizontal;
-    border:       0;
-    padding:      5px;
-    text-color: @foreground;
-    background-color: @darkBlue;
+  orientation: horizontal;
+  border: 0;
+  padding: 5px;
+  text-color: @altBlue;
+  background-color: @altDarkBlue;
 }
 
 element-icon {
@@ -109,52 +116,52 @@ element-icon {
 }
 
 element normal.normal {
-    background-color: @darkBlue;
-    text-color:       @foreground;
+  background-color: @altDarkBlue;
+  text-color: @altBlue;
 }
 
 element normal.urgent {
-    background-color: @red;
-    text-color:       @foreground;
+  background-color: @red;
+  text-color: @altBlue;
 }
 
 element normal.active {
-    background-color: @darkBlue;
-    text-color:       @foreground;
+  background-color: @altDarkBlue;
+  text-color: @altBlue;
 }
 
 element selected.normal {
-    text-color: @darkBlue;
-    background-color: @foreground;
+  text-color: @altDarkBlue;
+  background-color: @altBlue;
 }
 
 element selected.urgent {
-    background-color: @red;
-    text-color:       @darkBlue;
+  background-color: @red;
+  text-color: @altDarkBlue;
 }
 
 element selected.active {
-    background-color: @yellow;
-    text-color:       @darkBlue;
+  background-color: @yellow;
+  text-color: @altDarkBlue;
 }
 
 element alternate.normal {
-    background-color: @darkBlue;
-    text-color:       @foreground;
+  background-color: @altDarkBlue;
+  text-color: @altBlue;
 }
 
 element alternate.urgent {
-    background-color: @darkBlue;
-    text-color:       @foreground;
+  background-color: @altDarkBlue;
+  text-color: @altBlue;
 }
 
 element alternate.active {
-    background-color: @darkBlue;
-    text-color:       @foreground;
+  background-color: @altDarkBlue;
+  text-color: @altBlue;
 }
 
 element-text {
-    cursor:           inherit;
-    highlight:        #F1EDEE;
-    text-color:       inherit;
+  cursor: inherit;
+  highlight: #F1EDEE;
+  text-color: inherit;
 }
