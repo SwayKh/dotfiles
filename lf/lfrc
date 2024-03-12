@@ -15,11 +15,10 @@ set preview true
 set sixel true
 set previewer ~/.config/lf/preview
 set ratios 1:2:2
-set cursorpreviewfmt "\033[7m"
+set cursorpreviewfmt "\033[7;2m"
 
 # Sort Downloads directory by creation time, reverse
 setlocal ~/Downloads/ sortby ctime
-# setlocal ~/Downloads/ info size
 setlocal ~/Downloads/ reverse
 
 # Sort Screenshots directory by creation time, reverse
@@ -33,7 +32,7 @@ map n #gets in the way of unarchive
 map u #used for unselect, gets in the way of unarchive
 map d #used for cut, get in way of trash func
 map e #opens editor, not needed
-map y #used for copy
+map y #used for copy, now for yank-path
 map f #used for find (Not sure how it worked)
 
 # Custom Key mappings
@@ -43,8 +42,8 @@ map c copy
 map P :paste; clear
 map p :paste-async
 map f search # Works like vim / search
-# map f fzf_search
-map D $rm -rf $fx
+map <enter> open
+map D $IFS=':';rm -rf $fx
 map <delete> delete
 map <esc> unselect
 map <backspace2> clear # Clears any cut/copy highlighter
@@ -53,24 +52,22 @@ map oc lfrc
 map op &xdg-open $f
 map J :updir; down; open # Move down in parent directory
 map K :updir; up; open # Move up in parent directory
-map sf :set info size
 map \ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
 map . selectRandom
+# map sf :set info size # There are 'z' keybindings for setting info, without changing sorting
 
 # Function Bindings
 map md mkdir
 map mf mkfile
+map dd trash
 map mp chmod #use 664, 777 notation rather than u+x
 map mc mark-save
-map dd trash
-map <enter> open
 map ua Unarchive
 map F :fzf_jump
+map y :yank-path
 map R bulk-rename
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
-map ml moveToTopLevel
-map mt touchM3U
 
 # Movement Bindings
 map gh cd ~ # This is default
@@ -108,10 +105,22 @@ cmd mkdir %printf "Directory Name: "; read and; mkdir $and; lf -remote 'send rel
 cmd mkfile %printf "File Name: "; read and; touch $and; lf -remote 'send reload'
 
 # Func that doesn't deletes file but just moves them to .trash folder
-cmd trash %set -f; mv "$fx" ~/.trash
+# cmd trash %set -f; mv "$fx" ~/.trash
 cmd clear_trash % rm -rf ~/.trash/*
 
-cmd yank-path $printf '%s' "$fx" | wl-copy
+cmd yank-path &{{
+  printf '%s' "$fx" | wl-copy
+  lf -remote 'send reload'
+}}
+
+cmd trash ${{
+  trash="~/.trash/"
+  for file in "$fx"
+  do
+    mv "$file" "$trash"
+  done
+  lf -remote "send reload"
+}}
 
 # Open the lfrc config file from anywhere
 cmd lfrc ${{
@@ -289,4 +298,16 @@ cmd selectRandom %{{
       exit 0
   fi
   lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd newFold ${{
+    set -f
+    printf "Directory name: "
+    read newd
+    mkdir -- "$newd"
+    mv -- $fx "$newd"
+}}
+
+cmd on-select &{{
+    lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
 }}
