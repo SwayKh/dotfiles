@@ -25,53 +25,53 @@ set backspace=indent,eol,start
 set wildmenu
 set laststatus=2
 
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
 
 "Gruvbox theme
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 "File explorer trees
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
 "For undo
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 
 "Git Integration
-Plug 'jreybert/vimagit'
+" Plug 'jreybert/vimagit'
 
 "Most Recently Used Files
-Plug 'mhinz/vim-startify'
-Plug 'yegappan/mru'
+" Plug 'mhinz/vim-startify'
+" Plug 'yegappan/mru'
 
 "Change surrounding brackets/quotes/tags
-Plug 'tpope/vim-surround'
-Plug 'raimondi/delimitmate'
+" Plug 'tpope/vim-surround'
+" Plug 'raimondi/delimitmate'
 
 "Fuzzy Finder
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'junegunn/fzf'
 
 "AutoFormatter
-Plug 'chiel92/vim-autoformat'
+" Plug 'chiel92/vim-autoformat'
 
 "Show Commands in popup
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 "Status bar
-Plug 'bling/vim-airline'
+" Plug 'bling/vim-airline'
 
 "Intellisense
 "Plug 'neoclide/coc.nvim'
 
 "Colorizer
-Plug 'lilydjwg/colorizer'
+" Plug 'lilydjwg/colorizer'
 
 "Fonts and icon
 "Plug 'ryanoasis/nerd-fonts'
 
 "Minimap
-Plug 'severin-lemaignan/vim-minimap'
-call plug#end()
+" Plug 'severin-lemaignan/vim-minimap'
+" call plug#end()
 
 
 "colorscheme gruvbox
