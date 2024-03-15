@@ -23,6 +23,14 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   end,
 })
 
+-- vim.api.nvim_create_autocmd("BufReadPost", {
+--   group = vim.api.nvim_create_augroup("conf_filetype", {}),
+--   pattern = { "*.conf", "*.ini", "*.rasi", "*.cfg" },
+--   callback = function()
+--     vim.cmd("set filetype=conf")
+--   end,
+-- })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
