@@ -26,40 +26,10 @@
 }
 
 window {
-  //width: 20%;
-  //height: 100%;
-  //orientation: vertical;
-  //location: west;
-
-  height: 60%;
-  width: 30%;
-  orientation: vertical;
-  location: center;
-
-  anchor: center;
-  padding: 0px;
-  border: 2px;
-  border-color: @altWhite;
-  border-radius: 10px;
-  spacing: 0;
-  children: [ mainbox];
+  border-color: @altBlue;
 }
-
-
-mainbox {
-  spacing: 0;
-  children: [ inputbar, listview];
-}
-
 
 listview {
-  layout: vertical;
-  padding: 0px 5px;
-  lines: 11;
-  columns: 1;
-  border: 0px;
-  margin: 0px;
-  scrollbar: false;
   background-color: @altDarkBlue;
 }
 
