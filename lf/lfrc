@@ -1,3 +1,4 @@
+# vim: ft=sh
 # Basic Settings
 
 set shell zsh
