@@ -23,6 +23,9 @@ return {
     local mason_tool_installer = require("mason-tool-installer")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local util = require("lspconfig.util")
+    local lspui = require("lspconfig.ui.windows")
+
+    lspui.default_options.border = "rounded"
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -93,9 +96,13 @@ return {
       bashls = {}, -- Bash
       clangd = {}, -- C/C++
       htmx = {}, -- HTMX
-      emmet_language_server = {}, -- HTML
+      emmet_language_server = {
+        filetypes = { "html", "twig", "hbs" },
+      }, -- HTML
       cssls = {}, -- CSS
-      tailwindcss = {}, -- Tailwind CSS
+      tailwindcss = {
+        filetypes = { "html", "twig", "hbs" },
+      }, -- Tailwind CSS
       eslint = {}, -- React/NextJS/Svelte
       marksman = {}, -- Markdown lsp
       sqlls = {}, -- SQL
