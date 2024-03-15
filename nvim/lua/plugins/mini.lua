@@ -12,14 +12,15 @@ return { -- Collection of various small independent plugins/modules
     --  - yinq - [Y]ank [I]nside [N]ext [']quote
     --  - ci'  - [C]hange [I]nside [']quote
     require("mini.ai").setup({ n_lines = 500 })
+    require("mini.pairs").setup()
 
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --
     -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
     -- - sd'   - [S]urround [D]elete [']quotes
     -- - sr)'  - [S]urround [R]eplace [)] [']
-    require("mini.surround").setup()
-    require("mini.pairs").setup()
+    --  [s/S] keybinds are used for flash, will figure it out
+    -- require("mini.surround").setup()
 
     -- require("mini.starter").setup()
     -- require("mini.indentscope").setup()
