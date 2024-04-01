@@ -76,13 +76,13 @@ mode-switcher {
 element {
   orientation: horizontal;
   border: 0;
-  padding: 5px;
+  padding: 3px;
   text-color: @altBlue;
   background-color: @altDarkBlue;
 }
 
 element-icon {
-  size: 32;
+  size: 22;
 }
 
 element normal.normal {
