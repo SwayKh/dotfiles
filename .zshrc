@@ -19,6 +19,9 @@ plugins=(git
     zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/nvm/init-nvm.sh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
@@ -30,7 +33,6 @@ export VISUAL=nvim
 alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'
 alias pipes='pipes.sh'
-# alias vim='nvim'
 alias c.='cd ~/dotfiles'
 alias :q='exit'
 alias lf=lfcd
@@ -51,7 +53,6 @@ alias gd='git diff'
 alias gp='git push'
 
 eval "$(starship init zsh)"
-source /usr/share/nvm/init-nvm.sh
 # (cat ~/.cache/wal/sequences &)
 
 # This needs to be defined in root user.
@@ -64,12 +65,6 @@ source /usr/share/nvm/init-nvm.sh
 #     --nodeps          \
 #     --needed
 # }
-
-# neofetch
-# pokemon-colorscripts -r
-# pfetch
-# colorscript -r
-
 
 # Remove duplicates from $PATH
 typeset -U PATH
