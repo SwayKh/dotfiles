@@ -1,7 +1,7 @@
 configuration {
     modi: "drun,nerdy,run,filebrowser,window";
     icon-theme: "Papirus";
-    show-icons: false;
+    show-icons: true;
     terminal: "kitty";
     /*drun-display-format: "{icon} {name}";*/
     location: 0;
