@@ -1,5 +1,6 @@
 configuration {
     modi: "drun,nerdy,run,filebrowser,window";
+    font: "JetBrainsMono Nerd Font 12";
     icon-theme: "Papirus";
     show-icons: true;
     terminal: "kitty";
