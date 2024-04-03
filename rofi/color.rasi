@@ -1,6 +1,5 @@
 /* foreground, blue, darkblue, are set to BBCCDD*/
 * {
-  font: "JetBrainsMono Nerd Font 12";
   foreground: #D99887; //#F2C395;
   oldforeground: #87A2AA;
   background: #333333;
