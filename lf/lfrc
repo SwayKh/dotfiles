@@ -44,7 +44,7 @@ map P :paste; clear
 map p :paste-async
 map f search # Works like vim / search
 map <enter> open
-map D $IFS=':';rm -rf $fx
+map D $rm -rf $fx # $IFS=':';
 map <delete> delete
 map <esc> unselect
 map <backspace2> clear # Clears any cut/copy highlighter
@@ -53,7 +53,7 @@ map oc lfrc
 map op &xdg-open $f
 map J :updir; down; open # Move down in parent directory
 map K :updir; up; open # Move up in parent directory
-map \ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
+map \\ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
 map . selectRandom
 # map sf :set info size # There are 'z' keybindings for setting info, without changing sorting
 
