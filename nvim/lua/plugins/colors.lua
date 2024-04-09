@@ -17,21 +17,25 @@ return {
   --   "eldritch-theme/eldritch.nvim",
   --   lazy = true,
   -- },
+  {
+    "sainnhe/sonokai",
+    lazy = true,
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+  },
+  {
+    "sainnhe/edge",
+    lazy = true,
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+  },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "sainnhe/sonokai",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = true,
-  -- },
-  -- {
-  --   "sainnhe/edge",
   --   lazy = true,
   -- },
   -- {
@@ -40,9 +44,6 @@ return {
   -- },
   -- {
   --   "EdenEast/nightfox.nvim",
-  -- },
-  -- {
-  --   "folke/tokyonight.nvim",
   -- },
   -- {
   --   "navarasu/onedark.nvim",
