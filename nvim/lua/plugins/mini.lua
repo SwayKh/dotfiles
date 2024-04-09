@@ -22,7 +22,7 @@ return { -- Collection of various small independent plugins/modules
     --  [s/S] keybinds are used for flash, will figure it out
     -- require("mini.surround").setup()
 
-    -- require("mini.starter").setup()
+    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
     -- require("mini.indentscope").setup()
 
     -- require("mini.hipatterns").setup({
