@@ -37,6 +37,7 @@ vim.opt.ttimeoutlen = 0
 vim.opt.conceallevel = 0
 vim.opt.showmode = true
 vim.opt.swapfile = false
+vim.opt.shortmess = "filnxtToOFI"
 vim.opt.completeopt = "menuone,menu,noselect"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
