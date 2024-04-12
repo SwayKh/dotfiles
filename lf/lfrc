@@ -182,7 +182,7 @@ cmd Unarchive ${{
 cmd setwallpaper &{{
   # cp "$f" ~/.config/wall.jpg;
   # swaybg -m fill -i ~/.config/wall.jpg &
-  wallbg="$HOME/.local/bin/wallbg"
+  wallbg="$HOME/scripts/wallbg"
   $wallbg "$f"
   lf -remote 'send reload'
 }}

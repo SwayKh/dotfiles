@@ -73,12 +73,12 @@ check_history(){
   awk -F ";" '{print $2}' $HISTFILE | grep "$1" | tac | bat
 }
 
-convertToJpg(){
-  find . -name "*.png" -exec mogrify -format jpg {} \;
-  find . -name "*.png" -exec rm {} \;
-  find . -name "*.webp" -exec mogrify -format jpg {} \;
+convertToPng(){
+  find . -name "*.jpg" -exec mogrify -format png {} \;
+  find . -name "*.jpg" -exec rm {} \;
+  find . -name "*.webp" -exec mogrify -format png {} \;
   find . -name "*.webp" -exec rm {} \;
-  find . -type f -name "*.jpg" -exec convert {} -resize 2560x1440 -quality 90 {} \;
+  find . -type f -name "*.png" -exec convert {} -resize 2560x1440 -quality 90 {} \;
 }
 
 updateRom() {
