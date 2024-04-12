@@ -2,7 +2,7 @@
 Name=LF
 GenericName=File Manager
 Comment=Terminal-based file manager
-Exec=wezterm -e lf
+Exec=foot -e lf
 Terminal=false
 StartupNotify=false
 Encoding=UTF-8
