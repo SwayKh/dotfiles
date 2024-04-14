@@ -3,8 +3,8 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
-    require("lua.plugins.disabled.alpha").setup(require("alpha.themes.dashboard").config)
-    local alpha = require("lua.plugins.disabled.alpha")
+    require("alpha").setup(require("alpha.themes.dashboard").config)
+    local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
     -- Set header

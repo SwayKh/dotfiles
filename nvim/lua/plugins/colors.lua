@@ -1,9 +1,9 @@
 return {
   {
-    "sainnhe/edge",
+    "rebelot/kanagawa.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("edge")
+      vim.cmd.colorscheme("kanagawa")
       vim.cmd.hi("Comment gui=none")
       -- vim.opt.background = "dark"
       vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
@@ -13,26 +13,26 @@ return {
       -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     end,
   },
-  {
-    "eldritch-theme/eldritch.nvim",
-    lazy = true,
-  },
-  {
-    "sainnhe/sonokai",
-    lazy = true,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = true,
-  },
+  -- {
+  --   "eldritch-theme/eldritch.nvim",
+  --   lazy = true,
+  -- },
+  -- {
+  --   "sainnhe/sonokai",
+  --   lazy = true,
+  -- },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = true,
+  -- },
   -- {
   --   "sainnhe/edge",
   --   lazy = true,
   -- },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = true,
+  -- },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
