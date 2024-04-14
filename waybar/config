@@ -11,7 +11,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "memory", "backlight", "pulseaudio", "tray"],
+    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "tray"],
 
     // Modules configuration
     "hyprland/workspaces": {
