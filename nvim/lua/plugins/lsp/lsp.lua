@@ -95,21 +95,23 @@ return {
     local servers = {
       bashls = {}, -- Bash
       clangd = {}, -- C/C++
-      htmx = {}, -- HTMX
       emmet_language_server = {
         filetypes = { "html", "twig", "hbs" },
       }, -- HTML
       cssls = {}, -- CSS
-      tailwindcss = {
-        filetypes = { "html", "twig", "hbs" },
-      }, -- Tailwind CSS
-      eslint = {}, -- React/NextJS/Svelte
       marksman = {}, -- Markdown lsp
       sqlls = {}, -- SQL
-
       tsserver = { -- Javascript, TypeScript
-        filetypes = { "typescriptreact", "javascriptreact", "svelte" },
+        filetypes = { "javascript", "typescriptreact", "javascriptreact", "svelte" },
       },
+      -- html = { -- HTML
+      --   filetypes = { "html", "twig", "hbs" },
+      -- },
+      -- htmx = {}, -- HTMX
+      -- tailwindcss = {
+      --   filetypes = { "html", "twig", "hbs" },
+      -- }, -- Tailwind CSS
+      -- eslint = {},   -- React/NextJS/Svelte
       gopls = { -- Golang
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -126,9 +128,6 @@ return {
       },
       pyright = { -- Python
         filetypes = { "python" },
-      },
-      html = { -- HTML
-        filetypes = { "html", "twig", "hbs" },
       },
       lua_ls = {
         -- cmd = {...},
@@ -217,6 +216,7 @@ return {
       opts.border = opts.border or border
       return orig_util_open_floating_preview(contents, syntax, opts, ...)
     end
+
     mason_lspconfig.setup({
       handlers = {
         function(server_name)
