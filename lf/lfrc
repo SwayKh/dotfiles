@@ -54,6 +54,7 @@ map op &xdg-open $f
 map J :updir; down; open # Move down in parent directory
 map K :updir; up; open # Move up in parent directory
 map \\ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
+map | :set ratios 1:2
 map . selectRandom
 # map sf :set info size # There are 'z' keybindings for setting info, without changing sorting
 
