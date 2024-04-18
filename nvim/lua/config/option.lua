@@ -3,11 +3,12 @@
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-vim.opt.cursorline = true
 vim.opt.autowrite = true
 vim.opt.autoread = true
 vim.opt.colorcolumn = "120"
+vim.opt.cursorline = true
 vim.opt.laststatus = 3
+vim.opt.showtabline = 2
 vim.opt.spell = false -- set spell on
 vim.opt.spelllang = "en_us"
 vim.opt.filetype = "on"
@@ -41,6 +42,7 @@ vim.opt.shortmess = "filnxtToOFI"
 vim.opt.completeopt = "menuone,menu,noselect"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.fillchars = { eob = " " }
 -- Fix Tab length
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

@@ -27,6 +27,10 @@ return {
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
 
+    local border_opts = {
+      border = "rounded",
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+    }
     cmp.setup({
       enabled = true,
       completion = {
@@ -71,15 +75,15 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" }, -- snippets
-        { name = "path" }, -- file system paths
-        { name = "buffer" }, -- text within current buffer
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "luasnip", priority = 750 },
+        { name = "buffer", priority = 500 },
+        { name = "path", priority = 250 },
         -- { name = "codeium" },
       }),
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
       },
       view = {
         entries = {
@@ -96,7 +100,25 @@ return {
           mode = "symbol_text",
           maxwidth = 80,
           ellipsis_char = "...",
-          symbol_map = { Codeium = "" },
+          symbol_map = {
+            Codeium = "",
+            Array = "󰅪",
+            Boolean = "⊨",
+            Class = "󰌗",
+            Constructor = "",
+            Key = "󰌆",
+            Namespace = "󰅪",
+            Null = "NULL",
+            Number = "#",
+            Object = "󰀚",
+            Package = "󰏗",
+            Property = "",
+            Reference = "",
+            Snippet = "",
+            String = "󰀬",
+            TypeParameter = "󰊄",
+            Unit = "",
+          },
         }),
       },
       experimental = {
