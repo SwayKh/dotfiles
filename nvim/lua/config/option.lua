@@ -38,7 +38,7 @@ vim.opt.ttimeoutlen = 0
 vim.opt.conceallevel = 0
 vim.opt.showmode = true
 vim.opt.swapfile = false
-vim.opt.shortmess = "filnxtToOFI"
+vim.opt.shortmess = "filnxtToOFsI"
 vim.opt.completeopt = "menuone,menu,noselect"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
@@ -47,7 +47,6 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
-vim.opt.showtabline = 2
 vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.breakindent = true
