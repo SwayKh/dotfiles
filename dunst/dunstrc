@@ -16,6 +16,7 @@
     follow = mouse
     sticky_history = yes
     line_height = 0
+    timeout = 5
     separator_height = 2
     padding = 4
     horizontal_padding = 4
@@ -47,4 +48,4 @@
 [urgency_critical]
     background = "#1d2021"
     foreground = "#ebdbb2"
-    timeout = 0
+    timeout = 10
