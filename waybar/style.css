@@ -3,7 +3,8 @@
 @define-color fg #f5f5f5;
 @define-color alert #f53c3c;
 @define-color disabled #a5a5a5;
-@define-color bordercolor #29c8e5;
+@define-color oldbordercolor #29c8e5;
+@define-color bordercolor #777;
 @define-color highlight #FBD47F;
 @define-color activegreen #8fb666;
 
@@ -17,41 +18,42 @@
 
 window#waybar {
   color: #f5f5f5;
-  background: @bg00;
+  background: #111;
   transition-property: background-color;
   transition-duration: 0.5s;
+  border: 2px solid @bordercolor;
 }
 
 window#waybar.empty {
   opacity: 0.3;
 }
 
-.modules-left {
-  background: @bg;
-  border: 2px solid @bordercolor;
-  border-radius: 20px;
-
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.modules-right {
-  background: @bg;
-  border: 2px solid @bordercolor;
-  border-radius: 20px;
-
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.modules-center {
-  background: @bg;
-  border: 2px solid @bordercolor;
-  border-radius: 20px;
-
-  padding-right: 5px;
-  padding-left: 5px;
-}
+/* .modules-left { */
+/*   background: @bg; */
+/*   border: 2px solid @bordercolor; */
+/*   border-radius: 20px; */
+/**/
+/*   padding-right: 5px; */
+/*   padding-left: 5px; */
+/* } */
+/**/
+/* .modules-right { */
+/*   background: @bg; */
+/*   border: 2px solid @bordercolor; */
+/* border-radius: 20px; */
+/**/
+/*   padding-right: 5px; */
+/*   padding-left: 5px; */
+/* } */
+/**/
+/* .modules-center { */
+/*   background: @bg; */
+/*   border: 2px solid @bordercolor; */
+/* border-radius: 20px; */
+/**/
+/*   padding-right: 5px; */
+/*   padding-left: 5px; */
+/* } */
 
 button {
   /* Use box-shadow instead of border so the text isn't offset */
