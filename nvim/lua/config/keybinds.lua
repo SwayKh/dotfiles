@@ -8,7 +8,7 @@ local map = vim.keymap.set
 
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is hard to do" })
+map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
