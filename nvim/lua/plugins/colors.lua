@@ -1,10 +1,11 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
+    "dasupradyumna/midnight.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("midnight")
       vim.cmd.hi("Comment gui=none")
+      -- vim.cmd.hi("Normal guibg=#222222")
       -- vim.opt.background = "dark"
       vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
       vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
@@ -14,12 +15,17 @@ return {
     end,
   },
   -- {
+  --   "marko-cerovac/material.nvim",
+  -- },
+  -- {
+  --   "dasupradyumna/midnight.nvim",
+  -- },
+  -- {
   --   "eldritch-theme/eldritch.nvim",
   --   lazy = true,
   -- },
   -- {
   --   "sainnhe/sonokai",
-  --   lazy = true,
   -- },
   -- {
   --   "rebelot/kanagawa.nvim",
