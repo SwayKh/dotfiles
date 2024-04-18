@@ -12,6 +12,8 @@ map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is awk
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
+map("n", "<M-j>", "5j", { desc = "Scroll 5 lines" })
+map("n", "<M-k>", "5k", { desc = "Scroll 5 lines" })
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map("n", "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
