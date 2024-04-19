@@ -1,17 +1,18 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "height": 25,
     "margin-left": 5,
     "margin-right": 5,
-    "margin-top": 5,
+    "margin-top": 0,
+    "margin-bottom": 5,
     "spacing": 1,
 
     // Choose the order of the modules
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "tray"],
+    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "tray", "custom/power"],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -157,6 +158,7 @@
       "format": "{icon}",
       "format-icons": "",// 󰣇
       "exec-on-event": "true",
-      "on-click": "~/scripts/sessionMenu.sh",
+      "on-click": "~/scripts/sessionMenu",
+      "tooltip": false
     }
 }
