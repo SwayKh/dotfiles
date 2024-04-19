@@ -12,7 +12,7 @@
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "tray" ],
+    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
