@@ -141,7 +141,11 @@ button:hover {
 }
 
 #custom-power {
-  color: #f53c3c;
+  color: #c13c3c;
+  padding-left: 10px;
+}
+#custom-separator {
+  color: @disabled;
 }
 
 #cpu {

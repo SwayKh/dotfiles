@@ -1,18 +1,18 @@
 {
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "height": 25,
     "margin-left": 5,
     "margin-right": 5,
-    "margin-top": 0,
-    "margin-bottom": 5,
+    "margin-top": 5,
+    "margin-bottom": 0,
     "spacing": 1,
 
     // Choose the order of the modules
 
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "tray", "custom/power"],
+    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -33,10 +33,10 @@
          },
         "format": "{icon}",
         "format-icons": {
-            "1": "",
+            "1": "󰈹",
             "2": "",
-            "3": "",
-            "4": "",
+            "3": "",
+            "4": "",
             "5": "",
             "6": "",
             "7": "",
@@ -160,5 +160,11 @@
       "exec-on-event": "true",
       "on-click": "~/scripts/sessionMenu",
       "tooltip": false
+    },
+    "custom/separator": {
+      "format": "{icon}",
+      "format-icons": "|",
+      "tooptip": false,
     }
 }
+// vim:ft=json
