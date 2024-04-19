@@ -17,67 +17,67 @@
   altDarkBlue: #1F1E2E;
   altWhite: #F1D8D4;
 
-  lightGray: #6B6B6B;
+  lightGray: #777777;
   mediumGray: #454545;
   darkGray: #232323;
-  black: #090A0F;
+  black: #111111;
   darkBlack: #000000;
 }
 
 window {
-  border-color: @altBlue;
+  border-color: @lightGray;
 }
 
 listview {
-  background-color: @altDarkBlue;
+  background-color: @black;
 }
 
 textbox {
-  text-color: @altBlue;
-  background-color: @altDarkBlue;
+  text-color: @lightGray;
+  background-color: @black;
 }
 
 entry {
   enabled: true;
   padding: 0px 5px;
-  text-color: @altBlue;
-  background-color: @altDarkBlue;
+  text-color: @lightGray;
+  background-color: @black;
 }
 
 prompt {
   padding: 0px 5px;
-  text-color: @altBlue;
+  text-color: @lightGray;
 }
 
 textbox-prompt-colon {
   expand: false;
   margin: 0px;
   str: " ";
-  text-color: @altBlue;
+  text-color: @lightGray;
 }
 
 inputbar {
-  background-color: @altDarkBlue;
+  background-color: @black;
   spacing: 8px;
   padding: 8px;
   margin: 0px;
   border: 0px;
   border-radius: 0px;
-  border-color: @altDarkBlue;
+  border-color: @black;
   children: ["textbox-prompt-colon", entry];
 }
 
 mode-switcher {
-  text-color: @altBlue;
-  background-color: @altDarkBlue;
+  text-color: @lightGray;
+  background-color: @black;
 }
 
 element {
   orientation: horizontal;
   border: 0;
   padding: 3px;
-  text-color: @altBlue;
-  background-color: @altDarkBlue;
+  text-color: @lightGray;
+  background-color: @black;
 }
 
 element-icon {
@@ -85,48 +85,48 @@ element-icon {
 }
 
 element normal.normal {
-  background-color: @altDarkBlue;
-  text-color: @altBlue;
+  background-color: @black;
+  text-color: @lightGray;
 }
 
 element normal.urgent {
   background-color: @red;
-  text-color: @altBlue;
+  text-color: @lightGray;
 }
 
 element normal.active {
-  background-color: @altDarkBlue;
-  text-color: @altBlue;
+  background-color: @black;
+  text-color: @lightGray;
 }
 
 element selected.normal {
-  text-color: @altDarkBlue;
-  background-color: @altBlue;
+  text-color: @black;
+  background-color: @lightGray;
 }
 
 element selected.urgent {
   background-color: @red;
-  text-color: @altDarkBlue;
+  text-color: @black;
 }
 
 element selected.active {
   background-color: @yellow;
-  text-color: @altDarkBlue;
+  text-color: @black;
 }
 
 element alternate.normal {
-  background-color: @altDarkBlue;
-  text-color: @altBlue;
+  background-color: @black;
+  text-color: @lightGray;
 }
 
 element alternate.urgent {
-  background-color: @altDarkBlue;
-  text-color: @altBlue;
+  background-color: @black;
+  text-color: @lightGray;
 }
 
 element alternate.active {
-  background-color: @altDarkBlue;
-  text-color: @altBlue;
+  background-color: @black;
+  text-color: @lightGray;
 }
 
 element-text {
