@@ -15,6 +15,7 @@ return {
     "j-hui/fidget.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     { "antosha417/nvim-lsp-file-operations", config = true },
+    "folke/neodev.nvim",
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -25,6 +26,7 @@ return {
     local util = require("lspconfig.util")
     local lspui = require("lspconfig.ui.windows")
 
+    require("neodev").setup()
     lspui.default_options.border = "rounded"
 
     vim.api.nvim_create_autocmd("LspAttach", {
