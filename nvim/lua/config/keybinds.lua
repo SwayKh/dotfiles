@@ -21,11 +21,11 @@ map({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap 
 
 map("n", "+", "<C-a>", { desc = "Increment number" })
 map("n", "-", "<C-x>", { desc = "Decreament number" })
-map("n", "<leader>v", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically", silent = true })
-map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally", silent = true })
+map("n", "<leader>v", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
+map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 
 map("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
-map("n", "<C-a>", "gg<S-v>G", { desc = "Select all", remap = true })
+map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 map("n", "<leader>.", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
