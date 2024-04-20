@@ -35,7 +35,7 @@ return {
       enabled = true,
       completion = {
         autocompletion = true,
-        completeopt = "menu,menuone,preview,noinsert,noselect",
+        completeopt = "menu,menuone,preview,noinsert", -- noselect,
       },
       -- The completeopt 'noselect' option does this
       preselect = cmp.PreselectMode.Item,

@@ -1,9 +1,9 @@
 return {
   {
-    "dasupradyumna/midnight.nvim",
+    "EdenEast/nightfox.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("midnight")
+      vim.cmd.colorscheme("carbonfox")
       vim.cmd.hi("Comment gui=none")
       -- vim.cmd.hi("Normal guibg=#222222")
       -- vim.opt.background = "dark"
@@ -22,27 +22,22 @@ return {
   -- },
   -- {
   --   "eldritch-theme/eldritch.nvim",
-  --   lazy = true,
   -- },
   -- {
   --   "sainnhe/sonokai",
   -- },
   -- {
   --   "rebelot/kanagawa.nvim",
-  --   lazy = true,
   -- },
   -- {
   --   "sainnhe/edge",
-  --   lazy = true,
   -- },
   -- {
   --   "folke/tokyonight.nvim",
-  --   lazy = true,
   -- },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
-  --   lazy = true,
   -- },
   -- {
   --   "dracula/vim",
@@ -90,12 +85,6 @@ return {
   -- },
   -- {
   --   "ku1ik/vim-monokai",
-  -- },
-  -- {
-  --   "lifepillar/vim-solarized",
-  -- },
-  -- {
-  --   "marko-cerovac/material.nvim",
   -- },
   -- {
   --   "mhartington/oceanic-next",
