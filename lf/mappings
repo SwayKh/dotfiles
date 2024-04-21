@@ -1,0 +1,73 @@
+# vim:ft=conf
+# Remove some default keybindings
+map m #gets in the way of mkdir, mkfile
+map n #gets in the way of unarchive
+map u #used for unselect, gets in the way of unarchive
+map d #used for cut, get in way of trash func
+map e #opens editor, not needed
+map y #used for copy, now for yank-path
+map f #used for find (Not sure how it worked)
+
+# Custom Key mappings
+map ` shell
+map x cut
+map c copy
+map P :paste; clear
+map p :paste-async
+map f search # Works like vim / search
+map <enter> open
+map D $rm -rf $fx # $IFS=':';
+map <delete> delete
+map <esc> unselect
+map <backspace2> clear # Clears any cut/copy highlighter
+map e $$f # Execute the selected file, must be executable
+map oc lfrc
+map op &xdg-open $f
+map J :updir; down; open # Move down in parent directory
+map K :updir; up; open # Move up in parent directory
+map <a-j> :push 5j
+map <a-k> :push 5k
+map \\ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
+map | :set ratios 1:2
+map . selectRandom
+# map sf :set info size # There are 'z' keybindings for setting info, without changing sorting
+
+# Function Bindings
+map md mkdir
+map mf mkfile
+map dd trash
+map mp chmod #use 664, 777 notation rather than u+x
+map mc mark-save
+map ua Unarchive
+map F :fzf_jump
+map y :yank-path
+map R bulk-rename
+map bg setwallpaper
+map du directory_size # Requires ncdu utility
+
+# Movement Bindings
+map gh cd ~ # This is default
+map g/ cd /
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gc cd ~/.config
+map gw cd ~/wallpapers/Images/
+map gt cd ~/Test
+map gT cd ~/.trash
+map ga cd ~/Android
+map gs cd ~/scripts
+map g. cd ~/dotfiles/
+map gr cd ~/Roms/
+map go cd ~/Obsidian/Vault/
+map gb cd ~/.local/bin
+map gla cd ~/.local/share/applications/
+map gpc cd ~/Pictures
+map gps cd ~/Pictures/Screenshots/
+
+map gpp cd ~/Projects/Python/
+map gpg cd ~/Projects/Go/
+map gpw cd ~/Projects/Web/
+map gpo cd ~/Projects/Web/TheOdinProject/
+map gpi cd '~/Projects/Python/Web Scraping/ImageDownload/'
+
+map gA cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/
