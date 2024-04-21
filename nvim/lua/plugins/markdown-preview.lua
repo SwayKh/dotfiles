@@ -1,8 +1,6 @@
 return {
   "iamcco/markdown-preview.nvim",
-  enabled = true,
   lazy = true,
-  event = { "BufReadPre", "BufNewFile" },
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   ft = { "markdown" },
   build = function()
