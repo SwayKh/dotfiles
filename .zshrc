@@ -90,11 +90,6 @@ updateRom() {
   # sudo rsync -avhP ~/RomsBackup/ /mnt/Roms/Backups/
   tree -L 2 ~/Roms/ > ~/Obsidian/Vault/Archive/RomsList.md
 }
-turnWifi(){
-  sudo ip link set wlo1 down
-  sudo iw wlo1 set type managed
-  sudo ip link set wlo1 up
-}
 
 refreshMirrors() {
   sudo reflector --verbose \
@@ -134,7 +129,7 @@ pacPreviewAll() {
 }
 
 pacPreviewInstalled() {
-  pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+  pacman -Qeq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
 
 listSize() {
@@ -143,26 +138,4 @@ listSize() {
 
 fman() {
   compgen -c | fzf | xargs man
-}
-
-
-makeM3U() {
-    local directory="$1"
-
-    # Check if directory argument is provided
-    if [ -z "$directory" ]; then
-        echo "Usage: make_m3u <directory>"
-        return 1
-    fi
-
-    local subdirs=("$directory"/*/)
-
-    for subdir in "${subdirs[@]}"; do
-        local subdir_name=$(basename "$subdir")
-        local m3u_file="$subdir/$subdir_name.m3u"
-        local files=("$subdir"*)
-        for file in "${files[@]}"; do
-          echo "${file##*/}" > "$m3u_file"
-        done
-    done
 }
