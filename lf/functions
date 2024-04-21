@@ -139,16 +139,6 @@ cmd fzf_search ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 
-cmd on-redraw %{{
-    if [ $lf_width -le 80 ]; then
-        lf -remote "send $id set ratios 1:2"
-    elif [ $lf_width -le 160 ]; then
-        lf -remote "send $id set ratios 1:2:3"
-    else
-        lf -remote "send $id set ratios 1:2:3:5"
-    fi
-}}
-
 cmd bulk-rename ${{
     old="$(mktemp)"
     new="$(mktemp)"
@@ -173,24 +163,6 @@ cmd bulk-rename ${{
     lf -remote "send $id unselect"
 }}
 
-cmd DeleteAllFiles ${{
-    find "$PWD" -maxdepth 1 -type f -delete
-}}
-
-cmd moveToTopLevel ${{
-  IFS=$'\n' read -r -A file_directories <<< "$fx"
-  for directory in "${file_directories[@]}"; do
-    find "$directory" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cp {} "$PWD" \;
-  done
-}}
-
-cmd touchM3U ${{
-  for file in "$fx"; do
-    dname="$(basename -a $file)"
-    touch "$file"/"$dname".m3u
-  done
-}}
-
 cmd selectRandom %{{
   res="$(find . -maxdepth 1 | shuf -n 1 )"
   if [ -d "$res" ] ; then
@@ -203,7 +175,7 @@ cmd selectRandom %{{
   lf -remote "send $id $cmd \"$res\""
 }}
 
-cmd newFold ${{
+cmd newDir ${{
     set -f
     printf "Directory name: "
     read newd
@@ -213,4 +185,43 @@ cmd newFold ${{
 
 cmd on-select &{{
     lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
+}}
+
+cmd makeM3U ${{
+    local directory="$1"
+
+    # Check if directory argument is provided
+    if [ -z "$directory" ]; then
+        echo "Usage: make_m3u <directory>"
+        return 1
+    fi
+
+    local subdirs=("$directory"/*/)
+
+    for subdir in "${subdirs[@]}"; do
+        local subdir_name=$(basename "$subdir")
+        local m3u_file="$subdir/$subdir_name.m3u"
+        local files=("$subdir"*)
+        for file in "${files[@]}"; do
+          echo "${file##*/}" > "$m3u_file"
+        done
+    done
+}}
+
+cmd touchM3U ${{
+  for file in "$fx"; do
+    dname="$(basename -a $file)"
+    touch "$file"/"$dname".m3u
+  done
+}}
+
+cmd DeleteAllFiles ${{
+    find "$PWD" -maxdepth 1 -type f -delete
+}}
+
+cmd moveToTopLevel ${{
+  IFS=$'\n' read -r -A file_directories <<< "$fx"
+  for directory in "${file_directories[@]}"; do
+    find "$directory" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cp {} "$PWD" \;
+  done
 }}
