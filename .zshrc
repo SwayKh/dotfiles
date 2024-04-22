@@ -36,6 +36,7 @@ alias pipes='pipes.sh'
 alias c.='cd ~/dotfiles'
 alias :q='exit'
 alias lf=lfcd
+alias lg=lazygit
 alias yeet="sudo pacman -Rns"
 alias up='paru -Syu'
 alias ls='eza --all --icons=always --color=always --group-directories-first'
