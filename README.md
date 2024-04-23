@@ -23,7 +23,7 @@ configs. Some of it might even be the defaults.
 The wallpapers can be found in my [Wallpapers](https://github.com/Swaykh/wallpapers) repo.
 Most of these are taken from github repos and [Unixporn](https://reddit.com/r/unixporn)
 
-The scripts I use for setting wallpapers and the Powermenu for rofi are in the
+The scripts I use for setting wallpapers and the Session Menu for rofi are in the
 [scripts repo](https://github.com/swaykh/scripts)
 
 ## Installation
@@ -54,9 +54,13 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Shell Prompt** : [Startship](https://starship.rs/)
 - **Login Manager** : [ly](https://github.com/fairyglade/ly)
 - **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg)
+- **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
 - **System Monitor** : [Btop](https://github.com/aristocratos/btop)
 - **System Info viewer** : [Neofetch](https://github.com/dylanaraps/neofetch)
 - **Notification daemon** : [Dunst](https://github.com/dunst-project/dunst)
+- **Image Viewer** : [Feh](https://github.com/derf/feh)
+- **Color Picker** : [Hyprpicker](https://github.com/hyprwm/hyprpicker)
+- **Clipboard** : [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
 - **Screenshot**: [Grim+Slurp](https://sr.ht/~emersion/grim/)
 - **Emulation Frontend** : [Retroarch](https://www.retroarch.com/) / [ES-DE](https://es-de.org/)
 - **Font** : JetBrainsMono Nerd Font
@@ -73,6 +77,8 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Idle daemon** : [Swayidle](https://github.com/swaywm/swayidle)
 - **WM/Compositor** : [i3(X11)](https://i3wm.org/) [Sway(Wayland replacement for i3)](https://swaywm.org/)
 - **Bar(For X11)** : [Polybar](https://github.com/polybar/polybar)
+- **Color Picker** : [xcolor](https://github.com/Soft/xcolor)
+- **Clipboard** : [xclip](https://github.com/astrand/xclip)
 
 #### CLI Tools
 
@@ -139,5 +145,70 @@ ripgrep (Telescope plugin neovim)
 tumbler (For thumbnails in Thunar File Manager)
 wmctrl (Window switching functionality for rofi-wayland-fork)
 cliphist (Rofi as clipboard manager)
+vulkan-radeon(Needed for Godot4)
+fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
+os-prober (Needed for add windows as boot entry in grub)
+upower (Needed to check battery levels of pheripherals like controllers)
+xdg-desktop-portal-hyprland (Needed for hyprland)
+xdg-desktop-portal-gtk (Needed for gtk file pickers)
+python-pip/x
+chaotic-keyring
+chaotic-mirrorlist
 Nerd Font (https://www.nerdfonts.com/)
+
+go rust perl lua python nvm npm
+wayland/x11
+```
+
+### List of programs installed(More like a pacman -Qeq)
+
+#### Base programs to install with Arch
+
+```
+base base-devel linux linux-firmware linux-headers grub vim amd-ucode net-tools
+git curl wget man-db rsync pacman-contrib openssh fwupd
+```
+
+#### Apps
+
+```
+citra-canary
+emulationstation-de
+ferdium
+firefox
+foot
+google-chrome
+godot
+gparted
+kclac
+kdeconnect
+obsidian
+qbittorrent
+retroarch
+rofi-nerdy
+sddm
+thunar
+ticktick
+uget
+vscode
+webcord
+yuzu
+```
+
+#### CLI
+
+```
+blueman
+birghtnessctl
+docker
+efibootmgr
+github-cli
+pacutils
+network-manager-applet
+pamixer
+pavucontrol
+pulseaudio
+reflector
+ubsutils
+xpadneo-dkms
 ```
