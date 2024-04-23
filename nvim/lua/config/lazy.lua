@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { import = "plugins" },
-  { import = "plugins.lsp" },
+  -- { import = "plugins.lsp" },
 }, {
   ui = {
     border = "rounded",
@@ -25,7 +25,7 @@ require("lazy").setup({
   },
 
   checker = {
-    enabled = true,
+    enabled = false, -- Don't check for plugin update automatically
     notify = false,
   },
   change_detection = {
