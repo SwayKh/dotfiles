@@ -10,7 +10,7 @@ return {
       preview = { layout = "horizontal" },
       winopts = {
         -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- On by default
-        title = "Fzf",
+        title = " Fzf ",
         title_pos = "center",
         height = 0.80, -- window height
         width = 0.80, -- window width
@@ -37,8 +37,8 @@ return {
       },
 
       fzf_opts = {
-        ["--info"] = "inline",
-        ["--layout"] = "reverse",
+        ["--layout"] = "default",
+        -- ["--info"] = "inline", -- This puts the item count next to input
         -- ["--header"] = "",
       },
     })
@@ -64,7 +64,12 @@ return {
 
     vim.keymap.set("n", "<leader>s/", function()
       require("fzf-lua").grep_curbuf({
+        fzf_opts = {
+          ["--layout"] = "reverse",
+        },
         winopts = {
+          title = " Grep Buffer ",
+          title_pos = "center",
           preview = { hidden = "hidden" },
           height = 0.50, -- window height
           width = 0.70, -- window width
