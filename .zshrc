@@ -133,6 +133,10 @@ pacPreviewInstalled() {
   pacman -Qeq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
 
+pacPreviewInstalledAll() {
+  pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+}
+
 listSize() {
   command ls | xargs -d '\n' du -sh | sort -hr
 }
