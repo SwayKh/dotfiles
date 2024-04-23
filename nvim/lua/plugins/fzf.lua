@@ -10,6 +10,7 @@ return {
       preview = { layout = "horizontal" },
       winopts = {
         -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- On by default
+        -- border = { "none", "single", "double", "rounded", "solid", "shadow" },
         title = " Fzf ",
         title_pos = "center",
         height = 0.80, -- window height
@@ -22,6 +23,12 @@ return {
           horizontal = "right:50%",
         },
       },
+      fzf_opts = {
+        ["--layout"] = "default",
+        ["--no-scrollbar"] = "",
+        ["--header"] = " ",
+        -- ["--info"] = "inline", -- This puts the item count next to input
+      },
 
       args = { prompt = " ❯ " },
       oldfiles = { prompt = " Recents ❯ " },
@@ -29,17 +36,25 @@ return {
       colorschemes = { prompt = " Themes ❯ " },
       keymaps = { prompt = " Keymaps ❯ " },
       grep = { prompt = " Find ❯ ", no_header_i = true },
-      files = { prompt = " Files ❯ ", no_header_i = true, cwd_prompt = false },
+      files = {
+        prompt = " Files ❯ ",
+        no_header_i = true,
+        cwd_prompt = false,
+        git_icons = true,
+      },
       git = {
         files = { prompt = " Git Files ❯ " },
         status = { prompt = " ❯ " },
         commits = { prompt = " ❯ " },
       },
-
-      fzf_opts = {
-        ["--layout"] = "default",
-        -- ["--info"] = "inline", -- This puts the item count next to input
-        -- ["--header"] = "",
+      helptags = {
+        prompt = ":",
+        preview_opts = "hidden",
+        winopts = {
+          row = 1,
+          width = vim.api.nvim_win_get_width(0),
+          height = 0.4,
+        },
       },
     })
 
@@ -71,10 +86,9 @@ return {
           title = " Grep Buffer ",
           title_pos = "center",
           preview = { hidden = "hidden" },
-          height = 0.50, -- window height
-          width = 0.70, -- window width
-          row = 0.50, -- window row position (0=top, 1=bottom)
-          col = 0.50, -- window col position (0=left, 1=right)
+          height = 0.40, -- window height
+          width = vim.api.nvim_win_get_width(0),
+          row = 1, -- window row position (0=top, 1=bottom)
         },
       })
     end, { desc = "[S]earch [/] in current buffer" })
