@@ -6,7 +6,8 @@ return {
   "neovim/nvim-lspconfig",
 
   lazy = true,
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPost" },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
     "williamboman/mason.nvim",
@@ -98,12 +99,13 @@ return {
     local servers = {
       bashls = {}, -- Bash
       clangd = {}, -- C/C++
-      emmet_language_server = {
-        filetypes = { "html", "twig", "hbs" },
-      }, -- HTML
       cssls = {}, -- CSS
       marksman = {}, -- Markdown lsp
       sqlls = {}, -- SQL
+      -- eslint = {},   -- React/NextJS/Svelte
+      emmet_language_server = {
+        filetypes = { "html", "twig", "hbs" },
+      }, -- HTML
       tsserver = { -- Javascript, TypeScript
         filetypes = { "javascript", "typescriptreact", "javascriptreact", "svelte" },
       },
@@ -114,7 +116,6 @@ return {
       -- tailwindcss = {
       --   filetypes = { "html", "twig", "hbs" },
       -- }, -- Tailwind CSS
-      -- eslint = {},   -- React/NextJS/Svelte
       gopls = { -- Golang
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -213,12 +214,12 @@ return {
       start_delay = 3000, -- 3 second delay
     })
 
-    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-      opts = opts or {}
-      opts.border = opts.border or border
-      return orig_util_open_floating_preview(contents, syntax, opts, ...)
-    end
+    -- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    -- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    --   opts = opts or {}
+    --   opts.border = opts.border or border
+    --   return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    -- end
 
     mason_lspconfig.setup({
       handlers = {
