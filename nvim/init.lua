@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 --Need this to be loaded before some plugins, but option.lua needs colorscheme to be loaded
 -- vim.opt.termguicolors = true
 

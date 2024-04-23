@@ -1,6 +1,9 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
+-- Add comments to detail to options
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
