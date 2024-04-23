@@ -25,8 +25,14 @@ return {
 
     -- vim.keymap.set("n", "<leader>h", ":Telescope harpoon marks<CR>", { desc = "Show harpoon quick menu" })
     vim.keymap.set("n", "<leader>ha", mark.add_file, { silent = true, desc = "Add file to harpoon" })
-    vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu, { silent = true, desc = "Show regular Harpoon quick menu" })
+    vim.keymap.set("n", "<leader>hr", mark.remove_file, { silent = true, desc = "Remove file from harpoon" })
+    vim.keymap.set("n", "<leader>ho", ui.toggle_quick_menu, { silent = true, desc = "Show regular Harpoon quick menu" })
+    vim.keymap.set("n", "<leader>hc", ui.clear_all, { silent = true, desc = "Clear all files from harpoon" })
 
-    -- require("telescope").load_extension("harpoon")
+    vim.keymap.set("n", "<leader>1", ui.nav_file(1), { silent = true, desc = "Navigate to file 1 in harpoon menu" })
+    vim.keymap.set("n", "<leader>2", ui.nav_file(2), { silent = true, desc = "Navigate to file 2 in harpoon menu" })
+    vim.keymap.set("n", "<leader>3", ui.nav_file(3), { silent = true, desc = "Navigate to file 3 in harpoon menu" })
+    vim.keymap.set("n", "<leader>4", ui.nav_file(4), { silent = true, desc = "Navigate to file 4 in harpoon menu" })
+    vim.keymap.set("n", "<leader>5", ui.nav_file(4), { silent = true, desc = "Navigate to file 5 in harpoon menu" })
   end,
 }
