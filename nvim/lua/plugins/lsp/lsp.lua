@@ -16,6 +16,7 @@ return {
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     { "antosha417/nvim-lsp-file-operations", config = true },
     "folke/neodev.nvim",
+    "nvim-lua/plenary.nvim",
   },
   config = function()
     local lspconfig = require("lspconfig")
