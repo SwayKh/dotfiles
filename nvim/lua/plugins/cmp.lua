@@ -76,9 +76,9 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
-        { name = "luasnip", priority = 750 },
-        { name = "buffer", priority = 500 },
-        { name = "path", priority = 250 },
+        { name = "luasnip", priority = 750, max_item_count = 3 },
+        { name = "buffer", priority = 500, max_item_count = 5 },
+        { name = "path", priority = 250, max_item_count = 3 },
         -- { name = "codeium" },
       }),
       window = {
