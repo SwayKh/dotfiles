@@ -1,7 +1,7 @@
 return {
   "goolord/alpha-nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  event = "VimEnter", -- Sets the loading event to 'VimEnter'
+  -- event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
     require("alpha").setup(require("alpha.themes.dashboard").config)
     local alpha = require("alpha")

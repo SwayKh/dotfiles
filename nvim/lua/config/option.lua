@@ -1,8 +1,10 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
-vim.opt.hlsearch = false
+vim.g.have_nerd_font = true
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
+vim.opt.inccommand = "split"
 vim.opt.autowrite = true
 vim.opt.autoread = true
 vim.opt.colorcolumn = "120"
