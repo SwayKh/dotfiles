@@ -6,6 +6,7 @@ local map = vim.keymap.set
 -- Plugin specific keymaps are in the plugin configs
 -- map("i", "jj", "<Esc>")
 
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
@@ -24,7 +25,8 @@ map("n", "-", "<C-x>", { desc = "Decreament number" })
 map("n", "<leader>v", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
 map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 
-map("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
+-- This overrides to <C-i> function of the jumplist
+-- map("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
