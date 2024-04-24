@@ -99,23 +99,18 @@ return {
     local servers = {
       bashls = {}, -- Bash
       clangd = {}, -- C/C++
-      cssls = {}, -- CSS
       marksman = {}, -- Markdown lsp
       sqlls = {}, -- SQL
-      -- eslint = {},   -- React/NextJS/Svelte
-      emmet_language_server = {
-        filetypes = { "html", "twig", "hbs" },
-      }, -- HTML
-      tsserver = { -- Javascript, TypeScript
-        filetypes = { "javascript", "typescriptreact", "javascriptreact", "svelte" },
-      },
-      -- html = { -- HTML
-      --   filetypes = { "html", "twig", "hbs" },
-      -- },
-      -- htmx = {}, -- HTMX
-      -- tailwindcss = {
-      --   filetypes = { "html", "twig", "hbs" },
-      -- }, -- Tailwind CSS
+      eslint = {}, -- React/NextJS/Svelte
+      emmet_language_server = {}, -- HTML
+      tsserver = {
+        -- filetypes = { "javascript", "typescriptreact", "javascriptreact", "svelte" },
+      }, -- Javascript, TypeScript
+      html = {}, -- HTML
+      htmx = {}, -- HTMX
+      cssls = {}, -- CSS
+      tailwindcss = {}, -- Tailwind CSS
+      pyright = {}, -- Python
       gopls = { -- Golang
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -129,9 +124,6 @@ return {
             },
           },
         },
-      },
-      pyright = { -- Python
-        filetypes = { "python" },
       },
       lua_ls = {
         -- cmd = {...},
@@ -214,12 +206,12 @@ return {
       start_delay = 3000, -- 3 second delay
     })
 
-    -- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-    -- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-    --   opts = opts or {}
-    --   opts.border = opts.border or border
-    --   return orig_util_open_floating_preview(contents, syntax, opts, ...)
-    -- end
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
 
     mason_lspconfig.setup({
       handlers = {
