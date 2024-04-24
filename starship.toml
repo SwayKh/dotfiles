@@ -5,27 +5,19 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
-$git_metrics\
+$cmd_duration\
 $fill\
 $nodejs\
 $golang\
 $python\
-$cmd_duration $jobs $time\
+$jobs $time\
 $line_break\
-$os\
 $character"""
 
+# $git_metrics\
+# $os\
+
 command_timeout = 10000
-
-[nodejs]
-format = "[$symbol($version )]($style)"
-
-[golang]
-symbol = " "
-format = 'via [$symbol($version )($mod_version )]($style)'
-
-[python]
-symbol = " "
 
 [os]
 disabled = false
@@ -36,21 +28,59 @@ Arch = "  "
 [fill]
 symbol = " "
 
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = 'on [$hostname](bold purple) '
+trim_at = "."
+disabled = false
+
 [directory]
-style = "blue"
+style = "bold italic blue"
 read_only = "  "
-truncation_length = 4
-truncate_to_repo = false
+truncation_length = 10
+truncate_to_repo = true
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
+# Replace the "❯" symbol in the prompt with "➜"
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
 
 [git_branch]
 symbol = " "
-format = "[$symbol$branch]($style) "
-style = "bright-black"
+# format = "[$symbol$branch]($style) "
+# style = "purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+stashed = "[${count}*](green)"
+modified = "[${count}+](yellow)"
+deleted =  "[${count}-](red)"
+conflicted =  "[${count}~](red)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+untracked = "[${count}?](blue)"
+staged = "[${count}+](green)"
+
+[git_state]
+style =	"bold red"
+format = "[$state( $progress_current/$progress_total) ]($style)"
+rebase = "rebase"
+merge = "merge"
+revert = "revert"
+cherry_pick = "cherry"
+bisect = "bisect"
+am = "am"
+am_or_rebase = "am/rebase"
+
+[git_metrics]
+disabled = false
 
 [jobs]
 symbol = ""
@@ -58,26 +88,27 @@ style = "bold red"
 number_threshold = 1
 format = "[$symbol]($style)"
 
-[git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
-
-[git_metrics]
-disabled = false
-
 [cmd_duration]
-format = "[$duration]($style)"
-style = "yellow"
+min_time = 4
+show_milliseconds = false
+disabled = false
+style = "bold italic red"
 
 [memory_usage]
 symbol = " "
 
 [rust]
 symbol = " "
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[golang]
+symbol = " "
+format = 'via [$symbol($version )($mod_version )]($style)'
+
+[python]
+symbol = " "
 
 [time]
 disabled = false
