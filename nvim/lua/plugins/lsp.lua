@@ -185,6 +185,7 @@ return {
       { "black" }, -- Python
       { "isort" }, -- Python
       { "prettierd" }, -- JS and Many More
+      { "prettier" }, -- JS and Many More
       { "shfmt" }, -- Shell Script
       { "stylua" }, -- Lua
 
