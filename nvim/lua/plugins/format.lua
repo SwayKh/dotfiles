@@ -39,7 +39,7 @@ return {
       python = { "isort", "black" },
       zig = { "zigfmt" },
       ["_"] = { "trim_whitespace", "trim_newlines" },
-      ["*"] = { "codespell" },
+      -- ["*"] = { "codespell" },
     },
     formatters = {
       shfmt = {
