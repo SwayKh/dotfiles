@@ -53,6 +53,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  desc = "clear the last used search pattern",
+  pattern = "*",
+  command = "let @/ = ''",
+})
+
 -- vim.api.nvim_create_autocmd("RecordingEnter", {
 --   callback = function()
 --     require("lualine").refresh({
