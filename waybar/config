@@ -12,7 +12,7 @@
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
+    "modules-right": ["cpu", "temperature", "backlight","network", "pulseaudio", "custom/separator", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -127,12 +127,13 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " :{ipaddr}", //({essid} {signalStrength}%)
+        "interval":2,
+        "format-wifi": " :{bandwidthTotalBytes:>4}", //({essid} {signalStrength}%)
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-wifi": "{ipaddr} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "󰀦", //Disconnected ⚠
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
