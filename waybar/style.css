@@ -177,11 +177,11 @@ button:hover {
 }
 
 #battery {
-  color: #48aa4c;
+  color: #5cc084;
 }
 
 #network {
-  color: #5cc084;
+  color: #48aa4c;
 }
 
 label:focus {
