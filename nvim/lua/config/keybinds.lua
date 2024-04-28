@@ -5,7 +5,7 @@ local map = vim.keymap.set
 -- Misc
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 map("n", "<leader>.", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
 
