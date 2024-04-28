@@ -34,7 +34,8 @@ map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 --Select all/Yank all/Custom paste
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
-map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
+map("x", "p", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true })
+-- map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
 -- Save, Quit and Delete
 map("n", "qq", "<Cmd>q!<CR>", { silent = true, desc = "[Q]uit" })
