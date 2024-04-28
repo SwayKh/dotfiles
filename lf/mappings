@@ -68,6 +68,6 @@ map gpp cd ~/Projects/Python/
 map gpg cd ~/Projects/Go/
 map gpw cd ~/Projects/Web/
 map gpo cd ~/Projects/Web/TheOdinProject/
-map gpi cd '~/Projects/Python/Web Scraping/ImageDownload/'
+map gpi cd '~/Projects/Go/N-Cover-Scraper/'
 
 map gA cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/
