@@ -7,11 +7,13 @@
   old-highlight: #F1594F;
   red: #973D46;
   darkRed: #973D46;
-  blue: #BBCCDD;
   yellow: #E0AE4A;
   darkYellow: #E0AE4A;
   border: #1B1E25;
   darkBlue: #04142D;
+
+  blue:#091F2D;
+  lightBlue:#888CA7;
 
   altBlue: #ACBAF9;
   altDarkBlue: #1F1E2E;
@@ -25,59 +27,59 @@
 }
 
 window {
-  border-color: @lightGray;
+  border-color: @lightBlue;
 }
 
 listview {
-  background-color: @black;
+  background-color: @blue;
 }
 
 textbox {
-  text-color: @lightGray;
-  background-color: @black;
+  text-color: @lightBlue;
+  background-color: @blue;
 }
 
 entry {
   enabled: true;
   padding: 0px 5px;
-  text-color: @lightGray;
-  background-color: @black;
+  text-color: @lightBlue;
+  background-color: @blue;
 }
 
 prompt {
   padding: 0px 5px;
-  text-color: @lightGray;
+  text-color: @lightBlue;
 }
 
 textbox-prompt-colon {
   expand: false;
   margin: 0px;
   str: " ";
-  text-color: @lightGray;
+  text-color: @lightBlue;
 }
 
 inputbar {
-  background-color: @black;
+  background-color: @blue;
   spacing: 8px;
   padding: 8px;
   margin: 0px;
   border: 0px;
   border-radius: 0px;
-  border-color: @black;
+  border-color: @blue;
   children: ["textbox-prompt-colon", entry];
 }
 
 mode-switcher {
-  text-color: @lightGray;
-  background-color: @black;
+  text-color: @lightBlue;
+  background-color: @blue;
 }
 
 element {
   orientation: horizontal;
   border: 0;
   padding: 3px;
-  text-color: @lightGray;
-  background-color: @black;
+  text-color: @lightBlue;
+  background-color: @blue;
 }
 
 element-icon {
@@ -85,48 +87,48 @@ element-icon {
 }
 
 element normal.normal {
-  background-color: @black;
-  text-color: @lightGray;
+  background-color: @blue;
+  text-color: @lightBlue;
 }
 
 element normal.urgent {
   background-color: @red;
-  text-color: @lightGray;
+  text-color: @lightBlue;
 }
 
 element normal.active {
-  background-color: @black;
-  text-color: @lightGray;
+  background-color: @blue;
+  text-color: @lightBlue;
 }
 
 element selected.normal {
-  text-color: @black;
-  background-color: @lightGray;
+  text-color: @blue;
+  background-color: @lightBlue;
 }
 
 element selected.urgent {
   background-color: @red;
-  text-color: @black;
+  text-color: @blue;
 }
 
 element selected.active {
   background-color: @yellow;
-  text-color: @black;
+  text-color: @blue;
 }
 
 element alternate.normal {
-  background-color: @black;
-  text-color: @lightGray;
+  background-color: @blue;
+  text-color: @lightBlue;
 }
 
 element alternate.urgent {
-  background-color: @black;
-  text-color: @lightGray;
+  background-color: @blue;
+  text-color: @lightBlue;
 }
 
 element alternate.active {
-  background-color: @black;
-  text-color: @lightGray;
+  background-color: @blue;
+  text-color: @lightBlue;
 }
 
 element-text {
