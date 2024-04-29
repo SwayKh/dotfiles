@@ -1,11 +1,8 @@
-@define-color bg rgba(4, 20, 45, 0.50);
-@define-color bg-alt #252428;
 @define-color fg #f5f5f5;
-@define-color alert #f53c3c;
+@define-color bg #091F2D;
+@define-color bordercolor #888CA7;
 @define-color disabled #a5a5a5;
-@define-color oldbordercolor #29c8e5;
-@define-color bordercolor #777;
-@define-color highlight #FBD47F;
+@define-color alert #f53c3c;
 @define-color activegreen #8fb666;
 
 * {
@@ -13,12 +10,11 @@
   font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
     Helvetica, Arial, sans-serif;
   font-size: 14px;
-  /* background-color: #04142d; */
 }
 
 window#waybar {
-  color: #f5f5f5;
-  background: #111;
+  color: @fg;
+  background: @bg;
   transition-property: background-color;
   transition-duration: 0.5s;
   border: 2px solid @bordercolor;
@@ -27,33 +23,6 @@ window#waybar {
 window#waybar.empty {
   opacity: 0.3;
 }
-
-/* .modules-left { */
-/*   background: @bg; */
-/*   border: 2px solid @bordercolor; */
-/*   border-radius: 20px; */
-/**/
-/*   padding-right: 5px; */
-/*   padding-left: 5px; */
-/* } */
-/**/
-/* .modules-right { */
-/*   background: @bg; */
-/*   border: 2px solid @bordercolor; */
-/* border-radius: 20px; */
-/**/
-/*   padding-right: 5px; */
-/*   padding-left: 5px; */
-/* } */
-/**/
-/* .modules-center { */
-/*   background: @bg; */
-/*   border: 2px solid @bordercolor; */
-/* border-radius: 20px; */
-/**/
-/*   padding-right: 5px; */
-/*   padding-left: 5px; */
-/* } */
 
 button {
   /* Use box-shadow instead of border so the text isn't offset */
@@ -70,45 +39,29 @@ button:hover {
 }
 
 #workspaces button {
-  /* background-color: #252428; */
   color: @fg;
 }
 
 #workspaces button.urgent {
   color: @alert;
-  /* background-color: #252428; */
-  /* border: 3px solid #f53c3c; */
 }
 #workspaces button.empty {
   color: @disabled;
-  /* background-color: #252428; */
 }
 
 #workspaces button.active {
-  color: @activegreen;
-  /* background-color: #252428; */
-  /* border: 3px solid #7bcbd5; */
+  color: #EDB443;
 }
 
-#workspaces button.focused {
-  background-color: @fg;
-  color: @bg-alt;
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
 }
 
-/* Uncomment If using icons instead of number for workspaces*/
-
-/* #workspaces, */
-/* #workspaces button,  */
-/* #workspaces button.active, */
-/* #workspaces button:hover,  */
-/* #workspaces button.focused, */
-/* #workspaces button.urgent { */
-/*     padding-right: 0px;  */
-/*     padding: 0px 6px;  */
-/*     padding-left: 3px; */
-/*     color: #F5F5F5; */
-/*     background-color: rgba(0, 0, 0, 0); */
-/* }  */
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
 
 #clock,
 #battery,
@@ -116,10 +69,10 @@ button:hover {
 #memory,
 #disk,
 #temperature,
+#language,
 #backlight,
 #network,
 #pulseaudio,
-#pulseaudio.muted,
 #wireplumber,
 #custom-media,
 #taskbar,
@@ -136,94 +89,31 @@ button:hover {
   padding: 0px 5px;
   padding-right: 10px;
   margin: 3px 3px;
-  color: @fg;
-  /* background-color: #252428; */
+  color: @bordercolor;
 }
 
 #custom-power {
-  color: #5cc084;
+  color: @fg;
   padding-left: 10px;
 }
+
 #custom-separator {
   color: @disabled;
 }
 
-#cpu {
-  color: #cb221b;
-}
-
-#temperature {
-  color: #d55c0d;
-}
-
-#memory {
-  color: #679c68;
-}
-
-#disk {
-  color: #979618;
-}
-
-#backlight {
-  color: #d69821;
-}
-
-#pulseaudio {
-  color: #448486;
-}
-
-#clock {
-  color: #b16186;
-}
-
-#battery {
-  color: #5cc084;
-}
-
-#network {
-  color: #48aa4c;
-}
-
-label:focus {
-  background-color: #000000;
-}
-
-#network.disconnected {
+#network.disconnected,
+#pulseaudio.muted,
+#wireplumber.muted {
   background-color: @alert;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #f5f5f5;
-  background-color: #26a65b;
+  color: #26a65b;
 }
 
-#wireplumber.muted {
-  background-color: @alert;
-}
-
-#language {
-  background: @fg;
-  color: @bg-alt;
-  padding: 0 5px;
-  margin: 0 5px;
-  min-width: 16px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-@keyframes blink {
-  to {
-    background-color: @fg;
-    color: @bg-alt;
-  }
+label:focus {
+  background-color: #000000;
 }
 
 #battery.critical:not(.charging) {
@@ -235,3 +125,64 @@ label:focus {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+/* #cpu { */
+/*   color: #cb221b; */
+/* } */
+/**/
+/* #temperature { */
+/*   color: #d55c0d; */
+/* } */
+/**/
+/* #memory { */
+/*   color: #679c68; */
+/* } */
+/**/
+/* #disk { */
+/*   color: #979618; */
+/* } */
+/**/
+/* #backlight { */
+/*   color: #d69821; */
+/* } */
+/**/
+/* #pulseaudio { */
+/*   color: #448486; */
+/* } */
+/**/
+/* #clock { */
+/*   color: #b16186; */
+/* } */
+/**/
+/* #battery { */
+/*   color: #5cc084; */
+/* } */
+/**/
+/* #network { */
+/*   color: #48aa4c; */
+/* } */
+
+/* In case you want to seperate the modules in left/right/center */
+/* .modules-left { */
+/*   background: @bg; */
+/*   border: 2px solid @bordercolor; */
+/*   border-radius: 20px; */
+/*   padding-right: 5px; */
+/*   padding-left: 5px; */
+/* } */
+/**/
+/* .modules-right { */
+/*   background: @bg; */
+/*   border: 2px solid @bordercolor; */
+/* border-radius: 20px; */
+/*   padding-right: 5px; */
+/*   padding-left: 5px; */
+/* } */
+/**/
+/* .modules-center { */
+/*   background: @bg; */
+/*   border: 2px solid @bordercolor; */
+/* border-radius: 20px; */
+/*   padding-right: 5px; */
+/*   padding-left: 5px; */
+/* } */

@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 25,
+    "height": 30,
     "margin-left": 5,
     "margin-right": 5,
     "margin-top": 5,
@@ -127,8 +127,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "interval":2,
-        "format-wifi": " :{bandwidthTotalBytes:>4}", //({essid} {signalStrength}%)
+        "interval":1,
+        "format-wifi": "{bandwidthTotalBytes:>3} ", //({essid} {signalStrength}%)
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format-wifi": "{ipaddr} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
