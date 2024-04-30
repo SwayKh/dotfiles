@@ -12,7 +12,7 @@
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "backlight","network", "pulseaudio", "custom/separator", "tray" ],
+    "modules-right": ["network", "cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -128,7 +128,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval":1,
-        "format-wifi": "{bandwidthTotalBytes:>3} ", //({essid} {signalStrength}%)
+        "format-wifi": "{bandwidthTotalBytes:>3}  ", //({essid} {signalStrength}%)
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format-wifi": "{ipaddr} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -141,9 +141,9 @@
         "format": "{volume}% {icon}", //{format_source}",
         "format-bluetooth": "{volume}% {icon} 󰂯", //{format_source}",
         "format-bluetooth-muted": "󰖁 {icon} 󰂯", //{format_source}",
-        "format-muted": "󰖁 {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-muted": "{volume}% 󰖁",
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
         "format-icons": {
             "headphone": "󰋋",
             "hands-free": "󱡒",
