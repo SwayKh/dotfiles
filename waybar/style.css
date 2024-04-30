@@ -104,7 +104,7 @@ button:hover {
 #network.disconnected,
 #pulseaudio.muted,
 #wireplumber.muted {
-  background-color: @alert;
+  color: @alert;
 }
 
 #battery.charging,
