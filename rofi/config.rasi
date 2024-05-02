@@ -27,22 +27,23 @@ window {
   //orientation: vertical;
   //location: west;
 
-  height: 60%;
-  width: 30%;
+  height: 40%;
+  width: 50%;
   orientation: vertical;
-  location: center;
+  location: north;
 
   anchor: center;
   padding: 0px;
+  margin: 5px;
   border: 2px;
   border-radius: 10px;
   spacing: 0;
-  children: [ mainbox];
+  children: [ mainbox ];
 }
 
 mainbox {
   spacing: 0;
-  children: [ inputbar, listview];
+  children: [ inputbar, listview ];
 }
 
 
