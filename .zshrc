@@ -83,7 +83,7 @@ convertToPng(){
   find . -name "*.jpg" -exec rm {} \;
   find . -name "*.webp" -exec mogrify -format png {} \;
   find . -name "*.webp" -exec rm {} \;
-  find . -type f -name "*.png" -exec convert {} -resize 2560x1440 -quality 90 {} \;
+  find . -type f -name "*.png" -exec convert {} -resize 1920x1080 -quality 90 {} \;
 }
 
 updateRom() {
@@ -144,4 +144,20 @@ listSize() {
 
 fman() {
   compgen -c | fzf | xargs man
+}
+
+rename_directories() {
+    # Loop through each directory inside "nes/"
+    for dir in "$1"/*; do
+        # Check if the item in "nes/" is a directory
+        if [ -d "$dir" ]; then
+            # Get the name of the file inside the directory
+            file=$(basename "$dir"/*)
+            # Get the full path of the directory
+            dir_path=$(dirname "$dir")
+            # Rename the directory to the name of the file
+            mv "$dir" "$dir_path/$file"
+            echo "Renamed '$dir' to '$dir_path/$file'"
+        fi
+    done
 }
