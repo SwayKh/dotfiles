@@ -32,6 +32,9 @@ sudo ln -sfn "$path"/kitty "$HOME"/.config/
 [ -d "$HOME"/.config/neofetch ] && rm -rf "$HOME"/.config/neofetch
 sudo ln -sfn "$path"/neofetch "$HOME"/.config/
 
+[ -d "$HOME"/.config/fastfetch ] && rm -rf "$HOME"/.config/fastfetch
+sudo ln -sfn "$path"/fastfetch "$HOME"/.config/
+
 [ -d "$HOME"/.config/hypr ] && rm -rf "$HOME"/.config/hypr
 sudo ln -sfn "$path"/hypr "$HOME"/.config/
 
