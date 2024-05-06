@@ -37,11 +37,15 @@ map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" 
 map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true })
 -- map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
--- Save, Quit and Delete
+-- Save, Quit
 map("n", "qq", "<Cmd>q!<CR>", { silent = true, desc = "[Q]uit" })
-map("n", "<leader>bd", "<Cmd>bd<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave file" })
 map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "Save all files [Q]uit" })
+
+-- Buffer keybinds
+map("n", "<leader>bd", "<Cmd>bdelete<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
+map("n", "<leader>bn", "<Cmd>bnext<CR>", { silent = true, desc = "Run [B]buffer [N]ext" })
+map("n", "<leader>bp", "<Cmd>bprevious<CR>", { silent = true, desc = "Run [B]buffer [P]revious" })
 
 -- Open Lazy/Mason UIs and reload plugins
 map("n", "<leader>;l", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
