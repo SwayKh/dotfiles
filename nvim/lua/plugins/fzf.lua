@@ -35,7 +35,14 @@ return {
       buffers = { prompt = " Buffers ❯ ", no_header_i = true },
       colorschemes = { prompt = " Themes ❯ " },
       keymaps = { prompt = " Keymaps ❯ " },
-      grep = { prompt = " Find ❯ ", no_header_i = true },
+      grep = {
+        prompt = " Find ❯ ",
+        no_header_i = true,
+        rg_glob = true, -- enable glob parsing by default to all
+        -- grep providers? (default:false)
+        glob_flag = "--iglob", -- for case sensitive globs use '--glob'
+        glob_separator = "%s%-%-", -- query separator pattern (lua): ' --'
+      },
       files = {
         prompt = " Files ❯ ",
         no_header_i = true,
