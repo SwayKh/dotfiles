@@ -38,7 +38,7 @@ map mf mkfile
 map dd trash
 map mp chmod #use 664, 777 notation rather than u+x
 map mc mark-save
-map ua Unarchive
+map ua unarchive
 map F :fzf_jump
 map y :yank-path
 map R bulk-rename
