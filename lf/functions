@@ -64,7 +64,7 @@ cmd chmod %{{
 	lf -remote 'send reload'
 }}
 
-cmd Unarchive ${{
+cmd unarchive ${{
 # This part creates the directory for extracting files
   a="${f%%.*}"
   mkdir -p "$a"
@@ -215,7 +215,7 @@ cmd touchM3U ${{
   done
 }}
 
-cmd DeleteAllFiles ${{
+cmd deleteAllFiles ${{
     find "$PWD" -maxdepth 1 -type f -delete
 }}
 
