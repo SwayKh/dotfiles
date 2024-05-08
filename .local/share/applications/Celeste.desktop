@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Celeste
+GenericName=Celeste-Game
+Comment=Popular Platformer game
+Exec=/home/sumit/Games/celeste-linux/Celeste
+Terminal=false
+StartupNotify=true
+Encoding=UTF-8
+Type=Application
+Icon=/home/sumit/Games/celeste-linux/Celeste.png
