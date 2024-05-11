@@ -13,7 +13,7 @@
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
+    "modules-right": [ "network", "cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -78,12 +78,14 @@
         "critical-threshold": 80,
         "interval": 2,
         "format": "{temperatureC}°C ",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""],
+        "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
     },
     "cpu": {
         "interval": 2,
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
     },
     "memory": {
         "interval": 2,
@@ -97,6 +99,12 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
     },
     "battery": {
         "states": {
@@ -147,7 +155,7 @@
     },
     "custom/power": {
       "format": "{icon}",
-      "format-icons": "",// 󰣇
+      "format-icons": "",// 
       "exec-on-event": "true",
       "on-click": "~/scripts/sessionMenu",
       "tooltip": false
