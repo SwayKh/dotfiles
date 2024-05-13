@@ -33,6 +33,7 @@ vim.opt.cursorline = true
 -- Always show statusline and tabline
 vim.opt.laststatus = 3
 vim.opt.showtabline = 2
+vim.opt.tabline = " %t"
 
 -- set spell on
 vim.opt.spell = false
@@ -60,6 +61,9 @@ vim.opt.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
+
+-- Don't have 'o' add a commment, From new tjdrevis video
+vim.opt.formatoptions:remove("o")
 
 -- Save undo history
 vim.opt.undofile = true
