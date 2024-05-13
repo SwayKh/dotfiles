@@ -6,11 +6,11 @@ return {
   },
   config = function()
     require("toggleterm").setup({
-      size = 10,
+      size = 15,
       shade_filetypes = {},
       open_mapping = [[<c-/>]],
       shade_terminal = true,
-      shading_factor = 2,
+      shading_factor = -50,
       start_in_insert = true,
       persist_size = true,
       direction = "horizontal",
@@ -27,18 +27,23 @@ return {
         WinBarNC = { link = "WinBarNC" },
       },
     })
-    vim.keymap.set("n", "<leader>t", ":ToggleTerm <CR>", { silent = true, desc = "[T]oggleTerm [F]loating" })
-    vim.keymap.set("n", "<leader>th", ":ToggleTerm <CR>", { silent = true, desc = "[T]oggleTerm [F]loating" })
+    vim.keymap.set("n", "<leader>t", "<Cmd>ToggleTerm <CR>", { silent = true, desc = "[T]oggleTerm [F]loating" })
     vim.keymap.set(
       "n",
-      "<leader>tf",
-      ":ToggleTerm direction=float<CR>",
+      "<leader>th",
+      "<Cmd>ToggleTerm direction=horizontal <CR>",
       { silent = true, desc = "[T]oggleTerm [H]orizontal" }
     )
     vim.keymap.set(
       "n",
+      "<leader>tf",
+      "<Cmd>ToggleTerm direction=float<CR>",
+      { silent = true, desc = "[T]oggleTerm [F]loat" }
+    )
+    vim.keymap.set(
+      "n",
       "<leader>tv",
-      ":ToggleTerm size=60 direction=vertical<CR>",
+      "<Cmd>ToggleTerm size=60 direction=vertical<CR>",
       { silent = true, desc = "[T]oggleTerm [V]ertical" }
     )
   end,
