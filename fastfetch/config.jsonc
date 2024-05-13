@@ -7,32 +7,32 @@
     {
       "type": "title",
       "key": " ",
-      "keyColor": "#F7BB96",
+      "keyColor": "",
     },
     {
       "type": "os",
       "key": " ",
-      "keyColor": "#DDB5F1",
+      "keyColor": "",
     },
     {
       "type": "kernel",
       "key": " ",
-      "keyColor": "#F18EAB",
+      "keyColor": "",
     },
     {
       "type": "cpu",
       "key":" ",
-      "keyColor": "#96CCFA",
+      "keyColor": "",
     },
     { 
       "type": "uptime",
       "key":"󱑃 ",
-      "keyColor": "#A9E8B1",
+      "keyColor": "",
     },
     { 
       "type": "packages",
       "key":"󰏗 ",
-      "keyColor": "#F0CCCC",
+      "keyColor": "",
     },
     { 
       "type": "shell",
@@ -68,7 +68,7 @@
     {
       "type": "colors",
       "paddingLeft": 2,
-      "symbol": "circle"
+      // "symbol": "circle"
     }
   ]
 }
