@@ -78,7 +78,7 @@ return {
         { name = "nvim_lsp", priority = 1000 },
         { name = "luasnip", priority = 750, max_item_count = 3 },
         { name = "buffer", priority = 500, max_item_count = 5 },
-        { name = "path", priority = 250, max_item_count = 3 },
+        { name = "path", priority = 250, max_item_count = 5 },
         -- { name = "codeium" },
       }),
       window = {
