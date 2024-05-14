@@ -1,0 +1,60 @@
+# vim:ft=conf
+# Function for one time Usage, Might never need again
+
+cmd makeM3U ${{
+    local directory="$1"
+
+    # Check if directory argument is provided
+    if [ -z "$directory" ]; then
+        echo "Usage: make_m3u <directory>"
+        return 1
+    fi
+
+    local subdirs=("$directory"/*/)
+
+    for subdir in "${subdirs[@]}"; do
+        local subdir_name=$(basename "$subdir")
+        local m3u_file="$subdir/$subdir_name.m3u"
+        local files=("$subdir"*)
+        for file in "${files[@]}"; do
+          echo "${file##*/}" > "$m3u_file"
+        done
+    done
+}}
+
+cmd touchM3U ${{
+  for file in "$fx"; do
+    dname="$(basename -a $file)"
+    touch "$file"/"$dname".m3u
+  done
+}}
+
+cmd deleteAllFiles ${{
+    find "$PWD" -maxdepth 1 -type f -delete
+}}
+
+cmd moveToTopLevel ${{
+  IFS=$'\n' read -r -A file_directories <<< "$fx"
+  for directory in "${file_directories[@]}"; do
+    find "$directory" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec cp {} "$PWD" \;
+  done
+}}
+
+# Mount Android storage via sshfs and termux
+cmd androidFs %{{
+	sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android
+}}
+
+# Convert all files to jpg and make them 1440p resolution
+cmd convertToJpg &{{
+  for file in "$fx"
+	do
+    mogrify -format jpg "$file"
+    convert "$file" -resize 1920x1080 -quality 90 "$file"
+	done
+  lf -remote 'send reload'
+}}
+
+cmd directory_size ${{
+	ncdu "$f"
+}}

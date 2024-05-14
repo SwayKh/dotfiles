@@ -28,4 +28,5 @@ setlocal ~/Pictures/Screenshots/ info ctime
 setlocal ~/Pictures/Screenshots/ reverse
 
 source ~/.config/lf/functions
+source ~/.config/lf/nicheFunc
 source ~/.config/lf/mappings
