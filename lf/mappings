@@ -42,6 +42,7 @@ map ua unarchive
 map F :fzf_jump
 map y :yank-path
 map R bulk-rename
+map L link
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
 

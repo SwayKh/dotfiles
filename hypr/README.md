@@ -94,7 +94,7 @@ ncdu
 raindrop 
 godot 
 fdupes
-Discord
+Webcord
 Font-manager
 google-chrome 
 citra 

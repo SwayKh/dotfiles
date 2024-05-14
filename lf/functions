@@ -105,7 +105,13 @@ cmd paste-async &{{
     mode="$1"
     shift
     case "$mode" in
-        copy) cp -rn -- "$@" .;;
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+                lf -remote "send $id echo $line"
+            done
+            ;;
         move) mv -n -- "$@" .;;
     esac
     rm ~/.local/share/lf/files
@@ -186,6 +192,27 @@ cmd newDir ${{
 cmd on-select &{{
     lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
 }}
+
+# c (select for copy) and P to paste soft-link
+# x (select for cut) and P to paste hard-link
+cmd link %{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    if [ "$#" -lt 1 ]; then
+        lf -remote "send $id echo no files to link"
+        exit 0
+    fi
+    case "$mode" in
+        # symbolically copy mode is indicating a soft link
+        copy) ln -sr -t . -- "$@";;
+        # while a move mode is indicating a hard link
+        move) ln -t . -- "$@";;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+
 
 cmd makeM3U ${{
     local directory="$1"
