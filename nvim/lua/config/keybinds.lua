@@ -62,11 +62,11 @@ map("n", "<leader>cc", "<Cmd>cclose<CR>", { desc = "Close Quickfix List" })
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 
--- Move in insert mode
-map("i", "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
-map("i", "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
-map("i", "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
-map("i", "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
+-- Move in insert mode, And Command-line mode
+map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
+map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
+map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
+map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
 
 -- Move between splits
 map("n", "<C-j>", "<C-w>j", { desc = "Move Between splits with HJKL" })
