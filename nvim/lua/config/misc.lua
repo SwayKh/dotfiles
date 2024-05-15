@@ -23,6 +23,27 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("disable_mini_indentline", {}),
+  pattern = {
+    "help",
+    "alpha",
+    "dashboard",
+    "neo-tree",
+    "Trouble",
+    "trouble",
+    "lazy",
+    "mason",
+    "notify",
+    "toggleterm",
+    "lazyterm",
+  },
+  desc = "Disable Mini Indentline for some filetype, similar to IndentBlankLine",
+  callback = function()
+    vim.b.miniindentscope_disable = true
+  end,
+})
+
 -- vim.api.nvim_create_autocmd("BufReadPost", {
 --   group = vim.api.nvim_create_augroup("conf_filetype", {}),
 --   pattern = { "*.conf", "*.ini", "*.rasi", "*.cfg" },
