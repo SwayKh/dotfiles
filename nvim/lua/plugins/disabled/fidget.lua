@@ -1,4 +1,5 @@
 return {
+  -- Mini Notify Can give the loading workspace notification
   "j-hui/fidget.nvim",
   lazy = true,
   opts = {},
