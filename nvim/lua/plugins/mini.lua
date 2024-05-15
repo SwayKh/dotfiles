@@ -5,21 +5,62 @@ return { -- Collection of various small independent plugins/modules
   lazy = true,
   event = "VeryLazy",
   config = function()
-    -- Better Around/Inside textobjects
-    --
-    -- Examples:
-    --  - va)  - [V]isually select [A]round [)]paren
-    --  - yinq - [Y]ank [I]nside [N]ext [']quote
-    --  - ci'  - [C]hange [I]nside [']quote
-    require("mini.ai").setup({ n_lines = 500 })
-    require("mini.pairs").setup()
+    require("mini.ai").setup({
+      mappings = {
+        around = "a",
+        inside = "i",
 
-    -- Add/delete/replace surroundings (brackets, quotes, etc.)
-    --
-    -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-    -- - sd'   - [S]urround [D]elete [']quotes
-    -- - sr)'  - [S]urround [R]eplace [)] [']
-    --  [s/S] keybinds are used for flash, will figure it out
+        around_next = "an",
+        inside_next = "in",
+        around_last = "al",
+        inside_last = "il",
+
+        goto_left = "g[",
+        goto_right = "g]",
+      },
+      n_lines = 50,
+    })
+
+    require("mini.pairs").setup({
+      mappings = {
+        ["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
+        ["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
+        ["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]." },
+
+        [")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
+        ["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
+        ["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
+
+        ['"'] = { action = "closeopen", pair = '""', neigh_pattern = "[^\\].", register = { cr = false } },
+        ["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%a\\].", register = { cr = false } },
+        ["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\].", register = { cr = false } },
+      },
+    })
+
+    -- Tabline plugin
+    require("mini.tabline").setup()
+    require("mini.notify").setup()
+
+    -- Comment lines in visual or normal mode
+    require("mini.comment").setup({
+      mappings = {
+        comment = "gc",
+        comment_line = "gcc",
+        comment_visual = "gc",
+        textobject = "gc",
+      },
+    })
+
+    -- Split or Join arguments inside brackets/braces/parenthesis
+    require("mini.splitjoin").setup({
+      mappings = {
+        toggle = "gS",
+        split = "",
+        join = "",
+      },
+    })
+    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
+
     require("mini.surround").setup({
       mappings = {
         add = "sa", -- Add surrounding in Normal and Visual modes
@@ -35,22 +76,12 @@ return { -- Collection of various small independent plugins/modules
       },
     })
 
-    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
-    -- require("mini.indentscope").setup()
-
-    -- require("mini.hipatterns").setup({
-    --   highlighters = {
-    --     hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
-    --   },
-    -- })
-
-    require("mini.comment").setup({
-      mappings = {
-        comment = "gc",
-        comment_line = "gcc",
-        comment_visual = "gc",
-        textobject = "gc",
+    require("mini.indentscope").setup({
+      draw = {
+        delay = 50,
+        animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
       },
+      symbol = "│", --  ╎ │
     })
 
     local statusline = require("mini.statusline")
