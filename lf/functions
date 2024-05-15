@@ -113,16 +113,14 @@ cmd fzf_jump ${{
 }}
 
 cmd fzf_search ${{
-    res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
-    if [ -d "$res" ] ; then
-        cmd="cd"
-    elif [ -f "$res" ] ; then
-        cmd="select"
-    else
-        exit 0
-    fi
-
-    lf -remote "send $id $cmd \"$res\""
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+    res="$(
+        FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+            --ansi --layout=reverse --header 'Search in files' \
+            | cut -d':' -f1 | sed 's/\\/\\\\/g;s/"/\\"/g'
+    )"
+    [ -n "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
 cmd bulk-rename ${{
@@ -191,4 +189,14 @@ cmd link %{{
     esac
     rm ~/.local/share/lf/files
     lf -remote "send clear"
+}}
+
+cmd singlePane %{{
+    lf -remote "send $id :set preview!; set ratios 1; set info size:time;"
+}}
+
+cmd default %{{
+    lf -remote "send $id :set ratios 1:2:2; set info; set preview"
+    # or just
+    # lf -remote "send $id source ~/.config/lf/lfrc"
 }}
