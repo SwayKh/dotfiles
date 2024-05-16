@@ -49,7 +49,9 @@ return {
       },
     })
 
-    vim.keymap.set("n", "-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
+    vim.keymap.set("n", "-", "<Cmd>Oil<CR>", { silent = true, desc = "Open Parent Directory" })
+    vim.keymap.set("n", "<leader>-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
+
     -- vcs.setup({
     --   status_symbol = {
     --     [StatusType.Added] = "",
