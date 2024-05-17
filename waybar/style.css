@@ -40,6 +40,7 @@ button:hover {
 
 #workspaces button {
   color: @fg;
+  /* padding : 0px 5px; */
 }
 
 #workspaces button.urgent {
@@ -86,6 +87,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #custom-power,
+#window,
 #mpd {
   padding: 0px 5px;
   padding-right: 10px;
@@ -114,7 +116,7 @@ button:hover {
 }
 
 label:focus {
-  background-color: #000000;
+  background-color: #333333;
 }
 
 #battery.critical:not(.charging) {

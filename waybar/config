@@ -65,6 +65,17 @@
         "spacing": 5,
         "show-passive-items": true,
     },
+    "hyprland/window": {
+      "format": "{}",
+      "separate-outputs": true
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
     "clock": {
         "interval": 60,
         "format": "  {:%a %b %d  %I:%M %p}", // %b %d %Y  --Date formatting
