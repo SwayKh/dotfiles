@@ -159,7 +159,7 @@ cmd selectRandom %{{
   lf -remote "send $id $cmd \"$res\""
 }}
 
-cmd newDir ${{
+cmd newDir %{{
     set -f
     printf "Directory name: "
     read newd
