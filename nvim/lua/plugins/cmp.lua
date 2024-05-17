@@ -21,7 +21,10 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
-    luasnip.config.setup({})
+    luasnip.config.setup({
+      history = false,
+      updateevents = "TextChanged,TextChangedI",
+    })
     local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
@@ -46,32 +49,40 @@ return {
       },
 
       mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- previous suggestion
+        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
-        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-        -- ["<Tab>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_next_item()
-        --   elseif luasnip.expand_or_locally_jumpable() then
-        --     luasnip.expand_or_jump()
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
-        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_prev_item()
-        --   elseif luasnip.locally_jumpable(-1) then
-        --     luasnip.jump(-1)
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
+        ["<CR>"] = cmp.mapping(
+          cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          }),
+          { "i", "c" }
+        ),
+        ["<C-y>"] = cmp.mapping(
+          cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          }),
+          { "i", "c" }
+        ),
+        ["<C-k>"] = cmp.mapping(function(fallback)
+          if luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<C-j>"] = cmp.mapping(function(fallback)
+          if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
