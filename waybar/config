@@ -168,7 +168,7 @@
       "format": "{icon}",
       "format-icons": "",// 
       "exec-on-event": "true",
-      "on-click": "~/scripts/sessionMenu",
+      "on-click": "~/scripts/session_menu",
       "tooltip": false
     },
     "custom/separator": {
