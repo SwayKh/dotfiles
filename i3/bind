@@ -31,7 +31,7 @@ bindsym $mod+TAB exec rofi -show window
 
 bindsym $mod+l exec $term -e lf
 bindsym $mod+m exec $term -e btop
-bindsym $mod+Escape exec "$HOME/scripts/sessionMenu.sh"
+bindsym $mod+Escape exec "$HOME/scripts/session_menu"
 
 # Move your focus around
 bindsym $mod+Ctrl+$left focus left
