@@ -66,7 +66,7 @@ return {
     })
 
     vim.keymap.set("n", "<leader>gf", fzf.git_files, { silent = true, desc = "Search [G]it [F]iles" }) --git_files
-    vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { silent = true, desc = '[S]earch Recent Files ("." for repeat)' })
+    vim.keymap.set("n", "<leader>s?", fzf.oldfiles, { silent = true, desc = "[S]earch Recent Files" })
     vim.keymap.set("n", "<leader>sf", fzf.files, { silent = true, desc = "[S]earch [F]iles" }) --find_files
     vim.keymap.set("n", "<leader>sg", fzf.live_grep, { silent = true, desc = "[S]earch by [G]rep" }) --live_grep
     vim.keymap.set("n", "<leader>sh", fzf.help_tags, { silent = true, desc = "[S]earch [H]elp" }) --help_tags
@@ -82,6 +82,10 @@ return {
 
     vim.keymap.set("n", "<leader>sn", function()
       require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
+    end, { silent = true, desc = "[S]earch [N]vim config" })
+
+    vim.keymap.set("n", "<leader>s.", function()
+      require("fzf-lua").files({ cwd = "$HOME/dotfiles" })
     end, { silent = true, desc = "[S]earch [N]vim config" })
 
     vim.keymap.set("n", "<leader>s/", function()
