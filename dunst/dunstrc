@@ -1,3 +1,6 @@
+# check default config file for help
+# /etc/dunst/dunstrc
+
 [global]
     font = "JetBrainsMono Nerd Font 10"
     allow_markup = yes
@@ -10,6 +13,7 @@
     word_wrap = yes
     ignore_newline = no
     geometry = "200x5-6+30"
+    width = 400
     transparency = 0
     idle_threshold = 120
     monitor = 0
