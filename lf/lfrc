@@ -8,13 +8,13 @@ set drawbox true    # Shows the box around the panes
 set dirfirst true
 set mouse true
 set hidden true     # Hidden Files
+set ratios 1:2:2    # Preview should be set after setting ratios, Needed for singlePane function
 set icons true      # Icons(Needs a Icons file or LF_ICONS env variable)
 set preview true
 set sixel true
 set period 1
 set incsearch true
 set incfilter true
-set ratios 1:2:2
 set ignorecase true # Ignore case when searching
 set scrolloff 5    # Leaves space on Top and Bottom of the screen
 set cursorpreviewfmt "\033[7;2m"

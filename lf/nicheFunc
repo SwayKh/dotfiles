@@ -45,14 +45,8 @@ cmd androidFs %{{
 	sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android
 }}
 
-# Convert all files to jpg and make them 1440p resolution
-cmd convertToJpg &{{
-  for file in "$fx"
-	do
-    mogrify -format jpg "$file"
-    convert "$file" -resize 1920x1080 -quality 90 "$file"
-	done
-  lf -remote 'send reload'
+cmd convertToPng &{{
+  convert_to_png "$fx"
 }}
 
 cmd directory_size ${{
