@@ -4,19 +4,23 @@
 set shell zsh
 set shellopts '-euy'
 set ifs "\n"
-
-set hidden true     # Hidden Files
-set ignorecase true # Ignore case when searching
-set scrolloff 10    # Leaves space on Top and Bottom of the screen
 set drawbox true    # Shows the box around the panes
+set dirfirst true
 set mouse true
+set hidden true     # Hidden Files
 set icons true      # Icons(Needs a Icons file or LF_ICONS env variable)
-set dircounts false # shows number of files in dir instead of total size
 set preview true
 set sixel true
-set previewer ~/.config/lf/preview
+set period 1
+set incsearch true
+set incfilter true
 set ratios 1:2:2
+set ignorecase true # Ignore case when searching
+set scrolloff 5    # Leaves space on Top and Bottom of the screen
 set cursorpreviewfmt "\033[7;2m"
+
+
+set previewer ~/.config/lf/preview
 
 # Sort Downloads directory by creation time, reverse
 setlocal ~/Downloads/ sortby ctime

@@ -55,6 +55,11 @@ cmd chmod %{{
 	lf -remote 'send reload'
 }}
 
+cmd chmodx &{{
+	chmod +x $fx
+	lf -remote "send $id reload"
+}}
+
 cmd unarchive ${{
 # This part creates the directory for extracting files
   a="${f%%.*}"

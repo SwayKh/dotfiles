@@ -1,53 +1,69 @@
 # vim:ft=conf
 # Remove some default keybindings
-map m #gets in the way of mkdir, mkfile
-map n #gets in the way of unarchive
-map u #used for unselect, gets in the way of unarchive
-map d #used for cut, get in way of trash func
-map e #opens editor, not needed
-map y #used for copy, now for yank-path
-map f #used for find (Not sure how it worked)
+clearmaps # Clears all mappings except :
 
-# Custom Key mappings
-map ` shell
+map q quit
+map k up
+map j down
+map h updir
+map l open
+map gg top
+map G bottom
+map K :updir; up; open
+map J :updir; down; open
 map x cut
 map c copy
-map P :paste; clear
-map p :paste-async
-map f search # Works like vim / search
-map D $rm -rf $fx # $IFS=':';
-map <enter> open
-map <delete> delete
-map <esc> unselect
-map <backspace2> clear # Clears any cut/copy highlighter
+map y :yank-path
+map p :paste; clear
+map P :paste-async
+map L link
+map v invert
+map ] jump-next
+map [ jump-prev
+map f search
+map F :fzf_jump
+map / search
 map e $$f # Execute the selected file, must be executable
-map op &xdg-open $f # Open a file via xgd-open, useful for opening html in browser, not nvim
+map w $$SHELL
+map r rename
+map R bulk-rename
+map o &xdg-open $f
+map O lfrc
+map N newDir
+map a :push %mkdir<space>
+map D $rm -rf $fx
 map | :set ratios 1:2
-map \\ :calcdirsize; down; # Calculate the directory size in the editor without NCDU
+map ; shell
+map . selectRandom
+map \% shell-pipe
+map \! shell-wait
+map \& shell-async
+map \$ shell
+map \' !true
+map \\ :calcdirsize; down;
+
+map <c-d> half-down
+map <c-u> half-up
 map <a-j> :push 5j
 map <a-k> :push 5k
-map K :updir; up; open # Move up in parent directory
-map J :updir; down; open # Move down in parent directory
-# map sf :set info size # There are 'z' keybindings for setting info, without changing sorting
 
-# Function Bindings
-map L link
-map oc lfrc
+map <enter> open
+map <esc> unselect
+map <delete> delete
+map <backspace2> clear
+map <space> :toggle; down
+
+map dd trash
 map mp chmod #use 664, 777 notation rather than u+x
 map md mkdir
-map <a-n> newDir
-map dd trash
 map mf mkfile
-map F :fzf_jump
 map mc mark-save
-map y :yank-path
+map mx chmodx
 map ua unarchive
-map R bulk-rename
-map . selectRandom
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
 
-# Movement Bindings
+# Bookmark Bindings
 map gh cd ~ # This is default
 map g/ cd /
 map gD cd ~/Documents
