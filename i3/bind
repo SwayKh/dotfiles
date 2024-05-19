@@ -29,7 +29,7 @@ bindsym $mod+KP_ADD exec kcalc
 bindsym $mod+r exec rofi -show drun
 bindsym $mod+TAB exec rofi -show window
 
-bindsym $mod+l exec $term -e lf
+bindsym $mod+l exec $term -e zsh -ic lf
 bindsym $mod+m exec $term -e btop
 bindsym $mod+Escape exec "$HOME/scripts/session_menu"
 
