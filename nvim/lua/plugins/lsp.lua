@@ -103,9 +103,7 @@ return {
       sqlls = {}, -- SQL
       eslint = {}, -- React/NextJS/Svelte
       emmet_language_server = {}, -- HTML
-      tsserver = {
-        -- filetypes = { "javascript", "typescriptreact", "javascriptreact", "svelte" },
-      }, -- Javascript, TypeScript
+      tsserver = {}, -- Javascript, TypeScript
       html = {}, -- HTML
       htmx = {}, -- HTMX
       cssls = {}, -- CSS
