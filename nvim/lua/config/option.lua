@@ -25,10 +25,10 @@ vim.opt.autowrite = true
 vim.opt.autoread = true
 
 -- Set a colorcolumn, I like mine at 120
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "80"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Always show statusline and tabline
 vim.opt.laststatus = 3
