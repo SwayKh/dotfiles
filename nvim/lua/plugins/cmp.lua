@@ -55,13 +55,6 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping(
-          cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-          }),
-          { "i", "c" }
-        ),
         ["<C-y>"] = cmp.mapping(
           cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
@@ -87,9 +80,9 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
-        { name = "luasnip", priority = 750, max_item_count = 3 },
-        { name = "buffer", priority = 500, max_item_count = 5 },
-        { name = "path", priority = 250, max_item_count = 5 },
+        { name = "luasnip", priority = 750, max_item_count = 5 },
+        { name = "buffer", priority = 500, max_item_count = 10 },
+        { name = "path", priority = 250, max_item_count = 10 },
         -- { name = "codeium" },
       }),
       window = {
