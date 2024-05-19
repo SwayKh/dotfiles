@@ -149,6 +149,7 @@ vulkan-radeon(Needed for Godot4)
 fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
 os-prober (Needed for add windows as boot entry in grub)
 upower (Needed to check battery levels of pheripherals like controllers)
+perl-file-mimeinfo (Needed for using mimeopen command in lf)
 xdg-desktop-portal-hyprland (Needed for hyprland)
 xdg-desktop-portal-gtk (Needed for gtk file pickers)
 python-pip/x
