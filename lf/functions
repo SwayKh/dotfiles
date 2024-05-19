@@ -78,10 +78,8 @@ cmd unarchive ${{
 }}
 
 cmd setwallpaper &{{
-  # cp "$f" ~/.config/wall.jpg;
-  # swaybg -m fill -i ~/.config/wall.jpg &
-  set_wall="$HOME/scripts/set_wall"
-  $set_wall "$f"
+  # set_wall="$HOME/scripts/set_wall"
+  set_wall "$f"
   lf -remote 'send reload'
 }}
 
@@ -201,6 +199,8 @@ cmd singlePane %{{
 }}
 
 cmd default %{{
+    # Set preview needs to be set after ratio, since there need to be 2 pane for
+    # it
     lf -remote "send $id :set ratios 1:2:2; set info; set preview"
     # or just
     # lf -remote "send $id source ~/.config/lf/lfrc"
