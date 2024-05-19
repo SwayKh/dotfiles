@@ -9,6 +9,10 @@ map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 map("n", "<leader>.", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
 
+-- This overrides to <C-i> function of the jumplist
+map("n", "<tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
+map("n", "<S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
+
 -- Move selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
@@ -106,9 +110,6 @@ vim.cmd("cnoreabbrev WQ wq")
 -- map("i", "{", "{}<left>")
 -- map("i", "{;", "{};<left><left>")
 -- map("i", "/*", "/**/<left><left>")
-
--- This overrides to <C-i> function of the jumplist
--- map("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
 
 -- Don't ever use this, plus M is being used by Flash
 -- map(
