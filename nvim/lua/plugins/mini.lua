@@ -18,7 +18,36 @@ return { -- Collection of various small independent plugins/modules
         goto_left = "g[",
         goto_right = "g]",
       },
-      n_lines = 50,
+      n_lines = 500,
+      custom_textobjects = {
+        o = require("mini.ai").gen_spec.treesitter({
+          a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+          i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+        }, {}),
+        f = require("mini.ai").gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+        c = require("mini.ai").gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+        t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
+        d = { "%f[%d]%d+" }, -- digits
+        e = { -- Word with case
+          {
+            "%u[%l%d]+%f[^%l%d]",
+            "%f[%S][%l%d]+%f[^%l%d]",
+            "%f[%P][%l%d]+%f[^%l%d]",
+            "^[%l%d]+%f[^%l%d]",
+          },
+          "^().*()$",
+        },
+        g = function() -- Whole buffer, similar to `gg` and 'G' motion
+          local from = { line = 1, col = 1 }
+          local to = {
+            line = vim.fn.line("$"),
+            col = math.max(vim.fn.getline("$"):len(), 1),
+          }
+          return { from = from, to = to }
+        end,
+        u = require("mini.ai").gen_spec.function_call(), -- u for "Usage"
+        U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
+      },
     })
 
     require("mini.pairs").setup({
@@ -42,14 +71,15 @@ return { -- Collection of various small independent plugins/modules
     require("mini.notify").setup()
 
     -- Comment lines in visual or normal mode
-    require("mini.comment").setup({
-      mappings = {
-        comment = "gc",
-        comment_line = "gcc",
-        comment_visual = "gc",
-        textobject = "gc",
-      },
-    })
+    -- Nvim 10.0 has commenting builtin with these keybinds
+    -- require("mini.comment").setup({
+    --   mappings = {
+    --     comment = "gc",
+    --     comment_line = "gcc",
+    --     comment_visual = "gc",
+    --     textobject = "gc",
+    --   },
+    -- })
 
     -- Split or Join arguments inside brackets/braces/parenthesis
     require("mini.splitjoin").setup({
@@ -77,11 +107,14 @@ return { -- Collection of various small independent plugins/modules
     })
 
     require("mini.indentscope").setup({
+      symbol = "│", --  ╎ │
       draw = {
         delay = 50,
         animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
       },
-      symbol = "│", --  ╎ │
+      options = {
+        try_as_border = true,
+      },
     })
 
     local statusline = require("mini.statusline")
