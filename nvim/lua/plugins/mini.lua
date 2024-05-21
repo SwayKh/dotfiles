@@ -69,6 +69,7 @@ return { -- Collection of various small independent plugins/modules
     -- Tabline plugin
     require("mini.tabline").setup()
     require("mini.notify").setup()
+    require("mini.git").setup()
 
     -- Comment lines in visual or normal mode
     -- Nvim 10.0 has commenting builtin with these keybinds

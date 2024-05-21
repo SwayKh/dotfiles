@@ -46,7 +46,7 @@ map <a-j> :push 5j
 map <a-k> :push 5k
 map <c-d> half-down
 map <c-u> half-up
-map <c-r> reload
+map <c-r> :reload; redraw
 map <c-l> %lf -remote "send $id source ~/.config/lf/lfrc"
 
 map <enter> open
