@@ -1,14 +1,3 @@
-# Can't put this in ~/scripts/function.sh, The shell exits with lf
-lfcd() {
-  tmp="$(mktemp)"
-  lf -last-dir-path="$tmp" "$@"
-  if [ -f "$tmp" ]; then
-    dir="$(cat "$tmp")"
-    rm -f "$tmp"
-    [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir" || exit
-  fi
-}
-
 export ZSH=$HOME/.oh-my-zsh
 plugins=(git
     extract
@@ -21,7 +10,7 @@ plugins=(git
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999999'
 
-source "$HOME"/scripts/function.sh
+source "$HOME"/dotfiles/scripts/function.sh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/completion.zsh
