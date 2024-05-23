@@ -5,6 +5,7 @@ set shell zsh
 set shellopts '-euy'
 set ifs "\n"
 set drawbox true    # Shows the box around the panes
+set roundbox true
 set dirfirst true
 set mouse true
 set hidden true     # Hidden Files

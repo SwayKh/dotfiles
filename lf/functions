@@ -11,6 +11,8 @@ cmd mkfile %printf "File Name: "; read and; touch $and; lf -remote 'send reload'
 # cmd trash %set -f; mv "$fx" ~/.trash
 cmd clear_trash % rm -rf ~/.trash/*
 
+cmd doc $$lf -doc | $EDITOR
+
 cmd yank-path &{{
   printf '%s' "$fx" | wl-copy
   lf -remote 'send reload'
