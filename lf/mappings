@@ -33,8 +33,10 @@ map N newDir
 map a :push %mkdir<space>
 map D $rm -rf $fx
 map | :set ratios 1:2
-map ; shell
+map ` shell
 map . selectRandom
+map ; find-next
+map , find-prev
 map \% shell-pipe
 map \! shell-wait
 map \& shell-async
@@ -46,6 +48,8 @@ map <a-j> :push 5j
 map <a-k> :push 5k
 map <c-d> half-down
 map <c-u> half-up
+map <c-n> search-next
+map <c-p> search-prev
 map <c-r> :reload; redraw
 map <c-l> %lf -remote "send $id source ~/.config/lf/lfrc"
 
@@ -64,6 +68,19 @@ map mx chmodx
 map ua unarchive
 map bg setwallpaper
 map du directory_size # Requires ncdu utility
+
+map zh set hidden!
+map zr set reverse!
+map zn set info
+map zs set info size
+map zt set info time
+map za set info size:time
+map sn :set sortby natural; set info
+map ss :set sortby size; set info size
+map st :set sortby time; set info time
+map sa :set sortby atime; set info atime
+map sc :set sortby ctime; set info ctime
+map se :set sortby ext; set info
 
 # Bookmark Bindings
 map gh cd ~ # This is default
