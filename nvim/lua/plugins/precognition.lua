@@ -4,7 +4,7 @@ return {
   config = function()
     require("precognition").setup({
       startVisible = true,
-      showBlankVirtLine = true,
+      showBlankVirtLine = false,
       highlightColor = "Comment",
       hints = {
         Caret = { text = "^", prio = 2 },

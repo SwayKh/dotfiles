@@ -28,11 +28,13 @@ vim.opt.autoread = true
 vim.opt.colorcolumn = "80"
 
 -- Show which line your cursor is on
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 -- Always show statusline and tabline
 vim.opt.laststatus = 3
 vim.opt.showtabline = 2
+-- Only show file name in tabline, not abbreviated path
 vim.opt.tabline = " %t"
 
 -- set spell on
@@ -44,6 +46,7 @@ vim.opt.filetype = "on"
 
 -- enable text wrapping, Wrap text at 80 characters
 vim.opt.wrap = true
+vim.opt.whichwrap = "<,>,[,],l,h"
 vim.opt.textwidth = 80
 
 -- Set terminal colors to 24bit, needed for colorschemes
@@ -64,6 +67,15 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Don't have 'o' add a commment, From new tjdrevis video
 vim.opt.formatoptions:remove("o")
+
+-- Fix Tab length and Indenting
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.autoindent = true
+vim.opt.expandtab = true
+vim.opt.breakindent = true
+vim.opt.smartindent = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -88,6 +100,9 @@ vim.opt.pumwidth = 50
 
 -- Max items to show in pop up menu
 vim.opt.pumheight = 0
+
+-- Transparency level for pop up menu
+vim.opt.pumblend = 12
 
 -- Max items to show in command menu
 vim.opt.cmdheight = 0
@@ -117,14 +132,42 @@ vim.opt.completeopt = "menuone,menu,noselect"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
--- Disable "~" characters at end of buffer
-vim.opt.fillchars = { eob = " " }
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
 
--- Fix Tab length and Indenting
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.autoindent = true
-vim.opt.expandtab = true
-vim.opt.breakindent = true
-vim.opt.smartindent = false
+-- Something related to search
+vim.opt.wildmenu = true
+vim.opt.wildmode = "longest:full,full"
+vim.opt.wildoptions = "pum"
+
+-- Disable "~" characters at end of buffer
+vim.opt.fillchars = {
+  horiz = "━",
+  horizup = "┻",
+  horizdown = "┳",
+  vert = "┃",
+  vertleft = "┨",
+  vertright = "┣",
+  verthoriz = "╋",
+  fold = "⠀",
+  eob = " ",
+  diff = "┃",
+  msgsep = "‾",
+  foldsep = "│",
+  foldclose = "▶",
+  foldopen = "▼",
+}
+
+vim.opt.jumpoptions = "stack,view"
+-- Syntax highlighting in strings for augroups, lua, perl, python, javascript. Useful if you are doing stuff like
+-- generating SQL/HTML/XML in strings
+vim.g.vimsyn_embed = "alpPrj"
+
+-- Where to keep the cursor when opening a horizontal split
+vim.opt.splitkeep = "screen"
+
+-- Tells me if there is the line is wrapped
+vim.g.showbreak = "↪"
+vim.opt.confirm = true
+vim.opt.showmatch = true
