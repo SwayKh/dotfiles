@@ -14,6 +14,7 @@ set icons true      # Icons(Needs a Icons file or LF_ICONS env variable)
 set preview true
 set sixel true
 set period 1
+set preserve "mode,timestamps"
 set incsearch true
 set incfilter true
 set ignorecase true # Ignore case when searching
