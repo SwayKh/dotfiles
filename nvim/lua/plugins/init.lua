@@ -8,5 +8,5 @@ return {
   --
   -- { "tpope/vim-sleuth", event = "VeryLazy" }, -- Detect tabstop and shiftwidth automatically
   { "nvim-tree/nvim-web-devicons", lazy = true },
-  -- { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
+  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 }
