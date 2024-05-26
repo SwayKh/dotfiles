@@ -3,13 +3,22 @@ return {
     "EdenEast/nightfox.nvim",
     priority = 1000,
     config = function()
+      require("nightfox").setup({
+        options = {
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          },
+        },
+      })
+
       vim.cmd.colorscheme("carbonfox")
-      vim.cmd.hi("Comment gui=none")
-      -- vim.cmd.hi("Normal guibg=#222222")
-      -- vim.opt.background = "dark"
       vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
       vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
       vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+      -- vim.cmd.hi("Comment gui=none")
+      -- vim.cmd.hi("Normal guibg=#222222")
       -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
       -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     end,
