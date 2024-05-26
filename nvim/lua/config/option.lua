@@ -44,10 +44,12 @@ vim.opt.spelllang = "en_us"
 -- Automaticaly set the file, used for filetype autocmd
 vim.opt.filetype = "on"
 
+-- Set textwidth to Automaticaly wrap text at that length
+vim.opt.textwidth = 80
 -- enable text wrapping, Wrap text at 80 characters
 vim.opt.wrap = true
+-- Which characters can go through wrap on a line
 vim.opt.whichwrap = "<,>,[,],l,h"
-vim.opt.textwidth = 80
 
 -- Set terminal colors to 24bit, needed for colorschemes
 vim.opt.termguicolors = true
@@ -89,7 +91,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 2
+vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 5
 
 -- Keep signcolumn on by default
@@ -109,6 +111,9 @@ vim.opt.cmdheight = 0
 
 -- Decrease update time, (Time before swap file is writter)
 vim.opt.updatetime = 250
+
+-- Set themes to dark
+vim.opt.background = "dark"
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -132,7 +137,7 @@ vim.opt.completeopt = "menuone,menu,noselect"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.foldmethod = "expr"
+vim.opt.foldmethod = "indent"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 
@@ -160,6 +165,7 @@ vim.opt.fillchars = {
 }
 
 vim.opt.jumpoptions = "stack,view"
+
 -- Syntax highlighting in strings for augroups, lua, perl, python, javascript. Useful if you are doing stuff like
 -- generating SQL/HTML/XML in strings
 vim.g.vimsyn_embed = "alpPrj"
@@ -169,5 +175,8 @@ vim.opt.splitkeep = "screen"
 
 -- Tells me if there is the line is wrapped
 vim.g.showbreak = "↪"
+
+-- Useful when buffers aren't written and I do :wq
 vim.opt.confirm = true
+
 vim.opt.showmatch = true
