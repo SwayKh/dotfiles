@@ -9,6 +9,10 @@ plugins=(git
     zsh-autosuggestions)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999999'
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+SAVEHIST=20000
+setopt appendhistory
 
 source "$HOME"/dotfiles/scripts/function.sh
 source $ZSH/oh-my-zsh.sh
@@ -29,7 +33,7 @@ export VISUAL=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
 export FZF_DEFAULT_OPTS='--layout=reverse --border --height=50%' # --inline-info
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git' # Use fd instead of find
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git --ignore-file ~/.gitignore' # Use fd instead of find
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 alias pokescript='pokemon-colorscripts -r'
