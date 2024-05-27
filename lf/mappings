@@ -13,7 +13,9 @@ map K :updir; up; open
 map J :updir; down; open
 map x cut
 map c copy
-map y :yank-path
+map yp :yank-path
+map yn :yank-filename
+map yd :yank-dirname
 map p :paste; clear
 map P :paste-async
 map L link
