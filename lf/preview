@@ -2,7 +2,7 @@
 
 image() {
   # geometry="$(($2 - 2))x$3"
-  chafa "$1" -f sixel -s "$2x$3" --animate off --polite on | fold -w65535
+  chafa "$1" -f sixel -s "$2x$3" --animate off --polite on # | fold -w65535
 }
 
 batorcat() {

@@ -18,6 +18,16 @@ cmd yank-path &{{
   lf -remote 'send reload'
 }}
 
+cmd yank-filename &{{
+  basename -a -- $fx | head -c-1 | wl-copy
+  lf -remote 'send reload'
+}}
+
+cmd yank-dirname &{{
+  dirname -- "$f" | head -c-1 | wl-copy
+  lf -remote 'send reload'
+}}
+
 cmd trash ${{
   trash="~/.trash/"
   for file in "$fx"
