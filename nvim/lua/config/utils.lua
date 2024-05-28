@@ -19,7 +19,7 @@ function M.pluginNames()
     return
   end
 
-  -- Lua json decoder needs some pacakge from luarocks
+  -- Lua json decoder needs some package from luarocks
   -- Decode JSON content to a Lua table using Neovim's json_decode
   local data = vim.fn.json_decode(content)
   if not data then
