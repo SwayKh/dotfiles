@@ -107,7 +107,25 @@ return {
       })
     end, { desc = "[S]earch [/] in current buffer" })
 
-    -- vim.keymap.set("n", "<leader>l", fzf.fzf_exec(require("lazy").plugins()), { desc = "Test commands" })
+    vim.keymap.set("n", "<leader>lr", function()
+      fzf.fzf_exec(require("config.utils").pluginNames(), {
+        prompt = "Select a plugin > ",
+        actions = {
+          ["default"] = function(selected)
+            vim.cmd("Lazy reload " .. selected[1])
+          end,
+        },
+        winopts = {
+          title = " Reload Plugins ",
+          title_pos = "center",
+          preview = { hidden = "hidden" },
+          height = 0.50, -- window height
+          width = 0.40, -- window width
+          row = 0.50, -- window row position (0=top, 1=bottom)
+          col = 0.50, -- window col position (0=left, 1=right)
+        },
+      })
+    end, { desc = "[L]azy [R]eload plugin of choice" })
 
     --[[telescope.lua
     -- Consutomize the look
