@@ -11,6 +11,11 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local action_state = require("telescope.actions.state")
+
+    local pickers = require("telescope.pickers")
+    local finders = require("telescope.finders")
+    local conf = require("telescope.config").values
 
     telescope.setup({
       defaults = {
@@ -53,6 +58,27 @@ return {
     vim.keymap.set("n", "<leader>sg", ":Telescope live_grep<CR>", { desc = "[S]earch by [G]rep" }) --live_grep
     vim.keymap.set("n", "<leader>sd", ":Telescope diagnostics<CR>", { desc = "[S]earch [D]iagnostics" }) --diagnostics
     vim.keymap.set("n", "<leader>sr", ":Telescope resume<CR>", { desc = "[S]earch [R]esume" }) --resume
+    vim.keymap.set("n", "<leader>lr", function(opts)
+      opts = opts or {}
+      pickers
+        .new(opts, {
+          prompt_title = "Plugins",
+          finder = finders.new_table({
+            results = require("config.utils").pluginNames(),
+          }),
+          sorter = conf.generic_sorter(opts),
+
+          attach_mappings = function(prompt_bufnr, _)
+            actions.select_default:replace(function()
+              actions.close(prompt_bufnr)
+              local selection = action_state.get_selected_entry()
+              vim.cmd("Lazy reload " .. selection[1])
+            end)
+            return true
+          end,
+        })
+        :find()
+    end, { desc = "[L]azy [R]eload plugin of choice" })
 
     vim.keymap.set("n", "<leader>sc", ":Telescope colorscheme<CR>", { desc = "Telescope [S]how [C]olorscheme" })
     vim.keymap.set("n", "<leader>sk", ":Telescope keymaps<CR>", { desc = "Telescope [S]how [K]eymaps" })
