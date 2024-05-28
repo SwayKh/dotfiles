@@ -55,12 +55,6 @@ map("n", "<leader>bp", "<Cmd>bprevious<CR>", { silent = true, desc = "Run [B]buf
 map("n", "<leader>;l", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
 map("n", "<leader>;m", "<Cmd>Mason<CR>", { silent = true, desc = "Open [M]ason" })
 -- map("n", "<leader>lr", ":Lazy reload", { desc = "[L]azy [R]eload plugin of choice" })
-map(
-  "n",
-  "<leader>lr",
-  "<Cmd>lua require('config.getPluginNames').fzfPluginPicker()<CR>",
-  { desc = "[L]azy [R]eload plugin of choice" }
-)
 
 -- Quickfix list keybinds
 map("n", "<leader>cn", "<Cmd>cnext<CR>", { desc = "Go to next item in Quickfix list" })
