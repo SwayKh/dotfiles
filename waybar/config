@@ -175,5 +175,13 @@
       "format": "{icon}",
       "format-icons": "|",
       "tooptip": false,
+    },
+    "custom/pacman": {
+      "format": "{}  ",
+      "interval": 3600,                     // every hour
+      "exec": "checkupdates | wc -l",       // # of updates
+      "exec-if": "exit 0",                  // always run; consider advanced run conditions
+      "on-click": "foot -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+      "signal": 8
     }
 }
