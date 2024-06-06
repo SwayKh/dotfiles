@@ -9,7 +9,7 @@ map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 map("n", "<leader>.", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
 
--- This overrides to <C-i> function of the jumplist
+-- This overrides to <C-i> function of the jumplist(Which I don't use)
 map("n", "<tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
 map("n", "<S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
 
@@ -22,10 +22,12 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Scroll keybinds
-map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines" })
-map({ "n", "v" }, "<M-k>", "5k", { desc = "Scroll 5 lines" })
-map({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
-map({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
+-- map({ "n", "v" }, "<M-j>", "5jzz", { desc = "Scroll 5 lines" })
+-- map({ "n", "v" }, "<M-k>", "5kzz", { desc = "Scroll 5 lines" })
+-- map({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
+-- map({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
+-- map("n", "n", "nzzzv", { desc = "Center text when searching", silent = true })
+-- map("n", "N", "Nzzzv", { desc = "Center text when searching", silent = true })
 
 -- Increment/Decreament
 map("n", "+", "<C-a>", { desc = "Increment number" })
@@ -111,7 +113,7 @@ vim.cmd("cnoreabbrev WQ wq")
 -- map("i", "{;", "{};<left><left>")
 -- map("i", "/*", "/**/<left><left>")
 
--- Don't ever use this, plus M is being used by Flash
+-- I don't ever use this, plus M is being used by Flash
 -- map(
 --   { "n", "v" },
 --   "M",
