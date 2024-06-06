@@ -80,6 +80,7 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
+        { name = "lazydev", priority = 750, group_index = 0 },
         { name = "luasnip", priority = 750, max_item_count = 5 },
         { name = "buffer", priority = 500, max_item_count = 10 },
         { name = "path", priority = 250, max_item_count = 10 },
@@ -127,7 +128,7 @@ return {
       },
       experimental = {
         native_menu = false,
-        ghost_text = true,
+        ghost_text = false,
       },
     })
     -- `/` cmdline setup.

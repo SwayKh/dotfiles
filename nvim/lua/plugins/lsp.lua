@@ -13,10 +13,12 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    -- "j-hui/fidget.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     { "antosha417/nvim-lsp-file-operations", config = true },
-    "folke/neodev.nvim",
+    { "folke/lazydev.nvim", ft = "lua" },
+    -- { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
+    -- "folke/neodev.nvim",
+    -- "j-hui/fidget.nvim",
     "nvim-lua/plenary.nvim",
   },
   config = function()
@@ -28,7 +30,7 @@ return {
     local util = require("lspconfig.util")
     local lspui = require("lspconfig.ui.windows")
 
-    require("neodev").setup()
+    require("lazydev").setup()
     lspui.default_options.border = "rounded"
 
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -132,12 +134,13 @@ return {
             runtime = { version = "LuaJIT" },
             workspace = {
               checkThirdParty = false,
+              -- Don't need all this, Lazydev handles the library opts
               -- library = {
               --   "${3rd}/luv/library",
               --   unpack(vim.api.nvim_get_runtime_file("", true)),
               -- },
               -- If lua_ls is really slow on your computer, you can try this instead:
-              library = { vim.env.VIMRUNTIME },
+              -- library = { vim.env.VIMRUNTIME },
             },
             completion = {
               callSnippet = "Replace",
