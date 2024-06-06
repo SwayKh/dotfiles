@@ -35,4 +35,13 @@ function M.pluginNames()
   return keys
 end
 
+function M.lazyPluginNames()
+  local keys = {}
+  for _, plugin in ipairs(require("lazy").plugins()) do
+    table.insert(keys, plugin.name)
+  end
+
+  return keys
+end
+
 return M
