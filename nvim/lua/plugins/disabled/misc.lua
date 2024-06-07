@@ -8,7 +8,6 @@ return {
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    lazy = true,
     event = "InsertEnter",
     config = function()
       require("nvim-surround").setup({
@@ -18,7 +17,7 @@ return {
   },
   {
     "karb94/neoscroll.nvim",
-    lazy = true,
+
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("neoscroll").setup({})

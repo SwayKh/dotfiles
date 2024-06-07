@@ -1,7 +1,6 @@
 return {
   "stevearc/oil.nvim",
   opts = {},
-  lazy = true,
   event = "VeryLazy",
   -- Optional dependencies
   dependencies = {
