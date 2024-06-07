@@ -1,8 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
-  lazy = true,
   event = "VeryLazy",
-
   dependencies = {
     "rcarriga/nvim-dap-ui",
 
@@ -10,8 +8,8 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
 
     -- Add your own debuggers here
-    { "leoluz/nvim-dap-go", lazy = true, ft = "go" },
-    { "mfussenegger/nvim-dap-python", lazy = true, ft = "python" },
+    { "leoluz/nvim-dap-go", ft = "go" },
+    { "mfussenegger/nvim-dap-python", ft = "python" },
   },
   config = function()
     local dap = require("dap")

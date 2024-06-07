@@ -3,7 +3,6 @@
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
-  lazy = true,
   -- event = { "InsertEnter", "CmdlineEnter" },
   event = "VeryLazy",
   dependencies = {

@@ -1,7 +1,6 @@
 return {
   "numToStr/Comment.nvim",
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-  lazy = true,
   event = "VeryLazy",
   config = function()
     require("Comment").setup({
