@@ -5,6 +5,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local fzf = require("fzf-lua")
+    local actions = require("fzf-lua.actions")
     fzf.setup({
       "fzf-native", -- profiles, options {"default", "telescope", "fzf-native", "fzf-tmux", "fzf-vim"} + :fzflua profiles
       preview = { layout = "horizontal" },
@@ -23,10 +24,62 @@ return {
           horizontal = "right:50%",
         },
       },
+      keymap = {
+        -- These override the default tables completely
+        -- no need to set to `false` to disable a bind
+        -- delete or modify is sufficient
+        builtin = {
+          -- neovim `:tmap` mappings for the fzf win
+          ["<F1>"] = "toggle-help",
+          ["<F2>"] = "toggle-fullscreen",
+          -- Only valid with the 'builtin' previewer
+          ["<F3>"] = "toggle-preview-wrap",
+          ["<F4>"] = "toggle-preview",
+          -- Rotate preview clockwise/counter-clockwise
+          ["<F5>"] = "toggle-preview-ccw",
+          ["<F6>"] = "toggle-preview-cw",
+          ["<S-down>"] = "preview-page-down",
+          ["<S-up>"] = "preview-page-up",
+          ["<S-left>"] = "preview-page-reset",
+        },
+        fzf = {
+          -- fzf '--bind=' options
+          ["ctrl-z"] = "abort",
+          ["ctrl-u"] = "unix-line-discard",
+          ["ctrl-f"] = "half-page-down",
+          ["ctrl-b"] = "half-page-up",
+          ["ctrl-a"] = "beginning-of-line",
+          ["ctrl-e"] = "end-of-line",
+          ["alt-a"] = "toggle-all",
+          ["ctrl-q"] = "select-all+accept",
+          -- Only valid with fzf previewers (bat/cat/git/etc)
+          ["f3"] = "toggle-preview-wrap",
+          ["f4"] = "toggle-preview",
+          ["shift-down"] = "preview-page-down",
+          ["shift-up"] = "preview-page-up",
+        },
+      },
+      actions = {
+        files = {
+          ["default"] = actions.file_edit_or_qf,
+          ["ctrl-s"] = actions.file_split,
+          ["ctrl-v"] = actions.file_vsplit,
+          ["ctrl-t"] = actions.file_tabedit,
+          ["alt-q"] = actions.file_sel_to_qf,
+          ["alt-l"] = actions.file_sel_to_ll,
+        },
+        buffers = {
+          ["default"] = actions.buf_edit,
+          ["ctrl-s"] = actions.buf_split,
+          ["ctrl-v"] = actions.buf_vsplit,
+          ["ctrl-t"] = actions.buf_tabedit,
+        },
+      },
       fzf_opts = {
         ["--layout"] = "default",
         ["--no-scrollbar"] = "",
         ["--header"] = " ",
+        ["--marker"] = "+",
         -- ["--info"] = "inline", -- This puts the item count next to input
       },
 
@@ -128,19 +181,24 @@ return {
     end, { desc = "[L]azy [R]eload plugin of choice" })
 
     --[[telescope.lua
-    -- Consutomize the look
-    -- Search bar as separate window
-    -- bigger fzf list or equal size to preview
-    -- harpoon is using telescope, DO SOMETHING
-    -- Remove all telescope mentions from keybinds and configs
-    -- So many open tabs
-    -- look into silent keybinds, that don't show cmd when running
-    -- telescope insert mode actions should be moved to fzf-lua
-    -- Get better theme, Dracula looks bad with cmp border
-    -- Remove the ctrl+g ctrl+x key showing below prompt
-    -- Make the layout like one in fzflua command menu
-    -- alpha dashboard had keybinds to telescope remove them
-    -- create a keybind to pick a plugin and lazy reload it
+    -- Consutomize the look (Done)
+    -- Search bar as separate window (No Need the Native theme is better)
+    -- bigger fzf list or equal size to preview (Don't even know that this is)
+    -- harpoon is using telescope, DO SOMETHING (Remove Telescope from harpoon
+    -- and then remove harpoon too)
+    -- Remove all telescope mentions from keybinds and configs (Done)
+    -- So many open tabs (It's all in the past now)
+    -- look into silent keybinds, that don't show cmd when running (Done, Also
+    -- for Alpha.nvim)
+    -- telescope insert mode actions should be moved to fzf-lua (C-n/p better)
+    -- Get better theme, Dracula looks bad with cmp border (Nightfox for now)
+    -- Remove the ctrl+g ctrl+x key showing below prompt (Done, Needed to open
+    -- an issue on github)
+    -- Make the layout like one in fzflua command menu (It was the Native preset)
+    -- alpha dashboard had keybinds to telescope remove them (Done)
+    -- create a keybind to pick a plugin and lazy reload it (Did this after many
+    -- months, But it felt good to do. Also there was a easier way with
+    -- lazy.plugins)
     --]]
   end,
 }
