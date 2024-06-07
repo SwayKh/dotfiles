@@ -36,13 +36,13 @@ return {
 
     -- Set menu
     dashboard.section.buttons.val = {
-      dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("f", "󰱼  > Find file", ":FzfLua files<CR>"),
-      dashboard.button("r", "  > Recent", ":FzfLua oldfiles<CR>"),
-      dashboard.button("e", "  > File Tree", ":Oil<CR>"),
-      dashboard.button("s", "  > Settings", ":FzfLua files cwd=~/.config/nvim/<CR>"),
-      dashboard.button("l", "󰒲  > Lazy", ":Lazy<CR>"),
-      dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+      dashboard.button("n", "  > New file", "<Cmd>ene <BAR> startinsert <CR>"),
+      dashboard.button("f", "󰱼  > Find file", "<Cmd>FzfLua files<CR>"),
+      dashboard.button("r", "  > Recent", "<Cmd>FzfLua oldfiles<CR>"),
+      dashboard.button("e", "  > File Tree", "<Cmd>Oil<CR>"),
+      dashboard.button("s", "  > Settings", "<Cmd>FzfLua files cwd=~/.config/nvim/<CR>"),
+      dashboard.button("l", "󰒲  > Lazy", "<Cmd>Lazy<CR>"),
+      dashboard.button("q", "  > Quit NVIM", "<Cmd>qa<CR>"),
     }
     local fortune = require("alpha.fortune")
     dashboard.section.footer.val = fortune()
