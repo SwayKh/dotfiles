@@ -3,8 +3,8 @@
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
-  -- event = { "InsertEnter", "CmdlineEnter" },
-  event = "VeryLazy",
+  event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
+  -- event = "VeryLazy",
   dependencies = {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
@@ -79,11 +79,11 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
+        { name = "codeium", priority = 1000, max_item_count = 5 },
         { name = "lazydev", priority = 750, group_index = 0 },
         { name = "luasnip", priority = 750, max_item_count = 5 },
         { name = "buffer", priority = 500, max_item_count = 10 },
         { name = "path", priority = 250, max_item_count = 10 },
-        -- { name = "codeium" },
       }),
       window = {
         completion = cmp.config.window.bordered(border_opts),
@@ -103,6 +103,13 @@ return {
           end,
           mode = "symbol_text",
           maxwidth = 80,
+          menu = {
+            nvim_lsp = "[LSP]",
+            nvim_lua = "[Lua]",
+            path = "[Path]",
+            buffer = "[Buffer]",
+            codeium = "[Codeium]",
+          },
           ellipsis_char = "...",
           symbol_map = {
             Codeium = "",
