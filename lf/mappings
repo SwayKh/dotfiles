@@ -87,20 +87,20 @@ map se :set sortby ext; set info
 # Bookmark Bindings
 map gh cd ~ # This is default
 map g/ cd /
-map gD cd ~/Documents
-map gd cd ~/Downloads
-map gc cd ~/.config
+map gD cd ~/Documents/
+map gd cd ~/Downloads/
+map gc cd ~/.config/
 map gw cd ~/wallpapers/Images/
-map gt cd ~/Test
-map gT cd ~/.trash
-map ga cd ~/Android
-map gs cd ~/scripts
+map gt cd ~/Test/
+map gT cd ~/.trash/
+map ga cd ~/Android/
+map gs cd ~/Sync/
 map g. cd ~/dotfiles/
 map gr cd ~/Roms/
 map go cd ~/Obsidian/Vault/
-map gb cd ~/.local/bin
+map gb cd ~/.local/bin/
 map gls cd ~/.local/share/
-map gpc cd ~/Pictures
+map gpc cd ~/Pictures/
 map gps cd ~/Pictures/Screenshots/
 
 map gpp cd ~/Projects/Python/
