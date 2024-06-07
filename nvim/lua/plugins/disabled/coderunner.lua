@@ -1,8 +1,6 @@
 return {
   "CRAG666/code_runner.nvim",
-  lazy = true,
   ft = { "c", "c++", "java", "python", "typescript", "javascript", "rust", "go" },
-
   config = function()
     require("code_runner").setup({
       filetype = {
