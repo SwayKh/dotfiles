@@ -1,8 +1,6 @@
 return { -- Collection of various small independent plugins/modules
   "echasnovski/mini.nvim",
   version = false,
-
-  lazy = true,
   event = "VeryLazy",
   config = function()
     require("mini.ai").setup({
@@ -71,11 +69,11 @@ return { -- Collection of various small independent plugins/modules
     require("mini.notify").setup()
     require("mini.git").setup()
 
-    require("mini.animate").setup({
-      cursor = {
-        enable = false,
-      },
-    })
+    -- require("mini.animate").setup({
+    --   cursor = {
+    --     enable = false,
+    --   },
+    -- })
 
     require("mini.bracketed").setup({
       buffer = { suffix = "b", options = {} },

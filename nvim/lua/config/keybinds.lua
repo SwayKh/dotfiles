@@ -22,12 +22,12 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Scroll keybinds
--- map({ "n", "v" }, "<M-j>", "5jzz", { desc = "Scroll 5 lines" })
--- map({ "n", "v" }, "<M-k>", "5kzz", { desc = "Scroll 5 lines" })
--- map({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
--- map({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
--- map("n", "n", "nzzzv", { desc = "Center text when searching", silent = true })
--- map("n", "N", "Nzzzv", { desc = "Center text when searching", silent = true })
+map({ "n", "v" }, "<M-j>", "5jzz", { desc = "Scroll 5 lines" })
+map({ "n", "v" }, "<M-k>", "5kzz", { desc = "Scroll 5 lines" })
+map({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
+map({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
+map("n", "n", "nzzzv", { desc = "Center text when searching", silent = true })
+map("n", "N", "Nzzzv", { desc = "Center text when searching", silent = true })
 
 -- Increment/Decreament
 map("n", "+", "<C-a>", { desc = "Increment number" })
