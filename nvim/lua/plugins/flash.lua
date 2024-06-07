@@ -2,7 +2,6 @@ return {
   "folke/flash.nvim",
   -- event = { "BufReadPre", "BufNewFile" },
   event = "VeryLazy",
-  opts = {},
   -- stylua: ignore
   keys = {
     -- Switch s mapping for m (taken from leap), s is being used by mini.surround
