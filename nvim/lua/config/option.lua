@@ -56,7 +56,7 @@ vim.opt.termguicolors = true
 
 -- Make line numbers default, no relativenumber
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- Width of numberline column
 vim.opt.numberwidth = 2
