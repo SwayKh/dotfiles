@@ -44,9 +44,10 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 -- map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
 -- Save, Quit
-map("n", "qq", "<Cmd>q!<CR>", { silent = true, desc = "[Q]uit" })
+map("n", "qq", "<Cmd>%bd<CR><Cmd>Alpha<CR>", { silent = true, desc = "[Q]uit" })
+map("n", "<leader>q", "<Cmd>wqa!<CR>", { silent = true, desc = "[Q]uit" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave file" })
-map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "Save all files [Q]uit" })
+map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>q!<CR>", { silent = true, desc = "Save all files [Q]uit" })
 
 -- Buffer keybinds
 map("n", "<leader>bd", "<Cmd>bdelete<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
