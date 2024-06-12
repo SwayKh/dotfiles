@@ -8,6 +8,7 @@
     "margin-top": 5,
     "margin-bottom": 0,
     "spacing": 1,
+    "reload_style_on_change": true,
 
     // Choose the order of the modules
 
