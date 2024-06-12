@@ -6,7 +6,10 @@ return {
   event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
   -- event = "VeryLazy",
   dependencies = {
-    "L3MON4D3/LuaSnip", -- snippet engine
+    {
+      "L3MON4D3/LuaSnip", -- snippet engine
+      build = "make install_jsregexp",
+    },
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
 
