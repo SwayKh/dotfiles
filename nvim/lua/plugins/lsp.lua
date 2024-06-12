@@ -7,7 +7,7 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
-    "williamboman/mason.nvim",
+    { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
