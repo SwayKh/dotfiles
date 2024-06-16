@@ -82,7 +82,8 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
-        { name = "codeium", priority = 1000, max_item_count = 5 },
+        -- { name = "codeium", priority = 1000, max_item_count = 5 },
+        { name = "supermaven", priority = 1000, max_item_count = 5 },
         { name = "lazydev", priority = 750, group_index = 0 },
         { name = "luasnip", priority = 750, max_item_count = 5 },
         { name = "buffer", priority = 500, max_item_count = 10 },
@@ -115,6 +116,7 @@ return {
           },
           ellipsis_char = "...",
           symbol_map = {
+            Supermaven = "",
             Codeium = "",
             Array = "󰅪",
             Boolean = "⊨",
