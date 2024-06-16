@@ -25,7 +25,8 @@ return {
       javascriptreact = { "prettierd", "prettier" },
       typescriptreact = { "prettierd", "prettier" },
       css = { "prettierd", "prettier" },
-      html = { "prettierd", "prettier" },
+      html = { "djlint", "prettierd", "prettier" },
+      templ = { "djlint", "templ" },
       json = { "prettierd", "prettier" },
       jsonc = { "prettierd", "prettier" },
       yaml = { "prettierd", "prettier" },
@@ -35,10 +36,10 @@ return {
       lua = { "stylua" },
       go = { "goimports", "gofumpt" },
       sh = { "shfmt" },
-      python = { "isort", "black" },
+      python = { "isort", "ruff" },
       zig = { "zigfmt" },
       ["_"] = { "trim_whitespace", "trim_newlines" },
-      -- ["*"] = { "codespell" },
+      ["*"] = { "codespell" },
     },
     formatters = {
       shfmt = {
