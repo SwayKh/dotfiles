@@ -3,31 +3,30 @@
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
-  event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
-  -- event = "VeryLazy",
+  -- event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
+    "hrsh7th/cmp-buffer", -- source for text in buffer
+    "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-cmdline", -- For cmdline suggestions
+    "onsails/lspkind.nvim", -- vs-code like pictograms
+
     {
       "L3MON4D3/LuaSnip", -- snippet engine
       build = "make install_jsregexp",
     },
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
-
-    "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
-    "hrsh7th/cmp-cmdline", -- For cmdline suggestions
-
-    "onsails/lspkind.nvim", -- vs-code like pictograms
   },
   config = function()
     local cmp = require("cmp")
-    local luasnip = require("luasnip")
+    local lspkind = require("lspkind")
 
+    local luasnip = require("luasnip")
     luasnip.config.setup({
       history = false,
       updateevents = "TextChanged,TextChangedI",
     })
-    local lspkind = require("lspkind")
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -46,7 +45,7 @@ return {
       preselect = cmp.PreselectMode.Item,
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body)
+          vim.snippet.expand(args.body)
         end,
       },
 
@@ -65,15 +64,15 @@ return {
           { "i", "c" }
         ),
         ["<C-k>"] = cmp.mapping(function(fallback)
-          if luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
+          if vim.snippet.active({ direction = 1 }) then
+            vim.snippet.jump(1)
           else
             fallback()
           end
         end, { "i", "s" }),
         ["<C-j>"] = cmp.mapping(function(fallback)
-          if luasnip.jumpable(-1) then
-            luasnip.jump(-1)
+          if vim.snippet.active({ direction = -1 }) then
+            vim.snippet.jump(-1)
           else
             fallback()
           end
@@ -81,13 +80,13 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp", priority = 1000 },
+        { name = "luasnip", priority = 1000, max_item_count = 5 },
+        { name = "supermaven", priority = 500, max_item_count = 5 },
+        { name = "nvim_lsp", priority = 400, max_item_count = 20 },
+        { name = "lazydev", priority = 300, group_index = 0 },
+        { name = "buffer", priority = 200, max_item_count = 10 },
+        { name = "path", priority = 100, max_item_count = 10 },
         -- { name = "codeium", priority = 1000, max_item_count = 5 },
-        { name = "supermaven", priority = 1000, max_item_count = 5 },
-        { name = "lazydev", priority = 750, group_index = 0 },
-        { name = "luasnip", priority = 750, max_item_count = 5 },
-        { name = "buffer", priority = 500, max_item_count = 10 },
-        { name = "path", priority = 250, max_item_count = 10 },
       }),
       window = {
         completion = cmp.config.window.bordered(border_opts),
@@ -113,6 +112,7 @@ return {
             path = "[Path]",
             buffer = "[Buffer]",
             codeium = "[Codeium]",
+            luasnip = "[LuaSnip]",
           },
           ellipsis_char = "...",
           symbol_map = {
