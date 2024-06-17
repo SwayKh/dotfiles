@@ -4,6 +4,9 @@ return {
   --   lazy = true,
   --   event = { "BufReadPre", "BufNewFile", "BufWritePre", "CmdlineEnter",
   --   "InsertEnter", "VeryLazy", "VimEnter" },
+  --   config = function()
+  --     require("shorthand").setup()
+  --    end
   -- },
   --
   -- { "tpope/vim-sleuth", event = "VeryLazy" }, -- Detect tabstop and shiftwidth automatically
