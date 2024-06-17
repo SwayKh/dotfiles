@@ -2,13 +2,11 @@ return {
   "akinsho/toggleterm.nvim",
   event = "VeryLazy",
   version = "*",
-  opts = {--[[ things you want to change go here]]
-  },
   config = function()
     require("toggleterm").setup({
       size = 15,
       shade_filetypes = {},
-      open_mapping = [[<c-/>]],
+      open_mapping = [[<c-,>]],
       shade_terminal = true,
       shading_factor = -50,
       start_in_insert = true,
