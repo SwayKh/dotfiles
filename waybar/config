@@ -13,7 +13,7 @@
     // Choose the order of the modules
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "modules-center": [ "custom/notification", "clock"],
     "modules-right": [ "network", "cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
 
     // Modules configuration
@@ -175,7 +175,7 @@
     "custom/separator": {
       "format": "{icon}",
       "format-icons": "|",
-      "tooptip": false,
+      "tooltip": false,
     },
     "custom/pacman": {
       "format": "{}  ",
@@ -184,5 +184,25 @@
       "exec-if": "exit 0",                  // always run; consider advanced run conditions
       "on-click": "foot -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
       "signal": 8
-    }
+    },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{} {icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
 }
