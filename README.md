@@ -47,6 +47,7 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
 - **File Manager** : [LF](https://github.com/gokcehan/lf)
 - **Text Editor** : [Neovim](https://neovim.io/)
+- **Browser** : [Floorp](https://floorp.app/en)
 - **Idle daemon** : [Hypridle](https://github.com/hyprwm/hypridle)
 - **Screen Locking Utility** : [Hyprlock](https://github.com/hyprwm/hyprlock)
 - **Terminal Multiplexer** : [Tmux](https://github.com/tmux/tmux)
@@ -59,13 +60,15 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **System Info viewer** : [Neofetch](https://github.com/dylanaraps/neofetch)
 - **Notification daemon** : [Dunst](https://github.com/dunst-project/dunst)
 - **Image Viewer** : [Feh](https://github.com/derf/feh)
+- **Anime Client** : [Ani-cli](https://github.com/pystardust/ani-cli)
+- **Local Sync Client** : [Syncthing](https://syncthing.net/)
 - **Color Picker** : [Hyprpicker](https://github.com/hyprwm/hyprpicker)
 - **Clipboard** : [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
 - **Screenshot**: [Grim+Slurp](https://sr.ht/~emersion/grim/)
 - **Emulation Frontend** : [Retroarch](https://www.retroarch.com/) / [ES-DE](https://es-de.org/)
-- **Font** : JetBrainsMono Nerd Font
 - **Customization** : [Nwg-look](https://github.com/nwg-piotr/nwg-look)
   / [Qt6ct](https://github.com/trialuser02/qt6ct)
+- **Font** : JetBrainsMono Nerd Font
 - [Scripts](https://github.com/swaykh/scripts)
 - [Wallpapers](https://github.com/swaykh/wallpapers)
 
@@ -75,9 +78,11 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Text Editor** : [Micro](https://micro-editor.github.io/)
 - **Screenlock Util** : [Swaylock-effects](https://github.com/mortie/swaylock-effects)
 - **Idle daemon** : [Swayidle](https://github.com/swaywm/swayidle)
-- **WM/Compositor** : [i3(X11)](https://i3wm.org/) [Sway(Wayland replacement for i3)](https://swaywm.org/)
+- **Notification daemon** : [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- **WM/Compositor** : [i3(X11)](https://i3wm.org/) / [Sway(Wayland replacement for i3)](https://swaywm.org/)
 - **Bar(For X11)** : [Polybar](https://github.com/polybar/polybar)
 - **Color Picker** : [xcolor](https://github.com/Soft/xcolor)
+- **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
 - **Clipboard** : [xclip](https://github.com/astrand/xclip)
 
 #### CLI Tools
@@ -150,6 +155,8 @@ fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
 os-prober (Needed for add windows as boot entry in grub)
 upower (Needed to check battery levels of pheripherals like controllers)
 perl-file-mimeinfo (Needed for using mimeopen command in lf)
+qt-graphicaleffects (Needed for sddm theme)
+qt-quickcontrols2 (Needed for sddm theme)
 xdg-desktop-portal-hyprland (Needed for hyprland)
 xdg-desktop-portal-gtk (Needed for gtk file pickers)
 python-pip/x
@@ -173,6 +180,7 @@ git curl wget man-db rsync pacman-contrib openssh fwupd
 #### Apps
 
 ```
+ani-cli
 citra-canary
 emulationstation-de
 ferdium
@@ -210,6 +218,8 @@ pamixer
 pavucontrol
 pulseaudio
 reflector
+swaync
+swww
 ubsutils
 xpadneo-dkms
 ```
