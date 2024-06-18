@@ -87,6 +87,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #custom-power,
+#custom-notification,
 #window,
 #mpd {
   padding: 0px 5px;
@@ -165,7 +166,7 @@ label:focus {
 /*   color: #48aa4c; */
 /* } */
 
-/* In case you want to seperate the modules in left/right/center */
+/* In case you want to separate the modules in left/right/center */
 /* .modules-left { */
 /*   background: @bg; */
 /*   border: 2px solid @bordercolor; */
