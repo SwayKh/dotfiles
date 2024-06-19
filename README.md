@@ -154,6 +154,7 @@ vulkan-radeon(Needed for Godot4)
 fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
 os-prober (Needed for add windows as boot entry in grub)
 upower (Needed to check battery levels of pheripherals like controllers)
+bluez-util (Needed xpadneo-dkms/Bluetooth controllers)
 perl-file-mimeinfo (Needed for using mimeopen command in lf)
 qt-graphicaleffects (Needed for sddm theme)
 qt-quickcontrols2 (Needed for sddm theme)
@@ -215,6 +216,9 @@ github-cli
 pacutils
 network-manager-applet
 pamixer
+pipewire
+pipewire-pulse
+wireplumber
 pavucontrol
 pulseaudio
 reflector
