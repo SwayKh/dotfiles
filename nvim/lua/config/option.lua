@@ -41,10 +41,10 @@ vim.opt.tabline = " %t"
 vim.opt.spell = false
 vim.opt.spelllang = "en_us"
 
--- Automaticaly set the file, used for filetype autocmd
+-- Automatically set the file, used for filetype autocmd
 vim.opt.filetype = "on"
 
--- Set textwidth to Automaticaly wrap text at that length
+-- Set textwidth to Automatically wrap text at that length
 vim.opt.textwidth = 80
 -- enable text wrapping, Wrap text at 80 characters
 vim.opt.wrap = true
@@ -67,7 +67,7 @@ vim.opt.mouse = "a"
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
 
--- Don't have 'o' add a commment, From new tjdrevis video
+-- Don't have 'o' add a comment, From new tjdrevis video
 vim.opt.formatoptions:remove("o")
 
 -- Fix Tab length and Indenting
@@ -91,13 +91,13 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 0
 vim.opt.sidescrolloff = 5
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
 
--- Width of pupup menu, like cmp menu
+-- Width of popup menu, like cmp menu
 vim.opt.pumwidth = 50
 
 -- Max items to show in pop up menu
