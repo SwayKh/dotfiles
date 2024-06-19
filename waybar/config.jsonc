@@ -13,8 +13,8 @@
     // Choose the order of the modules
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
-    "modules-center": [ "custom/notification", "clock"],
-    "modules-right": [ "network", "cpu", "temperature", "backlight", "pulseaudio", "custom/separator", "tray" ],
+    "modules-center": ["clock"],
+    "modules-right": [ "network", "cpu", "temperature", "backlight", "wireplumber", "custom/separator", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
@@ -39,50 +39,20 @@
             // "default": ""
          },
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": [
-           "kitty",
-           "wezterm",
-           "foot",
-           "footclient"
-        ],
-    },
+
     "tray": {
         "icon-size": 18,
         "spacing": 5,
         "show-passive-items": true,
     },
-    "hyprland/window": {
-      "format": "{}",
-      "separate-outputs": true
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
+
     "clock": {
         "interval": 60,
         "format": "  {:%a %b %d  %I:%M %p}", // %b %d %Y  --Date formatting
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
+
    "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -93,48 +63,30 @@
         "format-icons": ["", "", ""],
         "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
     },
+
     "cpu": {
         "interval": 2,
         "format": "{usage}% ",
         "tooltip": false,
         "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
     },
+
     "memory": {
         "interval": 2,
         "format": "{}% "
     },
+
    "disk": {
         "interval": 15,
         "format": "{percentage_used}% 󰋊",
     },
+
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
-    "backlight/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal",
-        "device": "intel_backlight"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
+
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval":1,
@@ -146,6 +98,7 @@
         "format-disconnected": "󰀦", //Disconnected ⚠
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}", //{format_source}",
@@ -155,16 +108,25 @@
         // "format-source": "{volume}% ",
         // "format-source-muted": "",
         "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󱡒",
-            "headset": "󰋎",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+          "headphone": "󰋋",
+          "hands-free": "󱡒",
+          "headset": "󰋎",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
+
+    "wireplumber": {
+      "format": "{volume}% {icon}",
+      "format-muted": "{volume}% 󰖁",
+      // "format-bluetooth": "{volume}% {icon} 󰂯", //{format_source}",
+      // "format-bluetooth-muted": "󰖁 {icon} 󰂯", //{format_source}",
+      "format-icons": ["", "", ""]
+    },
+
     "custom/power": {
       "format": "{icon}",
       "format-icons": "",// 
@@ -172,11 +134,13 @@
       "on-click": "~/scripts/session_menu",
       "tooltip": false
     },
+
     "custom/separator": {
       "format": "{icon}",
       "format-icons": "|",
       "tooltip": false,
     },
+
     "custom/pacman": {
       "format": "{}  ",
       "interval": 3600,                     // every hour
@@ -185,6 +149,7 @@
       "on-click": "foot -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
       "signal": 8
     },
+
     "custom/notification": {
       "tooltip": false,
       "format": "{} {icon}",
@@ -204,5 +169,64 @@
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
       "escape": true
+    },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "kitty",
+           "wezterm",
+           "foot",
+           "footclient"
+        ],
+    },
+
+    "hyprland/window": {
+      "format": "{}",
+      "separate-outputs": true
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
 }

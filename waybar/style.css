@@ -76,6 +76,7 @@ button:hover {
 #network,
 #pulseaudio,
 #wireplumber,
+#wireplumber,
 #custom-media,
 #taskbar,
 #tray,
@@ -150,6 +151,7 @@ label:focus {
 /*   color: #d69821; */
 /* } */
 /**/
+/*wireplumber,*/
 /* #pulseaudio { */
 /*   color: #448486; */
 /* } */
