@@ -1,0 +1,43 @@
+configuration {
+    case-sensitive: false;
+    cycle:          true;
+    font:           "JetBrainsMono Nerd Font 18";
+}
+
+/* foreground, blue, darkblue, are set to BBCCDD*/
+* {
+    foreground:                     #D99887;
+    oldforeground:                  #F5F5F5;
+    background:                     #333333;
+    highlight:	                    #F5F5F5;
+    red:                            #973D46;
+    darkred:                        #973D46;
+    blue:                           #BBCCDD;
+    darkblue:                       #BBCCDD;
+    yellow:                         #E0AE4A;
+    darkyellow:                     #E0AE4A;
+    border:                         #1B1E25;
+    darkblack:                      #090A0F;
+    darkgray:                       #333333;
+    darkblue:                       #04142D;
+}
+
+window {
+  width: 20%;
+  height: 40%;
+  orientation: vertical;
+  location: north west;
+  anchor: west;
+  y-offset: 5;
+  x-offset: 5;
+  border: 2px;
+  border-radius: 10px;
+  padding: 0px;
+  children: [ mainbox ];
+}
+
+element-icon {
+  size: 32;
+}
+
+@import "color"
