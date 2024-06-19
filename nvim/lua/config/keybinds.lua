@@ -18,14 +18,18 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Move through long lines of text visually
-map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map("n", "k", "v:count == 0 ? 'gkzz' : 'kzz'", { expr = true, silent = true })
+map("n", "j", "v:count == 0 ? 'gjzz' : 'jzz'", { expr = true, silent = true })
 
 -- Scroll keybinds
-map({ "n", "v" }, "<M-j>", "5jzz", { desc = "Scroll 5 lines" })
-map({ "n", "v" }, "<M-k>", "5kzz", { desc = "Scroll 5 lines" })
-map({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Better half up scroll", remap = true })
-map({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Better half down scroll", remap = true })
+map({ "n", "v" }, "<M-j>", "5jzzzv", { desc = "Scroll 5 lines" })
+map({ "n", "v" }, "<M-k>", "5kzzzv", { desc = "Scroll 5 lines" })
+map({ "n", "v" }, "<C-u>", "<C-u>zzzv", { desc = "Better half up scroll", remap = true })
+map({ "n", "v" }, "<C-d>", "<C-d>zzzv", { desc = "Better half down scroll", remap = true })
+map("n", "gg", "ggzzzv", { desc = "Center text when scrolling", silent = true })
+map("n", "G", "Gzzzv", { desc = "Center text when scrolling", silent = true })
+map("n", "j", "jzzzv", { desc = "Center text when scrolling", silent = true })
+map("n", "k", "kzzzv", { desc = "Center text when scrolling", silent = true })
 map("n", "n", "nzzzv", { desc = "Center text when searching", silent = true })
 map("n", "N", "Nzzzv", { desc = "Center text when searching", silent = true })
 
