@@ -69,8 +69,28 @@ vim.api.nvim_create_autocmd("FileType", {
 --   end,
 -- })
 
-vim.cmd([[ autocmd RecordingEnter * set cmdheight=1 ]])
-vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])
+-- vim.cmd([[ autocmd RecordingEnter * set cmdheight=1 ]])
+-- vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])
+
+-- Variables for recording macros, Used for mini statusline
+-- vim.g.is_recording_macro = false
+
+-- Autocmd to track macro recording, And redraw statusline, which trigger
+-- macro function of mini.statusline
+vim.api.nvim_create_autocmd("RecordingEnter", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("redrawstatus")
+  end,
+})
+
+-- Autocmd to track the end of macro recording
+vim.api.nvim_create_autocmd("RecordingLeave", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("redrawstatus")
+  end,
+})
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
