@@ -8,10 +8,10 @@ return {
       sticky = true,
       padding = true,
       toggler = {
-        line = "<M-/>",
+        line = "gcc",
       },
       opleader = {
-        line = "<M-/>",
+        line = "gc",
       },
       mappings = {
         basic = true,
