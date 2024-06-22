@@ -1,12 +1,38 @@
+// vim:ft=css:
 * {
-  font:                 "JetBrainsMono Nerd Font 12";
-  foreground:           #888CA7;
-  background:           #091F2D;
-  highlight:            #F1EDEE;
+  font:                   "JetBrainsMono Nerd Font 12";
+  foreground:             #888CA7;
+  background:             #091F2D;
+  highlight:              #F1EDEE;
+
+  pink:                   #D99887;
+  old-highlight:          #F1594F;
+  red:                    #973D46;
+  darkred:                #973D46;
+  yellow:                 #F2C395;
+  darkyellow:             #E0AE4A;
+  lightblue:              #888CA7;
+  oldforeground:          #87A2AA;
+  altblue:                #ACBAF9;
+  altwhite:               #F1D8D4;
+  white:                  #F5F5F5;
+
+  b5:                     #1B1E25;
+  b4:                     #04142D;
+  b3:                     #091F2D;
+  b2:                     #1F1E2E;
+  b1:                     #333333;
+
+  lightgray:              #777777;
+  mediumgray:             #454545;
+  darkgray:               #232323;
+  black:                  #111111;
+  darkblack:              #000000;
 }
 
 element-icon {
-  //size: 22; // Better to increase the whole element size with dpi
+  /*Better to increase the whole element size with dpi*/
+  /*size: 22;*/
 }
 
 element-text {
@@ -32,6 +58,11 @@ textbox-prompt-colon {
   background-color: @background;
 }
 
+message {
+  text-color: @foreground;
+  background-color: @background;
+}
+
 entry {
   text-color:       @foreground;
   background-color: @background;
@@ -42,6 +73,11 @@ listview {
 }
 
 mode-switcher {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+button {
   text-color:       @foreground;
   background-color: @background;
 }
