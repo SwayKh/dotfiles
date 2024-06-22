@@ -1,0 +1,82 @@
+* {
+  font:                 "JetBrainsMono Nerd Font 12";
+  foreground:           #888CA7;
+  background:           #091F2D;
+  highlight:            #F1EDEE;
+}
+
+element-icon {
+  //size: 22; // Better to increase the whole element size with dpi
+}
+
+element-text {
+  highlight:        @highlight;
+}
+
+window {
+  border-color:     @foreground;
+}
+
+inputbar {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+prompt {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+textbox-prompt-colon {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+entry {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+listview {
+  background-color: @background;
+}
+
+mode-switcher {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+element {
+  text-color:       @foreground;
+  background-color: @background;
+}
+
+element normal.normal {
+  background-color: @background;
+  text-color:       @foreground;
+}
+
+element normal.active {
+  background-color: @background;
+  text-color:       @foreground;
+}
+
+element selected.normal {
+  text-color:       @background;
+  background-color: @foreground;
+}
+
+element selected.active {
+  background-color: @foreground;
+  text-color:       @background;
+}
+
+element alternate.normal {
+  background-color: @background;
+  text-color:       @foreground;
+}
+
+element alternate.active {
+  background-color: @background;
+  text-color:       @foreground;
+}
