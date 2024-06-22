@@ -36,7 +36,7 @@ inputbar {
 
 textbox-prompt-colon {
   expand: false;
-  padding: 0px 5px;
+  padding: 0px 0px;
   border-radius: 5px;
   str: " "; /* */
 }
@@ -49,11 +49,11 @@ entry {
 
 listview {
   scrollbar: false;
+  lines: 5;
   cycle: false;
   dynamic: true;
   spacing: 0px;
   padding: 0px 10px;
-  lines: 5;
   margin: 0px;
   /* List view has the dash border, Remove it here */
   border: 0px;
@@ -61,6 +61,6 @@ listview {
 
 element {
   border: 0;
-  padding: 3px;
+  padding: 5px;
   border-radius: 5px;
 }
