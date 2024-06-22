@@ -1,7 +1,7 @@
 // vim:ft=css
 configuration {
   modi:                 "drun,run,nerdy,filebrowser";
-  dpi:                  88;
+  dpi:                  90;
   show-icons:           true;
   icon-theme:           "Papirus";
 	terminal:             "foot";
@@ -78,7 +78,7 @@ listview {
 
 element {
   border: 0;
-  padding: 3px;
+  padding: 2px;
   border-radius: 5px;
 }
 
