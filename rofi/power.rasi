@@ -1,43 +1,66 @@
+// vim:ft=css
 configuration {
-    case-sensitive: false;
-    cycle:          true;
-    font:           "JetBrainsMono Nerd Font 18";
+  dpi:                  110;
+  font:                 "JetBrainsMono Nerd Font 18";
+  show-icons:           false;
+  disable-history:      true;
 }
 
-/* foreground, blue, darkblue, are set to BBCCDD*/
-* {
-    foreground:                     #D99887;
-    oldforeground:                  #F5F5F5;
-    background:                     #333333;
-    highlight:	                    #F5F5F5;
-    red:                            #973D46;
-    darkred:                        #973D46;
-    blue:                           #BBCCDD;
-    darkblue:                       #BBCCDD;
-    yellow:                         #E0AE4A;
-    darkyellow:                     #E0AE4A;
-    border:                         #1B1E25;
-    darkblack:                      #090A0F;
-    darkgray:                       #333333;
-    darkblue:                       #04142D;
-}
+@import "colors.rasi"
 
 window {
-  width: 20%;
-  height: 40%;
+  width: 15%;
+  /*Removing height make the window height equal to num of opts*/
+  /*height: 30%;*/
   orientation: vertical;
   location: north west;
   anchor: west;
-  y-offset: 5;
-  x-offset: 5;
+  x-offset: 0px;
+  y-offset: 0px;
+  margin: 5px;
   border: 2px;
-  border-radius: 10px;
-  padding: 0px;
+  border-radius: 5px;
+  padding: 5px;
   children: [ mainbox ];
 }
 
-element-icon {
-  size: 32;
+mainbox {
+  children: [ inputbar, listview ];
+}
+inputbar {
+  spacing: 0px;
+  /*padding: top right bottom left*/
+  padding: 0px 5px 5px;
+  children: [ "textbox-prompt-colon", entry ];
 }
 
-@import "color"
+textbox-prompt-colon {
+  expand: false;
+  padding: 0px 5px;
+  border-radius: 5px;
+  str: " "; /* */
+}
+
+entry {
+  placeholder:  "Search...";
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+listview {
+  scrollbar: false;
+  cycle: false;
+  dynamic: true;
+  spacing: 0px;
+  padding: 0px 10px;
+  lines: 5;
+  margin: 0px;
+  /* List view has the dash border, Remove it here */
+  border: 0px;
+}
+
+element {
+  border: 0;
+  padding: 3px;
+  border-radius: 5px;
+}
