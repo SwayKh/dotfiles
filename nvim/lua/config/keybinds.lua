@@ -49,7 +49,7 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 
 -- Save, Quit
 map("n", "qq", "<Cmd>%bd<CR><Cmd>Alpha<CR>", { silent = true, desc = "[Q]uit" })
-map("n", "<leader>q", "<Cmd>wqa!<CR>", { silent = true, desc = "[Q]uit" })
+map("n", "<leader>Q", "<Cmd>wqa!<CR>", { silent = true, desc = "[Q]uit" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave file" })
 map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>q!<CR>", { silent = true, desc = "Save all files [Q]uit" })
 
