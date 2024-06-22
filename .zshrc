@@ -65,6 +65,7 @@ alias gl='git log --oneline'
 alias gb='git checkout -b'
 alias gd='git diff'
 alias gp='git push'
+alias gP='git pull'
 
 eval "$(starship init zsh)"
 # (cat ~/.cache/wal/sequences &)
