@@ -61,6 +61,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("WinEnter", {
+  pattern = "*",
+  desc = "Resize buffer on entry, Alternative to focus.nvim",
+  callback = function()
+    vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
+  end,
+})
+
 -- vim.api.nvim_create_autocmd("BufReadPost", {
 --   group = vim.api.nvim_create_augroup("conf_filetype", {}),
 --   pattern = { "*.conf", "*.ini", "*.rasi", "*.cfg" },
@@ -98,7 +106,7 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 -- See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
