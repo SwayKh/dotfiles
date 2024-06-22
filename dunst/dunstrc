@@ -30,10 +30,10 @@
     alignment = center
     corner_radius = 5
     startup_notification = true
-    separator_color = "#888CA7"
-    frame_color = '#888CA7'
-    foreground = '#888CA7'
-    background = '#091F2D'
+    separator_color = frame
+    frame_color = "#888CA7"
+    foreground = "#888CA7"
+    background = "#091F2D"
 [frame]
     width = (0,400)
     color = "#ebdbb2"

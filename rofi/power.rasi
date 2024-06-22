@@ -1,7 +1,6 @@
 // vim:ft=css
 configuration {
   dpi:                  110;
-  font:                 "JetBrainsMono Nerd Font 18";
   show-icons:           false;
   disable-history:      true;
 }
