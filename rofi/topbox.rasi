@@ -1,0 +1,75 @@
+// vim:ft=css
+configuration {
+  modi: "drun,nerdy,run,filebrowser,window";
+  font: "JetBrainsMono Nerd Font 12";
+  icon-theme: "Papirus";
+  show-icons: true;
+  terminal: "foot";
+  disable-history: false;
+  max-history-size: 50;
+  filebrowser {
+    directory: "/home/sumit/";
+  }
+}
+
+window {
+  /*Removing height make the window height equal to num of opts*/
+  /*height: 40%;*/
+  width: 50%;
+  orientation: vertical;
+  location: north;
+  anchor: center;
+  x-offset: 0px;
+  y-offset: 0px;
+  margin: 5px;
+  border: 2px;
+  border-radius: 5px;
+  padding: 5px;
+  spacing: 0;
+  children: [ mainbox ];
+}
+
+mainbox {
+  spacing: 0;
+  children: [ inputbar, listview ];
+}
+
+inputbar {
+  spacing: 0px;
+  /*padding: top right bottom left*/
+  padding: 0px 5px 5px;
+  children: [ "textbox-prompt-colon", entry ];
+}
+
+textbox-prompt-colon {
+  expand: false;
+  padding: 0px 5px;
+  border-radius: 5px;
+  str: " "; /* */
+}
+
+entry {
+  placeholder:  "Search...";
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+listview {
+  scrollbar: false;
+  lines: 8;
+  cycle: false;
+  dynamic: true;
+  spacing: 0px;
+  padding: 0px 5px;
+  margin: 0px;
+  /* List view has the dash border, Remove it here */
+  border: 0px;
+}
+
+element {
+  border: 0;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+@import "colors"
