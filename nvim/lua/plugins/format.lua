@@ -29,6 +29,7 @@ return {
       templ = { "djlint", "templ" },
       json = { "prettierd", "prettier" },
       jsonc = { "prettierd", "prettier" },
+      rasi = { "prettierd", "prettier" },
       yaml = { "prettierd", "prettier" },
       markdown = { "prettierd", "prettier", "injected" },
       norg = { "injected" },
