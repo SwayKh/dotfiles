@@ -54,7 +54,7 @@ prompt {
 textbox-prompt-colon {
   expand: false;
   margin: 0px;
-  str: " ";
+  str: " "; // 
   text-color: @lightBlue;
 }
 
