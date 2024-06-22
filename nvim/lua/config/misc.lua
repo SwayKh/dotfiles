@@ -80,6 +80,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("RecordingEnter", {
   pattern = "*",
   callback = function()
+    vim.g.macro_recording = "Recording @" .. vim.fn.reg_recording()
     vim.cmd("redrawstatus")
   end,
 })
@@ -88,6 +89,7 @@ vim.api.nvim_create_autocmd("RecordingEnter", {
 vim.api.nvim_create_autocmd("RecordingLeave", {
   pattern = "*",
   callback = function()
+    vim.g.macro_recording = ""
     vim.cmd("redrawstatus")
   end,
 })
