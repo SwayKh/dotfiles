@@ -1,16 +1,28 @@
 // vim:ft=css
 configuration {
-  modi: "drun,nerdy,run,filebrowser,window";
-  font: "JetBrainsMono Nerd Font 12";
-  icon-theme: "Papirus";
-  show-icons: true;
-  terminal: "foot";
-  disable-history: false;
-  max-history-size: 50;
+  modi:                 "drun,nerdy,run,filebrowser,window";
+  font:                 "JetBrainsMono Nerd Font 12";
+  dpi:                  90;
+  icon-theme:           "Papirus";
+  show-icons:           true;
+  terminal:             "foot";
+  disable-history:      false;
+  max-history-size:     50;
+
+  display-drun:         " Apps"; // 󰀻
+  display-run:          " Runs";
+  display-nerdy:        "󰱨 Nerdy";
+	display-window:       " Windows";
+  display-filebrowser:  " Files";
+	display-ssh:          "󰣀 SSH";
+	display-keys:         " Keys";
+
   filebrowser {
     directory: "/home/sumit/";
   }
 }
+
+@import "colors"
 
 window {
   /*Removing height make the window height equal to num of opts*/
@@ -31,7 +43,7 @@ window {
 
 mainbox {
   spacing: 0;
-  children: [ inputbar, listview ];
+  children: [ inputbar, mode-switcher, listview ];
 }
 
 inputbar {
@@ -54,16 +66,28 @@ entry {
   border-radius: 5px;
 }
 
+mode-switcher {
+  margin: 5px;
+  orientation: horizontal;
+}
+
+button {
+  border-radius: 5px;
+}
+
 listview {
   scrollbar: false;
-  lines: 8;
+  lines: 6;
   cycle: false;
   dynamic: true;
   spacing: 0px;
-  padding: 0px 5px;
-  margin: 0px;
   /* List view has the dash border, Remove it here */
-  border: 0px;
+  /*border: 0px;*/
+
+  padding: 10px;
+  border: 1px;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 element {
@@ -71,5 +95,3 @@ element {
   padding: 3px;
   border-radius: 5px;
 }
-
-@import "colors"
