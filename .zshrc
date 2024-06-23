@@ -42,6 +42,7 @@ alias pipes='pipes.sh'
 alias c.='cd ~/dotfiles'
 alias :q='exit'
 alias lf=lfcd
+alias yazi=yy
 alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias fvim='fzf --print0 | xargs -0 -o nvim'
 alias lg=lazygit
