@@ -76,7 +76,7 @@ preload
 qt5ct 
 lxappearance 
 nwg-look
-kcalc
+galculator
 python-pip 
 python-pipx
 ```
@@ -116,7 +116,7 @@ powertop
 ```
 
 ## Details about the utilities
-**Hyprland** - Window Manager. Very beautiful, customisable, and configurable Window manger. Has great animation. Very powerful key binding support.
+**Hyprland** - Window Manager. Very beautiful, customisable, and configurable Window manager. Has great animation. Very powerful key binding support.
 **Hyprpaper** - Wallpaper utility for Hyprland. Swaybg is better.
 **Hyprpicker** - Color picker for Hyprland. keybind in hyprland.conf
 **Waybar** - Status bar, configuration is in the dotfiles. Use `waybar-hyprland-git` from the AUR for some hyprland patches like on-click active workspaces
@@ -130,7 +130,7 @@ powertop
 **Network-manager-applet** - GTK status bar applet to control and connect to Wifi.
 **Wl-Clipboard** - Clipboard utility for wayland. Similar to xclip for X11
 **Cliphist** - Clipboard manager for wayland. Binding in the hypland binding.
-**ly-dm** - TUI Login manger. Very light weight.
+**ly-dm** - TUI Login manager. Very light weight.
 **Polkit-kde-agent** - The Utility that asks for password when doing tasks that require `sudo` privilege, via GUI.
 **Wireplumber Pamixer Pipewire Pulseaudio** - Wayland audio managers. Needed for Hyprland.
 **Blueman** - Bluetooth utility. Can be used as applet similar to nm-applet
@@ -225,7 +225,7 @@ Previously I was using many small tools to get LF to work with image previews -
 Like using horriblename's LF fork with sixel support
 Using `chafa` for image preview
 compiling ctpv-git fir the preview script
-and setting various setting in lfrc to accomodate ctpv
+and setting various setting in lfrc to accommodate ctpv
 
 BUT NOW, LF supports sixel graphic in-built, So I can use the CTPV preview script
 with base lf
