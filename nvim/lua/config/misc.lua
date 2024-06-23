@@ -61,11 +61,26 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("WinEnter", {
+vim.api.nvim_create_autocmd("CursorMoved", {
   pattern = "*",
+  -- group = vim.api.nvim_create_augroup("ResizeOnWinEnter", { clear = true }),
   desc = "Resize buffer on entry, Alternative to focus.nvim",
   callback = function()
-    vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
+    local excluded_filetypes = {
+      "alpha",
+      "dashboard",
+      "neo-tree",
+      "Trouble",
+      "trouble",
+      "lazy",
+      "mason",
+      "notify",
+      "toggleterm",
+      "lazyterm",
+    }
+    if not vim.tbl_contains(excluded_filetypes, vim.bo.filetype) then
+      vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
+    end
   end,
 })
 
