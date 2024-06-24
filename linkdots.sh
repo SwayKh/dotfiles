@@ -20,6 +20,9 @@ sudo ln -sfn "$path"/btop "$HOME"/.config/
 [ -d "$HOME"/.config/lf ] && rm -rf "$HOME"/.config/lf
 sudo ln -sfn "$path"/lf "$HOME"/.config/
 
+[ -d "$HOME"/.config/yazi ] && rm -rf "$HOME"/.config/yazi
+sudo ln -sfn "$path"/yazi "$HOME"/.config/
+
 [ -d "$HOME"/.config/nvim ] && rm -rf "$HOME"/.config/nvim
 sudo ln -sfn "$path"/nvim "$HOME"/.config/
 
