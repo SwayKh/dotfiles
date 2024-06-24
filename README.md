@@ -45,7 +45,7 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Bar** : [Waybar](https://github.com/Alexays/Waybar)
 - **Application Launcher** : [Rofi(wayland fork)](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
-- **File Manager** : [LF](https://github.com/gokcehan/lf)
+- **File Manager** : [LF](https://github.com/gokcehan/lf) / [Yazi](https://github.com/sxyazi/yazi)
 - **Text Editor** : [Neovim](https://neovim.io/)
 - **Browser** : [Floorp](https://floorp.app/en)
 - **Idle daemon** : [Hypridle](https://github.com/hyprwm/hypridle)
@@ -54,7 +54,7 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Shell** : [Zsh](https://www.zsh.org/)
 - **Shell Prompt** : [Startship](https://starship.rs/)
 - **Login Manager** : [ly](https://github.com/fairyglade/ly)
-- **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg)
+- **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
 - **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
 - **System Monitor** : [Btop](https://github.com/aristocratos/btop)
 - **System Info viewer** : [Neofetch](https://github.com/dylanaraps/neofetch)
@@ -82,7 +82,7 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **WM/Compositor** : [i3(X11)](https://i3wm.org/) / [Sway(Wayland replacement for i3)](https://swaywm.org/)
 - **Bar(For X11)** : [Polybar](https://github.com/polybar/polybar)
 - **Color Picker** : [xcolor](https://github.com/Soft/xcolor)
-- **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
+- **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg)
 - **Clipboard** : [xclip](https://github.com/astrand/xclip)
 
 #### CLI Tools
@@ -124,7 +124,7 @@ Swaylock and Swayidle have been replaced with Hyprlock and Hypridle
 
 ## Dependencies
 
-Dependencies for LF Preview script
+Dependencies for LF Preview script or Yazi preview
 
 ```
 bat
@@ -134,6 +134,7 @@ wkhtmltopdf
 ffmpegthumbnailer
 ImageMagick
 poppler
+unarchiver
 epub-thumbnailer
 tar
 xz
