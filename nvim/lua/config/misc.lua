@@ -72,6 +72,7 @@ vim.api.nvim_create_autocmd("CursorMoved", {
       "neo-tree",
       "Trouble",
       "trouble",
+      "oil",
       "lazy",
       "mason",
       "notify",
