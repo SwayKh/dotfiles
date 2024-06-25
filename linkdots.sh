@@ -1,6 +1,6 @@
 #! /bin/bash
 
-path=$(pwd)
+path="$(cd "$(dirname "$0")" && pwd)"
 
 # HOME Directory
 sudo ln -sfn "$path"/.zshrc "$HOME"/.zshrc
@@ -13,6 +13,9 @@ sudo ln -Sfn "$path"/settings.json "$HOME"/.config/Code/User/settings.json
 # .config Directory
 
 sudo ln -sfn "$path"/.local/share/applications "$HOME"/.local/share/
+
+[ -d "$HOME"/scripts ] && rm -rf "$HOME"/scripts
+sudo ln -sfn "$path"/scripts "$HOME"/
 
 [ -d "$HOME"/.config/btop ] && rm -rf "$HOME"/.config/btop
 sudo ln -sfn "$path"/btop "$HOME"/.config/

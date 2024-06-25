@@ -26,7 +26,7 @@ bindsym $mod+l exec $term -e zsh -ic lf
 bindsym $mod+m exec $term -e btop
 
 bindsym $mod+Escape exec "$HOME/scripts/session_menu"
-bindsym $mod+space exec "$HOME/scripts/random_wall_bg"
+bindsym $mod+space exec "$HOME/scripts/random_swww_wall"
 bindsym Print exec "$HOME/scripts/screenshots/captureAll.sh"
 bindsym Ctrl+Print exec "$HOME/scripts/screenshots/captureScreen.sh"
 bindsym Ctrl+Shift+Print exec "$HOME/scripts/screenshots/captureArea.sh"
