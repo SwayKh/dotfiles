@@ -4,7 +4,7 @@ plugins=(git
     web-search
     yum
     git-extras
-    docker
+    # docker
     vagrant
     zsh-autosuggestions)
 
@@ -29,8 +29,26 @@ export EDITOR=nvim
 export VISUAL=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-export FZF_DEFAULT_OPTS='--layout=reverse --border --height=50% --preview-window=65% --sort' # --inline-info
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude .git --ignore-file ~/.gitignore' # Use fd instead of find
+export FZF_DEFAULT_OPTS='\
+  --layout=reverse \
+  --border \
+  --height=50% \
+  --preview-window=65% \
+  --sort \
+  --bind='ctrl-c:abort' \
+  --bind='ctrl-b:preview-page-up' \
+  --bind='ctrl-f:preview-page-down' \
+  --bind='ctrl-u:preview-half-page-up' \
+  --bind='ctrl-d:preview-half-page-down' \
+  ' # --inline-info
+# Use fd instead of find
+export FZF_DEFAULT_COMMAND='\
+  fd --type f \
+    --hidden \
+    --strip-cwd-prefix \
+    --exclude .git \
+    --ignore-file ~/.gitignore\
+  '
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 alias pokescript='pokemon-colorscripts -r'
