@@ -2,6 +2,7 @@
 .tmp
 lazy-lock.json
 foot/themes/*
+micro/plug/*
 
 ### Vim ###
 # Swap

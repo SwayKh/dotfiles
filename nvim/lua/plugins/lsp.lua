@@ -6,16 +6,12 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
-    -- Automatically install LSPs and related tools to stdpath for neovim
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/lazydev.nvim", ft = "lua" },
-    -- { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
-    -- "folke/neodev.nvim",
-    -- "j-hui/fidget.nvim",
     "nvim-lua/plenary.nvim",
   },
   config = function()
@@ -41,11 +37,11 @@ return {
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         map("<leader>rs", ":LspRestart", "LSP [R]e[S]tart")
 
-        map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]efinition")
+        map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]definition")
         map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
         map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
         map("gD", require("fzf-lua").lsp_declarations, "[G]oto [D]eclaration")
-        map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]efinition")
+        map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]definition")
         map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]symbols")
         map("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]symbols")
 
@@ -128,13 +124,6 @@ return {
             runtime = { version = "LuaJIT" },
             workspace = {
               checkThirdParty = false,
-              -- Don't need all this, Lazydev handles the library opts
-              -- library = {
-              --   "${3rd}/luv/library",
-              --   unpack(vim.api.nvim_get_runtime_file("", true)),
-              -- },
-              -- If lua_ls is really slow on your computer, you can try this instead:
-              -- library = { vim.env.VIMRUNTIME },
             },
             completion = {
               callSnippet = "Replace",
