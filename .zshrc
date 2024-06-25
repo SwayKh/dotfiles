@@ -20,9 +20,6 @@ source /usr/share/nvm/init-nvm.sh
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-# Don't need to source the files individually
-# source /usr/share/fzf/completion.zsh
-# source /usr/share/fzf/key-bindings.zsh
 
 export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"

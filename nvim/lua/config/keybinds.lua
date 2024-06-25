@@ -3,6 +3,7 @@
 local map = vim.keymap.set
 
 -- Misc
+map("i", "<C-l>", "<Cmd>echo &filetype<CR>", { silent = true, desc = "Use C-i to escape from insert mode" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -107,21 +108,3 @@ vim.cmd("cnoreabbrev Qa qa")
 vim.cmd("cnoreabbrev W  w")
 vim.cmd("cnoreabbrev Wq wq")
 vim.cmd("cnoreabbrev WQ wq")
-
--- Autocomplete brackets and quotes
--- Feels annoying somehow, autopair plugin is better
--- map("i", "'", "''<left>")
--- map("i", '"', '""<left>')
--- map("i", "(", "()<left>")
--- map("i", "[", "[]<left>")
--- map("i", "{", "{}<left>")
--- map("i", "{;", "{};<left><left>")
--- map("i", "/*", "/**/<left><left>")
-
--- I don't ever use this, plus M is being used by Flash
--- map(
---   { "n", "v" },
---   "M",
---   "<Cmd>call cursor(0, virtcol('$')/2)<CR>",
---   { silent = true, desc = "Move to the middle of the line" }
--- )
