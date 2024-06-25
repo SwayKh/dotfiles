@@ -161,6 +161,8 @@ qt-graphicaleffects (Needed for sddm theme)
 qt-quickcontrols2 (Needed for sddm theme)
 xdg-desktop-portal-hyprland (Needed for hyprland)
 xdg-desktop-portal-gtk (Needed for gtk file pickers)
+android-sdk-platform-tools (Needed for android build in Godot)
+android-tools (Needed for android build in Godot)
 python-pip/x
 chaotic-keyring
 chaotic-mirrorlist
