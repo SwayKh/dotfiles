@@ -29,7 +29,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-export FZF_DEFAULT_OPTS='\
+export FZF_DEFAULT_OPTS="\
   --layout=reverse \
   --border \
   --height=50% \
@@ -40,14 +40,14 @@ export FZF_DEFAULT_OPTS='\
   --bind='ctrl-f:preview-page-down' \
   --bind='ctrl-u:preview-half-page-up' \
   --bind='ctrl-d:preview-half-page-down' \
-  ' # --inline-info
+  " # --inline-info
 # Use fd instead of find
 export FZF_DEFAULT_COMMAND='\
   fd --type f \
-    --hidden \
-    --strip-cwd-prefix \
-    --exclude .git \
-    --ignore-file ~/.gitignore\
+  --strip-cwd-prefix \
+  --hidden \
+  --exclude .git \
+  --ignore-file ~/.gitignore\
   '
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
