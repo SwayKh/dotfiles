@@ -112,10 +112,11 @@ return {
       },
       helptags = {
         prompt = ":",
-        preview_opts = "hidden",
+        -- preview_opts = "hidden",
         winopts = {
           row = 1,
-          width = vim.api.nvim_win_get_width(0),
+          -- width = vim.api.nvim_win_get_width(0),
+          width = 1,
           height = 0.4,
         },
       },
