@@ -17,6 +17,7 @@ return {
       },
       preview = {
         border = "rounded",
+        update_on_cursor_moved = true,
       },
       win_options = {
         signcolumn = "number",
@@ -45,11 +46,14 @@ return {
     vim.keymap.set("n", "-", "<Cmd>Oil<CR>", { silent = true, desc = "Open Parent Directory" })
     vim.keymap.set("n", "<leader>-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
 
+    -- Toggle preview on enter and move cursor to files buffer
+    -- This breaks floating mode
     vim.api.nvim_create_autocmd("User", {
       pattern = "OilEnter",
       callback = vim.schedule_wrap(function(args)
         if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
-          oil.select({ preview = true })
+          oil.open_preview()
+          vim.cmd("wincmd L")
         end
       end),
     })
