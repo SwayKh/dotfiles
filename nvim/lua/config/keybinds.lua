@@ -98,10 +98,16 @@ map("n", "<C-S-j>", "<C-w>-") -- resize window to down
 map("n", "<C-S-Left>", "<Cmd>vertical resize +3<CR>") -- Control+Left resizes vertical split +
 map("n", "<C-S-Right>", "<Cmd>vertical resize -3<CR>") -- Control+Right resizes vertical split -
 
-map("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
-map("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
-map("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-map("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+-- Found much better use than disabling the arrow keys
+-- map("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+-- map("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+-- map("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+-- map("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+
+map("n", "<left>", "<Cmd>vertical resize +3<CR>", { desc = "Resize vertical split with left" })
+map("n", "<right>", "<Cmd>vertical resize -3<CR>", { desc = "Resize vertical split with right" })
+map("n", "<down>", "<Cmd>resize -3<CR>", { desc = "Resize split with down" })
+map("n", "<up>", "<Cmd>resize +3<CR>", { desc = "Resize split with up" })
 
 -- Remap common typos when saving and closing files
 vim.cmd("cnoreabbrev Q  q")
