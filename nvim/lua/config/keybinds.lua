@@ -3,7 +3,6 @@
 local map = vim.keymap.set
 
 -- Misc
-map("i", "<C-l>", "<Cmd>echo &filetype<CR>", { silent = true, desc = "Use C-i to escape from insert mode" })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -54,9 +53,9 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 
 -- Save, Quit
 map("n", "qq", "<Cmd>%bd<CR><Cmd>Alpha<CR>", { silent = true, desc = "[Q]uit" })
-map("n", "<leader>Q", "<Cmd>wqa!<CR>", { silent = true, desc = "[Q]uit" })
-map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave file" })
-map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>q!<CR>", { silent = true, desc = "Save all files [Q]uit" })
+map("n", "<leader>Q", "<Cmd>wqa!<CR>", { silent = true, desc = "Save all files and [Q]uit" })
+map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave all files" })
+map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>q<CR>", { silent = true, desc = "[Q]uit" })
 
 -- Buffer keybinds
 map("n", "<leader>bd", "<Cmd>bdelete<CR>", { silent = true, desc = "Run [B]buffer [D]elete" })
