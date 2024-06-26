@@ -1,5 +1,6 @@
+local autocmd = vim.api.nvim_create_autocmd
 -- Open help window in a vertical split to the right.
-vim.api.nvim_create_autocmd("BufWinEnter", {
+autocmd("BufWinEnter", {
   group = vim.api.nvim_create_augroup("help_window_right", {}),
   pattern = { "*.txt" },
   callback = function()
@@ -12,7 +13,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   pattern = {
     "checkhealth",
     "fugitive*",
@@ -29,7 +30,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   group = vim.api.nvim_create_augroup("disable_mini_indentline", {}),
   pattern = {
     "help",
@@ -53,7 +54,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("CursorMoved", {
+autocmd("CursorMoved", {
   pattern = "*",
   group = vim.api.nvim_create_augroup("ResizeBuffer", {}),
   desc = "Resize buffer on entry, Alternative to focus.nvim",
@@ -81,7 +82,7 @@ vim.api.nvim_create_autocmd("CursorMoved", {
 
 -- Autocmd to track macro recording, And redraw statusline, which trigger
 -- macro function of mini.statusline
-vim.api.nvim_create_autocmd("RecordingEnter", {
+autocmd("RecordingEnter", {
   pattern = "*",
   callback = function()
     vim.g.macro_recording = "Recording @" .. vim.fn.reg_recording()
@@ -90,7 +91,7 @@ vim.api.nvim_create_autocmd("RecordingEnter", {
 })
 
 -- Autocmd to track the end of macro recording
-vim.api.nvim_create_autocmd("RecordingLeave", {
+autocmd("RecordingLeave", {
   pattern = "*",
   callback = function()
     vim.g.macro_recording = ""
@@ -100,7 +101,7 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
@@ -108,7 +109,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufReadPost", {
+autocmd("BufReadPost", {
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     if mark[1] > 1 and mark[1] <= vim.api.nvim_buf_line_count(0) then
@@ -117,7 +118,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWinEnter", {
+autocmd("BufWinEnter", {
   desc = "clear the last used search pattern",
   pattern = "*",
   command = "let @/ = ''",
