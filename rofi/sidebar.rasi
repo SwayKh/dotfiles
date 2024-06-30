@@ -1,6 +1,6 @@
 // vim:ft=css
 configuration {
-  modi:                 "drun,run,nerdy,filebrowser";
+  modi:                 "drun,run,nerdy,window";
   dpi:                  90;
   show-icons:           true;
   icon-theme:           "Papirus";
