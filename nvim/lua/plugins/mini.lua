@@ -125,6 +125,15 @@ return { -- Collection of various small independent plugins/modules
 
     local miniclue = require("mini.clue")
     miniclue.setup({
+      window = {
+        delay = 300,
+        scroll_down = "<C-d>",
+        scroll_up = "<C-u>",
+        config = {
+          width = "auto",
+          border = "rounded",
+        },
+      },
       triggers = {
         -- Leader triggers
         { mode = "n", keys = "<Leader>" },
