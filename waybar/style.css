@@ -8,8 +8,7 @@
 
 * {
   min-height: 0;
-  font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -40,8 +39,8 @@ button:hover {
 }
 
 #workspaces button {
-  color: @fg;
-  /* padding : 0px 5px; */
+  color: @bordercolor;
+  /*padding : 0px 5px; */
 }
 
 #workspaces button.urgent {
@@ -80,12 +79,15 @@ button:hover {
 #scratchpad,
 #custom-power,
 #custom-notification,
-#custom-separator,
 #window,
 #mpd {
   padding: 0px 5px;
   padding-right: 10px;
   margin: 3px 3px;
+  color: @bordercolor;
+}
+
+#custom-separator {
   color: @bordercolor;
 }
 
