@@ -1,9 +1,10 @@
-@define-color fg #f5f5f5;
+@define-color fg #F5F5F5;
 @define-color bg #091F2D;
 @define-color bordercolor #888CA7;
-@define-color disabled #a5a5a5;
-@define-color alert #f53c3c;
-@define-color activegreen #8fb666;
+@define-color disabled #A5A5A5;
+@define-color alert #F53C3C;
+@define-color activegreen #26A65B;
+@define-color highlight #F2C187;
 
 * {
   min-height: 0;
@@ -51,17 +52,7 @@ button:hover {
 }
 
 #workspaces button.active {
-  color: #F2C187;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
+  color: @highlight;
 }
 
 #clock,
@@ -98,8 +89,15 @@ button:hover {
 }
 
 #custom-power {
-  color: @fg;
+  color: @bordercolor;
   padding-left: 10px;
+}
+
+#tray {
+  background-color: @bordercolor;
+  border-radius: 20px;
+  padding: 0px 10px;
+  margin: 5px;
 }
 
 #custom-separator {
@@ -114,11 +112,11 @@ button:hover {
 
 #battery.charging,
 #battery.plugged {
-  color: #26a65b;
+  color: @activegreen;
 }
 
 label:focus {
-  background-color: #333333;
+  background-color: @bg;
 }
 
 #battery.critical:not(.charging) {
@@ -129,6 +127,16 @@ label:focus {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
 }
 
 /* #cpu { */
