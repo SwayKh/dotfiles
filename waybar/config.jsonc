@@ -14,7 +14,7 @@
 
     "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": [ "network", "cpu", "temperature", "backlight", "wireplumber", "custom/separator", "tray" ],
+    "modules-right": [ "network", "cpu", "temperature", "backlight", "wireplumber", "tray" ],
 
     // Modules configuration
     "hyprland/workspaces": {
