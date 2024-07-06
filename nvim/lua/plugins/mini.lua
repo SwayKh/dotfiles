@@ -69,6 +69,7 @@ return { -- Collection of various small independent plugins/modules
     require("mini.tabline").setup()
     require("mini.notify").setup()
     require("mini.git").setup()
+    require("mini.icons").setup()
 
     require("mini.bracketed").setup({
       buffer = { suffix = "b", options = {} },
