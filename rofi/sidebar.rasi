@@ -50,7 +50,7 @@ inputbar {
   border-radius: 5px;
   /*padding: top right bottom left*/
   padding: 150px 10px 10px 10px;
-  background-image: url("~/.config/wall.png", width);
+  background-image: url("~/.config/wall.png", height);
   children: [ "textbox-prompt-colon", entry ];
 }
 

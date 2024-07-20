@@ -39,7 +39,7 @@ button:hover {
 }
 
 #workspaces button {
-  color: @bordercolor;
+  color: @fg;
   /*padding : 0px 5px; */
 }
 
@@ -47,7 +47,7 @@ button:hover {
   color: @alert;
 }
 #workspaces button.empty {
-  color: @disabled;
+  color: @bordercolor;
 }
 
 #workspaces button.active {
@@ -92,7 +92,7 @@ button:hover {
 }
 
 #custom-power {
-  color: @bordercolor;
+  color: @fg;
   padding-left: 10px;
 }
 
