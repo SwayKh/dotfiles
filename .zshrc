@@ -27,6 +27,7 @@ export PATH="$HOME/scripts:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 export EDITOR=nvim
 export VISUAL=nvim
+export SUDO_EDITOR=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
 export FZF_DEFAULT_OPTS="\
