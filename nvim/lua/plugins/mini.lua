@@ -70,6 +70,7 @@ return { -- Collection of various small independent plugins/modules
     require("mini.notify").setup()
     require("mini.git").setup()
     require("mini.icons").setup()
+    require("mini.diff").setup()
 
     require("mini.bracketed").setup({
       buffer = { suffix = "b", options = {} },
