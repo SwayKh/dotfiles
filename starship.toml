@@ -1,3 +1,6 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
 $username\
 $hostname\
@@ -17,7 +20,8 @@ $character"""
 # $git_metrics\
 # $os\
 
-command_timeout = 10000
+command_timeout = 3600000
+scan_timeout = 500
 
 [os]
 disabled = false
