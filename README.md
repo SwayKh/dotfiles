@@ -178,7 +178,8 @@ wayland/x11
 
 ```
 base base-devel linux linux-firmware linux-headers grub vim amd-ucode net-tools
-git curl wget man-db rsync pacman-contrib openssh fwupd
+git curl wget man-db pacman-contrib openssh networkmanager
+efibootmgr
 ```
 
 #### Apps
@@ -214,7 +215,7 @@ yuzu
 blueman
 birghtnessctl
 docker
-efibootmgr
+fwupd
 github-cli
 pacutils
 network-manager-applet
@@ -225,6 +226,7 @@ wireplumber
 pavucontrol
 pulseaudio
 reflector
+rsync
 swaync
 swww
 ubsutils
