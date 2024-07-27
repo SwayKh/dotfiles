@@ -13,6 +13,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
 setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 source "$HOME"/dotfiles/scripts/function.sh
 source $ZSH/oh-my-zsh.sh

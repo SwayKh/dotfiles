@@ -17,7 +17,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+n exec obsidian
 bindsym $mod+w exec ferdium
 bindsym $mod+d exec webcord
-bindsym $mod+s exec spotify-launcher
+bindsym $mod+s exec spotify
 bindsym $mod+KP_ADD exec kcalc
 bindsym $mod+r exec rofi -show drun
 bindsym $mod+TAB exec rofi -show window
