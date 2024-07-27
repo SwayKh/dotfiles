@@ -24,7 +24,7 @@
     horizontal_padding = 4
     # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
     icon_position = left
-    icon_folders = ~/.icons/16x16/
+    # icon_folders = ~/.icons/16x16/
 
     width = 400
     alignment = center
@@ -58,3 +58,9 @@
     background = "#091F2D"
     foreground = "#888CA7"
     timeout = 10
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
