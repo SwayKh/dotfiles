@@ -13,27 +13,28 @@ map K :updir; up; open
 map J :updir; down; open
 map x cut
 map c copy
-map yp :yank-path
-map yn :yank-filename
-map yd :yank-dirname
+map C copyToClipboard
+map yp :yankPath
+map yn :yankFilename
+map yd :yankDirname
 map p :paste; clear
-map P :paste-async
+map P :pasteAsync
 map L link
 map v invert
 map ] jump-next
 map [ jump-prev
 map f search
-map F :fzf_jump
+map F :fzfJump
 map / search
 map e $$f # Execute the selected file, must be executable
 map w $$SHELL
 map r rename
-map R bulk-rename
+map R bulkRename
 map o &xdg-open $f
 map O lfrc
 map N newDir
 map a :push %mkdir<space>
-map D $rm -rf $fx
+map D $rm -rf -- $fx
 map | :set ratios 1:2
 map ` shell
 map . selectRandom
@@ -53,7 +54,7 @@ map <c-u> half-up
 map <c-n> search-next
 map <c-p> search-prev
 map <c-r> :reload; redraw
-map <c-l> %lf -remote "send $id source ~/.config/lf/lfrc"
+map <c-c> :sourceConfig
 
 map <enter> open
 map <esc> unselect
@@ -68,7 +69,7 @@ map mf mkfile
 map mc mark-save
 map mx chmodx
 map ua unarchive
-map bg setwallpaper
+map bg setWallpaper
 map du directory_size # Requires ncdu utility
 
 map zh set hidden!
