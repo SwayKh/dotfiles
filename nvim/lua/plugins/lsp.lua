@@ -92,7 +92,7 @@ return {
     capabilities = vim.tbl_deep_extend("force", capabilities, cmp_nvim_lsp.default_capabilities())
 
     local servers = {
-      bashls = {}, -- Bash
+      -- bashls = {}, -- Bash
       clangd = {}, -- C/C++
       marksman = {}, -- Markdown lsp
       sqlls = {}, -- SQL

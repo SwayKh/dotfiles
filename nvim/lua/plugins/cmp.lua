@@ -3,8 +3,8 @@
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",
-  -- event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
-  event = { "InsertEnter", "CmdlineEnter" },
+  event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
+  -- event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths

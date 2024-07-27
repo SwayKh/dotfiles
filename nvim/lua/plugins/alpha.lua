@@ -1,5 +1,6 @@
 return {
   "goolord/alpha-nvim",
+  event = "VimEnter",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   -- event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
@@ -30,8 +31,14 @@ return {
       dashboard.button("l", "󰒲  > Lazy", "<Cmd>Lazy<CR>"),
       dashboard.button("q", "  > Quit NVIM", "<Cmd>qa<CR>"),
     }
-    local fortune = require("alpha.fortune")
-    dashboard.section.footer.val = fortune()
+    -- local fortune = require("alpha.fortune")
+    -- dashboard.section.footer.val = fortune()
+
+    dashboard.section.footer.val = function()
+      local stats = require("lazy").stats()
+      local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+      return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+    end
 
     -- Send config to alpha
     alpha.setup(dashboard.opts)
