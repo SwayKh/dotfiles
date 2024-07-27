@@ -13,17 +13,19 @@ cmd clear_trash % rm -rf ~/.trash/*
 
 cmd doc $$lf -doc | $EDITOR
 
-cmd yank-path &{{
+cmd share $curl -F"file=@$fx" https://0x0.st | wl-copy
+
+cmd yankPath &{{
   printf '%s' "$fx" | wl-copy
   lf -remote 'send reload'
 }}
 
-cmd yank-filename &{{
+cmd yankFilename &{{
   basename -a -- $fx | head -c-1 | wl-copy
   lf -remote 'send reload'
 }}
 
-cmd yank-dirname &{{
+cmd yankDirname &{{
   dirname -- "$f" | head -c-1 | wl-copy
   lf -remote 'send reload'
 }}
@@ -68,11 +70,11 @@ cmd chmod %{{
 }}
 
 cmd chmodx &{{
-	chmod +x $fx
+	chmod u+x $fx
 	lf -remote "send $id reload"
 }}
 
-cmd unarchive ${{
+cmd unarchive &{{
 # This part creates the directory for extracting files
   a="${f%%.*}"
   mkdir -p "$a"
@@ -87,15 +89,16 @@ cmd unarchive ${{
     *.7z) 7z x "$f" -o"$a" ;;
     *) echo "Unsupported Format" ;;
   esac
+  lf -remote "send $id echo 'Unarchive complete for $f'"
 }}
 
-cmd setwallpaper &{{
+cmd setWallpaper &{{
   # set_wall="$HOME/scripts/set_wall"
   set_wall "$f"
   lf -remote 'send reload'
 }}
 
-cmd paste-async &{{
+cmd pasteAsync &{{
     set -- $(cat ~/.local/share/lf/files)
     mode="$1"
     shift
@@ -114,7 +117,7 @@ cmd paste-async &{{
 }}
 
 # Jump to directories using fzf
-cmd fzf_jump ${{
+cmd fzfJump ${{
     res="$(find . -maxdepth 2 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
         cmd="cd"
@@ -127,7 +130,7 @@ cmd fzf_jump ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 
-cmd fzf_search ${{
+cmd fzfSearch ${{
     RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
     res="$(
         FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
@@ -138,7 +141,7 @@ cmd fzf_search ${{
     [ -n "$res" ] && lf -remote "send $id select \"$res\""
 }}
 
-cmd bulk-rename ${{
+cmd bulkRename ${{
     old="$(mktemp)"
     new="$(mktemp)"
     if [ -n "$fs" ]; then
@@ -160,6 +163,12 @@ cmd bulk-rename ${{
     done
     rm -- "$old" "$new"
     lf -remote "send $id unselect"
+}}
+
+cmd copyToClipboard %{{
+  mime-type=$(file -bL --mime-type "$fx")
+  wl-copy --type "$mime-type" < "$fx"
+  echo "File '$f' copied to clipboard as '$mime_type'."
 }}
 
 cmd selectRandom %{{
@@ -186,6 +195,12 @@ cmd on-select &{{
     lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
 }}
 
+# cmd on-cd &{{
+#     export STARSHIP_SHELL=
+#     fmt="$(starship prompt)"
+#     lf -remote "send $id set promptfmt \"$fmt\""
+# }}
+
 # c (select for copy) and P to paste soft-link
 # x (select for cut) and P to paste hard-link
 cmd link %{{
@@ -211,9 +226,20 @@ cmd singlePane %{{
 }}
 
 cmd default %{{
-    # Set preview needs to be set after ratio, since there need to be 2 pane for
-    # it
+    # Set preview needs to be set after ratio, since there need to be 2 pane
     lf -remote "send $id :set ratios 1:2:2; set info; set preview"
-    # or just
-    # lf -remote "send $id source ~/.config/lf/lfrc"
 }}
+
+cmd sourceConfig %{{
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+# cmd on-redraw %{{
+#     if [ $lf_width -le 80 ]; then
+#         lf -remote "send $id set ratios 1:2"
+#     elif [ $lf_width -le 160 ]; then
+#         lf -remote "send $id set ratios 1:2:2"
+#     else
+#         lf -remote "send $id set ratios 2:3:5"
+#     fi
+# }}
