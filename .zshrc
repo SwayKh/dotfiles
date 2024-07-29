@@ -87,6 +87,8 @@ alias gp='git push'
 alias gP='git pull'
 
 eval "$(starship init zsh)"
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # (cat ~/.cache/wal/sequences &)
 
 # Remove duplicates from $PATH
