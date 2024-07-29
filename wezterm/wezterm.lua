@@ -1,25 +1,24 @@
 local wezterm = require("wezterm")
-return {
-	-- color_scheme = 'termnial.sexy',
-	color_scheme = "Catppuccin Mocha",
+local config = wezterm.config_builder()
+
+config = {
+	-- Check colorscheme at wezterm website https://wezfurlong.org/wezterm/colorschemes/index.html
+	color_scheme = "carbonfox",
+	-- Tabs are enabled by default
 	enable_tab_bar = false,
-	font_size = 11.0,
+	font_size = 10.0,
+	-- Disable wayland support, Somewhat broken on hyprland, Works with -git
 	enable_wayland = false,
 	font = wezterm.font("JetBrainsMono Nerd Font"),
+	automatically_reload_config = true,
+	enable_scroll_bar = false,
+	front_end = "WebGpu",
+	warn_about_missing_glyphs = false,
 
-	-- macos_window_background_blur = 40,
-	macos_window_background_blur = 30,
-
-	-- window_background_image = '/Users/omerhamerman/Downloads/3840x1080-Wallpaper-041.jpg',
-	-- window_background_image_hsb = {
-	-- 	brightness = 0.01,
-	-- 	hue = 1.0,
-	-- 	saturation = 0.5,
-	-- },
-	-- window_background_opacity = 0.92,
+	-- Blur and opacity
+	macos_window_background_blur = 40,
 	window_background_opacity = 1.0,
-	-- window_background_opacity = 0.78,
-	-- window_background_opacity = 0.20,
+	-- Remove the window decorations
 	window_decorations = "RESIZE",
 	keys = {
 		-- {
@@ -37,3 +36,4 @@ return {
 		},
 	},
 }
+return config
