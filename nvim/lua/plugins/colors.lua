@@ -4,6 +4,7 @@ return {
     priority = 1000,
     config = function()
       require("nightfox").setup({
+        transparent = true,
         options = {
           styles = {
             comments = "italic",

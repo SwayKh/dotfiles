@@ -9,6 +9,6 @@ return {
   --    end
   -- },
   --
-  { "nvim-tree/nvim-web-devicons", lazy = true },
+  -- { "nvim-tree/nvim-web-devicons", lazy = true },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 }
