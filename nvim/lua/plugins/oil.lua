@@ -1,11 +1,6 @@
 return {
   "stevearc/oil.nvim",
   event = "VeryLazy",
-  -- Optional dependencies
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-
   config = function()
     local oil = require("oil")
     oil.setup({
@@ -48,14 +43,14 @@ return {
 
     -- Toggle preview on enter and move cursor to files buffer
     -- This breaks floating mode
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "OilEnter",
-      callback = vim.schedule_wrap(function(args)
-        if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
-          oil.open_preview()
-          vim.cmd("wincmd L")
-        end
-      end),
-    })
+    --   vim.api.nvim_create_autocmd("User", {
+    --     pattern = "OilEnter",
+    --     callback = vim.schedule_wrap(function(args)
+    --       if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+    --         oil.open_preview()
+    --         vim.cmd("wincmd L")
+    --       end
+    --     end),
+    --   })
   end,
 }
