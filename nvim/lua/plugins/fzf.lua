@@ -2,6 +2,7 @@ return {
   "ibhagwan/fzf-lua",
   event = "VeryLazy",
   -- optional for icon support
+  dependencies = { "echasnovski/mini.nvim" },
   config = function()
     local fzf = require("fzf-lua")
     local actions = require("fzf-lua.actions")
