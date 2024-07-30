@@ -1,5 +1,5 @@
 # Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+# "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
 $username\
@@ -7,6 +7,7 @@ $hostname\
 $directory\
 $git_branch\
 $git_state\
+$git_metrics\
 $git_status\
 $cmd_duration\
 $fill\
@@ -15,9 +16,9 @@ $golang\
 $python\
 $jobs $time\
 $line_break\
-$character"""
+$character
+"""
 
-# $git_metrics\
 # $os\
 
 command_timeout = 3600000
@@ -58,8 +59,8 @@ error_symbol = "[✗](bold red)"
 
 [git_branch]
 symbol = " "
-# format = "[$symbol$branch]($style) "
-# style = "purple"
+style = "purple"
+format = "[$symbol$branch]($style) "
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
