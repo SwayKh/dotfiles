@@ -108,7 +108,7 @@ vim.wo.signcolumn = "yes"
 vim.opt.pumwidth = 50
 
 -- Max items to show in pop up menu
-vim.opt.pumheight = 0
+vim.opt.pumheight = 10
 
 -- Transparency level for pop up menu
 vim.opt.pumblend = 12
@@ -151,7 +151,7 @@ vim.opt.foldlevel = 99
 -- Something related to search
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
-vim.opt.wildoptions = "pum"
+vim.opt.wildoptions = "pum,fuzzy"
 
 -- Disable "~" characters at end of buffer
 vim.opt.fillchars = {
