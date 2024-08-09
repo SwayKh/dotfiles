@@ -1,0 +1,2073 @@
+: 1719154155:0;c.
+: 1719154238:0;hyprctl clients
+: 1719154285:0;clear
+: 1719154423:0;rg
+: 1719154424:0;rg .
+: 1719154696:0;clear
+: 1719154703:0;yazi
+: 1719158803:0;lg
+: 1719158849:0;cd scripts
+: 1719158850:0;ls
+: 1719158851:0;lg
+: 1719158856:0;yy
+: 1719158859:0;source ~/.zshrc
+: 1719158863:0;yy
+: 1719158882:0;ls
+: 1719158885:0;ll
+: 1719158886:0;ls
+: 1719158887:0;la
+: 1719158889:0;lt
+: 1719158891:0;cd ..
+: 1719158895:0;clear
+: 1719159224:0;yazi
+: 1719159695:0;c.
+: 1719159695:0;lg
+: 1719159714:0;cd scripts
+: 1719159715:0;lg
+: 1719159753:0;ls
+: 1719159755:0;gs
+: 1719159756:0;lg
+: 1719159793:0;cd ..
+: 1719159794:0;lg
+: 1719159918:0;:q
+: 1719159959:0;yazi
+: 1719160001:0;ls
+: 1719160004:0;gs
+: 1719160010:0;./linkdots.sh
+: 1719160016:0;clear
+: 1719160019:0;yazi
+: 1719160228:0;yy
+: 1719160317:0;ls
+: 1719160318:0;clear
+: 1719160320:0;yazi
+: 1719161742:0;clear
+: 1719161744:0;yy
+: 1719165589:0;ya
+: 1719165593:0;ya pack -a yazi-rs/plugins#full-border
+: 1719165612:0;yy
+: 1719166105:0;lg
+: 1719166141:0;yy
+: 1719219623:0;tmux kill-server
+: 1719219810:0;up
+: 1719219813:0;ya
+: 1719219816:0;ya help
+: 1719221643:0;yy
+: 1719221679:0;c.
+: 1719221699:0;exa -ld --color=always
+: 1719221707:0;exa -ld --color=always nvim
+: 1719221713:0;exa -lad --color=always nvim
+: 1719221721:0;exa -lld --color=always nvim
+: 1719221723:0;ll
+: 1719221724:0;la
+: 1719222799:0;yy
+: 1719222864:0;lf
+: 1719222893:0;yy
+: 1719223222:0;yazi
+: 1719223623:0;yazi --clear-cache
+: 1719223627:0;yazi
+: 1719223656:0;yazi --clear-cache
+: 1719223659:0;yy
+: 1719223957:0;yazi
+: 1719223963:0;yy
+: 1719224238:0;swww daemon
+: 1719224242:0;swww
+: 1719224252:0;swww-daemon
+: 1719224283:0;cd wallpapers/Images
+: 1719224283:0;ls
+: 1719224286:0;shuf -n1 . 
+: 1719224289:0;shuf -n1
+: 1719224297:0;shuf -n 1
+: 1719224299:0;cd ..
+: 1719224302:0;shuf -n 1 .
+: 1719224304:0;shuf -n1 .
+: 1719224315:0;ls | shuf -n1
+: 1719224318:0;cd Images
+: 1719224320:0;ls | shuf -n1
+: 1719224349:0;swww img $(ls | shuf -n1) --transition-type center
+: 1719224384:0;swww img Ubuntu-old.png --transition-type=center
+: 1719224445:0;swww-daemon --format xrgb
+: 1719224451:0;swww img Ubuntu-old.png --transition-type=center
+: 1719224494:0;swww img windows-panic.png
+: 1719224574:0;swww kill
+: 1719224580:0;swww-daemon kill
+: 1719224596:0;swww query
+: 1719224601:0;swww-daemon
+: 1719224606:0;swww img windows-panic.png
+: 1719224615:0;swww img Ubuntu-old.png
+: 1719224665:0;swww img Ubuntu-old.png --no-resize --outputs
+: 1719224678:0;swww img Ubuntu-old.png --no-resize --outputs eDP-1
+: 1719241751:0;swww kill
+: 1719241763:0;swww-daemon --format xrgb
+: 1719241771:0;cd wallpapers/Images
+: 1719241772:0;ls
+: 1719241776:0;ls | shuf -n1
+: 1719241876:0;swww img erwan-hesry-WIdhyut3bp4-unsplash.png --transition-type=center --transition-step=10 --transition-fps=60
+: 1719241887:0;swww img erwan-hesry-WIdhyut3bp4-unsplash.png --transition-type=center --transition-step=100 --transition-fps=60
+: 1719241918:0;ls | shuf -n1
+: 1719241943:0;swww --transition-type=center --transition-step=100 --transition-fps=60 img arctic-landscape.png
+: 1719241961:0;swww img --transition-type=center --transition-step=100 --transition-fps=60 arctic-landscape.png
+: 1719241994:0;ls | shuf -n1 | swww img --transition-type=center --transition-step=100 --transition-fps=60 
+: 1719242019:0;swww img --transition-type=center --transition-step=100 --transition-fps=60 $(ls | shuf -n1) 
+: 1719242537:0;swww img --transition-type=center --transition-step=100 --transition-fps=60 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242551:0;swww img --transition-type=center --transition-step=100 --transition-fps=10 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242567:0;swww img --transition-type=center --transition-step=100 --transition-fps=120 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242578:0;swww img --transition-type=center --transition-step=255 --transition-fps=120 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242615:0;cd wallpapers/Images
+: 1719242643:0;swww img --transition-type=center --transition-step=20 --transition-fps=120 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242658:0;swww img --transition-type=center --transition-step=20 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242668:0;swww img --transition-type=center --transition-step=20 --transition-fps=120 --transition-duration=0 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242673:0;swww img --transition-type=center --transition-step=20 --transition-fps=120 --transition-duration=0.5 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242683:0;swww img --transition-type=center --transition-step=20 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242711:0;swww --transition-type help
+: 1719242717:0;swww img help
+: 1719242734:0;swww --transition-type --help
+: 1719242739:0;swww img --help
+: 1719242823:0;swww img --transition-type=any --transition-step=20 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242837:0;swww img --transition-type=grow --transition-step=20 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242846:0;swww img --transition-type=center --transition-step=20 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242864:0;swww img --transition-type=outer --transition-step=20 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719242927:0;c.
+: 1719242928:0;cd scripts
+: 1719242929:0;gs
+: 1719242931:0;cd
+: 1719242932:0;cd scripts
+: 1719242935:0;gP
+: 1719242972:0;nvim
+: 1719243159:0;swww img --transition-type=any --transition-step=50 --transition-fps=120 --transition-duration=1 $(find . -maxdepth 1 | shuf -n 1 ) 
+: 1719243169:0;swww img --transition-type=any --transition-step=50 --transition-fps=120 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719243181:0;swww img --transition-type=any --transition-step=10 --transition-fps=120 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719243190:0;swww img --transition-type=any --transition-step=30 --transition-fps=120 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719243199:0;swww img --transition-type=any --transition-step=30 --transition-fps=60 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719243544:0;lg
+: 1719243602:0;cd
+: 1719243603:0;cd.
+: 1719243604:0;c.
+: 1719243605:0;cd scripts
+: 1719243606:0;ls
+: 1719243608:0;gP
+: 1719243615:0;nvim
+: 1719243638:0;cd ..
+: 1719243639:0;nvim
+: 1719245462:0;cd ~/scripts
+: 1719245464:0;cd
+: 1719245466:0;c.
+: 1719245467:0;cd scripts
+: 1719245468:0;ls
+: 1719245497:0;ll
+: 1719245498:0;la
+: 1719245512:0;chmod 755 random_swww_wall
+: 1719245522:0;nvim random_wall_bg
+: 1719245556:0;lg
+: 1719245662:0;c.
+: 1719245665:0;nvim
+: 1719245764:0;lg
+: 1719246006:0;swww-daemon --format xrgb
+: 1719246026:0;random_swww_wall
+: 1719246044:0;cd scripts
+: 1719246045:0;gP
+: 1719246743:0;./random_swww_wall
+: 1719246802:0;d
+: 1719246802:0;cd
+: 1719246809:0;cd wallpapers/Images
+: 1719246847:0;swww img --transition-type=any --transition-step=30 --transition-fps=60 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719246875:0;swww img --transition-type=center --transition-step=30 --transition-fps=60 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719246901:0;swww img --transition-type=any --transition-step=30 --transition-fps=60 --transition-duration=1 "$(find . -maxdepth 1 | shuf -n 1 )" 
+: 1719246980:0;lg
+: 1719247011:0;random_swww_wall
+: 1719247053:0;cd
+: 1719247055:0;cd wallpapers
+: 1719247057:0;cd sc
+: 1719247058:0;cd
+: 1719247060:0;cd scripts
+: 1719247062:0;ls
+: 1719247071:0;chmod 755 random_swww_wall
+: 1719247074:0;lg
+: 1719247086:0;cd
+: 1719247088:0;c.
+: 1719247090:0;cd scripts
+: 1719247091:0;ls
+: 1719247096:0;nvim random_swww_wall
+: 1719247143:0;random_swww_wall
+: 1719247234:0;find ~/wallpapers/Images -maxdepth 1 | shuf -n1
+: 1719247260:0;pwd
+: 1719247261:0;cd
+: 1719247263:0;cd scripts
+: 1719247266:0;nvim random_swww_wall
+: 1719247323:0;lg
+: 1719247431:0;nvim 
+: 1719247446:0;nvim
+: 1719247448:0;lg
+: 1719247467:0;cd
+: 1719247500:0;cd scripts
+: 1719247501:0;lg
+: 1719247510:0;nvim
+: 1719247520:0;lg
+: 1719247526:0;cd screenshots
+: 1719247532:0;cd ..
+: 1719247534:0;ls
+: 1719247535:0;lg
+: 1719248426:0;yeet swaybg
+: 1719248444:0;cd
+: 1719248444:0;ls
+: 1719248451:0;pacPreviewInstalled --height=100%
+: 1719248466:0;paru -Qeq | fzf --border --reverse --preview='pacman -Qil {}'
+: 1719248478:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719249112:0;:q
+: 1719249318:0;c.
+: 1719249322:0;nvim
+: 1719304056:0;lg
+: 1719304445:0;tmux kill-session -t Editor
+: 1719306536:0;lg
+: 1719306904:0;cd
+: 1719307020:0;yeet kcalc
+: 1719307132:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719307225:0;yeet android-sdk android-sdk-build-tools android-sdk-cmdline-tools-latest android-sdk-platform-tools android-ndk
+: 1719307243:0;yeet android-sdk-platform-tools android-tools
+: 1719307261:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719307381:0;yeet dhcpcd
+: 1719307388:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719307433:0;yeet docker
+: 1719307442:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719307534:0;fwupdmgr upgrade
+: 1719307552:0;fwupdmgr refresh
+: 1719307558:0;fwupdmgr refresh --force
+: 1719307570:0;fwupdmgr get-devices
+: 1719307587:0;fwupdmgr get-updates
+: 1719307593:0;fwupdmgr upgrade
+: 1719307598:0;yeet fwupd
+: 1719307628:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719307684:0;yeet gparted
+: 1719307781:0;fzf 
+: 1719307789:0;nvim
+: 1719307791:0;c.
+: 1719307793:0;nvim
+: 1719307865:0;ls
+: 1719307880:0;fdot
+: 1719307882:0;fdots
+: 1719307889:0;fshow
+: 1719307903:0;nvim
+: 1719307927:0;nvim .zshrc
+: 1719308192:0;fshow
+: 1719308199:0;fzf
+: 1719308213:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719308297:0;source ~/.zshrc
+: 1719308414:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719308442:0;source ~/.zshrc
+: 1719308444:0;clear
+: 1719308450:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719311554:0;source ~/.zshrc
+: 1719311575:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719311580:0;sour
+: 1719311584:0;source ~/.zshrc
+: 1719311588:0;clear
+: 1719311612:0;fzf
+: 1719311646:0;source ~/.zshrc
+: 1719312056:0;fzf
+: 1719312060:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719317243:0;fzf
+: 1719317546:0;lg
+: 1719317549:0;cd scripts
+: 1719317550:0;ls
+: 1719317551:0;lg
+: 1719317604:0;cd ..
+: 1719317606:0;lg
+: 1719318908:0;cd
+: 1719318910:0;cd scripts
+: 1719318918:0;gP
+: 1719318984:0;cd
+: 1719318985:0;c,
+: 1719318986:0;c.
+: 1719318987:0;nvim
+: 1719320503:0;nvim linkdots.sh
+: 1719321738:0;cd
+: 1719321743:0;dirname $0
+: 1719321758:0;dirname dotfiles/linkdots.sh
+: 1719321779:0;dirname dotfiles/scripts/fshow
+: 1719322059:0;c.
+: 1719322060:0;lg
+: 1719322066:0;nvim
+: 1719323032:0;cd
+: 1719323033:0;cd scripts
+: 1719323035:0;gs
+: 1719323037:0;gP
+: 1719323043:0;cd
+: 1719323050:0;cd dotfiles/scripts
+: 1719323051:0;gs
+: 1719323052:0;cd
+: 1719323116:0;c.
+: 1719323119:0;./linkdots.sh
+: 1719324085:0;c.
+: 1719324088:0;./linkdots.sh
+: 1719324091:0;ls
+: 1719324211:0;lg
+: 1719324649:0;c.
+: 1719324652:0;gP
+: 1719325403:0;up
+: 1719332831:0;paru -Ss ticktick
+: 1719333898:0;clear
+: 1719333899:0;fshow
+: 1719333906:0;fzf
+: 1719333931:0;source ~/.zshrc
+: 1719334086:0;fzf
+: 1719334089:0;fshow
+: 1719334109:0;fzf
+: 1719334111:0;clear
+: 1719334114:0;gs
+: 1719334115:0;lg
+: 1719334215:0;cd scripts
+: 1719334215:0;ls
+: 1719334217:0;pwd
+: 1719334218:0;lg
+: 1719334238:0;cd ..
+: 1719334240:0;lg
+: 1719335328:0;tmux kill-session -t Terminal
+: 1719335343:0;brightnessctl set 10+
+: 1719335349:0;tmux kill-session -t Terminal
+: 1719335355:0;brightnessctl set 10+
+: 1719335372:0;brightnessctl set 10-
+: 1719335419:0;paru -S wev
+: 1719335426:0;wev
+: 1719335669:0;clear
+: 1719335702:0;brightnessctl set 10
+: 1719335708:0;brightnessctl set 125
+: 1719335711:0;brightnessctl set 126
+: 1719335717:0;brightnessctl set 128
+: 1719387117:0;tmux ls
+: 1719387126:0;tmux kill-session -t 4
+: 1719387129:0;tmux kill-session -t 5
+: 1719387131:0;tmux kill-session -t 6
+: 1719387132:0;tmux kill-session -t 7
+: 1719387135:0;up
+: 1719387165:0;swww img .config/wall.png --resize=no
+: 1719387172:0;swww img .config/wall.png --resize=crop
+: 1719387177:0;swww img .config/wall.png --resize=fit
+: 1719387251:0;paru -S reflector-simple
+: 1719387414:0;up
+: 1719387422:0;paru -Syyu
+: 1719397158:0;clear
+: 1719397170:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1719397229:0;pactree ttf-sourcecodepro-nerd
+: 1719397234:0;pactree -r ttf-sourcecodepro-nerd
+: 1719397243:0;yeet ttf-sourcecodepro-nerd
+: 1719397294:0;neofetch
+: 1719397296:0;clear
+: 1719412514:0;swww img .config/wall.png --resize=fit
+: 1719412522:0;swww img .config/wall.png --resize=no
+: 1719412529:0;swww img .config/wall.png --resize=crop
+: 1719417027:0;c.
+: 1719417029:0;lg
+: 1719422494:0;fshow
+: 1719422498:0;cd dotfiles/scripts
+: 1719422500:0;fshow
+: 1719422509:0;cd ..
+: 1719422512:0;fshow
+: 1719422558:0;tmux ls
+: 1719488661:0;up
+: 1719503941:0;paru -Ss spotify
+: 1719504003:0;paru -S spotify-qt
+: 1719504182:0;yeet spotify-qt
+: 1719504194:0;paru -Ss ^spotify
+: 1719504261:0;paru -S spotify-launcher
+: 1719504468:0;paru -S spotify-adblock
+: 1719504478:0;clear
+: 1719508167:0;paru -Ss spotx
+: 1719508190:0;paru -S spotx-git
+: 1719508226:0;spotx
+: 1719508281:0;yeet spotx-git
+: 1719508330:0;c.
+: 1719508341:0;lg
+: 1719508402:0;hyprctl clients
+: 1719508728:0;kill 51700 
+: 1719508778:0;rofi -show window
+: 1719508817:0;lg
+: 1719561748:0;up
+: 1719595856:0;clear
+: 1719597198:0;tmux ls
+: 1719649318:0;up
+: 1719732449:0;c.
+: 1719732451:0;lg
+: 1719732574:0;fshow
+: 1719733000:0;clear
+: 1719733003:0;sudo bluetoothctl
+: 1719733069:0;wev
+: 1719733079:0;clear
+: 1719735553:0;upower -d | grep -i "xbox" -A 10
+: 1719768080:0;c.
+: 1719768081:0;lg
+: 1719769597:0;clear
+: 1719769599:0;nvim
+: 1719813844:0;up
+: 1719819269:0;upower -d | grep -i "xbox" -A 10
+: 1719904559:0;hwclock --show
+: 1719904570:0;hwclock --versboe
+: 1719904573:0;hwclock --verbose
+: 1719904581:0;sudo hwclock --show
+: 1719904610:0;timedatectl
+: 1719904665:0;timedatectl set-time "19:00:00"
+: 1719904874:0;timedatectl set-ntp 0
+: 1719904881:0;timedatectl set-time "19:00:00"
+: 1719927213:0;timedatectl set-time "21:00:00"
+: 1719936593:0;timedatectl set-ntp 1
+: 1719907509:0;timedatectl
+: 1719922914:0;clear
+: 1719923033:0;timedatectl set-ntp 1
+: 1719945293:0;up
+: 1720011734:0;cd Projects/Go/N-Cover-Scraper
+: 1720011736:0;gs
+: 1720011739:0;ls
+: 1720011745:0;nvim Numbers.json
+: 1720011780:0;nvim
+: 1720011972:0;tmux kill-session -t Editor
+: 1720012088:0;nvim
+: 1720012096:0;./GoNCoverScraper
+: 1720012287:0;clear
+: 1720012499:0;cd
+: 1720042382:0;vi
+: 1720042383:0;vim
+: 1720013322:0;clear
+: 1720013324:0;exit
+: 1720013913:0;clear
+: 1720013914:0;help
+: 1720013983:0;tmux ls
+: 1720014038:0;clear
+: 1720014052:0;ls
+: 1720014212:0;tmux ls
+: 1720014334:0;ls
+: 1720014441:0;tmux kill-server
+: 1720015350:0;vnstat
+: 1720015696:0;nvim 
+: 1720017351:0;lg
+: 1720017357:0;c.
+: 1720017358:0;lg
+: 1720019139:0;hyprctl clients
+: 1720019238:0;tmux kill-server
+: 1720020017:0;exit
+: 1720020071:0;c.
+: 1720020072:0;lg
+: 1720021168:0;tmux ls
+: 1720021176:0;tmux kill-session -t 16
+: 1720021184:0;hyprctl kill
+: 1720024225:0;hyprctl clients
+: 1720024732:0;tmux ls
+: 1720024739:0;up
+: 1720026060:0;yeet syncthingtray
+: 1720026070:0;paru -S syncthing
+: 1720026077:0;clear
+: 1720116610:0;up
+: 1720116639:0;refresh_mirrors
+: 1720116780:0;paru -
+: 1720116792:0;paru -Syyu
+: 1720116804:0;yeet reflector
+: 1720116811:0;yeet reflector-simple
+: 1720116829:0;up
+: 1720202095:0;clear
+: 1720202096:0;c.
+: 1720202098:0;lg
+: 1720202120:0;fvim
+: 1720254752:0;c.
+: 1720254758:0;nvim --startuptime log.txt
+: 1720254763:0;nvim log.txt
+: 1720255247:0;hyprctl dispatch togglespecialworkspace lf
+: 1720255314:0;hyprctl dispatch togglespecialworkspace docs
+: 1720255325:0;hyprctl dispatch togglespecialworkspace dots
+: 1720255744:0;c.
+: 1720255748:0;nvim log.txt
+: 1720255947:0;cd scripts
+: 1720255949:0;lg
+: 1720256110:0;up
+: 1720257478:0;lg
+: 1720257907:0;rm log.txt
+: 1720257908:0;lg
+: 1720258658:0;cd scripts
+: 1720258658:0;lg
+: 1720258702:0;cd ..
+: 1720258705:0;lg
+: 1720258750:0;clear
+: 1720337807:0;sudo -l
+: 1720337815:0;stat .zshrc
+: 1720337819:0;id sumit
+: 1720339459:0;clear
+: 1720339461:0;up
+: 1720339466:0;most_used 10
+: 1720339482:0;up
+: 1720339497:0;c.
+: 1720339499:0;cd scripts
+: 1720339499:0;ls
+: 1720339502:0;nvim most_used
+: 1720339608:0;most_used 10
+: 1720340116:0;history |   awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' |   grep -v "./" |   column -c3 -s " " -t |   sort -nr |   nl |   head -n "$1"
+: 1720339674:0;most_used 10
+: 1720340116:0;history |   awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' |   grep -v "./" |   column -c3 -s " " -t |   sort -nr |   nl |   head -n "$1"
+: 1720339682:0;nvim most_used
+: 1720339794:0;most_used 10
+: 1720340094:0;man mail
+: 1720340098:0;paru -Ss mail
+: 1720340105:0;paru -Ss ^mail
+: 1720340117:0;clear
+: 1720341623:0;c.
+: 1720341635:0;cd Obsidian/Vault/Archive
+: 1720341636:0;ls
+: 1720341641:0;nvim Numbers.json
+: 1720341693:0;cd scripts
+: 1720341694:0;ls
+: 1720341764:0;nvim most_used
+: 1720341862:0;most_used 10
+: 1720341871:0;nvim most_used
+: 1720341973:0;history
+: 1720341980:0;history |   awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' |   grep -v "./" |   column -c3 -s " " -t |   sort -nr |   nl |   head -n "$1"
+: 1720341984:0;history |   awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' |   grep -v "./" |   column -c3 -s " " -t |   sort -nr |   nl |   head -n "10"
+: 1720342024:0;cd
+: 1720342029:0;cat .zsh_history
+: 1720342582:0;history
+: 1720342589:0;whatis history
+: 1720342595:0;man history
+: 1720342614:0;whatis sumit
+: 1720342620:0;love
+: 1720342624:0;happiness
+: 1720342626:0;kill
+: 1720342630:0;bash
+: 1720342643:0;ls
+: 1720342654:0;fclip
+: 1720342705:0;cd 
+: 1720342707:0;cd wallpapers/Images
+: 1720342708:0;ls
+: 1720342711:0;fzf 
+: 1720342764:0;fzf --preview='chafa {} -f sixel -s "$2x$3" --animate off --polite on'
+: 1720342778:0;fzf --preview='chafa {} -f sixel --animate off --polite on'
+: 1720342802:0;man fzf
+: 1720342861:0;fzf --preview='chafa {} -f sixel -s "$2x$3" --animate off --polite on'
+: 1720342908:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_COLUMNSx$FZF_PREVIEW_LINES" --animate off --polite on'
+: 1720342917:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_COLUMNSx$FZF_PREVIEW_LINES" --animate off'
+: 1720342923:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_COLUMNSx$FZF_PREVIEW_LINES"'
+: 1720342938:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_LINESx$FZF_PREVIEW_COLUMNS"'
+: 1720342951:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_LINESx$FZF_PREVIEW_COLUMNS" --animate off --polite on'
+: 1720342976:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_COLUMNSx$FZF_PREVIEW_LINES" --animate off --polite on'
+: 1720342998:0;fzf --preview='chafa {} -f sixel -s "$FZF_PREVIEW_COLUMNSx$FZF_PREVIEW_LINES" --animate off --polite on' --preview-window=50%
+: 1720343033:0;man sixel
+: 1720343036:0;man chafa
+: 1720343121:0;fzf --preview='chafa {} -f sixel --animate off --polite on' --preview-window=50%
+: 1720343159:0;fzf --preview='chafa {} -f sixel --view-size "$FZF_PREVIEW_COLUMNSx$FZF_PREVIEW_LINES" --animate off --polite on' --preview-window=50%
+: 1720343203:0;fzf --preview='chafa {} -f sixel --view-size "720x320" --animate off --polite on' --preview-window=50%
+: 1720343215:0;fzf --preview='chafa {} -f sixel -s "720x320" --animate off --polite on' --preview-window=50%
+: 1720343238:0;fzf --preview='chafa {} -f sixel -s "320x180" --animate off --polite on' --preview-window=50%
+: 1720343251:0;fzf --preview='chafa {} -f sixel -s "200x100" --animate off --polite on' --preview-window=50%
+: 1720343281:0;fzf --preview='chafa {} -f sixel --fit-width --animate off --polite on' --preview-window=50%
+: 1720343290:0;fzf --preview='chafa {} -f sixel --fit-width' --preview-window=50%
+: 1720343417:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}'
+: 1720343426:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}'
+: 1720343445:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50%
+: 1720343486:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort
+: 1720343525:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343642:0;hyprctl clients
+: 1720343703:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343708:0;cd wallpapers/Images
+: 1720343712:0;fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343835:0;fzf ~/wallpapers/Images --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343916:0;fd . ~/wallpapers/Images | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343927:0;clear
+: 1720343934:0;fd ~/wallpapers/Images | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343944:0;fd . ~/wallpapers/Images | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720343952:0;clear
+: 1720344059:0;fd . ~/wallpapers/Images | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720344095:0;man fd
+: 1720344116:0;fd . ~/wallpapers/Images --relative-path | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720344131:0;man fd
+: 1720344185:0;fd ~/wallpapers/Images --relative-path | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720344207:0;fd --relative-path ~/wallpapers/Images | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1720344214:0;man fd
+: 1720344290:0;ls
+: 1720344297:0;nvim fpreview.sh
+: 1720344333:0;fman
+: 1720344348:0;cheat_sheet fd
+: 1720344356:0;clear
+: 1720344360:0;ls
+: 1720344363:0;fshow
+: 1720344397:0;nvim fwall
+: 1720344577:0;chmod 755 fwall
+: 1720344604:0;fwall
+: 1720344653:0;nvim fwall
+: 1720344828:0;clear
+: 1720344829:0;man fzf
+: 1720345052:0;tmux ls
+: 1720345076:0;fwall
+: 1720345263:0;clear
+: 1720345276:0;fwall
+: 1720345284:0;clear
+: 1720345287:0;fwall
+: 1720345614:0;clear
+: 1720345733:0;fwall
+: 1720346214:0;c.
+: 1720346215:0;clear
+: 1720346227:0;fwall
+: 1720424895:0;up
+: 1720444574:0;hyprctl kill
+: 1720450464:0;up
+: 1720543702:0;neofetch
+: 1720543707:0;uptime
+: 1720543710:0;uptime -h
+: 1720543713:0;uptime -p
+: 1720630845:0;up
+: 1720681742:0;upower -d | grep -i "xbox" -A 10
+: 1720685311:0;hyprctl kill
+: 1720701495:0;c.
+: 1720701497:0;lg
+: 1720701506:0;cd scripts
+: 1720701506:0;ls
+: 1720701507:0;lg
+: 1720772397:0;upower -d | grep -i "xbox" -A 10
+: 1720797427:0;ls
+: 1720797436:0;paru -Ss ^zed
+: 1720797454:0;paru -Qs zed
+: 1720797459:0;paru -Sis zed
+: 1720797462:0;paru -Sq zed
+: 1720797476:0;paru -Si zed
+: 1720797485:0;paru -S zed
+: 1720799365:0;paru -Syu
+: 1720799389:0;paru -S zed
+: 1720799520:0;source "/home/sumit/.venv/bin/activate"
+: 1720799524:0;ls
+: 1720799526:0;echo
+: 1720809164:0;hello
+: 1720941261:0;cd Projects/Go/N-Cover-Scraper
+: 1720942498:0;ls
+: 1720942506:0;./GoNCoverScraper
+: 1720942568:0;ls
+: 1720942750:0;tmux ls
+: 1720942755:0;lg
+: 1720942773:0;cd scripts
+: 1720942774:0;lg
+: 1720942791:0;fwall
+: 1720942808:0;clear
+: 1720942832:0;u0
+: 1720942838:0;up
+: 1720942847:0;upower -d | grep -i "xbox" -A 10
+: 1720977578:0;clear
+: 1721220864:0;hyprctl clients
+: 1721222049:0;clear
+: 1721222050:0;up
+: 1721222082:0;paru -S visual code
+: 1721222090:0;paru -Ss visual code
+: 1721222132:0;yeet visual-studio-code-bin
+: 1721222136:0;clear
+: 1721222140:0;omz update
+: 1721222149:0;clear
+: 1721222166:0;uninstall_oh_my_zsh
+: 1721222172:0;clear
+: 1721222176:0;shell
+: 1721222180:0;which shell
+: 1721222189:0;which 
+: 1721222198:0;which $SHELL
+: 1721243321:0;upower -d | grep -i "xbox" -A 10
+: 1721284700:0;paru -Ss advance mp
+: 1721284703:0;paru -Ss advance map
+: 1721284823:0;paru -Ss tile molester
+: 1721284855:0;paru -Ss vbam
+: 1721285011:0;clear
+: 1721285028:0;sudoedit /etc/pacman.conf
+: 1721285136:0;paru -Ss ^wine
+: 1721285157:0;paru -S winw
+: 1721285160:0;paru -S wine
+: 1721285171:0;clear
+: 1721290905:0;timedatectl set-ntp 0
+: 1721290928:0;timedatectl set-time "17:00:00"
+: 1721304441:0;hyprctl kill
+: 1721304455:0;timedatectl set-ntp 1
+: 1721318461:0;c.
+: 1721318471:0;git checkout -b TestBranch
+: 1721318473:0;ls
+: 1721318477:0;git checkout
+: 1721318488:0;git checkout -b
+: 1721318510:0;git branch
+: 1721318530:0;git checkout -b main
+: 1721318535:0;git checkout main
+: 1721318537:0;ls
+: 1721318589:0;git checkout -d TestBranch
+: 1721318594:0;git branch
+: 1721318638:0;git checkout main
+: 1721318640:0;ls
+: 1721318650:0;git branch -d TestBranch
+: 1721318652:0;ls
+: 1721318654:0;git branch
+: 1721319264:0;cd scripts
+: 1721319272:0;ls
+: 1721319387:0;clear
+: 1721319588:0;cd
+: 1721319590:0;ls
+: 1721319596:0;nvim .gitconfig
+: 1721321933:0;neofetch
+: 1721321936:0;fastfetch
+: 1721321942:0;neofetch --config none
+: 1721327344:0;tty-clock 
+: 1721327466:0;yeet tty-cloc
+: 1721327472:0;yeet tty-clock
+: 1721327484:0;tty-clock
+: 1721327489:0;yeet tty-clock
+: 1721327508:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1721372608:0;up
+: 1721372622:0;paru -S archlinux-keyring
+: 1721372645:0;paru -Sy
+: 1721372703:0;refresh_mirrors
+: 1721372752:0;paru -S reflector-simple
+: 1721372808:0;ping google.com
+: 1721372946:0;refresh_mirrors
+: 1721372992:0;tmux kill-server
+: 1721372995:0;ls
+: 1721373024:0;paru -Sy
+: 1721373179:0;paru -S archlinux-keyring
+: 1721373555:0;up
+: 1721374807:0;clear
+: 1721374813:0;paru -Syyu
+: 1721375054:0;paru -S linux linux-firmware
+: 1721375139:0;clear
+: 1721375204:0;tmux kill-session -t Editor
+: 1721375227:0;ls
+: 1721375231:0;lf
+: 1721375269:0;ls
+: 1721375273:0;nvim main.go
+: 1721375318:0;cd ~/Projects/Go/Calculator
+: 1721375318:0;ls
+: 1721375321:0;nvim main.go
+: 1721377255:0;cleawr
+: 1721377257:0;clear
+: 1721377263:0;upower -d | grep -i "xbox" -A 10
+: 1721408361:0;up
+: 1721408386:0;tmux ls
+: 1721408475:0;up
+: 1721408499:0;clear
+: 1721408502:0;nvim main.go
+: 1721410255:0;hyprctl kill
+: 1721461344:0;cd ~/Projects/Go/N-Cover-Scraper
+: 1721461365:0;up
+: 1721461498:0;startship print-config | grep timeout
+: 1721461510:0;starship print-config | grep timeout
+: 1721461563:0;nvim starship.toml
+: 1721461706:0;ls
+: 1721461713:0;tmux ls
+: 1721461715:0;cd ~/Projects/Go/N-Cover-Scraper
+: 1721461718:0;ls
+: 1721461723:0;./GoNCoverScraper
+: 1721461757:0;ls
+: 1721461761:0;lf
+: 1721461767:0;cd Archive
+: 1721461767:0;ls
+: 1721461771:0;nvm Numbers.json
+: 1721461780:0;nvim Numbers.json
+: 1721461828:0;clear
+: 1721461831:0;./GoNCoverScraper
+: 1721461847:0;lf
+: 1721461860:0;clear
+: 1721461941:0;lg
+: 1721461947:0;c.
+: 1721461948:0;lg
+: 1721461951:0;fshow
+: 1721461959:0;gs
+: 1721461970:0;lg
+: 1721462063:0;cd scripts
+: 1721462064:0;lg
+: 1721462179:0;cd ..
+: 1721462181:0;lg
+: 1721462385:0;yeet tree
+: 1721462390:0;up
+: 1721462409:0;clear
+: 1721462415:0;lf
+: 1721462556:0;clear
+: 1721462560:0;cd
+: 1721462564:0;cd Projects/Go
+: 1721462566:0;clear
+: 1721462798:0;paru -Ss blobdrop
+: 1721462812:0;clear
+: 1721474929:0;paru -Qi blobdrop-git
+: 1721474938:0;paru -Si blobdrop-git
+: 1721474951:0;paru -Qil blobdrop-git
+: 1721474955:0;paru -Sil blobdrop-git
+: 1721474978:0;pacman -Siv blobdrop-git
+: 1721475063:0;paru -S lynx
+: 1721475073:0;paru -Ss lynx
+: 1721480200:0;paru -S lynx
+: 1721480211:0;lyn
+: 1721480213:0;_lynx
+: 1721480215:0;lynx
+: 1721480220:0;clear
+: 1721480227:0;paru -Ss exiftool
+: 1721483354:0;clear
+: 1721483388:0;tmux ls
+: 1721483394:0;upower -d
+: 1721483409:0;upower -d | grep -i "xbox" -A 10
+: 1721491274:0;yeet jynx
+: 1721491284:0;yeet lynx
+: 1721501375:0;lt
+: 1721501380:0;c.
+: 1721501381:0;lt
+: 1721501384:0;ls
+: 1721501385:0;la
+: 1721501387:0;lt
+: 1721501389:0;ll
+: 1721501419:0;ll | fzf --bind=
+: 1721501431:0;ll | fzf --bind='enter:nvim'
+: 1721501437:0;ll | fzf --bind='enter:exec nvim'
+: 1721501442:0;fwall
+: 1721501460:0;cd scripts
+: 1721501462:0;nvim
+: 1721501490:0;fwall
+: 1721501503:0;lf
+: 1721501520:0;fvim
+: 1721501529:0;fdots
+: 1721552840:0;up
+: 1721552888:0;paru -Ss spotify
+: 1721552908:0;pacman -Ss spotify
+: 1721552966:0;paru -S psst-git spot-client
+: 1721553021:0;up
+: 1721553070:0;paru -S psst-git spot-client
+: 1721553136:0;yeet psst-git spot-client
+: 1721553670:0;paru -S nethogs
+: 1721553680:0;clear
+: 1721553682:0;nethogs
+: 1721553687:0;sudo nethogs
+: 1721553838:0;paru -S bandwhich
+: 1721553850:0;clear
+: 1721553852:0;bandwhich
+: 1721553856:0;sudo bandwhich
+: 1721553962:0;paru -S iftop
+: 1721553969:0;paru -S bmon
+: 1721553975:0;bmon
+: 1721554000:0;sudo iftop
+: 1721554143:0;yeet nethogs iftop bmon bandwhich
+: 1721554148:0;paru -S vnstat
+: 1721554159:0;vnstat help
+: 1721554162:0;vnstat --help
+: 1721554179:0;fman
+: 1721554216:0;vnstat -d
+: 1721554257:0;sudo systemctl start vnstat.service
+: 1721554263:0;sudo systemctl enable vnstat.service
+: 1721554283:0;systemctl status vnstat.service
+: 1721554287:0;systemctl status vnstats.service
+: 1721554290:0;systemctl status vnstatd.service
+: 1721554316:0;sudo systemctl enable --now vnstatd.service
+: 1721554324:0;vnstat
+: 1721554330:0;vnstat -h
+: 1721554410:0;paru -S netdata
+: 1721554486:0;netdata
+: 1721554492:0;sudo netdata
+: 1721554594:0;yeet netdata 
+: 1721554792:0;paru -Ss netraf
+: 1721554842:0;paru -Ss atop
+: 1721554854:0;paru -S atop
+: 1721554883:0;atop
+: 1721554920:0;sudo atop
+: 1721554966:0;paru -S netatop
+: 1721555000:0;atop
+: 1721555004:0;netatop
+: 1721555009:0;sudo atop
+: 1721555315:0;atop
+: 1721555322:0;sudo atop
+: 1721555753:0;yeet netatop atop
+: 1721555763:0;paru -S netdata
+: 1721555773:0;sudo netdata
+: 1721555799:0;sudoedit /etc/netdata/netdata.conf
+: 1721555823:0;sudo systemctl restart netdata.service
+: 1721555852:0;sudo systemctl stop netdata.service
+: 1721555859:0;sudo systemctl start netdata.service
+: 1721555984:0;sudo /usr/libexec/netdata/plugins.d/apps.plugin 1
+: 1721556473:0;yeet netdata
+: 1721556834:0;clear
+: 1721556901:0;cd
+: 1721556904:0;fzf
+: 1721557006:0;killall dunst && notify-send "Hello"
+: 1721557396:0;cp .zsh_history .zsh_history.bak
+: 1721557549:0;history
+: 1721557582:0;ls -la
+: 1721557585:0;la
+: 1721557588:0;ls -la
+: 1721557593:0;la
+: 1721557623:0;tmux kill-server
+: 1721557720:0;pacPreviewInstalled
+: 1721557740:0;pacman -Qq | grep fetch
+: 1721557743:0;neofetch
+: 1721557752:0;neofetch --config none
+: 1721644880:0;up
+: 1721644953:0;ls
+: 1721644960:0;nvim README.md
+: 1721645127:0;nvim
+: 1721664121:0;up
+: 1721664146:0;fzf
+: 1721664149:0;cd
+: 1721664150:0;fzf
+: 1721664162:0;clear
+: 1721664163:0;fzf
+: 1721664183:0;pacman -Slq | fzf --preview='pacman -Si {}'
+: 1721664294:0;paru -S multipatch
+: 1721664309:0;paru -Ss multipatch
+: 1721664316:0;paru -Ss multi patch
+: 1721664839:0;paru -Ss tsukoyomi
+: 1721664848:0;paru -Ss tsukuyomi
+: 1721665147:0;paru -Ss tiledggd
+: 1721665163:0;paru -Ss tiled ggd
+: 1721665168:0;paru -Ss tiled gd
+: 1721665245:0;paru -Ss visual boy 
+: 1721665258:0;paru -Ss vba 
+: 1721665292:0;paru -S vbam-sdl
+: 1721665330:0;vba
+: 1721665337:0;vbam
+: 1721665396:0;cd Test/vbaTest
+: 1721665403:0;vbam Pokemon\ Unbound.gba
+: 1721665428:0;yeet vbam-sdl
+: 1721665439:0;paru -S vbam-wx
+: 1721665930:0;:q
+: 1721666045:0;yeet vbam-wx
+: 1721666721:0;clear
+: 1721666727:0;paru -Ss bottles
+: 1721666735:0;paru -Ss bottle
+: 1721666759:0;paru -Ss bottles
+: 1721666805:0;paru -S bottles
+: 1721668329:0;clear
+: 1721668331:0;fzf
+: 1721668337:0;clear
+: 1721668338:0;fzf
+: 1721668341:0;cd 
+: 1721668341:0;fzf
+: 1721668365:0;pm
+: 1721668370:0;c.
+: 1721668372:0;cd scripts
+: 1721668373:0;ls
+: 1721668376:0;nvim function.sh
+: 1721668484:0;pacPreviewAll
+: 1721668496:0;pacPreviewInstalled
+: 1721668541:0;pm
+: 1721668572:0;hyprctl kill
+: 1721668580:0;nvim function.sh
+: 1721668622:0;pm
+: 1721670394:0;ls
+: 1721670396:0;pm
+: 1721670413:0;clear
+: 1721670420:0;source ~/.zshrc
+: 1721670422:0;pm
+: 1721670429:0;clear
+: 1721734419:0;up
+: 1721736787:0;refresh_mirrors
+: 1721746519:0;up
+: 1721747069:0;cd Downloads/\[109\]tilemolester-0/tilemolester-0.16/
+: 1721747070:0;s
+: 1721747071:0;ls
+: 1721747151:0;java
+: 1721747154:0;pm
+: 1721747284:0;clear
+: 1721747291:0;paru -S jre
+: 1721748266:0;clear
+: 1721748269:0;paru -S jre
+: 1721748302:0;clear
+: 1721748304:0;ls
+: 1721748308:0;java -jar tm.jar
+: 1721749309:0;lear
+: 1721751152:0;c.
+: 1721751154:0;clear
+: 1721751156:0;gs
+: 1721751158:0;cd scripts
+: 1721751159:0;ls
+: 1721751160:0;gs
+: 1721751164:0;fshow
+: 1721751167:0;lg
+: 1721751272:0;man fzf
+: 1721751315:0;cd ..
+: 1721751315:0;gs
+: 1721751317:0;lg
+: 1721753239:0;gp
+: 1721801080:0;up
+: 1721801116:0;fwall
+: 1721801260:0;paru -S dolphin
+: 1721801285:0;paru -S nautilus
+: 1721801291:0;paru -S nemo
+: 1721801313:0;paru -S nemo nautilus
+: 1721806034:0;sudoedit /etc/pacman.d/mirrorlist
+: 1721806055:0;sudo pacman -Syyu
+: 1721806201:0;bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh)
+: 1721806365:0;pm
+: 1721806603:0;yeet spotify-launcher
+: 1721806637:0;bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh)
+: 1721806738:0;hyprctl clients
+: 1721806766:0;clear
+: 1721806774:0;spotify-launcher
+: 1721806944:0;bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh)
+: 1721806961:0;which spotify
+: 1721806964:0;whereis spotify
+: 1721806984:0;clear
+: 1721807004:0;paru -S spotx-linux
+: 1721807014:0;paru -Ss spotc
+: 1721807016:0;paru -Ss spotx
+: 1721807032:0;paru -S spotx-linux
+: 1721807066:0;spotx
+: 1721807326:0;paru -S spotify-adblock
+: 1721807444:0;c.
+: 1721807444:0;ls
+: 1721807449:0;cd .local/share/applications
+: 1721807450:0;ls
+: 1721807469:0;nvim Spotify.desktop
+: 1721807513:0;c.
+: 1721807514:0;cd .local/share/applications
+: 1721807518:0;rm Spotify.desktop
+: 1721807752:0;yeet thunar nemo
+: 1721808467:0;ls
+: 1721808468:0;clear
+: 1721808469:0;ls
+: 1721815028:0;paru -Qs zathura
+: 1721816441:0;clear
+: 1721876031:0;up
+: 1721894285:0;:q
+: 1721894712:0;fzf
+: 1721894735:0;pm
+: 1721894740:0;clear
+: 1721894749:0;ncdu
+: 1721895070:0;ls
+: 1721895094:0;rm -f Fire\ Emblem\ Echoes\ -\ Shadows\ of\ Valentia\ \(USA\)\ \(En,Fr,Es\).zip Kingdom\ Hearts\ 3D\ -\ Dream\ Drop\ Distance\ \(USA\)\ \(En,Fr\).zip Radiant\ Historia\ -\ Perfect\ Chronology\ \(USA\).zip Rune\ Factory\ 4\ \(USA\).zip Shin\ Megami\ Tensei\ -\ Devil\ Survivor\ 2\ -\ Record\ Breaker\ \(USA\).zip Shin\ Megami\ Tensei\ IV\ \(USA\).zip 
+: 1721895096:0;clear
+: 1721895097:0;ls
+: 1721895123:0;rsync -avhP ./Fire\ Emblem\ Echoes\ -\ Shadows\ of\ Valentia\ \(USA\)\ \(En,Fr,Es\).3ds ./Kingdom\ Hearts\ 3D\ -\ Dream\ Drop\ Distance\ \(USA\)\ \(En,Fr\).3ds ./Radiant\ Historia\ -\ Perfect\ Chronology\ \(USA\).3ds ./Rune\ Factory\ 4\ \(USA\).3ds ./Shin\ Megami\ Tensei\ -\ Devil\ Survivor\ 2\ -\ Record\ Breaker\ \(USA\).3ds ./Shin\ Megami\ Tensei\ IV\ \(USA\).3ds ~/Roms/n3ds/
+: 1721895612:0;clear
+: 1721895614:0;ls
+: 1721895619:0;:q
+: 1721895696:0;ls
+: 1721895743:0;curl -F"file=@OnePieceChars" https://0x0.st
+: 1721895764:0;curl -F"file=@OnePieceChars.jpg" https://0x0.st
+: 1721895870:0;:q
+: 1721897003:0;xgd-mime tmux-client-23072.log
+: 1721897011:0;man xdg-mime
+: 1721897020:0;cd dotfiles
+: 1721897021:0;ls
+: 1721897030:0;xdg-mime query .zshrc
+: 1721897043:0;fman
+: 1721897060:0;xdg-mime query filetype .zshrc
+: 1721897076:0;paru -S mimetype
+: 1721897192:0;file --mime-type -b .zshrc
+: 1721897200:0;file --mime-type -b README.md
+: 1721897748:0;ls
+: 1721897757:0;wl-copy animelist.test
+: 1721897798:0;wl-copy --mime-type text/plain < animelist.test
+: 1721897817:0;wl-copy --type text/plain < animelist.test
+: 1721897907:0;run-help cat
+: 1721897919:0;cat animelist.test | wl-copy --type text/plain
+: 1721897932:0;:q
+: 1721898799:0;slurp
+: 1721898809:0;man slurp
+: 1721898819:0;slurp -d
+: 1721898905:0;man grim
+: 1721898955:0;Usage: grim [options...] [output-file]\
+\
+  -h              Show help message and quit.\
+  -s <factor>     Set the output image scale factor. Defaults to the\
+                  greatest output scale factor.\
+  -g <geometry>   Set the region to capture.\
+  -t png|ppm|jpeg Set the output filetype. Defaults to png.\
+  -q <quality>    Set the JPEG filetype quality 0-100. Defaults to 80.\
+  -l <level>      Set the PNG filetype compression level 0-9. Defaults to 6.\
+  -o <output>     Set the output name to capture.\
+  -c              Include cursors in the screenshot.\
+
+: 1721899049:0;clear
+: 1721899053:0;wl-copy -l
+: 1721899057:0;wl-paste -l
+: 1721925404:0;clear
+: 1721925408:0;yay -S pinta
+: 1721925413:0;paru -S pinta
+: 1721925566:0;cd 
+: 1721925568:0;cd Downloads
+: 1721925569:0;ls
+: 1721925601:0;curl -F"file=@Fyou.jpg" https://0x0.st | wl-copy
+: 1721925667:0;https://0x0.st/XfKU.jpg\
+
+: 1721925853:0;clear
+: 1721925854:0;up
+: 1721926525:0;clear
+: 1721926529:0;ls
+: 1721926531:0;cd
+: 1721926532:0;ls
+: 1721926535:0;cd .config
+: 1721926535:0;ls
+: 1721926574:0;clear
+: 1721926630:0;pactree electron28
+: 1721926634:0;pactree -r electron28
+: 1721926639:0;pactree -r electron30
+: 1721926642:0;pactree -r electron31
+: 1721926648:0;pacman -Qm
+: 1721926652:0;pacman -Qk
+: 1721926683:0;pacman -Qdtq
+: 1721926685:0;clear
+: 1721926688:0;pacman -Qdtq
+: 1721926701:0;yeet electron28
+: 1721926719:0;yeet xorg-xinput
+: 1721926731:0;yeet xorg-xhost
+: 1721926748:0;clear
+: 1721926750:0;pacman -Qdtq
+: 1721926761:0;yeet python-ply
+: 1721926773:0;yeet hyprwayland-scanner-git
+: 1721926784:0;neofetch --config all
+: 1721926787:0;neofetch --config
+: 1721926804:0;up
+: 1721930415:0;yeet spotx-linux 
+: 1721930422:0;up
+: 1722015018:0;pm
+: 1722016800:0;up
+: 1722019045:0;clear
+: 1722019045:0;ls
+: 1722019049:0;nvim mimeapps.list
+: 1722066543:0;up
+: 1722067975:0;clear
+: 1722068770:0;:q
+: 1722070886:0;update_roms
+: 1722091140:0;lf
+: 1722091328:0;clear
+: 1722091343:0;tmux kill-server
+: 1722091639:0;paru -S wezterm
+: 1722091683:0;lls
+: 1722091684:0;ls
+: 1722091688:0;clear
+: 1722091704:0;ls
+: 1722091705:0;lf
+: 1722091731:0;c.
+: 1722091732:0;ls
+: 1722091734:0;lg
+: 1722092942:0;yeet lynx
+: 1722093047:0;lg
+: 1722093312:0;cleare
+: 1722093314:0;clear
+: 1722093317:0;wl-paste -l
+: 1722093851:0;cd scripts
+: 1722093852:0;ls
+: 1722093857:0;wl-paste -l
+: 1722093859:0;cleare
+: 1722093861:0;clear
+: 1722094045:0;paru -Si greenclip
+: 1722094054:0;paru -S greenclip
+: 1722094074:0;rofi-greenclip
+: 1722094101:0;rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+: 1722094120:0;clear
+: 1722094217:0;greenclip daemon
+: 1722094271:0;sudo systemctl enable --now greenclip.service
+: 1722094309:0;greenclip daemon
+: 1722094331:0;cliphist
+: 1722094674:0;greenclip print | grep . | fzf -e | xargs -r -d'\n' -I '{}' greenclip print '{}'
+: 1722094716:0;cleare
+: 1722094720:0;greenclip print | grep . | fzf -e | xargs -r -d'\n' -I '{}' greenclip print '{}'
+: 1722094984:0;cleare
+: 1722094984:0;c.
+: 1722094986:0;clear
+: 1722094986:0;ls
+: 1722094999:0;lg
+: 1722095001:0;cd
+: 1722095002:0;ls
+: 1722095008:0;cd dotfiles/scripts
+: 1722095009:0;ls
+: 1722095010:0;lg
+: 1722095016:0;ls
+: 1722095017:0;gs
+: 1722095022:0;lg
+: 1722095084:0;cd ..
+: 1722095085:0;ls
+: 1722095086:0;lg
+: 1722095137:0;ls
+: 1722095138:0;clrea
+: 1722095139:0;clear
+: 1722095140:0;ls
+: 1722095141:0;lf
+: 1722095144:0;nvim
+: 1722095152:0;lg
+: 1722095156:0;lf
+: 1722095176:0;ls
+: 1722095177:0;lf
+: 1722095440:0;cliphist list
+: 1722095451:0;cliphist list | wc -l
+: 1722095459:0;cliphist list | fzf
+: 1722095500:0;up
+: 1722095508:0;ls
+: 1722095512:0;cd
+: 1722095513:0;c.
+: 1722095514:0;ls
+: 1722095516:0;cd wezterm
+: 1722095517:0;ls
+: 1722095517:0;lf
+: 1722095570:0;ls
+: 1722095580:0;nvim wezterm.lua
+: 1722095707:0;yazi
+: 1722098264:0;clear
+: 1722098295:0;cd wezterm
+: 1722098889:0;yazi
+: 1722099072:0;clear
+: 1722099073:0;yy
+: 1722099153:0;yeet yazi
+: 1722099159:0;yeet yazi-git
+: 1722099170:0;gh
+: 1722099171:0;ls
+: 1722099172:0;cd
+: 1722099174:0;cd .config
+: 1722099175:0;ls
+: 1722099186:0;rm yazi
+: 1722099187:0;lc
+: 1722099188:0;cd
+: 1722099193:0;paru -S yazi
+: 1722099206:0;yy
+: 1722099279:0;cleare
+: 1722099281:0;clear
+: 1722099297:0;cd dotfiles/yazi
+: 1722099327:0;yy
+: 1722159270:0;up
+: 1722166698:0;clear
+: 1722166699:0;ls
+: 1722167466:0;lf
+: 1722167471:0;c.
+: 1722167472:0;sl
+: 1722167474:0;ls
+: 1722167478:0;nvim wezterm/wezterm.lua
+: 1722167549:0;lf
+: 1722167566:0;paru -S kitty alacritty
+: 1722167574:0;lf
+: 1722167582:0;clrea
+: 1722167584:0;clear
+: 1722167597:0;ls
+: 1722167598:0;lf
+: 1722167633:0;yeet kitty alacritty
+: 1722167636:0;clrea
+: 1722167638:0;clear
+: 1722167913:0;nvim wezterm.lua
+: 1722168019:0;ls
+: 1722168024:0;nvim wezterm.lua
+: 1722173682:0;tmux kill-session -t Terminal
+: 1722173694:0;paru -Ss wezterm
+: 1722173705:0;paru -S wezterm-git
+: 1722173788:0;cd /usr/share/terminfo/w/
+: 1722173788:0;ls
+: 1722173795:0;sudoedit wezterm
+: 1722173805:0;rm wezterm
+: 1722173811:0;rm wezterm 
+: 1722173820:0;sudo rm -f wezterm
+: 1722173822:0;ls
+: 1722173825:0;paru -S wezterm-git
+: 1722173850:0;ls
+: 1722173855:0;c.
+: 1722173862:0;cd wezterm
+: 1722173863:0;ls
+: 1722173870:0;nvim wezterm.lua
+: 1722174344:0;tmux kill-session -t Editor
+: 1722174387:0;yeet wezterm-git
+: 1722174402:0;paru -S wezterm
+: 1722174421:0;wezterm
+: 1722174430:0;wezterm --config=none
+: 1722174517:0;paru -S wezterm-git
+: 1722174572:0;lf
+: 1722174579:0;clear
+: 1722174580:0;c.
+: 1722174581:0;ls
+: 1722174582:0;clrea
+: 1722174584:0;clear
+: 1722174585:0;lf
+: 1722174592:0;ls
+: 1722174601:0;./GoNCoverScraper
+: 1722174615:0;clear
+: 1722174633:0;tmux kill-session -t FileManager
+: 1722174681:0;c.
+: 1722174683:0;cd wezterm
+: 1722174684:0;ls
+: 1722174687:0;lg
+: 1722174696:0;nvim wezterm.lua
+: 1722174800:0;clrea
+: 1722174802:0;clear
+: 1722174809:0;lf
+: 1722174820:0;ls
+: 1722174822:0;nvim wezterm.lua
+: 1722174931:0;ls
+: 1722174976:0;clear
+: 1722174982:0;nvim wezterm.lua
+: 1722174987:0;c.
+: 1722174988:0;cd wezterm
+: 1722174989:0;ls
+: 1722174992:0;nvim wezterm.lua
+: 1722175089:0;tmux
+: 1722175091:0;ls
+: 1722175093:0;nvim wezterm.lua
+: 1722175191:0;:q
+: 1722175207:0;tmux
+: 1722175210:0;tmux ls
+: 1722175215:0;cd dotfiles/wezterm
+: 1722175216:0;ls
+: 1722175218:0;nvim wezterm.lua
+: 1722175302:0;cd wezterm
+: 1722175305:0;cd dotfiles/wezterm
+: 1722175306:0;ls
+: 1722175314:0;nvim wezterm.lua
+: 1722175378:0;paru -Ss zsh-auto
+: 1722175409:0;pm
+: 1722175489:0;source ~/.zshrc
+: 1722175497:0;ls
+: 1722175516:0;tmux kill-server
+: 1722176306:0;ls
+: 1722176306:0;lf
+: 1722186914:0;ls
+: 1722186929:0;compgen
+: 1722186936:0;man compgen
+: 1722186961:0;clear
+: 1722236499:0;yeet wezterm-git
+: 1722236507:0;yeet rofi-greenclip
+: 1722236514:0;yeet pinta
+: 1722236527:0;yeet spotify-adblock-git
+: 1722236543:0;yeet jre
+: 1722236572:0;yeet bottles
+: 1722236582:0;yeet vbam
+: 1722240694:0;ls
+: 1722240697:0;c.
+: 1722240698:0;nvim .
+: 1722240741:0;nvim
+: 1722240786:0;nvim .
+: 1722240850:0;up
+: 1722241672:0;tmux kill-session -t Editor
+: 1722241791:0;up
+: 1722241813:0;ls
+: 1722241980:0;up
+: 1722242020:0;nvim
+: 1722242035:0;lg
+: 1722242430:0;clear
+: 1722242697:0;ls
+: 1722242699:0;gs
+: 1722242708:0;cd scripts
+: 1722242709:0;ls
+: 1722242710:0;gs
+: 1722242718:0;c.
+: 1722242719:0;ls
+: 1722242746:0;c.
+: 1722252116:0;cd
+: 1722252117:0;ls
+: 1722252120:0;lf
+: 1722252123:0;ls
+: 1722252131:0;cd MarrowCopy
+: 1722252132:0;ls
+: 1722252134:0;nvim main.go
+: 1722252202:0;cd ..
+: 1722252203:0;ls
+: 1722252209:0;nvim Calculator/main.go
+: 1722252743:0;cd Calculator
+: 1722252743:0;ls
+: 1722252745:0;nvim main.go
+: 1722254092:0;cd ../../Python/
+: 1722254093:0;ls
+: 1722254099:0;cd Single\ file\ projects
+: 1722254099:0;ls
+: 1722254102:0;cd ..
+: 1722254104:0;cd Web\ Scraping
+: 1722254104:0;ls
+: 1722254109:0;cd ImageDownload
+: 1722254109:0;la
+: 1722254115:0;nvim Complete_Version.py
+: 1722254361:0;up
+: 1722254460:0;ls
+: 1722254463:0;iwctl
+: 1722254471:0;pacman -Ss iwctl
+: 1722254485:0;pm
+: 1722254495:0;paru -S iwd
+: 1722254504:0;iwctl
+: 1722254520:0;yeet iwd
+: 1722254561:0;paru -Qtkd
+: 1722254575:0;paru -Qdtq
+: 1722265537:0;waybar
+: 1722265953:0;clear
+: 1722271300:0;tmux ls
+: 1722271312:0;tmux kill-server
+: 1722271319:0;clear
+: 1722272919:0;gs
+: 1722272924:0;cd scripts
+: 1722272925:0;ls
+: 1722272926:0;gs
+: 1722272930:0;lg
+: 1722273054:0;fclip
+: 1722273083:0;fdots
+: 1722273101:0;fgrep
+: 1722273123:0;fman
+: 1722273140:0;fshow
+: 1722273142:0;c.
+: 1722273143:0;fshow
+: 1722323061:0;bash <(curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Linux/main/install.sh)
+: 1722323076:0;which spotify
+: 1722323083:0;where spotify
+: 1722323086:0;whereis spotify
+: 1722324120:0;up
+: 1722325971:0;pm
+: 1722325990:0;paru -S spotify-adblock-git
+: 1722326008:0;hyprctl clients
+: 1722326163:0;tmux kill-session -t Editor
+: 1722327028:0;clear
+: 1722334503:0;ls
+: 1722334507:0;gs
+: 1722334508:0;lg
+: 1722342557:0;ls
+: 1722342559:0;lg
+: 1722342562:0;clear
+: 1722342566:0;cat "Hello"
+: 1722355563:0;pm
+: 1722355840:0;paru -Ss anki
+: 1722361794:0;up
+: 1722361907:0;paru -Qm
+: 1722361973:0;ls
+: 1722361998:0;mv .zsh_history .zsh_history.bak
+: 1722361999:0;ls
+: 1722421901:0;up
+: 1722421931:0;cd Projects/Go
+: 1722421932:0;ls
+: 1722421935:0;gs
+: 1722421954:0;mkdir GoClass
+: 1722421956:0;cd GoClass
+: 1722421957:0;ls
+: 1722429753:0;up
+: 1722439850:0;lftp ftp://\[android-ftp-ip-address\] -e "mirror -R [local-directory] [remote-directory]; bye"\
+
+: 1722440128:0;ncdu
+: 1722440132:0;cd 
+: 1722440135:0;ncdu 
+: 1722440196:0;clear
+: 1722440233:0;ncdu --exclude ~/Roms --exclude ~/.cache .
+: 1722440256:0;cd /
+: 1722440257:0;ls
+: 1722440262:0;ncdu -X
+: 1722440265:0;ncdu -x
+: 1722440316:0;cd
+: 1722440320:0;paru -Scc
+: 1722440571:0;update_roms
+: 1722440903:0;ls
+: 1722440904:0;c.
+: 1722440906:0;cd
+: 1722440907:0;ls
+: 1722440927:0;cat .zsh_history.bak >> .zsh_history.new
+: 1722440931:0;cat .zsh_history >> .zsh_history.new
+: 1722440958:0;ls
+: 1722440959:0;history
+: 1722441067:0;bash <(curl -sSL https://spotx-official.github.io/run.sh)
+: 1722441249:0;sudo pacman -S spotify-launcher
+: 1722441265:0;yeet spotify-adblock-git
+: 1722441270:0;yeet spotify
+: 1722441322:0;bash <(curl -sSL https://spotx-official.github.io/run.sh)
+: 1722441358:0;hyprctl clients
+: 1722441369:0;spotify
+: 1722441375:0;spotify-launcher
+: 1722441386:0;clear
+: 1722441391:0;spotify-launcher
+: 1722441452:0;clear
+: 1722443211:0;sudo fdisk -l
+: 1722447996:0;telnet towel.blinkenlight.nl 
+: 1722511176:0;ls
+: 1722511178:0;up
+: 1722511187:0;ls
+: 1722511193:0;cd Projects/Go
+: 1722511251:0;zed
+: 1722512180:0;zeditor
+: 1722512192:0;yeet zed
+: 1722512211:0;pm
+: 1722513863:0;ls
+: 1722513864:0;clear
+: 1722514586:0;cd GoClass
+: 1722514587:0;ls
+: 1722514600:0;mkdir test
+: 1722514602:0;cd test
+: 1722514609:0;go mod init test
+: 1722514614:0;nvim main.go
+: 1722514818:0;cat main.go
+: 1722514919:0;nvim main.go
+: 1722515089:0;go run main.go
+: 1722515105:0;go run main.go go.mod
+: 1722515125:0;nvim main.go
+: 1722515145:0;go run main.go go.mod
+: 1722515152:0;go build
+: 1722515153:0;ls
+: 1722515157:0;test go.mod
+: 1722515171:0;./test go.mod
+: 1722515177:0;which test
+: 1722515184:0;gat
+: 1722515190:0;./test main.go
+: 1722515216:0;cat ~/.zshrc
+: 1722515224:0;./test ~/.zshrc
+: 1722515320:0;cat << main.go\
+
+: 1722515324:0;cat < main.go\
+
+: 1722515330:0;./test < main.go
+: 1722515485:0;man cat
+: 1722515503:0;ls
+: 1722515513:0;cat .bashrc
+: 1722515520:0;cat -A .bashrc
+: 1722515528:0;man cat
+: 1722515554:0;man tac
+: 1722515870:0;cd ..
+: 1722515872:0;ls
+: 1722515878:0;mkdir Gat
+: 1722515881:0;cd Gat
+: 1722515881:0;ls
+: 1722515887:0;go mod init gat
+: 1722515889:0;ls
+: 1722515896:0;touch main.go
+: 1722515896:0;ls
+: 1722515898:0;nvim main.go
+: 1722516016:0;ls
+: 1722516026:0;git init
+: 1722516055:0;touch README.md
+: 1722516057:0;nvim README.md
+: 1722516118:0;man cat
+: 1722516179:0;ls
+: 1722516200:0;cd
+: 1722516205:0;clear
+: 1722516212:0;cd Projects/Go/GoClass/test
+: 1722516212:0;ls
+: 1722516215:0;nvim main.go
+: 1722516507:0;ls
+: 1722516510:0;lg
+: 1722516542:0;git branch -M main
+: 1722516550:0;git remote add origin https://github.com/SwayKh/Gat.git
+: 1722516557:0;git push -u origin main
+: 1722516643:0;ls
+: 1722516924:0;nvim main.go
+: 1722525000:0;nvim README.md
+: 1722525506:0;git pull
+: 1722525510:0;gs
+: 1722525519:0;lg
+: 1722525572:0;ls
+: 1722525577:0;nvim main.go
+: 1722526044:0;ls
+: 1722526053:0;go run main.go test.sh
+: 1722526067:0;go run main.go
+: 1722526085:0;go run main.go test
+: 1722526297:0;nvim main.go
+: 1722526810:0;ls
+: 1722526813:0;go run main.go test
+: 1722526816:0;go run main.go README.md
+: 1722526824:0;go run main.go main.go
+: 1722526829:0;go run main.go "main.go"
+: 1722526839:0;go run main.go go.mod
+: 1722526842:0;go build
+: 1722526850:0;gat
+: 1722526855:0;./gat main.go
+: 1722526868:0;time ./gat main.go
+: 1722527085:0;ls
+: 1722527086:0;clear
+: 1722527089:0;go build
+: 1722527094:0;./gat main.go go.mod
+: 1722527288:0;ls
+: 1722527290:0;nvim main.go
+: 1722528419:0;go build
+: 1722528481:0;./gat main.go go.mod
+: 1722528485:0;./gat main.go
+: 1722528486:0;ls
+: 1722528494:0;nv
+: 1722528501:0;vim main.go
+: 1722528523:0;nvim main.go
+: 1722528574:0;go build
+: 1722528577:0;./gat main.go
+: 1722528582:0;clear
+: 1722528752:0;ls
+: 1722528754:0;lg
+: 1722528784:0;nvim .gitignore
+: 1722528788:0;ls
+: 1722528790:0;lg
+: 1722528808:0;nvim .gitignore
+: 1722528815:0;lg
+: 1722528888:0;ls
+: 1722528893:0;nvim main.go
+: 1722528902:0;./gat ~/.zshrc
+: 1722529736:0;go build
+: 1722529743:0;./gat main.go
+: 1722529769:0;go build
+: 1722529775:0;./gat main.go
+: 1722529811:0;go build
+: 1722529814:0;./gat main.go
+: 1722531708:0;ls
+: 1722531709:0;lg
+: 1722532944:0;go build
+: 1722532948:0;./gat main.go
+: 1722533008:0;go build
+: 1722533009:0;./gat main.go
+: 1722533070:0;go build
+: 1722533071:0;./gat main.go
+: 1722533076:0;./gat main.go go.mod
+: 1722533247:0;./gat go.mod test.sh
+: 1722533330:0;lg
+: 1722533383:0;ls
+: 1722533389:0;./gat main.go LICENSE
+: 1722533399:0;cat go.mod test.sh
+: 1722534688:0;ls
+: 1722534693:0;go build
+: 1722534694:0;ls
+: 1722534697:0;./gat main.go
+: 1722534700:0;./gat main.go LICENSE
+: 1722534705:0;./gat main.go test.sh
+: 1722535233:0;lg
+: 1722536873:0;nvim README.md
+: 1722537085:0;lg
+: 1722537125:0;ls
+: 1722537127:0;cd ..
+: 1722537128:0;ls
+: 1722537134:0;rm -rf test
+: 1722537135:0;ls
+: 1722619324:0;up
+: 1722619718:0;cd Projects/Go
+: 1722675653:0;c.
+: 1722675657:0;fvim
+: 1722675979:0;c.
+: 1722676174:0;ls
+: 1722676182:0;cd Projects/Go/N-Cover-Scraper
+: 1722676183:0;ls
+: 1722676188:0;./GoNCoverScraper
+: 1722676213:0;cd
+: 1722676218:0;cd Obsidian/Vault/Archive
+: 1722676219:0;ls
+: 1722676221:0;nvim Numbers.json
+: 1722676291:0;./GoNCoverScraper
+: 1722676303:0;nvim Numbers.json
+: 1722676348:0;nvim main.go
+: 1722677457:0;./GoNCoverScraper
+: 1722677517:0;nvim main.go
+: 1722681890:0;ls
+: 1722681891:0;cd
+: 1722681905:0;cd MyProjects
+: 1722681905:0;ls
+: 1722681908:0;lg
+: 1722681917:0;ls
+: 1722681933:0;git submodule add https://github.com/Swaykh/gat
+: 1722682002:0;lg
+: 1722682031:0;cd 
+: 1722682033:0;cd Projects
+: 1722682033:0;ls
+: 1722682034:0;lg
+: 1722682621:0;ls
+: 1722682623:0;cd Go
+: 1722682624:0;ls
+: 1722682629:0;rm -rf MarrowCopy
+: 1722682632:0;lg
+: 1722683934:0;ls
+: 1722683935:0;lg
+: 1722685003:0;nvim main.go
+: 1722685049:0;go build
+: 1722685059:0;ls
+: 1722685062:0;./GoNCoverScraper
+: 1722685086:0;ls
+: 1722685087:0;lg
+: 1722685165:0;nvim Numbers.json
+: 1722685375:0;./GoNCoverScraper
+: 1722685432:0;ls
+: 1722685433:0;cd ..
+: 1722685434:0;lg
+: 1722685515:0;ls
+: 1722685522:0;cd Go/fem-htmx-proj
+: 1722685522:0;ls
+: 1722685523:0;lg
+: 1722685526:0;ls
+: 1722685529:0;cd ..
+: 1722685530:0;ls
+: 1722685533:0;rm -rf fem-htmx-proj
+: 1722685537:0;cd ..
+: 1722685538:0;lg
+: 1722685645:0;ls
+: 1722685647:0;gs
+: 1722685650:0;fshow
+: 1722685658:0;cd
+: 1722685660:0;c.
+: 1722685661:0;lg
+: 1722685700:0;cd Projects
+: 1722685701:0;ls
+: 1722685703:0;cd Go
+: 1722685703:0;ls
+: 1722685706:0;cd N-Cover-Scraper
+: 1722685706:0;ls
+: 1722685712:0;nvim main.go
+: 1722685909:0;cd Saved
+: 1722685910:0;ls
+: 1722685911:0;lg
+: 1722685913:0;lf
+: 1722685991:0;ls
+: 1722685993:0;:q
+: 1722686000:0;pm
+: 1722686013:0;paru -S copyq
+: 1722686042:0;up
+: 1722686052:0;copyq
+: 1722686059:0;copyq toggle
+: 1722686070:0;man copyq
+: 1722686119:0;copyq &
+: 1722686385:0;copyq toggle
+: 1722686507:0;tmux ls
+: 1722686512:0;cd Projects/Go/N-Cover-Scraper
+: 1722686513:0;ls
+: 1722686516:0;nvm main.go
+: 1722686520:0;nvim main.go
+: 1722686597:0;go run main.go
+: 1722686613:0;nvim main.go
+: 1722686683:0;yeet copyq
+: 1722686831:0;go run main.go
+: 1722686846:0;go build
+: 1722686849:0;cd ..
+: 1722686850:0;lg
+: 1722686944:0;c.
+: 1722686944:0;ls
+: 1722686945:0;lg
+: 1722687042:0;cd scripts
+: 1722687043:0;ls
+: 1722687044:0;lg
+: 1722687371:0;cd scripts
+: 1722687371:0;ls
+: 1722687374:0;nvim fpreview.sh
+: 1722687389:0;nvim preview.sh
+: 1722687605:0;source ~/.zshrc
+: 1722687653:0;nvim ls
+: 1722687655:0;ls
+: 1722687661:0;chmod 755 preview.sh
+: 1722687677:0;clear
+: 1722687686:0;cd
+: 1722687688:0;cd scripts
+: 1722687688:0;ls
+: 1722687689:0;cd
+: 1722687694:0;cd wallpapers
+: 1722687696:0;cd Images
+: 1722687867:0;ls
+: 1722687879:0;clear
+: 1722687883:0;pm
+: 1722687937:0;ffmpegthumbnailer
+: 1722688179:0;source ~/.zshrc
+: 1722688310:0;cd
+: 1722688313:0;cd Downloads
+: 1722688314:0;ls
+: 1722688319:0;source ~/.zshrc
+: 1722688746:0;c.
+: 1722702794:0;hyprlock
+: 1722703389:0;clear
+: 1722703394:0;lg
+: 1722703645:0;up
+: 1722705626:0;clear
+: 1722707160:0;cd Obsidian/Vault/Archive
+: 1722707161:0;ls
+: 1722707198:0;nvim Numbers.json
+: 1722766897:0;ls
+: 1722766904:0;up raindrop
+: 1722767010:0;up
+: 1722767019:0;p
+: 1722767020:0;pm
+: 1722767032:0;paru -Ss raindrop
+: 1722767052:0;sudoedit /etc/makepkg.conf
+: 1722769305:0;clear
+: 1722781354:0;ls
+: 1722781373:0;hyprlock
+: 1722782437:0;pm
+: 1722782469:0;paru -S superproductivity-bin
+: 1722782578:0;hyprlock
+: 1722782679:0;fzf
+: 1722784349:0;superproductivity
+: 1722784604:0;tmux ls
+: 1722784619:0;tmux kill-session -t 4
+: 1722784622:0;tmux ls
+: 1722784624:0;superproductivity
+: 1722786015:0;fzf
+: 1722786022:0;hyprlock
+: 1722786355:0;clear
+: 1722790991:0;up
+: 1722791022:0;sudoedit /etc/pacman.conf
+: 1722795235:0;hyprlock
+: 1722857729:0;yeet superproductivity-bin
+: 1722857735:0;up
+: 1722857775:0;pacman -Qs tmux
+: 1722857781:0;pacman -Ss tmux
+: 1722857932:0;paru -Ss tmux sixel
+: 1722858426:0;tmux kill-server
+: 1722858446:0;yazi
+: 1722858466:0;:q
+: 1722858643:0;up
+: 1722859225:0;cd Projects/Go
+: 1722859226:0;ls
+: 1722859226:0;nvim
+: 1722859242:0;lt
+: 1722859244:0;lf
+: 1722859263:0;ls
+: 1722859265:0;clear
+: 1722859266:0;ls
+: 1722859269:0;cd Gat
+: 1722859270:0;lt
+: 1722859290:0;nvim main.go
+: 1722859300:0;cd ..
+: 1722859300:0;ls
+: 1722875093:0;cd Projects/Go
+: 1722875095:0;ls
+: 1722875096:0;gs
+: 1722875099:0;lg
+: 1722875154:0;clear
+: 1722875156:0;lt
+: 1722875159:0;ls
+: 1722878293:0;up
+: 1722878311:0;paru -Ss joplin
+: 1722878418:0;pacman -Ss joplin
+: 1722878432:0;paru -Ss joplin
+: 1722879672:0;c.
+: 1722879673:0;ls
+: 1722879675:0;clear
+: 1722879677:0;lg
+: 1722935596:0;pm
+: 1722935609:0;paru -S river
+: 1722935763:0;paru -S awesome
+: 1722935782:0;paru -S bspwm
+: 1722936158:0;ls
+: 1722936168:0;whoami
+: 1722936174:0;echo $SHELL
+: 1722936197:0;sudoedit /usr/share/river/example/init
+: 1722936216:0;ls
+: 1722936244:0;sudo cp -a /usr/share/river/example/init ~/.config/river/init
+: 1722936254:0;sudo cp -a /usr/share/river/example/init ~/.config/river/
+: 1722936260:0;cd
+: 1722936268:0;mkdir -p .config/river
+: 1722936269:0;ls
+: 1722936272:0;sudo cp -a /usr/share/river/example/init ~/.config/river/
+: 1722936273:0;ls
+: 1722936276:0;cd .config/river
+: 1722936277:0;ls
+: 1722936282:0;nvim init i
+: 1722936288:0;ls
+: 1722936290:0;nvim init
+: 1722936374:0;ls
+: 1722936376:0;btop
+: 1722936503:0;nvim init
+: 1722936593:0;ls
+: 1722936599:0;chmod 755 init
+: 1722936603:0;sudo chmod 755 init
+: 1722936610:0;chown sumit:sumit init
+: 1722936615:0;sudo chown sumit:sumit init
+: 1722936616:0;ls
+: 1722936617:0;ll
+: 1722936618:0;la
+: 1722936624:0;cd
+: 1722936625:0;ls
+: 1722936626:0;clear
+: 1722936638:0;exec river
+: 1722936643:0;ls
+: 1722936645:0;echo
+: 1722936645:0;lf
+: 1722936663:0;cd
+: 1722936664:0;c.
+: 1722936670:0;cd .config/river
+: 1722936670:0;ls
+: 1722936672:0;cd
+: 1722936674:0;cd .config/river
+: 1722936674:0;ls
+: 1722936677:0;nvim init
+: 1722936825:0;clear
+: 1722936826:0;tmux
+: 1722936832:0;nvim init
+: 1722936837:0;man river
+: 1722936872:0;clear
+: 1722936876:0;man riverctl
+: 1722937011:0;riverctl spawn waybar
+: 1722937059:0;riverctl spawn rofi -show drun
+: 1722937089:0;lf
+: 1722937095:0;yazi
+: 1722937111:0;clear
+: 1722937112:0;fzf
+: 1722937116:0;neofetch
+: 1722937202:0;clear
+: 1722937205:0;cd
+: 1722937226:0;riverctl spawn rofi
+: 1722937241:0;riverctl spawn "rofi -show drun"
+: 1722937258:0;cd scripts/
+: 1722937259:0;ls
+: 1722937278:0;riverctl spawn random_swww_wall
+: 1722937287:0;riverctl spawn ./random_swww_wall
+: 1722937448:0;man riverctl
+: 1722937611:0;cd ..
+: 1722937613:0;cd hypr
+: 1722937615:0;nvim
+: 1722937648:0;riverctl spawn "swww-daemon --format xrgb"
+: 1722937857:0;man pamixer
+: 1722937935:0;~/scripts/random_swww_wall
+: 1722938094:0;exec river
+: 1722938099:0;ls
+: 1722938100:0;lf
+: 1722938106:0;neofetch
+: 1722938108:0;ls
+: 1722938109:0;cd
+: 1722938110:0;ls
+: 1722938137:0;paru -Si river
+: 1722938604:0;clear
+: 1722938605:0;btop
+: 1722938612:0;neofetch
+: 1722938614:0;fastfetch
+: 1722938631:0;cd
+: 1722938634:0;cd .config/river
+: 1722938636:0;nvim init
+: 1722939274:0;exec river
+: 1722939287:0;neofetch
+: 1722939333:0;exec bspwm
+: 1722939374:0;exec awesome
+: 1722939732:0;cd dotfiles/hypr
+: 1722939733:0;ls
+: 1722939739:0;nvim hyprland.conf
+: 1722939820:0;ls
+: 1722939821:0;cd
+: 1722939832:0;cd /usr/share/doc/bspwm/examples
+: 1722939833:0;ls
+: 1722939838:0;nvm bspwmrc
+: 1722939845:0;nvim bspwmrc
+: 1722957433:0;cd Projects/Go/G
+: 1722957436:0;cd Projects/Go/GoClass
+: 1722957437:0;ls
+: 1722957439:0;gs
+: 1722957445:0;c.
+: 1722957450:0;cd Projects/Go/GoClass
+: 1722957451:0;ls
+: 1722957455:0;lg
+: 1722957460:0;cd scripts
+: 1722957461:0;ls
+: 1722957462:0;gs
+: 1722957463:0;lg
+: 1723027033:0;paru -Ss i3 gap
+: 1723015778:0;paru -S i3-wm
+: 1723015796:0;yeet river awesome bspwm
+: 1723016197:0;up
+: 1723018034:0;cd dotfiles/i
+: 1723018037:0;cd dotfiles/i3
+: 1723018039:0;ls
+: 1723018043:0;nvim config
+: 1723018073:0;nvim bind
+: 1723018103:0;ls
+: 1723018110:0;nvim autostart
+: 1723018118:0;clear
+: 1723018137:0;nvim autostart
+: 1723018187:0;paru -S wezterm
+: 1723018217:0;ls
+: 1723018221:0;exut
+: 1723018227:0;ls
+: 1723018229:0;clear
+: 1723018231:0;c.
+: 1723018235:0;cd i3
+: 1723018236:0;ls
+: 1723018238:0;nvim config
+: 1723018337:0;paru -S xrandr
+: 1723018351:0;paru -Ss xrandr
+: 1723018374:0;paru -S xorg-xrandr
+: 1723018385:0;nvim config
+: 1723018940:0;cd dotfiles/hypr
+: 1723018941:0;ls
+: 1723018945:0;nvim apps.conf
+: 1723018996:0;paru -S autotiling
+: 1723019211:0;obsidian
+: 1723019266:0;paru -S figlet
+: 1723019279:0;figlet i3-WM
+: 1723019698:0;paru -S polybar
+: 1723019764:0;paru -S rofi
+: 1723019902:0;floorp
+: 1723020372:0;btop
+: 1723025138:0;clear
+: 1723025385:0;c.
+: 1723025386:0;nvim
+: 1723029902:0;paru -S pulseaudio
+: 1723030654:0;polybar
+: 1723030715:0;lg
+: 1723030726:0;nvim
+: 1723031020:0;polybar
+: 1723031051:0;cd dotfiles/polybar
+: 1723031053:0;./launch.sh
+: 1723031653:0;rofi -show drun
+: 1723031663:0;rofi 
+: 1723031668:0;rofi
+: 1723031687:0;rofi -show run
+: 1723031701:0;./launch.sh
+: 1723032381:0;btop
+: 1723034166:0;paru -S ncmpcpp
+: 1723034227:0;ncmpcpp
+: 1723034236:0;man ncmpcpp
+: 1723034259:0;yeet ncmpcpp
+: 1723043518:0;ls
+: 1723043532:0;man i3
+: 1723044223:0;pm
+: 1723044278:0;paru -S xorg-xbacklight
+: 1723044377:0;paru -S xev
+: 1723044448:0;xev
+: 1723044453:0;paru -Ss xev
+: 1723044470:0;paru -S xorg-xev
+: 1723044475:0;xev
+: 1723044705:0;pm
+: 1723044724:0;paru -S xorg-xprop
+: 1723044738:0;xprop
+: 1723045447:0;xev
+: 1723045693:0;cd ..
+: 1723045694:0;cd
+: 1723045700:0;bat .fehbg
+: 1723045723:0;find ~/wallpapers/Images -maxdepth 1 | shuf -n1 | feh --no-fehbg --bg-fill 
+: 1723045731:0;find ~/wallpapers/Images -maxdepth 1 | shuf -n1
+: 1723045777:0;feh --no-fehgb --bg-fill $(find ~/wallpapers/Images -madepth 1 | shuf -n1)
+: 1723045784:0;feh --no-fehbg --bg-fill $(find ~/wallpapers/Images -madepth 1 | shuf -n1)
+: 1723045801:0;bat scripts/random_
+: 1723045804:0;bat scripts/random_wall_bg
+: 1723045824:0;fehbg
+: 1723045829:0;find ~/wallpapers/Images -maxdepth 1 | shuf -n1
+: 1723045849:0;feh --no-fehbg --bg-fill /home/sumit/wallpapers/Images/pacman-ghosts.png
+: 1723045975:0;feh --bg-fill "$(find ~/wallpapers/images -type f | shuf -n 1)"
+: 1723046029:0;find ~/wallpapers/Images -maxdepth 1 | shuf -n1
+: 1723046100:0;feh --bg-fill "$(find ~/wallpapers/images -type f | shuf -n 1)"
+: 1723046114:0;feh --bg-fill "$(find ~/wallpapers/Images -type f | shuf -n 1)"
+: 1723046175:0;cd dotfiles/scripts
+: 1723046175:0;ls
+: 1723046182:0;nvim random_fehbg
+: 1723046256:0;chmod 755 random_fehbg
+: 1723046276:0;nvim random_fehbg
+: 1723046301:0;xev
+: 1723046432:0;ls
+: 1723046452:0;cd hyprland
+: 1723046453:0;ls
+: 1723046455:0;cd ..
+: 1723046894:0;paru -S xautolock
+: 1723046927:0;pm
+: 1723046939:0;paru -S i3lock
+: 1723047098:0;i3lock -i ~/.config/wall.png
+: 1723047381:0;paru -S xsel
+: 1723047451:0;nvim 
+: 1723047460:0;nvim
+: 1723053203:0;pm
+: 1723053214:0;paru -S xinput
+: 1723053221:0;paru -S xorg-xinput
+: 1723053232:0;xinput list
+: 1723053305:0;xinput list-props 12
+: 1723053528:0;j
+: 1723053735:0;ls
+: 1723053739:0;paru -S rofi
+: 1723053754:0;neofetch
+: 1723053830:0;rofi -show
+: 1723053839:0;yeet rofi-nerdy
+: 1723053843:0;c.
+: 1723053844:0;nvim
+: 1723054066:0;paru -S rofi-nerdy
+: 1723054272:0;yeet i3-wm
+: 1723054287:0;yeet autotiling
+: 1723054294:0;yeet polybar
+: 1723054299:0;yeet rofi
+: 1723054310:0;paru -S rofi-wayland
+: 1723054327:0;yeet wezterm
+: 1723054336:0;yeet i3lock
+: 1723054347:0;yeet pulseaudio
+: 1723054361:0;paru -S pipewire-pulse
+: 1723054377:0;yeet xel xorg-xclip
+: 1723054433:0;yeet xorg-xel xorg-xclip xorg-xcolor xorg-xrandr xautolock xorg-xinput xorg-xbacklight xorg-xprop
+: 1723054450:0;yeet xorg-xev xorg-xclip xorg-xcolor xorg-xrandr xautolock xorg-xinput xorg-xbacklight xorg-xprop
+: 1723054513:0;yeet xorg-xev xorg-xrandr xautolock xorg-xinput xorg-xbacklight xorg-xprop
+: 1723054529:0;yeet xorg-xev xorg-xrandr xautolock xorg-xinput xorg-xbacklight
+: 1723054657:0;paru -S i3-wm autotiling rofi polybar pusleaudio wezterm i3lock xautolock xorg-xrandr xorg-xclipboard xorg-xcolor xorg-xinput xorg-xbacklight xorg-xev xorg-xprop
+: 1723054671:0;yeet xorg-xclipboard
+: 1723054677:0;yeet xorg-xcolor
+: 1723054678:0;pm
+: 1723054690:0;yeet xclip
+: 1723054693:0;yeet xcolor
+: 1723054707:0;pm
+: 1723054760:0;paru -S i3-wm autotiling rofi polybar pusleaudio wezterm i3lock xautolock xorg-xrandr xorg-xclipboard xorg-xcolor xorg-xinput xorg-xbacklight xorg-xev xorg-xprop
+: 1723054787:0;paru -S i3-wm autotiling rofi polybar pusleaudio wezterm i3lock xautolock xorg-xrandr xclip xcolor xorg-xinput xorg-xbacklight xorg-xev xorg-xprop
+: 1723131505:0;up
+: 1723120265:0;pacman Qs -git
+: 1723120269:0;pacman Qs git
+: 1723120281:0;pacman -SQs -git
+: 1723120285:0;pacman -Qs -git
+: 1723120299:0;pacman -Qs git
+: 1723120404:0;pacman -Qq | grep -git
+: 1723120408:0;pacman -Qq | grep "-git"
+: 1723120412:0;pacman -Qq | grep "git"
+: 1723120441:0;up
+: 1723120715:0;pacman -S rofi-wayland
+: 1723120758:0;sudo pacman -S rofi-wayland pipewire-pulse
+: 1723120764:0;clear
+: 1723120776:0;sudo pacman -S river
+: 1723120786:0;-
+: 1723120791:0;c.
+: 1723120792:0;gs
+: 1723120867:0;cd
+: 1723120874:0;man cp
+: 1723120922:0;cp -a .zsh_history .zsh_history.bak
