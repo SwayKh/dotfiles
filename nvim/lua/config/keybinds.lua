@@ -49,8 +49,15 @@ map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 
 --Select all/Yank all/Custom paste
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
+-- Disabling this, for the leader yank keybind, Better to select all and yank
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true })
+--
+-- Use Leader keybinds to yank to system clipboard, This is after disabling
+-- vim.opt.clipboard = "unnamedplus"
+-- map({ "n", "v", "x" }, "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
+-- map({ "n", "v", "x" }, "<leader>Y", '"+yy', { noremap = true, silent = true, desc = "Yank line to clipboard" })
+-- map({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
 -- map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
 -- Save, Quit
