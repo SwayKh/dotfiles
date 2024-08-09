@@ -50,7 +50,7 @@
         "interval": 60,
         "format": "  {:%a %b %d  %I:%M %p}", // %b %d %Y  --Date formatting
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d %H:%M:%S  }"
     },
 
    "temperature": {
