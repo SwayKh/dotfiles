@@ -1,0 +1,22 @@
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = SwayKh
+	email = khatrisumit712@gmail.com
+[color]
+	ui = auto
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	excludesFile = ~/home.gitignore
+[safe]
+	directory = /home/sumit/Android/Obsidian/Vault
+[pull]
+	rebase = true
