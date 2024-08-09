@@ -4,11 +4,13 @@
 # ░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
 
 assign [class="firefox"] 1
+assign [class="floorp"] 1
 assign [class="Code"] 2
 assign [class="nvim"] 2
-assign [class="Thunar"] 5
-assign [class="retroarch"] 6
-assign [class="Spotify"] 7
-assign [class="Ferdium"] 8
-assign [class="WebCord"] 9
-assign [class="obsidian"] 10
+assign [class="thunar"] 3
+assign [class="nautilus"] 3
+assign [class="retroarch"] 4
+assign [class="Spotify"] 5
+assign [class="Ferdium"] 5
+assign [class="WebCord"] 6
+assign [class="obsidian"] 7

@@ -1,37 +1,44 @@
 
 set $mod Mod4
-set $term wezterm
 set $left h
 set $right l
 set $up k
 set $down j
+set $term wezterm
+set $browser floorp
+set $filemanager nautilus
 floating_modifier $mod
 
-bindsym $mod+q kill
-bindsym $mod+Shift+q exec i3-msg exit
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+s move scratchpad
 bindsym $mod+minus scratchpad show
 
-bindsym $mod+Ctrl+f fullscreen
-bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+t exec $term
-bindsym $mod+f exec thunar
-bindsym $mod+b exec firefox
-bindsym $mod+n exec obsidian
+bindsym $mod+t exec $term -e tmux
+bindsym $mod+f exec $filemanager
+bindsym $mod+b exec $browser
+bindsym $mod+o exec obsidian
 bindsym $mod+w exec ferdium
 bindsym $mod+d exec webcord
-bindsym $mod+s exec spotify-launcher
-bindsym $mod+KP_ADD exec kcalc
+bindsym $mod+g exec retroarch
+bindsym $mod+KP_Add exec galculator
 bindsym $mod+r exec rofi -show drun
-bindsym $mod+TAB exec rofi -show window
 
 bindsym $mod+l exec $term -e zsh -ic lf #lfMention
 bindsym $mod+m exec $term -e btop
+
 bindsym $mod+Escape exec "$HOME/scripts/session_menu"
+bindsym $mod+space exec "$HOME/scripts/random_fehbg"
+
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+f fullscreen
+bindsym $mod+Ctrl+f floating toggle
+bindsym $mod+Shift+q exec i3-msg exit
+
+bindsym $mod+v exec cliphist list | rofi -dmenu -config ~/.config/rofi/regular.rasi | cliphist decode | xclip -selection clipboard -t text/plain
+
 
 # Move your focus around
 bindsym $mod+Ctrl+$left focus left

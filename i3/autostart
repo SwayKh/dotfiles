@@ -5,12 +5,20 @@
 
 exec --no-startup-id dex --autostart --environment i3
 
-exec_always --no-startup-id xrandr --output eDP-1 --scale 1.2
+# Enable natural scrolling
+exec --no-startup-id xinput set-prop 12 "libinput Natural Scrolling Enabled" 1
+# Enable tapping
+exec --no-startup-id xinput set-prop <device_id> "libinput Tapping Enabled" 1
+# Enable two finger tap to simulate right click
+exec --no-startup-id xinput set-prop <device_id> "libinput Tapping Button Mapping Enabled" 1 2 3
+
+exec_always --no-startup-id xrandr --output eDP-1 --scale 1.0
+exec_always --no-startup-id xautolock -time 10 -locker "i3lock -i $HOME/.config/wall.png"
 exec_always --no-startup-id dunst
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id pulseaudio --start
+exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id nm-applet --indicator
 exec_always --no-startup-id /usr/lib/kdeconnectd
 exec_always --no-startup-id /usr/bin/kdeconnect-indicator

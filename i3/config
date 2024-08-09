@@ -13,9 +13,7 @@ focus_follows_mouse yes
 
 # class                 border  backgr. text    indicator child_border
 client.unfocused        #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused          #D99887 #D99887 #D99887 #D99887   #D99887
-
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+client.focused          #888CA7 #888CA7 #888CA7 #888CA7   #888CA7
 
 include ./bind
 include ./rules
