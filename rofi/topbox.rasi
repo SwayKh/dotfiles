@@ -1,6 +1,6 @@
 // vim:ft=css
 configuration {
-  modi:                 "drun,nerdy,run,filebrowser,window";
+  modi:                 "drun,run,filebrowser,window";
   dpi:                  90;
   icon-theme:           "Papirus";
   show-icons:           true;
@@ -29,7 +29,7 @@ window {
   width: 50%;
   orientation: vertical;
   location: north;
-  anchor: center;
+  anchor: north;
   x-offset: 0px;
   y-offset: 0px;
   margin: 5px;
