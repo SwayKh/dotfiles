@@ -50,9 +50,14 @@ export FZF_DEFAULT_COMMAND='\
   --strip-cwd-prefix \
   --hidden \
   --exclude .git \
-  --ignore-file ~/.gitignore\
+  --ignore-file ~/home.gitignore\
   '
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="
+  --preview '~/scripts/preview.sh {}' \
+  --height=50% \
+  --preview-window=65% \
+  "
 
 alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'

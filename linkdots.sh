@@ -6,6 +6,8 @@ path="$(cd "$(dirname "$0")" && pwd)"
 sudo ln -sfn "$path"/.zshrc "$HOME"/.zshrc
 sudo ln -sfn "$path"/.profile "$HOME"/.profile
 sudo ln -sfn "$path"/.bashrc "$HOME"/.bashrc
+sudo ln -sfn "$path"/home.gitignore "$HOME"/home.gitignore
+sudo ln -sfn "$path"/.gitconfig "$HOME"/.gitconfig
 sudo ln -sfn "$path"/starship.toml "$HOME"/.config/starship.toml
 sudo ln -Sfn "$path"/settings.json "$HOME"/.config/Code/User/settings.json
 # sudo ln -sfn "$path"/tmux/tmux.conf "$HOME"/.tmux.conf
