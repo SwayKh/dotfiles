@@ -12,7 +12,7 @@
 
     // Choose the order of the modules
 
-    "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces"],
+    "modules-left": ["custom/power", "custom/separator", "hyprland/workspaces", "river/tags"],
     "modules-center": ["clock"],
     "modules-right": [ "network", "cpu", "temperature", "backlight", "wireplumber", "tray" ],
 
@@ -38,6 +38,22 @@
             // "active": "",
             // "default": ""
          },
+    },
+
+    "river/tags": {
+      "num-tags": 7,
+      "tag-labels": [
+          "󰈹",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "󰠮",
+          "",
+          "",
+          ""
+      ],
     },
 
     "tray": {
