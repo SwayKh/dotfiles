@@ -1,125 +1,174 @@
 #!/bin/sh
 
-# This is the example configuration file for river.
-#
-# If you wish to edit this, you will probably want to copy it to
-# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
-#
-# See the river(1), riverctl(1), and rivertile(1) man pages for complete
-# documentation.
+# The Figlet font is DOS Rebel from https://github.com/xero/figlet-fonts/blob/master/Examples.md
 
-# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
-
-# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
-# riverctl map normal Super+Shift Return spawn foot
-
-# My Mappings
-riverctl map normal Super R spawn "rofi -show drun"
-riverctl map normal Super T spawn "foot"
-riverctl map normal Super E spawn "nautilus"
+#    █████████               █████                      █████                         █████
+#   ███░░░░░███             ░░███                      ░░███                         ░░███
+#  ░███    ░███  █████ ████ ███████    ██████   █████  ███████    ██████   ████████  ███████
+#  ░███████████ ░░███ ░███ ░░░███░    ███░░███ ███░░  ░░░███░    ░░░░░███ ░░███░░███░░░███░
+#  ░███░░░░░███  ░███ ░███   ░███    ░███ ░███░░█████   ░███      ███████  ░███ ░░░   ░███
+#  ░███    ░███  ░███ ░███   ░███ ███░███ ░███ ░░░░███  ░███ ███ ███░░███  ░███       ░███ ███
+#  █████   █████ ░░████████  ░░█████ ░░██████  ██████   ░░█████ ░░████████ █████      ░░█████
+# ░░░░░   ░░░░░   ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░░░     ░░░░░   ░░░░░░░░ ░░░░░        ░░░░░
 
 # Autostart
-riverctl spawn "~/.config/waybar/launch.sh"
 riverctl spawn "swww-daemon --format xrgb"
+riverctl spawn "$HOME/.config/waybar/launch.sh"
 riverctl spawn "dunst"
-riverctl spawn "wl-clipboard"
 riverctl spawn "nm-applet --indicator"
 riverctl spawn "blueman-applet"
+riverctl spawn "wl-clipboard"
+riverctl spawn "swayidle -w"
 riverctl spawn "/usr/lib/kdeconnectd"
 riverctl spawn "/usr/bin/kdeconnect-indicator"
 riverctl spawn "/usr/lib/polkit-kde-authentication-agent-1"
+riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "$HOME/.config/river/environment.sh"
+# Clipboard History
+riverctl spawn "wl-paste --type text --watch cliphist store"  #Stores only text data
+riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image data
+# riverctl spawn "wlr-randr --output eDP-1 --scale 0.75"
+riverctl spawn "$term"
+riverctl spawn "$lf"
+riverctl spawn "$btop"
+riverctl spawn "$nvim"
+
+#  ███████████   ███                 █████
+# ░░███░░░░░███ ░░░                 ░░███
+#  ░███    ░███ ████  ████████    ███████   █████
+#  ░██████████ ░░███ ░░███░░███  ███░░███  ███░░
+#  ░███░░░░░███ ░███  ░███ ░███ ░███ ░███ ░░█████
+#  ░███    ░███ ░███  ░███ ░███ ░███ ░███  ░░░░███
+#  ███████████  █████ ████ █████░░████████ ██████
+# ░░░░░░░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░░
+
+# Variables
+terminal="foot"
+filemanager="nautilus"
+browser="floorp"
+
+# My Mappings
+riverctl map normal Super T spawn "$terminal -e tmux"
+riverctl map normal Super F spawn "$filemanager"
+riverctl map normal Super B spawn "$browser"
+riverctl map normal Super R spawn "rofi -show drun"
+riverctl map normal Super O spawn "obsidian"
+riverctl map normal Super W spawn "ferdium"
+riverctl map normal Super D spawn "webcord"
+riverctl map normal Super G spawn "retroarch"
+riverctl map normal Super L spawn "$terminal -e zsh -ic lf" #lfMention
+riverctl map normal Super M spawn "$terminal -e btop"
+riverctl map normal Super KP_Add spawn "galculator"
 
 riverctl map normal Super Q close
 riverctl map normal Super+Shift Q exit
+riverctl map normal Super+Control F toggle-float
+riverctl map normal Super+Shift F toggle-fullscreen
+riverctl map normal Super+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'Refreshed River'"
 
-# Super+J and Super+K to focus the next/previous view in the layout stack
-riverctl map normal Super J focus-view next
-riverctl map normal Super K focus-view previous
+riverctl map normal Super Space spawn "$HOME/scripts/random_swww_wall"
+riverctl map normal Super Escape spawn "$HOME/scripts/session_menu"
 
-# Super+Shift+J and Super+Shift+K to swap the focused view with the next/previous
-# view in the layout stack
-riverctl map normal Super+Shift J swap next
-riverctl map normal Super+Shift K swap previous
+# Screenshots
+riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
+riverctl map normal Control Print spawn "$HOME/scripts/screenshots/captureScreen.sh"
+riverctl map normal Control+Shift Print spawn "$HOME/scripts/screenshots/captureArea.sh"
 
-# Super+Period and Super+Comma to focus the next/previous output
-riverctl map normal Super Period focus-output next
-riverctl map normal Super Comma focus-output previous
+riverctl map normal Super V spawn "cliphist list | rofi -dmenu -config ~/.config/rofi/regular.rasi | cliphist decode | wl-copy"
 
-# Super+Shift+{Period,Comma} to send the focused view to the next/previous output
-riverctl map normal Super+Shift Period send-to-output next
-riverctl map normal Super+Shift Comma send-to-output previous
+for i in $(seq 1 9); do
+  # Tags are basically workspaces, but different
+  tags=$((1 << ("$i" - 1)))
+  # Move focus to Tag(Workspace)
+  riverctl map normal Super "$i" set-focused-tags $tags
+  # Move view(window) to Tag(Workspace)
+  riverctl map normal Super+Shift "$i" set-view-tags $tags
+  # Show view(window) from specified tag on current tag(workspace)
+  riverctl map normal Super+Control "$i" toggle-focused-tags $tags
+  # Show focused view(window) on specified tag(workspace)
+  riverctl map normal Super+Shift+Control "$i" toggle-view-tags $tags
+done
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked; do
+  # Eject the optical drive (well if you still have one that is)
+  riverctl map $mode None XF86Eject spawn 'eject -T'
+
+  riverctl map $mode None XF86AudioRaiseVolume spawn "pamixer -i 5 && dunstify -i /lol -t 300 -r 2593 'Volume : $(pamixer --get-volume)%'"
+  riverctl map $mode None XF86AudioLowerVolume spawn "pamixer -d 5 && dunstify -i /lol -t 300 -r 2593 'Volume : $(pamixer --get-volume)%'"
+  riverctl map $mode None XF86AudioMute spawn 'pamixer --toggle-mute && dunstify -i /lol -t 300 -r 2593 "Toggle Mute"'
+
+  riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+  riverctl map $mode None XF86AudioPlay spawn 'playerctl play-pause'
+  riverctl map $mode None XF86AudioPrev spawn 'playerctl previous'
+  riverctl map $mode None XF86AudioNext spawn 'playerctl next'
+
+  riverctl map $mode None XF86MonBrightnessUp spawn "brightnessctl set +10% && sleep 0.2 && dunstify -i /lol -t 300 -r 2593 'Brightness: $(brightnessctl -m | cut -d, -f4 | tr -d '%')%'"
+  riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 10%- && sleep 0.2 && dunstify -i /lol -t 300 -r 2593 'Brightness: $(brightnessctl -m | cut -d, -f4 | tr -d '%')%'"
+done
+
+# Mouse binds
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 # Super+Return to bump the focused view to the top of the layout stack
 riverctl map normal Super Return zoom
 
-# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
-riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+# Move all these binds to a floating mode, since that's where the work
+riverctl declare-mode floating
+riverctl map normal Alt F enter-mode floating
 
-# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
-riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+# -repeat makes the bind repeatable, while it not released
+# {H,J,K,L} to resize views by 25
+riverctl map -repeat floating None H resize horizontal -25
+riverctl map -repeat floating None J resize vertical 25
+riverctl map -repeat floating None K resize vertical -25
+riverctl map -repeat floating None L resize horizontal 25
 
-# Super+Alt+{H,J,K,L} to move views
-riverctl map normal Super+Alt H move left 100
-riverctl map normal Super+Alt J move down 100
-riverctl map normal Super+Alt K move up 100
-riverctl map normal Super+Alt L move right 100
+# Control+{H,J,K,L} to move views by 25
+riverctl map -repeat floating Control H move left 25
+riverctl map -repeat floating Control J move down 25
+riverctl map -repeat floating Control K move up 25
+riverctl map -repeat floating Control L move right 25
 
-# Super+Alt+Control+{H,J,K,L} to snap views to screen edges
-riverctl map normal Super+Alt+Control H snap left
-riverctl map normal Super+Alt+Control J snap down
-riverctl map normal Super+Alt+Control K snap up
-riverctl map normal Super+Alt+Control L snap right
+# Shift+{H,J,K,L} to snap views to screen edges
+riverctl map floating Shift H snap left
+riverctl map floating Shift J snap down
+riverctl map floating Shift K snap up
+riverctl map floating Shift L snap right
 
-# Super+Alt+Shift+{H,J,K,L} to resize views
-riverctl map normal Super+Alt+Shift H resize horizontal -100
-riverctl map normal Super+Alt+Shift J resize vertical 100
-riverctl map normal Super+Alt+Shift K resize vertical -100
-riverctl map normal Super+Alt+Shift L resize horizontal 100
+riverctl map floating None Escape enter-mode normal
 
-# Super + Left Mouse Button to move views
-riverctl map-pointer normal Super BTN_LEFT move-view
+# Focus windows with Super h/j/k/l
+riverctl map normal Super+Control H focus-view left
+riverctl map normal Super+Control J focus-view down
+riverctl map normal Super+Control K focus-view up
+riverctl map normal Super+Control L focus-view right
 
-# Super + Right Mouse Button to resize views
-riverctl map-pointer normal Super BTN_RIGHT resize-view
+#Focus windows with Super Arrow keys
+riverctl map normal Super Left focus-view left
+riverctl map normal Super Down focus-view down
+riverctl map normal Super Up focus-view up
+riverctl map normal Super Right focus-view right
 
-# Super + Middle Mouse Button to toggle float
-riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+# Super+J and Super+K to focus the next/previous view in the layout stack
+riverctl map normal Super+Control N focus-view next
+riverctl map normal Super+Control P focus-view previous
 
-for i in $(seq 1 9); do
-  tags=$((1 << ($i - 1)))
-
-  # Super+[1-9] to focus tag [0-8]
-  riverctl map normal Super $i set-focused-tags $tags
-
-  # Super+Shift+[1-9] to tag focused view with tag [0-8]
-  riverctl map normal Super+Shift $i set-view-tags $tags
-
-  # Super+Control+[1-9] to toggle focus of tag [0-8]
-  riverctl map normal Super+Control $i toggle-focused-tags $tags
-
-  # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
-  riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
-done
+# Swap views(windows) with Super+Shift h/j/k/l
+riverctl map normal Super+Shift Left swap left
+riverctl map normal Super+Shift Down swap down
+riverctl map normal Super+Shift Up swap up
+riverctl map normal Super+Shift Right swap right
 
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
-
-# Super+Space to toggle float
-riverctl map normal Super Space toggle-float
-
-# Super+F to toggle fullscreen
-riverctl map normal Super F toggle-fullscreen
-
-# Super+{Up,Right,Down,Left} to change layout orientation
-riverctl map normal Super Up send-layout-cmd rivertile "main-location top"
-riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
-riverctl map normal Super Down send-layout-cmd rivertile "main-location bottom"
-riverctl map normal Super Left send-layout-cmd rivertile "main-location left"
 
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
@@ -131,45 +180,189 @@ riverctl map normal Super F11 enter-mode passthrough
 # Super+F11 to return to normal mode
 riverctl map passthrough Super F11 enter-mode normal
 
-# Various media key mapping examples for both normal and locked mode which do
-# not have a modifier
-for mode in normal locked; do
-  # Eject the optical drive (well if you still have one that is)
-  riverctl map $mode None XF86Eject spawn 'eject -T'
+# Super+{Up,Right,Down,Left} to change layout orientation
+# riverctl map normal Super Up send-layout-cmd rivertile "main-location top"
+# riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+# riverctl map normal Super Down send-layout-cmd rivertile "main-location bottom"
+# riverctl map normal Super Left send-layout-cmd rivertile "main-location left"
+#
+# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
+# riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+# riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
 
-  # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-  riverctl map $mode None XF86AudioRaiseVolume spawn 'pamixer -i 5'
-  riverctl map $mode None XF86AudioLowerVolume spawn 'pamixer -d 5'
-  riverctl map $mode None XF86AudioMute spawn 'pamixer --toggle-mute'
+# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
+# riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
+# riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+#
+# Super+Period and Super+Comma to focus the next/previous output(Monitor/Screen)
+# riverctl map normal Super Period focus-output next
+# riverctl map normal Super Comma focus-output previous
 
-  # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
-  riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
-  riverctl map $mode None XF86AudioPlay spawn 'playerctl play-pause'
-  riverctl map $mode None XF86AudioPrev spawn 'playerctl previous'
-  riverctl map $mode None XF86AudioNext spawn 'playerctl next'
+# Super+Shift+{Period,Comma} to send the focused view to the next/previous output
+# riverctl map normal Super+Shift Period send-to-output next
+# riverctl map normal Super+Shift Comma send-to-output previous
 
-  # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
-  riverctl map $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
-  riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
-done
+#   █████████            █████     █████     ███
+#  ███░░░░░███          ░░███     ░░███     ░░░
+# ░███    ░░░   ██████  ███████   ███████   ████  ████████    ███████  █████
+# ░░█████████  ███░░███░░░███░   ░░░███░   ░░███ ░░███░░███  ███░░███ ███░░
+#  ░░░░░░░░███░███████   ░███      ░███     ░███  ░███ ░███ ░███ ░███░░█████
+#  ███    ░███░███░░░    ░███ ███  ░███ ███ ░███  ░███ ░███ ░███ ░███ ░░░░███
+# ░░█████████ ░░██████   ░░█████   ░░█████  █████ ████ █████░░███████ ██████
+#  ░░░░░░░░░   ░░░░░░     ░░░░░     ░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░███░░░░░░
+#                                                            ███ ░███
+#                                                           ░░██████
+#                                                            ░░░░░░
 
 # Set background and border color
 riverctl background-color 0x002b36
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
+riverctl border-width 2
+riverctl border-color-focused 0x888CA7
+riverctl border-color-unfocused 0x333333
 
-# Set keyboard repeat rate
 riverctl set-repeat 50 300
+riverctl default-layout rivertile
+riverctl default-attach-mode bottom
+riverctl focus-follows-cursor always
+riverctl hide-cursor timeout 60000 # 60 Seconds in milliseconds
+riverctl hide-cursor when-typing enabled
+riverctl set-cursor-warp on-focus-change
 
-# Make all views with an app-id that starts with "float" and title "foo" start floating.
-riverctl rule-add -app-id 'float*' -title 'foo' float
+rivertile -view-padding 5 -outer-padding 5 &
+riverctl send-layout-cmd rivertile "main-ratio 0.5"
 
-# Make all views with app-id "bar" and any title use client-side decorations
-riverctl rule-add -app-id "bar" csd
+# Touchpad Settings
+# Get device name from riverctl list-inputs
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" tap enabled
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" accel-profile flat
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
-riverctl default-layout rivertile
-rivertile -view-padding 6 -outer-padding 6 &
-riverctl input "SynPS/2 Synaptics TouchPad" disable-while-typing enabled
-riverctl input "SynPS/2 Synaptics TouchPad" disable-while-trackpointing
+
+#   █████████                                █████             █████                              █████
+#  ███░░░░░███                              ░░███             ░░███                              ░░███
+# ░███    ░░░   ██████  ████████   ██████   ███████    ██████  ░███████   ████████   ██████    ███████
+# ░░█████████  ███░░███░░███░░███ ░░░░░███ ░░░███░    ███░░███ ░███░░███ ░░███░░███ ░░░░░███  ███░░███
+#  ░░░░░░░░███░███ ░░░  ░███ ░░░   ███████   ░███    ░███ ░░░  ░███ ░███  ░███ ░███  ███████ ░███ ░███
+#  ███    ░███░███  ███ ░███      ███░░███   ░███ ███░███  ███ ░███ ░███  ░███ ░███ ███░░███ ░███ ░███
+# ░░█████████ ░░██████  █████    ░░████████  ░░█████ ░░██████  ████ █████ ░███████ ░░████████░░████████
+#  ░░░░░░░░░   ░░░░░░  ░░░░░      ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░ ░░░░░  ░███░░░   ░░░░░░░░  ░░░░░░░░
+#                                                                         ░███
+#                                                                         █████
+#                                                                        ░░░░░
+
+# Create scratchpad tags for each tag I need
+terminal_tag=$((1 << 11))
+lf_tag=$((1 << 12))
+dots_tag=$((1 << 13))
+monitor_tag=$((1 << 14))
+docs_tag=$((1 << 15))
+ticktick_tag=$((1 << 16))
+spotify_tag=$((1 << 18))
+special1_tag=$((1 << 19))
+# special2_tag=$((1 << 18))
+# special3_tag=$((1 << 19))
+# special4_tag=$((1 << 20))
+#
+all_tags=$(((1 << 32) - 1))
+sticky_tag=$((1 << 31))
+scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special1_tag))
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(($all_tags ^ $scratch_tags))
+all_but_sticky_tag=$(($all_tags ^ $sticky_tag))
+riverctl spawn-tagmask ${all_but_sticky_tag}
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+term="$terminal --app-id Special_term -e tmux new-session -s Terminal"
+lf="$terminal --app-id Special_lf -e zsh -ic \"tmux new-session -s FileManager 'lf'\"" #lfMention
+btop="$terminal --app-id Special_btop -e btop"
+nvim="$terminal --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor 'nvim'"
+
+riverctl map normal Super S toggle-view-tags $sticky_tag
+
+riverctl map normal Super+Shift T set-focused-tags $(($terminal_tag + $sticky_tag))
+riverctl map normal Super+Shift M set-focused-tags $(($monitor_tag + $sticky_tag))
+riverctl map normal Super+Shift L set-focused-tags $(($lf_tag + $sticky_tag))
+riverctl map normal Super+Shift N set-focused-tags $(($dots_tag + $sticky_tag))
+riverctl map normal Super+Shift D set-focused-tags $(($docs_tag + $sticky_tag))
+riverctl map normal Super+Shift S set-focused-tags $(($spotify_tag + $sticky_tag))
+riverctl map normal Super+Shift Minus set-focused-tags $(($ticktick_tag + $sticky_tag))
+riverctl map normal Super+Shift Space set-focused-tags $(($special1_tag + $sticky_tag))
+
+#  ███████████              ████
+# ░░███░░░░░███            ░░███
+#  ░███    ░███  █████ ████ ░███   ██████   █████
+#  ░██████████  ░░███ ░███  ░███  ███░░███ ███░░
+#  ░███░░░░░███  ░███ ░███  ░███ ░███████ ░░█████
+#  ░███    ░███  ░███ ░███  ░███ ░███░░░   ░░░░███
+#  █████   █████ ░░████████ █████░░██████  ██████
+# ░░░░░   ░░░░░   ░░░░░░░░ ░░░░░  ░░░░░░  ░░░░░░
+
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add ssd
+
+riverctl rule-add -app-id "floorp" tags $((1 << (1 - 1)))
+riverctl rule-add -app-id "firefox" tags $((1 << (1 - 1)))
+riverctl rule-add -app-id "Code" tags $((1 << (2 - 1)))
+riverctl rule-add -app-id "dev.zed.Zed" tags $((1 << (2 - 1)))
+riverctl rule-add -app-id "org.gnome.Nautilus" tags $((1 << (3 - 1)))
+riverctl rule-add -app-id "Thunar" tags $((1 << (3 - 1)))
+riverctl rule-add -app-id "org.libretro.RetroArch" tags $((1 << (4 - 1)))
+riverctl rule-add -app-id "Celeste.bin.x86_64" tags $((1 << (4 - 1)))
+riverctl rule-add -app-id "hollow_knight.x86_64" tags $((1 << (4 - 1)))
+riverctl rule-add -app-id "citra-qt" tags $((1 << (4 - 1)))
+riverctl rule-add -app-id "es-de" tags $((1 << (4 - 1)))
+riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
+riverctl rule-add -app-id "Webcord" tags $((1 << (6 - 1)))
+riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
+
+riverctl rule-add -app-id "Specical_term" tags $terminal_tag
+riverctl rule-add -app-id "Special_btop" tags $monitor_tag
+riverctl rule-add -app-id "Special_lf" tags $lf_tag
+riverctl rule-add -app-id "Special_nvim" tags $dots_tag
+riverctl rule-add -app-id "ticktick" tags $ticktick_tag
+riverctl rule-add -app-id "feh" tags $docs_tag
+riverctl rule-add -app-id "mpv" tags $docs_tag
+riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
+riverctl rule-add -app-id "Spotify" tags $spotify_tag
+
+riverctl rule-add -app-id "org.pwmt.zathura" fullscreen
+riverctl rule-add -app-id "mpv" fullscreen
+riverctl rule-add -app-id "feh" fullscreen
+riverctl rule-add -app-id "org.libretro.RetroArch" fullscreen
+riverctl rule-add -app-id "es-de" fullscreen
+
+riverctl rule-add -app-id "galculator" float
+riverctl rule-add -app-id "org.kde.kcalc" float
+riverctl rule-add -app-id "blueman-manager" float
+riverctl rule-add -app-id "nm-connection-editor" float
+riverctl rule-add -app-id "org.kde.polkit-kde-authentication-agent-1" float
+
+# riverctl float-filter-add app-id float
+# riverctl float-filter-add title "popup title with spaces"
+# riverctl float-filter-add title "zoom"
+
+# Hopefully these work
+# riverctl rule-add -app-id "Lxappearance" float
+# riverctl rule-add -app-id "viewnior" float
+# riverctl rule-add -app-id "pavucontrol-qt" float
+# riverctl rule-add -app-id "pavucontrol" float
+# riverctl rule-add -app-id "file-roller" float
+# riverctl rule-add -title "file_progress" float
+# riverctl rule-add -title "confirm" float
+# riverctl rule-add -title "dialog" float
+# riverctl rule-add -title "download" float
+# riverctl rule-add -title "notification" float
+# riverctl rule-add -title "error" float
+# riverctl rule-add -title "splash" float
+# riverctl rule-add -title "confirmreset" float
+# riverctl rule-add -title "Open File" float
+# riverctl rule-add -title "branchdialog" float
+# riverctl rule-add -title "wlogout" float
+# riverctl rule-add -title "Media viewer" float
+# riverctl rule-add -title "Volume Control" float
+# riverctl rule-add -title "Picture-in-Picture" float
