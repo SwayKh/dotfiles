@@ -11,6 +11,7 @@ configuration {
   display-drun:         " Apps"; // 󰀻
   display-run:          " Runs";
   display-nerdy:        "󰱨 Nerdy";
+  display-emoji:        "󰱨 Emoji";
 	display-window:       " Windows";
   display-filebrowser:  " Files";
 	display-ssh:          "󰣀 SSH";
@@ -26,7 +27,7 @@ configuration {
 window {
   /*Removing height make the window height equal to num of opts*/
   /*height: 40%;*/
-  width: 50%;
+  width: 40%;
   orientation: vertical;
   location: north;
   anchor: north;
