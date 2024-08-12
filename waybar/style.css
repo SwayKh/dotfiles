@@ -9,7 +9,7 @@
 * {
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 window#waybar {
@@ -26,6 +26,8 @@ button {
   /* Avoid rounded borders under each button name */
   border: none;
   border-radius: 0;
+  padding: 0px 5px;
+  margin: 3px 0px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -62,7 +64,7 @@ button:hover {
   /*If you need round border icons*/
   border-radius: 20px;
   padding: 0px 5px;
-  margin: 3px 3px;
+  margin: 3px 0px;
 }
 
 #tags button.occupied {
@@ -104,8 +106,8 @@ button:hover {
 #custom-notification,
 #window,
 #mpd {
-  padding: 0px 5px;
-  padding-right: 10px;
+  padding: 0px 3px;
+  padding-right: 5px;
   margin: 3px 3px;
   color: @bordercolor;
 }
@@ -122,7 +124,7 @@ button:hover {
 #tray {
   background-color: @bordercolor;
   border-radius: 20px;
-  padding: 0px 10px;
+  padding: 0px 5px;
   margin: 5px;
 }
 
