@@ -28,7 +28,30 @@ The scripts I use for setting wallpapers and the Session Menu for rofi are in th
 
 ## Installation
 
----
+### Very important
+```
+sudo pacman -S xdg-desktop-portal-hyprland brightnessctl playerctl
+```
+
+### Hyprland Stuff
+```
+sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
+```
+
+### Utilities
+```
+sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist
+```
+
+### Cli tools
+```
+sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf
+```
+
+### Pipewire and stuff
+```
+sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
+```
 
 Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
 
@@ -46,13 +69,14 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Application Launcher** : [Rofi(wayland fork)](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
 - **File Manager** : [LF](https://github.com/gokcehan/lf) / [Yazi](https://github.com/sxyazi/yazi)
+- **File Manager(GUI)** : [Nautilus](https://apps.gnome.org/Nautilus/)
 - **Text Editor** : [Neovim](https://neovim.io/)
 - **Browser** : [Floorp](https://floorp.app/en)
 - **Idle daemon** : [Hypridle](https://github.com/hyprwm/hypridle)
 - **Screen Locking Utility** : [Hyprlock](https://github.com/hyprwm/hyprlock)
 - **Terminal Multiplexer** : [Tmux](https://github.com/tmux/tmux)
 - **Shell** : [Zsh](https://www.zsh.org/)
-- **Shell Prompt** : [Startship](https://starship.rs/)
+- **Shell Prompt** : [Starship](https://starship.rs/)
 - **Login Manager** : [ly](https://github.com/fairyglade/ly)
 - **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
 - **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
@@ -76,6 +100,7 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 
 - **Terminal** : [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor** : [Micro](https://micro-editor.github.io/)
+- **File Manager(GUI)** : [Thunar](https://docs.xfce.org/xfce/thunar/start)
 - **Screenlock Util** : [Swaylock-effects](https://github.com/mortie/swaylock-effects)
 - **Idle daemon** : [Swayidle](https://github.com/swaywm/swayidle)
 - **Notification daemon** : [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
@@ -98,7 +123,7 @@ ncdu
 tldr
 paru
 sshfs
-swaybg
+swww
 tmux
 tree
 ```
@@ -201,7 +226,7 @@ qbittorrent
 retroarch
 rofi-nerdy
 sddm
-thunar
+nautilus
 ticktick
 uget
 vscode
@@ -221,6 +246,7 @@ pacutils
 network-manager-applet
 pamixer
 pipewire
+pipewire-audio
 pipewire-pulse
 wireplumber
 pavucontrol
