@@ -48,7 +48,7 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = Hack Nerd Font;10
+font-0 = Hack Nerd Font;9
 
 modules-left = xworkspaces xwindow
 modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date

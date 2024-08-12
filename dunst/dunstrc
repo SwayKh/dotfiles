@@ -2,7 +2,7 @@
 # /etc/dunst/dunstrc
 
 [global]
-    font = "JetBrainsMono Nerd Font 10"
+    font = "JetBrainsMono Nerd Font 9"
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
