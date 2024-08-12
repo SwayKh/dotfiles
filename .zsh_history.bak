@@ -2071,3 +2071,493 @@
 : 1723120867:0;cd
 : 1723120874:0;man cp
 : 1723120922:0;cp -a .zsh_history .zsh_history.bak
+: 1723121319:0;pm
+: 1723121402:0;paru -Slq | fzf
+: 1723121443:0;man river
+: 1723121450:0;man rivertile
+: 1723121489:0;fman
+: 1723121886:0;man riverctl
+: 1723121895:0;pm
+: 1723121899:0;source ~/.zshrc
+: 1723121902:0;pm
+: 1723133400:0;git show
+: 1723133409:0;cd scripts
+: 1723133412:0;git show
+: 1723133416:0;ls
+: 1723133417:0;cd
+: 1723133556:0;nvim
+: 1723133579:0;vim
+: 1723133601:0;nvim
+: 1723133811:0;pm
+: 1723133858:0;source ~/.zshrc
+: 1723133859:0;pm
+: 1723133872:0;paru -S rofi-nerdy
+: 1723133888:0;paru -S rofi-nerdy --needed
+: 1723133903:0;c.
+: 1723133908:0;lg
+: 1723133945:0;up
+: 1723135242:0;rofi -show nerdy
+: 1723135341:0;pm
+: 1723135514:0;up
+: 1723135535:0;pm
+: 1723137121:0;clear
+: 1723137471:0;pm
+: 1723137485:0;paru -S flameshot
+: 1723138051:0;flameshot
+: 1723138079:0;flameshot gui
+: 1723138382:0;yeet flameshot
+: 1723139589:0;tmux kill-server
+: 1723139607:0;cd scripts
+: 1723139608:0;ls
+: 1723139613:0;update_roms
+: 1723139631:0;most_used 10
+: 1723139645:0;session_menu
+: 1723139665:0;fdot
+: 1723139667:0;fdots
+: 1723139670:0;fshot
+: 1723139672:0;fshow
+: 1723139675:0;ls
+: 1723139680:0;fclip
+: 1723139696:0;check_history
+: 1723139704:0;check_history paru
+: 1723139717:0;nvim check_history
+: 1723139724:0;check_history paru
+: 1723139732:0;cheat_sheet fd
+: 1723139757:0;list_size
+: 1723139759:0;cd
+: 1723139761:0;list_size
+: 1723186112:0;cd Projects/Go
+: 1723186113:0;ls
+: 1723186117:0;cd N-Cover-Scraper
+: 1723186118:0;ls
+: 1723186128:0;./GoNCoverScraper
+: 1723186135:0;nvim Numbers.json
+: 1723186188:0;cd Projects/Go
+: 1723186191:0;cd N-Cover-Scraper
+: 1723186193:0;./GoNCoverScraper
+: 1723186237:0;clear
+: 1723186239:0;cd ..
+: 1723186240:0;ls
+: 1723186902:0;fman
+: 1723186909:0;cd Projects/Go
+: 1723186910:0;ls
+: 1723186928:0;tmux 
+: 1723186931:0;tmux kill-server
+: 1723186943:0;cd Projects/Go
+: 1723187803:0;up
+: 1723196410:0;c.
+: 1723196411:0;ls
+: 1723196415:0;nvim starship.toml
+: 1723196440:0;lg
+: 1723197365:0;fshow
+: 1723197431:0;cd scripts
+: 1723197431:0;ls
+: 1723197434:0;lg
+: 1723197589:0;cd ..
+: 1723197664:0;clear
+: 1723197666:0;c.
+: 1723198185:0;ls
+: 1723198187:0;cd GoClass
+: 1723198187:0;ls
+: 1723198205:0;mkdir FileIO
+: 1723198207:0;cd FileIO
+: 1723198207:0;ls
+: 1723198214:0;go mod init fileio
+: 1723198223:0;touch main.go
+: 1723198533:0;nvim main.go
+: 1723199062:0;go run .
+: 1723199285:0;nvim main.go
+: 1723200229:0;tmux kill-session -t Editor
+: 1723200309:0;go run .
+: 1723203815:0;go run main.go
+: 1723203820:0;go run main.go go.mod
+: 1723203850:0;nvim main.go
+: 1723203887:0;go run main.go go.mod
+: 1723203892:0;go run main.go *.go
+: 1723203905:0;go run main.go format/fmtEx.go
+: 1723203968:0;nvim
+: 1723204003:0;go run main.go
+: 1723204008:0;ls
+: 1723204012:0;nvim
+: 1723204132:0;go run wc.go
+: 1723204200:0;go run . go.mod
+: 1723204203:0;go run . wc.go
+: 1723204206:0;go run .
+: 1723204211:0;go run main.go go.mod
+: 1723208005:0;vnstat
+: 1723208009:0;vnstat -d
+: 1723208023:0;vnstat -h
+: 1723208284:0;nethogs
+: 1723208286:0;clear
+: 1723224497:0;paru -Y
+: 1723224500:0;paru -Yc
+: 1723224534:0;paru
+: 1723224539:0;clear
+: 1723224557:0;paru --help
+: 1723224635:0;paru yay
+: 1723224660:0;yay --help
+: 1723224717:0;yay -Yc
+: 1723224752:0;yeet yay
+: 1723224758:0;cd .
+: 1723224759:0;cd ..
+: 1723289045:0;ls
+: 1723289050:0;echo $SHELL
+: 1723289052:0;echo $TERM
+: 1723289061:0;c.
+: 1723289066:0;cd river
+: 1723289067:0;ls
+: 1723289075:0;nvim init
+: 1723289102:0;cd ..
+: 1723289103:0;nvim
+: 1723289142:0;riverctl spawn "~/.config/waybar/launch.sh"\
+
+: 1723290043:0;lf
+: 1723290270:0;riverctl spawn "~/.config/waybar/launch.sh"\
+
+: 1723290277:0;waybar
+: 1723290281:0;riverctl spawn "~/.config/waybar/launch.sh"\
+
+: 1723290438:0;waybar
+: 1723291165:0;riverctl spawn "~/.config/waybar/launch.sh"\
+
+: 1723291252:0;lg
+: 1723291348:0;nvim river/init
+: 1723291563:0;riverctl zoom
+: 1723291843:0;clear
+: 1723291843:0;tmux
+: 1723291847:0;ls
+: 1723291852:0;btop
+: 1723291860:0;neofetch
+: 1723291863:0;btopm
+: 1723291865:0;btop
+: 1723291871:0;neofetch
+: 1723293344:0;sudo libinput list-devices
+: 1723293354:0;sudo libinput list-devices | grep touchpad
+: 1723293487:0;riverctl input "SynPS/2 Synaptics TouchPad" tap enabled\
+
+: 1723293509:0;riverctl input "SynPS/2 Synaptics TouchPad" natural-scroll enabled
+: 1723294163:0;c.
+: 1723294165:0;nvim river/init
+: 1723294167:0;lf
+: 1723294272:0;riverctl border-color-unfocused 0x333333\
+
+: 1723294279:0;riverctl border-color-focused 0x888CA7\
+
+: 1723294293:0;riverctl border-color-focused 0x333333\
+
+: 1723294297:0;riverctl border-color-focused 0x888CA7\
+
+: 1723294336:0;rivertile -view-padding 5 -outer-padding 5 &\
+
+: 1723294453:0;notify-send "Volume: $(pamixer --get-volume)"
+: 1723294472:0;notify-send "Volume: $(pamixer --get-volume)%"
+: 1723294475:0;notify-send "Volume: $(pamixer --get-volume) %"
+: 1723294536:0;brightnessctl g
+: 1723294541:0;brightnessctl -m | cut -d, -f4 | tr -d '%'
+: 1723294594:0;notify-send "Brightness: $(brightnessctl -m | cut -d, -f4 | tr -d '%')"
+: 1723305751:0;yeet hyprland-git
+: 1723305794:0;yeet hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git
+: 1723305808:0;yeet hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git xdg-desktop-portal-hyprland-git
+: 1723305812:0;clear
+: 1723306469:0;cd dotfiles/river
+: 1723306469:0;ls
+: 1723306474:0;./init
+: 1723308175:0;paru wev
+: 1723308185:0;wev
+: 1723308585:0;fwall
+: 1723308597:0;lf
+: 1723309108:0;../scripts/screenshots/captureArea.sh
+: 1723310012:0;wev
+: 1723310318:0;./init
+: 1723311301:0;paru 
+: 1723311312:0;paru -S wlr-randr
+: 1723311330:0;wlr-randr
+: 1723311453:0;man wlr-randr
+: 1723311509:0;wlr-randr --output HDMI-A-1 --mode 1366x768@60Hz --scale 1.5
+: 1723311517:0;wlr-randr --output eDP-1 --mode 1366x768@60Hz --scale 1.5
+: 1723311530:0;wlr-randr --output eDP-1 --scale 1.5
+: 1723311535:0;wlr-randr --output eDP-1 --scale 0.8
+: 1723311559:0;wlr-randr --output eDP-1  --scale 0.75
+: 1723311817:0;pm
+: 1723311931:0;wlr-randr --output eDP-1  --scale 1
+: 1723312323:0;neofetch
+: 1723312343:0;../scripts/random_swww_wall
+: 1723313125:0;ls
+: 1723313126:0;clear
+: 1723313129:0;cd ..
+: 1723313130:0;nvim
+: 1723313195:0;clear
+: 1723313293:0;notify-send "Brightness: $(brightnessctl -m | cut -d, -f4 | tr -d '%')"
+: 1723313405:0;./waybar/launch.sh
+: 1723313414:0;j
+: 1723314185:0;paru -Qq | fzf
+: 1723314379:0;yeet xdg-desktop-portal-gtk
+: 1723314405:0;paru -S xdg-desktop-portal
+: 1723314749:0;cd scripts
+: 1723314749:0;ls
+: 1723314762:0;touch colorpicker
+: 1723314770:0;nvim colorpicker
+: 1723314851:0;chmod 755 colorpicker
+: 1723314854:0;./colorpicker
+: 1723314870:0;nvim colorpicker
+: 1723314896:0;./colorpicker
+: 1723314909:0;nvim colorpicker
+: 1723314921:0;./colorpicker
+: 1723315321:0;riverctl border-width 2\
+
+: 1723315323:0;riverctl border-width 1\
+
+: 1723315325:0;riverctl border-width 2\
+
+: 1723315328:0;riverctl border-width 5\
+
+: 1723315330:0;riverctl border-width 2\
+
+: 1723315358:0;rivertile -view-padding 5 -outer-padding 5 &\
+
+: 1723315368:0;riverctl input "SynPS/2 Synaptics TouchPad" tap enabled\
+
+: 1723315390:0;"prompt 'Quit: ' 'riverctl exit'"
+: 1723315656:0;riverctl map normal Super+Control R spawn "${XDG_CONFIG_HOME}/river/init >/dev/null && notify-send 'River' 'Refreshed'"\
+
+: 1723315685:0;riverctl map normal Super+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'River' 'Refreshed'"\
+
+: 1723316102:0;clear
+: 1723316218:0;sudo libinput list-devices
+: 1723316343:0;c.
+: 1723316346:0;./river/init
+: 1723316420:0;sudo libinput list-devices
+: 1723316454:0;riverctl input "SynPS/2 Synaptics TouchPad" natural-scroll enabled\
+
+: 1723316466:0;riverctl input "SynPS/2 Synaptics TouchPad" natural-scroll disabled\
+
+: 1723316660:0;chmod 755 river/scratchpads.sh
+: 1723317261:0;neofetch
+: 1723317326:0;c.
+: 1723317327:0;nvim
+: 1723317391:0;c.
+: 1723317392:0;nvim
+: 1723317453:0;c.
+: 1723317454:0;nvim
+: 1723364453:0;c.
+: 1723364456:0;nvim
+: 1723364533:0;figlet
+: 1723364540:0;figlet Autostart
+: 1723364578:0;man figlet
+: 1723364581:0;pm
+: 1723364670:0;figlet -f script Autostart
+: 1723364677:0;figlet -f banner Autostart
+: 1723364684:0;figlet -f big Autostart
+: 1723364690:0;figlet -f block Autostart
+: 1723364699:0;figlet -f bubble Autostart
+: 1723364704:0;figlet -f digital Autostart
+: 1723364711:0;figlet -f ivrit Autostart
+: 1723364716:0;figlet -f lean Autostart
+: 1723364724:0;figlet -f mini Autostart
+: 1723364731:0;figlet -f mnemonic Autostart
+: 1723364738:0;figlet -f shadow Autostart
+: 1723364764:0;figlet -f smscript Autostart
+: 1723364770:0;figlet -f term Autostart
+: 1723364775:0;figlet -f standard Autostart
+: 1723364785:0;figlet -f smshadow Autostart
+: 1723364803:0;paru -S figlet-fonts
+: 1723364828:0;figlet -f slide Autostart
+: 1723364870:0;figlet -f 3-d Autostart
+: 1723364916:0;figlet -f sansi Autostart
+: 1723364943:0;figlet -f banner Autostart
+: 1723364950:0;figlet -f banner3 Autostart
+: 1723364958:0;figlet -f banner3-D Autostart
+: 1723364963:0;figlet -f banner4 Autostart
+: 1723365024:0;figlet -f colossal Autostart
+: 1723365040:0;figlet -f doh Autostart
+: 1723365049:0;figlet -f dotmatrix Autostart
+: 1723365071:0;figlet -f larry3d Autostart
+: 1723365252:0;paru -S figlet-fonts-extra
+: 1723365289:0;figlet -f ANSI\ Regular Autostart
+: 1723365296:0;figlet -f ANSI\ Shadow Autostart
+: 1723365351:0;figlet -f ANSI\ Shadow Mappings
+: 1723365431:0;figlet -f ANSI\ Shadow Settings
+: 1723365577:0;H
+: 1723365606:0;clear
+: 1723365667:0;figlet -f Basic Settings
+: 1723365698:0;figlet -f Big\ Money-nw Settings
+: 1723365739:0;figlet -f DOS\ Rebel Settings
+: 1723365775:0;figlet -f DOS\ Rebel Binds
+: 1723365786:0;figlet -f DOS\ Rebel Mappings
+: 1723365851:0;figlet -f DOS\ Rebel Autostart
+: 1723365909:0;figlet -f DOS\ Rebel -t Autostart
+: 1723366076:0;man riverctl
+: 1723366084:0;nvim
+: 1723366923:0;clear
+: 1723366931:0;up
+: 1723366969:0;river -v
+: 1723366973:0;river -version
+: 1723367477:0;riverctl get-focused-tag
+: 1723367478:0;riverctl get-focused-tags
+: 1723367508:0;echo $(riverctl get-focused-tags_\
+
+: 1723367510:0;echo $(riverctl get-focused-tags)\
+
+: 1723377022:0;riverctl -help
+: 1723377025:0;riverctl -
+: 1723377027:0;riverctl -h
+: 1723377040:0;riverctl list-views
+: 1723377043:0;riverctl list-rules
+: 1723377047:0;riverctl list-rules tags
+: 1723377051:0;riverctl list-rules ssd
+: 1723377055:0;riverctl list-rules output
+: 1723377060:0;riverctl list-rules position
+: 1723377066:0;riverctl list-rules float
+: 1723377073:0;clear
+: 1723377298:0;riverctl list-inputs
+: 1723377593:0;riverctl list-input-configs
+: 1723377703:0;riverctl list-inputs
+: 1723378056:0;riverctl list-input-configs
+: 1723378069:0;sudo libinput list-devices
+: 1723378304:0;riverctl focus-previous-tags
+: 1723378311:0;riverctl focus-next-tags
+: 1723378368:0;riverctl zoom
+: 1723378397:0;riverctl focus-previous-tags -1
+: 1723378400:0;riverctl focus-previous-tags
+: 1723378407:0;riverctl focus-previous-tags -h
+: 1723379269:0;paru -S lswt
+: 1723379300:0;lswt
+: 1723379315:0;hyprctl clients
+: 1723379365:0;riverctl list-views
+: 1723381001:0;riverctl focus-output next
+: 1723381161:0;seq 10 20
+: 1723381190:0;seq 11 20
+: 1723382212:0;foot --app-id nvim
+: 1723382218:0;lswt
+: 1723392477:0;fshow
+: 1723392874:0;lswt
+: 1723393228:0;pgrep
+: 1723393233:0;pgrep foot
+: 1723393238:0;pgrep obsidian
+: 1723393244:0;pgrep Obsidian
+: 1723393266:0;lswt
+: 1723393277:0;pgrep obsidian
+: 1723393292:0;echo $(pgrep obsidian)
+: 1723393371:0;pgrep -f obsidian
+: 1723393628:0;riverctl list-rules
+: 1723393634:0;riverctl list-rules tags
+: 1723393653:0;riverctl toggle-view-tags
+: 1723394292:0;riverctl focus-output previous
+: 1723394346:0;figlet -f DOS\ Rebel -t Rules
+: 1723394398:0;clear
+: 1723394399:0;lswt
+: 1723394486:0;figlet -f DOS\ Rebel -t Scratchpads
+: 1723394491:0;figlet -f DOS\ Rebel -t Scratchpad
+: 1723395128:0;lswt
+: 1723395177:0;zeditor
+: 1723395179:0;code
+: 1723395209:0;lswt
+: 1723395360:0;paru
+: 1723395368:0;pm
+: 1723395410:0;paru -S code
+: 1723395465:0;lswt
+: 1723395490:0;pm
+: 1723395511:0;paru -S visual-studio-code-bin
+: 1723395529:0;pm
+: 1723395573:0;lswt
+: 1723395613:0;paru -S zed
+: 1723395626:0;lswt
+: 1723395662:0;paru -S thunar
+: 1723395668:0;lswt
+: 1723395702:0;yeet visual-studio-code-bin zed
+: 1723395708:0;clear
+: 1723395721:0;lswt
+: 1723395741:0;yeet thunar
+: 1723395743:0;clear
+: 1723395747:0;up
+: 1723395764:0;clear
+: 1723395790:0;lswt
+: 1723395841:0;clear
+: 1723395843:0;lswt
+: 1723395868:0;clear
+: 1723395896:0;lswt
+: 1723396019:0;feg
+: 1723396023:0;feh
+: 1723396032:0;feh .config/w
+: 1723396036:0;feh .config/wall.png
+: 1723396042:0;lswt
+: 1723396365:0;man riverctl
+: 1723396506:0;clear
+: 1723396518:0;riverctl rule-add fullscreen "mpv"
+: 1723396534:0;riverctl rule-add fullscreen -app-id "mpv"
+: 1723396543:0;riverctl rule-add -app-id "mpv" fullscreen
+: 1723396635:0;paru -S kcalc
+: 1723396653:0;lswt
+: 1723396716:0;yeet kcalc
+: 1723396749:0;lswt
+: 1723397671:0;clear
+: 1723397672:0;c.
+: 1723397672:0;ls
+: 1723397676:0;./river/init
+: 1723398184:0;clear
+: 1723398420:0;./river/init
+: 1723399832:0;foot --app-id term -e tmux new-session -s \Terminal\\
+
+: 1723399964:0;foot --app-id term -e tmux new-session -s \"Terminal\"
+: 1723399972:0;foot --app-id term -e tmux new-session -s Terminal
+: 1723400044:0;lswt
+: 1723400076:0;foot --app-id term -e tmux
+: 1723400103:0;foot -e tmux
+: 1723400110:0;foot -e tmux --app-id lf
+: 1723400133:0;foot --app-id btop -e btop
+: 1723401532:0;foot --app-id term -e tmux new-session -s "Terminal"\
+
+: 1723401539:0;foot -e tmux new-session -s "Terminal"\
+
+: 1723401630:0;c.
+: 1723401634:0;./river/init
+: 1723401710:0;man rivertile
+: 1723401779:0;riverctl send-layout-cmd rivertile "main-ratio 0.5"\
+
+: 1723401788:0;man riverctl
+: 1723401790:0;clear
+: 1723401825:0;tmux ls
+: 1723401857:0;paru -S swayidle swaylock-effects
+: 1723401896:0;tmux ls
+: 1723401914:0;tmux kill-session -t Terminal
+: 1723401919:0;tmux kill-session -t "\"Terminal\""
+: 1723401925:0;tmux kill-session -t 24
+: 1723401927:0;tmux kill-session -t 3
+: 1723401929:0;tmux ls
+: 1723401933:0;clear
+: 1723402195:0;ls
+: 1723402198:0;cd river
+: 1723402198:0;ls
+: 1723402205:0;chmod 755 environment.sh
+: 1723402236:0;lswt
+: 1723403016:0;tmux ls
+: 1723403028:0;echo $WAYLAND_DISPLAY
+: 1723403553:0;echo $XDG_SESSION_DESKTOP
+: 1723403631:0;clea
+: 1723403632:0;clear
+: 1723403633:0;ls
+: 1723403646:0;riverctl spawn .config/river/environment.sh
+: 1723403649:0;echo $XDG_SESSION_DESKTOP
+: 1723403653:0;tmux ls
+: 1723403687:0;lswt
+: 1723403694:0;riverctl list-rules
+: 1723403703:0;riverctl list-rules output
+: 1723403707:0;riverctl list-rules tags
+: 1723403721:0;riverctl list-rules fullscreen
+: 1723403724:0;riverctl list-rules float
+: 1723403734:0;riverctl list-rules dimensions
+: 1723403738:0;riverctl list-rules ssd
+: 1723404047:0;clear
+: 1723404049:0;echo $XDG_SESSION_DESKTOP
+: 1723404084:0;tmux ls
+: 1723470435:0;neofetch
+: 1723459164:0;waybar
+: 1723459194:0;ls
+: 1723459196:0;nvim
+: 1723459263:0;up
+: 1723459378:0;wlrctl
+: 1723459379:0;pm
+: 1723459422:0;clear
+: 1723459441:0;history | wc -l
+: 1723459445:0;cd
+: 1723459448:0;cp -a .zsh_history .zsh_history.bak
