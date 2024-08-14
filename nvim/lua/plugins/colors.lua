@@ -1,20 +1,21 @@
 return {
   {
-    "EdenEast/nightfox.nvim",
+    "dracula/vim",
+    name = "dracula",
     priority = 1000,
     config = function()
-      require("nightfox").setup({
-        transparent = true,
-        options = {
-          styles = {
-            comments = "italic",
-            keywords = "bold",
-            types = "italic,bold",
-          },
-        },
-      })
+      -- require("dracula").setup({
+      --   transparent = true,
+      --   options = {
+      --     styles = {
+      --       comments = "italic",
+      --       keywords = "bold",
+      --       types = "italic,bold",
+      --     },
+      --   },
+      -- })
 
-      vim.cmd.colorscheme("carbonfox")
+      vim.cmd.colorscheme("dracula")
       vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
       vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
       vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
