@@ -25,7 +25,6 @@ riverctl spawn "/usr/bin/kdeconnect-indicator"
 riverctl spawn "/usr/lib/polkit-kde-authentication-agent-1"
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "source $HOME/.config/river/environment.sh"
 # Clipboard History
 riverctl spawn "wl-paste --type text --watch cliphist store"  #Stores only text data
 riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image data
@@ -112,6 +111,12 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
+# Super+0 to focus all tags
+# Super+Shift+0 to tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
 # Super+Return to bump the focused view to the top of the layout stack
 riverctl map normal Super Return zoom
 
@@ -162,12 +167,6 @@ riverctl map normal Super+Shift Down swap down
 riverctl map normal Super+Shift Up swap up
 riverctl map normal Super+Shift Right swap right
 
-# Super+0 to focus all tags
-# Super+Shift+0 to tag focused view with all tags
-all_tags=$(((1 << 32) - 1))
-riverctl map normal Super 0 set-focused-tags $all_tags
-riverctl map normal Super+Shift 0 set-view-tags $all_tags
-
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
 riverctl declare-mode passthrough
@@ -180,7 +179,7 @@ riverctl map passthrough Super F11 enter-mode normal
 
 riverctl declare-mode resize
 riverctl map normal Alt R enter-mode resize
-# Super+{Up,Right,Down,Left} to change layout orientation
+# {Up,Right,Down,Left} to change layout orientation
 riverctl map resize None Up send-layout-cmd rivertile "main-location top"
 riverctl map resize None Right send-layout-cmd rivertile "main-location right"
 riverctl map resize None Down send-layout-cmd rivertile "main-location bottom"
@@ -216,10 +215,10 @@ riverctl map normal Super+Shift Comma send-to-output previous
 #                                                            ░░░░░░
 
 # Set background and border color
-riverctl background-color 0x002b36
+riverctl background-color 0x002B36
 riverctl border-width 2
-riverctl border-color-focused 0x888CA7
-riverctl border-color-unfocused 0x333333
+riverctl border-color-focused 0xA98DB5
+riverctl border-color-unfocused 0xA5A5A5
 
 riverctl set-repeat 30 300
 riverctl default-layout rivertile
@@ -254,14 +253,12 @@ terminal_tag=$((1 << 11))
 lf_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
-
 docs_tag=$((1 << 15))
 ticktick_tag=$((1 << 16))
-spotify_tag=$((1 << 18))
-special1_tag=$((1 << 19))
-# special2_tag=$((1 << 18))
-# special3_tag=$((1 << 19))
-# special4_tag=$((1 << 20))
+spotify_tag=$((1 << 17))
+special1_tag=$((1 << 18))
+# special2_tag=$((1 << 19))
+# special3_tag=$((1 << 20))
 #
 all_tags=$(((1 << 32) - 1))
 scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special1_tag))
@@ -312,7 +309,7 @@ riverctl rule-add -app-id "Special_lf" tags $lf_tag
 riverctl rule-add -app-id "Special_nvim" tags $dots_tag
 riverctl rule-add -app-id "Special_btop" tags $monitor_tag
 riverctl rule-add -app-id "ticktick" tags $ticktick_tag
-riverctl rule-add -app-id "feh" tags $docs_tag
+# riverctl rule-add -app-id "feh" tags $docs_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
 riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
 riverctl rule-add -app-id "Spotify" tags $spotify_tag
@@ -338,3 +335,4 @@ riverctl rule-add -title "Picture-in-Picture" float
 # River will send the process group of the init executable SIGTERM on exit.
 rivertile -view-padding 3 -outer-padding 3 &
 riverctl send-layout-cmd rivertile "main-ratio 0.5"
+riverctl send-layout-cmd rivertile "main-count 2"

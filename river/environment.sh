@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export XCURSOR_THEME=Bibata-Modern-Classic
 export XCURSOR_SIZE=18
@@ -17,3 +17,4 @@ export QT_SCALE_FACTOR=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=1
 export GDK_BACKEND="wayland,x11,*"
+export GTK_USE_PORTAL=1
