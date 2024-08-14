@@ -1,8 +1,8 @@
 // vim:ft=css:
 * {
   font:                   "JetBrainsMono Nerd Font 10";
-  foreground:             #888CA7;
-  background:             #091F2D;
+  foreground:             #A98DB5;
+  background:             #271638;
   highlight:              #F1EDEE;
 
   pink:                   #D99887;
