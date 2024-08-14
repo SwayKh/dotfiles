@@ -1,6 +1,6 @@
 
 set $mod Mod4
-set $term foot
+set $term footclient
 floating_modifier $mod normal
 
 bindsym $mod+q kill

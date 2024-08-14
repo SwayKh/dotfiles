@@ -4,7 +4,7 @@ configuration {
   dpi:                  90;
   icon-theme:           "Papirus";
   show-icons:           true;
-  terminal:             "foot";
+  terminal:             "footclient";
   disable-history:      false;
   max-history-size:     50;
 
