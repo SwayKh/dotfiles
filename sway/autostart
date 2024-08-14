@@ -10,6 +10,7 @@ exec_always pulseaudio --start
 exec_always ~/.config/waybar/launch.sh
 exec_always ~/.config/sway/environment.sh
 exec autotiling
+exec foot --server
 exec_always dunst
 exec_always nm-applet --indicator
 exec_always blueman-applet
