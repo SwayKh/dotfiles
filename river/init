@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # The Figlet font is DOS Rebel from https://github.com/xero/figlet-fonts/blob/master/Examples.md
 
@@ -18,21 +18,18 @@ riverctl spawn "dunst"
 riverctl spawn "nm-applet --indicator"
 riverctl spawn "blueman-applet"
 riverctl spawn "wl-clipboard"
+riverctl spawn "foot --server"
 riverctl spawn "swayidle -w"
 riverctl spawn "/usr/lib/kdeconnectd"
 riverctl spawn "/usr/bin/kdeconnect-indicator"
 riverctl spawn "/usr/lib/polkit-kde-authentication-agent-1"
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "$HOME/.config/river/environment.sh"
+riverctl spawn "source $HOME/.config/river/environment.sh"
 # Clipboard History
 riverctl spawn "wl-paste --type text --watch cliphist store"  #Stores only text data
 riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image data
-# riverctl spawn "wlr-randr --output eDP-1 --scale 0.75"
-riverctl spawn "$term"
-riverctl spawn "$lf"
-riverctl spawn "$btop"
-riverctl spawn "$nvim"
+# riverctl spawn "wlr-randr --output eDP-1 --scale 1.00"
 
 #  ███████████   ███                 █████
 # ░░███░░░░░███ ░░░                 ░░███
@@ -44,7 +41,7 @@ riverctl spawn "$nvim"
 # ░░░░░░░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░░
 
 # Variables
-terminal="foot"
+terminal="footclient"
 filemanager="nautilus"
 browser="floorp"
 
@@ -69,6 +66,7 @@ riverctl map normal Super+Control R spawn "$HOME/.config/river/init >/dev/null &
 
 riverctl map normal Super Space spawn "$HOME/scripts/random_swww_wall"
 riverctl map normal Super Escape spawn "$HOME/scripts/session_menu"
+riverctl map normal Super C spawn "$HOME/scripts/colorpicker"
 
 # Screenshots
 riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
@@ -180,27 +178,30 @@ riverctl map normal Super F11 enter-mode passthrough
 # Super+F11 to return to normal mode
 riverctl map passthrough Super F11 enter-mode normal
 
+riverctl declare-mode resize
+riverctl map normal Alt R enter-mode resize
 # Super+{Up,Right,Down,Left} to change layout orientation
-# riverctl map normal Super Up send-layout-cmd rivertile "main-location top"
-# riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
-# riverctl map normal Super Down send-layout-cmd rivertile "main-location bottom"
-# riverctl map normal Super Left send-layout-cmd rivertile "main-location left"
+riverctl map resize None Up send-layout-cmd rivertile "main-location top"
+riverctl map resize None Right send-layout-cmd rivertile "main-location right"
+riverctl map resize None Down send-layout-cmd rivertile "main-location bottom"
+riverctl map resize None Left send-layout-cmd rivertile "main-location left"
 #
 # Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
-# riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-# riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map resize Super H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map resize Super L send-layout-cmd rivertile "main-ratio +0.05"
 
 # Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
-# riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
-# riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+riverctl map resize Super+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map resize Super+Shift L send-layout-cmd rivertile "main-count -1"
+riverctl map resize None Escape enter-mode normal
 #
 # Super+Period and Super+Comma to focus the next/previous output(Monitor/Screen)
-# riverctl map normal Super Period focus-output next
-# riverctl map normal Super Comma focus-output previous
+riverctl map normal Super Period focus-output next
+riverctl map normal Super Comma focus-output previous
 
 # Super+Shift+{Period,Comma} to send the focused view to the next/previous output
-# riverctl map normal Super+Shift Period send-to-output next
-# riverctl map normal Super+Shift Comma send-to-output previous
+riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Comma send-to-output previous
 
 #   █████████            █████     █████     ███
 #  ███░░░░░███          ░░███     ░░███     ░░░
@@ -220,16 +221,13 @@ riverctl border-width 2
 riverctl border-color-focused 0x888CA7
 riverctl border-color-unfocused 0x333333
 
-riverctl set-repeat 50 300
+riverctl set-repeat 30 300
 riverctl default-layout rivertile
 riverctl default-attach-mode bottom
 riverctl focus-follows-cursor always
 riverctl hide-cursor timeout 60000 # 60 Seconds in milliseconds
 riverctl hide-cursor when-typing enabled
 riverctl set-cursor-warp on-focus-change
-
-rivertile -view-padding 5 -outer-padding 5 &
-riverctl send-layout-cmd rivertile "main-ratio 0.5"
 
 # Touchpad Settings
 # Get device name from riverctl list-inputs
@@ -238,9 +236,6 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" accel-profile flat
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
-
-# Set the default layout generator to be rivertile and start it.
-# River will send the process group of the init executable SIGTERM on exit.
 
 #   █████████                                █████             █████                              █████
 #  ███░░░░░███                              ░░███             ░░███                              ░░███
@@ -259,6 +254,7 @@ terminal_tag=$((1 << 11))
 lf_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
+
 docs_tag=$((1 << 15))
 ticktick_tag=$((1 << 16))
 spotify_tag=$((1 << 18))
@@ -268,30 +264,21 @@ special1_tag=$((1 << 19))
 # special4_tag=$((1 << 20))
 #
 all_tags=$(((1 << 32) - 1))
-sticky_tag=$((1 << 31))
 scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special1_tag))
-# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
-# explicitly set.
 all_but_scratch_tag=$(($all_tags ^ $scratch_tags))
-all_but_sticky_tag=$(($all_tags ^ $sticky_tag))
-riverctl spawn-tagmask ${all_but_sticky_tag}
 riverctl spawn-tagmask ${all_but_scratch_tag}
 
-term="$terminal --app-id Special_term -e tmux new-session -s Terminal"
-lf="$terminal --app-id Special_lf -e zsh -ic \"tmux new-session -s FileManager 'lf'\"" #lfMention
-btop="$terminal --app-id Special_btop -e btop"
-nvim="$terminal --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor 'nvim'"
+scratchpad="$HOME/.config/river/scratchpads.sh"
 
-riverctl map normal Super S toggle-view-tags $sticky_tag
+riverctl map normal Super+Shift T spawn "$scratchpad term"
+riverctl map normal Super+Shift M spawn "$scratchpad btop"
+riverctl map normal Super+Shift L spawn "$scratchpad lf"
+riverctl map normal Super+Shift N spawn "$scratchpad nvim"
 
-riverctl map normal Super+Shift T set-focused-tags $(($terminal_tag + $sticky_tag))
-riverctl map normal Super+Shift M set-focused-tags $(($monitor_tag + $sticky_tag))
-riverctl map normal Super+Shift L set-focused-tags $(($lf_tag + $sticky_tag))
-riverctl map normal Super+Shift N set-focused-tags $(($dots_tag + $sticky_tag))
-riverctl map normal Super+Shift D set-focused-tags $(($docs_tag + $sticky_tag))
-riverctl map normal Super+Shift S set-focused-tags $(($spotify_tag + $sticky_tag))
-riverctl map normal Super+Shift Minus set-focused-tags $(($ticktick_tag + $sticky_tag))
-riverctl map normal Super+Shift Space set-focused-tags $(($special1_tag + $sticky_tag))
+riverctl map normal Super+Shift D set-focused-tags $docs_tag
+riverctl map normal Super+Shift S set-focused-tags $spotify_tag
+riverctl map normal Super+Shift Minus set-focused-tags $ticktick_tag
+riverctl map normal Super+Shift Space set-focused-tags $special1_tag
 
 #  ███████████              ████
 # ░░███░░░░░███            ░░███
@@ -320,10 +307,10 @@ riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
 riverctl rule-add -app-id "Webcord" tags $((1 << (6 - 1)))
 riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
 
-riverctl rule-add -app-id "Specical_term" tags $terminal_tag
-riverctl rule-add -app-id "Special_btop" tags $monitor_tag
+riverctl rule-add -app-id "Special_term" tags $terminal_tag
 riverctl rule-add -app-id "Special_lf" tags $lf_tag
 riverctl rule-add -app-id "Special_nvim" tags $dots_tag
+riverctl rule-add -app-id "Special_btop" tags $monitor_tag
 riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "feh" tags $docs_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
@@ -342,27 +329,12 @@ riverctl rule-add -app-id "blueman-manager" float
 riverctl rule-add -app-id "nm-connection-editor" float
 riverctl rule-add -app-id "org.kde.polkit-kde-authentication-agent-1" float
 
-# riverctl float-filter-add app-id float
-# riverctl float-filter-add title "popup title with spaces"
-# riverctl float-filter-add title "zoom"
+riverctl rule-add -app-id "float" float
+riverctl rule-add -title "popup title with spaces" float
+riverctl rule-add -title "zoom" float
+riverctl rule-add -title "Picture-in-Picture" float
 
-# Hopefully these work
-# riverctl rule-add -app-id "Lxappearance" float
-# riverctl rule-add -app-id "viewnior" float
-# riverctl rule-add -app-id "pavucontrol-qt" float
-# riverctl rule-add -app-id "pavucontrol" float
-# riverctl rule-add -app-id "file-roller" float
-# riverctl rule-add -title "file_progress" float
-# riverctl rule-add -title "confirm" float
-# riverctl rule-add -title "dialog" float
-# riverctl rule-add -title "download" float
-# riverctl rule-add -title "notification" float
-# riverctl rule-add -title "error" float
-# riverctl rule-add -title "splash" float
-# riverctl rule-add -title "confirmreset" float
-# riverctl rule-add -title "Open File" float
-# riverctl rule-add -title "branchdialog" float
-# riverctl rule-add -title "wlogout" float
-# riverctl rule-add -title "Media viewer" float
-# riverctl rule-add -title "Volume Control" float
-# riverctl rule-add -title "Picture-in-Picture" float
+# Set the default layout generator to be rivertile and start it.
+# River will send the process group of the init executable SIGTERM on exit.
+rivertile -view-padding 3 -outer-padding 3 &
+riverctl send-layout-cmd rivertile "main-ratio 0.5"
