@@ -17,6 +17,7 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 source "$HOME"/dotfiles/scripts/function.sh
+source "$HOME/.config/river/environment.sh"
 source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/init-nvm.sh
 
