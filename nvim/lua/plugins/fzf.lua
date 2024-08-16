@@ -90,6 +90,7 @@ return {
       keymaps = { prompt = " Keymaps ❯ " },
       grep = {
         prompt = " Find ❯ ",
+        rg_opts = [[--column --line-number --no-heading --color=always --hidden --smart-case --max-columns=4096 -e]],
         no_header_i = true,
         rg_glob = true, -- enable glob parsing by default to all
         -- grep providers? (default:false)
