@@ -29,6 +29,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:"$HOME/.cargo/bin"
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export EDITOR=nvim
 export VISUAL=nvim
 export SUDO_EDITOR=nvim
