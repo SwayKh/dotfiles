@@ -18,3 +18,4 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=1
 export GDK_BACKEND="wayland,x11,*"
 export GTK_USE_PORTAL=1
+export WLR_NO_HARDWARE_CURSORS=1
