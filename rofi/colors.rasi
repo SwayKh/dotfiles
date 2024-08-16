@@ -82,6 +82,11 @@ button {
   background-color: @background;
 }
 
+button selected {
+  text-color:       @background;
+  background-color: @foreground;
+}
+
 element {
   text-color:       @foreground;
   background-color: @background;
