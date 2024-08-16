@@ -16,7 +16,7 @@ lf_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
 
-term="$terminal --app-id Special_term -e tmux new-session -s Terminal"
+term="$terminal --app-id Special_term -e zsh -ic \"tmux new-session -s Terminal\""
 lf="$terminal --app-id Special_lf -e zsh -ic \"tmux new-session -s FileManager 'lf'\"" #lfMention
 btop="$terminal --app-id Special_btop -e btop"
 nvim="$terminal --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\""
