@@ -2561,3 +2561,987 @@
 : 1723459441:0;history | wc -l
 : 1723459445:0;cd
 : 1723459448:0;cp -a .zsh_history .zsh_history.bak
+: 1723459450:0;cd
+: 1723459583:0;riverctl map normal Super+Shift Space set-focused-tags $special1_tag
+: 1723459594:0;riverctl map normal Super+Shift Minus set-focused-tags $ticktick_tag
+: 1723459607:0;riverctl map normal Super+Shift S set-focused-tags $spotify_tag
+: 1723459615:0;riverctl map normal Super+Shift D set-focused-tags $docs_tag
+: 1723459621:0;riverctl map normal Super+Shift N set-focused-tags $dots_tag
+: 1723459624:0;riverctl map normal Super+Shift L set-focused-tags $lf_tag
+: 1723459630:0;riverctl map normal Super+Shift M set-focused-tags $monitor_tag
+: 1723459635:0;riverctl map normal Super+Shift T set-focused-tags $terminal_tag
+: 1723459684:0;btop
+: 1723459698:0;tmux kill-server
+: 1723459841:0;swaylock -h
+: 1723459884:0;swaylock
+: 1723459938:0;brightnessctl -m | cut -d, -f4 | tr -d '%'
+: 1723461665:0;clear
+: 1723461768:0;paru -S rofi-nerdy
+: 1723461781:0;pm
+: 1723461805:0;paru -S rofi-emoji
+: 1723462600:0;ls /etc/resolv.conf
+: 1723462609:0;la /etc/re
+: 1723462611:0;la /etc/resolv.conf
+: 1723462668:0;sudoedit /etc/NetworkManager/conf.d/dns.conf
+: 1723462851:0;sudo systemctl enable --now systemd-resolved.service 
+: 1723462985:0;sudo systemctl restart network
+: 1723462997:0;sudo systemctl restart NetworkManager.service
+: 1723463004:0;up
+: 1723463224:0;clear
+: 1723463249:0;riverctl set-focused-tags $ticktick_tag
+: 1723463252:0;riverctl set-focused-tags 
+: 1723463358:0;pgrep 
+: 1723463362:0;pgrep --help
+: 1723463389:0;pgrep -x nvim
+: 1723463392:0;pgrep -x lf
+: 1723463437:0;riverctl list-rules ssd
+: 1723463439:0;riverctl list-rules tags
+: 1723463451:0;c.
+: 1723463452:0;nvim
+: 1723463707:0;c.
+: 1723463709:0;lg
+: 1723463877:0;:q
+: 1723463888:0;riverctl list-rules tags
+: 1723463905:0;pgrep -x Special
+: 1723463909:0;pgrep -x Special_term
+: 1723463926:0;pgrep -x "Special_term"
+: 1723463988:0;ps 
+: 1723464338:0;ps -h
+: 1723464342:0;ps --helo
+: 1723464344:0;ps --help
+: 1723464354:0;ps -aux
+: 1723464359:0;ps -aux | grep Special
+: 1723464400:0;ps -au | grep Special
+: 1723464404:0;ps -ax | grep Special
+: 1723464409:0;ps -ux | grep Special
+: 1723464450:0;ps aux | grep Special
+: 1723464457:0;clear
+: 1723464467:0;pgrep --help
+: 1723464483:0;pgrep -f Special
+: 1723464703:0;ps -e
+: 1723464725:0;ps -e | grep Special
+: 1723464765:0;ps axjf
+: 1723464782:0;ps axjf | grep "Special"
+: 1723464824:0;pgrep Special
+: 1723464828:0;pgrep -f Special
+: 1723464918:0;ls
+: 1723464921:0;c.
+: 1723464928:0;pgrep -f Special
+: 1723465034:0;foot --app-id Special_term
+: 1723465046:0;ps aux | grep Special
+: 1723465051:0;pgrep -f Special
+: 1723465061:0;foot --app-id Special_term -e tmux
+: 1723465064:0;pgrep -f Special
+: 1723465080:0;foot --app-id Special_term -e tmux new-session -s terminal
+: 1723465083:0;pgrep -f Special
+: 1723465311:0;tmux ls
+: 1723465320:0;tmux kill-session -t 4
+: 1723465328:0;riverctl toggle-focused-tags
+: 1723465356:0;riverctl toggle-focused-tags $((1 << 11))
+: 1723465369:0;riverctl toggle-focused-tags $((1 << 11)) | grep -q 
+: 1723465375:0;riverctl toggle-focused-tags $((1 << 11)) | grep -q "No View"
+: 1723466094:0;paru -Ss river-bedload
+: 1723466104:0;paru -S river-bedload-git
+: 1723466200:0;pm
+: 1723466244:0;paru -Ss river flow
+: 1723466272:0;cargo install --git https://github.com/stefur/flow flow
+: 1723466329:0;river-bedload -print
+: 1723466335:0;river-bedload -print outputs
+: 1723466340:0;river-bedload -print seats
+: 1723466347:0;river-bedload -print active
+: 1723466364:0;river-bedload -print
+: 1723466375:0;river-bedload -minfied -print tags
+: 1723466386:0;river-bedload  -minfied tags
+: 1723466407:0;river-bedload -print tags
+: 1723466413:0;river-bedload -print tags -minfied
+: 1723466426:0;river-bedload -print focused
+: 1723466433:0;river-bedload -print title
+: 1723466447:0;river-bedload -print seats
+: 1723466460:0;river-bedload -print active
+: 1723466491:0;flow
+: 1723466510:0;riverctl spawn "flow toggle-tags 1"
+: 1723466519:0;riverctl spawn "flow toggle-tags 10"
+: 1723466539:0;riverctl spawn "flow focus-set-view-tags 10"
+: 1723466561:0;riverctl spawn "flow focus-set-view-tags $(( 1 << 1 )"
+: 1723466564:0;riverctl spawn "flow focus-set-view-tags $(( 1 << 1 ))"
+: 1723466567:0;riverctl spawn "flow focus-set-view-tags $(( 1 << 2 ))"
+: 1723466602:0;riverctl spawn "flow cycle-tags next"
+: 1723466610:0;riverctl spawn "flow cycle-tags next 6"
+: 1723466619:0;flow
+: 1723466629:0;cargo install --git https://github.com/stefur/flow flow
+: 1723466690:0;source ~/.zshrc
+: 1723466695:0;riverctl spawn "flow cycle-tags next"
+: 1723466700:0;riverctl spawn "flow cycle-tags next 6"
+: 1723466702:0;flow
+: 1723466711:0;flow cycle-tags next 7
+: 1723466725:0;flow focus-set-view-tags 1
+: 1723466734:0;flow focus-set-view-tags 10
+: 1723466736:0;flow focus-set-view-tags 100
+: 1723466760:0;flow focus-set-view-tags 11
+: 1723466784:0;flow focus-set-view-tags $(( 1 << 12 ))
+: 1723466809:0;flow toggle-tags $(( 1 << 12 ))
+: 1723466993:0;rofi -show emoji
+: 1723467161:0;lswt
+: 1723467190:0;rofi -modi emoji -show emoji
+: 1723467224:0;rofi-emoji
+: 1723467230:0;rofi
+: 1723467236:0;paru -S rofi-emoji
+: 1723467244:0;rofi -show emoji
+: 1723467309:0;pm
+: 1723467331:0;paru -S rofi-lbonn-wayland-git
+: 1723467363:0;rofi -show nerdy
+: 1723467377:0;yeet rofi-emoji
+: 1723467401:0;clear
+: 1723467520:0;:q
+: 1723467530:0;lswt
+: 1723467562:0;ticktick
+: 1723467587:0;clear
+: 1723467588:0;lswt
+: 1723480601:0;paru -S rofi-wayland
+: 1723480735:0;wev
+: 1723480752:0;clear
+: 1723482062:0;pacPreviewInstalled
+: 1723482239:0;yeet figlet figlet-fonts figlet-fonts-extra godot wlr-randr vnstat wev xsel
+: 1723482250:0;pacPreviewInstalled
+: 1723482369:0;pacPreviewInstalledAll
+: 1723482376:0;clear
+: 1723482791:0;pm
+: 1723482799:0;paru -Qs pamixer
+: 1723483004:0;pacPreviewInstalledAll
+: 1723483123:0;pm
+: 1723483314:0;pacPreviewInstalled
+: 1723483593:0;paru Si
+: 1723483597:0;paru Slq
+: 1723483605:0;paru -Sil
+: 1723483614:0;paru -Qlq
+: 1723483636:0;paru -Qq | fzf --preview='pacman -Si {}'
+: 1723484075:0;clear
+: 1723484257:0;paru -Qq | fzf --preview='pacman -Si {}'
+: 1723484814:0;pacPreviewInstalled
+: 1723484916:0;yeet river lswt river-bedload-git swayidle swaylock-effects vulkan-radeon
+: 1723484944:0;c.
+: 1723484945:0;ls
+: 1723484946:0;lg
+: 1723485934:0;paru -S river swaylock-effects swayidle
+: 1723485992:0;paru -S lswt
+: 1723486006:0;lswt
+: 1723486016:0;btop
+: 1723486040:0;c.
+: 1723486041:0;nvim
+: 1723537948:0;c.
+: 1723537949:0;tmux ls
+: 1723537960:0;nvim
+: 1723538534:0;tmux ls
+: 1723538538:0;tmux kill-server
+: 1723538763:0;pm
+: 1723538970:0;wlrctl
+: 1723538976:0;paru -Ss wlrctl
+: 1723538988:0;paru -Ss\ wlrctl
+: 1723538992:0;paru -S wlrctl
+: 1723539051:0;sudoedit /etc/NetworkManager/conf.d/dns.conf
+: 1723539078:0;sudo systemctl disable --now systemd-resolved.service 
+: 1723539091:0;sudo systemctl restart NetworkManager.service
+: 1723539097:0;paru -S wlrctl
+: 1723539119:0;sudoedit /etc/NetworkManager/conf.d/dns.conf
+: 1723539140:0;sudo rm /etc/NetworkManager/conf.d/dns.conf
+: 1723539151:0;sudo systemctl restart NetworkManager.service
+: 1723539155:0;clear
+: 1723539158:0;up
+: 1723539217:0;paru -S wlrctl
+: 1723539232:0;refresh_mirrors
+: 1723539431:0;sudoedit /etc/resolv.conf
+: 1723539438:0;up
+: 1723539466:0;la /etc/resolv.conf
+: 1723539480:0;sudoedit /etc/NetworkManager/conf.d/dns.conf
+: 1723539511:0;sudo nmcli general reload
+: 1723539528:0;cat /etc/resolv.conf
+: 1723539547:0;paru -S dnsmasq
+: 1723539589:0;sudoedit /etc/NetworkManager/conf.d/dns.conf
+: 1723539599:0;sudo nmcli general reload
+: 1723539603:0;cat /etc/resolv.conf
+: 1723539609:0;paru
+: 1723539791:0;cat /etc/resolv.conf
+: 1723539854:0;paru -S wlrctl
+: 1723539896:0;lswt
+: 1723540051:0;paru
+: 1723540069:0;refresh_mirrors
+: 1723540365:0;paru
+: 1723540597:0;sudo rm /etc/NetworkManager/conf.d/dns.conf
+: 1723540602:0;la /etc/resolv.conf
+: 1723540613:0;yeet dnsmasq
+: 1723540624:0;lswt
+: 1723540690:0;nvim
+: 1723540730:0;up
+: 1723541383:0;paru -S wlrctl
+: 1723541414:0;man wlrctl
+: 1723541455:0;wlrctl list
+: 1723541461:0;man wlrctl
+: 1723541475:0;wlrctl output list
+: 1723541479:0;wlrctl
+: 1723541483:0;wlrctl -h
+: 1723541496:0;wlrctl toplevel list
+: 1723541512:0;wlrctl focus Special_nvim
+: 1723541526:0;wlrctl toplevel focus Special_nvim
+: 1723541543:0;wlrctl window focus Special_nvim
+: 1723541550:0;wlrctl window focus floorp
+: 1723541554:0;wlrctl window
+: 1723541558:0;wlrctl window focus 
+: 1723541562:0;wlrctl window focus foot
+: 1723541568:0;wlrctl window list
+: 1723541579:0;wlrctl window focus "Special_lf"
+: 1723544290:0;man wlrctl
+: 1723544311:0;wlrctl window list
+: 1723544318:0;wlrctl find foot
+: 1723544327:0;wlrctl window find foot
+: 1723544339:0;wlrctl window find "Special_btop"
+: 1723544344:0;wlrctl window find floorp
+: 1723544373:0;wlrctl window focus "Special_lf"
+: 1723544394:0;wlrctl pointer move 50 -70
+: 1723544401:0;wlrctl pointer move 50 -300
+: 1723544421:0;wlrctl toplevel focus floorp
+: 1723544482:0;wlrctl toplevel focus foot
+: 1723544492:0;wlrctl window focus floorp
+: 1723544506:0;man wlrctl
+: 1723544573:0;wlrctl window focus app-id:floorp
+: 1723544584:0;man wlrctl
+: 1723544595:0;lswt
+: 1723544604:0;wlrctl window focus app-id:floorp
+: 1723549464:0;man wlrctl
+: 1723549672:0;lswt
+: 1723549682:0;lswt | grep "Special_nvim"
+: 1723549828:0;foot --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor 'nvim'
+: 1723549839:0;foot --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor 'nvim'
+: 1723549855:0;foot --working-directory=$HOME/dotfiles/
+: 1723549860:0;foot --working-directory=$HOME/dotfiles/ -e tmux
+: 1723549871:0;foot --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor
+: 1723549875:0;foot --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor 'nvim'
+: 1723549881:0;foot --working-directory=$HOME/dotfiles/ -e tmux new-session
+: 1723549884:0;tmux ls
+: 1723549900:0;foot --working-directory=$HOME/dotfiles/ -e "tmux new-session -s Editor 'nvim'"
+: 1723549912:0;foot --working-directory=$HOME/dotfiles/ -e \"tmux new-session -s Editor 'nvim'\"
+: 1723549923:0;foot --working-directory=$HOME/dotfiles/ -e \"tmux new-session -s Editor nvim\"
+: 1723550563:0;foot --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \ 
+: 1723550568:0;c.
+: 1723550569:0;nvim
+: 1723550595:0;foot  --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\"
+: 1723550623:0;foot  --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e zsh -ic "tmux new-session -s Editor 'nvim'"
+: 1723550654:0;c.
+: 1723550655:0;nvim
+: 1723551528:0;riverctl map normal Super+Shift T "$scratchpad" "term"\
+
+: 1723551559:0;riverctl set-focused-tags $(( 1 << 11 ))
+: 1723551760:0;riverctl map normal Super+Shift T spawn "$scratchpad term"\
+
+: 1723551812:0;riverctl set-focused-tags $(( 1 << 11 ))
+: 1723551995:0;clear
+: 1723552006:0;./river/scratchpads.sh nvim
+: 1723552014:0;riverctl set-focused-tags $(( 1 << 11 ))
+: 1723552050:0;cd river
+: 1723552051:0;ls
+: 1723552052:0;la
+: 1723552148:0;riverctl set-focused-tags $(( 1 << 11 ))
+: 1723552884:0;./river/scratchpads.sh lf
+: 1723566491:0;echo $XDG_SESSION_DESKTOP
+: 1723566499:0;la
+: 1723566502:0;cd river
+: 1723566503:0;la
+: 1723566768:0;echo $QT_QPA_PLATFORMTHEME
+: 1723566784:0;echo $QT_QPA_PLATFORM
+: 1723567214:0;echo $QT_QPA_PLATFORMTHEME
+: 1723567217:0;echo $QT_QPA_PLATFORM
+: 1723567240:0;echo $XDG_SESSION_DESKTOP
+: 1723567368:0;riverctl toggle-view-tags
+: 1723567375:0;riverctl xcursor-theme
+: 1723567391:0;riverctl list-rules tags
+: 1723567493:0;clear
+: 1723567498:0;riverctl list-rules output
+: 1723567501:0;riverctl list-rules ssd
+: 1723567504:0;riverctl list-rules position
+: 1723567508:0;riverctl list-rules fullscreen
+: 1723567512:0;riverctl list-rules float
+: 1723567530:0;riverctl list-rules dimensions
+: 1723567531:0;clear
+: 1723567592:0;riverctl spawn "~/.config/river/environment.sh\
+"
+: 1723567598:0;riverctl spawn "~/.config/river/environment.sh"
+: 1723567599:0;echo $XDG_SESSION_DESKTOP
+: 1723567614:0;export XCURSOR_SIZE 
+: 1723567625:0;yeet wlrctl
+: 1723568025:0;ls
+: 1723568032:0;clear
+: 1723568055:0;./.config/river/init
+: 1723568195:0;echo $XDG_SESSION_DESKTOP
+: 1723568379:0;foot -server
+: 1723568386:0;foot --server
+: 1723568390:0;man foot
+: 1723568406:0;foot --server
+: 1723568410:0;foot --server &
+: 1723568440:0;footclient
+: 1723568465:0;hello
+: 1723568467:0;echo $XDG_SESSION_DESKTOP
+: 1723569183:0;c.
+: 1723569185:0;nvim
+: 1723569325:0;echo $XDG_SESSION_DESKTOP
+: 1723569359:0;cd river
+: 1723569361:0;./environment.sh
+: 1723569363:0;echo $XDG_SESSION_DESKTOP
+: 1723569383:0;echo $XDG_CURRENT_DESKTOP
+: 1723569924:0;riverctl send-layout-cmd rivertile "outer-padding 3"\
+
+: 1723569937:0;riverctl send-layout-cmd rivertile "view-padding 3"\
+
+: 1723569943:0;rivertile
+: 1723570055:0;man rivertile
+: 1723570124:0;riverctl send-layout-cmd rivertile "view-padding -"\
+
+: 1723570129:0;riverctl send-layout-cmd rivertile "view-padding -1"\
+
+: 1723570133:0;riverctl send-layout-cmd rivertile "-view-padding -1"\
+
+: 1723570168:0;c.
+: 1723570170:0;cd river
+: 1723570171:0;ls
+: 1723570173:0;./init
+: 1723570434:0;echo $XDG_CURRENT_DESKTOP
+: 1723570440:0;echo $XDG_SESSION_DESKTOP
+: 1723570491:0;echo $XDG_CURRENT_DESKTOP
+: 1723570990:0;c.
+: 1723570991:0;nvim
+: 1723571375:0;man riverctl
+: 1723572402:0;footclient --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\"
+: 1723572411:0;footclient --working-directory=$HOME/dotfiles/ -e zsh -ic tmux new-session -s Editor 'nvim'
+: 1723572438:0;footclient --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor 'nvim'
+: 1723572442:0;footclient --working-directory=$HOME/dotfiles/ -e tmux new-session -s Editor
+: 1723572445:0;footclient --working-directory=$HOME/dotfiles/ -e tmux new-session -S Editor
+: 1723572452:0;footclient --working-directory=$HOME/dotfiles/ -e tmux new-session -s "Editor"
+: 1723572463:0;footclient --working-directory=$HOME/dotfiles/ -e "tmux new-session -s Editor"
+: 1723572470:0;footclient
+: 1723572480:0;footclient --working-directory=$HOME/dotfiles
+: 1723572482:0;ls
+: 1723572487:0;footclient --working-directory=$HOME/dotfiles -e tmux
+: 1723572497:0;footclient --working-directory=$HOME/dotfiles -e tmux new-session -s lkasdf
+: 1723572501:0;tmux ls
+: 1723572506:0;tmux kill-session -t Editor
+: 1723572946:0;ls ~/.config/river/environment.sh
+: 1723573147:0;echo
+: 1723573150:0;echo $XDG_CURRENT_DESKTOP
+: 1723573167:0;source ~/.config/river/environment.sh
+: 1723573171:0;echo $XDG_CURRENT_DESKTOP
+: 1723573520:0;paru -S xdg-desktop-portal-wlr
+: 1723573534:0;yeet xdg-desktop-portal-hyprland-git
+: 1723573551:0;echo $XDG_CURRENT_DESKTOP
+: 1723573555:0;echo $XDG_SESSION_DESKTOP
+: 1723573646:0;riverctl spawn "source $HOME/.config/river/environment.sh"\
+
+: 1723573648:0;echo $XDG_SESSION_DESKTOP
+: 1723573651:0;echo $XDG_CURRENT_DESKTOP
+: 1723573713:0;man riverctl
+: 1723573889:0;echo $XDG_CURRENT_DESKTOP
+: 1723573892:0;c.
+: 1723573894:0;cd river
+: 1723573897:0;./init
+: 1723573907:0;echo $XDG_CURRENT_DESKTOP
+: 1723573910:0;echo $XDG_SESSION_DESKTOP
+: 1723620427:0;echo
+: 1723620429:0;echo $XDG_SESSION_DESKTOP
+: 1723620437:0;tmux
+: 1723620446:0;tmux ls
+: 1723620603:0;c.
+: 1723620604:0;lg
+: 1723620610:0;gs
+: 1723620611:0;lg
+: 1723621381:0;cd scripts
+: 1723621381:0;ls
+: 1723621382:0;lg
+: 1723621440:0;cd ..
+: 1723621440:0;ls
+: 1723621443:0;lg
+: 1723622003:0;riverctl spawn "~/.config/waybar/launch.sh"\
+
+: 1723622021:0;kill 737 
+: 1723622040:0;riverctl spawn "foot --server"
+: 1723622068:0;tmux ls
+: 1723622076:0;tmux kill-session -t FileManager
+: 1723622081:0;tmux kill-session -t Terminal
+: 1723622211:0;tmux ls
+: 1723622365:0;up
+: 1723623047:0;ls
+: 1723623054:0;python -m http.server
+: 1723624005:0;clear
+: 1723624420:0;cd Projects/Web/Startpage
+: 1723624420:0;ls
+: 1723624422:0;lg
+: 1723624745:0;python -m http.server
+: 1723624816:0;lg
+: 1723624965:0;nvim index.html
+: 1723624982:0;python -m http.server
+: 1723625102:0;lf
+: 1723625155:0;lg
+: 1723625795:0;clear
+: 1723625798:0;c.
+: 1723625800:0;clear
+: 1723625801:0;lg
+: 1723626359:0;pm
+: 1723626380:0;paru -S xorg-xlsclients
+: 1723626393:0;xlsclients
+: 1723626402:0;man xlsclients
+: 1723626426:0;source ~/.config/river/environment.sh
+: 1723626428:0;echo $XDG_SESSION_DESKTOP
+: 1723626434:0;echo $DESKTOP_SESSION
+: 1723626443:0;echo $DISPLAY
+: 1723626452:0;export
+: 1723626518:0;man xlsclients
+: 1723626521:0;xlsclients
+: 1723626870:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627445:0;. ~/.profile
+: 1723627447:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627480:0;riverctl spawn "source ~/.profile"
+: 1723627482:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627489:0;riverctl spawn ". ~/.profile"
+: 1723627491:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627499:0;. ~/.profile
+: 1723627500:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627605:0;riverctl spawn "bash -ic source .profile"
+: 1723627607:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627617:0;bash source
+: 1723627621:0;bash source .profile
+: 1723627633:0;bash -c "source .profile"
+: 1723627635:0;echo $MOZ_ENABLE_WAYLAND
+: 1723627950:0;echo $XDG_SESSION_DESKTOP
+: 1723628918:0;ls
+: 1723628933:0;export XDG_SESSION_CLASS 
+: 1723628941:0;export XDG_SESSION_TYPE
+: 1723628947:0;echo $XDG_SESSION_CLASS 
+: 1723628951:0;echo $XDG_SESSION_TYPE
+: 1723629388:0;fshow
+: 1723629424:0;lg
+: 1723629487:0;cd Projects/Web/Startpage
+: 1723629487:0;ls
+: 1723629488:0;lg
+: 1723629892:0;neofetch
+: 1723629907:0;xlsclients
+: 1723629913:0;yeet xorg-xlsclients
+: 1723629946:0;paru -S fastfetch
+: 1723629964:0;man fastfetch
+: 1723630010:0;clear
+: 1723630017:0;fastfetch -c archy
+: 1723630028:0;fastfetch -c archey
+: 1723630044:0;fastfetch -c neofetch
+: 1723630082:0;fastfetch -c ci
+: 1723630094:0;fastfetch -c paleofetch
+: 1723630114:0;fastfetch -c screenfetch
+: 1723630137:0;fastfetch -c all
+: 1723630142:0;fastfetch -c neofetch
+: 1723630147:0;fastfetch -c archey
+: 1723630159:0;fastfetch -c 1
+: 1723630178:0;fastfetch -c /usr/share/fastfetch/presets/examples/1.jsonc
+: 1723630183:0;fastfetch -c /usr/share/fastfetch/presets/examples/2.jsonc
+: 1723630187:0;fastfetch -c /usr/share/fastfetch/presets/examples/3.jsonc
+: 1723630190:0;fastfetch -c /usr/share/fastfetch/presets/examples/4.jsonc
+: 1723630193:0;fastfetch -c /usr/share/fastfetch/presets/examples/5.jsonc
+: 1723630195:0;fastfetch -c /usr/share/fastfetch/presets/examples/6.jsonc
+: 1723630204:0;fastfetch -c /usr/share/fastfetch/presets/examples/7.jsonc
+: 1723630223:0;fastfetch -c /usr/share/fastfetch/presets/examples/8.jsonc
+: 1723630228:0;fastfetch -c /usr/share/fastfetch/presets/examples/9.jsonc
+: 1723630231:0;fastfetch -c /usr/share/fastfetch/presets/examples/10.jsonc
+: 1723630273:0;fastfetch -c /usr/share/fastfetch/presets/examples/.jsonc
+: 1723630278:0;fastfetch -c /usr/share/fastfetch/presets/examples/11.jsonc
+: 1723630280:0;fastfetch -c /usr/share/fastfetch/presets/examples/12.jsonc
+: 1723630288:0;fastfetch -c /usr/share/fastfetch/presets/examples/13.jsonc
+: 1723630303:0;fastfetch -c /usr/share/fastfetch/presets/examples/14.jsonc
+: 1723630308:0;fastfetch -c /usr/share/fastfetch/presets/examples/15.jsonc
+: 1723630316:0;fastfetch -c /usr/share/fastfetch/presets/examples/16.jsonc
+: 1723630322:0;fastfetch -c /usr/share/fastfetch/presets/examples/17.jsonc
+: 1723630327:0;fastfetch -c /usr/share/fastfetch/presets/examples/18.jsonc
+: 1723630344:0;fastfetch -c /usr/share/fastfetch/presets/examples/19.jsonc
+: 1723630350:0;fastfetch -c /usr/share/fastfetch/presets/examples/20.jsonc
+: 1723630354:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1723630367:0;fastfetch -c /usr/share/fastfetch/presets/examples/22.jsonc
+: 1723630377:0;fastfetch -c /usr/share/fastfetch/presets/examples/23.jsonc
+: 1723630381:0;fastfetch -c /usr/share/fastfetch/presets/examples/24.jsonc
+: 1723630384:0;fastfetch -c /usr/share/fastfetch/presets/examples/22.jsonc
+: 1723630387:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1723630705:0;foot --server &
+: 1723630721:0;kill 731 
+: 1723630739:0;tmux kill-server
+: 1723630783:0;lf
+: 1723630796:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1723631024:0;ls
+: 1723631025:0;la
+: 1723631028:0;ls
+: 1723631028:0;ll
+: 1723631029:0;la
+: 1723631031:0;clear
+: 1723631032:0;ls
+: 1723631061:0;neofetch
+: 1723635782:0;cd Projects/Web/Startpage
+: 1723635784:0;nvim index.html
+: 1723635795:0;python -m http.server
+: 1723635819:0;lg
+: 1723635842:0;c.
+: 1723635843:0;lg
+: 1723636344:0;clear
+: 1723636642:0;c.
+: 1723636644:0;clear
+: 1723636646:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1723636807:0;lg
+: 1723637019:0;lswt
+: 1723637794:0;fshow
+: 1723638002:0;cd Projects/Web/Startpage
+: 1723638004:0;nvim index.html
+: 1723638365:0;python -m http.server
+: 1723638459:0;lg
+: 1723638486:0;tmux ls
+: 1723638496:0;tmux kill-session -t Fetch
+: 1723639043:0;lg
+: 1723639050:0;cd .local
+: 1723639050:0;ls
+: 1723639053:0;cd share
+: 1723639054:0;ls
+: 1723639055:0;lg
+: 1723639060:0;cd applications
+: 1723639061:0;l
+: 1723639062:0;ls
+: 1723639065:0;cd
+: 1723639071:0;clear
+: 1723639314:0;cd Test
+: 1723639314:0;ls
+: 1723639320:0;git clone https://github.com/SwayKh/Obsidian-notes
+: 1723639339:0;cd Obsidian-notes
+: 1723639341:0;fshow
+: 1723639381:0;git checkout ee1bfa4
+: 1723639437:0;nvim
+: 1723639447:0;lf
+: 1723639449:0;lg
+: 1723639487:0;cd Linux\ Journal
+: 1723639487:0;ls
+: 1723639489:0;nvim
+: 1723639654:0;fshow
+: 1723639680:0;cd ..
+: 1723639682:0;cd Programming
+: 1723639682:0;nvim
+: 1723639855:0;clear
+: 1723639857:0;cd ..
+: 1723639862:0;git checkout main
+: 1723639864:0;nvim
+: 1723639870:0;cd ..
+: 1723639878:0;nvim nala.md
+: 1723639885:0;nvim
+: 1723639893:0;cd
+: 1723639894:0;ls
+: 1723639896:0;c.
+: 1723639897:0;nvim
+: 1723639917:0;clear
+: 1723640221:0;man riverctl
+: 1723640418:0;riverctl map-switch normal lid close "swaylock -f"\
+
+: 1723651287:0;fshow
+: 1723651359:0;man rivertile
+: 1723651378:0;riverctl send-layout-cmd rivertile "main-location left"
+: 1723651413:0;riverctl send-layout-cmd rivertile "main-count 1"
+: 1723651650:0;up
+: 1723651762:0;pm
+: 1723651831:0;pacPreviewInstalled
+: 1723651901:0;yeet hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git
+: 1723651949:0;neofetch
+: 1723651959:0;pacPreviewAll
+: 1723651971:0;pacPreviewInstalledAll
+: 1723656712:0;yeet breeze-icons
+: 1723656721:0;pacPreviewInstalledAll
+: 1723656772:0;yeet xorg-xset
+: 1723656804:0;yeet xorg-xwayland
+: 1723656995:0;yeet thumbler
+: 1723656998:0;yeet tumbler
+: 1723657152:0;rof
+: 1723657154:0;rofi -show nerdy
+: 1723658022:0;pacPreviewInstalledAll
+: 1723658044:0;clear
+: 1723658048:0;yeet electron30
+: 1723658052:0;yeet electron31
+: 1723658130:0;clear
+: 1723658132:0;neofetch
+: 1723658458:0;clear
+: 1723658461:0;neofetch
+: 1723658467:0;fastfetch -c /usr/share/fastfetch/presets/examples/22.jsonc
+: 1723711059:0;cd Projects/Go/GoClass
+: 1723711060:0;ls
+: 1723711077:0;info
+: 1723711083:0;info rof
+: 1723711085:0;info rofi
+: 1723711102:0;man rofi
+: 1723711116:0;man rofi-theme
+: 1723711554:0;man riverctl
+: 1723713531:0;:q
+: 1723713692:0;man riverctl
+: 1723714237:0;tmux ls
+: 1723723506:0;swaylock -l
+: 1723743125:0;lg
+: 1723744551:0;cd
+: 1723744560:0;pm
+: 1723744566:0;c.
+: 1723744568:0;cd scripts
+: 1723744569:0;nvim function.sh
+: 1723744644:0;ls
+: 1723744645:0;c.
+: 1723744646:0;nvim
+: 1723746245:0;clear
+: 1723746246:0;ls
+: 1723746247:0;lt
+: 1723746251:0;cd Projects/Go/GoClass
+: 1723746253:0;cd ..
+: 1723746254:0;lt
+: 1723746580:0;c.
+: 1723746581:0;ls
+: 1723746581:0;lg
+: 1723746587:0;nvim mimeapps.list
+: 1723746606:0;cd nvim/
+: 1723746606:0;nvim
+: 1723746657:0;man ripgrep
+: 1723746660:0;man rg
+: 1723746727:0;cd ..
+: 1723746729:0;nvim
+: 1723746752:0;rg . 
+: 1723746756:0;cd ..
+: 1723746757:0;ls
+: 1723746765:0;rg . export
+: 1723746770:0;rg . "export"
+: 1723746776:0;man rg
+: 1723746787:0;rg "export"
+: 1723746836:0;rg "export" --hidden
+: 1723746903:0;man rg
+: 1723747164:0;rg "export"
+: 1723747200:0;source ~/.zshrc
+: 1723747203:0;rg "export"
+: 1723747301:0;nvim
+: 1723792543:0;cd Projects/Go
+: 1723792545:0;clear
+: 1723792546:0;ls
+: 1723792567:0;clear
+: 1723792586:0;up
+: 1723792690:0;cd N-Cover-Scraper
+: 1723792696:0;./GoNCoverScraper
+: 1723792701:0;ls
+: 1723792704:0;nvim Numbers.json
+: 1723792722:0;./GoNCoverScraper
+: 1723792750:0;clear
+: 1723792752:0;cd ..
+: 1723792753:0;ls
+: 1723792772:0;lg
+: 1723798489:0;up
+: 1723799746:0;lg
+: 1723807993:0;clear
+: 1723808088:0;nvim
+: 1723809008:0;neofetch
+: 1723809014:0;fastfetch -c /usr/share/fastfetch/presets/examples/22.jsonc
+: 1723809017:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1723809033:0;clear
+: 1723809034:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1723809112:0;:q
+: 1723811126:0;paru -S stow
+: 1723811139:0;pacman -Si xset
+: 1723811145:0;pacman -Si xoeg-xset
+: 1723811148:0;pacman -Si xorg-xset
+: 1723811152:0;clear
+: 1723811154:0;man stow
+: 1723811206:0;yeet stow
+: 1723811875:0;riverctl rule-add -app-id 'org.pwmt.zathura' ssd
+: 1723811886:0;riverctl rule-add -app-id 'org.pwmt.zathura' csd
+: 1723812427:0;clear
+: 1723812429:0;man riverctl
+: 1723812661:0;clear
+: 1723812662:0;lg
+: 1723825978:0;clear
+: 1723828583:0;paru -S ncdu
+: 1723828588:0;cd ..
+: 1723828590:0;ncdu
+: 1723828600:0;list_size
+: 1723828614:0;c.
+: 1723828617:0;nvim scripts
+: 1723828675:0;man find
+: 1723828752:0;find -maxdepth 1 -type d
+: 1723828755:0;cd ..
+: 1723828756:0;find -maxdepth 1 -type d
+: 1723828778:0;c.
+: 1723828780:0;cd scripts
+: 1723828782:0;nvim list_
+: 1723828789:0;nvim list_size
+: 1723828801:0;find -maxdepth 1 -type d | xargs -d '\n' du -sh | sort -hr
+: 1723828861:0;yeet superproductivity-bin
+: 1723828899:0;find -maxdepth 1 -type d
+: 1723828980:0;du -sh -- */ | sort -hr
+: 1723829091:0;du -sh -- .[ */ | sort -hr
+: 1723829136:0;du -sh -- .[ */ | sort -hr\
+
+: 1723829167:0;du -sh -- .*(D) */ | sort -hr\
+
+: 1723829259:0;c.
+: 1723829261:0;cd scripts
+: 1723829264:0;nvim list_size
+: 1723829291:0;cd 
+: 1723829293:0;list_size
+: 1723829304:0;clear
+: 1723829790:0;man ncdu
+: 1723829828:0;ncdu --exclude ~/Roms 
+: 1723830132:0;cd Test
+: 1723830133:0;ls
+: 1723830135:0;ll
+: 1723830135:0;la
+: 1723830192:0;git clone https://github.com/SwayKh/dotfiles --depth 1
+: 1723830201:0;list_size
+: 1723830227:0;rm -rf dotfiles
+: 1723830493:0;clear
+: 1723830495:0;sudo fdisk -l
+: 1723832303:0;systemctl status paccache.service
+: 1723832331:0;sudo systemctl enable --now paccache.service
+: 1723832782:0;foot --app-id Go --working-directory=$HOME/Projects/Go -e zsh -ic "tmux new-session -s Go" 
+: 1723832837:0;footclient --app-id Go --working-directory=$HOME/Projects/Go -e zsh -ic "tmux new-session -s Go" 
+: 1723832855:0;footclient --app-id Go -e zsh -ic "tmux new-session -s Go" 
+: 1723832866:0;footclient --app-id Go -e "tmux new-session -s Go" 
+: 1723832875:0;footclient --app-id Go -e tmux
+: 1723832879:0;tmux ls
+: 1723832893:0;footclient --app-id Go -e tmux new-session -s Go
+: 1723832897:0;footclient --app-id Go -e "tmux new-session -s Go"
+: 1723833038:0;footclient --app-id Go --working-directory=$HOME/Projects/Go -e zsh -ic 'tmux new-session -s Go' 
+: 1723833105:0;footclient -e zsh -ic tmix
+: 1723833108:0;footclient -e zsh -ic tmux
+: 1723833113:0;tmux ls
+: 1723833300:0;footclient -e zsh -ic tmux new-session -s Go'\
+'
+: 1723833310:0;footclient -e zsh -ic 'tmux new-session -s Go'
+: 1723833315:0;footclient -e zsh -ic tmux new-session -s Go
+: 1723833326:0;footclient -e zsh -ic "tmux new-session -s Go"
+: 1723833335:0;footclient -e "tmux new-session -s Go"
+: 1723833378:0;footclient -e tmux new-session -s Go
+: 1723833391:0;clear
+: 1723833408:0;c.
+: 1723833411:0;clear
+: 1723833412:0;lg
+: 1723833538:0;rg
+: 1723833541:0;rg .
+: 1723833548:0;rg export
+: 1723833559:0;rg source
+: 1723833568:0;clear
+: 1723833735:0;cd scripts
+: 1723833735:0;ls
+: 1723833736:0;lg
+: 1723833836:0;cd ..
+: 1723833836:0;lg
+: 1723833888:0;clear
+: 1723833890:0;cd
+: 1723833892:0;cd Obsidian
+: 1723833894:0;cd Vault
+: 1723833895:0;lg
+: 1723833899:0;gs
+: 1723833901:0;cd ..
+: 1723833905:0;cd wallpapers
+: 1723833906:0;ls
+: 1723833909:0;cd
+: 1723833911:0;cd scripts
+: 1723833912:0;cd
+: 1723833915:0;cd Projects
+: 1723833916:0;cd
+: 1723833918:0;cd MyProjects
+: 1723833920:0;ls
+: 1723833921:0;gs
+: 1723833952:0;cd
+: 1723833953:0;cd Test
+: 1723833954:0;ls
+: 1723833955:0;la
+: 1723833956:0;ll
+: 1723833976:0;git clone https://github.com/SwayKh/projects
+: 1723834275:0;git clone https://github.com/SwayKh/Projects
+: 1723834307:0;cd Projects
+: 1723834308:0;lf
+: 1723834331:0;du -sh -- .*(D) */ | sort -hr\
+
+: 1723834335:0;cd ..
+: 1723834336:0;du -sh -- .*(D) */ | sort -hr\
+
+: 1723834349:0;ncdu
+: 1723834358:0;cd 
+: 1723834386:0;man sync
+: 1723834485:0;ncdu
+: 1723834490:0;ncdu --exclude ~/Roms 
+: 1723834652:0;checkupdates
+: 1723834689:0;pacsearch tldr
+: 1723834695:0;pacsearch fzf
+: 1723834702:0;pacsearch zsh
+: 1723834719:0;rankmirrors
+: 1723834804:0;paccache
+: 1723834806:0;paccache -h
+: 1723834819:0;sudo systemctl enable paccache
+: 1723834920:0;paccache -r
+: 1723892346:0;btop
+: 1723892382:0;paru -S hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git
+: 1723892627:0;ping archlinux.org
+: 1723892640:0;clear
+: 1723892644:0;paru -S hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git
+: 1723892650:0;up
+: 1723892706:0;paru -S hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git
+: 1723892785:0;clear
+: 1723892805:0;ls
+: 1723892827:0;lswt
+: 1723892836:0;paru -S wlrctl
+: 1723892853:0;wlrctl 
+: 1723892858:0;wlrctl -h
+: 1723892862:0;man wlrctl
+: 1723892908:0;wlrctl toplevel list
+: 1723892916:0;wlrctl window list
+: 1723892920:0;wlrctl output list
+: 1723892942:0;hyprctl clients
+: 1723893957:0;pm
+: 1723894005:0;paru river bedload
+: 1723894032:0;river-bedload -print active
+: 1723894038:0;river-bedload -print 
+: 1723894046:0;river-bedload -print tags
+: 1723894049:0;:q
+: 1723894068:0;river-bedload -print tags
+: 1723894134:0;paru ristate
+: 1723894240:0;ristate
+: 1723894246:0;ristate -h
+: 1723894254:0;ristate -o
+: 1723894261:0;ristate -t
+: 1723894286:0;yeet wlrctl ristate river-bedload-git
+: 1723894291:0;yeet hyprland-git hyprlock-git hypridle-git hyprpicker-git hyprlang-git hyprutils-git
+: 1723894294:0;clear
+: 1723894341:0;cd ~/Projects/Go tmux new-session -s Go
+: 1723894345:0;cd ~/Projects/Go && tmux new-session -s Go
+: 1723894357:0;footclient -e tmux new-session -s Go
+: 1723894370:0;footclient -e --app-id Go tmux new-session -s Go
+: 1723894380:0;cd
+: 1723894381:0;clear
+: 1723894402:0;footclient -e --app-id Go --working-directory=$HOME/Projects/Go tmux new-session -s Go
+: 1723894415:0;footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic "tmux new-session -s Go"
+: 1723894420:0;clear
+: 1723894421:0;nvim
+: 1723894514:0;riverctl map normal $mod+Shift G spawn "$goTerm"\
+
+: 1723894558:0;riverctl map normal $mod+Shift G spawn "footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic \"tmux new-session -s Go\""\
+
+: 1723894576:0;riverctl map normal $mod+Shift G spawn "footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic 'tmux new-session -s Go'"\
+
+: 1723894607:0;footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic \"tmux new-session -s Go\"
+: 1723894613:0;footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic tmux new-session -s Go
+: 1723894617:0;clear
+: 1723894622:0;footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic ;tmux new-session -s Go'
+: 1723894628:0;clear
+: 1723894650:0;riverctl map normal $mod+Shift G spawn "$goTerm"\
+
+: 1723894661:0;clear
+: 1723894626:5;footclient -e --app-id Go --working-directory=$HOME/Projects/Go zsh -ic 'tmux new-session -s Go'
+: 1723894672:0;ls
+: 1723894674:0;lswt
+: 1723894780:0;clear
+: 1723894782:0;up
+: 1723894787:0;update_roms
+: 1723894807:0;lswt
+: 1723894844:0;tree
+: 1723894848:0;c.
+: 1723894850:0;cd scripts
+: 1723894851:0;nvim
+: 1723894862:0;paru -S tree
+: 1723894872:0;lt
+: 1723894884:0;paru -S tree
+: 1723894896:0;tree
+: 1723894901:0;lt
+: 1723894909:0;tree
+: 1723894924:0;nvim
+: 1723894947:0;c.
+: 1723894949:0;cd scripts
+: 1723894950:0;nvim update_roms
+: 1723894960:0;lt -L 2 ~/Roms
+: 1723894979:0;ls
+: 1723894984:0;lt
+: 1723894994:0;lt > treetest.md
+: 1723894996:0;ls
+: 1723894999:0;nvim treetest.md
+: 1723895009:0;tree >> treetest.md
+: 1723895012:0;nvim treetest.md
+: 1723895035:0;man exa
+: 1723895041:0;man eza
+: 1723895062:0;lt --icons=never
+: 1723895085:0;lt --icons=never >> treetest.md
+: 1723895088:0;nvim treetest.md
+: 1723895103:0;lt --icons=never --color=never >> treetest.md
+: 1723895105:0;nvim treetest.md
+: 1723895115:0;nvim
+: 1723895174:0;man eza
+: 1723895229:0;clear
+: 1723895231:0;update_roms
+: 1723895234:0;clear
+: 1723895241:0;yeet tree
+: 1723895244:0;clear
+: 1723895247:0;neofetch
+: 1723895359:0;tmux ls
+: 1723895387:0;df -f
+: 1723895393:0;df -h
+: 1723895412:0;df -h /home
+: 1723895605:0;clear
+: 1723895607:0;lswt
+: 1723895616:0;tmux ls
+: 1723906575:0;lswt
+: 1723906688:0;lsusb
+: 1723911185:0;clear
+: 1723911806:0;lswt
+: 1723914443:0;ls
+: 1723914447:0;lsblk
+: 1723914459:0;fdisk -l
+: 1723914462:0;sudo fdisk -l
+: 1723914512:0;cd
+: 1723914513:0;ls
+: 1723914533:0;update_roms
+: 1723914584:0;umount /dev/sda3
+: 1723914588:0;sudo umount /dev/sda3
+: 1723914613:0;rm -rf Roms
+: 1723914650:0;clear
+: 1723914654:0;ncdu
+: 1723914717:0;list_size
+: 1723915401:0;sudo mount /dev/sda3 /mnt/Roms
+: 1723915404:0;ls
+: 1723915566:0;lt
+: 1723915580:0;sudoedit /etc/fstab
+: 1723915909:0;cd /mnt/Roms
+: 1723915909:0;ls
+: 1723915915:0;rm -rf lost+found
+: 1723915916:0;ls
+: 1723915978:0;cd Projects
+: 1723915981:0;list_size
+: 1723915988:0;cd Python
+: 1723915991:0;list_size
+: 1723915997:0;cd ../Web
+: 1723916000:0;list_size
+: 1723916006:0;cd
+: 1723916024:0;list_size
+: 1723916041:0;clear
+: 1723916051:0;cd 
+: 1723916122:0;man ncdu
+: 1723916153:0;ncdu --color dark
+: 1723916180:0;umount /dev/sda3
+: 1723916185:0;sudo umount /dev/sda3
+: 1723916286:0;lsblk
+: 1723916305:0;mkdir /mnt/newHome
+: 1723916309:0;sudo mkdir /mnt/newHome
+: 1723916310:0;ls
+: 1723916314:0;clear
+: 1723916316:0;mkdir /mnt/newHome
+: 1723916320:0;lsblk
+: 1723916337:0;mount /dev/nvme0n1p1 /mnt/newHome
+: 1723916341:0;sudo mount /dev/nvme0n1p1 /mnt/newHome
+: 1723916410:0;sudo rsync -avhAXP /home/ /mnt/newHome
+: 1723916775:0;lswt
+: 1723917733:0;progress
+: 1723919944:0;list_size
+: 1723920247:0;lswt
+: 1723920368:0;list_size
+: 1723920592:0;sudo rsync -avhAXP /home/ /mnt/newHome
+: 1723920890:0;sudo cp /etc/fstab /etc/fstab_old
+: 1723920912:0;lsblk
+: 1723920925:0;sudoedit /etc/fstab
+: 1723920988:0;cat /etc/fstab
+: 1723921011:0;lswt
+: 1723921046:0;sudo mv /home /home_old
+: 1723921080:0;sudo umount /home
+: 1723921392:0;sudo find /mnt/newHome -not -user sumit -exec ls -ld {} \;
+: 1723921611:0;sudoedit /etc/fstab
+: 1723921702:0;lswt
+: 1723921729:0;cp -a .zsh_history .zsh_history.bak
