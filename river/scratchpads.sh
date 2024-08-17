@@ -16,29 +16,29 @@ lf_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
 
-term="$terminal --app-id Special_term -e zsh -ic \"tmux new-session -s Terminal\""
-lf="$terminal --app-id Special_lf -e zsh -ic \"tmux new-session -s FileManager 'lf'\"" #lfMention
-btop="$terminal --app-id Special_btop -e btop"
-nvim="$terminal --app-id Special_nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\""
+term="$terminal --app-id special_term -e zsh -ic \"tmux new-session -s Terminal\""
+lf="$terminal --app-id special_lf -e zsh -ic \"tmux new-session -s FileManager 'lf'\"" #lfMention
+btop="$terminal --app-id special_btop -e btop"
+nvim="$terminal --app-id special_nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\""
 
 case "$1" in
 "term")
-  search="Special_term"
+  search="special_term"
   tag="$terminal_tag"
   cmd="$term"
   ;;
 "lf")
-  search="Special_lf"
+  search="special_lf"
   tag="$lf_tag"
   cmd="$lf"
   ;;
 "btop")
-  search="Special_btop"
+  search="special_btop"
   tag="$monitor_tag"
   cmd="$btop"
   ;;
 "nvim")
-  search="Special_nvim"
+  search="special_nvim"
   tag="$dots_tag"
   cmd="$nvim"
   ;;
