@@ -44,6 +44,7 @@ terminal="footclient"
 filemanager="nautilus"
 browser="floorp"
 mod="Mod4"
+goTerm="footclient -e --app-id special_go --working-directory=$HOME/Projects/Go zsh -ic 'tmux new-session -s Go'"
 
 # My Mappings
 riverctl map normal $mod T spawn "$terminal -e tmux"
@@ -57,6 +58,7 @@ riverctl map normal $mod G spawn "retroarch"
 riverctl map normal $mod L spawn "$terminal -e zsh -ic lf" #lfMention
 riverctl map normal $mod M spawn "$terminal -e btop"
 riverctl map normal $mod KP_Add spawn "galculator"
+riverctl map normal $mod+Shift G spawn "$goTerm"
 
 riverctl map normal $mod Q close
 riverctl map normal $mod+Shift Q exit
@@ -261,6 +263,7 @@ riverctl rule-add ssd
 riverctl rule-add -app-id "floorp" tags $((1 << (1 - 1)))
 riverctl rule-add -app-id "firefox" tags $((1 << (1 - 1)))
 riverctl rule-add -app-id "Code" tags $((1 << (2 - 1)))
+riverctl rule-add -app-id "special_go" tags $((1 << (2 - 1)))
 riverctl rule-add -app-id "dev.zed.Zed" tags $((1 << (2 - 1)))
 riverctl rule-add -app-id "org.gnome.Nautilus" tags $((1 << (3 - 1)))
 riverctl rule-add -app-id "Thunar" tags $((1 << (3 - 1)))
@@ -273,10 +276,10 @@ riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
 riverctl rule-add -app-id "Webcord" tags $((1 << (6 - 1)))
 riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
 
-riverctl rule-add -app-id "Special_term" tags $terminal_tag
-riverctl rule-add -app-id "Special_lf" tags $lf_tag
-riverctl rule-add -app-id "Special_nvim" tags $dots_tag
-riverctl rule-add -app-id "Special_btop" tags $monitor_tag
+riverctl rule-add -app-id "special_term" tags $terminal_tag
+riverctl rule-add -app-id "special_lf" tags $lf_tag
+riverctl rule-add -app-id "special_nvim" tags $dots_tag
+riverctl rule-add -app-id "special_btop" tags $monitor_tag
 riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
 riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
