@@ -31,9 +31,9 @@
     corner_radius = 5
     startup_notification = true
     separator_color = frame
-    frame_color = "#888CA7"
-    foreground = "#888CA7"
-    background = "#091F2D"
+    frame_color = "#A98DB5"
+    foreground = "#A98DB5"
+    background = "#271638"
 [frame]
     width = (0,400)
     color = "#ebdbb2"
@@ -45,18 +45,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#091F2D"
-    foreground = "#888CA7"
+    background = "#271638"
+    foreground = "#A98DB5"
     timeout = 5
 
 [urgency_normal]
-    background = "#091F2D"
-    foreground = "#888CA7"
+    background = "#271638"
+    foreground = "#A98DB5"
     timeout = 5
 
 [urgency_critical]
-    background = "#091F2D"
-    foreground = "#888CA7"
+    background = "#271638"
+    foreground = "#A98DB5"
     timeout = 10
 
 [shortcuts]
