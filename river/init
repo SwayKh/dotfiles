@@ -65,7 +65,7 @@ riverctl map normal $mod+Shift Q exit
 riverctl map normal $mod+Control F toggle-float
 riverctl map normal $mod+Shift F toggle-fullscreen
 riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'Refreshed River'"
-riverctl map normal $mod Grave spawn "notify-send \"$(lswt | awk 'NR > 1 {print $2}')\""
+riverctl map normal $mod Grave spawn "$HOME/scripts/list_river_window"
 
 riverctl map normal $mod Space spawn "$HOME/scripts/random_swww_wall"
 riverctl map normal $mod Escape spawn "$HOME/scripts/session_menu"
