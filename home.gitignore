@@ -3,9 +3,10 @@
 .cargo
 .cmake
 .codeium
-.config
+#.config
 .floorp
 .gervill
+.git
 .gnupg
 .goful
 .lexaloffle
@@ -17,6 +18,7 @@
 .oh-my-zsh
 .pki
 .ssh
+.steam
 .trash
 .vscode
 .vim
@@ -24,5 +26,5 @@ ES-DE
 GameDev
 Games
 go
-Roms
+#Roms
 Themes

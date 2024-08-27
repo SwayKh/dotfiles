@@ -1,6 +1,7 @@
 .log
 .tmp
 lazy-lock.json
+theme.txt
 foot/themes/*
 micro/plug/*
 
