@@ -1,6 +1,11 @@
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 return {
+  -- There's a fork of nvim-cmp for much better performance
+  -- try it out sometime, Here's the PR https://github.com/hrsh7th/nvim-cmp/pull/1980
+  -- "yioneko/nvim-cmp",
+  -- branch = "perf",
+  --
   -- Autocompletion
   "hrsh7th/nvim-cmp",
   event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
@@ -43,17 +48,28 @@ return {
       },
       -- The completeopt 'noselect' option does this
       preselect = cmp.PreselectMode.Item,
+
+      performance = {
+        debounce = 0, -- default is 60ms
+        throttle = 0, -- default is 30ms
+      },
+
       snippet = {
         expand = function(args)
           vim.snippet.expand(args.body)
         end,
       },
 
+      matching = {
+        -- I want to do fuzzy matching :)
+        dissallow_fuzzy_matching = false,
+      },
+
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- previous suggestion
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-h>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-l>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<C-y>"] = cmp.mapping(
@@ -78,6 +94,7 @@ return {
           end
         end, { "i", "s" }),
       }),
+
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "luasnip", priority = 1000, max_item_count = 5 },
@@ -88,15 +105,18 @@ return {
         { name = "path", priority = 100, max_item_count = 10 },
         -- { name = "codeium", priority = 1000, max_item_count = 5 },
       }),
+
       window = {
         completion = cmp.config.window.bordered(border_opts),
         documentation = cmp.config.window.bordered(border_opts),
       },
+
       view = {
         entries = {
           follow_cursor = true,
         },
       },
+
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
@@ -137,6 +157,7 @@ return {
           },
         }),
       },
+
       experimental = {
         native_menu = false,
         ghost_text = false,
