@@ -49,28 +49,36 @@ return { -- Collection of various small independent plugins/modules
       },
     })
 
-    require("mini.pairs").setup({
-      mappings = {
-        ["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]." },
-        ["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]." },
-        ["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]." },
-
-        [")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
-        ["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
-        ["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
-
-        ['"'] = { action = "closeopen", pair = '""', neigh_pattern = "[^\\].", register = { cr = false } },
-        ["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%a\\].", register = { cr = false } },
-        ["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\].", register = { cr = false } },
-      },
-    })
-
-    -- Tabline plugin
+    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
+    require("mini.pairs").setup()
     require("mini.tabline").setup()
     require("mini.notify").setup()
     require("mini.git").setup()
     require("mini.icons").setup()
-    require("mini.diff").setup()
+
+    local format_summary = function(data)
+      local summary = vim.b[data.buf].minidiff_summary
+      local t = {}
+      if summary.add > 0 then
+        table.insert(t, "+" .. summary.add)
+      end
+      if summary.change > 0 then
+        table.insert(t, "~" .. summary.change)
+      end
+      if summary.delete > 0 then
+        table.insert(t, "-" .. summary.delete)
+      end
+      vim.b[data.buf].minidiff_summary_string = table.concat(t, " ")
+    end
+    local au_opts = { pattern = "MiniDiffUpdated", callback = format_summary }
+    vim.api.nvim_create_autocmd("User", au_opts)
+
+    require("mini.diff").setup({
+      view = {
+        style = "sign",
+        signs = { add = "+", change = "~", delete = "-" },
+      },
+    })
 
     require("mini.bracketed").setup({
       buffer = { suffix = "b", options = {} },
@@ -97,7 +105,6 @@ return { -- Collection of various small independent plugins/modules
         join = "",
       },
     })
-    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
 
     require("mini.surround").setup({
       mappings = {
@@ -115,7 +122,7 @@ return { -- Collection of various small independent plugins/modules
     })
 
     require("mini.indentscope").setup({
-      symbol = "│", --  ╎ │
+      symbol = "╎", --  ╎ │
       draw = {
         delay = 50,
         animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
