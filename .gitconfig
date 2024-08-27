@@ -20,3 +20,5 @@
 	directory = /home/sumit/Android/Obsidian/Vault
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
