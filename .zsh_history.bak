@@ -3545,3 +3545,558 @@
 : 1723921611:0;sudoedit /etc/fstab
 : 1723921702:0;lswt
 : 1723921729:0;cp -a .zsh_history .zsh_history.bak
+: 1723921731:0;c.
+: 1723921733:0;lg
+: 1723921820:0;cd scripts
+: 1723921821:0;lg
+: 1723921851:0;rm treetest.md
+: 1723921852:0;ls
+: 1723921852:0;lg
+: 1723921857:0;cd ..
+: 1723921859:0;lg
+: 1723921877:0;clear
+: 1723921882:0;sudo rsync -avhAXP /home/ /mnt/newHome
+: 1723955667:0;cd
+: 1723955671:0;fzf
+: 1723955695:0;source ~/.zshrc
+: 1723955698:0;fzf
+: 1723955718:0;clear
+: 1723957377:0;lswt
+: 1723957381:0;clear
+: 1723957415:0;c.
+: 1723957416:0;ls
+: 1723957418:0;nvim
+: 1723957467:0;clear
+: 1723957536:0;cd
+: 1723957537:0;ncdu
+: 1723957557:0;list_size
+: 1723957569:0;clear
+: 1723957589:0;up
+: 1723957763:0;lswt
+: 1723966937:0;up
+: 1723979801:0;clear
+: 1723979802:0;up
+: 1723979821:0;cd
+: 1723979840:0;mkdir /mnt/Games
+: 1723979842:0;sudo mkdir /mnt/Games
+: 1723979851:0;mount /dev/sda3 /mnt/Games
+: 1723979854:0;sudo mount /dev/sda3 /mnt/Games
+: 1723981395:0;clear
+: 1723981396:0;fzf
+: 1723981428:0;sour
+: 1723981430:0;source ~/.zshrc
+: 1723981432:0;clear
+: 1724009057:0;lswt
+: 1724011884:0;clear
+: 1724011910:0;lswt
+: 1724315489:0;UP
+: 1724315491:0;up
+: 1724315793:0;cd N-Cover-Scraper
+: 1724315796:0;./GoNCoverScraper
+: 1724315807:0;clear
+: 1724315819:0;go mod tidy
+: 1724315821:0;ls
+: 1724315827:0;nvim go.mod
+: 1724316474:0;up
+: 1724316497:0;export
+: 1724316502:0;export | fzf
+: 1724316705:0;man awk
+: 1724316709:0;man gawk
+: 1724316721:0;lswt
+: 1724316801:0;lswt | awk '{print $2}\
+'
+: 1724316818:0;lswt | awk 'NR > 1 {print $2}\
+'
+: 1724316822:0;lswt | awk 'NR > 1 {print $2}'
+: 1724317104:0;riverctl map normal $mod Grave spawn "$HOME/scripts/list_window"\
+
+: 1724317108:0;wev
+: 1724317114:0;paru -S wev
+: 1724317122:0;wev
+: 1724317249:0;[200~riverctl map normal $mod grave spawn "$HOME/scripts/list_window"
+: 1724317255:0;riverctl map normal $mod grave spawn "$HOME/scripts/list_window"\
+
+: 1724317278:0;riverctl map normal Super Grave spawn "$HOME/scripts/list_window"\
+
+: 1724317284:0;export | fzf
+: 1724317318:0;clear
+: 1724317331:0;echo $XDG_CURRENT_DESKTOP
+: 1724317630:0;./scripts/list_
+: 1724317632:0;./scripts/list_window
+: 1724317763:0;riverctl spawn "./scripts/list_window"
+: 1724317781:0;riverctl spawn env XDG_CURRENT_DESKTOP=River "./scripts/list_window"
+: 1724318222:0;riverctl map normal Super grave spawn "notify-send $(lswt | awk 'NR > 1 {print $2}')"\
+
+: 1724318249:0;lswt | awk 'NR > 1 {print $2}'
+: 1724318367:0;lswt | awk 'NR > 1 {print $2}' | notify-send
+: 1724318375:0;lswt | awk 'NR > 1 {print $2}' > notify-send
+: 1724318384:0;lswt | awk 'NR > 1 {print $2}' |  notify-send
+: 1724318390:0;lswt | awk 'NR > 1 {print $2}' | notify-send -
+: 1724318454:0;notify-send $(lswt | awk 'NR > 1 {print $2}')
+: 1724318460:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1724318518:0;clear
+: 1724318661:0;killall dunst && notify-send "Hello"
+: 1724318667:0;clear
+: 1724318673:0;lg
+: 1724318702:0;cd scripts
+: 1724318702:0;lg
+: 1724318723:0;rm treetest.md
+: 1724318724:0;ls
+: 1724318726:0;lg
+: 1724318728:0;cd ..
+: 1724318728:0;lg
+: 1724319099:0;man go 
+: 1724319127:0;go mod -u
+: 1724319133:0;go help omd
+: 1724319136:0;go help mod
+: 1724319159:0;cd ..
+: 1724324679:0;lg
+: 1724324685:0;nvim theme.txt
+: 1724324687:0;ls
+: 1724329045:0;pm
+: 1724329113:0;paru -S pinta
+: 1724329141:0;pm
+: 1724329170:0;paru -S xournal
+: 1724329186:0;paru -S mypaint
+: 1724329195:0;paru -S pinta
+: 1724329203:0;cd /
+: 1724329203:0;ls
+: 1724329205:0;cd mnt
+: 1724329205:0;ls
+: 1724329837:0;yeet pinentry
+: 1724329848:0;yeet pinta
+: 1724329866:0;yeet pinta'
+: 1724329868:0;yeet pinta
+: 1724329884:0;asdf
+: 1724329889:0;up
+: 1724329898:0;passwd
+: 1724329914:0;yeet pinta
+: 1724329928:0;ls
+: 1724329930:0;lf
+: 1724330006:0;sudo rm newHome
+: 1724330015:0;clear
+: 1724330020:0;cd /mnt
+: 1724330021:0;ls
+: 1724330023:0;sudo rm newHome
+: 1724330168:0;ls
+: 1724330173:0;up
+: 1724330198:0;clear
+: 1724330289:0;passwd
+: 1724330294:0;clear
+: 1724330295:0;up
+: 1724330307:0;ls
+: 1724330309:0;cd /mnt
+: 1724330310:0;ls
+: 1724330313:0;sudo rm newHome
+: 1724330319:0;sudo rm -r newHome
+: 1724330324:0;sudo rm -r Roms
+: 1724330324:0;ls
+: 1724330330:0;sudo mount /dev/sda3 /mnt/Games
+: 1724330332:0;ls
+: 1724330332:0;lf
+: 1724330377:0;ls
+: 1724330446:0;sudo ln -s /mnt/Games/Linux /home/sumit/Games 
+: 1724330471:0;cd Game
+: 1724330473:0;cd Games
+: 1724330474:0;ls
+: 1724330478:0;rm Linux
+: 1724330479:0;ls
+: 1724330487:0;lf
+: 1724330510:0;ls
+: 1724330524:0;sudo ln -s /mnt/Games/Games /home/sumit
+: 1724330547:0;sudo ln -s /mnt/Games/Roms /home/sumit
+: 1724330561:0;ls
+: 1724330565:0;cd
+: 1724330568:0;sudoedit /etc/fstab
+: 1724330603:0;ls
+: 1724330603:0;cd
+: 1724330606:0;cd /mnt
+: 1724330607:0;ls
+: 1724330626:0;cat /etc/fstab
+: 1724330729:0;ncdu
+: 1724330858:0;yeet pinta
+: 1724330869:0;pacPreviewInstalled
+: 1724330878:0;clear
+: 1724330886:0;pacPreviewInstalled
+: 1724330943:0;clear
+: 1724339839:0;ncdu --color dark
+: 1724340690:0;riverctl map normal Super Grave spawn "notify-send \"$(lswt | awk 'NR > 1 {print $2}')\""\
+
+: 1724340700:0;retroarch
+: 1724340741:0;fzf
+: 1724340844:0;retroarch
+: 1724340912:0;clear
+: 1724341062:0;lg
+: 1724341064:0;c.
+: 1724341065:0;lg
+: 1724341101:0;pm
+: 1724341108:0;clear
+: 1724341116:0;paru -S steam
+: 1724341132:0;clear
+: 1724341426:0;upower -d | grep -i "xbox" -A 10
+: 1724341512:0;clear
+: 1724341513:0;fzf
+: 1724341676:0;pm
+: 1724341867:0;epub2txt
+: 1724342732:0;source ~/.zshrc
+: 1724342790:0;man chafa
+: 1724342908:0;c.
+: 1724342968:0;cd
+: 1724342970:0;cd /
+: 1724342990:0;cd
+: 1724343046:0;fzf
+: 1724343053:0;clear
+: 1724343056:0;pm
+: 1724343151:0;paru -S gnome-epub-thumbnailer
+: 1724343160:0;epub-thumbnailer
+: 1724343389:0;git clone https://github.com/marianosimone/epub-thumbnailer
+: 1724343394:0;cd epub-thumbnailer
+: 1724343447:0;sudo python3 install.py install
+: 1724344054:0;pip3 install Pillow
+: 1724344077:0;pipx install Pillow
+: 1724344111:0;pip install Pillow
+: 1724344131:0;cd
+: 1724344137:0;pyActivate
+: 1724344140:0;pip install Pillow
+: 1724344145:0;pip3 install Pillow
+: 1724344164:0;cd epub-thumbnailer
+: 1724344165:0;sudo python3 install.py install
+: 1724344174:0;cd 
+: 1724344178:0;rm -rf epub-thumbnailer
+: 1724344184:0;deactivate
+: 1724344185:0;clear
+: 1724344191:0;paru epub-thumbnailer
+: 1724344374:0;clear
+: 1724344375:0;cd
+: 1724344378:0;lg
+: 1724344381:0;c.
+: 1724344382:0;lg
+: 1724344814:0;fzf
+: 1724344977:0;riverctl map normal Super Grave spawn "$HOME/scripts/list_river_window"\
+
+: 1724345006:0;riverctl spawn dotfiles/scripts/list_river_window 
+: 1724345025:0;chmod 755 scripts/list_river_window
+: 1724345185:0;c.
+: 1724345186:0;ls
+: 1724345189:0;most_used 10
+: 1724345261:0;clear
+: 1724345266:0;cd scripts
+: 1724345267:0;ls
+: 1724345270:0;nvim most_used
+: 1724345325:0;cmd
+: 1724345550:0;./most_used
+: 1724345566:0;./most_used 10
+: 1724345681:0;sudo ./most_used 10
+: 1724345730:0;fshow
+: 1724345795:0;ls
+: 1724345799:0;la
+: 1724345807:0;mv most_used not_most_used
+: 1724345810:0;source ~/.zshrc
+: 1724345812:0;most_used 10
+: 1724345877:0;history | wc -l
+: 1724345879:0;cd
+: 1724345884:0;cp -a .zsh_history .zsh_history.bak
+: 1724345888:0;c.
+: 1724345890:0;cd scripts
+: 1724345891:0;ls
+: 1724345892:0;lg
+: 1724345992:0;cd ..
+: 1724345992:0;ls
+: 1724345993:0;lg
+: 1724346005:0;clear
+: 1724346011:0;most_used 10
+: 1724346013:0;most_used 
+: 1724346017:0;most_used 20
+: 1724346093:0;paru -Qs vulkan
+: 1724346177:0;paru -S vulkan-radeon
+: 1724346354:0;clear
+: 1724399820:0;up
+: 1724427911:0;ls
+: 1724427914:0;cd Gat
+: 1724427915:0;ls
+: 1724427919:0;lt
+: 1724427920:0;nvim
+: 1724428828:0;ls
+: 1724428832:0;go run main.go
+: 1724428835:0;go run main.go go.mod
+: 1724428852:0;go run main.go go.
+: 1724429043:0;go run main.go
+: 1724429052:0;go run main.go < go.mod
+: 1724429057:0;go run main.go go.mod
+: 1724429063:0;go run main.go "main.go"
+: 1724429069:0;go run main.go LICENSE
+: 1724429084:0;echo LICENSE | go run main.go
+: 1724429105:0;go run main.go LICENSE
+: 1724429107:0;clear
+: 1724429441:0;ls
+: 1724429447:0;go build
+: 1724429448:0;ls
+: 1724429456:0;./gat < main.go
+: 1724429461:0;./gat < main.go LICENSE go.mod
+: 1724429475:0;./gat < main.go LICENSE
+: 1724429477:0;./gat < main.go
+: 1724429490:0;./gat < LICENSE go.mod 
+: 1724429522:0;./gat main.go 
+: 1724429559:0;clear
+: 1724429564:0;nvim
+: 1724429614:0;lg
+: 1724429767:0;nvim
+: 1724429970:0;cat < main.go go.mod
+: 1724429973:0;cat < main.go
+: 1724429979:0;echo "hello" | cat
+: 1724429983:0;echo "hello" | ./gat
+: 1724429986:0;man cat
+: 1724430021:0;go
+: 1724430024:0;go build
+: 1724430025:0;lg
+: 1724430122:0;clear
+: 1724430126:0;cd ..
+: 1724430126:0;ls
+: 1724430134:0;cd Gat
+: 1724430135:0;;s
+: 1724430143:0;fzf | ./gat
+: 1724430159:0;./gat $(fzf)
+: 1724430169:0;cd ..
+: 1724430171:0;clear
+: 1724430267:0;lswt
+: 1724432355:0;cd Password-Generator
+: 1724432356:0;ls
+: 1724432356:0;lhg
+: 1724432357:0;lg
+: 1724432372:0;cd
+: 1724481897:0;up
+: 1724481918:0;paru -S rofi-nerdy
+: 1724481949:0;tmux ls
+: 1724481956:0;rofi -show nerdy
+: 1724481962:0;up
+: 1724481988:0;cd N-Cover-Scraper
+: 1724481989:0;ls
+: 1724481991:0;./GoNCoverScraper
+: 1724483109:0;cd Obsidian/Vault/Archive
+: 1724483110:0;ls
+: 1724483112:0;nvim Numbers.json
+: 1724485502:0;./GoNCoverScraper
+: 1724485557:0;clear
+: 1724485608:0;pm
+: 1724485620:0;paru -S geeque
+: 1724485624:0;paru -S geeqie
+: 1724485649:0;clear
+: 1724485652:0;ls
+: 1724485654:0;cd ..
+: 1724485655:0;ls
+: 1724485658:0;lg
+: 1724485675:0;fshow
+: 1724485681:0;clear
+: 1724485873:0;yeet geeqie
+: 1724485876:0;clear
+: 1724511382:0;./GoNCoverScraper
+: 1724511386:0;clear
+: 1724511388:0;cd ..
+: 1724511388:0;ls
+: 1724511483:0;cd GoClass
+: 1724511484:0;ls
+: 1724511494:0;mkdir Slices
+: 1724511497:0;cd Slices
+: 1724511505:0;go mod init Slices
+: 1724511505:0;ls
+: 1724511511:0;touch main.go
+: 1724511513:0;nvim main.go
+: 1724511656:0;rm go.mod
+: 1724511670:0;go mod init SlicesInDetail
+: 1724511674:0;go mod tidy
+: 1724511676:0;nvim main.go
+: 1724511680:0;go run
+: 1724511683:0;go run .
+: 1724513458:0;clear
+: 1724513465:0;go run .
+: 1724514542:0;up
+: 1724514552:0;lg
+: 1724520893:0;clear
+: 1724520907:0;cp -a ~/.zsh_history ~/.zsh_history.bak
+: 1724520908:0;ls
+: 1724520911:0;c.
+: 1724520912:0;lg
+: 1724521070:0;paru -S steam
+: 1724522773:0;clear
+: 1724572611:0;cd Roms
+: 1724572612:0;ls
+: 1724572614:0;fzf
+: 1724572620:0;cd
+: 1724572621:0;fzf
+: 1724572641:0;c.
+: 1724572642:0;nvim home.gitignore
+: 1724572651:0;fzf
+: 1724572653:0;cd
+: 1724572654:0;fzf
+: 1724572657:0;source ~/.zshrc
+: 1724572659:0;fzf
+: 1724572725:0;source ~/.zshrc
+: 1724572727:0;fzf
+: 1724572814:0;cd Roms
+: 1724572814:0;ls
+: 1724572815:0;fzf
+: 1724574400:0;cd
+: 1724574401:0;clear
+: 1724574403:0;fzf
+: 1724574423:0;source ~/.zshrc
+: 1724574425:0;fzf
+: 1724574500:0;lswt
+: 1724574571:0;man
+: 1724574573:0;man fd
+: 1724574615:0;fzf
+: 1724574618:0;source ~/.zshrc
+: 1724574620:0;fzf
+: 1724574652:0;clear
+: 1724577405:0;lswt
+: 1724579491:0;ls
+: 1724579494:0;clear
+: 1724579495:0;lswt
+: 1724579498:0;ls
+: 1724597335:0;up
+: 1724598043:0;pacPreviewInstalled
+: 1724598705:0;paru list choatic-aur
+: 1724598757:0;paclist chaotic-aur
+: 1724604800:0;clear
+: 1724648454:0;lg
+: 1724648461:0;cd Gat
+: 1724648462:0;lg
+: 1724648465:0;cd ..
+: 1724648469:0;c.
+: 1724648470:0;lg
+: 1724648475:0;up
+: 1724648541:0;clear
+: 1724656404:0;lswt
+: 1724657031:0;ls
+: 1724657032:0;lswt
+: 1724657041:0;tmux ls
+: 1724657044:0;steam
+: 1724660673:0;tmux ls
+: 1724660679:0;footclient
+: 1724660695:0;tmux attach -t 6
+: 1724660714:0;tmux ls
+: 1724660863:0;ls
+: 1724660864:0;lt
+: 1724661082:0;upower -d | grep -i "xbox" -A 10
+: 1724661109:0;clear
+: 1724661110:0;ls
+: 1724667266:0;cd Gat
+: 1724667266:0;lt
+: 1724667267:0;cd
+: 1724671829:0;pm
+: 1724671851:0;paru -S git-filter-repo
+: 1724671909:0;cd Obsidian/Vault/Images
+: 1724671910:0;ls
+: 1724671972:0;clear
+: 1724671973:0;ls
+: 1724672000:0;git filter-repo --invert-paths --path Dracula_1.png
+: 1724672013:0;lg
+: 1724672032:0;cd
+: 1724672035:0;cd Test
+: 1724672035:0;ls
+: 1724672038:0;cd Obsidian-notes
+: 1724672042:0;gP
+: 1724672047:0;lf
+: 1724672059:0;cd ..
+: 1724672060:0;ls
+: 1724672062:0;cd Images
+: 1724672062:0;ls
+: 1724672065:0;git filter-repo --invert-paths --path Dracula_1.png
+: 1724672076:0;cd ..
+: 1724672076:0;ls
+: 1724672078:0;cd ..
+: 1724672079:0;ls
+: 1724672082:0;cd Obsidian-notes
+: 1724672083:0;ls
+: 1724672093:0;git filter-repo --invert-paths --path ./Images/Dracula_1.png
+: 1724672098:0;git filter-repo --invert-paths --path Images/Dracula_1.png
+: 1724672100:0;cd ..
+: 1724672101:0;ls
+: 1724672105:0;rm -rf Obsidian-notes
+: 1724672125:0;git clone https://github.com/SwayKh/Obsidian-notes
+: 1724672140:0;ls
+: 1724672141:0;cd Obsidian-notes
+: 1724672148:0;git filter-repo --invert-paths --path Images/Dracula_1.png
+: 1724672156:0;git filter-repo --invert-paths --path Images/Gruvbox_1.png
+: 1724672162:0;git filter-repo --invert-paths --path Images/HyprlandV1.png
+: 1724672165:0;git filter-repo --invert-paths --path Images/HyprlandV2.png
+: 1724672168:0;git filter-repo --invert-paths --path Images/HyprlandV3.png
+: 1724672172:0;git filter-repo --invert-paths --path Images/HyprlandV4.png
+: 1724672175:0;git filter-repo --invert-paths --path Images/HyprlandV5.png
+: 1724672176:0;ls
+: 1724672177:0;cd Images
+: 1724672178:0;ls
+: 1724672180:0;cd ..
+: 1724672185:0;git filter-repo --invert-paths --path Images/Tokyo_Night_rice.png
+: 1724672187:0;ls
+: 1724672226:0;git push origin --force --all
+: 1724672242:0;git push origin
+: 1724672254:0;git push origin --set-upstream origin main
+: 1724672289:0;ls
+: 1724672296:0;git push origin --force --all
+: 1724672452:0;gb
+: 1724672454:0;lg
+: 1724672490:0;git remote add origin https://github.com/SwayKh/Obsidian-notes
+: 1724672491:0;ls
+: 1724672494:0;git push origin --force --all
+: 1724672516:0;lt 
+: 1724672522:0;find -maxdepth 1 -type f
+: 1724672529:0;find -type f
+: 1724672532:0;find -type f | wc -l
+: 1724684176:0;cd
+: 1724684179:0;cd Obsidian/Vault
+: 1724689644:0;cd Test
+: 1724689645:0;ls
+: 1724689647:0;lt
+: 1724689649:0;lf
+: 1724689951:0;cd
+: 1724689968:0;diff Test/vscode-user-settings.json dotfiles/settings.json
+: 1724690010:0;ls
+: 1724690013:0;gP
+: 1724690030:0;cd ..
+: 1724690032:0;lf
+: 1724690046:0;cd
+: 1724690048:0;clear
+: 1724690050:0;neofetch
+: 1724690408:0;man riverct
+: 1724690414:0;man riverctl
+: 1724690454:0;man riverctl | nvim
+: 1724690485:0;clear
+: 1724690820:0;source ~/.zshrc
+: 1724690875:0;cd wallpapers
+: 1724690881:0;fd --relative-path ~/wallpapers/Images | fzf --preview='chafa -f sixel -s ${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES} {}' --preview-window=50% --no-sort --height=100%
+: 1724690896:0;cd Images
+: 1724690898:0;fd
+: 1724690905:0;fd | fzf -dmenu
+: 1724690911:0;fd | rofi -dmenu
+: 1724690947:0;fwall
+: 1724690974:0;source ~/.zshrc
+: 1724690986:0;clear
+: 1724691004:0;source ~/.zshrc
+: 1724735982:0;up
+: 1724740730:0;lg
+: 1724743474:0;p,
+: 1724743475:0;pm
+: 1724743498:0;paru -S wayland-pipewire
+: 1724743505:0;paru -S wayland pipewire idle
+: 1724743514:0;paru -Ss wayland pipewire idle
+: 1724743529:0;paru -S wayland-pipewire-idle
+: 1724743536:0;paru -S wayland-pipewire-idle-inhibit
+: 1724744091:0;clear
+: 1724744240:0;systemctl --user enable wayland-pipewire-idle-inhibit.service --now
+: 1724746833:0;cd
+: 1724746834:0;list_size
+: 1724747361:0;git config --global push.autoSetupRemote true
+: 1724747365:0;c.
+: 1724747365:0;lg
+: 1724747375:0;nvim .gitconfig
+: 1724747393:0;ls
+: 1724748440:0;tmux ls
+: 1724748446:0;tmux kill-session -t Editor
+: 1724751688:0;lg
+: 1724751920:0;cd scripts
+: 1724751921:0;ls
+: 1724751921:0;lg
+: 1724751942:0;cd ..
+: 1724751943:0;lg
+: 1724752098:0;clear
+: 1724752103:0;cp -a ~/.zsh_history ~/.zsh_history.bak
