@@ -29,26 +29,31 @@ The scripts I use for setting wallpapers and the Session Menu for rofi are in th
 ## Installation
 
 ### Very important
+
 ```
 sudo pacman -S xdg-desktop-portal-hyprland brightnessctl playerctl
 ```
 
 ### Hyprland Stuff
+
 ```
 sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
 ```
 
 ### Utilities
+
 ```
 sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist
 ```
 
 ### Cli tools
+
 ```
 sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf
 ```
 
 ### Pipewire and stuff
+
 ```
 sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
 ```
@@ -160,7 +165,9 @@ ffmpegthumbnailer
 ImageMagick
 poppler
 unarchiver
-epub-thumbnailer
+[epub-thumbnailer](https://github.com/marianosimone/epub-thumbnailer)
+            or
+epub-thumnailer-git in AUR
 tar
 xz
 unzip
