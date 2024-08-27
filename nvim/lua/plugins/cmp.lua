@@ -119,43 +119,46 @@ return {
 
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
-        format = lspkind.cmp_format({
-          before = function(_, vim_item)
-            vim_item.abbr = string.sub(vim_item.abbr, 1, 45)
-            return vim_item
-          end,
-          mode = "symbol_text",
-          maxwidth = 80,
-          menu = {
-            nvim_lsp = "[LSP]",
-            nvim_lua = "[Lua]",
-            path = "[Path]",
-            buffer = "[Buffer]",
-            codeium = "[Codeium]",
-            luasnip = "[LuaSnip]",
-          },
-          ellipsis_char = "...",
-          symbol_map = {
-            Supermaven = "",
-            Codeium = "",
-            Array = "󰅪",
-            Boolean = "⊨",
-            Class = "󰌗",
-            Constructor = "",
-            Key = "󰌆",
-            Namespace = "󰅪",
-            Null = "NULL",
-            Number = "#",
-            Object = "󰀚",
-            Package = "󰏗",
-            Property = "",
-            Reference = "",
-            Snippet = "",
-            String = "󰀬",
-            TypeParameter = "󰊄",
-            Unit = "",
-          },
-        }),
+        -- format = lspkind.cmp_format({
+        --   before = function(_, vim_item)
+        --     vim_item.menu = ""
+        --     vim_item.kind = ""
+        --     vim_item.abbr = vim_item.abbr ... string.rep(" ", 30 - string.len(vim_item.abbr))
+        --     return vim_item
+        --   end,
+        --   mode = "symbol_text",
+        --   maxwidth = 50,
+        --   show_labelDetails = true,
+        --   menu = {
+        --     nvim_lsp = "[LSP]",
+        --     nvim_lua = "[Lua]",
+        --     path = "[Path]",
+        --     buffer = "[Buffer]",
+        --     codeium = "[Codeium]",
+        --     luasnip = "[LuaSnip]",
+        --   },
+        --   ellipsis_char = "...",
+        --   symbol_map = {
+        --     Supermaven = "",
+        --     Codeium = "",
+        --     Array = "󰅪",
+        --     Boolean = "⊨",
+        --     Class = "󰌗",
+        --     Constructor = "",
+        --     Key = "󰌆",
+        --     Namespace = "󰅪",
+        --     Null = "NULL",
+        --     Number = "#",
+        --     Object = "󰀚",
+        --     Package = "󰏗",
+        --     Property = "",
+        --     Reference = "",
+        --     Snippet = "",
+        --     String = "󰀬",
+        --     TypeParameter = "󰊄",
+        --     Unit = "",
+        --   },
+        -- }),
       },
 
       experimental = {

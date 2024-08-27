@@ -105,13 +105,13 @@ vim.opt.sidescrolloff = 5
 vim.wo.signcolumn = "yes"
 
 -- Width of popup menu, like cmp menu
-vim.opt.pumwidth = 50
+vim.opt.pumwidth = 30
 
 -- Max items to show in pop up menu
-vim.opt.pumheight = 10
+vim.opt.pumheight = 15
 
 -- Transparency level for pop up menu
-vim.opt.pumblend = 12
+vim.opt.pumblend = 10
 
 -- Max items to show in command menu
 vim.opt.cmdheight = 0
