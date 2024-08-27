@@ -6,8 +6,10 @@ return {
   -- "yioneko/nvim-cmp",
   -- branch = "perf",
   --
-  -- Autocompletion
-  "hrsh7th/nvim-cmp",
+  -- "hrsh7th/nvim-cmp",
+
+  "yioneko/nvim-cmp",
+  branch = "perf",
   event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
   -- event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
@@ -61,7 +63,6 @@ return {
       },
 
       matching = {
-        -- I want to do fuzzy matching :)
         dissallow_fuzzy_matching = false,
       },
 
@@ -97,10 +98,10 @@ return {
 
       -- sources for autocompletion
       sources = cmp.config.sources({
+        { name = "lazydev", priority = 300, group_index = 0 },
         { name = "luasnip", priority = 1000, max_item_count = 5 },
         { name = "supermaven", priority = 500, max_item_count = 5 },
         { name = "nvim_lsp", priority = 400, max_item_count = 20 },
-        { name = "lazydev", priority = 300, group_index = 0 },
         { name = "buffer", priority = 200, max_item_count = 10 },
         { name = "path", priority = 100, max_item_count = 10 },
         -- { name = "codeium", priority = 1000, max_item_count = 5 },
@@ -119,46 +120,67 @@ return {
 
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
-        -- format = lspkind.cmp_format({
-        --   before = function(_, vim_item)
-        --     vim_item.menu = ""
-        --     vim_item.kind = ""
-        --     vim_item.abbr = vim_item.abbr ... string.rep(" ", 30 - string.len(vim_item.abbr))
-        --     return vim_item
-        --   end,
-        --   mode = "symbol_text",
-        --   maxwidth = 50,
-        --   show_labelDetails = true,
-        --   menu = {
-        --     nvim_lsp = "[LSP]",
-        --     nvim_lua = "[Lua]",
-        --     path = "[Path]",
-        --     buffer = "[Buffer]",
-        --     codeium = "[Codeium]",
-        --     luasnip = "[LuaSnip]",
-        --   },
-        --   ellipsis_char = "...",
-        --   symbol_map = {
-        --     Supermaven = "",
-        --     Codeium = "",
-        --     Array = "󰅪",
-        --     Boolean = "⊨",
-        --     Class = "󰌗",
-        --     Constructor = "",
-        --     Key = "󰌆",
-        --     Namespace = "󰅪",
-        --     Null = "NULL",
-        --     Number = "#",
-        --     Object = "󰀚",
-        --     Package = "󰏗",
-        --     Property = "",
-        --     Reference = "",
-        --     Snippet = "",
-        --     String = "󰀬",
-        --     TypeParameter = "󰊄",
-        --     Unit = "",
-        --   },
-        -- }),
+        fields = { "abbr", "kind", "menu" },
+        format = function(entry, vim_item)
+          local kind = require("lspkind").cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            show_labelDetails = true,
+            menu = {
+              nvim_lsp = "[Lsp]",
+              nvim_lua = "[Lua]",
+              path = "[Path]",
+              buffer = "[Buffer]",
+              codeium = "[Codeium]",
+              luasnip = "[LuaSnip]",
+            },
+            ellipsis_char = "...",
+            symbol_map = {
+              Supermaven = "",
+              Codeium = "",
+              Array = "󰅪",
+              Boolean = "⊨",
+              Key = "󰌆",
+              Namespace = "󰅪",
+              Null = "NULL",
+              Number = "#",
+              Object = "󰀚",
+              Package = "󰏗",
+              String = "󰀬",
+              TypeParameter = "󰊄",
+              Text = "󰉿",
+              Method = "󰆧",
+              Function = "󰊕",
+              Constructor = "",
+              Field = "󰜢",
+              Variable = "󰀫",
+              Class = "󰠱",
+              Interface = "",
+              Module = "",
+              Property = "󰜢",
+              Unit = "󰑭",
+              Value = "󰎠",
+              Enum = "",
+              Keyword = "󰌋",
+              Snippet = "",
+              Color = "󰏘",
+              File = "󰈙",
+              Reference = "󰈇",
+              Folder = "󰉋",
+              EnumMember = "",
+              Constant = "󰏿",
+              Struct = "󰙅",
+              Event = "",
+              Operator = "󰆕",
+            },
+          })(entry, vim_item)
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+          kind.kind = "    " .. (strings[1] or "") .. "    " .. (strings[2] or "") .. ""
+          kind.menu = "    " .. (strings[2] or "") .. ""
+          kind.abbr = string.sub(kind.abbr .. string.rep(" ", 25), 1, 25)
+
+          return kind
+        end,
       },
 
       experimental = {
