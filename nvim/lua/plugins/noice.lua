@@ -46,7 +46,7 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            row = 5,
+            row = "50%",
             col = "50%",
           },
           size = {
@@ -58,7 +58,7 @@ return {
           relative = "editor",
           backend = "cmp",
           position = {
-            row = 8,
+            row = "50%",
             col = "50%",
           },
           size = {
