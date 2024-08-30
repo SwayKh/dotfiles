@@ -35,6 +35,8 @@ autocmd("FileType", {
   pattern = {
     "help",
     "alpha",
+    "nofile",
+    "",
     "dashboard",
     "neo-tree",
     "Trouble",
@@ -62,6 +64,8 @@ autocmd("CursorMoved", {
   callback = function()
     local excluded_filetypes = {
       "alpha",
+      "",
+      "nofile",
       "dashboard",
       "neo-tree",
       "Trouble",
@@ -81,6 +85,21 @@ autocmd("CursorMoved", {
     end
   end,
 })
+
+-- vim.api.nvim_create_autocmd("WinEnter", {
+--   pattern = "*",
+--   group = vim.api.nvim_create_augroup("ResizeBuffer", { clear = true }),
+--   desc = "Resize buffer on entry, Alternative to focus.nvim",
+--   callback = function()
+--     if vim.fn.win_gettype() == "" and vim.bo.buftype == "" then
+--       if vim.bo.filetype == "help" then
+--         vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
+--       else
+--         vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
+--       end
+--     end
+--   end,
+-- })
 
 -- Autocmd to track macro recording, And redraw statusline, which trigger
 -- macro function of mini.statusline
@@ -120,10 +139,13 @@ autocmd("BufReadPost", {
   end,
 })
 
-autocmd("BufWinEnter", {
+autocmd("VimEnter", {
   desc = "clear the last used search pattern",
   pattern = "*",
-  command = "let @/ = ''",
+  callback = function()
+    vim.fn.setreg("/", "") -- Clears the search register
+    vim.cmd('let @/ = ""') -- Clear the search register using Vim command
+  end,
 })
 
 -- vim.api.nvim_create_user_command("Redir", function(ctx)
