@@ -4,27 +4,37 @@ return {
     name = "dracula",
     priority = 1000,
     config = function()
-      -- require("dracula").setup({
-      --   transparent = true,
-      --   options = {
-      --     styles = {
-      --       comments = "italic",
-      --       keywords = "bold",
-      --       types = "italic,bold",
-      --     },
-      --   },
-      -- })
-
+      require("dracula").setup({
+        transparent = false,
+        styles = {
+          comments = "italic",
+          keywords = "bold",
+          types = "bold,italic",
+        },
+      })
       vim.cmd.colorscheme("dracula")
-      vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-      vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
-      -- vim.cmd.hi("Comment gui=none")
-      -- vim.cmd.hi("Normal guibg=#222222")
-      -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     end,
+    vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" }),
+    vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" }),
+    vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" }),
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }),
+    -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }),
+    -- vim.cmd.hi("Comment gui=none"),
+    -- vim.cmd.hi("Normal guibg=#222222"),
   },
+  -- {
+  --   "sainnhe/everforest",
+  --   priority = 1000,
+  --   config = function()
+  --     -- " Available values: 'hard', 'medium'(default), 'soft'
+  --     vim.g.everforest_background = "hard"
+  --     vim.g.everforest_enable_italic = 1
+  --     vim.g.everforest_ui_contrast = "high"
+  --     vim.g.everforest_diagnostic_text_highlight = 1
+  --     vim.g.everforest_better_performance = 1
+  --     vim.cmd.colorscheme("everforest")
+  --   end,
+  -- },
   -- {
   --   "marko-cerovac/material.nvim",
   -- },
@@ -53,6 +63,18 @@ return {
   -- {
   --   "dracula/vim",
   --   name = "dracula",
+  --   priority = 1000,
+  --   config = function()
+  --     require("dracula").setup({
+  --       transparent = false,
+  --       styles = {
+  --         comments = "italic",
+  --         keywords = "bold",
+  --         types = "bold,italic",
+  --       },
+  --     })
+  --     vim.cmd.colorscheme("dracula")
+  --   end,
   -- },
   -- {
   --   "EdenEast/nightfox.nvim",

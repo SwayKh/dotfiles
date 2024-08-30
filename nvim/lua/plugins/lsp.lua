@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
-    { "antosha417/nvim-lsp-file-operations", config = true },
+    -- { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/lazydev.nvim", ft = "lua" },
     "nvim-lua/plenary.nvim",
   },

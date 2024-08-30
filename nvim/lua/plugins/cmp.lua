@@ -122,7 +122,7 @@ return {
       formatting = {
         fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
-          local kind = require("lspkind").cmp_format({
+          local kind = lspkind.cmp_format({
             mode = "symbol_text",
             maxwidth = 50,
             show_labelDetails = true,
@@ -162,7 +162,7 @@ return {
               Value = "󰎠",
               Enum = "",
               Keyword = "󰌋",
-              Snippet = "",
+              Snippet = "",
               Color = "󰏘",
               File = "󰈙",
               Reference = "󰈇",
