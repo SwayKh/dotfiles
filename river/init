@@ -345,7 +345,7 @@ riverctl rule-add -title "Picture-in-Picture" float
 # Set background and border color
 riverctl background-color 0x002B36
 riverctl border-width 2
-riverctl border-color-focused 0xA98DB5
+riverctl border-color-focused 0x47B4C5
 riverctl border-color-unfocused 0xA5A5A5
 
 riverctl set-repeat 30 300
