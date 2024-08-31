@@ -1,7 +1,4 @@
 return {
-  -- Going to copy over kickstart nvim lsp config
-  -- Will have Mason, Mason-tool-installer and nvim_lspconfig all in one place
-  --
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
   event = { "BufReadPost", "BufNewFile" },
@@ -11,8 +8,17 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     -- { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/lazydev.nvim", ft = "lua" },
     "nvim-lua/plenary.nvim",
+    {
+      "folke/lazydev.nvim",
+      ft = "lua",
+      opts = {
+        library = {
+          -- Load luvit types when the `vim.uv` word is found
+          { path = "luvit-meta/library", words = { "vim%.uv" } },
+        },
+      },
+    },
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -69,16 +75,58 @@ return {
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
+          local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
           vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             buffer = event.buf,
+            group = highlight_augroup,
             callback = vim.lsp.buf.document_highlight,
           })
 
           vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
             buffer = event.buf,
+            group = highlight_augroup,
             callback = vim.lsp.buf.clear_references,
           })
         end
+
+        vim.api.nvim_create_autocmd("LspDetach", {
+          group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+          callback = function(event2)
+            vim.lsp.buf.clear_references()
+            vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+          end,
+        })
+
+        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+          vim.lsp.inlay_hint.enable(true, { event.buf })
+          map("<leader>ti", function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+          end, "[T]oggle [I]nlay Hints")
+        end
+
+        vim.diagnostic.config({
+          signs = {
+            active = true,
+            values = {
+              { name = "DiagnosticSignError", text = "" },
+              { name = "DiagnosticSignWarn", text = "" },
+              { name = "DiagnosticSignHint", text = "󰌶" },
+              { name = "DiagnosticSignInfo", text = "" },
+            },
+          },
+          virtual_text = true,
+          update_in_insert = false,
+          underline = true,
+          severity_sort = true,
+          float = {
+            focusable = true,
+            style = "minimal",
+            border = "rounded",
+            source = "always",
+            header = "",
+            prefix = "",
+          },
+        })
       end,
     })
 
@@ -103,6 +151,7 @@ return {
       htmx = {}, -- HTMX
       cssls = {}, -- CSS
       tailwindcss = {}, -- Tailwind CSS
+      templ = {}, -- Templ
       pyright = {}, -- Python
       gopls = { -- Golang
         cmd = { "gopls" },
