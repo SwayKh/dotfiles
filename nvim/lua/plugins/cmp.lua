@@ -13,7 +13,6 @@ return {
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-cmdline", -- For cmdline suggestions
     "onsails/lspkind.nvim", -- vs-code like pictograms
-
     {
       "L3MON4D3/LuaSnip", -- snippet engine
       build = "make install_jsregexp",
