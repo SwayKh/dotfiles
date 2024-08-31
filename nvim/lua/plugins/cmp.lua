@@ -1,17 +1,13 @@
--- [[ Configure nvim-cmp ]]
--- See `:help cmp`
 return {
   -- There's a fork of nvim-cmp for much better performance
   -- try it out sometime, Here's the PR https://github.com/hrsh7th/nvim-cmp/pull/1980
   -- "yioneko/nvim-cmp",
   -- branch = "perf",
-  --
   -- "hrsh7th/nvim-cmp",
-
+  --
   "yioneko/nvim-cmp",
   branch = "perf",
   event = { "VeryLazy", "InsertEnter", "CmdlineEnter" },
-  -- event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
@@ -41,6 +37,7 @@ return {
     local border_opts = {
       border = "rounded",
       winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+      scrollbar = false,
     }
     cmp.setup({
       enabled = true,
@@ -69,8 +66,8 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- previous suggestion
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- next suggestion
-        ["<C-h>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-l>"] = cmp.mapping.scroll_docs(4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<C-y>"] = cmp.mapping(
@@ -80,20 +77,30 @@ return {
           }),
           { "i", "c" }
         ),
-        ["<C-k>"] = cmp.mapping(function(fallback)
-          if vim.snippet.active({ direction = 1 }) then
-            vim.snippet.jump(1)
-          else
-            fallback()
+        ["<C-k>"] = cmp.mapping(function()
+          if luasnip.expand_or_locally_jumpable() then
+            luasnip.expand_or_jump()
           end
         end, { "i", "s" }),
-        ["<C-j>"] = cmp.mapping(function(fallback)
-          if vim.snippet.active({ direction = -1 }) then
-            vim.snippet.jump(-1)
-          else
-            fallback()
+        ["<C-j>"] = cmp.mapping(function()
+          if luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
           end
         end, { "i", "s" }),
+        -- ["<C-k>"] = cmp.mapping(function(fallback)
+        --   if vim.snippet.active({ direction = 1 }) then
+        --     vim.snippet.jump(1)
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i", "s" }),
+        -- ["<C-j>"] = cmp.mapping(function(fallback)
+        --   if vim.snippet.active({ direction = -1 }) then
+        --     vim.snippet.jump(-1)
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i", "s" }),
       }),
 
       -- sources for autocompletion

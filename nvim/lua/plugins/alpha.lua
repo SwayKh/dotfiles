@@ -1,7 +1,6 @@
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
-  -- event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
     require("alpha").setup(require("alpha.themes.dashboard").config)
     local alpha = require("alpha")
@@ -33,11 +32,21 @@ return {
     -- local fortune = require("alpha.fortune")
     -- dashboard.section.footer.val = fortune()
 
-    dashboard.section.footer.val = function()
-      local stats = require("lazy").stats()
-      local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-      return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
-    end
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
+      callback = function()
+        local stats = require("lazy").stats()
+        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+        dashboard.section.footer.val = "⚡ Neovim loaded "
+          .. stats.loaded
+          .. "/"
+          .. stats.count
+          .. " plugins in "
+          .. ms
+          .. "ms"
+        pcall(vim.cmd.AlphaRedraw)
+      end,
+    })
 
     -- Send config to alpha
     alpha.setup(dashboard.opts)
