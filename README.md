@@ -31,13 +31,19 @@ The scripts I use for setting wallpapers and the Session Menu for rofi are in th
 ### Very important
 
 ```
-sudo pacman -S xdg-desktop-portal-hyprland brightnessctl playerctl
+sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl
 ```
 
 ### Hyprland Stuff
 
 ```
 sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
+```
+
+### Or River Stuff
+
+```
+paru -S river lswt swaylock-effects swayidle
 ```
 
 ### Utilities
@@ -69,7 +75,7 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 ---
 
 - **OS** : [Arch](https://archlinux.org/)
-- **WM/Compositor** : [Hyprland](https://hyprland.org/)
+- **WM/Compositor** : [Hyprland](https://hyprland.org/) / [River](https://codeberg.org/river/river)
 - **Bar** : [Waybar](https://github.com/Alexays/Waybar)
 - **Application Launcher** : [Rofi(wayland fork)](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
