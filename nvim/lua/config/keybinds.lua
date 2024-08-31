@@ -15,6 +15,35 @@ map("n", "<leader>f", "<Cmd>Vexplore!<CR>", { silent = true, desc = "Open netrw 
 map("n", "<tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
 map("n", "<S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
 
+-- Move between splits
+map("n", "<C-j>", "<C-w>j", { desc = "Move Between splits with HJKL" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move Between splits with HJKL" })
+map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
+
+-- Go to Beginning or End of line
+map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
+map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
+
+-- Move in insert mode, And Command-line mode
+map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
+map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
+map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
+map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
+
+-- Split Resize
+map("n", "<C-S-h>", "<C-w>>") -- resize window to left
+map("n", "<C-S-l>", "<C-w><") -- resize window to right
+map("n", "<C-S-k>", "<C-w>+") -- resize window to up
+map("n", "<C-S-j>", "<C-w>-") -- resize window to down
+map("n", "<C-S-Left>", "<Cmd>vertical resize +3<CR>") -- Control+Left resizes vertical split +
+map("n", "<C-S-Right>", "<Cmd>vertical resize -3<CR>") -- Control+Right resizes vertical split -
+
+map("n", "<left>", "<Cmd>vertical resize +3<CR>", { desc = "Resize vertical split with left" })
+map("n", "<right>", "<Cmd>vertical resize -3<CR>", { desc = "Resize vertical split with right" })
+map("n", "<down>", "<Cmd>resize -3<CR>", { desc = "Resize split with down" })
+map("n", "<up>", "<Cmd>resize +3<CR>", { desc = "Resize split with up" })
+
 -- Move selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
@@ -82,40 +111,11 @@ map("n", "<leader>cp", "<Cmd>cprev<CR>", { desc = "Go to previous item in Quickf
 map("n", "<leader>co", "<Cmd>copen<CR>", { desc = "Open Quickfix List" })
 map("n", "<leader>cc", "<Cmd>cclose<CR>", { desc = "Close Quickfix List" })
 
--- Go to Beginning or End of line
-map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
-map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
-
--- Move in insert mode, And Command-line mode
-map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
-map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
-map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
-map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
-
--- Move between splits
-map("n", "<C-j>", "<C-w>j", { desc = "Move Between splits with HJKL" })
-map("n", "<C-k>", "<C-w>k", { desc = "Move Between splits with HJKL" })
-map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
-map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
-
--- Split Resize
-map("n", "<C-S-h>", "<C-w>>") -- resize window to left
-map("n", "<C-S-l>", "<C-w><") -- resize window to right
-map("n", "<C-S-k>", "<C-w>+") -- resize window to up
-map("n", "<C-S-j>", "<C-w>-") -- resize window to down
-map("n", "<C-S-Left>", "<Cmd>vertical resize +3<CR>") -- Control+Left resizes vertical split +
-map("n", "<C-S-Right>", "<Cmd>vertical resize -3<CR>") -- Control+Right resizes vertical split -
-
 -- Found much better use than disabling the arrow keys
 -- map("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 -- map("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 -- map("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 -- map("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
-
-map("n", "<left>", "<Cmd>vertical resize +3<CR>", { desc = "Resize vertical split with left" })
-map("n", "<right>", "<Cmd>vertical resize -3<CR>", { desc = "Resize vertical split with right" })
-map("n", "<down>", "<Cmd>resize -3<CR>", { desc = "Resize split with down" })
-map("n", "<up>", "<Cmd>resize +3<CR>", { desc = "Resize split with up" })
 
 -- Remap common typos when saving and closing files
 vim.cmd("cnoreabbrev Q  q")

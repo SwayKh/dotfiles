@@ -19,6 +19,7 @@ autocmd("FileType", {
     "fugitive*",
     "git",
     "help",
+    "man",
     "lspinfo",
     "netrw",
     "notify",
@@ -86,20 +87,13 @@ autocmd("CursorMoved", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("WinEnter", {
---   pattern = "*",
---   group = vim.api.nvim_create_augroup("ResizeBuffer", { clear = true }),
---   desc = "Resize buffer on entry, Alternative to focus.nvim",
---   callback = function()
---     if vim.fn.win_gettype() == "" and vim.bo.buftype == "" then
---       if vim.bo.filetype == "help" then
---         vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
---       else
---         vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
---       end
---     end
---   end,
--- })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "gitcommit", "markdown" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+  end,
+})
 
 -- Autocmd to track macro recording, And redraw statusline, which trigger
 -- macro function of mini.statusline

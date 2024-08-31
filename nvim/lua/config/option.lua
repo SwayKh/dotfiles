@@ -1,10 +1,5 @@
--- [[ Setting options ]]
--- See `:help vim.o`
--- Add comments to detail to options
-
--- Set <space> as the leader key
--- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- Set <space> as the leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -126,7 +121,9 @@ vim.opt.background = "dark"
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 vim.opt.ttimeoutlen = 0
-vim.opt.conceallevel = 0
+
+-- Needed for Obsidian.nvim to work properly
+vim.opt.conceallevel = 1
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
