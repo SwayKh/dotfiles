@@ -38,8 +38,8 @@ return {
       },
     })
 
-    vim.keymap.set("n", "-", "<Cmd>Oil<CR>", { silent = true, desc = "Open Parent Directory" })
-    vim.keymap.set("n", "<leader>-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Oil in floating mode" })
+    vim.keymap.set("n", "-", "<Cmd>Oil --float<CR>", { silent = true, desc = "Open Parent Directory" })
+    vim.keymap.set("n", "<leader>-", "<Cmd>Oil<CR>", { silent = true, desc = "Open Oil in floating mode" })
 
     -- Toggle preview on enter and move cursor to files buffer
     -- This breaks floating mode
