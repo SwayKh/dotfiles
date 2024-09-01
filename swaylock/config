@@ -1,5 +1,3 @@
-
-screenshots
 clock
 indicator
 line-uses-ring
@@ -11,6 +9,7 @@ effect-vignette=0.3:0.9
 timestr=%H:%M
 datestr=%a %e %b
 
+color=272C33
 text-color=e70948
 indicator-radius=200
 indicator-thickness=10
@@ -31,5 +30,3 @@ ring-wrong-color=e70948
 text-ver-color=595959
 inside-ver-color=00000000
 ring-ver-color=595959
-
-
