@@ -76,7 +76,7 @@ riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
 riverctl map normal Control Print spawn "$HOME/scripts/screenshots/captureScreen.sh"
 riverctl map normal Control+Shift Print spawn "$HOME/scripts/screenshots/captureArea.sh"
 
-riverctl map normal $mod V spawn "cliphist list | rofi -dmenu -config ~/.config/rofi/regular.rasi | cliphist decode | wl-copy"
+riverctl map normal $mod V spawn "cliphist list | rofi -dmenu -p 'Clipboard' -config ~/.config/rofi/regular.rasi | cliphist decode | wl-copy"
 
 for i in $(seq 1 9); do
   # Tags are basically workspaces, but different

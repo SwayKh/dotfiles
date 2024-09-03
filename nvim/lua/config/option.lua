@@ -123,7 +123,7 @@ vim.opt.timeoutlen = 300
 vim.opt.ttimeoutlen = 0
 
 -- Needed for Obsidian.nvim to work properly
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 3
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
