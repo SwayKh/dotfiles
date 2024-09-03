@@ -46,7 +46,7 @@ cmd androidFs %{{
 }}
 
 cmd convertToPng &{{
-  convert_to_png "$fx"
+  convert-to-png "$fx"
 }}
 
 cmd directory_size ${{
