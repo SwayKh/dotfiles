@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # The Figlet font is DOS Rebel from https://github.com/xero/figlet-fonts/blob/master/Examples.md
 
@@ -15,14 +15,14 @@
 riverctl spawn "swww-daemon --format xrgb"
 riverctl spawn "$HOME/.config/waybar/launch.sh"
 riverctl spawn "dunst"
-riverctl spawn "nm-applet --indicator"
-riverctl spawn "blueman-applet"
+riverctl spawn "/usr/lib/kdeconnectd"
+# riverctl spawn "/usr/bin/kdeconnect-indicator"
+# riverctl spawn "nm-applet --indicator"
+# riverctl spawn "blueman-applet"
 riverctl spawn "wl-clipboard"
 riverctl spawn "foot --server"
 riverctl spawn "swayidle -w"
-riverctl spawn "/usr/lib/kdeconnectd"
-riverctl spawn "/usr/bin/kdeconnect-indicator"
-riverctl spawn "/usr/lib/polkit-kde-authentication-agent-1"
+riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 # Clipboard History
@@ -65,10 +65,10 @@ riverctl map normal $mod+Shift Q exit
 riverctl map normal $mod+Control F toggle-float
 riverctl map normal $mod+Shift F toggle-fullscreen
 riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'Refreshed River'"
-riverctl map normal $mod Grave spawn "$HOME/scripts/list_river_window"
+riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
 
-riverctl map normal $mod Space spawn "$HOME/scripts/random_swww_wall"
-riverctl map normal $mod Escape spawn "$HOME/scripts/session_menu"
+riverctl map normal $mod Space spawn "$HOME/scripts/random-swwwbg"
+riverctl map normal $mod Escape spawn "$HOME/scripts/rofi-power"
 riverctl map normal $mod C spawn "$HOME/scripts/colorpicker"
 
 # Screenshots
@@ -76,7 +76,7 @@ riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
 riverctl map normal Control Print spawn "$HOME/scripts/screenshots/captureScreen.sh"
 riverctl map normal Control+Shift Print spawn "$HOME/scripts/screenshots/captureArea.sh"
 
-riverctl map normal $mod V spawn "cliphist list | rofi -dmenu -p 'Clipboard' -config ~/.config/rofi/regular.rasi | cliphist decode | wl-copy"
+riverctl map normal $mod V spawn "cliphist list | rofi -dmenu -p 'Clipboard' -config $HOME/.config/rofi/regular.rasi | cliphist decode | wl-copy"
 
 for i in $(seq 1 9); do
   # Tags are basically workspaces, but different
@@ -234,7 +234,7 @@ special1_tag=$((1 << 18))
 #
 all_tags=$(((1 << 32) - 1))
 scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special1_tag))
-all_but_scratch_tag=$(($all_tags ^ $scratch_tags))
+all_but_scratch_tag=$((all_tags ^ scratch_tags))
 riverctl spawn-tagmask ${all_but_scratch_tag}
 
 scratchpad="$HOME/.config/river/scratchpads.sh"
@@ -302,8 +302,11 @@ riverctl rule-add -app-id "steam" -title "Brawlhalla" float
 riverctl rule-add -app-id "galculator" float
 riverctl rule-add -app-id "org.kde.kcalc" float
 riverctl rule-add -app-id "blueman-manager" float
+riverctl rule-add -app-id "org.kde.kdeconnect.app" float
 riverctl rule-add -app-id "nm-connection-editor" float
 riverctl rule-add -app-id "org.kde.polkit-kde-authentication-agent-1" float
+riverctl rule-add -app-id "polkit-gnome-authentication-agent-1" float
+
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
 riverctl rule-add -app-id 'GParted' float
 riverctl rule-add -app-id 'nwg-look' float
