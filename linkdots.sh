@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 path="$(cd "$(dirname "$0")" && pwd)"
 
