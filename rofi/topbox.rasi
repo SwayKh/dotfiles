@@ -83,7 +83,7 @@ listview {
   scrollbar: false;
   cycle: false;
   dynamic: false;
-  fixed-height: true;
+  fixed-height: false;
   spacing: 0px;
   /* List view has the dash border, Remove it here */
   /*border: 0px;*/
