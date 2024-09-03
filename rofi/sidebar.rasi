@@ -82,7 +82,7 @@ listview {
   spacing: 3px;
   scrollbar: false;
   cycle: false;
-  fixed-height: true;
+  fixed-height: false;
   dynamic: false; // Shrinks windows to occupy search result
   margin: 0px;
   padding: 0px;
