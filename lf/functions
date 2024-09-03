@@ -93,8 +93,8 @@ cmd unarchive &{{
 }}
 
 cmd setWallpaper &{{
-  # set_wall="$HOME/scripts/set_wall"
-  set_wall "$f"
+  # set-wall="$HOME/scripts/set-wall"
+  set-wall "$f"
   lf -remote 'send reload'
 }}
 
