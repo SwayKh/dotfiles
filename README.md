@@ -31,7 +31,7 @@ The scripts I use for setting wallpapers and the Session Menu for rofi are in th
 ### Very important
 
 ```
-sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl
+sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
 ```
 
 ### Hyprland Stuff
@@ -191,9 +191,11 @@ wmctrl (Window switching functionality for rofi-wayland-fork)
 cliphist (Rofi as clipboard manager)
 vulkan-radeon(Needed for Godot4)
 fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
+gvfs-mnt (Needed for mounting Phone storage via USB)
 os-prober (Needed for add windows as boot entry in grub)
 upower (Needed to check battery levels of pheripherals like controllers)
 bluez-util (Needed xpadneo-dkms/Bluetooth controllers)
+polkit-gnome (Needed for GUI Password prompt for root GUI apps)
 perl-file-mimeinfo (Needed for using mimeopen command in lf)
 qt-graphicaleffects (Needed for sddm theme)
 qt-quickcontrols2 (Needed for sddm theme)
@@ -264,6 +266,7 @@ pipewire-pulse
 wireplumber
 pavucontrol
 pulseaudio
+playerctl
 reflector
 rsync
 swaync
