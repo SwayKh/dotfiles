@@ -25,8 +25,8 @@ bindsym $mod+TAB exec rofi -show window
 bindsym $mod+l exec $term -e zsh -ic lf #lfMention
 bindsym $mod+m exec $term -e btop
 
-bindsym $mod+Escape exec "$HOME/scripts/session_menu"
-bindsym $mod+space exec "$HOME/scripts/random_swww_wall"
+bindsym $mod+Escape exec "$HOME/scripts/rofi-power"
+bindsym $mod+space exec "$HOME/scripts/random-swwwbg"
 bindsym Print exec "$HOME/scripts/screenshots/captureAll.sh"
 bindsym Ctrl+Print exec "$HOME/scripts/screenshots/captureScreen.sh"
 bindsym Ctrl+Shift+Print exec "$HOME/scripts/screenshots/captureArea.sh"
