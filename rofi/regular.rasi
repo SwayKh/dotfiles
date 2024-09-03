@@ -1,16 +1,18 @@
-// vim:ft=css
+// vim:ft=rasi
 configuration {
-  modi:                 "drun,nerdy,run,filebrowser,window";
-  dpi:                  80;
-  icon-theme:           "Papirus";
+  modi:                 "drun,run,filebrowser,window";
+  dpi:                  90;
   show-icons:           true;
+  icon-theme:           "Papirus";
   terminal:             "footclient";
+  window-format:        "{w} · {c} · {t}";
   disable-history:      false;
   max-history-size:     50;
 
   display-drun:         " Apps"; // 󰀻
   display-run:          " Runs";
   display-nerdy:        "󰱨 Nerdy";
+  display-emoji:        "󰱨 Emoji";
 	display-window:       " Windows";
   display-filebrowser:  " Files";
 	display-ssh:          "󰣀 SSH";
@@ -24,8 +26,8 @@ configuration {
 @import "colors"
 
 window {
-  height: 50%;
-  width: 50%;
+  //height: 50%;
+  width: 40%;
   orientation: vertical;
   location: center;
   anchor: center;
@@ -33,49 +35,50 @@ window {
   y-offset: 0px;
   padding: 5px;
   margin: 0px;
-  border: 1px;
-  border-radius: 5px;
-  spacing: 0;
+  border: 2px;
+  border-radius: 0px;
+  spacing: 0px;
   children: [ mainbox ];
 }
 
 mainbox {
-  spacing: 0;
+  spacing: 3px;
   children: [ inputbar, listview ];
 }
 
 inputbar {
-  spacing: 0px;
+  spacing: 3px;
   /*padding: top right bottom left*/
-  padding: 10px;
-  children: [ "textbox-prompt-colon", entry ];
+  padding: 0px;
+  children: [ prompt, entry ];
 }
 
-textbox-prompt-colon {
-  expand: false;
-  padding: 0px;
-  str: " "; /* */
+prompt {
+  padding: 3px;
+  border-radius: 0px;
 }
 
 entry {
   placeholder:  "Search...";
-  padding: 0px 5px;
-  border-radius: 5px;
+  padding: 3px;
+  border-radius: 0px;
 }
 
 listview {
   lines: 12;
-  spacing: 0px;
+  spacing: 3px;
   scrollbar: false;
-  /*padding: top right bottom left*/
+  cycle: false;
+  fixed-height: true;
+  dynamic: false; // Shrinks windows to occupy search result
+  margin: 0px;
   padding: 0px;
   border: 0px;
-  border-radius: 5px;
-  margin: 0px;
+  border-radius: 0px;
 }
 
 element {
-  border: 0;
+  border: 0px;
+  border-radius: 0px;
   padding: 3px;
-  border-radius: 5px;
 }
