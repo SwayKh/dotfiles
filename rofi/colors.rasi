@@ -1,4 +1,4 @@
-// vim:ft=css:
+// vim:ft=rasi
 * {
   font:                   "JetBrainsMono Nerd Font 10";
   foreground:             #4EB9C6;
@@ -32,7 +32,8 @@
 
 element-icon {
   /*Better to increase the whole element size with dpi*/
-  /*size: 22;*/
+  /* Or Maybe Not, Just have a unified icon size for all scheme */
+  size: 18;
 }
 
 element-text {
@@ -49,13 +50,13 @@ inputbar {
 }
 
 prompt {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:       @background;
+  background-color: @foreground;
 }
 
 textbox-prompt-colon {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:       @background;
+  background-color: @foreground;
 }
 
 message {

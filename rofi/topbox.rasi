@@ -1,10 +1,11 @@
-// vim:ft=css
+// vim:ft=rasi
 configuration {
   modi:                 "drun,run,filebrowser,window";
   dpi:                  90;
-  icon-theme:           "Papirus";
   show-icons:           true;
+  icon-theme:           "Papirus";
   terminal:             "footclient";
+  window-format:        "{w} · {c} · {t}";
   disable-history:      false;
   max-history-size:     50;
 
@@ -30,68 +31,70 @@ window {
   width: 40%;
   orientation: vertical;
   location: north;
-  anchor: north;
+  anchor: center;
   x-offset: 0px;
   y-offset: 0px;
   margin: 5px;
+  padding: 5px;
   border: 2px;
   border-radius: 5px;
-  padding: 5px;
-  spacing: 0;
+  spacing: 0px;
   children: [ mainbox ];
 }
 
 mainbox {
-  spacing: 0;
+  spacing: 5px;
   children: [ inputbar, mode-switcher, listview ];
 }
 
 inputbar {
-  spacing: 0px;
+  spacing: 3px;
   /*padding: top right bottom left*/
-  padding: 0px 5px 5px;
+  padding: 0px;
   children: [ "textbox-prompt-colon", entry ];
 }
 
 textbox-prompt-colon {
   expand: false;
-  padding: 0px 5px;
+  padding: 3px 15px;
   border-radius: 5px;
   str: " "; /* */
 }
 
 entry {
   placeholder:  "Search...";
-  padding: 0px 5px;
+  padding: 0px;
   border-radius: 5px;
 }
 
 mode-switcher {
-  margin: 5px;
+  spacing: 3px;
   orientation: horizontal;
 }
 
 button {
+  padding: 3px;
   border-radius: 5px;
 }
 
 listview {
+  lines: 7;
+  spacing: 3px;
   scrollbar: false;
-  lines: 6;
   cycle: false;
-  dynamic: true;
+  dynamic: false;
+  fixed-height: true;
   spacing: 0px;
   /* List view has the dash border, Remove it here */
   /*border: 0px;*/
-
-  padding: 10px;
+  margin: 0px;
+  padding: 5px;
   border: 1px;
   border-radius: 5px;
-  margin: 5px;
 }
 
 element {
-  border: 0;
-  padding: 3px;
+  border: 0px;
   border-radius: 5px;
+  padding: 3px;
 }
