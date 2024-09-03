@@ -35,6 +35,9 @@ return {
         "dockerfile",
         "gitignore",
         "query",
+        "rasi",
+        "hyprlang",
+        "regex",
       },
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       sync_install = true,

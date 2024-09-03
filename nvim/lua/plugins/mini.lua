@@ -55,6 +55,7 @@ return { -- Collection of various small independent plugins/modules
     require("mini.notify").setup()
     require("mini.git").setup()
     require("mini.icons").setup()
+    require("mini.notify").setup()
     require("mini.hipatterns").setup({
       highlighters = {
         hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
