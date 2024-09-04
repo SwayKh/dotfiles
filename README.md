@@ -9,67 +9,6 @@
 
 ---
 
-## Screenshot
-
----
-
-![Screenshot](./img/screenshot.png)
-![Neovim](./img/nvim.png)
-
-These are all my dotfiles, even for the software I don't use anymore. Feel free
-to copy and mix and match however you like, Most of this is taken from others'
-configs. Some of it might even be the defaults.
-
-The wallpapers can be found in my [Wallpapers](https://github.com/Swaykh/wallpapers) repo.
-Most of these are taken from github repos and [Unixporn](https://reddit.com/r/unixporn)
-
-The scripts I use for setting wallpapers and the Session Menu for rofi are in the
-[scripts repo](https://github.com/swaykh/scripts)
-
-## Installation
-
-### Very important
-
-```
-sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
-```
-
-### Hyprland Stuff
-
-```
-sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
-```
-
-### Or River Stuff
-
-```
-paru -S river lswt swaylock-effects swayidle
-```
-
-### Utilities
-
-```
-sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist
-```
-
-### Cli tools
-
-```
-sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf
-```
-
-### Pipewire and stuff
-
-```
-sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
-```
-
-Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
-
->     git clone https://github.com/SwayKh/dotfiles.git
->     cd dotfiles
->     ./linkdots.sh
-
 ## What Software I use
 
 ---
@@ -121,23 +60,66 @@ Follow these steps (Beware that this will remove all your old configs. So prepar
 - **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg)
 - **Clipboard** : [xclip](https://github.com/astrand/xclip)
 
-#### CLI Tools
+## Screenshot
+
+---
+
+![Screenshot](./img/screenshot.png)
+![Neovim](./img/nvim.png)
+
+These are all my dotfiles, even for the software I don't use anymore. Feel free
+to copy and mix and match however you like, Most of this is taken from others'
+configs. Some of it might even be the defaults.
+
+The wallpapers can be found in my [Wallpapers](https://github.com/Swaykh/wallpapers) repo.
+Most of these are taken from github repos and [Unixporn](https://reddit.com/r/unixporn)
+
+The scripts I use for setting wallpapers and the Power Menu using rofi are in the
+[scripts repo](https://github.com/swaykh/scripts)
+
+## Installation
+
+#### Important
 
 ```
-btop
-cava
-eza
-fzf
-jq
-lazygit
-ncdu
-tldr
-paru
-sshfs
-swww
-tmux
-tree
+sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
 ```
+
+#### Hyprland Stuff
+
+```
+sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
+```
+
+#### Or River Stuff
+
+```
+paru -S river lswt swaylock-effects swayidle
+```
+
+#### Utilities
+
+```
+sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist
+```
+
+#### Cli tools
+
+```
+sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf cava jq ncdu sshfs swww
+```
+
+#### Pipewire and stuff
+
+```
+sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
+```
+
+Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
+
+>     git clone https://github.com/SwayKh/dotfiles.git
+>     cd dotfiles
+>     ./linkdots.sh
 
 There's also some configs, I've kept as backup. For eg
 
