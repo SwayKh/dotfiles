@@ -4100,3 +4100,958 @@
 : 1724751943:0;lg
 : 1724752098:0;clear
 : 1724752103:0;cp -a ~/.zsh_history ~/.zsh_history.bak
+: 1724752269:0;lg
+: 1724752527:0;clear
+: 1724773817:0;ls
+: 1724773818:0;cd Gat
+: 1724773819:0;ls
+: 1724773821:0;nvim main.go
+: 1724775746:0;cd Projects/Python/Web\ Scraping
+: 1724775747:0;ls
+: 1724775748:0;cd ImageDownload
+: 1724775749:0;ls
+: 1724775752:0;nvim Complete_Version.py
+: 1724775821:0;clear
+: 1724775822:0;tmux ls
+: 1724775885:0;nvim main.go
+: 1724777499:0;nvm main.go
+: 1724777502:0;nvim main.go
+: 1724783469:0;clear
+: 1724783471:0;nvim main.go
+: 1724783482:0;clear
+: 1724783486:0;lg
+: 1724823005:0;footclient -e nvim
+: 1724823048:0;up
+: 1724823140:0;clear
+: 1724823743:0;c.
+: 1724823745:0;lg
+: 1724824898:0;ls
+: 1724824899:0;c.
+: 1724824900:0;nvim
+: 1724830698:0;ls
+: 1724830703:0;nvim
+: 1724831016:0;c.
+: 1724831018:0;cd
+: 1724831022:0;cd Projects/Go/Gat
+: 1724831022:0;ls
+: 1724831024:0;nvim main.go
+: 1724831461:0;c.
+: 1724831461:0;nvim
+: 1724831763:0;cd
+: 1724831808:0;c.
+: 1724831809:0;nvim
+: 1724831895:0;lg
+: 1724831952:0;tmux kill-server
+: 1724844753:0;nvim
+: 1724844785:0;neofetch
+: 1724844789:0;nvim
+: 1724844877:0;nvim Gat/main.go
+: 1724845518:0;nvim
+: 1724856585:0;pm
+: 1724856593:0;paru -S fontforge
+: 1724857113:0;cd GoClass
+: 1724857113:0;ls
+: 1724857115:0;cd Slices
+: 1724857116:0;ls
+: 1724857118:0;nvim main.go
+: 1724858343:0;ls
+: 1724858346:0;cd ../Fmt-FileIO
+: 1724858347:0;ls
+: 1724858353:0;go run main.go
+: 1724858366:0;go run main.go go.mod
+: 1724858389:0;go run main.go
+: 1724858408:0;cd ../Slices
+: 1724858409:0;ls
+: 1724858477:0;go run main.go
+: 1724909481:0;lswt
+: 1724914729:0;yeet wayland-pipewire-idle-inhibit
+: 1724921212:0;clear
+: 1724921216:0;man fd
+: 1724921243:0;fd . --type symlink
+: 1724921259:0;fd --type symlink
+: 1724921369:0;cd ..
+: 1724921371:0;ls
+: 1724921389:0;mkdir Dotgo
+: 1724921391:0;cd Dotgo
+: 1724921397:0;ls
+: 1724921407:0;go mod init Dotgo
+: 1724921425:0;ls
+: 1724921429:0;git init
+: 1724921430:0;ls
+: 1724921455:0;echo "# Dotgo" >> README.md
+: 1724921455:0;ls
+: 1724921464:0;glow README.md
+: 1724921490:0;ga README.md
+: 1724921491:0;gc
+: 1724921561:0;whatis gb
+: 1724921567:0;git branch -M main
+: 1724921568:0;ls
+: 1724921713:0;touch specification.md
+: 1724921716:0;nvim specification.md
+: 1724922662:0;git remote add origin https://github.com/SwayKh/Go-dotfiles-manager.git
+: 1724922668:0;git push
+: 1724922678:0;ls
+: 1724922680:0;nvim specification.md
+: 1724923672:0;ls
+: 1724923676:0;rm go.mod
+: 1724923677:0;ls
+: 1724923696:0;nvim specification.md
+: 1724923703:0;ls
+: 1724923705:0;clean
+: 1724923706:0;clear
+: 1724923718:0;ls
+: 1724923721:0;nvim specification.md
+: 1724923724:0;ls
+: 1724923728:0;ga specification.md
+: 1724923729:0;ls
+: 1724923732:0;gc
+: 1724923761:0;gp
+: 1724923794:0;go mod init Dotgo
+: 1724923798:0;touch main
+: 1724923802:0;rm main
+: 1724923806:0;touch main.go
+: 1724923807:0;ls
+: 1724923808:0;nvim main.go
+: 1724923831:0;go run .
+: 1724923832:0;:wq
+: 1724923836:0;:q
+: 1724923850:0;lg
+: 1724923876:0;ga.
+: 1724923879:0;gc
+: 1724923898:0;gp
+: 1724931567:0;nvim specification.md
+: 1724941318:0;cd ../Gat
+: 1724941319:0;ls
+: 1724941321:0;nvim main.go
+: 1724942332:0;cd ../RedditCommentScraper
+: 1724942333:0;ls
+: 1724942336:0;go mod tidy
+: 1724942339:0;nvim main.go
+: 1724942343:0;nvim go.
+: 1724942349:0;nvim go.mod
+: 1724942504:0;nvim main.go
+: 1724942632:0;clear
+: 1724942634:0;nvim main.go
+: 1724942904:0;clear
+: 1724943008:0;c.
+: 1724943008:0;ls
+: 1724943009:0;lg
+: 1724944066:0;clear
+: 1724944071:0;lg
+: 1724944427:0;nvim main.go
+: 1724944488:0;cd ..
+: 1724944492:0;lg
+: 1724944548:0;cd ../Web/Startpage
+: 1724944549:0;lg
+: 1724944553:0;cd ../go
+: 1724944555:0;cd ..
+: 1724944558:0;cd Go
+: 1724944560:0;lg
+: 1724949106:0;cd Projects/Go/Dotgo
+: 1724949106:0;ls
+: 1724949108:0;lg
+: 1724949134:0;c.
+: 1724949134:0;ls
+: 1724949135:0;lg
+: 1724949300:0;clear
+: 1724949304:0;cd
+: 1724949306:0;cd Projects
+: 1724949306:0;ls
+: 1724949308:0;cd 
+: 1724949310:0;cd MyProjects
+: 1724949310:0;s
+: 1724949311:0;ls
+: 1724949494:0;cd
+: 1724949495:0;ls
+: 1724949504:0;cd Sync
+: 1724949504:0;ls
+: 1724949505:0;lg
+: 1724949508:0;lf
+: 1724949511:0;cd
+: 1724949512:0;ls
+: 1724949544:0;lt
+: 1725002045:0;waybar
+: 1725002327:0;cava
+: 1725002337:0;paru -S cava
+: 1725002348:0;cava
+: 1725002353:0;waybar
+: 1725002690:0;clear
+: 1725002771:0;paru -S fftw3
+: 1725002780:0;paru -Ss fftw3
+: 1725002793:0;cava
+: 1725006203:0;paru -Qeq
+: 1725006219:0;wlcopy < paru -Qeq 
+: 1725006237:0;wl-copy < paru -Qeq
+: 1725006247:0;paru -Qeq | wl-copy
+: 1725008021:0;clear
+: 1725008022:0;up
+: 1725029302:0;clear
+: 1725029462:0;cd
+: 1725029463:0;c.
+: 1725029463:0;ls
+: 1725029472:0;cd
+: 1725029487:0;diff .zsh_history .zsh_history.bak
+: 1725029493:0;vimdiff 
+: 1725029502:0;nvim
+: 1725029604:0;nvim -d .zsh_history .zsh_history.bak
+: 1725029637:0;clear
+: 1725029638:0;c.
+: 1725029639:0;lg
+: 1725030910:0;nvim
+: 1725031599:0;ls /usr/share/
+: 1725031620:0;ls /usr/local/share/nvim/
+: 1725031631:0;ls /usr/local/share/nvim/runtime/colors/
+: 1725031642:0;ls /usr/share/nvim/runtime/colors
+: 1725031705:0;sudo mv /usr/share/nvim/runtime/colors /usr/share/nvim/runtime/color
+: 1725032088:0;nvim
+: 1725032315:0;sudo mv /usr/share/nvim/runtime/color /usr/share/nvim/runtime/colors
+: 1725035916:0;nvim
+: 1725036142:0;help
+: 1725036143:0;man
+: 1725036145:0;man man
+: 1725036147:0;clear
+: 1725036393:0;ls foot/themes
+: 1725036395:0;ls foot/themes | fzf
+: 1725036430:0;cd foot
+: 1725036430:0;ls
+: 1725036436:0;rm -rf themes
+: 1725036442:0;git clone https://codeberg.org/dnkl/foot/src/branch/master/themes
+: 1725036514:0;git clone https://codeberg.org/dnkl/foot
+: 1725036544:0;clear
+: 1725036551:0;cd ..
+: 1725036553:0;ls foot/themes | fzf
+: 1725036676:0;ls
+: 1725036678:0;nvim
+: 1725036695:0;c.
+: 1725036696:0;nvim
+: 1725036960:0;ls
+: 1725036962:0;lf
+: 1725036970:0;c.
+: 1725036971:0;nvim
+: 1725037034:0;ls
+: 1725037036:0;c.
+: 1725037037:0;lf
+: 1725037039:0;ls
+: 1725037041:0;nvim
+: 1725037112:0;tmux kill-server
+: 1725037121:0;kill 729 
+: 1725037141:0;riverctl spawn 'foot -server'
+: 1725037164:0;cat .config/river/init
+: 1725037168:0;cat .config/river/init | head 
+: 1725037177:0;cat .config/river/init | head -n 30
+: 1725037183:0;riverctl spawn 'foot --server'
+: 1725037196:0;:q
+: 1725037213:0;fastfetch -c /usr/share/fastfetch/presets/examples/21.jsonc
+: 1725037216:0;fastfetch
+: 1725037382:0;clea
+: 1725037383:0;clear
+: 1725037384:0;cd Test
+: 1725037385:0;ls
+: 1725037388:0;git clone https://github.com/Narmis-E/onedark-wallpapers
+: 1725037435:0;ls
+: 1725037438:0;cd onedark-wallpapers
+: 1725037438:0;lf
+: 1725040183:0;cd
+: 1725040184:0;cd Test
+: 1725040187:0;rm -rf onedark-wallpapers
+: 1725040189:0;git clone https://github.com/Narmis-E/onedark-wallpapers
+: 1725040247:0;lf
+: 1725040289:0;cd test
+: 1725040294:0;cd ~/Test
+: 1725040294:0;ls
+: 1725040295:0;rm -rf onedark-wallpapers
+: 1725040297:0;clear
+: 1725040785:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725040875:0;killall dunst && notify-send "Hello"
+: 1725041376:0;nvim
+: 1725041924:0;cd
+: 1725041925:0;lg
+: 1725041928:0;c.
+: 1725041929:0;fshow
+: 1725041934:0;lg
+: 1725042005:0;nvim .gitignore
+: 1725042014:0;cd foot
+: 1725042014:0;ls
+: 1725042020:0;lg
+: 1725042425:0;c.
+: 1725042425:0;ls
+: 1725042426:0;cd scripts
+: 1725042427:0;lf
+: 1725042453:0;cd
+: 1725042455:0;cd wallpapers
+: 1725042456:0;lf
+: 1725042461:0;cd Images/m
+: 1725042463:0;cd Images
+: 1725042468:0;convert_to_png
+: 1725042484:0;clear
+: 1725042782:0;cd Gat
+: 1725042784:0;nvim main.go
+: 1725105158:0;tmux kill-session -t Go
+: 1725105167:0;nvim Gat/main.go
+: 1725105378:0;cd
+: 1725105380:0;c.
+: 1725105382:0;fzf
+: 1725105397:0;cd nvim/lua
+: 1725105397:0;ls
+: 1725105399:0;cd plugins
+: 1725105411:0;ls disabled | wc -l
+: 1725105418:0;find -type f | wc -l
+: 1725105421:0;ls
+: 1725105437:0;find . -type f | wc -l
+: 1725105443:0;find . -type f -maxdepth 1 | wc -l
+: 1725105449:0;find . -type f -maxdepth=1 | wc -l
+: 1725105465:0;find -maxdepth 1 -type f | wc -l
+: 1725105474:0;find disabled -maxdepth 1 -type f | wc -l
+: 1725105478:0;nvim
+: 1725105509:0;clear
+: 1725105511:0;c.
+: 1725105512:0;ls
+: 1725105513:0;lt
+: 1725105640:0;lg
+: 1725105787:0;fshow
+: 1725105826:0;git rebase -i HEAD~1
+: 1725105833:0;lg
+: 1725106025:0;git reflog
+: 1725106078:0;git reflog show
+: 1725106125:0;git reflog
+: 1725106137:0;git checkout 0a8959e
+: 1725106139:0;lg
+: 1725106249:0;git checkout
+: 1725106254:0;git reflogf
+: 1725106256:0;git reflog
+: 1725106351:0;git fsck --lost-found
+: 1725106355:0;ls
+: 1725106438:0;cd .git/lost-found/other
+: 1725106439:0;ls
+: 1725106460:0;git show 1e3365
+: 1725106486:0;c.
+: 1725106489:0;git reflog
+: 1725106510:0;git checkout e4493b6
+: 1725106511:0;lg
+: 1725106687:0;git reflog
+: 1725106772:0;git reset HEAD@{1}
+: 1725106776:0;lf
+: 1725106778:0;lg
+: 1725106787:0;git reflog
+: 1725106793:0;git reset HEAD@{3}
+: 1725106795:0;lg
+: 1725106853:0;git reflof
+: 1725106856:0;git reflog
+: 1725107593:0;lg
+: 1725107693:0;nvim Gat/main.go
+: 1725107704:0;nvim
+: 1725107707:0;nvim Gat/main.go
+: 1725115758:0;rm loadspeed.txt
+: 1725115879:0;clear
+: 1725115880:0;lg
+: 1725115951:0;git checkout main
+: 1725115958:0;lg
+: 1725116533:0;nvim Gat/main.go
+: 1725116557:0;cd scripts
+: 1725116558:0;lg
+: 1725116596:0;cd ..
+: 1725116597:0;lg
+: 1725117071:0;cd
+: 1725117073:0;cd Projects/Web
+: 1725117074:0;ls
+: 1725117075:0;cd Startpage
+: 1725117076:0;ls
+: 1725117077:0;nvim index.html
+: 1725118166:0;nvim
+: 1725118366:0;nvim index.html
+: 1725118647:0;lg
+: 1725118913:0;cd ..
+: 1725118921:0;cd Go/Gat
+: 1725118921:0;ls
+: 1725118942:0;nvim main.go
+: 1725119119:0;tmux ls
+: 1725119131:0;clear
+: 1725119576:0;rofi -show nerdy
+: 1725119581:0;up
+: 1725119602:0;nvim README.md
+: 1725119773:0;lg
+: 1725119788:0;nvim README.md
+: 1725121208:0;cd ..
+: 1725121211:0;cd Dotgo
+: 1725121211:0;ls
+: 1725121217:0;nvim specification.md
+: 1725121299:0;tmux kill-session -t Go
+: 1725121304:0;cd Dotgo
+: 1725121304:0;ls
+: 1725121306:0;lg
+: 1725121318:0;ls
+: 1725121321:0;nvim specification.md
+: 1725121327:0;ls
+: 1725121333:0;rm .conform.1149628.specification.md
+: 1725121336:0;ls
+: 1725121340:0;nvim specification.md
+: 1725121347:0;tmux kill-session -t Go
+: 1725121352:0;ls
+: 1725121355:0;cd Dotgo
+: 1725121355:0;ls
+: 1725121413:0;nvim specification.md
+: 1725121524:0;ls
+: 1725121548:0;rm specification.md specification.txt
+: 1725121552:0;ls
+: 1725121558:0;lg
+: 1725121765:0;ls
+: 1725121767:0;nvim specification.md
+: 1725121825:0;tmux kill-session -t Go
+: 1725121831:0;cd Dotgo
+: 1725121832:0;ls
+: 1725121842:0;mv specification.md specification.txt
+: 1725121844:0;nvim specification.txt
+: 1725121852:0;ls
+: 1725121855:0;nvim specification.txt
+: 1725121902:0;ls
+: 1725121904:0;nvim specification.txt
+: 1725121972:0;lg
+: 1725122176:0;nvim specification.txt
+: 1725122259:0;lg
+: 1725122283:0;clear
+: 1725122725:0;cd
+: 1725122727:0;cd Roms
+: 1725122729:0;fzf
+: 1725123740:0;c.
+: 1725124880:0;chdman
+: 1725125612:0;paru -S mame-tools
+: 1725125632:0;chdman
+: 1725125637:0;cd 
+: 1725125641:0;cd Downloads/RomsTest/
+: 1725125642:0;ls
+: 1725125651:0;cd ..
+: 1725125651:0;ls
+: 1725125673:0;cd chdscripts
+: 1725125706:0;./convertFromCueToChd.sh ~/Downloads/RomsTest/Mortal\ Kombat\ 4\ \(USA\)/Mortal\ Kombat\ 4\ \(USA\).cue 
+: 1725186547:0;up
+: 1725187179:0;clear
+: 1725187181:0;ls
+: 1725187182:0;neofetch
+: 1725196025:0;ls
+: 1725196027:0;cd Gat
+: 1725196028:0;ls
+: 1725196028:0;lg
+: 1725196266:0;cd ..
+: 1725196267:0;ls
+: 1725196272:0;cd N-Cover-Scraper
+: 1725196272:0;ls
+: 1725196277:0;cd Projects
+: 1725196278:0;cd
+: 1725196307:0;ls
+: 1725196309:0;./GoNCoverScraper
+: 1725198004:0;c.
+: 1725198005:0;;s
+: 1725198006:0;ls
+: 1725198007:0;lg
+: 1725201736:0;man swaylock
+: 1725201779:0;swaylock -f
+: 1725201823:0;clear
+: 1725201824:0;cd ..
+: 1725203140:0;cd Dotgo
+: 1725203141:0;ls
+: 1725203193:0;clear
+: 1725203816:0;neofetch
+: 1725203821:0;fastfetch
+: 1725203861:0;pacPreviewInstalledAll
+: 1725205522:0;pacPreviewInstalled
+: 1725205546:0;yeet fontconfig
+: 1725205554:0;yeet fontforge
+: 1725205560:0;pacPreviewInstalled
+: 1725205595:0;yeet git-filter-repo
+: 1725205597:0;pacPreviewInstalled
+: 1725205613:0;yeet gnome-epub-thumbnailer
+: 1725205616:0;pacPreviewInstalled
+: 1725205657:0;cd ~/Downloads
+: 1725205657:0;ls
+: 1725205667:0;cd chdscripts
+: 1725205668:0;nvim
+: 1725205688:0;cd ..
+: 1725205688:0;ls
+: 1725205695:0;cd RomsTest
+: 1725205696:0;ls
+: 1725205697:0;lf
+: 1725205725:0;cd chdscripts
+: 1725205726:0;ls
+: 1725205727:0;lf
+: 1725205766:0;ls
+: 1725205768:0;./convertFromCueToChd.sh
+: 1725205777:0;./convertFromCueToChd.sh Mortal\ Kombat\ 4\ \(USA\).cue
+: 1725205779:0;ls
+: 1725205847:0;lf
+: 1725206395:0;clear
+: 1725206401:0;cd Downloads
+: 1725206402:0;ls
+: 1725208919:0;cd
+: 1725208921:0;cd Roms
+: 1725208921:0;ls
+: 1725208923:0;fzf
+: 1725212499:0;lf
+: 1725212506:0;ls
+: 1725212508:0;lg
+: 1725212517:0;nvim
+: 1725212827:0;lg
+: 1725212835:0;cd 
+: 1725212837:0;cd Test
+: 1725212837:0;ls
+: 1725212839:0;lg
+: 1725212840:0;lf
+: 1725212868:0;git clone https://github.com/SwayKh/dotfiles
+: 1725212881:0;git clone https://github.com/SwayKh/dotfiles --depth 1 noDots
+: 1725212886:0;cd dotfiles
+: 1725212887:0;lg
+: 1725212890:0;fshow
+: 1725212894:0;cd ..
+: 1725212896:0;cd noDots
+: 1725212897:0;fshow
+: 1725212904:0;cd ..
+: 1725212908:0;rm -rf noDots
+: 1725212908:0;ls
+: 1725212911:0;cd dotfiles
+: 1725212912:0;cd
+: 1725212913:0;c.
+: 1725212915:0;nvim
+: 1725212960:0;lg
+: 1725213266:0;clear
+: 1725213284:0;nvim
+: 1725213289:0;nvim home.gitignore
+: 1725213296:0;fzf
+: 1725213326:0;nvim home.gitignore
+: 1725213331:0;fzf
+: 1725213339:0;c.
+: 1725213340:0;nvim
+: 1725268514:0;ls
+: 1725268516:0;pm
+: 1725268546:0;paru -Ss rofi-
+: 1725268579:0;cd ..
+: 1725268582:0;cd Web/Startpage
+: 1725268582:0;ls
+: 1725268583:0;nvim index.html
+: 1725268628:0;lg
+: 1725268651:0;cd ../../Go
+: 1725268651:0;ls
+: 1725268652:0;clear
+: 1725269123:0;paru -Ss nmcli
+: 1725269133:0;nmcli
+: 1725269201:0;clear
+: 1725269208:0;paru -Ss rofi-
+: 1725270000:0;ls
+: 1725270003:0;cd scripts
+: 1725270004:0;ls
+: 1725270012:0;chmod 755 wifi_menu
+: 1725270017:0;./wifi_menu
+: 1725270253:0;ls
+: 1725270257:0;wifi_menu
+: 1725270312:0;nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/� /g" | sed "s/  //g" | sed "/--/d"
+: 1725270324:0;nmcli device wifi list
+: 1725270342:0;nmcli device wifi list --fields "SECURITY,SSID"
+: 1725270369:0;nmcli --fields "SECURITY,SSID" device wifi list
+: 1725270380:0;nmcli device wifi list
+: 1725270439:0;c.
+: 1725270442:0;rg 
+: 1725270443:0;nvim
+: 1725270503:0;nmcli device wifi list | awk '{print $9 $3}' | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/� /g" | sed "s/  //g" | sed "/--/d"
+: 1725270765:0;nmcli device wifi list | awk 'NR==1 || NR>1 {print $2, $8}'
+: 1725270829:0;clear
+: 1725270831:0;cd
+: 1725270832:0;clear
+: 1725270899:0;nmcli device wifi list | awk 'NR==1 || NR>1 {print $2, $8}'
+: 1725270927:0;nmcli device wifi list | awk 'NR==1 || $0 !~ /^\*/ {print $(NF-6), $NF}'\
+
+: 1725270946:0;nmcli device wifi list'\
+
+: 1725270948:0;nmcli device wifi list\
+
+: 1725271078:0;nmcli device wifi list | awk '/SSID/ {print "SSID SECURITY"} NR>1 {print substr($0, 42, 15), $NF}'\
+
+: 1725271133:0;nmcli device wifi list | awk 'NR==1 {print $3, $NF} NR>1 {for (i=3; i<NF-6; i++) printf $i " "; print $(NF-6), $NF}'\
+
+: 1725271406:0;nmcli -t --fields "SECURITY,SSID" device wifi list | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/� /g" | sed "s/  //g" | sed "/--/d"
+: 1725271443:0;wifi_menu
+: 1725272895:0;man rofi-theme
+: 1725272900:0;man rofi
+: 1725273014:0;man rofi-theme
+: 1725273046:0;wifi_menu
+: 1725273306:0;echo "test" | rofi -dmenu -p "Test:"\
+
+: 1725273373:0;rofi -dmenu -config "$HOME/.config/rofi/regular.rasi" -p "Password: "
+: 1725273409:0;yeet rofi-nerdy
+: 1725273418:0;wifi_menu
+: 1725274253:0;c.
+: 1725274254:0;lg
+: 1725274269:0;wifi_menu
+: 1725289834:0;ls
+: 1725289844:0;ls --tree
+: 1725290086:0;up
+: 1725290123:0;clear
+: 1725290137:0;cd
+: 1725294527:0;clear
+: 1725295992:0;wifi_menu
+: 1725296006:0;lg
+: 1725299564:0;nvim
+: 1725299591:0;nvim .zshrc
+: 1725299996:0;cd scripts
+: 1725299997:0;ls
+: 1725300002:0;chmod 755 rofi_wifi
+: 1725300007:0;clear
+: 1725300015:0;rofi_wifi
+: 1725300161:0;c.
+: 1725300162:0;lg
+: 1725341804:0;paru -Ss usbutils
+: 1725341850:0;nautilus -q
+: 1725341891:0;paru -Ss gvfs
+: 1725341904:0;paru -S gvfs-mtp
+: 1725341915:0;nautilus -q
+: 1725342128:0;c.
+: 1725342129:0;nvim 
+: 1725343183:0;clear
+: 1725343184:0;ls
+: 1725343187:0;./convertFroToChd.sh
+: 1725343243:0;lf
+: 1725345012:0;nvim README.md
+: 1725345953:0;rofi_wifi
+: 1725350850:0;lg
+: 1725351147:0;cd scripts
+: 1725351148:0;lf
+: 1725351225:0;get_ip
+: 1725351239:0;/sbin/ip -6 addr | grep inet6 | awk -F '[ \t]+|/' '{print $3}' | grep -v ^::1 | grep -v ^fe80\
+
+: 1725351247:0;ip -6 addr | grep inet6 | awk -F '[ \t]+|/' '{print $3}' | grep -v ^::1 | grep -v ^fe80\
+
+: 1725351270:0;get_ip
+: 1725351769:0;clear
+: 1725351777:0;fzf-cd-widget
+: 1725351791:0;fzf-completion
+: 1725351800:0;fzf-tmux
+: 1725351807:0;clear
+: 1725351832:0;lf
+: 1725351900:0;ls
+: 1725351917:0;nvim rofi_bluetooth
+: 1725351931:0;chmod 755 rofi_bluetooth
+: 1725351939:0;clear
+: 1725351947:0;./rofi_bluetooth
+: 1725351963:0;ls
+: 1725351968:0;nvim rofi_wifi
+: 1725352040:0;rofi_wifi
+: 1725352067:0;source ~/.zshrc
+: 1725352073:0;rofi_bluetooth
+: 1725352089:0;nvim rofi_bluetooth
+: 1725352231:0;ls
+: 1725352233:0;rofi_wifi
+: 1725352378:0;rofi_bluetooth
+: 1725352414:0;lf
+: 1725352581:0;clear
+: 1725353038:0;ls
+: 1725353047:0;nvim wifi_menu
+: 1725353064:0;rofi_wifi
+: 1725353345:0;ls
+: 1725353348:0;rm wifi_menu
+: 1725353349:0;ls
+: 1725353359:0;lg
+: 1725353379:0;ls
+: 1725353385:0;rm noice.log
+: 1725353386:0;ls
+: 1725353386:0;lg
+: 1725353533:0;ls
+: 1725353544:0;lf
+: 1725353584:0;clear
+: 1725353585:0;ls
+: 1725353592:0;lg
+: 1725353645:0;ls
+: 1725353648:0;lf
+: 1725353972:0;lg
+: 1725353998:0;cd ..
+: 1725353999:0;ls
+: 1725354000:0;lg
+: 1725355166:0;cd scripts
+: 1725355167:0;ls
+: 1725355168:0;lg
+: 1725355214:0;cd ..
+: 1725355317:0;lg
+: 1725356639:0;rofi-emoji
+: 1725357618:0;kdeconnect-app
+: 1725357631:0;kdeconnect-settings
+: 1725357660:0;kdeconnect-cli
+: 1725357667:0;kdeconnect-cli -d 07b84bc3_33cd_4b24_a7ac_af034681c2a5 -
+: 1725357677:0;kdeconnect-handler
+: 1725357800:0;clear
+: 1725357808:0;lswt
+: 1725359072:0;waybar
+: 1725359521:0;clear
+: 1725359525:0;lswt
+: 1725359712:0;ls
+: 1725359716:0;./waybar/launch.sh
+: 1725360869:0;clear
+: 1725360870:0;lg
+: 1725360906:0;clear
+: 1725374398:0;paru -Ss polkit
+: 1725374407:0;pacman -Ss polkit
+: 1725374463:0;paru -S mate-polkit polkit-gnome deepin-polkit-agent 
+: 1725374570:0;refresh_mirrors
+: 1725374573:0;ls
+: 1725374578:0;refresh-mirrors
+: 1725374705:0;paru -S mate-polkit polkit-gnome deepin-polkit-agent 
+: 1725374750:0;paru -S lxsession
+: 1725374769:0;clear
+: 1725375016:0;sudo nautilus
+: 1725375124:0;pkexec echo "Trigger mate Polkit agent"
+: 1725375167:0;pkexec echo "Trigger LX Polkit agent"
+: 1725375309:0;paru -Si deepin-polkit-agent
+: 1725376492:0;paru -S lxqt-policykit
+: 1725376569:0;clear
+: 1725376599:0;pkexec echo "Trigger LX Polkit agent"
+: 1725376636:0;echo "LX Polkit agent uses 65MB of memory"
+: 1725376673:0;pkexec echo "Trigger LXQT Polkit agent"
+: 1725376699:0;echo "LXQT Polkit agent uses 178MB of memory"
+: 1725376736:0;pkexec echo "Trigger Mate Polkit agent"
+: 1725376754:0;echo "MATE Polkit agent uses 84MB of memory"
+: 1725376792:0;pkexec echo "Trigger KDE Polkit agent"
+: 1725376830:0;echo "KDE Polkit agent uses 248MB of memory"
+: 1725376869:0;pkexec echo "Trigger GNOME Polkit agent"
+: 1725376885:0;echo "GNOME Polkit agent uses 84MB of memory"
+: 1725377052:0;pkexec echo "Trigger GNOME Polkit agent"
+: 1725377068:0;pkexec echo "Trigger LX Polkit agent"
+: 1725377098:0;riverctl spawn "/usr/bin/lxpolkit"
+: 1725377101:0;pkexec echo "Trigger LX Polkit agent"
+: 1725377189:0;pkexec echo "Trigger GNOME Polkit agent"
+: 1725377222:0;paru -Qs policy
+: 1725377232:0;paru -Qs polkit
+: 1725377272:0;yeet mate-polkit deepin-polkit-agent polkit-kde-agent lxqt-policykit
+: 1725377306:0;clear
+: 1725377801:0;paru -S xorg-xlsclients
+: 1725377807:0;xlsclients
+: 1725378846:0;yeet xorg-xwayland
+: 1725378973:0;paru -Si river
+: 1725379004:0;kill 70106 
+: 1725379311:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1725379393:0;duf
+: 1725379420:0;yeet duf
+: 1725379437:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1725379681:0;paru -S mako
+: 1725379685:0;mako
+: 1725379720:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725379732:0;killall dunst
+: 1725379734:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725379748:0;riverctl spawn mako
+: 1725379806:0;yeet gn
+: 1725379824:0;yeet glfw
+: 1725380255:0;notify-send.py "Buttons" "Do you like em?" --hint boolean:action-icons:true --action yes:face-cool no:face-sick
+: 1725380267:0;clear
+: 1725380428:0;pactree glfw
+: 1725380440:0;pactree -r glfw
+: 1725380481:0;yeet gn
+: 1725380486:0;pactree gn
+: 1725380489:0;pactree -r gn
+: 1725380517:0;rg "glfw" ~/
+: 1725380679:0;pacman -Qi glfw | grep "Optional For"\
+
+: 1725380690:0;rg "gn" ~/
+: 1725380817:0;clear
+: 1725380828:0;pactree -r poppler-glib
+: 1725380832:0;pactree poppler-glib
+: 1725380849:0;pacman -Qi popplet-glib | grep "Optional"
+: 1725380854:0;pacman -Qi poppler-glib | grep "Optional"
+: 1725380905:0;yeet poppler-glib
+: 1725381018:0;yeet ufw
+: 1725381023:0;pactree -r ufw
+: 1725381104:0;yeet cava fastfetch glfw gn lxsession mame-tools poppler-glib reflector-simple ufw wev xorg-xlsclients
+: 1725381124:0;clear
+: 1725381125:0;neofetch
+: 1725381138:0;yeet xorg-xrandr
+: 1725381148:0;clear
+: 1725381150:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1725381166:0;paru -S mako
+: 1725381178:0;mako
+: 1725381182:0;killall dunst
+: 1725381184:0;mako
+: 1725381190:0;riverctl spawn mako
+: 1725381196:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725381230:0;makoctl
+: 1725381238:0;makoctl list
+: 1725381242:0;makoctl
+: 1725381399:0;makoctl reload
+: 1725381401:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725381441:0;killall mako
+: 1725381444:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725381448:0;yeet mako
+: 1725381450:0;clear
+: 1725381452:0;killall mako
+: 1725381455:0;dunst
+: 1725381458:0;notify-send "$(lswt | awk 'NR > 1 {print $2}')"
+: 1725381491:0;clear
+: 1725381519:0;paru -Qq | fzf --preview='pacman -Si {}'
+: 1725381525:0;paru -Qq | fzf --height=100% --preview='pacman -Si {}'
+: 1725381535:0;clear
+: 1725381553:0;c
+: 1725381554:0;c.
+: 1725381555:0;ls
+: 1725381555:0;clear
+: 1725381556:0;ls
+: 1725381557:0;lg
+: 1725381572:0;cd scripts
+: 1725381573:0;ls
+: 1725381573:0;lg
+: 1725381585:0;cd ..
+: 1725381588:0;lg
+: 1725382003:0;pkexec echo "Hello"
+: 1725382010:0;lswt
+: 1725382021:0;clear
+: 1725407472:0;neofetch
+: 1725407534:0;ls
+: 1725407535:0;clear
+: 1725407536:0;neofetch
+: 1725408233:0;paru -S gdm
+: 1725408240:0;yeet sddm
+: 1725408247:0;clear
+: 1725408250:0;yeet steam
+: 1725408271:0;neofetch
+: 1725408352:0;free
+: 1725408355:0;free -h
+: 1725423708:0;clear
+: 1725423711:0;neofetch
+: 1725443668:0;ps -e -orss,cmd --sort=+rss
+: 1725443682:0;ps -e -orss,cmd --sort=+rss -h
+: 1725443689:0;ps -e -h -orss,cmd --sort=+rss
+: 1725443694:0;clear
+: 1725443724:0;neofetch
+: 1725443826:0;man rofi-script
+: 1725443839:0;man rofi
+: 1725444027:0;echo $PATH
+: 1725444042:0;rofi -show run
+: 1725444161:0;clear
+: 1725444370:0;neofetch
+: 1725444820:0;clear
+: 1725445114:0;riverctl spawn "notify-send $PATH"
+: 1725447117:0;yeet citra-canary-git
+: 1725447123:0;yeet yuzu
+: 1725447130:0;pacman -
+: 1725447141:0;pacman -Qs yuzu
+: 1725447147:0;clear
+: 1725447159:0;yeet emulationstation-de
+: 1725447168:0;yeet retroarch
+: 1725447715:0;clear
+: 1725451804:0;c.
+: 1725451820:0;lg
+: 1725451905:0;gp
+: 1725452450:0;pacman -Qe | awk '{print $1}' | xargs -I{} bash -c 'echo "$(pactree -u {} | wc -l) {}"' | sort -n -k1\
+
+: 1725452469:0;yeet kdeconnect
+: 1725452478:0;pacman -Qe | awk '{print $1}' | xargs -I{} bash -c 'echo "$(pactree -u {} | wc -l) {}"' | sort -n -k1\
+
+: 1725452490:0;yeet floorp
+: 1725462056:0;clear
+: 1725464678:0;grep -i '^l.*n.*k.*s' /usr/share/dict/words
+: 1725464688:0;cd /
+: 1725464691:0;fzf
+: 1725464711:0;cd /usr
+: 1725464712:0;ls
+: 1725464718:0;fzf
+: 1725464843:0;ls
+: 1725464852:0;mv Dotgo Linksym
+: 1725464853:0;ls
+: 1725464855:0;cd Linksym
+: 1725464856:0;ls
+: 1725464862:0;lf
+: 1725464871:0;rm go.mod
+: 1725464876:0;go mod init Linksym
+: 1725464884:0;rm go.mod
+: 1725464937:0;cd
+: 1725464948:0;go mod init github.com/SwayKh/Linksym
+: 1725464959:0;go mod tidy
+: 1725464964:0;nvim specification.txt
+: 1725465204:0;lgh
+: 1725465205:0;lg
+: 1725465216:0;git remote -v
+: 1725465220:0;lg
+: 1725465861:0;nmcli dev wifi list
+: 1725465961:0;clear
+: 1725466955:0;riverctl 
+: 1725466957:0;clear
+: 1725466959:0;yeet steam
+: 1725466965:0;neofetch
+: 1725467188:0;clear
+: 1725467189:0;neofetch
+: 1725467191:0;clear
+: 1725467196:0;ncdu
+: 1725467199:0;ls
+: 1725467738:0;up
+: 1725469337:0;clear
+: 1725469496:0;neofetch
+: 1725471802:0;cd ..
+: 1725471802:0;ls
+: 1725471805:0;cd GoClass
+: 1725471805:0;ls
+: 1725471813:0;mkdir structs
+: 1725471816:0;cd structs
+: 1725471817:0;ls
+: 1725471825:0;go mod init structures
+: 1725471829:0;touch main.go
+: 1725471832:0;nvim main.go
+: 1725472056:0;go run .
+: 1725472116:0;go ru .
+: 1725472118:0;go run .
+: 1725474665:0;tmux kill-server
+: 1725474698:0;neofetch
+: 1725519146:0;cd N-Cover-Scraper
+: 1725519147:0;ls
+: 1725519149:0;./GoNCoverScraper
+: 1725519157:0;neofetch
+: 1725519201:0;clear
+: 1725519202:0;c.
+: 1725519202:0;ls
+: 1725519208:0;cd
+: 1725519210:0;cd Projects/Go
+: 1725519210:0;ls
+: 1725519211:0;clear
+: 1725519213:0;ls
+: 1725519844:0;clear
+: 1725519845:0;up
+: 1725522313:0;clear
+: 1725522322:0;cp -a ~/.zsh_history ~/.zsh_history.bak
+: 1725525086:0;clear
+: 1725525299:0;fastfetch
+: 1725525304:0;paru -S fastfetch
+: 1725525313:0;fastfetch
+: 1725525321:0;c.
+: 1725525321:0;ls
+: 1725525445:0;fastfetch
+: 1725525510:0;clear
+: 1725525512:0;fastfetch
+: 1725525522:0;neoefetch
+: 1725525526:0;neofetch
+: 1725525558:0;lg
+: 1725525727:0;fastfetch
+: 1725525772:0;fastfetch -c all
+: 1725525829:0;fastfetch
+: 1725526370:0;clear
+: 1725526372:0;fastfetch
+: 1725526448:0;clear
+: 1725526452:0;fastfetch
+: 1725526486:0;chafa ~/.config/wall.png
+: 1725526489:0;fastfetch
+: 1725526491:0;clear
+: 1725526497:0;source ~/.zshrc
+: 1725526500:0;fastfetch
+: 1725530238:0;neofetch
+: 1725530322:0;fastfetch
+: 1725530820:0;clear
+: 1725530828:0;fastfetch -c /usr/share/fastfetch/presets/examples/1.jsonc
+: 1725530837:0;fastfetch -c /usr/share/fastfetch/presets/examples/23.jsonc
+: 1725530848:0;fastfetch -c /usr/share/fastfetch/presets/examples/2.jsonc
+: 1725547034:0;fastfetch -c /usr/share/fastfetch/presets/examples/3.jsonc
+: 1725547043:0;fastfetch -c /usr/share/fastfetch/presets/examples/4.jsonc
+: 1725547052:0;fastfetch -c /usr/share/fastfetch/presets/examples/5.jsonc
+: 1725547055:0;fastfetch -c /usr/share/fastfetch/presets/examples/6.jsonc
+: 1725547238:0;fastfetch
+: 1725547283:0;fastfetch -c /usr/share/fastfetch/presets/examples/6.jsonc
+: 1725547287:0;fastfetch -c /usr/share/fastfetch/presets/examples/7.jsonc
+: 1725547305:0;fastfetch -c /usr/share/fastfetch/presets/examples/8.jsonc
+: 1725547315:0;fastfetch -c /usr/share/fastfetch/presets/examples/9.jsonc
+: 1725547326:0;fastfetch -c /usr/share/fastfetch/presets/examples/10.jsonc
+: 1725547344:0;fastfetch
+: 1725547755:0;fastfetch -c /usr/share/fastfetch/presets/examples/11.jsonc
+: 1725547759:0;fastfetch -c /usr/share/fastfetch/presets/examples/12.jsonc
+: 1725547854:0;fastfetch
+: 1725548208:0;c.
+: 1725548209:0;clear
+: 1725548212:0;lg
+: 1725548671:0;cp -a ~/.zsh_history ~/.zsh_history.bak
