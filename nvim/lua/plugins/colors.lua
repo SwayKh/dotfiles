@@ -1,6 +1,7 @@
 return {
   {
     "olimorris/onedarkpro.nvim",
+    event = "VimEnter",
     priority = 1000,
     config = function()
       require("onedarkpro").setup({

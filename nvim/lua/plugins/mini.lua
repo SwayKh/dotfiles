@@ -56,6 +56,10 @@ return { -- Collection of various small independent plugins/modules
     require("mini.git").setup()
     require("mini.icons").setup()
     require("mini.notify").setup()
+
+    -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
+    MiniIcons.mock_nvim_web_devicons()
+
     require("mini.hipatterns").setup({
       highlighters = {
         hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
