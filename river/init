@@ -16,7 +16,7 @@ riverctl spawn "swww-daemon --format xrgb"
 riverctl spawn "$HOME/.config/waybar/launch.sh"
 riverctl spawn "dunst"
 riverctl spawn "/usr/lib/kdeconnectd"
-# riverctl spawn "/usr/bin/kdeconnect-indicator"
+riverctl spawn "/usr/bin/kdeconnect-indicator"
 # riverctl spawn "nm-applet --indicator"
 # riverctl spawn "blueman-applet"
 riverctl spawn "wl-clipboard"
@@ -25,10 +25,11 @@ riverctl spawn "swayidle -w"
 riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+# riverctl spawn "wlr-randr --output eDP-1 --scale 1.00"
+
 # Clipboard History
 riverctl spawn "wl-paste --type text --watch cliphist store"  #Stores only text data
 riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image data
-# riverctl spawn "wlr-randr --output eDP-1 --scale 1.00"
 
 #  ███████████   ███                 █████
 # ░░███░░░░░███ ░░░                 ░░███
@@ -64,12 +65,16 @@ riverctl map normal $mod Q close
 riverctl map normal $mod+Shift Q exit
 riverctl map normal $mod+Control F toggle-float
 riverctl map normal $mod+Shift F toggle-fullscreen
-riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'Refreshed River'"
-riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
 
-riverctl map normal $mod Space spawn "$HOME/scripts/random-swwwbg"
-riverctl map normal $mod Escape spawn "$HOME/scripts/rofi-power"
+riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'Refreshed River'"
+
+#Scripts
 riverctl map normal $mod C spawn "$HOME/scripts/colorpicker"
+riverctl map normal $mod Space spawn "$HOME/scripts/random-swwwbg"
+riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
+riverctl map normal $mod Escape spawn "$HOME/scripts/rofi-power"
+riverctl map normal $mod+Control W spawn "$HOME/scripts/rofi-wifi"
+riverctl map normal $mod+Control B spawn "$HOME/scripts/rofi-bluetooth"
 
 # Screenshots
 riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
@@ -228,12 +233,12 @@ monitor_tag=$((1 << 14))
 docs_tag=$((1 << 15))
 ticktick_tag=$((1 << 16))
 spotify_tag=$((1 << 17))
-special1_tag=$((1 << 18))
+special_tag=$((1 << 18))
 # special2_tag=$((1 << 19))
 # special3_tag=$((1 << 20))
 #
 all_tags=$(((1 << 32) - 1))
-scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special1_tag))
+scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special_tag))
 all_but_scratch_tag=$((all_tags ^ scratch_tags))
 riverctl spawn-tagmask ${all_but_scratch_tag}
 
@@ -247,7 +252,7 @@ riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
 riverctl map normal $mod+Shift D set-focused-tags $docs_tag
 riverctl map normal $mod+Shift S set-focused-tags $spotify_tag
 riverctl map normal $mod+Shift I set-focused-tags $ticktick_tag
-riverctl map normal $mod+Shift Space set-focused-tags $special1_tag
+riverctl map normal $mod+Shift Space set-focused-tags $special_tag
 
 #  ███████████              ████
 # ░░███░░░░░███            ░░███
@@ -320,19 +325,6 @@ riverctl rule-add -title "popup title with spaces" float
 riverctl rule-add -title "zoom" float
 riverctl rule-add -title "Picture-in-Picture" float
 
-# riverctl rule-add -app-id "Special_btop" float
-# riverctl rule-add -app-id "Special_btop" dimensions 1300 680
-# riverctl rule-add -app-id "Special_btop" position 30 55
-# riverctl rule-add -app-id "Special_term" float
-# riverctl rule-add -app-id "Special_term" dimensions 1300 680
-# riverctl rule-add -app-id "Special_term" position 30 55
-# riverctl rule-add -app-id "Special_nvim" float
-# riverctl rule-add -app-id "Special_nvim" dimensions 1300 680
-# riverctl rule-add -app-id "Special_nvim" position 30 55
-# riverctl rule-add -app-id "Special_lf" float
-# riverctl rule-add -app-id "Special_lf" dimensions 1300 680
-# riverctl rule-add -app-id "Special_lf" position 30 55
-
 #   █████████            █████     █████     ███
 #  ███░░░░░███          ░░███     ░░███     ░░░
 # ░███    ░░░   ██████  ███████   ███████   ████  ████████    ███████  █████
@@ -354,7 +346,7 @@ riverctl border-color-unfocused 0xA5A5A5
 riverctl set-repeat 30 300
 riverctl default-attach-mode bottom
 riverctl focus-follows-cursor always
-riverctl hide-cursor timeout 60000 # 60 Seconds in milliseconds
+riverctl hide-cursor timeout 10000 # 10 Seconds in milliseconds
 riverctl hide-cursor when-typing enabled
 riverctl set-cursor-warp on-focus-change
 riverctl xcursor-theme "Bibata-Modern-Classic" 18
