@@ -24,7 +24,7 @@ window {
 
 mainbox {
   spacing: 3px;
-  children: [ inputbar, listview ];
+  children: [ listview ];
 }
 inputbar {
   spacing: 3px;
