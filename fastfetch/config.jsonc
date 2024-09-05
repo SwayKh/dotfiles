@@ -1,74 +1,122 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "auto" // small
+    "type": "auto",
+    //"source": "$HOME/.config/wall.png",
+    //"type": "sixel", // small
+    //"height": 18,
+    //"width": 72,
+    //"padding": {
+    //  "top": 2,
+    //},
   },
   "modules": [
+    "break",
     {
-      "type": "title",
-      "key": " ",
-      "keyColor": "",
+      "type": "custom",
+      "format": "  󰊠 Arch Linux",
+      "outputColor": "cyan",
+    },
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────────────────────────────────────────┐",
+      "outputColor": "white",
     },
     {
       "type": "os",
-      "key": " ",
-      "keyColor": "",
+      "key": "  󰣇 OS ",
+      "keyColor": "red",
+      "outputColor": "bright_",
     },
     {
       "type": "kernel",
-      "key": " ",
-      "keyColor": "",
+      "key": "   Kernel ",
+      "keyColor": "red",
+      "outputColor": "bright_",
     },
     {
-      "type": "cpu",
-      "key":" ",
-      "keyColor": "",
-    },
-    { 
-      "type": "uptime",
-      "key":"󱑃 ",
-      "keyColor": "",
-    },
-    { 
       "type": "packages",
-      "key":"󰏗 ",
-      "keyColor": "",
+      "key": "  󰏖 Packages ",
+      "keyColor": "yellow",
+      "outputColor": "bright_",
     },
-    { 
-      "type": "shell",
-      "key":" ",
-      "keyColor": "",
-    },
-    { 
+    {
       "type": "wm",
-      "key":" ",
-      "keyColor": "",
+      "key": "   WM ",
+      "keyColor": "yellow",
+      "outputColor": "bright_",
     },
-    { 
-      "type" :"terminal",
-      "key":" ",
-      "keyColor": "",
+    {
+      "type": "shell",
+      "key": "   Shell ",
+      "keyColor": "green",
+      "outputColor": "bright_",
     },
-    { 
-      "type": "terminalfont",
-      "key":" ",
-      "keyColor": "",
+    {
+      "type": "uptime",
+      "key": "   Uptime ",
+      "keyColor": "green",
+      "outputColor": "bright_",
     },
-    { 
-      "type": "memory",
-      "key":" ",
-      "keyColor": "",
-    },
-    { 
-      "type": "disk",
-      "key":"󰋊 ",
-      "keyColor": "",
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────────────────────────┘",
+      "outputColor": "white",
     },
     "break",
     {
+      "type": "title",
+      "key": "   ",
+      "keyColor": "blue",
+      "outputColor": "bright_",
+    },
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────────────────────────────────────────┐",
+      "outputColor": "white",
+    },
+    {
+      "type": "host",
+      "key": "  󱩊 PC",
+      "keyColor": "blue",
+      "outputColor": "bright_",
+    },
+    {
+      "type": "cpu",
+      "key": "  󰍛 CPU ",
+      "keyColor": "yellow",
+      "outputColor": "bright_",
+    },
+    {
+      "type": "gpu",
+      "key": "   GPU",
+      "keyColor": "yellow",
+      "outputColor": "bright_",
+    },
+    {
+      "type": "memory",
+      "key": "   Memory",
+      "keyColor": "green",
+      "outputColor": "bright_",
+    },
+    {
       "type": "colors",
-      "paddingLeft": 2,
-      // "symbol": "circle"
-    }
-  ]
+      "key": "   Colors", // For printing icon
+      "keyColor": "green",
+      "block": {
+        "range": [1, 6],
+      },
+    },
+    //{
+    //  "type": "disk",
+    //  "key": "  󰋊 Disk",
+    //  "keyColor": "blue",
+    //  "outputColor": "bright_",
+    //},
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────────────────────────┘",
+      "outputColor": "white",
+    },
+  ],
 }
