@@ -31,6 +31,45 @@ riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_
 riverctl spawn "wl-paste --type text --watch cliphist store"  #Stores only text data
 riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image data
 
+#   █████████            █████     █████     ███
+#  ███░░░░░███          ░░███     ░░███     ░░░
+# ░███    ░░░   ██████  ███████   ███████   ████  ████████    ███████  █████
+# ░░█████████  ███░░███░░░███░   ░░░███░   ░░███ ░░███░░███  ███░░███ ███░░
+#  ░░░░░░░░███░███████   ░███      ░███     ░███  ░███ ░███ ░███ ░███░░█████
+#  ███    ░███░███░░░    ░███ ███  ░███ ███ ░███  ░███ ░███ ░███ ░███ ░░░░███
+# ░░█████████ ░░██████   ░░█████   ░░█████  █████ ████ █████░░███████ ██████
+#  ░░░░░░░░░   ░░░░░░     ░░░░░     ░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░███░░░░░░
+#                                                            ███ ░███
+#                                                           ░░██████
+#                                                            ░░░░░░
+
+# Set background and border color
+riverctl background-color 0x002B36
+riverctl border-width 2
+riverctl border-color-focused 0x47B4C5
+riverctl border-color-unfocused 0xA5A5A5
+
+riverctl set-repeat 30 300
+riverctl default-attach-mode bottom
+riverctl focus-follows-cursor always
+riverctl hide-cursor timeout 10000 # 10 Seconds in milliseconds
+riverctl hide-cursor when-typing enabled
+riverctl set-cursor-warp on-focus-change
+riverctl xcursor-theme "Bibata-Modern-Classic" 18
+
+# Touchpad Settings
+# Get device name from riverctl list-inputs
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" tap enabled
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" accel-profile flat
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
+#
+# Set the default layout generator to be rivertile and start it.
+# River will send the process group of the init executable SIGTERM on exit.
+riverctl default-layout rivertile
+rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
+
 #  ███████████   ███                 █████
 # ░░███░░░░░███ ░░░                 ░░███
 #  ░███    ░███ ████  ████████    ███████   █████
@@ -292,6 +331,7 @@ riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
 riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
 riverctl rule-add -app-id "Spotify" tags $spotify_tag
+riverctl rule-add -app-id "org.qbittorrent.qBittorrent" tags $special_tag
 
 riverctl rule-add -title "Brawlhalla" fullscreen
 riverctl rule-add -app-id "org.pwmt.zathura" fullscreen
@@ -311,6 +351,7 @@ riverctl rule-add -app-id "org.kde.kdeconnect.app" float
 riverctl rule-add -app-id "nm-connection-editor" float
 riverctl rule-add -app-id "org.kde.polkit-kde-authentication-agent-1" float
 riverctl rule-add -app-id "polkit-gnome-authentication-agent-1" float
+riverctl rule-add -app-id "org.qbittorrent.qBittorrent" float
 
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
 riverctl rule-add -app-id 'GParted' float
@@ -324,42 +365,3 @@ riverctl rule-add -app-id float float
 riverctl rule-add -title "popup title with spaces" float
 riverctl rule-add -title "zoom" float
 riverctl rule-add -title "Picture-in-Picture" float
-
-#   █████████            █████     █████     ███
-#  ███░░░░░███          ░░███     ░░███     ░░░
-# ░███    ░░░   ██████  ███████   ███████   ████  ████████    ███████  █████
-# ░░█████████  ███░░███░░░███░   ░░░███░   ░░███ ░░███░░███  ███░░███ ███░░
-#  ░░░░░░░░███░███████   ░███      ░███     ░███  ░███ ░███ ░███ ░███░░█████
-#  ███    ░███░███░░░    ░███ ███  ░███ ███ ░███  ░███ ░███ ░███ ░███ ░░░░███
-# ░░█████████ ░░██████   ░░█████   ░░█████  █████ ████ █████░░███████ ██████
-#  ░░░░░░░░░   ░░░░░░     ░░░░░     ░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░███░░░░░░
-#                                                            ███ ░███
-#                                                           ░░██████
-#                                                            ░░░░░░
-
-# Set background and border color
-riverctl background-color 0x002B36
-riverctl border-width 2
-riverctl border-color-focused 0x47B4C5
-riverctl border-color-unfocused 0xA5A5A5
-
-riverctl set-repeat 30 300
-riverctl default-attach-mode bottom
-riverctl focus-follows-cursor always
-riverctl hide-cursor timeout 10000 # 10 Seconds in milliseconds
-riverctl hide-cursor when-typing enabled
-riverctl set-cursor-warp on-focus-change
-riverctl xcursor-theme "Bibata-Modern-Classic" 18
-
-# Touchpad Settings
-# Get device name from riverctl list-inputs
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" tap enabled
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" accel-profile flat
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
-riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
-#
-# Set the default layout generator to be rivertile and start it.
-# River will send the process group of the init executable SIGTERM on exit.
-riverctl default-layout rivertile
-rivertile -view-padding 3 -outer-padding 3 -main-ratio 0.5 -main-count 1 &
