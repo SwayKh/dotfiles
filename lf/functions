@@ -172,6 +172,10 @@ cmd copyToClipboard %{{
   echo "File '$f' copied to clipboard as '$mime_type'."
 }}
 
+cmd dragAndDrop &{{
+  ripdrag -x -b -n -d -t -k "$fx"
+}}
+
 cmd selectRandom %{{
   res="$(find . -maxdepth 1 | shuf -n 1 )"
   if [ -d "$res" ] ; then
