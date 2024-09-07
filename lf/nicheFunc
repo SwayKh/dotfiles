@@ -49,6 +49,6 @@ cmd convertToPng &{{
   convert-to-png "$fx"
 }}
 
-cmd directory_size ${{
+cmd directorySize ${{
 	ncdu "$f"
 }}

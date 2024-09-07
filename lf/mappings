@@ -70,7 +70,8 @@ map mc mark-save
 map mx chmodx
 map ua unarchive
 map bg setWallpaper
-map du directory_size # Requires ncdu utility
+map du directorySize # Requires ncdu utility
+map dg dragAndDrop
 
 map zh set hidden!
 map zr set reverse!
