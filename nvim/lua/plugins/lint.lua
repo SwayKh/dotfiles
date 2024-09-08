@@ -11,7 +11,7 @@ return {
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
       python = { "pylint", "ruff" },
-      go = { "djlint", "golangcilint" },
+      go = { "golangcilint" },
       bash = { "shellcheck" },
       cpp = { "cpplint" },
     }

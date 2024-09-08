@@ -36,7 +36,7 @@ return {
       graphql = { "prettierd", "prettier" },
       lua = { "stylua" },
       go = { "goimports", "gofumpt" },
-      sh = { "shfmt" },
+      sh = { "beautysh", "shfmt" },
       python = { "isort", "ruff" },
       zig = { "zigfmt" },
       ["_"] = { "trim_whitespace", "trim_newlines" },
