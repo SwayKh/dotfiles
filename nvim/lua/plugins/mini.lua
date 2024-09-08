@@ -4,6 +4,18 @@ return { -- Collection of various small independent plugins/modules
   event = "VeryLazy",
 
   config = function()
+    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
+    require("mini.pairs").setup()
+    require("mini.tabline").setup()
+    require("mini.notify").setup()
+    require("mini.git").setup()
+    require("mini.icons").setup()
+    require("mini.notify").setup()
+    require("mini.align").setup()
+
+    -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
+    MiniIcons.mock_nvim_web_devicons()
+
     require("mini.ai").setup({
       mappings = {
         around = "a",
@@ -48,17 +60,6 @@ return { -- Collection of various small independent plugins/modules
         U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
       },
     })
-
-    -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
-    require("mini.pairs").setup()
-    require("mini.tabline").setup()
-    require("mini.notify").setup()
-    require("mini.git").setup()
-    require("mini.icons").setup()
-    require("mini.notify").setup()
-
-    -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
-    MiniIcons.mock_nvim_web_devicons()
 
     require("mini.hipatterns").setup({
       highlighters = {
