@@ -1,28 +1,75 @@
 # Get editor completions based on the config schema
-# "$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = 'https://starship.rs/config-schema.json'
+# $username\
+# $hostname\
+# $time\
 
 format = """
-$username\
-$hostname\
 $directory\
 $git_branch\
-$git_state\
 $git_metrics\
+$git_state\
 $git_status\
+$c\
+$cmake\
+$cobol\
+$crystal\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
 $cmd_duration\
 $fill\
-$nodejs\
-$golang\
-$python\
-$jobs $time\
+$jobs \
 $line_break\
 $character
 """
 
-# $os\
-
-command_timeout = 3600000
-scan_timeout = 500
+command_timeout = 500
+scan_timeout = 30
 
 [os]
 disabled = false
@@ -46,8 +93,9 @@ format = 'on [$hostname](bold purple) '
 trim_at = "."
 disabled = false
 
+
 [directory]
-style = "bold italic blue"
+style = "bold italic cyan"
 read_only = "  "
 truncation_length = 10
 truncate_to_repo = true
@@ -58,11 +106,12 @@ success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
 
 [git_branch]
-symbol = " "
-style = "purple"
-format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold bright-red"
+format = "[$symbol$branch]($style)"
 
 [git_status]
+style = "bold red"
 format = '([\[$all_status$ahead_behind\]]($style) )'
 stashed = "[${count}*](green)"
 modified = "[${count}+](yellow)"
@@ -74,7 +123,7 @@ untracked = "[${count}?](blue)"
 staged = "[${count}+](green)"
 
 [git_state]
-style =	"bold red"
+style =	"bold yellow"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
 merge = "merge"
@@ -85,6 +134,9 @@ am = "am"
 am_or_rebase = "am/rebase"
 
 [git_metrics]
+added_style = "bold green"
+deleted_style = "bold red"
+format = '[ \([󰐕$added]($added_style) [󰍴$deleted]($deleted_style)\) ](bold white)'
 disabled = false
 
 [jobs]
@@ -97,15 +149,13 @@ format = "[$symbol]($style)"
 min_time = 4
 show_milliseconds = false
 disabled = false
-style = "bold italic red"
+style = "bold italic bright-red"
 
 [memory_usage]
-symbol = " "
-
-[rust]
-symbol = " "
+symbol = " "
 
 [nodejs]
+symbol = " "
 format = "[$symbol($version )]($style)"
 
 [golang]
@@ -113,7 +163,7 @@ symbol = " "
 format = 'via [$symbol($version )($mod_version )]($style)'
 
 [python]
-symbol = " "
+symbol = " "
 
 [time]
 disabled = false
