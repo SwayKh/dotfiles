@@ -103,8 +103,8 @@ return {
         cwd_prompt = false,
         git_icons = true,
         find_opts = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
-        rg_opts = [[--color=never --files --hidden --follow -g "!.git"]],
-        fd_opts = [[--color=never --type f --hidden --follow --exclude .git --ignore-file ~/home.gitignore]],
+        rg_opts = [[--color=never --files --no-ignore --hidden --follow -g "!.git"]],
+        fd_opts = [[--color=never --type f --no-ignore --hidden --follow --exclude .git --ignore-file ~/home.gitignore]],
       },
       git = {
         files = { prompt = " Git Files ❯ " },
