@@ -43,7 +43,7 @@ sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
 ### Utilities
 
 ```
-sudo pacman -S --needed river foot rofi-wayland dunst waybar swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist
+sudo pacman -S --needed river foot rofi-wayland dunst waybar swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist wlr-randr
 ```
 
 ### Cli tools

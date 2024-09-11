@@ -85,6 +85,12 @@ The scripts I use for setting wallpapers and the Power Menu using rofi are in th
 sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
 ```
 
+#### Pipewire and stuff
+
+```
+sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
+```
+
 #### Hyprland Stuff
 
 ```
@@ -94,7 +100,7 @@ sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
 #### Or River Stuff
 
 ```
-paru -S river lswt swaylock-effects swayidle
+paru -S river lswt swaylock-effects swayidle wlr-randr
 ```
 
 #### Utilities
@@ -107,12 +113,6 @@ sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm sway
 
 ```
 sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf cava jq ncdu sshfs swww
-```
-
-#### Pipewire and stuff
-
-```
-sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
 ```
 
 Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
@@ -131,14 +131,22 @@ There's also some configs, I've kept as backup. For eg
 
 ## Hyprland
 
----
-
 My Hyprland Configs and keybinds. My hyprland config is divided into various
 different conf files to make it easier to navigate. I'll put the list of
 programs I have installed in a note to make it easier to setup or choose some
 alternatives to use.
 
-Swaylock and Swayidle have been replaced with Hyprlock and Hypridle
+Swaylock and Swayidle can be replaced with Hyprlock and Hypridle for Hyprland
+
+## River
+
+Recently switched to River as my WM/Compositor, after using Hyprland for a year.
+The River config is a single shell executable init file that contains all the
+configuration. Will a environments.sh file that is source from my .zshrc and a
+custom scratchpad.sh script that mimics hyprland's create-on-empty feature for
+scratchpads/Special workspaces.
+
+Dependencies required for River are listed above.
 
 ## Dependencies
 
@@ -171,6 +179,8 @@ ripgrep (Telescope plugin neovim)
 tumbler (For thumbnails in Thunar File Manager)
 wmctrl (Window switching functionality for rofi-wayland-fork)
 cliphist (Rofi as clipboard manager)
+ripdrag (For drag and drop functionality in LF)
+wlr-randr (For turning DPMS off when using River)
 vulkan-radeon(Needed for Godot4)
 fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
 gvfs-mnt (Needed for mounting Phone storage via USB)
