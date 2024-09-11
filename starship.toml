@@ -136,7 +136,7 @@ am_or_rebase = "am/rebase"
 [git_metrics]
 added_style = "bold green"
 deleted_style = "bold red"
-format = '[ \([󰐕$added]($added_style) [󰍴$deleted]($deleted_style)\) ](bold white)'
+format = '( \(([-$added]($added_style)) ([-$deleted]($deleted_style))\) )(bold white)'
 disabled = false
 
 [jobs]
@@ -160,7 +160,7 @@ format = "[$symbol($version )]($style)"
 
 [golang]
 symbol = " "
-format = 'via [$symbol($version )($mod_version )]($style)'
+format = ' via [$symbol($version )($mod_version )]($style)'
 
 [python]
 symbol = " "
