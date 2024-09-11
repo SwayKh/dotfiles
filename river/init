@@ -320,7 +320,7 @@ riverctl rule-add -app-id "citra-qt" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "es-de" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "steam" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
-riverctl rule-add -app-id "Webcord" tags $((1 << (6 - 1)))
+riverctl rule-add -app-id "WebCord" tags $((1 << (6 - 1)))
 riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
 
 riverctl rule-add -app-id "special-term" tags $terminal_tag
