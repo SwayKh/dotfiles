@@ -12,6 +12,11 @@ autocmd("BufWinEnter", {
     end
   end,
 })
+autocmd({ "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, {
+  desc = "Autosave",
+  pattern = "*",
+  command = "silent! update",
+})
 
 autocmd("FileType", {
   pattern = {
