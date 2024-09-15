@@ -173,7 +173,7 @@ cmd copyToClipboard %{{
 }}
 
 cmd dragAndDrop &{{
-  ripdrag -x -b -n -d -t -k "$fx"
+  ripdrag -x -b -n -t -k -a $fx
 }}
 
 cmd selectRandom %{{
