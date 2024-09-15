@@ -1,10 +1,10 @@
 @define-color fg #F5F5F5;
-@define-color bg #272C33;
-@define-color bordercolor #4EB9C6;
+@define-color bg #292825;
+@define-color bordercolor #A7C080;
 @define-color disabled #A5A5A5;
-@define-color alert #F53C3C;
+@define-color alert #E67E80;
 @define-color activegreen #26A65B;
-@define-color highlight #F2C187;
+@define-color highlight #DBBC7F;
 
 * {
   min-height: 0;
@@ -27,7 +27,7 @@ button {
   border: none;
   border-radius: 0px;
   padding: 0px 5px;
-  margin: 3px 0px;
+  margin: 5px 0px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -55,7 +55,7 @@ button:hover {
 #tags {
   background-color: transparent;
   border-radius: 0px;
-  margin-left: 10px;
+  padding: 0px 5px;
 }
 
 #tags button {
@@ -64,8 +64,8 @@ button:hover {
 
   /*If you need round border icons*/
   border-radius: 0px;
-  padding: 0px 5px;
-  margin: 3px 0px;
+  padding: 0px 0px;
+  margin: 5px 0px;
 }
 
 #tags button.occupied {
@@ -93,7 +93,6 @@ button:hover {
 #network,
 #pulseaudio,
 #wireplumber,
-#wireplumber,
 #custom-media,
 #taskbar,
 #tray,
@@ -113,34 +112,44 @@ button:hover {
 #window,
 #mpd {
   padding: 0px 5px;
-  margin: 0px 3px;
+  margin: 0px 5px;
   color: @bordercolor;
 }
 
+#custom-notification,
+#custom-wifi,
+#custom-kdeconnect,
 #custom-bluetooth,
-#idle_inhibitor,
-#custom-separator {
-  font-size: 1.4rem;
+#custom-power,
+#idle_inhibitor {
+  color: @bg;
+}
+
+#clock,
+#custom-group {
+  color: @bg;
+  background-color: @bordercolor;
+  margin: 5px;
+  padding: 0px 5px;
+  border-radius: 5px;
 }
 
 #custom-separator {
-  color: @disabled;
   padding: 0px;
-  margin: 0px 3px;
+  margin: 0px;
+  color: @disabled;
 }
 
 #custom-power {
   color: @alert;
-  padding: 0px;
-  padding-right: 15px;
 }
 
 #tray {
   /* background-color: @bordercolor; */
-  border: 1px solid @bordercolor;
-  border-radius: 15px;
+  border: 0px solid @bordercolor;
+  border-radius: 5px;
   padding: 0px 15px;
-  margin: 3px;
+  margin: 5px;
 }
 
 #network.disconnected,
@@ -166,14 +175,4 @@ label:focus {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
 }
