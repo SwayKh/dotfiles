@@ -46,7 +46,7 @@ riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image
 # Set background and border color
 riverctl background-color 0x002B36
 riverctl border-width 2
-riverctl border-color-focused 0x47B4C5
+riverctl border-color-focused 0xA7C080
 riverctl border-color-unfocused 0xA5A5A5
 
 riverctl set-repeat 30 300
@@ -84,7 +84,7 @@ terminal="footclient"
 filemanager="nautilus"
 browser="floorp"
 mod="Mod4"
-goTerm="footclient -e --app-id special-go --working-directory=$HOME/Projects/Go zsh -ic 'tmux new-session -s Go'"
+goTerm="footclient -e --app-id special-go --working-directory=$HOME/Projects/Go/Linksym/ zsh -ic 'tmux new-session -s Go'"
 
 # My Mappings
 riverctl map normal $mod T spawn "$terminal -e tmux"
@@ -98,7 +98,7 @@ riverctl map normal $mod G spawn "retroarch"
 riverctl map normal $mod L spawn "$terminal -e zsh -ic lf" #lfMention
 riverctl map normal $mod M spawn "$terminal -e btop"
 riverctl map normal $mod KP_Add spawn "galculator"
-riverctl map normal $mod+Shift G spawn "$goTerm"
+riverctl map normal $mod P spawn "$goTerm"
 
 riverctl map normal $mod Q close
 riverctl map normal $mod+Shift Q exit
