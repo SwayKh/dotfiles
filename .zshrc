@@ -70,7 +70,7 @@ export FZF_CTRL_T_OPTS="
 
 alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'
-alias pipes='pipes.sh'
+alias pipes='pipes.sh -R -p 4 -t 0'
 alias c.='cd ~/dotfiles'
 alias :q='exit'
 alias lf=lfcd

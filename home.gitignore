@@ -4,6 +4,8 @@
 .cmake
 .codeium
 #.config
+.config/retroarch/
+.config/discord/
 .floorp
 .gervill
 .git
@@ -20,11 +22,12 @@
 .ssh
 .steam
 .trash
+*venv*
 .vscode
 .vim
 ES-DE
 GameDev
 Games
 go
-#Roms
+Roms
 Themes
