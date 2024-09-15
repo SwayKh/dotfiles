@@ -1,8 +1,8 @@
 // vim:ft=rasi
 * {
   font:                   "JetBrainsMono Nerd Font 10";
-  foreground:             #4EB9C6;
-  background:             #272C33;
+  foreground:             #A7C080;
+  background:             #292825;
   highlight:              #F1EDEE;
 
   pink:                   #D99887;

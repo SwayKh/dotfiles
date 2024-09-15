@@ -211,7 +211,20 @@
 ; waveform = 0
 
 [color]
-gradient = 1
+foreground = "#A7C080"
+gradient = 0
+gradient_count = 4
+
+
+# everforest
+# gradient_color_1 = '#A7C080'
+# gradient_color_2 = '#83C092'
+# gradient_color_3 = '#7FBBB3'
+# gradient_color_4 = '#D699B6'
+# gradient_color_5 = '#E67E80'
+# gradient_color_6 = '#DBBC7F'
+# gradient_color_7 = '#D3C6AA'
+# gradient_color_8 = '#2E383C'
 
 # catppuccin
 # gradient_color_1 = '#94e2d5'
@@ -224,14 +237,14 @@ gradient = 1
 # gradient_color_8 = '#f38ba8'
 
 # tokyo-night
-gradient_color_1 = '#7aa2f7'
-gradient_color_2 = '#7dcfff'
-gradient_color_3 = '#bb9af7'
-gradient_color_4 = '#9ece6a'
-gradient_color_5 = '#e0af68'
-gradient_color_6 = '#ff9e64'
-gradient_color_7 = '#f7768e'
-gradient_color_8 = '#db4b4b'
+# gradient_color_1 = '#7aa2f7'
+# gradient_color_2 = '#7dcfff'
+# gradient_color_3 = '#bb9af7'
+# gradient_color_4 = '#9ece6a'
+# gradient_color_5 = '#e0af68'
+# gradient_color_6 = '#ff9e64'
+# gradient_color_7 = '#f7768e'
+# gradient_color_8 = '#db4b4b'
 
 [smoothing]
 

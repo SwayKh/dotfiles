@@ -31,8 +31,8 @@
     corner_radius = 5
     startup_notification = true
     separator_color = frame
-    frame_color = "#4EB9C6"
-    foreground = "#4EB9C6"
+    frame_color = "#A7C080"
+    foreground = "#A7C080"
     background = "#272C33"
 [frame]
     width = (0,400)
@@ -46,17 +46,17 @@
 
 [urgency_low]
     background = "#272C33"
-    foreground = "#4EB9C6"
+    foreground = "#A7C080"
     timeout = 5
 
 [urgency_normal]
     background = "#272C33"
-    foreground = "#4EB9C6"
+    foreground = "#A7C080"
     timeout = 5
 
 [urgency_critical]
     background = "#272C33"
-    foreground = "#4EB9C6"
+    foreground = "#A7C080"
     timeout = 10
 
 [shortcuts]

@@ -54,6 +54,11 @@ inputbar {
   children: [ "textbox-prompt-colon", entry ];
 }
 
+prompt {
+  padding: 3px;
+  border-radius: 5px;
+}
+
 textbox-prompt-colon {
   expand: false;
   padding: 3px 15px;
