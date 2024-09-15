@@ -1,2 +1,2 @@
 timeout 600 'swaylock -f'
-timeout 720 'wlr-randr --output eDP-1 --toggle' resume 'wlr-randr --output eDP-1 --toggle'
+before-sleep 'swaylock -f'
