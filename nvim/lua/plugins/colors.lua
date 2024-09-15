@@ -1,50 +1,70 @@
 return {
   {
-    "olimorris/onedarkpro.nvim",
-    event = "VimEnter",
+
+    "sainnhe/everforest",
     priority = 1000,
     config = function()
-      require("onedarkpro").setup({
-        options = {
-          cursorline = false,
-          transparency = false,
-          terminal_colors = true,
-          highlight_inactive_windows = false,
-        },
-        highlights = {
-          Comment = { italic = true },
-          Directory = { bold = true },
-          ErrorMsg = { italic = true, bold = true },
-        },
-        styles = {
-          comments = "italic",
-          keywords = "bold,italic",
-          functions = "bold",
-          strings = "altfont",
-          variables = "NONE",
-          types = "NONE",
-          methods = "NONE",
-          numbers = "NONE",
-          constants = "italic",
-          operators = "NONE",
-          parameters = "NONE",
-          conditionals = "italic",
-          virtual_text = "NONE",
-        },
-        filetypes = {
-          all = true,
-        },
-      })
-      vim.cmd.colorscheme("onedark")
+      -- " Available values: 'hard', 'medium'(default), 'soft'
+      vim.g.everforest_background = "hard"
+      vim.g.everforest_enable_italic = 1
+      vim.g.everforest_ui_contrast = "high"
+      vim.g.everforest_diagnostic_text_highlight = 1
+      vim.g.everforest_diagnostic_line_highlight = 1
+      -- vim.g.everforest_better_performance = 1
+      vim.g.everforest_transparent_background = 2
+      vim.g.everforest_float_style = "dim"
+      vim.g.everforest_diagnostic_virtual_text = "colored"
+      vim.g.everforest_dim_inactive_windows = 1
+      vim.cmd.colorscheme("everforest")
     end,
     vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" }),
     vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" }),
     vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" }),
+
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }),
     -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }),
     -- vim.cmd.hi("Comment gui=none"),
     -- vim.cmd.hi("Normal guibg=#222222"),
   },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   event = "VimEnter",
+  --   priority = 1000,
+  --   config = function()
+  --     require("onedarkpro").setup({
+  --       options = {
+  --         cursorline = false,
+  --         transparency = false,
+  --         terminal_colors = true,
+  --         highlight_inactive_windows = false,
+  --       },
+  --       highlights = {
+  --         Comment = { italic = true },
+  --         Directory = { bold = true },
+  --         ErrorMsg = { italic = true, bold = true },
+  --       },
+  --       styles = {
+  --         comments = "italic",
+  --         keywords = "bold,italic",
+  --         functions = "bold",
+  --         strings = "altfont",
+  --         variables = "NONE",
+  --         types = "NONE",
+  --         methods = "NONE",
+  --         numbers = "NONE",
+  --         constants = "italic",
+  --         operators = "NONE",
+  --         parameters = "NONE",
+  --         conditionals = "italic",
+  --         virtual_text = "NONE",
+  --       },
+  --       filetypes = {
+  --         all = true,
+  --       },
+  --     })
+  --     vim.cmd.colorscheme("onedark")
+  --   end,
+  -- },
   -- {
   --   "navarasu/onedark.nvim",
   --   priority = 1000,

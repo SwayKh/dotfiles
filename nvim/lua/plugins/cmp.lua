@@ -18,7 +18,7 @@ return {
       build = "make install_jsregexp",
     },
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "rafamadriz/friendly-snippets", -- useful snippets
+    -- "rafamadriz/friendly-snippets", -- useful snippets
   },
   config = function()
     local cmp = require("cmp")
@@ -116,6 +116,11 @@ return {
       window = {
         completion = cmp.config.window.bordered(border_opts),
         documentation = cmp.config.window.bordered(border_opts),
+        -- documentation = {
+        --   border = "rounded",
+        --   winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+        --   scrollbar = false,
+        -- },
       },
 
       view = {

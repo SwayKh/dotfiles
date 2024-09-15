@@ -106,7 +106,7 @@ vim.opt.pumwidth = 30
 vim.opt.pumheight = 15
 
 -- Transparency level for pop up menu
-vim.opt.pumblend = 10
+vim.opt.pumblend = 0
 
 -- Max items to show in command menu
 vim.opt.cmdheight = 0
