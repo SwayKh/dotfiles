@@ -43,6 +43,7 @@ riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image
 #                                                           ░░██████
 #                                                            ░░░░░░
 
+# Settings
 # Set background and border color
 riverctl background-color 0x002B36
 riverctl border-width 2
@@ -79,6 +80,7 @@ rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
 #  ███████████  █████ ████ █████░░████████ ██████
 # ░░░░░░░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░░
 
+# Binds
 # Variables
 terminal="footclient"
 filemanager="nautilus"
@@ -264,6 +266,7 @@ riverctl map normal $mod+Shift Comma send-to-output previous
 #                                                                         █████
 #                                                                        ░░░░░
 
+# Scratchpads
 # Create scratchpad tags for each tag I need
 terminal_tag=$((1 << 11))
 lf_tag=$((1 << 12))
@@ -302,6 +305,7 @@ riverctl map normal $mod+Shift Space set-focused-tags $special_tag
 #  █████   █████ ░░████████ █████░░██████  ██████
 # ░░░░░   ░░░░░   ░░░░░░░░ ░░░░░  ░░░░░░  ░░░░░░
 
+# Rules
 # Make all views with app-id "bar" and any title use client-side decorations
 riverctl rule-add ssd
 
