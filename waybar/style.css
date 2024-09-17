@@ -145,11 +145,11 @@ button:hover {
 }
 
 #tray {
-  /* background-color: @bordercolor; */
-  border: 0px solid @bordercolor;
-  border-radius: 5px;
-  padding: 0px 15px;
+  /*background-color: @bordercolor;*/
+  border: 1px solid @bordercolor;
   margin: 5px;
+  padding: 0px 15px;
+  border-radius: 5px;
 }
 
 #network.disconnected,
