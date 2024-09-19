@@ -59,8 +59,8 @@ export FZF_DEFAULT_COMMAND='\
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="
   --preview '~/scripts/preview.sh {}' \
-  --height=70% \
-  --preview-window=60% \
+  --height=100% \
+  --preview-window=65% \
   --bind='ctrl-c:abort' \
   --bind='ctrl-b:preview-page-up' \
   --bind='ctrl-f:preview-page-down' \
