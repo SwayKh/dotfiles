@@ -55,6 +55,7 @@ map <c-n> search-next
 map <c-p> search-prev
 map <c-r> :reload; redraw
 map <c-c> :sourceConfig
+map <c-f> :fzfSearch
 
 map <enter> open
 map <esc> unselect

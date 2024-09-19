@@ -119,7 +119,24 @@ cmd pasteAsync &{{
 
 # Jump to directories using fzf
 cmd fzfJump ${{
-    res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    # res="$(fd . --maxdepth 3 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    res="$(
+      fd \
+      -L \
+      --strip-cwd-prefix \
+      --hidden \
+      --no-ignore \
+      --exclude .git \
+      --ignore-file ~/home.gitignore |
+      fzf \
+      --header='Jump to location' \
+      --layout=reverse \
+      --sort \
+      --border \
+      --height=100% |
+      sed 's/\\/\\\\/g;s/"/\\"/g'
+      )"
+
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
