@@ -83,7 +83,7 @@ rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
 # Binds
 # Variables
 terminal="footclient"
-filemanager="nautilus"
+filemanager="thunar"
 browser="floorp"
 mod="Mod4"
 goTerm="footclient -e --app-id special-go --working-directory=$HOME/Projects/Go/Linksym/ zsh -ic 'tmux new-session -s Go'"
@@ -97,6 +97,8 @@ riverctl map normal $mod O spawn "obsidian"
 riverctl map normal $mod W spawn "ferdium"
 riverctl map normal $mod D spawn "webcord"
 riverctl map normal $mod G spawn "retroarch"
+riverctl map normal $mod S spawn "spotify-launcher"
+riverctl map normal $mod I spawn "ticktick"
 riverctl map normal $mod L spawn "$terminal -e zsh -ic lf" #lfMention
 riverctl map normal $mod M spawn "$terminal -e btop"
 riverctl map normal $mod KP_Add spawn "galculator"
@@ -315,7 +317,7 @@ riverctl rule-add -app-id "Code" tags $((1 << (2 - 1)))
 riverctl rule-add -app-id "special-go" tags $((1 << (2 - 1)))
 riverctl rule-add -app-id "dev.zed.Zed" tags $((1 << (2 - 1)))
 riverctl rule-add -app-id "org.gnome.Nautilus" tags $((1 << (3 - 1)))
-riverctl rule-add -app-id "Thunar" tags $((1 << (3 - 1)))
+riverctl rule-add -app-id "thunar" tags $((1 << (3 - 1)))
 riverctl rule-add -app-id "org.libretro.RetroArch" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "Celeste.bin.x86_64" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "hollow_knight.x86_64" tags $((1 << (4 - 1)))
