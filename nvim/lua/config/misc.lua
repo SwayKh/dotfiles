@@ -108,21 +108,27 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Replace the default qf window with trouble.nvim
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "qf",
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "qf",
+--   callback = function()
+--     -- vim.cmd([[Trouble qflist open]])
+--     if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
+--       vim.defer_fn(function()
+--         vim.cmd.lclose()
+--         require("trouble").open("loclist")
+--       end, 0)
+--     else
+--       vim.defer_fn(function()
+--         vim.cmd.cclose()
+--         require("trouble").open("quickfix")
+--       end, 0)
+--     end
+--   end,
+-- })
+
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
   callback = function()
-    -- vim.cmd([[Trouble qflist open]])
-    if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
-      vim.defer_fn(function()
-        vim.cmd.lclose()
-        require("trouble").open("loclist")
-      end, 0)
-    else
-      vim.defer_fn(function()
-        vim.cmd.cclose()
-        require("trouble").open("quickfix")
-      end, 0)
-    end
+    vim.cmd([[Trouble qflist open]])
   end,
 })
 
