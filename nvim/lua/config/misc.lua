@@ -31,6 +31,8 @@ autocmd("FileType", {
     "noice",
     "qf",
     "query",
+    "Trouble",
+    "trouble",
   },
   callback = function()
     vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
@@ -102,6 +104,25 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+  end,
+})
+
+-- Replace the default qf window with trouble.nvim
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    -- vim.cmd([[Trouble qflist open]])
+    if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
+      vim.defer_fn(function()
+        vim.cmd.lclose()
+        require("trouble").open("loclist")
+      end, 0)
+    else
+      vim.defer_fn(function()
+        vim.cmd.cclose()
+        require("trouble").open("quickfix")
+      end, 0)
+    end
   end,
 })
 
