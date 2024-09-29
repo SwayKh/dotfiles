@@ -48,8 +48,8 @@ return {
         map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
         map("gD", require("fzf-lua").lsp_declarations, "[G]oto [D]eclaration")
         map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]definition")
-        map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]symbols")
-        map("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]symbols")
+        -- map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]symbols")
+        -- map("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]symbols")
 
         -- See `:help K` for why this keymap
         map("K", vim.lsp.buf.hover, "Hover Documentation")

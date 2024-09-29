@@ -5,7 +5,11 @@ return {
   dependencies = { "echasnovski/mini.nvim" },
   config = function()
     local fzf = require("fzf-lua")
-    local actions = require("fzf-lua.actions")
+
+    local config = require("fzf-lua.config")
+    local t_actions = require("trouble.sources.fzf").actions
+    config.defaults.actions.files["ctrl-t"] = t_actions.open
+
     fzf.setup({
       "fzf-native", -- profiles, options {"default", "telescope", "fzf-native", "fzf-tmux", "fzf-vim"} + :fzflua profiles
       preview = { layout = "horizontal" },
@@ -16,7 +20,7 @@ return {
         title_pos = "center",
         height = 0.80, -- window height
         width = 0.80, -- window width
-        row = 0.45, -- window row position (0=top, 1=bottom)
+        row = 0.50, -- window row position (0=top, 1=bottom)
         col = 0.50, -- window col position (0=left, 1=right)
         preview = {
           layout = "horizontal",
@@ -25,54 +29,9 @@ return {
         },
       },
       keymap = {
-        -- These override the default tables completely
-        -- no need to set to `false` to disable a bind
-        -- delete or modify is sufficient
-        builtin = {
-          -- neovim `:tmap` mappings for the fzf win
-          ["<F1>"] = "toggle-help",
-          ["<F2>"] = "toggle-fullscreen",
-          -- Only valid with the 'builtin' previewer
-          ["<F3>"] = "toggle-preview-wrap",
-          ["<F4>"] = "toggle-preview",
-          -- Rotate preview clockwise/counter-clockwise
-          ["<F5>"] = "toggle-preview-ccw",
-          ["<F6>"] = "toggle-preview-cw",
-          ["<S-down>"] = "preview-page-down",
-          ["<S-up>"] = "preview-page-up",
-          ["<S-left>"] = "preview-page-reset",
-        },
         fzf = {
-          -- fzf '--bind=' options
-          ["ctrl-z"] = "abort",
-          ["ctrl-u"] = "unix-line-discard",
-          ["ctrl-f"] = "half-page-down",
-          ["ctrl-b"] = "half-page-up",
-          ["ctrl-a"] = "beginning-of-line",
-          ["ctrl-e"] = "end-of-line",
           ["alt-a"] = "toggle-all",
           ["ctrl-q"] = "select-all+accept",
-          -- Only valid with fzf previewers (bat/cat/git/etc)
-          ["f3"] = "toggle-preview-wrap",
-          ["f4"] = "toggle-preview",
-          ["shift-down"] = "preview-page-down",
-          ["shift-up"] = "preview-page-up",
-        },
-      },
-      actions = {
-        files = {
-          ["default"] = actions.file_edit_or_qf,
-          ["ctrl-s"] = actions.file_split,
-          ["ctrl-v"] = actions.file_vsplit,
-          ["ctrl-t"] = actions.file_tabedit,
-          ["alt-q"] = actions.file_sel_to_qf,
-          ["alt-l"] = actions.file_sel_to_ll,
-        },
-        buffers = {
-          ["default"] = actions.buf_edit,
-          ["ctrl-s"] = actions.buf_split,
-          ["ctrl-v"] = actions.buf_vsplit,
-          ["ctrl-t"] = actions.buf_tabedit,
         },
       },
       fzf_opts = {
@@ -83,11 +42,6 @@ return {
         -- ["--info"] = "inline", -- This puts the item count next to input
       },
 
-      args = { prompt = " ❯ " },
-      oldfiles = { prompt = " Recents ❯ " },
-      buffers = { prompt = " Buffers ❯ ", no_header_i = true },
-      colorschemes = { prompt = " Themes ❯ " },
-      keymaps = { prompt = " Keymaps ❯ " },
       grep = {
         prompt = " Find ❯ ",
         rg_opts = [[--column --line-number --no-heading --color=always --hidden --smart-case --max-columns=4096 -e]],
@@ -106,6 +60,11 @@ return {
         rg_opts = [[--color=never --files --no-ignore --hidden --follow -g "!.git"]],
         fd_opts = [[--color=never --type f --no-ignore --hidden --follow --exclude .git --ignore-file ~/home.gitignore]],
       },
+      args = { prompt = " ❯ " },
+      oldfiles = { prompt = " Recents ❯ " },
+      buffers = { prompt = " Buffers ❯ ", no_header_i = true },
+      colorschemes = { prompt = " Themes ❯ " },
+      keymaps = { prompt = " Keymaps ❯ " },
       git = {
         files = { prompt = " Git Files ❯ " },
         status = { prompt = " ❯ " },
@@ -181,26 +140,5 @@ return {
         },
       })
     end, { desc = "[L]azy [R]eload plugin of choice" })
-
-    --[[telescope.lua
-    -- Consutomize the look (Done)
-    -- Search bar as separate window (No Need the Native theme is better)
-    -- bigger fzf list or equal size to preview (Don't even know that this is)
-    -- harpoon is using telescope, DO SOMETHING (Remove Telescope from harpoon
-    -- and then remove harpoon too)
-    -- Remove all telescope mentions from keybinds and configs (Done)
-    -- So many open tabs (It's all in the past now)
-    -- look into silent keybinds, that don't show cmd when running (Done, Also
-    -- for Alpha.nvim)
-    -- telescope insert mode actions should be moved to fzf-lua (C-n/p better)
-    -- Get better theme, Dracula looks bad with cmp border (Nightfox for now)
-    -- Remove the ctrl+g ctrl+x key showing below prompt (Done, Needed to open
-    -- an issue on github)
-    -- Make the layout like one in fzflua command menu (It was the Native preset)
-    -- alpha dashboard had keybinds to telescope remove them (Done)
-    -- create a keybind to pick a plugin and lazy reload it (Did this after many
-    -- months, But it felt good to do. Also there was a easier way with
-    -- lazy.plugins)
-    --]]
   end,
 }
