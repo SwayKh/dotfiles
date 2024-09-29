@@ -30,7 +30,7 @@ return {
     local lspui = require("lspconfig.ui.windows")
 
     require("lazydev").setup()
-    lspui.default_options.border = "rounded"
+    lspui.default_options.border = "none"
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -121,7 +121,7 @@ return {
           float = {
             focusable = true,
             style = "minimal",
-            border = "rounded",
+            border = "none",
             source = "always",
             header = "",
             prefix = "",
@@ -220,7 +220,7 @@ return {
 
     mason.setup({
       ui = {
-        border = "rounded",
+        border = "none",
         width = 0.8,
         height = 0.8,
         icons = {

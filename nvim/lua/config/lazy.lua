@@ -16,7 +16,7 @@ require("lazy").setup({
   { import = "plugins" },
 }, {
   ui = {
-    border = "rounded",
+    border = "none",
     size = {
       width = 0.8,
       height = 0.8,

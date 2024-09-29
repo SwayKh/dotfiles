@@ -11,7 +11,7 @@ return {
         show_hidden = true,
       },
       preview = {
-        border = "rounded",
+        border = "none",
         update_on_cursor_moved = true,
       },
       win_options = {

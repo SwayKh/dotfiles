@@ -34,7 +34,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     local border_opts = {
-      border = "rounded",
+      border = "none",
       winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       scrollbar = false,
     }
