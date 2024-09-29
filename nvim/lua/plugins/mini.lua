@@ -134,7 +134,7 @@ return { -- Collection of various small independent plugins/modules
         scroll_up = "<C-u>",
         config = {
           width = "auto",
-          border = "rounded",
+          border = "none",
         },
       },
       triggers = {

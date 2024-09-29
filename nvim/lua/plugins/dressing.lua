@@ -22,7 +22,7 @@ return {
         start_in_insert = true,
 
         -- These are passed to nvim_open_win
-        border = "rounded",
+        border = "none",
         -- 'editor' and 'win' will default to being centered
         relative = "cursor",
 
@@ -105,7 +105,7 @@ return {
           size = nil,
           relative = "editor",
           border = {
-            style = "rounded",
+            style = "none",
           },
           buf_options = {
             swapfile = false,
@@ -125,7 +125,7 @@ return {
           -- Display numbers for options and set up keymaps
           show_numbers = true,
           -- These are passed to nvim_open_win
-          border = "rounded",
+          border = "none",
           -- 'editor' and 'win' will default to being centered
           relative = "editor",
 

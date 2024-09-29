@@ -13,7 +13,7 @@ return {
       persist_size = true,
       direction = "horizontal",
       autochdir = true,
-      float_opts = { border = "rounded" },
+      float_opts = { border = "none" },
       highlights = {
         Normal = { link = "Normal" },
         NormalNC = { link = "NormalNC" },

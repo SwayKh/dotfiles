@@ -17,9 +17,9 @@ return {
       vim.g.everforest_dim_inactive_windows = 1
       vim.cmd.colorscheme("everforest")
     end,
-    vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" }),
-    vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" }),
-    vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" }),
+    -- vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" }),
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" }),
+    -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" }),
 
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }),
     -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }),
