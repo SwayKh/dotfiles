@@ -5,13 +5,38 @@ return { -- Collection of various small independent plugins/modules
 
   config = function()
     -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
+    require("mini.extra").setup()
     require("mini.pairs").setup()
     require("mini.tabline").setup()
     require("mini.notify").setup()
+
     require("mini.git").setup()
     require("mini.icons").setup()
     require("mini.notify").setup()
     require("mini.align").setup()
+
+    require("mini.files").setup()
+    require("mini.jump").setup({ mappings = { repeat_jump = "," } })
+    require("mini.jump2d").setup({ view = { dim = true } })
+
+    vim.keymap.set("n", "-", function()
+      local buf_name = vim.api.nvim_buf_get_name(0)
+      local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+      MiniFiles.open(path)
+      MiniFiles.reveal_cwd()
+    end, { desc = "Open Mini Files" })
+
+    -- vim.keymap.set("n", "<C-s>", function()
+    --   if vim.api.nvim_buf_get_name(0):match("minifiles") then
+    --     print("That's the correct file type")
+    --   end
+    --
+    --   if vim.bo.filetype == "minifiles" then
+    --     MiniFiles.synchronize()
+    --   else
+    --     vim.cmd("wall")
+    --   end
+    -- end, { desc = "Save changes with C-s in MiniFiles" })
 
     -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
     MiniIcons.mock_nvim_web_devicons()
@@ -31,6 +56,12 @@ return { -- Collection of various small independent plugins/modules
       },
       n_lines = 500,
       custom_textobjects = {
+
+        B = require("mini.extra").gen_ai_spec.buffer(),
+        D = require("mini.extra").gen_ai_spec.diagnostic(),
+        I = require("mini.extra").gen_ai_spec.indent(),
+        L = require("mini.extra").gen_ai_spec.line(),
+        N = require("mini.extra").gen_ai_spec.number(),
         o = require("mini.ai").gen_spec.treesitter({
           a = { "@block.outer", "@conditional.outer", "@loop.outer" },
           i = { "@block.inner", "@conditional.inner", "@loop.inner" },
@@ -64,6 +95,10 @@ return { -- Collection of various small independent plugins/modules
     require("mini.hipatterns").setup({
       highlighters = {
         hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+        todo = require("mini.extra").gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
+        hack = require("mini.extra").gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+        note = require("mini.extra").gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
+        fixme = require("mini.extra").gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
       },
     })
 
