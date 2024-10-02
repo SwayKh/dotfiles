@@ -3,9 +3,17 @@ return {
   event = "VeryLazy",
   cmd = "Trouble",
   config = function()
-    require("trouble").setup({
+    local trouble = require("trouble")
+    trouble.setup({
       auto_jump = true, -- auto jump to the item when there's only one
       focus = true, -- Focus the window when opened
+      auto_preview = true, -- automatically open preview when on an item
+      auto_refresh = true, -- auto refresh when open
+      preview = {
+        type = "main",
+        -- Set to false, if you want the preview to always be a real loaded buffer.
+        scratch = false,
+      },
       win = {
         border = "none",
         size = 0.30,
@@ -54,5 +62,25 @@ return {
       "<cmd>Trouble symbols toggle<cr>",
       { silent = true, desc = "Document Symbols (Trouble)" }
     )
+    vim.keymap.set("n", "[q", function(self)
+      if require("trouble").is_open() then
+        trouble.prev(self, { skip_groups = true, jump = true, focus = false })
+      else
+        local ok, err = pcall(vim.cmd.cprev)
+        if not ok then
+          vim.notify(err, vim.log.levels.ERROR)
+        end
+      end
+    end, { silent = true, desc = "Previous Trouble/Quickfix Item" })
+    vim.keymap.set("n", "]q", function(self)
+      if require("trouble").is_open() then
+        trouble.next(self, { skip_groups = true, jump = true, focus = false })
+      else
+        local ok, err = pcall(vim.cmd.cnext)
+        if not ok then
+          vim.notify(err, vim.log.levels.ERROR)
+        end
+      end
+    end, { silent = true, desc = "Next Trouble/Quickfix Item" })
   end,
 }
