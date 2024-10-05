@@ -12,6 +12,7 @@ autocmd("BufWinEnter", {
     end
   end,
 })
+
 autocmd({ "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, {
   desc = "Autosave",
   pattern = "*",
@@ -56,6 +57,7 @@ autocmd("FileType", {
     "oil",
     "oil_preview",
     "mason",
+    "minifiles",
     "fzf",
     "notify",
     "nocie",
@@ -65,6 +67,15 @@ autocmd("FileType", {
   desc = "Disable Mini Indentline for some filetype, similar to IndentBlankLine",
   callback = function()
     vim.b.miniindentscope_disable = true
+  end,
+})
+
+autocmd({ "CursorMoved", "BufEnter" }, {
+  pattern = "*",
+  desc = "Center cursor on CursorMoved event",
+  callback = function()
+    -- vim.api.nvim_feedkeys("zz", "n", false)
+    vim.cmd("norm! zz")
   end,
 })
 
@@ -88,6 +99,7 @@ autocmd("CursorMoved", {
       "lazy",
       "lspinfo",
       "mason",
+      "minifiles",
       "notify",
       "noice",
       "toggleterm",
@@ -99,7 +111,23 @@ autocmd("CursorMoved", {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+-- autocmd({ "CursorMoved", "CursorMovedI", "BufEnter" }, {
+--   desc = "Keep the Cursor in the middle of the screen",
+--   group = vim.api.nvim_create_augroup("Keep Cursor centered", {}),
+--   callback = function()
+--     local win_h = vim.api.nvim_win_get_height(0)
+--     local off = math.min(vim.o.scrolloff, math.floor(win_h / 2))
+--     local dist = vim.fn.line("$") - vim.fn.line(".")
+--     local rem = vim.fn.line("w$") - vim.fn.line("w0") + 1
+--     if dist < off and win_h - rem + dist < off then
+--       local view = vim.fn.winsaveview()
+--       view.topline = view.topline + off - (win_h - rem + dist)
+--       vim.fn.winrestview(view)
+--     end
+--   end,
+-- })
+
+autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown" },
   callback = function()
     vim.opt_local.wrap = true
@@ -126,7 +154,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 --   end,
 -- })
 
-vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+autocmd("QuickFixCmdPost", {
   callback = function()
     vim.cmd([[Trouble qflist open]])
   end,
@@ -179,7 +207,7 @@ autocmd("VimEnter", {
   end,
 })
 
--- vim.api.nvim_create_user_command("Redir", function(ctx)
+-- autocmd("Redir", function(ctx)
 --   local lines = vim.split(vim.api.nvim_exec(ctx.args, true), "\n", { plain = true })
 --   vim.cmd("new")
 --   vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
