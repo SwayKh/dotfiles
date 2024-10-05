@@ -5,19 +5,22 @@ return { -- Collection of various small independent plugins/modules
 
   config = function()
     -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
+    require("mini.align").setup()
+    require("mini.bracketed").setup()
     require("mini.extra").setup()
-    require("mini.pairs").setup()
-    require("mini.tabline").setup()
-    require("mini.notify").setup()
-
+    require("mini.files").setup()
     require("mini.git").setup()
     require("mini.icons").setup()
-    require("mini.notify").setup()
-    require("mini.align").setup()
-
-    require("mini.files").setup()
     require("mini.jump").setup({ mappings = { repeat_jump = "," } })
     require("mini.jump2d").setup({ view = { dim = true } })
+    require("mini.notify").setup()
+    require("mini.pairs").setup()
+    require("mini.splitjoin").setup()
+    require("mini.surround").setup()
+    require("mini.tabline").setup()
+
+    -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
+    MiniIcons.mock_nvim_web_devicons()
 
     vim.keymap.set("n", "-", function()
       local buf_name = vim.api.nvim_buf_get_name(0)
@@ -26,20 +29,35 @@ return { -- Collection of various small independent plugins/modules
       MiniFiles.reveal_cwd()
     end, { desc = "Open Mini Files" })
 
-    -- vim.keymap.set("n", "<C-s>", function()
-    --   if vim.api.nvim_buf_get_name(0):match("minifiles") then
-    --     print("That's the correct file type")
-    --   end
-    --
-    --   if vim.bo.filetype == "minifiles" then
-    --     MiniFiles.synchronize()
-    --   else
-    --     vim.cmd("wall")
-    --   end
-    -- end, { desc = "Save changes with C-s in MiniFiles" })
+    vim.keymap.set({ "n", "x" }, "<leader>gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git Status" })
 
-    -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
-    MiniIcons.mock_nvim_web_devicons()
+    require("mini.diff").setup({
+      view = {
+        style = "sign",
+        signs = { add = "+", change = "~", delete = "-" },
+      },
+    })
+
+    require("mini.indentscope").setup({
+      symbol = "╎", --  ╎ │
+      draw = {
+        delay = 50,
+        animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
+      },
+      options = {
+        try_as_border = true,
+      },
+    })
+
+    require("mini.hipatterns").setup({
+      highlighters = {
+        hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+        todo = require("mini.extra").gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
+        hack = require("mini.extra").gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+        note = require("mini.extra").gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
+        fixme = require("mini.extra").gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
+      },
+    })
 
     require("mini.ai").setup({
       mappings = {
@@ -56,7 +74,6 @@ return { -- Collection of various small independent plugins/modules
       },
       n_lines = 500,
       custom_textobjects = {
-
         B = require("mini.extra").gen_ai_spec.buffer(),
         D = require("mini.extra").gen_ai_spec.diagnostic(),
         I = require("mini.extra").gen_ai_spec.indent(),
@@ -66,6 +83,8 @@ return { -- Collection of various small independent plugins/modules
           a = { "@block.outer", "@conditional.outer", "@loop.outer" },
           i = { "@block.inner", "@conditional.inner", "@loop.inner" },
         }, {}),
+        u = require("mini.ai").gen_spec.function_call(), -- u for "Usage"
+        U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
         f = require("mini.ai").gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
         c = require("mini.ai").gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
         t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
@@ -87,77 +106,35 @@ return { -- Collection of various small independent plugins/modules
           }
           return { from = from, to = to }
         end,
-        u = require("mini.ai").gen_spec.function_call(), -- u for "Usage"
-        U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
       },
     })
 
-    require("mini.hipatterns").setup({
-      highlighters = {
-        hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
-        todo = require("mini.extra").gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
-        hack = require("mini.extra").gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
-        note = require("mini.extra").gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
-        fixme = require("mini.extra").gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
-      },
-    })
+    require("mini.statusline").setup({
+      use_icons = vim.g.have_nerd_font,
+      content = {
+        active = function()
+          local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
+          local git = MiniStatusline.section_git({ trunc_width = 40 })
+          local diff = MiniStatusline.section_diff({ trunc_width = 75 })
+          local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
+          -- local lsp = MiniStatusline.section_lsp({ trunc_width = 75 })
+          local filename = MiniStatusline.section_filename({ trunc_width = 140 })
+          local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
+          local location = MiniStatusline.section_location({ trunc_width = 200 })
+          local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
+          local macro = vim.g.macro_recording
 
-    require("mini.diff").setup({
-      view = {
-        style = "sign",
-        signs = { add = "+", change = "~", delete = "-" },
-      },
-    })
-
-    require("mini.bracketed").setup({
-      buffer = { suffix = "b", options = {} },
-      comment = { suffix = "c", options = {} },
-      conflict = { suffix = "x", options = {} },
-      diagnostic = { suffix = "d", options = {} },
-      file = { suffix = "f", options = {} },
-      indent = { suffix = "i", options = {} },
-      jump = { suffix = "j", options = {} },
-      location = { suffix = "l", options = {} },
-      oldfile = { suffix = "o", options = {} },
-      quickfix = { suffix = "q", options = {} },
-      treesitter = { suffix = "t", options = {} },
-      undo = { suffix = "u", options = {} },
-      window = { suffix = "w", options = {} },
-      yank = { suffix = "y", options = {} },
-    })
-
-    -- Split or Join arguments inside brackets/braces/parenthesis
-    require("mini.splitjoin").setup({
-      mappings = {
-        toggle = "gS",
-        split = "",
-        join = "",
-      },
-    })
-
-    require("mini.surround").setup({
-      mappings = {
-        add = "sa", -- Add surrounding in Normal and Visual modes
-        delete = "sd", -- Delete surrounding
-        find = "sf", -- Find surrounding (to the right)
-        find_left = "sF", -- Find surrounding (to the left)
-        highlight = "sh", -- Highlight surrounding
-        replace = "sr", -- Replace surrounding
-        update_n_lines = "sn", -- Update `n_lines`
-
-        suffix_last = "l", -- Suffix to search with "prev" method
-        suffix_next = "n", -- Suffix to search with "next" method
-      },
-    })
-
-    require("mini.indentscope").setup({
-      symbol = "╎", --  ╎ │
-      draw = {
-        delay = 50,
-        animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
-      },
-      options = {
-        try_as_border = true,
+          return MiniStatusline.combine_groups({
+            { hl = mode_hl, strings = { mode } },
+            { hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics } },
+            "%<", -- Mark general truncate point
+            { hl = "MiniStatuslineFilename", strings = { filename } },
+            "%=", -- End left alignment
+            { hl = "MiniStatuslineFilename", strings = { macro } },
+            { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
+            { hl = mode_hl, strings = { search, location } },
+          })
+        end,
       },
     })
 
@@ -202,6 +179,13 @@ return { -- Collection of various small independent plugins/modules
         -- `z` key
         { mode = "n", keys = "z" },
         { mode = "x", keys = "z" },
+
+        -- Bracketed Keybinds
+        { mode = "n", keys = "]" },
+        { mode = "n", keys = "[" },
+
+        -- Surround Keybinds
+        { mode = "n", keys = "s" },
       },
 
       clues = {
@@ -212,35 +196,6 @@ return { -- Collection of various small independent plugins/modules
         miniclue.gen_clues.registers(),
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
-      },
-    })
-
-    require("mini.statusline").setup({
-      use_icons = vim.g.have_nerd_font,
-      content = {
-        active = function()
-          local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
-          local git = MiniStatusline.section_git({ trunc_width = 40 })
-          local diff = MiniStatusline.section_diff({ trunc_width = 75 })
-          local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
-          -- local lsp = MiniStatusline.section_lsp({ trunc_width = 75 })
-          local filename = MiniStatusline.section_filename({ trunc_width = 140 })
-          local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
-          local location = MiniStatusline.section_location({ trunc_width = 200 })
-          local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
-          local macro = vim.g.macro_recording
-
-          return MiniStatusline.combine_groups({
-            { hl = mode_hl, strings = { mode } },
-            { hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics } },
-            "%<", -- Mark general truncate point
-            { hl = "MiniStatuslineFilename", strings = { filename } },
-            "%=", -- End left alignment
-            { hl = "MiniStatuslineFilename", strings = { macro } },
-            { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
-            { hl = mode_hl, strings = { search, location } },
-          })
-        end,
       },
     })
   end,
