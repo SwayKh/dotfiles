@@ -27,6 +27,7 @@ source <(fzf --zsh)
 export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
+export GOPATH="$HOME/go"
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:"$HOME/.cargo/bin"
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
