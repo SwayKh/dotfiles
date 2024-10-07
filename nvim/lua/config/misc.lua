@@ -1,10 +1,10 @@
 local autocmd = vim.api.nvim_create_autocmd
--- Open help window in a vertical split to the right.
+-- Open help|man window in a vertical split to the right.
 autocmd("BufWinEnter", {
   group = vim.api.nvim_create_augroup("help_window_right", {}),
-  pattern = { "*.txt" },
+  pattern = { "*" },
   callback = function()
-    if vim.o.filetype == "help" then
+    if vim.bo.filetype == "help" or vim.bo.filetype == "man" then
       vim.cmd([[
         wincmd L
         vertical resize 90
@@ -43,10 +43,11 @@ autocmd("FileType", {
 autocmd("FileType", {
   group = vim.api.nvim_create_augroup("disable_mini_indentline", {}),
   pattern = {
+    "",
+    "man",
     "help",
     "alpha",
     "nofile",
-    "",
     "dashboard",
     "neo-tree",
     "Trouble",
@@ -85,26 +86,16 @@ autocmd("CursorMoved", {
   desc = "Resize buffer on entry, Alternative to focus.nvim",
   callback = function()
     local excluded_filetypes = {
-      "alpha",
-      "",
-      "nofile",
-      "dashboard",
       "neo-tree",
       "Trouble",
       "trouble",
       "netrw",
-      "oil",
-      "oil_preview",
-      "fzf",
-      "lazy",
-      "lspinfo",
-      "mason",
-      "minifiles",
-      "notify",
-      "noice",
-      "toggleterm",
-      "lazyterm",
     }
+    -- This handles all floating windows
+    local win = vim.api.nvim_win_get_config(0)
+    if win.relative ~= "" then
+      return
+    end
     if not vim.tbl_contains(excluded_filetypes, vim.bo.filetype) then
       vim.cmd("vertical resize " .. math.floor(vim.o.columns / 1.618))
     end

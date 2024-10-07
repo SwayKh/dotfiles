@@ -25,7 +25,6 @@ return {
         WinBarNC = { link = "WinBarNC" },
       },
     })
-    vim.keymap.set("n", "<leader>t", "<Cmd>ToggleTerm <CR>", { silent = true, desc = "[T]oggleTerm [F]loating" })
     vim.keymap.set(
       "n",
       "<leader>th",

@@ -5,5 +5,5 @@ return {
   build = function()
     vim.fn["mkdp#util#install"]()
   end,
-  vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>"),
+  vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Preview Markdown" }),
 }

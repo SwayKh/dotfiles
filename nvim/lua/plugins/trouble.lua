@@ -12,16 +12,20 @@ return {
       preview = {
         type = "main",
         -- Set to false, if you want the preview to always be a real loaded buffer.
-        scratch = false,
+        scratch = true,
       },
       win = {
         border = "none",
-        size = 0.30,
+        size = 0.38, -- This weird size makes sense with the resize autocmd
       },
       modes = {
         symbols = {
-          win = { position = "bottom" },
-          focus = false,
+          win = { position = "right" },
+          focus = true,
+        },
+        diagnostics = {
+          win = { position = "right" },
+          focus = true,
         },
       },
     })

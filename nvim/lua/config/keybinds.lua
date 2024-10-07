@@ -9,21 +9,21 @@ map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
 map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })
-map("n", "<leader>f", "<Cmd>Vexplore!<CR>", { silent = true, desc = "Open netrw on right side" })
+map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
 
 -- This overrides to <C-i> function of the jumplist(Which I don't use)
 map("n", "<tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
 map("n", "<S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
+
+-- Go to Beginning or End of line
+map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
+map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 
 -- Move between splits
 map("n", "<C-j>", "<C-w>j", { desc = "Move Between splits with HJKL" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move Between splits with HJKL" })
 map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
-
--- Go to Beginning or End of line
-map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
-map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 
 -- Move in insert mode, And Command-line mode
 map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
@@ -49,8 +49,8 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Move through long lines of text visually
-map("n", "k", "v:count == 0 ? 'gkzz' : 'kzz'", { expr = true, silent = true })
-map("n", "j", "v:count == 0 ? 'gjzz' : 'jzz'", { expr = true, silent = true })
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Scroll keybinds
 map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines" })
@@ -92,7 +92,7 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 -- map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
 -- Save, Quit
-map("n", "qq", "<Cmd>%bd<CR><Cmd>Alpha<CR>", { silent = true, desc = "[Q]uit" })
+map("n", "qq", "<Cmd>%bd<CR><Cmd>quit<CR>", { silent = true, desc = "[Q]uit" })
 map("n", "<leader>Q", "<Cmd>wqa!<CR>", { silent = true, desc = "Save all files and [Q]uit" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave all files" })
 map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>q<CR>", { silent = true, desc = "[Q]uit" })
