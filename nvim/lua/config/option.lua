@@ -26,8 +26,8 @@ vim.opt.inccommand = "split"
 vim.opt.autowrite = true
 vim.opt.autoread = true
 
--- Set a colorcolumn, I like mine at 120
-vim.opt.colorcolumn = "80"
+-- Set a colorcolumn,
+vim.opt.colorcolumn = "0"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -132,7 +132,7 @@ vim.opt.showmode = false
 vim.opt.swapfile = false
 
 -- Options for the starting screen on neovim. See :h shortmess for detail
-vim.opt.shortmess = "filnxtToOFsI"
+vim.opt.shortmess = "filnxtToOFs" -- I for Intro screen
 
 -- Option for insert mode completion
 vim.opt.completeopt = "menuone,menu,noselect"

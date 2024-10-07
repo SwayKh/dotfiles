@@ -22,7 +22,10 @@ require("lazy").setup({
       height = 0.8,
     },
   },
-
+  rocks = {
+    -- Disable lua rocks
+    enabled = false,
+  },
   checker = {
     enabled = false, -- Don't check for plugin update automatically
     notify = false,
