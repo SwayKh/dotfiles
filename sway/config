@@ -26,7 +26,7 @@ gaps outer 3px
 gaps inner 3px
 smart_gaps inverse_outer
 
-font pango:  JetBrainsMono Nerd Font 9
+font pango:  JetBrainsMono Nerd Font 10
 
 #
 # Example configuration:
