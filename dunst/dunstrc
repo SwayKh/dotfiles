@@ -2,7 +2,7 @@
 # /etc/dunst/dunstrc
 
 [global]
-    font = "JetBrainsMono Nerd Font 9"
+    font = "JetBrainsMono Nerd Font 10"
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
@@ -13,7 +13,8 @@
     ignore_newline = no
     geometry = "200x5-6+30"
     transparency = 0
-    idle_threshold = 120
+    # Don't timeout notification is user is idle for this amount of time, potentially useful
+    idle_threshold = 0
     monitor = 0
     follow = mouse
     sticky_history = yes
