@@ -5055,3 +5055,4626 @@
 : 1725548209:0;clear
 : 1725548212:0;lg
 : 1725548671:0;cp -a ~/.zsh_history ~/.zsh_history.bak
+: 1725548672:0;lg
+: 1725548716:0;clear
+: 1725550145:0;cd Linksym
+: 1725550145:0;ls
+: 1725550146:0;lg
+: 1725550149:0;nvim main.go
+: 1725550226:0;cd ..
+: 1725550228:0;cd GoClass
+: 1725550228:0;ls
+: 1725550258:0;mv structs Structs
+: 1725550259:0;ls
+: 1725550265:0;mkdir Regex
+: 1725550267:0;cd Regex
+: 1725550275:0;go mod init regex-and-search
+: 1725550279:0;go mod titdy
+: 1725550283:0;go mod tidy
+: 1725550287:0;touch main
+: 1725550292:0;touch main.go
+: 1725550292:0;ls
+: 1725550294:0;rm main
+: 1725550295:0;ls
+: 1725550299:0;nvim main.go
+: 1725550737:0;go run .
+: 1725552229:0;nvim
+: 1725554316:0;ls
+: 1725554318:0;cd ../..
+: 1725554319:0;ls
+: 1725554322:0;nvim Linksym
+: 1725554334:0;cd Linksym
+: 1725554335:0;ls
+: 1725554830:0;nvim main.go
+: 1725555057:0;go run .
+: 1725555191:0;lf
+: 1725555263:0;go run .
+: 1725555269:0;ls
+: 1725555270:0;lf
+: 1725555308:0;go run .
+: 1725555314:0;ls
+: 1725555317:0;rm test.txt
+: 1725555317:0;ls
+: 1725555322:0;go run .
+: 1725555324:0;lf
+: 1725555362:0;go run .
+: 1725555367:0;rm test.txt
+: 1725555368:0;ls
+: 1725555369:0;lt
+: 1725555383:0;lt -n 3
+: 1725555388:0;lt -n=3
+: 1725555393:0;go run .
+: 1725555425:0;rm test.txt
+: 1725555426:0;ls
+: 1725555431:0;go run .
+: 1725555434:0;lt
+: 1725555454:0;rm test.txt
+: 1725555454:0;ls
+: 1725555457:0;go run .
+: 1725555458:0;ls
+: 1725555463:0;la
+: 1725555476:0;rm test.txt
+: 1725555598:0;lg
+: 1725555681:0;ls
+: 1725555683:0;nvim main.go
+: 1725555830:0;lg
+: 1725555833:0;lf
+: 1725555835:0;go run .
+: 1725555836:0;ls
+: 1725555838:0;la
+: 1725555875:0;go run .
+: 1725555880:0;rm test.txt
+: 1725555882:0;go run .
+: 1725555883:0;ls
+: 1725555884:0;la
+: 1725555920:0;go run .
+: 1725556035:0;ls
+: 1725556038:0;rm test.txt
+: 1725556063:0;go run .
+: 1725556520:0;go ru n.
+: 1725556522:0;go run .
+: 1725556647:0;ls
+: 1725556648:0;lg
+: 1725556685:0;cd ..
+: 1725556685:0;ls
+: 1725556687:0;cd Gat
+: 1725556689:0;go buil
+: 1725556692:0;go build
+: 1725556693:0;ls
+: 1725556700:0;cd ../Linksym
+: 1725556744:0;ls
+: 1725556748:0;nvim .gitignore
+: 1725556761:0;go build
+: 1725556762:0;ls
+: 1725556767:0;nvim .gitignore
+: 1725556815:0;lg
+: 1725556885:0;clear
+: 1725556888:0;fastfetch
+: 1725606296:0;clear
+: 1725606298:0;up
+: 1725606696:0;fastfetch
+: 1725607300:0;riverctl list-inputs
+: 1725607567:0;riverctl list-input-configs
+: 1725608163:0;riverctl spawn "setleds +num < /dev/tty1"
+: 1725608263:0;riverctl spawn "sh -c 'setsid setleds +num < /dev/tty1'"
+: 1725608403:0;rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &\
+
+: 1725608465:0;riverctl send-layout-cmd rivertile "view-padding 2"
+: 1725608476:0;riverctl send-layout-cmd rivertile "outer-padding 2"
+: 1725608658:0;riverctl send-layout-cmd rivertile "outer-padding 0"
+: 1725608813:0;riverctl send-layout-cmd rivertile
+: 1725608818:0;riverctl send-layout-cmd rivertile "outer-padding -1"
+: 1725608824:0;riverctl send-layout-cmd rivertile "outer-padding 1"
+: 1725608829:0;riverctl send-layout-cmd rivertile "outer-padding 0"
+: 1725608832:0;riverctl send-layout-cmd rivertile "-outer-padding 0"
+: 1725608887:0;clear
+: 1725608888:0;fastfetch
+: 1725609247:0;riverctl send-layout-cmd rivertile "-outer-padding 2"
+: 1725609253:0;riverctl send-layout-cmd rivertile "-view-padding 2"
+: 1725609358:0;clear
+: 1725609360:0;fastfetch
+: 1725610002:0;pyActivate
+: 1725610161:0;nvim Gat/main.go
+: 1725611475:0;lswt
+: 1725612120:0;paru -S wlr-randrdr
+: 1725612123:0;paru -S wlr-randr
+: 1725612131:0;man wlr-randr
+: 1725612143:0;wlr-randr -h
+: 1725612158:0;wlr-randr --output eDP-1 off
+: 1725612172:0;wlr-randr --output eDP-1 --off
+: 1725612255:0;wlr-randr --output eDP-1 --on
+: 1725612261:0;btop
+: 1725612284:0;ps -aux | grep river
+: 1725612344:0;wlr-randr -h
+: 1725612348:0;wlr-randr --help
+: 1725612660:0;wlr-randr --output eDP-1 --on
+: 1725612821:0;wlr-randr --output eDP-1 --off
+: 1725612903:0;echo $WAYLAND_DISPLAY
+: 1725612917:0;export WAYLAND_DISPLAY=wayland-0
+: 1725612919:0;echo $WAYLAND_DISPLAY
+: 1725612922:0;wlr-rnadr
+: 1725612927:0;wlr-randr
+: 1725612944:0;wlr-randr --output eDP-1 --on
+: 1725612975:0;top
+: 1725612988:0;ls
+: 1725612990:0;tmux ls
+: 1725613000:0;tmux attach -t Terminal
+: 1725613001:0;ls
+: 1725613015:0;wlr-randr --output eDP-1 --on
+: 1725613022:0;ls
+: 1725613026:0;clear
+: 1725613027:0;ls
+: 1725613034:0;echo $WAYLAND_DISPLAY
+: 1725613057:0;tmux ls
+: 1725613085:0;ls
+: 1725613088:0;echo $WAYLAND_DISPLAY
+: 1725613097:0;export WAYLAND_DISPLAY=wayland-1
+: 1725613100:0;wlr-randr --output eDP-1 --on
+: 1725613107:0;wlr-randr
+: 1725613117:0;wlr-randr --output eDP-1 --on
+: 1725613163:0;wlr-randr
+: 1725613192:0;wlr-randr --output eDP-1 --on --mode 1366x768@60
+: 1725613206:0;wlr-randr -h
+: 1725613218:0;wlr-randr --output eDP-1 --on --mode 1366x768@60Hz
+: 1725613222:0;wlr-randr --output eDP-1 --on --mode 1366x768
+: 1725613228:0;wlr-randr --output eDP-1 --toggle
+: 1725613243:0;wlr-randr --json
+: 1725613249:0;wlr-randr -h
+: 1725613266:0;wlr-randr --output eDP-1 --on
+: 1725613287:0;btop
+: 1725613300:0;killall river
+: 1725613323:0;echo $WAYLAND_DISPLAY
+: 1725613380:0;tmux ls
+: 1725613392:0;tmux kill-server
+: 1725613780:0;riverctl spawn "swayidle -w"
+: 1725613800:0;riverctl spawn "swayidle -w"\
+
+: 1725613811:0;swayidle -w
+: 1725613838:0;swaylock -f
+: 1725613845:0;swayidle -h
+: 1725613857:0;swayidle
+: 1725613862:0;clear
+: 1725613969:0;lswt
+: 1725621229:0;cd Linksym
+: 1725621229:0;ls
+: 1725621232:0;nvim specification.txt
+: 1725621428:0;ls
+: 1725621433:0;nvim .gitignore
+: 1725621446:0;lg
+: 1725621454:0;nvim specification.txt
+: 1725621536:0;ls
+: 1725621537:0;lg
+: 1725621558:0;fshow
+: 1725621618:0;nvim specification.txt
+: 1725621647:0;lg
+: 1725621729:0;clear
+: 1725621733:0;fastfetch
+: 1725621735:0;cn
+: 1725621739:0;cleanfetch
+: 1725621747:0;c.
+: 1725621757:0;nvim .zshrc
+: 1725621769:0;nvim
+: 1725621795:0;clear
+: 1725621798:0;cleanfetch
+: 1725621800:0;source ~/.zshrc
+: 1725621802:0;clear
+: 1725621806:0;cleanfetch
+: 1725631112:0;ls
+: 1725631119:0;rm -rf .git
+: 1725631120:0;ls
+: 1725631122:0;lg
+: 1725631160:0;git init
+: 1725631161:0;ls
+: 1725631165:0;lg
+: 1725631176:0;nvim README.md
+: 1725631226:0;ga README.md
+: 1725631229:0;gc
+: 1725631246:0;git branch -M main
+: 1725631255:0;git remote add origin https://github.com/SwayKh/Linksym.git
+: 1725631258:0;git push
+: 1725631262:0;lg
+: 1725631275:0;ga .gitignore
+: 1725631277:0;gc
+: 1725631296:0;gp
+: 1725631476:0;gP
+: 1725631481:0;lg
+: 1725634355:0;ls
+: 1725634359:0;lt
+: 1725634360:0;la
+: 1725634362:0;ll
+: 1725634364:0;la
+: 1725634763:0;nvim main.go
+: 1725636417:0;nmcli dev wifi list
+: 1725636866:0;go run .
+: 1725636999:0;go mod tidy
+: 1725637155:0;go run .
+: 1725637160:0;go build
+: 1725637165:0;./Linksym
+: 1725637226:0;cd ..
+: 1725637229:0;cd Gat
+: 1725637229:0;ls
+: 1725637236:0;nvim go.mod
+: 1725637251:0;rm go.mod
+: 1725637288:0;go mod init github.com/SwayKh/gat
+: 1725637292:0;go mod tidy
+: 1725637295:0;lg
+: 1725637466:0;cd
+: 1725637467:0;cd Test
+: 1725637468:0;ls
+: 1725637477:0;go get github.com/SwayKh/gat
+: 1725637505:0;go
+: 1725637613:0;gat
+: 1725637626:0;go install github.com/SwayKh/gat
+: 1725637634:0;go install github.com/SwayKh/gat@latest
+: 1725637654:0;gat
+: 1725637661:0;gat config.rasi
+: 1725637675:0;ls
+: 1725637682:0;gat config.rasi
+: 1725637695:0;go
+: 1725637708:0;go clean github.com/SwayKh/gat
+: 1725637712:0;go clean github.com/SwayKh/gat@latest
+: 1725637725:0;whic gat
+: 1725637728:0;which gat
+: 1725637750:0;rm -f $(which gat)
+: 1725637752:0;gat
+: 1725637755:0;clear
+: 1725637758:0;cd
+: 1725637761:0;cd Projects/Go
+: 1725637762:0;ls
+: 1725637764:0;cd Gat
+: 1725637764:0;ls
+: 1725637767:0;nvim main.go
+: 1725637836:0;go build
+: 1725637837:0;ls
+: 1725637840:0;gat LICENSE
+: 1725637843:0;la
+: 1725637847:0;./gat LICENSE
+: 1725637852:0;nvim main.go
+: 1725637858:0;go build
+: 1725637860:0;./gat LICENSE
+: 1725637863:0;nvim main.go
+: 1725637873:0;go build
+: 1725637878:0;lg
+: 1725637922:0;nvim main.go
+: 1725637943:0;go build
+: 1725637947:0;lg
+: 1725638000:0;cd 
+: 1725638002:0;cd Test
+: 1725638005:0;go install github.com/SwayKh/gat@latest
+: 1725638011:0;gat config.rasi
+: 1725638055:0;rm -f $(which gat)
+: 1725638233:0;cd
+: 1725638237:0;cd Projects/Go/Gat
+: 1725638238:0;ls
+: 1725638239:0;nvim README.md
+: 1725638552:0;lg
+: 1725638595:0;cd 
+: 1725638596:0;cd Test
+: 1725638597:0;gat
+: 1725638607:0;go install github.com/SwayKh/gat@latest
+: 1725638611:0;gat config.rasi
+: 1725638617:0;gat config.rasi 
+: 1725638702:0;cd 
+: 1725638707:0;cd Projects/Go/Gat
+: 1725638708:0;ls
+: 1725638710:0;nvim go.mod
+: 1725638716:0;cd
+: 1725638718:0;cd Test
+: 1725638729:0;rm -f $(which gat)
+: 1725638756:0;cd
+: 1725638758:0;cd Projects/Go/Gat
+: 1725638758:0;ls
+: 1725638764:0;go build
+: 1725638765:0;ls
+: 1725638773:0;./gat main.go
+: 1725638804:0;ls
+: 1725638808:0;whic gat
+: 1725638810:0;which gat
+: 1725638820:0;ls
+: 1725638822:0;nvim go.mod
+: 1725638828:0;go install github.com/SwayKh/gat@latest
+: 1725638832:0;ls
+: 1725638833:0;which gatt-service
+: 1725638836:0;which gat
+: 1725638836:0;ls
+: 1725638844:0;source ~/.zshrc
+: 1725638847:0;gat config.rasi
+: 1725638894:0;./../go/bin/gat config.rasi
+: 1725638910:0;rm -f $(which gat)
+: 1725638915:0;go clean -modcache
+: 1725638934:0;go install github.com/SwayKh/gat@latest
+: 1725638945:0;gat config.rasi
+: 1725638947:0;clear
+: 1725638958:0;go install github.com/SwayKh/gat@v0.1.0
+: 1725638978:0;which gat
+: 1725638981:0;gat config.rasi
+: 1725638985:0;rm -f $(which gat)
+: 1725638986:0;gat
+: 1725638996:0;ls ~/go/bin
+: 1725639288:0;rm -f $(which gat)
+: 1725639289:0;clear
+: 1725639290:0;gat
+: 1725639292:0;clear
+: 1725639293:0;lg
+: 1725639297:0;cd ../Linksym
+: 1725639298:0;ls
+: 1725639323:0;clear
+: 1725639416:0;ls
+: 1725639418:0;nvim go.mod
+: 1725639424:0;ls
+: 1725639427:0;go mod tidy
+: 1725639429:0;go build
+: 1725639430:0;ls
+: 1725639442:0;rm linksym Linksym
+: 1725639449:0;nvim .gitignore
+: 1725639454:0;lg
+: 1725639460:0;nvim main.go
+: 1725639633:0;go build
+: 1725639637:0;./linksym
+: 1725640717:0;go run .
+: 1725640773:0;ls
+: 1725640776:0;go build
+: 1725640825:0;./linksym ~/.bash_logout
+: 1725640831:0;ls
+: 1725640867:0;clear
+: 1725640868:0;ls
+: 1725640872:0;cleanfetch
+: 1725640890:0;lg
+: 1725641037:0;ls
+: 1725641038:0;lg
+: 1725641040:0;fshow
+: 1725641043:0;clear
+: 1725641083:0;cleanfetch
+: 1725694880:0;fastfetch
+: 1725695013:0;man rofi
+: 1725695028:0;man dmenu
+: 1725695036:0;man rofi-dmenu
+: 1725695099:0;nmcli dev wifi list
+: 1725695226:0;cd Linksym
+: 1725695810:0;docker
+: 1725695814:0;pacman -Qe | awk '{print $1}' | xargs -I{} bash -c 'echo "$(pactree -u {} | wc -l) {}"' | sort -n -k1\
+
+: 1725695820:0;;
+: 1725695830:0;yeet floorp google-chrome
+: 1725695833:0;clear
+: 1725695875:0;up
+: 1725695886:0;pacPreviewInstalled
+: 1725695893:0;cleanfetch
+: 1725696018:0;yazi
+: 1725696188:0;pactree -r electron3
+: 1725696193:0;pactree -r electron30
+: 1725696195:0;pactree -r electron31
+: 1725696198:0;pactree -r electron32
+: 1725696236:0;# Linux/macOS\
+git clone https://github.com/BennyOe/onedark.yazi.git ~/.config/yazi/flavors/onedark.yazi\
+\
+# Windows\
+git clone https://github.com/BennyOe/onedark.yazi.git %AppData%\yazi\config\flavors\onedark.yazi
+: 1725696245:0;git clone https://github.com/BennyOe/onedark.yazi.git ~/.config/yazi/flavors/onedark.yazi
+: 1725696275:0;yazi
+: 1725696396:0;ls
+: 1725696412:0;nvim main.go
+: 1725696417:0;cd
+: 1725696447:0;c.
+: 1725696449:0;cd yazi
+: 1725696449:0;ls
+: 1725696454:0;nvim init.lua
+: 1725697170:0;ls
+: 1725697175:0;sour
+: 1725697178:0;source ~/.zshrc
+: 1725697181:0;nvim init.lua
+: 1725697219:0;up
+: 1725697737:0;nvim init.lua
+: 1725697782:0;cleanfetch
+: 1725697857:0;yazi
+: 1725697865:0;tmux ls
+: 1725697876:0;yazi
+: 1725697936:0;c.
+: 1725697937:0;cd yazi
+: 1725697939:0;nvim init.lua
+: 1725697945:0;c.
+: 1725697947:0;cd yazi
+: 1725697948:0;ls
+: 1725697949:0;lf
+: 1725698003:0;clear
+: 1725698004:0;c.
+: 1725698006:0;cd yazi
+: 1725698006:0;ls
+: 1725698016:0;up
+: 1725698020:0;lf
+: 1725698382:0;yazi
+: 1725698464:0;ls
+: 1725698467:0;nvim init.lua
+: 1725698470:0;yazi
+: 1725698536:0;ls
+: 1725698537:0;nvim
+: 1725699492:0;ls
+: 1725699505:0;pm
+: 1725699588:0;paru -S ripdrag-git
+: 1725699770:0;c.
+: 1725699780:0;ripdrag home.gitignore
+: 1725699813:0;ripdrag -i -t -x home.gitignore
+: 1725699819:0;ripdrag -t -x home.gitignore
+: 1725700199:0;clear
+: 1725700218:0;nvim keymap.toml
+: 1725700291:0;nvim -d Test/YaziConfig/keymap.toml .config/yazi/keymap.toml
+: 1725700664:0;nvim yazi.toml
+: 1725700704:0;yazi
+: 1725702243:0;lswt
+: 1725702251:0;tmux kill-session -t FileManager
+: 1725724648:0;nmcli dev wifi list
+: 1725724695:0;nmcli 
+: 1725724750:0;nmcli dev wifi list
+: 1725726617:0;go build -o ./bin/
+: 1725726640:0;go build 
+: 1725726661:0;go build ./cmd/main.go -o ./bin
+: 1725726672:0;go build ./cmd/main.go -o ./bin/linksym
+: 1725726684:0;lf
+: 1725726700:0;ls
+: 1725726706:0;go build ./cmd/main.go
+: 1725726707:0;ls
+: 1725726721:0;go build ./cmd/main.go -o linksym
+: 1725726757:0;go list
+: 1725726787:0;go env help
+: 1725726792:0;go help env
+: 1725726805:0;go env
+: 1725726862:0;go build -o ./bin/linksym ./cmd/main.go
+: 1725726864:0;ls
+: 1725726867:0;rm main
+: 1725726868:0;ls
+: 1725726869:0;lt
+: 1725726877:0;go build -o ./bin/ ./cmd/main.go
+: 1725726878:0;ls
+: 1725726879:0;lt
+: 1725726884:0;rm bin/main
+: 1725727352:0;nvim specification.txt
+: 1725729021:0;nvim 
+: 1725729368:0;ls
+: 1725729369:0;lg
+: 1725729406:0;clear
+: 1725729409:0;cleanfetch
+: 1725729655:0;c.
+: 1725729655:0;lg
+: 1725779825:0;paru -Si vbetool
+: 1725781433:0;paru -S vbetool
+: 1725781444:0;vbetool
+: 1725781461:0;vbetool dpme off
+: 1725781469:0;sudo vbetool dpme off
+: 1725781477:0;vbetool dpms off
+: 1725781483:0;sudo vbetool dpms off
+: 1725781563:0;yeet vbetool
+: 1725781732:0;echo 1 > /sys/class/backlight/*/bl_power 
+: 1725781739:0;sudo echo 1 > /sys/class/backlight/*/bl_power 
+: 1725781805:0;paru -Si xset
+: 1725781811:0;paru -Si xorg-xset
+: 1725781821:0;paru -S xorg-xset
+: 1725781866:0;xset dpms force off
+: 1725781908:0;yeet xorg-xset
+: 1725781932:0;paru -Rns xorg-set
+: 1725781935:0;paru -Rns xorg-sset
+: 1725781937:0;paru -Rns xorg-xset
+: 1725781941:0;paru -Rnsd xorg-xset
+: 1725781946:0;paru -Rnc xorg-xset
+: 1725781965:0;paru -Rnss xorg-xset
+: 1725781982:0;wlr-randr --output eDP-1 --off
+: 1725782025:0;wlr-randr --output eDP-1 --on
+: 1725782029:0;echo 1 > /sys/class/backlight/*/bl_power 
+: 1725782038:0;btop
+: 1725782279:0;killall river
+: 1725782302:0;tmux kill-server
+: 1725782313:0;wlr-randr --output eDP-1 --toggle
+: 1725782327:0;killall river
+: 1725782455:0;wlr-randr
+: 1725782458:0;wlr-randr -h
+: 1725782662:0;(sleep 10 && wlr-randr --output eDP-1 --toggle) &
+: 1725782664:0;wlr-randr --output eDP-1 --toggle
+: 1725782678:0;clear
+: 1725782681:0;cleanfetch
+: 1725783163:0;ls
+: 1725783165:0;cd Linksym
+: 1725783165:0;ls
+: 1725783166:0;nvim
+: 1725787043:0;go run .
+: 1725787079:0;go run ./cmd/main.go
+: 1725787086:0;go run ./cmd/main.go ./test/nested/test.txt
+: 1725787148:0;go run ./cmd/main.go test/nested/test.txt
+: 1725787528:0;clear
+: 1725787532:0;go run ./cmd/main.go test/nested/test.txt
+: 1725787569:0;lf
+: 1725787685:0;go run ./cmd/main.go test/nested/test.txt
+: 1725787687:0;lf
+: 1725788251:0;go run ./cmd/main.go test/nested
+: 1725788253:0;lf
+: 1725788264:0;clear
+: 1725795708:0;c.
+: 1725795709:0;up
+: 1725797299:0;ls
+: 1725797301:0;lt
+: 1725797307:0;lf
+: 1725797335:0;ls
+: 1725797343:0;go run ./cmd/main.go test/nested/test.txt
+: 1725797344:0;lf
+: 1725797371:0;go run ./cmd/main.go test/nested/
+: 1725797472:0;lf
+: 1725797485:0;ls
+: 1725797492:0;go run ./cmd/main.go test/nested
+: 1725797494:0;lf
+: 1725797510:0;go run ./cmd/main.go test/nested
+: 1725797523:0;cd ..
+: 1725797525:0;go run ./cmd/main.go test/nested
+: 1725797526:0;lf
+: 1725797536:0;ls
+: 1725797761:0;cd /
+: 1725797761:0;ls
+: 1725797766:0;cd tmp
+: 1725797767:0;ls
+: 1725797772:0;touch testing.file
+: 1725797773:0;ls
+: 1725797781:0;rm testing.file
+: 1725797784:0;cd ..
+: 1725797784:0;ls
+: 1725797787:0;cd mnt
+: 1725797788:0;ls
+: 1725797792:0;touch testing.file
+: 1725797798:0;sudo touch testing.file
+: 1725797803:0;cd
+: 1725797812:0;cd Projects/Go/Linksym/
+: 1725797812:0;ls
+: 1725797823:0;go run ./cmd/main.go /mnt/testing.file
+: 1725797837:0;ls
+: 1725797839:0;lf
+: 1725797863:0;cd ~/Projects/Go/Linksym/
+: 1725797864:0;ls
+: 1725797910:0;cleanfetch
+: 1725798453:0;ls
+: 1725798459:0;rm testing.file
+: 1725798460:0;ls
+: 1725798473:0;go run ./cmd/main.go /mnt/testing.file
+: 1725798485:0;sudo go run ./cmd/main.go /mnt/testing.file
+: 1725798493:0;ls
+: 1725798495:0;lf
+: 1725798537:0;sudo rm testing.file
+: 1725798542:0;ls
+: 1725798546:0;cleanfetch
+: 1725798550:0;rm testing.file
+: 1725798599:0;lg
+: 1725807145:0;ls
+: 1725807149:0;lf
+: 1725807150:0;lg
+: 1725807165:0;ls
+: 1725807165:0;g
+: 1725807167:0;lg
+: 1725807396:0;lswt
+: 1725811144:0;nmcli dev wifi list
+: 1725811193:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1725811659:0;paru -Si tree
+: 1725812185:0;ls
+: 1725812188:0;nvim
+: 1725813306:0;cd
+: 1725813393:0;go get gopkg.in/yaml.v3\
+
+: 1725813408:0;nvim
+: 1725814042:0;clear
+: 1725814082:0;lg
+: 1725814086:0;c.
+: 1725814087:0;lf
+: 1725814091:0;fshow
+: 1725814093:0;lf
+: 1725814171:0;ls
+: 1725814177:0;lf
+: 1725814182:0;lg
+: 1725814370:0;cd scripts
+: 1725814371:0;lg
+: 1725814376:0;cd ..
+: 1725814377:0;lg
+: 1725814387:0;nvim README.md
+: 1725814716:0;ls
+: 1725814718:0;lf
+: 1725814742:0;lg
+: 1725814857:0;lf
+: 1725814859:0;lg
+: 1725814875:0;rm hypr/.conform.5170903.README.md
+: 1725814876:0;ls
+: 1725814878:0;lt
+: 1725814956:0;go run ./cmd/main.go /mnt/testing.file
+: 1725815937:0;c
+: 1725815938:0;cd
+: 1725815942:0;cd Projects/Go/Password-Generator
+: 1725815943:0;ls
+: 1725815944:0;nvim
+: 1725815976:0;c.
+: 1725815979:0;cleanfetch
+: 1725816007:0;lf
+: 1725816012:0;ls
+: 1725816013:0;nvim
+: 1725816542:0;ls
+: 1725816546:0;go run ./cmd/main.go
+: 1725816552:0;go run ./cmd/main.go go.sum
+: 1725816556:0;ls
+: 1725816561:0;lf
+: 1725816575:0;lg
+: 1725816611:0;rm .linksym.yaml
+: 1725816611:0;ls
+: 1725816612:0;lg
+: 1725816712:0;nvim
+: 1725816750:0;clear
+: 1725863621:0;cleanfetch
+: 1725863920:0;cd Linksym
+: 1725863920:0;ls
+: 1725863922:0;lg
+: 1725868837:0;lf
+: 1725868840:0;cd Linksym
+: 1725868868:0;source ~/.zshrc
+: 1725868918:0;fc-cache
+: 1725868936:0;paru -S ttf-nerd-fonts-symbols
+: 1725868957:0;fc-cache -u
+: 1725868974:0;fc-list 
+: 1725869099:0;ls
+: 1725869104:0;cd Projects/Go/Password-Generator
+: 1725869247:0;starship explain
+: 1725869255:0;cd Projects/Go/Password-Generator
+: 1725869258:0;cd
+: 1725869260:0;cd Projects/Go/Password-Generator
+: 1725869271:0;starship completions
+: 1725869275:0;starship completions zsh
+: 1725869282:0;starship explain
+: 1725869303:0;starship time
+: 1725869310:0;starship time -hV
+: 1725869322:0;starship timings
+: 1725869331:0;starship prompt
+: 1725869338:0;starship module
+: 1725869341:0;starship module go
+: 1725869344:0;starship module Go
+: 1725869351:0;starship config
+: 1725869386:0;paru -Qq | fzf --height=100% --preview='pacman -Si {}'
+: 1725869421:0;echo -e "\xf0\x9f\x90\x8d"
+: 1725869428:0;echo -e "\xee\x82\xa0"
+: 1725869481:0;paru -S noto-fonts-emoji
+: 1725869513:0;locale
+: 1725869541:0;fc-cache
+: 1725869545:0;source ~/.zshrc
+: 1725869554:0;echo -e "\xf0\x9f\x90\x8d"
+: 1725869626:0;locale -a
+: 1725869645:0;locale-gen
+: 1725869652:0;sudo locale-gen
+: 1725869659:0;locale
+: 1725869663:0;source ~/.zshrc
+: 1725869705:0;sudoedit /etc/locale.gen
+: 1725869830:0;sudo locale-gen
+: 1725869839:0;cleanfetch
+: 1725869895:0;sudoedit /etc/locale.gen
+: 1725869908:0;sudoedit /etc/locale.conf
+: 1725869924:0;sudo locale-gen
+: 1725869931:0;cleanfetch
+: 1725869942:0;sudoedit /etc/locale.conf
+: 1725869954:0;sudo locale-gen
+: 1725869959:0;clear
+: 1725869960:0;source ~/.zshrc
+: 1725870013:0;localectl set-locale LANG=en_US.UTF-8
+: 1725870016:0;sudo localectl set-locale LANG=en_US.UTF-8
+: 1725870031:0;cleanfetch
+: 1725870034:0;locale
+: 1725870055:0;echo -e "\xf0\x9f\x90\x8d"\
+echo -e "\xee\x82\xa0"
+: 1725870097:0;cat /etc/locale.conf
+: 1725870109:0;locale-gen
+: 1725870118:0;sudo locale-gen
+: 1725870139:0;kill 759 
+: 1725870160:0;cleanfetch
+: 1725870174:0;cd ~/Projects/Go/Password-Generator
+: 1725870184:0;yeet noto-fonts-emoji
+: 1725870188:0;source ~/.zshrc
+: 1725870198:0;cd ~/Projects/Go/Password-Generator
+: 1725870213:0;tmux kill-server 
+: 1725870230:0;kill 24306 
+: 1725870238:0;cd ~/Projects/Go/Password-Generator
+: 1725870275:0;locale 
+: 1725870284:0;locale -a
+: 1725870294:0;sudoedit /etc/locale.conf
+: 1725870322:0;sudo locale-gen
+: 1725870339:0;tmux kill-server
+: 1725870344:0;kill 31001 
+: 1725870355:0;cd ~/Projects/Go/Password-Generator
+: 1725870402:0;sudo localectl set-locale LC_ALL=en_US.utf8
+: 1725870408:0;locale -a
+: 1725870517:0;paru -Qs star
+: 1725870531:0;paru -Si starship
+: 1725870582:0;paru -S noto-color-emoji-fontconfig
+: 1725870600:0;ls
+: 1725870604:0;cleanfetch
+: 1725870607:0;source ~/.zshrc
+: 1725870613:0;tmux kill-server
+: 1725870619:0;kill 34188 
+: 1725870631:0;cd ~/Projects/Go/Password-Generator
+: 1725870665:0;tmux kill-server
+: 1725870693:0;cd Linksym
+: 1725870694:0;ls
+: 1725870801:0;fc-list | grep jetbrains
+: 1725870804:0;fc-list 
+: 1725870871:0;cleanfetch
+: 1725870885:0;sudo locale-gen
+: 1725870899:0;sudo /etc/locale.gen
+: 1725870906:0;sudoedit /etc/locale.gen
+: 1725870958:0;sudoedit /etc/locale.conf
+: 1725870990:0;source ~/.zshrc
+: 1725870996:0;sudo locale-gen
+: 1725870998:0;up
+: 1725871030:0;cleanfetch
+: 1725871108:0;paru -S ttf-firacode-nerd
+: 1725871118:0;ls
+: 1725871121:0;cd ~/Projects/Go/Password-Generator
+: 1725871122:0;lg
+: 1725871181:0;ls
+: 1725871185:0;lf
+: 1725871191:0;ls
+: 1725871202:0;nvim
+: 1725871318:0;man foot
+: 1725871430:0;nvim /etc/xdg/foot
+: 1725871666:0;ls
+: 1725871669:0;cd ~/Projects/Go/Password-Generator
+: 1725871670:0;ls
+: 1725871682:0;yeet noto-color-emoji-fontconfig
+: 1725871688:0;clear
+: 1725871693:0;cd ~/Projects/Go/Password-Generator
+: 1725871695:0;ls
+: 1725871775:0;clear
+: 1725871832:0;ls
+: 1725871834:0;cd ~/Projects/Go/Password-Generator
+: 1725871835:0;ls
+: 1725871841:0;nvim
+: 1725871855:0;ls
+: 1725871860:0;cd ~/Projects/Go/Password-Generator
+: 1725871861:0;ls
+: 1725871863:0;nvim
+: 1725871977:0;cd
+: 1725871977:0;ls
+: 1725871979:0;lf
+: 1725872102:0;pyActivate
+: 1725872103:0;ls
+: 1725872108:0;deactivate
+: 1725872110:0;ls
+: 1725872113:0;cd
+: 1725872176:0;curl -sS https://starship.rs/install.sh | sh
+: 1725872204:0;yeet starship
+: 1725872211:0;tmux kill-server
+: 1725872218:0;kill 734 
+: 1725872231:0;ls
+: 1725872234:0;cd ~/Projects/Go/Password-Generator
+: 1725872235:0;ls
+: 1725872247:0;curl -sS https://starship.rs/install.sh | sh
+: 1725872266:0;cleanfetch
+: 1725872422:0;ls
+: 1725872423:0;nvim
+: 1725872429:0;cd Projects/Go/Password-Generator
+: 1725872430:0;ls
+: 1725872438:0;starship explain
+: 1725872467:0;c.
+: 1725872467:0;ls
+: 1725872469:0;clear
+: 1725872471:0;fshow
+: 1725872512:0;cd
+: 1725872514:0;cd Projects/Go/Password-Generator
+: 1725872515:0;ls
+: 1725872605:0;tmux kill-server
+: 1725872619:0;kill 10136 
+: 1725872636:0;cd Projects/Go
+: 1725872636:0;ls
+: 1725872640:0;nvim Linksym
+: 1725872649:0;cd Linksym
+: 1725872649:0;ls
+: 1725872680:0;pm
+: 1725872719:0;paru -S ttf-font-awesome
+: 1725872727:0;clear
+: 1725872728:0;ls
+: 1725872734:0;cd Projects/Go/Linksym
+: 1725872735:0;ls
+: 1725872878:0;locale
+: 1725872884:0;sudo locale-gen
+: 1725872888:0;locale
+: 1725872890:0;locale -a
+: 1725872901:0;fc-cache
+: 1725872944:0;fc-cache -f -v
+: 1725872959:0;cd Projects
+: 1725872960:0;cd Go
+: 1725872962:0;cd Linksym
+: 1725872964:0;ls
+: 1725872966:0;fc-cache -f -v
+: 1725872979:0;echo -e "\xf0\x9f\x90\x8d"\
+echo -e "\xee\x82\xa0"
+: 1725873046:0;c.
+: 1725873046:0;ls
+: 1725873049:0;cd nvim
+: 1725873049:0;ls
+: 1725873054:0;cd 
+: 1725873059:0;cd - 
+: 1725873060:0;ls
+: 1725873064:0;starship explain
+: 1725873103:0;paru -Qq | grep nerd
+: 1725873131:0;fc-list | grep firecode
+: 1725873135:0;fc-list | grep firacode
+: 1725873141:0;fc-list | fzf
+: 1725873178:0;ls
+: 1725873185:0;cd -
+: 1725873188:0;cd Projects
+: 1725873190:0;ls
+: 1725873191:0;cd Go
+: 1725873192:0;ls
+: 1725873196:0;cd Linksym
+: 1725873196:0;ls
+: 1725873234:0;echo -e "\xf0\x9f\xa6\x80"
+: 1725873271:0;paru -S wezterm
+: 1725873288:0;ls
+: 1725873296:0;c.
+: 1725873296:0;ls
+: 1725873300:0;cd nvim
+: 1725873302:0;cd
+: 1725873304:0;cd Projects/Go
+: 1725873305:0;ls
+: 1725873309:0;cd Linksym
+: 1725873310:0;ls
+: 1725873334:0;paru -S noto-color-emoji-fontconfig
+: 1725873339:0;clear
+: 1725873352:0;cd ~/Projects/Go/Password-Generator
+: 1725873353:0;ls
+: 1725873354:0;cd ..
+: 1725873362:0;c.
+: 1725873364:0;cd nvim
+: 1725873366:0;cd
+: 1725873499:0;nvim
+: 1725873604:0;starship bug-report
+: 1725873687:0;echo $STARSHIP_SHELL
+: 1725873740:0;sour
+: 1725873744:0;ls
+: 1725873752:0;cd Projects
+: 1725873761:0;cd Go
+: 1725873762:0;ls
+: 1725873766:0;cd Linksym
+: 1725873790:0;starship bug-report
+: 1725873929:0;echo -e "\xf0\x9f\x90\x8d"\
+echo -e "\xee\x82\xa0"
+: 1725874067:0;c.
+: 1725874069:0;nvim linkdots.sh
+: 1725874140:0;yeet ttf-firacode-nerd ttf-font-awesome noto-color-emoji-fontconfig
+: 1725874181:0;sh -c 'rm "$(command -v 'starship')"'
+: 1725874202:0;command -v starship
+: 1725874213:0;sudo rm /usr/local/bin/starship
+: 1725874228:0;paru -S starship
+: 1725874245:0;ls
+: 1725874247:0;c.
+: 1725874249:0;cd nvim
+: 1725874314:0;yeet wezterm
+: 1725874351:0;ls
+: 1725874355:0;c.
+: 1725874357:0;cd nvim
+: 1725874357:0;ls
+: 1725874363:0;cd ..
+: 1725874384:0;lg
+: 1725874579:0;ls
+: 1725874609:0;clear
+: 1725874778:0;ls
+: 1725874990:0;cleanfetch
+: 1725875021:0;ls
+: 1725875027:0;c.
+: 1725875048:0;tmux kill-server
+: 1725875064:0;kill 18466 
+: 1725875071:0;c.
+: 1725875072:0;ls
+: 1725875095:0;cd Linksym
+: 1725875097:0;ls
+: 1725875447:0;clear
+: 1725875468:0;ls
+: 1725875609:0;cleanfetch
+: 1725875630:0;+ls
+: 1725875631:0;ls
+: 1725875680:0;clear
+: 1725875680:0;ls
+: 1725875868:0;clear
+: 1725875903:0;ls
+: 1725876046:0;clear
+: 1725876048:0;cleanfetch
+: 1725876056:0;nvim
+: 1725876076:0;cleanfetch
+: 1725876140:0;tmux kill-server
+: 1725876143:0;ls
+: 1725876154:0;kill 45762 
+: 1725876196:0;cd Linksym
+: 1725876220:0;ls
+: 1725876443:0;cd
+: 1725876444:0;ls
+: 1725876447:0;cleanfetch
+: 1725876462:0;ls
+: 1725876472:0;c.
+: 1725876473:0;ls
+: 1725876473:0;lg
+: 1725876477:0;cd
+: 1725876483:0;cd Projects
+: 1725876487:0;cd Go
+: 1725876489:0;cd Linksym
+: 1725876490:0;ls
+: 1725876503:0;clear
+: 1725876554:0;cleanfetch
+: 1725876658:0;cd Linksym
+: 1725876659:0;ls
+: 1725876718:0;nvim
+: 1725877440:0;ls
+: 1725877442:0;cleanfetch
+: 1725877447:0;ls
+: 1725877490:0;l
+: 1725877492:0;ls
+: 1725877569:0;clear
+: 1725877571:0;ls
+: 1725877575:0;l
+: 1725877656:0;cd Linksym
+: 1725878068:0;locale
+: 1725878087:0;sudo localectl set-locale LC_ALL=en_US.UTF-8
+: 1725878091:0;ls
+: 1725878095:0;time
+: 1725878116:0;date
+: 1725878210:0;nvim
+: 1725879658:0;ls
+: 1725879661:0;startship
+: 1725879662:0;ls
+: 1725879664:0;c.
+: 1725879684:0;wlr-randr
+: 1725879697:0;killall river
+: 1725879721:0;tmux kill-server
+: 1725879723:0;ls
+: 1725879734:0;kill 28395 
+: 1725879811:0;cd Linksym
+: 1725879812:0;ls
+: 1725879829:0;nvim specification.txt
+: 1725880237:0;date
+: 1725880244:0;cleanfetch
+: 1725880268:0;fdots
+: 1725880285:0;cleanfetch
+: 1725880286:0;ls
+: 1725880289:0;c.
+: 1725880658:0;ls
+: 1725880660:0;waybar
+: 1725880701:0;clear
+: 1725880702:0;tmux ls
+: 1725880737:0;up
+: 1725880783:0;timedatectl
+: 1725882377:0;ls
+: 1725882381:0;nvim test.go
+: 1725882415:0;ls
+: 1725882564:0;cleanfetch
+: 1725882606:0;cd Test
+: 1725882607:0;ls
+: 1725882633:0;go install github.com/SwayKh/gat@latest
+: 1725882636:0;ls
+: 1725882641:0;gat headscale.apikey
+: 1725882645:0;gat nala.md
+: 1725882658:0;ls
+: 1725882664:0;gat config.rasi
+: 1725882672:0;gat < config.rasi
+: 1725882673:0;clear
+: 1725882679:0;rm -f $(which gat)
+: 1725891021:0;lg
+: 1725891741:0;nvim
+: 1725892228:0;ls
+: 1725892319:0;go run ./cmd/main.go
+: 1725892325:0;go run ./cmd/main.go test/nested/test.txt
+: 1725893275:0;go run .
+: 1725893288:0;go run . test/nested/test.txt
+: 1725894451:0;cd ../Password-Generator
+: 1725894451:0;ls
+: 1725894454:0;nvim
+: 1725894692:0;ls
+: 1725894709:0;go run . test/nested/test.txt
+: 1725894816:0;ls
+: 1725894817:0;lf
+: 1725894843:0;ls
+: 1725894855:0;cleanfetch
+: 1725894864:0;go run . test/nested/test.txt
+: 1725894905:0;clear
+: 1725894905:0;ls
+: 1725894908:0;lf
+: 1725894912:0;ls
+: 1725894915:0;cleanfetch
+: 1725894925:0;go run . test/nested/test.txt
+: 1725895004:0;ls
+: 1725895005:0;lf
+: 1725895017:0;go run . test/nested/test.txt
+: 1725895361:0;lf
+: 1725895371:0;ls
+: 1725895373:0;cleanfetch
+: 1725895383:0;go run . test/nested/test.txt
+: 1725895386:0;lf
+: 1725895399:0;go run . test/nested
+: 1725895403:0;lf
+: 1725895503:0;fd -name *.go
+: 1725895527:0;fd  *.go
+: 1725895531:0;fd . *.go
+: 1725895544:0;find -name main.go
+: 1725895547:0;find -name .go
+: 1725895550:0;find -name *.go
+: 1725895599:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1725899469:0;ls
+: 1725899470:0;lg
+: 1725899508:0;nvim .git
+: 1725899512:0;nvim .gitignore
+: 1725899520:0;lg
+: 1725900122:0;ls
+: 1725900234:0;nvim 
+: 1725900437:0;nvim specification.txt
+: 1725900541:0;ls
+: 1725900553:0;cd Linksym
+: 1725900553:0;ls
+: 1725900556:0;nvim specification.txt
+: 1725900675:0;cd Linksym
+: 1725900675:0;ls
+: 1725900677:0;nvim specification.txt
+: 1725900727:0;cd Linksym
+: 1725900727:0;ls
+: 1725900729:0;nvim specification.txt
+: 1725953913:0;up
+: 1725953930:0;cd Linksym
+: 1725953930:0;ls
+: 1725953962:0;fastfetch
+: 1725953964:0;cleanfetch
+: 1725955141:0;lg
+: 1725955181:0;nvim
+: 1725955187:0;lg
+: 1725955309:0;ls
+: 1725955478:0;cleanfetch
+: 1725955539:0;ls
+: 1725955641:0;clear
+: 1725955673:0;ls
+: 1725955725:0;l
+: 1725955815:0;ls
+: 1725955899:0;nvim
+: 1725955955:0;ls
+: 1725956073:0;cleanfetch
+: 1725956106:0;ls
+: 1725956368:0;nvim
+: 1725956377:0;ls
+: 1725956379:0;nvim
+: 1725956390:0;ls
+: 1725956392:0;cleanfetch
+: 1725956407:0;ls
+: 1725956408:0;clear
+: 1725956410:0;nvim
+: 1725956421:0;ls
+: 1725956422:0;nvim
+: 1725956456:0;cleanfetch
+: 1725956462:0;lg
+: 1725956514:0;ls
+: 1725956518:0;nvim specification.txt
+: 1725956520:0;nvim
+: 1725959983:0;ls
+: 1725959988:0;go run .
+: 1725962929:0;go build -o ./bin/linksym 
+: 1725962930:0;ls
+: 1725962935:0;go run .
+: 1725963131:0;go run . add 
+: 1725963201:0;ls
+: 1725963203:0;cat .linksym.yaml
+: 1725963261:0;ls
+: 1725963263:0;lg
+: 1725963582:0;fshow
+: 1725963609:0;cleanfetch
+: 1725963619:0;git log
+: 1725963639:0;ls
+: 1725963641:0;lg
+: 1725963744:0;nvim
+: 1725963864:0;man fd
+: 1725963882:0;man rg
+: 1725963930:0;nvim
+: 1725963972:0;ls
+: 1725963972:0;lf
+: 1725967738:0;lg
+: 1725967839:0;nvim
+: 1725978673:0;go run . -h
+: 1725978715:0;go run . --help
+: 1725979224:0;go run . remove
+: 1725979266:0;lg
+: 1725979392:0;nvim
+: 1725979673:0;go run . remove
+: 1725979911:0;go run . 
+: 1725979927:0;go run . --help
+: 1725979936:0;go run . add test/nested/test.txt
+: 1725979938:0;ls
+: 1725979941:0;lf
+: 1725979953:0;ls
+: 1725979958:0;go run . add test/nested
+: 1725979967:0;lf
+: 1725979993:0;go run . add test/nested/test.txt test/
+: 1725980063:0;lf
+: 1725980074:0;go run . add test/nested/test.txt test/test.txt
+: 1725980075:0;lf
+: 1725980126:0;cd ../..
+: 1725980127:0;ls
+: 1725980626:0;go run . add test/nested/test.txt test/test.txt
+: 1725980641:0;lf
+: 1725980652:0;go run . add test/nested/test.txt test/
+: 1725980654:0;lf
+: 1725981055:0;go run . add test/nested/test.txt test/
+: 1725981075:0;lf
+: 1725981082:0;go run . add test/nested/test.txt test/
+: 1725984477:0;ls
+: 1725984479:0;lf
+: 1725984507:0;go run . add test/nested/test.txt test/
+: 1725984624:0;nmcli dev wifi list
+: 1725984632:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1725984678:0;go run . add test/nested/test.txt test/
+: 1725984704:0;lf
+: 1725984714:0;clear
+: 1725984777:0;go run .
+: 1725984786:0;go run . add
+: 1725984791:0;go run . add test/nested/test.txt
+: 1725984792:0;lf
+: 1725984889:0;cat .linksym.yaml
+: 1725984900:0;go run . init
+: 1725984902:0;lf
+: 1725984932:0;go build 
+: 1725984935:0;go build -o ./bin/linksym 
+: 1725984937:0;lf
+: 1725984945:0;./linksym 
+: 1725984950:0;./linksym remove
+: 1725984954:0;./linksym init
+: 1725984960:0;./linksym -help
+: 1725984964:0;./linksym --help
+: 1725984969:0;./linksym h
+: 1725984971:0;./linksym -h
+: 1725985098:0;ls
+: 1725985106:0;lg
+: 1725985356:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1725985364:0;cleanfetch
+: 1725985370:0;clear
+: 1725985371:0;lg
+: 1725985376:0;ls
+: 1725985382:0;cleanfetch
+: 1725985451:0;cat .linksym.yaml
+: 1725985456:0;go build
+: 1725985459:0;go build -o ./bin/linksym 
+: 1725985471:0;./linksym add test/nested/test.txt
+: 1725985479:0;./linksym add test/nested
+: 1725985496:0;./linksym add specification.txt test/
+: 1725985518:0;./linksym add README.md test/nested/readme.me
+: 1725985528:0;lf
+: 1725985588:0;cleanfetch
+: 1725986095:0;nvim
+: 1725986172:0;cat .linksym.yaml
+: 1725986221:0;go build
+: 1725986261:0;linksym -h
+: 1725986267:0;./linksym -h
+: 1725986269:0;./linksym remove
+: 1725986865:0;go build
+: 1725986871:0;./linksym remove
+: 1725986883:0;go run . remove
+: 1725987009:0;lf
+: 1725987016:0;ls
+: 1725987018:0;go run .
+: 1725987025:0;go run . add test/nested/test.txt
+: 1725987042:0;go run . init
+: 1725987046:0;go run . add test/nested/test.txt
+: 1725987059:0;go run . add test/nested
+: 1725987068:0;go run . specification.txt test/nested
+: 1725987073:0;go run . add specification.txt test/nested
+: 1725987075:0;lf
+: 1725987084:0;ls
+: 1725987087:0;go run . remove
+: 1725987101:0;cat .linksym.yaml
+: 1725987109:0;lf
+: 1725987129:0;ls
+: 1725987131:0;lg
+: 1725987139:0;nvim
+: 1725987799:0;go build
+: 1725987808:0;go run . add linksg.txt
+: 1725987877:0;cat .linksym.yaml
+: 1725987957:0;lg
+: 1725987979:0;nvim
+: 1725988053:0;lg
+: 1725988067:0;clear
+: 1726038126:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1726038131:0;cleanfetch
+: 1726038171:0;lg
+: 1726038177:0;cd Linksym
+: 1726038245:0;up
+: 1726038265:0;lg
+: 1726038269:0;nvim
+: 1726041777:0;lswt
+: 1726044079:0;clear
+: 1726044084:0;cleanfetch
+: 1726044287:0;ls
+: 1726044292:0;gat .linksym.yaml
+: 1726044297:0;bat .linksym.yaml
+: 1726044909:0;lg
+: 1726045422:0;rm bin/linksym
+: 1726045424:0;go build
+: 1726045426:0;ls
+: 1726045476:0;./linksym remove
+: 1726045480:0;./linksym source
+: 1726045485:0;./linksym -h
+: 1726045504:0;./linksym --help
+: 1726045517:0;./linksym add ~/Test/LinksymTest specification.txt
+: 1726045535:0;lf
+: 1726045549:0;ls
+: 1726045552:0;cleanfetch
+: 1726045554:0;nvim
+: 1726045755:0;go build
+: 1726045759:0;./linksym add ~/Test/LinksymTest specification.txt
+: 1726045926:0;go build
+: 1726045938:0;./linksym add ~/Test/LinksymTest/specification.txt specification.txt
+: 1726045992:0;go build
+: 1726045993:0;./linksym add ~/Test/LinksymTest/specification.txt specification.txt
+: 1726046037:0;./linksym add ~/Test/LinksymTest/ specification.txt
+: 1726046455:0;go build
+: 1726046461:0;./linksym add
+: 1726046467:0;./linksym add ~/Test/LinksymTest/ specification.txt ljlakje/lkjadf
+: 1726046533:0;lg
+: 1726046646:0;lf
+: 1726046650:0;nvim
+: 1726048217:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1726048626:0;lg
+: 1726048628:0;nvim
+: 1726057334:0;ls
+: 1726057343:0;tmux ls
+: 1726057352:0;echo -e "\xf0\x9f\x90\x8d"\
+echo -e "\xee\x82\xa0"
+: 1726057360:0;wlr-randr --output eDP-1 --toggle
+: 1726057372:0;riverctl
+: 1726057377:0;export WAYLAND_DISPLAY=wayland-1
+: 1726057380:0;riverctl
+: 1726057398:0;riverctl spawn "wlr-randr --output eDP-1 --toggle"\
+
+: 1726057420:0;tmux attach -t Go
+: 1726057429:0;ls
+: 1726057432:0;nvim specification.txt
+: 1726057652:0;tmux attach -t Terminal
+: 1726057654:0;ls
+: 1726057659:0;cleanfetch
+: 1726057668:0;tmux attach -t Editor
+: 1726057739:0;tmux ls
+: 1726057748:0;tmux attach -t FileManager
+: 1726057767:0;tmux ls
+: 1726057772:0;cd Projects/Go/Linksym
+: 1726057772:0;ls
+: 1726057774:0;nvim specification.txt
+: 1726057837:0;killall river
+: 1726068966:0;cd Linksym
+: 1726069073:0;ls
+: 1726069074:0;nvim
+: 1726069590:0;ls
+: 1726070215:0;./linksym add ~/Test/LinksymTest test/nested
+: 1726070217:0;lf
+: 1726070256:0;cleanfetch
+: 1726070276:0;paru -Ss nitch
+: 1726070296:0;cleanfetch
+: 1726071405:0;nvim specification.txt
+: 1726073847:0;up
+: 1726074002:0;paru -S amd-ucode bison bluez bluez-libs bluez-utils fastfetch gc gcc gcc-libs gettext github-cli gtk3 imath luajit poppler ripgrep tree-sitter-lua tree-sitter-markdown
+: 1726074401:0;paru -S --needed amd-ucode bison bluez bluez-libs bluez-utils fastfetch gc gcc gcc-libs gettext github-cli gtk3 imath luajit poppler ripgrep tree-sitter-lua tree-sitter-markdown
+: 1726074405:0;clear
+: 1726074407:0;up
+: 1726074548:0;c.
+: 1726074548:0;ls
+: 1726074549:0;lg
+: 1726074931:0;c.
+: 1726074933:0;cd
+: 1726074935:0;cleanfetch
+: 1726075031:0;nvim
+: 1726075557:0;lg
+: 1726075572:0;ls
+: 1726075572:0;g
+: 1726075574:0;lg
+: 1726126445:0;cd Linksym
+: 1726126447:0;ls
+: 1726126449:0;cleanfetch
+: 1726127040:0;tmux ls
+: 1726128553:0;nvim
+: 1726129402:0;go run . remove
+: 1726130560:0;go run . README.md
+: 1726130566:0;go run . remove
+: 1726130919:0;go run .
+: 1726130924:0;go run . remove
+: 1726131392:0;lg
+: 1726131415:0;bat .linksym.yaml
+: 1726131423:0;go run . init
+: 1726131425:0;bat .linksym.yaml
+: 1726131710:0;ls
+: 1726131717:0;nvim
+: 1726131880:0;lg
+: 1726131913:0;nvim
+: 1726131930:0;go run . init
+: 1726131940:0;go run . add specification.txt test/nested
+: 1726131945:0;lf
+: 1726131969:0;go run . add test/nested/test.txt
+: 1726131977:0;go run . add test/nested
+: 1726132023:0;./linksym add ~/Test/LinksymTest/ specification.txt
+: 1726132034:0;./linksym add ~/Test/LinksymTest/specification.txt specification.txt
+: 1726132085:0;bat .linksym.yaml
+: 1726132102:0;go build
+: 1726132106:0;nvim
+: 1726132127:0;lf
+: 1726132153:0;ls
+: 1726132155:0;cleanfetch
+: 1726132221:0;lg
+: 1726132227:0;lf
+: 1726132240:0;lg
+: 1726140502:0;nvim
+: 1726140546:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1726140551:0;nmcli dev wifi list
+: 1726140566:0;ls
+: 1726140569:0;cleanfetch
+: 1726140571:0;nmcli dev wifi list
+: 1726140595:0;systemctl status NetworkManager
+: 1726140615:0;sudo systemctl restart NetworkManager.service
+: 1726140627:0;nmcli dev wifi list
+: 1726140629:0;nmcli 
+: 1726140640:0;nmcli device whoe
+: 1726140643:0;nmcli device show
+: 1726140686:0;nmcli device wifi list
+: 1726140691:0;nmcli dev wifi list
+: 1726140712:0;clear
+: 1726142202:0;nvim
+: 1726143010:0;c.
+: 1726143011:0;ls
+: 1726143013:0;lg
+: 1726143166:0;nvim
+: 1726151895:0;clear
+: 1726151902:0;up
+: 1726151929:0;nmcli dev wifi list
+: 1726151971:0;clear
+: 1726151973:0;up
+: 1726151984:0;refresh-mirrors
+: 1726152233:0;paru -Syyu
+: 1726152329:0;n
+: 1726152331:0;cleanfetch
+: 1726152333:0;refresh-mirrors
+: 1726152422:0;source ~/.zshrc
+: 1726152425:0;cleanfetch
+: 1726152432:0;paru -S neovide
+: 1726152443:0;refresh-mirrors
+: 1726152774:0;systemctl status reflector.service
+: 1726152794:0;timedatectl status
+: 1726152807:0;sudo systemctl enable --now reflector.service
+: 1726152836:0;sudo systemctl enable reflector.service
+: 1726152846:0;systemctl status reflector.service
+: 1726152859:0;systemctl start reflector.service
+: 1726152881:0;rankmirrors
+: 1726152911:0;rankmirrors /etc/pacman.d/mirrorlist.pacnew
+: 1726152923:0;rankmirrors /etc/pacman.d/mirrorlist
+: 1726152943:0;rankmirrors /etc/pacman.d/mirrorlist.pacnew > mirror.txt
+: 1726152946:0;nvim mirror.txt
+: 1726153107:0;rm mirror.txt
+: 1726153119:0;sudoedit /etc/pacman.d/mirrorlist
+: 1726153158:0;clear
+: 1726153164:0;paru -Syyu
+: 1726153182:0;rankmirrors
+: 1726153253:0;clear
+: 1726153260:0;paru -Syyuu
+: 1726153273:0;refresh-mirrors
+: 1726153362:0;sudoedit /etc/pacman.d/mirrorlist
+: 1726153382:0;paru -Syyu
+: 1726153447:0;sudoedit /etc/pacman.d/mirrorlist
+: 1726153463:0;clear
+: 1726153468:0;sudo pacman -Syyu
+: 1726153800:0;paru -S neovide
+: 1726153844:0;clear
+: 1726153850:0;refresh-mirrors
+: 1726154116:0;sudo pacman -Syyu
+: 1726154196:0;sudoedit /etc/pacman.d/mirrorlist
+: 1726154211:0;up
+: 1726154353:0;cd ../N-Cover-Scraper
+: 1726154354:0;ls
+: 1726154356:0;./GoNCoverScraper
+: 1726154361:0;nvim Numbers.json
+: 1726154378:0;./GoNCoverScraper
+: 1726154553:0;ls
+: 1726154555:0;cleanfetch
+: 1726154556:0;up
+: 1726154589:0;paru -Sy
+: 1726154592:0;paru -Su
+: 1726154637:0;cleanfetch
+: 1726154646:0;paru -S neovide
+: 1726154659:0;lg
+: 1726155690:0;fzf
+: 1726155840:0;ls
+: 1726155844:0;fzf
+: 1726156015:0;up
+: 1726156034:0;cleanfetch
+: 1726158132:0;clear
+: 1726158136:0;neovide
+: 1726158172:0;neovide --working_directory=~/dotfiles
+: 1726158183:0;neovide -- --working_directory=~/dotfiles
+: 1726158192:0;clear
+: 1726158300:0;up
+: 1726158323:0;cleanfetch
+: 1726158365:0;nvim
+: 1726158966:0;yeet neovide
+: 1726158978:0;cleanfetch
+: 1726159804:0;up
+: 1726223831:0;nmcli dev wifi
+: 1726223832:0;nmcli dev wifi list
+: 1726223912:0;nmcli device 
+: 1726224063:0;nmcli radio
+: 1726224067:0;nmcli device 
+: 1726224094:0;nmcli c
+: 1726224125:0;nmcli radio wifi on
+: 1726224128:0;nmcli
+: 1726224133:0;nmcli c
+: 1726224138:0;nmcli dev wifi list
+: 1726224173:0;sudo pkill wpa_supplicant
+: 1726224177:0;nmcli d
+: 1726224209:0;sudo systemctl disable wpa_supplicant.service
+: 1726224214:0;nmclid d
+: 1726224216:0;nmcli d
+: 1726224232:0;nmlci radio wifi on
+: 1726224238:0;nmcli radio wifi on
+: 1726224239:0;ls
+: 1726224245:0;nmcli radio
+: 1726224250:0;nmcli radio all on
+: 1726224251:0;ls
+: 1726224255:0;nmcli radio
+: 1726224263:0;nmcli connection 
+: 1726224291:0;nmtui
+: 1726224406:0;nmcli radio
+: 1726224487:0;iwct,
+: 1726224490:0;iwctl
+: 1726224491:0;iwd
+: 1726224496:0;pacman -Qi iwd
+: 1726224539:0;cat /etc/NetworkManager/NetworkManager.conf
+: 1726224834:0;nmcli device wifi rescan
+: 1726224925:0;sudo systemctl restart NetworkManager
+: 1726224938:0;nmcli radio
+: 1726224950:0;sudo nmcli device wifi
+: 1726224954:0;sudo nmcli device wifi rescan
+: 1726224999:0;rfkill list all
+: 1726225053:0;cleanfetch
+: 1726225064:0;nmcli general
+: 1726225174:0;ip link set wlo1 up
+: 1726225177:0;sudo ip link set wlo1 up
+: 1726225184:0;nmcli general
+: 1726225258:0;cat /etc/NetworkManager/system-connections
+: 1726225269:0;ls /etc/NetworkManager/system-connections
+: 1726225273:0;sudo ls /etc/NetworkManager/system-connections
+: 1726225285:0;cd /etc/NetworkManager/system-connections
+: 1726225285:0;ls
+: 1726225292:0;sudo cd /etc/NetworkManager/system-connections
+: 1726225397:0;nmcli general
+: 1726225408:0;nmcli radio wwan on
+: 1726225409:0;ls
+: 1726225419:0;sudo nmcli radio wifi on
+: 1726225444:0;sudo nmcli general status
+: 1726225463:0;nmcli connection up Realme\ 7\ Pro
+: 1726225488:0;ip link
+: 1726225593:0;nm-online
+: 1726225645:0;sudo nmcli c delete lo
+: 1726225668:0;sudo systemctl status NetworkManager
+: 1726225675:0;sudo systemctl restart NetworkManager
+: 1726225687:0;nmcli dev wifi
+: 1726225692:0;nmcli radio
+: 1726225702:0;nmcli m
+: 1726225771:0;ip link set eno1 up
+: 1726225778:0;sudo ip link set eno1 up
+: 1726225802:0;sudo ip link set enp2s0 up
+: 1726225808:0;sudo ip link set lo up
+: 1726225812:0;sudo ip link set wlo1
+: 1726225814:0;sudo ip link set wlo1 up
+: 1726225826:0;sudo ip link set wlp3s0 up
+: 1726225836:0;nmcli general
+: 1726225840:0;nmcli general status
+: 1726225851:0;nmcli radio all on
+: 1726225879:0;ip addr
+: 1726225887:0;ip addr flush dev wlo1
+: 1726225890:0;ip addr flush dev lo
+: 1726226218:0;nm-applet 
+: 1726226287:0;up
+: 1726226352:0;systemctl status NetworkManager
+: 1726226372:0;nmcli
+: 1726226380:0;nmcli d show
+: 1726226388:0;nmcli device show
+: 1726226431:0;sudo systemctl enable --start wpa_supplicant
+: 1726226435:0;sudo systemctl enable --now wpa_supplicant
+: 1726226441:0;nmcli radio all on
+: 1726226447:0;nm-applet
+: 1726226521:0;systemctl --type=service
+: 1726226578:0;nm-connection-editor
+: 1726226621:0;nmcli device wifi list
+: 1726226635:0;nmcli con
+: 1726226637:0;nmcli connection
+: 1726226641:0;nmcli c
+: 1726226673:0;nm-applet --indicator
+: 1726226688:0;nmcli general reload
+: 1726226696:0;nmcli general
+: 1726226733:0;_dhclient 
+: 1726226742:0;nmcli networking on
+: 1726226751:0;nmcli agent all
+: 1726226756:0;nmcli radio
+: 1726226760:0;nmcli radio help
+: 1726226783:0;sudo nmcli general reload
+: 1726226789:0;nmcli radio 
+: 1726226832:0;ping
+: 1726226836:0;ping archlinux.org
+: 1726227057:0;paru -S iwd
+: 1726228574:0;iwctl
+: 1726228588:0;iwctl help
+: 1726228591:0;iwctl 0h
+: 1726228594:0;iwctl -h
+: 1726228638:0;sudo iwctl
+: 1726228731:0;sudo systemctl status iwd.service
+: 1726228746:0;sudo systemctl enable --now iwd
+: 1726228752:0;sudo systemctl enable --now wpa_supplicant
+: 1726228802:0;up
+: 1726229050:0;yeet iwd
+: 1726229164:0;riverctl spawn "/usr/lib/kdeconnectd"\
+
+: 1726229168:0;riverctl spawn "/usr/bin/kdeconnect-indicator"\
+
+: 1726229339:0;ls
+: 1726229340:0;tmux ls
+: 1726229343:0;tmux kill-server
+: 1726229534:0;up
+: 1726229725:0;clear
+: 1726230251:0;waybar
+: 1726230334:0;c.
+: 1726230334:0;clear
+: 1726230342:0;lg
+: 1726230430:0;cleanfetch
+: 1726237365:0;nmcli d wifi list
+: 1726237412:0;man -k dpms
+: 1726237456:0;fman
+: 1726237468:0;nmcli radio wifi on
+: 1726237472:0;nmcli d wifi list
+: 1726237476:0;sudo nmcli radio wifi on
+: 1726237706:0;u[
+: 1726237708:0;up
+: 1726238657:0;cleanfetch
+: 1726238803:0;ls
+: 1726238805:0;cd scripts
+: 1726238805:0;ls
+: 1726238812:0;chmod 775 wifi-rofi
+: 1726238821:0;wifi_rofi
+: 1726238823:0;source ~/.zshrc
+: 1726238830:0;wifi-rofi
+: 1726239105:0;rm wifi-rofi
+: 1726239392:0;yeet wlr-randr
+: 1726239427:0;cleanfetch
+: 1726239782:0;lg
+: 1726239795:0;nvim
+: 1726240678:0;ls
+: 1726240692:0;git clone https://github.com/SwayKh/Linksym
+: 1726240696:0;ls
+: 1726240697:0;nvim
+: 1726241262:0;lg
+: 1726241280:0;nvim
+: 1726241721:0;lg
+: 1726241995:0;go build
+: 1726242024:0;go build -o ./bin/linksym 
+: 1726242025:0;ls
+: 1726242028:0;lf
+: 1726242108:0;gP
+: 1726242960:0;./linksym add test/nested/test.txt test
+: 1726242962:0;lf
+: 1726243014:0;./linksym add ~/Test/LinksymTest/file.txt test
+: 1726243015:0;lf
+: 1726243065:0;./linksym add test/test.txt test/nested/test.txt
+: 1726243081:0;nvim
+: 1726243099:0;go build
+: 1726243101:0;./linksym add test/test.txt test/nested/test.txt
+: 1726243103:0;lf
+: 1726243142:0;ls
+: 1726243160:0;./linksym add bin test/nested/
+: 1726243161:0;lf
+: 1726243189:0;./linksym add . test/nested/test.txt
+: 1726243210:0;lf
+: 1726243235:0;./linksym add $PWD test/nested/test.txt
+: 1726243256:0;./linksym add tell.me test/nested/test.txt
+: 1726243256:0;lf
+: 1726243269:0;ls
+: 1726243271:0;cleanfetch
+: 1726243327:0;lg
+: 1726243661:0;./linksym add ~/.config/test.txt test/nested/test.txt
+: 1726243687:0;bat .linksym.yaml
+: 1726246789:0;nvim
+: 1726246905:0;cleanfetch
+: 1726290907:0;up
+: 1726290934:0;pactree -r electron32
+: 1726290937:0;pactree -r electron31
+: 1726290939:0;pactree -r electron30
+: 1726290946:0;up
+: 1726291641:0;clear
+: 1726291643:0;cleanfetch
+: 1726294454:0;nvim
+: 1726294492:0;ls
+: 1726294493:0;lf
+: 1726294524:0;nvim
+: 1726302894:0;ls
+: 1726302899:0;bat .linksym.yaml
+: 1726303272:0;go build
+: 1726303275:0;go build -o ./bin/linksym 
+: 1726303280:0;./linksym init
+: 1726303281:0;ls
+: 1726303311:0;./linksym add specification.txt test/
+: 1726303340:0;./linksym add ~/Test/LinksymTest specification.txt
+: 1726303355:0;./linksym add ~/Test/LinksymTest/specification.txt specification.txt
+: 1726303412:0;nvim
+: 1726303558:0;go build -o ./bin/linksym 
+: 1726303560:0;go build
+: 1726303569:0;./linksym add ~/Test/LinksymTest specification.txt
+: 1726303593:0;nvim
+: 1726303611:0;go build
+: 1726303625:0;./linksym add ~/Test/LinksymTest specification.txt
+: 1726303668:0;cleanfetch
+: 1726303689:0;bat .linksym.yaml
+: 1726303708:0;lg
+: 1726304593:0;bat .linksym.yaml
+: 1726304913:0;nvim specification.txt
+: 1726304916:0;ls
+: 1726304919:0;nvim specification.txt
+: 1726304921:0;lf
+: 1726305030:0;./linksym add ~/.config/specifiction.txt specification.txt
+: 1726305128:0;nvim specification.txt
+: 1726305175:0;cleanfetch
+: 1726305200:0;nvim
+: 1726305522:0;ls
+: 1726305539:0;./linksym add ~/Test/LinksymTest/ specification.txt
+: 1726305584:0;./linksym add ~/Test/LinksymTest/specification.txt specification.txt
+: 1726305594:0;nvim specification.txt
+: 1726305621:0;bat specification.txt
+: 1726305643:0;./linksym add ~/Test/LinksymTest/specification.txt specification.txt
+: 1726311887:0;bat specification.txt
+: 1726311890:0;bat .linksym.yaml
+: 1726311916:0;paru -Qs waybar
+: 1726311923:0;paru -Qi waybar
+: 1726311941:0;paru -S waybar-git
+: 1726311971:0;paru
+: 1726311973:0;paru -h
+: 1726312424:0;python
+: 1726312798:0;pm
+: 1726313101:0;cleanfetch
+: 1726313706:0;fastfetch
+: 1726313708:0;lf
+: 1726313758:0;clear
+: 1726313762:0;nvim
+: 1726313937:0;cleanfetch
+: 1726313947:0;ls
+: 1726313949:0;nvim
+: 1726314004:0;cleanfetch
+: 1726314149:0;cd Test
+: 1726314149:0;ls
+: 1726314154:0;git clone https://github.com/Apeiros-46B/everforest-walls
+: 1726314552:0;lf
+: 1726314590:0;cleanfetch
+: 1726315471:0;ls
+: 1726315479:0;kill 745 
+: 1726315487:0;riverctl spawn 'foot --server'
+: 1726315499:0;tmux ls
+: 1726315502:0;tmux kill-server
+: 1726315511:0;ls
+: 1726315514:0;cleanfetch
+: 1726315522:0;lg
+: 1726315555:0;cleanfetch
+: 1726315648:0;kill 102102 
+: 1726315652:0;ls
+: 1726315659:0;lf
+: 1726315674:0;riverctl spawn 'foot --server'
+: 1726315849:0;tmux ls
+: 1726315853:0;tmux kill-server
+: 1726324797:0;paru -S waybar-cava-git
+: 1726324815:0;paru -S waybar-cava
+: 1726324851:0;paru -h
+: 1726324859:0;paru -C
+: 1726324868:0;paru -c
+: 1726325071:0;paru -Qs waybar
+: 1726325078:0;paru -S waybar-git --rebuild
+: 1726325608:0;nvim
+: 1726326266:0;clear
+: 1726326268:0;cleanfetch
+: 1726326710:0;nmcli 
+: 1726326720:0;cleanfetch
+: 1726328657:0;pacdiff
+: 1726328727:0;bat --list-themes | fzf --preview="bat --theme={} --color=always /path/to/file"
+: 1726328735:0;bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.zshrc"
+: 1726331543:0;rofi -show nerdy
+: 1726332174:0;waybar
+: 1726332494:0;cleanfetch
+: 1726334543:0;waybar
+: 1726377366:0;cleanfetch
+: 1726377388:0;cd Projects/Web/Startpage
+: 1726377389:0;ls
+: 1726377390:0;lg
+: 1726377419:0;cleanfetch
+: 1726377522:0;nmcli dev wifi
+: 1726377525:0;nmcli dev wifi list
+: 1726377533:0;clear
+: 1726377539:0;c.
+: 1726377543:0;lf
+: 1726377548:0;cd -
+: 1726377560:0;cd /home/sumit/Projects/Web/Startpage/
+: 1726377561:0;ls
+: 1726377679:0;c.
+: 1726377685:0;up
+: 1726377919:0;cleanfetch
+: 1726377934:0;lf
+: 1726377948:0;ls
+: 1726377973:0;c.
+: 1726377974:0;clear
+: 1726377977:0;nvim
+: 1726378366:0;clear
+: 1726378371:0;nmcli
+: 1726378426:0;vnstat -h
+: 1726378543:0;up
+: 1726379930:0;clean
+: 1726379933:0;cleanfetch
+: 1726380066:0;paru -S roi
+: 1726380069:0;paru -S rofi
+: 1726380132:0;tmux kill-server
+: 1726381579:0;paru -S rofi-wayland
+: 1726384875:0;c.
+: 1726384877:0;cleanfetch
+: 1726384878:0;lg
+: 1726385321:0;cleanfetch
+: 1726385365:0;paru -S cava
+: 1726385375:0;cava
+: 1726386549:0;paru -S pipes.sh
+: 1726386566:0;paru -S bash-pipes
+: 1726386574:0;paru -S pipes.sh
+: 1726386667:0;pipes
+: 1726386689:0;cava
+: 1726386788:0;cav
+: 1726386790:0;cava
+: 1726386815:0;pipes
+: 1726386822:0;pipes -h
+: 1726386835:0;pipes -p 5
+: 1726386874:0;pipes -t 1
+: 1726386877:0;pipes -t 2
+: 1726386881:0;pipes -t 3
+: 1726386884:0;pipes -t 4
+: 1726386886:0;pipes -t 5
+: 1726386888:0;pipes -t 56
+: 1726386894:0;pipes -t 6
+: 1726386896:0;pipes -t 7
+: 1726386898:0;pipes -t 1
+: 1726386901:0;pipes -t 2
+: 1726386903:0;pipes -t 1
+: 1726386909:0;pipes -t 17
+: 1726386919:0;pipes -h
+: 1726386947:0;pipes -R -p 4
+: 1726386957:0;pipes -R -p 4 -t 1
+: 1726386961:0;pipes -R -p 4 -t 2
+: 1726386964:0;pipes -R -p 4 -t 3
+: 1726386966:0;pipes -R -p 4 -t 4
+: 1726386968:0;pipes -R -p 4 -t 5
+: 1726386971:0;pipes -R -p 4 -t 6
+: 1726386973:0;pipes -R -p 4 -t 7
+: 1726386976:0;pipes -R -p 4 -t 8
+: 1726386978:0;pipes -R -p 4 -t 9
+: 1726386981:0;pipes -R -p 4 -t 0
+: 1726387074:0;source ~/.zshrc
+: 1726387077:0;pipes
+: 1726387115:0;cava
+: 1726387932:0;pipes
+: 1726387958:0;cmatrix
+: 1726387963:0;paru -S cmatrix
+: 1726387972:0;cmatrix -h
+: 1726388008:0;cmatrix -a -B -r -m
+: 1726388013:0;cmatrix -a -B -r
+: 1726388029:0;clear
+: 1726388031:0;waybar
+: 1726388173:0;cmatrix -a -B -r -b
+: 1726388177:0;cmatrix -a -B -r -h
+: 1726388187:0;cmatrix -a -B -r -C 
+: 1726388205:0;cmatrix -a -B -r -C #A5BE7F
+: 1726388211:0;cmatrix -a -B -r -C A5BE7F
+: 1726388216:0;cmatrix -a -B -r -C black
+: 1726388222:0;cmatrix -a -B -r -C red
+: 1726388523:0;waybar
+: 1726388562:0;clear
+: 1726395397:0;c.
+: 1726395398:0;lg
+: 1726395458:0;cleanfetch
+: 1726395556:0;cava
+: 1726395655:0;pipes
+: 1726395664:0;paru -S cmatrix-git
+: 1726395697:0;cmatrix -a -B -r
+: 1726395807:0;cava
+: 1726396064:0;pipes
+: 1726396067:0;cmatrix -a -B -r -C red
+: 1726396072:0;cmatrix -a -B -r
+: 1726396080:0;cava
+: 1726396289:0;nvim
+: 1726396590:0;cleanfetch
+: 1726397134:0;cava
+: 1726397222:0;cd wallpapers/Images
+: 1726397227:0;feh totoro.jpeg
+: 1726397332:0;feh totoro.jpeg --auto-zoom
+: 1726397455:0;feh --keep-zoom-vp --auto-zoom totoro.jpeg
+: 1726397958:0;lg
+: 1726399237:0;ripdrag -t -x home.gitignore
+: 1726399294:0;man ripdrag
+: 1726399299:0;ripdrag -m
+: 1726399301:0;ripdrag -h
+: 1726399547:0;K
+: 1726399560:0;ripdrag --multi LICENSE
+: 1726399567:0;ripdrag -- --multi LICENSE
+: 1726399583:0;ripdrag LICENSE --multi
+: 1726399597:0;ripdrag LICENSE -m
+: 1726399723:0;ripdrag -h
+: 1726409493:0;pm
+: 1726409744:0;yeet cava cmatrix-git pipes.sh
+: 1726409749:0;clear
+: 1726409754:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1726410078:0;:q
+: 1726410254:0;ripdrag -x -b -n -t -k -a 2paggfqi38aa1.png 1CzsXnD.jpeg 0oui0mtf451a1.png
+: 1726410427:0;lf -h
+: 1726410441:0;clear
+: 1726410467:0;lf -h
+: 1726410473:0;lf -print-selection
+: 1726410646:0;yeet kvantum-qt5
+: 1726410660:0;yeet kvantum
+: 1726410666:0;yeet kvantum-qt5 kvantum
+: 1726410672:0;clear
+: 1726410674:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1726410860:0;c.
+: 1726410861:0;clear
+: 1726410862:0;lg
+: 1726411730:0;cd scripts
+: 1726411730:0;lg
+: 1726411766:0;cd ..
+: 1726411768:0;lg
+: 1726411854:0;nvim
+: 1726412400:0;lg
+: 1726412410:0;nvim
+: 1726412418:0;lg
+: 1726412445:0;nvim
+: 1726412956:0;lg
+: 1726412966:0;go build
+: 1726412973:0;bat .linksym.yaml
+: 1726412985:0;./linksym init
+: 1726412988:0;bat .linksym.yaml
+: 1726413000:0;./linksym add test/nested/test.txt
+: 1726413033:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726413050:0;bat .linksym.yaml
+: 1726413270:0;clear
+: 1726413274:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726413277:0;./linksym add test/nested/test.txt
+: 1726413279:0;lg
+: 1726413314:0;./linksym init
+: 1726413320:0;./linksym add test/nested/test.txt
+: 1726413326:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726413353:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726413370:0;ls
+: 1726413371:0;nvim
+: 1726413426:0;clear
+: 1726413466:0;go build
+: 1726413471:0;./linksym init
+: 1726413477:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726413483:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726417028:0;./linksym add ~/Test/NumbersTest
+: 1726417113:0;nvim
+: 1726417121:0;go build
+: 1726417129:0;./linksym add ~/Test/NumbersTest
+: 1726418257:0;nviom
+: 1726418258:0;nvim
+: 1726418328:0;go build
+: 1726418331:0;./linksym add ~/Test/NumbersTest
+: 1726418413:0;go build
+: 1726418415:0;./linksym add ~/Test/NumbersTest
+: 1726418447:0;bat .linksym.yaml
+: 1726418486:0;cleanfetch
+: 1726418710:0;go build
+: 1726418718:0;./linksym add ~/Test/NumbersTest
+: 1726418726:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726418730:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726418734:0;./linksym add test/nested/test.txt
+: 1726418737:0;bat .linksym.yaml
+: 1726419839:0;ls
+: 1726419849:0;go build
+: 1726419882:0;./linksym init
+: 1726419890:0;./linksym add test/nested/test.txt
+: 1726419897:0;bat .linksym.yaml
+: 1726419922:0;./linksym remove test.txt
+: 1726419926:0;bat .linksym.yaml
+: 1726420013:0;clear
+: 1726420026:0;go build
+: 1726420030:0;./linksym remove test.txt
+: 1726420114:0;go build
+: 1726420128:0;./linksym add test/nested/test.txt
+: 1726420134:0;./linksym remove test.txt
+: 1726420224:0;bat .linksym.yaml
+: 1726420279:0;clear
+: 1726420280:0;up
+: 1726487742:0;nmcli dev wifi list
+: 1726487747:0;cleanfetch
+: 1726487748:0;upo
+: 1726487749:0;up
+: 1726487878:0;nvim
+: 1726487924:0;go build
+: 1726487927:0;lf
+: 1726487929:0;lg
+: 1726487939:0;lf
+: 1726487951:0;go build
+: 1726487954:0;go build -o ./bin/linksym 
+: 1726487959:0;./linksym init
+: 1726487971:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726487974:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726487984:0;./linksym add ~/Test/NumbersTest
+: 1726487987:0;bat .linksym.yaml
+: 1726488002:0;clear
+: 1726488014:0;./linksym add test/nested/test.txt
+: 1726488017:0;bat .linksym.yaml
+: 1726488041:0;./linksym remove test.txt
+: 1726488142:0;go build
+: 1726488158:0;./linksym remove test.txt
+: 1726489027:0;go build
+: 1726489030:0;go build -o ./bin/linksym 
+: 1726489089:0;clear
+: 1726489092:0;go build
+: 1726489099:0;./linksym init
+: 1726489104:0;./linksym add test/nested/test.txt
+: 1726489109:0;./linksym add ~/Test/NumbersTest
+: 1726489114:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726489118:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726489120:0;bat .linksym.yaml
+: 1726489129:0;./linksym remove test.txt
+: 1726489157:0;./linksym remove NumbersTest
+: 1726489177:0;./linksym remove file.txt
+: 1726489185:0;./linksym remove bitch.ass
+: 1726489285:0;go build
+: 1726489289:0;./linksym init
+: 1726489294:0;clear
+: 1726489306:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726489310:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726489315:0;./linksym add ~/Test/NumbersTest
+: 1726489320:0;./linksym add test/nested/test.txt
+: 1726489322:0;bat .linksym.yaml
+: 1726489329:0;./linksym remove bitch.ass
+: 1726489363:0;./linksym remove file.txt
+: 1726489366:0;./linksym remove NumbersTest
+: 1726489371:0;./linksym remove test.txt
+: 1726489499:0;cleanfetch
+: 1726489515:0;clear
+: 1726489518:0;lg
+: 1726498817:0;bash <(curl -sSL https://spotx-official.github.io/run.sh)
+: 1726498837:0;clear
+: 1726498840:0;cleanfetch
+: 1726498955:0;lg
+: 1726501709:0;go build
+: 1726501711:0;go build -o ./bin/linksym 
+: 1726501713:0;clear
+: 1726501720:0;bat .linksym.yaml
+: 1726501732:0;./linksym init
+: 1726501739:0;./linksym add test/nested/test.txt
+: 1726501745:0;./linksym add ~/Test/NumbersTest
+: 1726501754:0;bat .linksym.yaml
+: 1726501761:0;./linksym remove test.txt
+: 1726501764:0;bat .linksym.yaml
+: 1726501839:0;./linksym remove NumbersTest
+: 1726501845:0;go build -o ./bin/linksym 
+: 1726501849:0;go build
+: 1726501852:0;./linksym init
+: 1726501862:0;clear
+: 1726501864:0;bat .linksym.yaml
+: 1726501871:0;./linksym add ~/Test/NumbersTest
+: 1726501874:0;./linksym add test/nested/test.txt
+: 1726501876:0;bat .linksym.yaml
+: 1726501881:0;./linksym remove NumbersTest
+: 1726501886:0;./linksym remove test.txt
+: 1726501889:0;bat .linksym.yaml
+: 1726501955:0;clear
+: 1726501956:0;lg
+: 1726502601:0;nvim
+: 1726504276:0;lg
+: 1726505020:0;nvim
+: 1726505086:0;bat .linksym.yaml
+: 1726505091:0;go build
+: 1726505092:0;go build -o ./bin/linksym 
+: 1726505096:0;rm .linksym.yaml
+: 1726505102:0;./linksym add test/nested/test.txt
+: 1726506002:0;./linksym init
+: 1726506030:0;clear
+: 1726506032:0;go build
+: 1726506033:0;ls
+: 1726506038:0;./linksym init
+: 1726506126:0;ls
+: 1726506130:0;./linksym 
+: 1726506159:0;go build
+: 1726506162:0;./linksym 
+: 1726506185:0;go build
+: 1726506187:0;./linksym 
+: 1726506640:0;go build
+: 1726506642:0;./linksym 
+: 1726506646:0;./linksym add test/nested/test.txt
+: 1726506668:0;clear
+: 1726506672:0;./linksym init
+: 1726506675:0;./linksym add test/nested/test.txt
+: 1726506678:0;bat .linksym.yaml
+: 1726506805:0;go build
+: 1726506811:0;./linksym init
+: 1726506812:0;ls
+: 1726506816:0;bat .linksym.yaml
+: 1726506948:0;go build
+: 1726506952:0;./linksym init
+: 1726506955:0;bat .linksym.yaml
+: 1726506957:0;clear
+: 1726507106:0;lg
+: 1726507114:0;./linksym remove test.txt
+: 1726507119:0;lf
+: 1726507143:0;c.
+: 1726507143:0;lg
+: 1726558595:0;up
+: 1726558599:0;lg
+: 1726559417:0;clear
+: 1726559421:0;cd Test
+: 1726559422:0;ls
+: 1726559436:0;git clone https://github.com/SwayKh/dotfiles EverforestDotfiles
+: 1726559454:0;list-
+: 1726559457:0;list-size
+: 1726559467:0;list-river-window
+: 1726559529:0;clear
+: 1726559530:0;lg
+: 1726559542:0;c.
+: 1726559544:0;cleanfetch
+: 1726559730:0;nvim
+: 1726561141:0;go build
+: 1726561143:0;bat .linksym.yaml
+: 1726561145:0;rm .linksym.yaml
+: 1726561181:0;ls
+: 1726561199:0;lf
+: 1726561206:0;./linksym init
+: 1726561244:0;ls
+: 1726561248:0;rm .linksym.yaml
+: 1726561250:0;go build
+: 1726561252:0;clear
+: 1726561255:0;./linksym init
+: 1726561257:0;ls
+: 1726561261:0;bat .linksym.yaml
+: 1726561419:0;./linksym add test/nested/test.txt
+: 1726561427:0;./linksym add ~/Test/NumbersTest
+: 1726561433:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726561437:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726561439:0;bat .linksym.yaml
+: 1726561448:0;./linksym remove test.txt
+: 1726562283:0;go build
+: 1726562287:0;bat .linksym.yaml
+: 1726562314:0;./linksym add test/nested/test.txt
+: 1726562317:0;bat .linksym.yaml
+: 1726562328:0;./linksym remove test.txt
+: 1726563163:0;go build
+: 1726563166:0;./linksym remove test.txt
+: 1726563235:0;go build
+: 1726563237:0;./linksym remove test.txt
+: 1726564028:0;clear
+: 1726564029:0;go build
+: 1726564031:0;go build -o ./bin/linksym 
+: 1726564032:0;ls
+: 1726564035:0;bat .linksym.yaml
+: 1726564178:0;go build -o ./bin/linksym 
+: 1726564182:0;go build
+: 1726564187:0;./linksym add test/nested/test.txt
+: 1726564189:0;bat .linksym.yaml
+: 1726564238:0;./linksym remove test.txt
+: 1726564239:0;bat .linksym.yaml
+: 1726564244:0;clear
+: 1726564287:0;bat .linksym.yaml
+: 1726564294:0;./linksym remove NumbersTest
+: 1726564474:0;go run . remove NumbersTest
+: 1726564515:0;clear
+: 1726564517:0;go build
+: 1726564532:0;./linksym add ~/Test/NumbersTest
+: 1726564536:0;./linksym remove ~/Test/NumbersTest
+: 1726564557:0;bat .linksym.yaml
+: 1726564566:0;./linksym remove NumbersTest
+: 1726564583:0;bat .linksym.yaml
+: 1726564592:0;./linksym remove file.txt
+: 1726564657:0;go build
+: 1726564660:0;./linksym remove file.txt
+: 1726564818:0;go run . remove file.txt
+: 1726564824:0;bat .linksym.yaml
+: 1726564999:0;go run . remove file.txt
+: 1726565001:0;bat .linksym.yaml
+: 1726566174:0;go run . remove file.txt
+: 1726566183:0;go run . remove bitch.ass
+: 1726566268:0;go build
+: 1726566341:0;clear
+: 1726566413:0;lg
+: 1726573215:0;fshow
+: 1726583448:0;ls
+: 1726583466:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726583468:0;ls
+: 1726583472:0;bat .linksym.yaml
+: 1726583484:0;cd ..
+: 1726583501:0;./tmp/linksym add ~/Test/LinksymTest/file.txt
+: 1726583725:0;ls
+: 1726583732:0;bat .linksym.yaml
+: 1726583736:0;rm .linksym.yaml
+: 1726583738:0;ls
+: 1726583743:0;go build
+: 1726583763:0;cd tmp
+: 1726583764:0;ls
+: 1726583767:0;bat ./linksym
+: 1726583774:0;bat .linksym.yaml
+: 1726583778:0;ls
+: 1726583784:0;./linksym remove bitch.ass
+: 1726583785:0;ls
+: 1726583790:0;bat .linksym.yaml
+: 1726583812:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726583846:0;./linksym init
+: 1726583856:0;ls
+: 1726583903:0;go build
+: 1726583904:0;ls
+: 1726583907:0;lf
+: 1726583910:0;ls
+: 1726583912:0;./linksym init
+: 1726583913:0;ls
+: 1726583917:0;bat .linksym.yaml
+: 1726583937:0;cd test
+: 1726583938:0;ls
+: 1726583951:0;../linksym add ../test/nested/test.txt
+: 1726583987:0;ls
+: 1726583988:0;cd ..
+: 1726584033:0;lg
+: 1726584047:0;ls
+: 1726584050:0;go build
+: 1726584056:0;./linksym add test/nested/test.txt
+: 1726584064:0;nvim
+: 1726584196:0;go build
+: 1726584197:0;ls
+: 1726584202:0;rm .linksym.yaml
+: 1726584207:0;./linksym init
+: 1726584213:0;bat .linksym.yaml
+: 1726584219:0;./linksym add test/nested/test.txt
+: 1726584221:0;bat .linksym.yaml
+: 1726584377:0;go build
+: 1726584382:0;bat .linksym.yaml
+: 1726584389:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726584397:0;ls
+: 1726584417:0;bat .linksym.yaml
+: 1726584497:0;nvim
+: 1726584581:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726587676:0;ls
+: 1726587678:0;bat .linksym.yaml
+: 1726587690:0;go build
+: 1726587692:0;rm .linksym.yaml
+: 1726587718:0;clear
+: 1726587721:0;./linksym init
+: 1726587722:0;bat .linksym.yaml
+: 1726587727:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726587731:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726587738:0;./linksym add test/nested/test.txt
+: 1726587739:0;ls
+: 1726587748:0;bat .linksym.yaml
+: 1726589723:0;ls
+: 1726589734:0;./linksym remove bitch.ass
+: 1726589737:0;./linksym remove file.txt
+: 1726589747:0;ls
+: 1726589754:0;./linksym remove test.txt
+: 1726589755:0;ls
+: 1726589757:0;bat .linksym.yaml
+: 1726589759:0;rm .linksym.yaml
+: 1726589761:0;go build
+: 1726589762:0;clear
+: 1726589768:0;./linksym init
+: 1726589774:0;./linksym add test/nested/test.txt
+: 1726589796:0;ls
+: 1726589805:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726589808:0;bat .linksym.yaml
+: 1726589843:0;ls
+: 1726590083:0;nvim
+: 1726590219:0;clear
+: 1726590220:0;bat .linksym.yaml
+: 1726590222:0;ls
+: 1726590225:0;rm .linksym.yaml
+: 1726590226:0;clear
+: 1726590228:0;go build
+: 1726590230:0;ls
+: 1726590232:0;clear
+: 1726590235:0;./linksym init
+: 1726590236:0;ls
+: 1726590245:0;./linksym add test/nested/test.txt
+: 1726590250:0;clear
+: 1726590251:0;ls
+: 1726590362:0;clear
+: 1726590363:0;ls
+: 1726590366:0;bat .linksym.yaml
+: 1726590382:0;go build
+: 1726590384:0;rm .linksym.yaml
+: 1726590385:0;clear
+: 1726590390:0;./linksym init
+: 1726590391:0;ls
+: 1726590393:0;bat .linksym.yaml
+: 1726590397:0;./linksym add test/nested/test.txt
+: 1726590403:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726590407:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726590413:0;./linksym add ~/Test/NumbersTest
+: 1726590416:0;bat .linksym.yaml
+: 1726590433:0;clear
+: 1726590434:0;bat .linksym.yaml
+: 1726590441:0;./linksym remove test.txt
+: 1726590443:0;./linksym remove file.txt
+: 1726590446:0;./linksym remove bitch.ass
+: 1726590451:0;./linksym remove NumbersTest
+: 1726590452:0;ls
+: 1726590463:0;bat .linksym.yaml
+: 1726590539:0;clear
+: 1726590540:0;bat .linksym.yaml
+: 1726590544:0;go build
+: 1726590549:0;./linksym init
+: 1726590551:0;bat .linksym.yaml
+: 1726590614:0;go build
+: 1726590617:0;./linksym init
+: 1726590626:0;bat .linksym.yaml
+: 1726590665:0;go build
+: 1726590667:0;bat .linksym.yaml
+: 1726590670:0;./linksym init
+: 1726590673:0;bat .linksym.yaml
+: 1726590726:0;go build
+: 1726590727:0;bat .linksym.yaml
+: 1726590728:0;ls
+: 1726590730:0;clear
+: 1726590731:0;bat .linksym.yaml
+: 1726590738:0;./linksym init
+: 1726590742:0;bat .linksym.yaml
+: 1726590750:0;./linksym add ~/Test/NumbersTest
+: 1726590755:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726590758:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726590759:0;ls
+: 1726590760:0;bat .linksym.yaml
+: 1726590811:0;go build
+: 1726590816:0;./linksym remove NumbersTest
+: 1726590819:0;./linksym remove file.txt
+: 1726590822:0;./linksym remove bitch.ass
+: 1726590823:0;ls
+: 1726590824:0;bat .linksym.yaml
+: 1726590828:0;./linksym init
+: 1726590834:0;bat .linksym.yaml
+: 1726590839:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726590842:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726590842:0;ls
+: 1726590844:0;bat .linksym.yaml
+: 1726590911:0;./linksym add ~/Test/NumbersTest Test2/
+: 1726590925:0;./linksym add ~/Test/NumbersTest 
+: 1726590926:0;ls
+: 1726590965:0;bat .linksym.yaml
+: 1726590971:0;./linksym remove bitch.ass
+: 1726590975:0;./linksym remove file.txt
+: 1726590978:0;./linksym remove NumbersTest
+: 1726590979:0;ls
+: 1726590980:0;bat .linksym.yaml
+: 1726590982:0;clear
+: 1726590984:0;ls
+: 1726590987:0;rm Test2
+: 1726591115:0;clear
+: 1726591116:0;bat .linksym.yaml
+: 1726591120:0;rm .linksym.yaml
+: 1726591120:0;ls
+: 1726591125:0;go build
+: 1726591126:0;clear
+: 1726591129:0;./linksym init
+: 1726591134:0;bat .linksym.yaml
+: 1726591491:0;clear
+: 1726591493:0;go build
+: 1726591494:0;bat .linksym.yaml
+: 1726591495:0;rm .linksym.yaml
+: 1726591496:0;ls
+: 1726591497:0;clear
+: 1726591501:0;./linksym init
+: 1726591504:0;bat .linksym.yaml
+: 1726591509:0;./linksym add ~/Test/NumbersTest 
+: 1726591516:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726591518:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726591519:0;ls
+: 1726591520:0;bat .linksym.yaml
+: 1726591562:0;./linksym add ~/Test/LinksymTest/text.file
+: 1726591563:0;ls
+: 1726591567:0;bat .linksym.yaml
+: 1726591592:0;cat .linksym.yaml | wl-copy
+: 1726591704:0;clear
+: 1726591708:0;bat .linksym.yaml
+: 1726591713:0;./linksym remove NumbersTest
+: 1726591719:0;./linksym remove file.txt
+: 1726591722:0;./linksym remove bitch.ass
+: 1726591725:0;./linksym remove text.file
+: 1726591726:0;ls
+: 1726591728:0;bat .linksym.yaml
+: 1726591730:0;rm .linksym.yaml
+: 1726591733:0;go build
+: 1726591737:0;./linksym init
+: 1726592051:0;bat .linksym.yaml
+: 1726592064:0;./linksym add ~/Test/LinksymTest/text.file
+: 1726592067:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726592071:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726592071:0;ls
+: 1726592073:0;bat .linksym.yaml
+: 1726592157:0;./linksym remove text.file
+: 1726592161:0;./linksym remove file.txt
+: 1726592163:0;./linksym remove bitch.ass
+: 1726592164:0;ls
+: 1726592166:0;bat .linksym.yaml
+: 1726592169:0;go build
+: 1726592171:0;./linksym init
+: 1726592175:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726592177:0;bat .linksym.yaml
+: 1726592185:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726592185:0;ls
+: 1726592186:0;bat .linksym.yaml
+: 1726592220:0;go build
+: 1726592224:0;./linksym remove bitch.ass
+: 1726592226:0;./linksym remove file.txt
+: 1726592227:0;ls
+: 1726592228:0;bat .linksym.yaml
+: 1726592231:0;./linksym init
+: 1726592233:0;go build
+: 1726592235:0;./linksym init
+: 1726592241:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726592248:0;ls
+: 1726592252:0;bat .linksym.yaml
+: 1726592266:0;ls
+: 1726592271:0;./linksym init
+: 1726592274:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726592276:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726592277:0;ls
+: 1726592278:0;bat .linksym.yaml
+: 1726592294:0;ls
+: 1726592301:0;./linksym remove bitch.ass
+: 1726592306:0;./linksym remove file.txt
+: 1726592306:0;ls
+: 1726592329:0;lg
+: 1726592337:0;ls
+: 1726592338:0;lg
+: 1726651023:0;cd ..
+: 1726651024:0;cd N-Cover-Scraper
+: 1726651025:0;ls
+: 1726651028:0;./GoNCoverScraper
+: 1726651056:0;clear
+: 1726651058:0;cd ..
+: 1726651322:0;up
+: 1726651929:0;cleanfetch
+: 1726652004:0;c. && cleanfetch
+: 1726652017:0;nvim
+: 1726652203:0;clear
+: 1726652204:0;ls
+: 1726652207:0;bat .linksym.yaml
+: 1726652210:0;go build
+: 1726652213:0;rm .linksym.yaml
+: 1726652215:0;clear
+: 1726652218:0;./linksym init
+: 1726652259:0;go build
+: 1726652260:0;rm .linksym.yaml
+: 1726652261:0;clear
+: 1726652264:0;./linksym init
+: 1726652366:0;clear
+: 1726652367:0;go build
+: 1726652369:0;rm .linksym.yaml
+: 1726652374:0;./linksym init
+: 1726652397:0;go build
+: 1726652398:0;rm .linksym.yaml
+: 1726652403:0;clear
+: 1726652407:0;./linksym init
+: 1726652416:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726652430:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726652494:0;./linksym remove file.txt
+: 1726652498:0;./linksym remove bitch.ass
+: 1726652501:0;clear
+: 1726652503:0;bat .linksym.yaml
+: 1726652506:0;go build
+: 1726652508:0;clear
+: 1726652512:0;go build
+: 1726652514:0;./linksym init
+: 1726652524:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726652529:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726652539:0;bat .linksym.yaml
+: 1726652607:0;clear
+: 1726652607:0;bat .linksym.yaml
+: 1726652611:0;./linksym remove bitch.ass
+: 1726652613:0;./linksym remove file.txt
+: 1726652615:0;bat 
+: 1726652621:0;bat .linksym.yaml
+: 1726652623:0;clear
+: 1726652624:0;rm .linksym.yaml
+: 1726652626:0;go build
+: 1726652627:0;clear
+: 1726652632:0;./linksym init
+: 1726652638:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726652641:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726652652:0;bat .linksym.yaml
+: 1726652692:0;./linksym remove file.txt
+: 1726652695:0;./linksym remove bitch.ass
+: 1726652696:0;bat .linksym.yaml
+: 1726652699:0;go build
+: 1726652703:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1726652708:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726652712:0;bat .linksym.yaml
+: 1726652728:0;./linksym add ~/Test/LinksymTest/text.file
+: 1726652729:0;bat .linksym.yaml
+: 1726652751:0;clear
+: 1726652753:0;bat .linksym.yaml
+: 1726652758:0;./linksym remove bitch.ass
+: 1726652760:0;./linksym remove file.txt
+: 1726652764:0;./linksym remove text.file
+: 1726652765:0;bat 
+: 1726652778:0;bat .linksym.yaml
+: 1726652779:0;clear
+: 1726652780:0;go build
+: 1726652785:0;lg
+: 1726653264:0;bat 
+: 1726653267:0;bat .linksym.yaml
+: 1726653270:0;go build
+: 1726653273:0;./linksym init
+: 1726653275:0;bat .linksym.yaml
+: 1726653324:0;go build
+: 1726653328:0;./linksym init
+: 1726653329:0;bat .linksym.yaml
+: 1726653338:0;./linksym add ~/Test/LinksymTest/text.file
+: 1726653341:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726653343:0;bat .linksym.yaml
+: 1726653355:0;./linksym remove text.file
+: 1726653358:0;./linksym remove file.txt
+: 1726653359:0;bat .linksym.yaml
+: 1726653361:0;clear
+: 1726653383:0;lg
+: 1726653781:0;go build
+: 1726653783:0;go build -o ./bin/linksym 
+: 1726653987:0;nvim theme.txt
+: 1726654047:0;cd
+: 1726654048:0;clear
+: 1726654050:0;fzf
+: 1726654233:0;man fg
+: 1726654238:0;man fshow
+: 1726654243:0;which fsow
+: 1726654246:0;which fshow
+: 1726654251:0;whatis fshow
+: 1726654256:0;man fd
+: 1726654428:0;clear
+: 1726654489:0;fzf
+: 1726654510:0;c.
+: 1726654512:0;fshow
+: 1726657738:0;lg
+: 1726658361:0;go build
+: 1726658362:0;bat .linksym.yaml
+: 1726658366:0;./linksym init
+: 1726658388:0;./linksym add ~/Test/NumbersTest test/NumbersTest
+: 1726658402:0;./linksym add ~/Test/NumbersTest test
+: 1726658403:0;ls
+: 1726658420:0;ls test
+: 1726658570:0;clear
+: 1726658573:0;cleanfetch
+: 1726658635:0;clear
+: 1726658637:0;bat .linksym.yaml
+: 1726658693:0;./linksym remove test/NumbersTest
+: 1726658695:0;ls
+: 1726658697:0;bat .linksym.yaml
+: 1726658700:0;./linksym init
+: 1726658875:0;nvim
+: 1726658972:0;ls
+: 1726658973:0;bat .linksym.yaml
+: 1726658974:0;clear
+: 1726658975:0;bat .linksym.yaml
+: 1726658980:0;./linksym add ~/Test/NumbersTest test
+: 1726658987:0;ls
+: 1726659044:0;bat .linksym.yaml
+: 1726659047:0;./linksym add ~/Test/NumbersTest test
+: 1726659266:0;bat .linksym.yaml
+: 1726659269:0;go build
+: 1726659272:0;./linksym init
+: 1726659283:0;./linksym add ~/Test/NumbersTest test/
+: 1726659371:0;bat .linksym.yaml
+: 1726659381:0;./linksym remove test/NumbersTest
+: 1726672001:0;lg
+: 1726672013:0;fzf
+: 1726672461:0;lg
+: 1726672608:0;ls
+: 1726672609:0;lg
+: 1726672664:0;clear
+: 1726672667:0;bat .linksym.yaml
+: 1726674286:0;lg
+: 1726674473:0;nvim
+: 1726679968:0;clear
+: 1726680129:0;cleanfetch
+: 1726731421:0;up
+: 1726731622:0;cleanfetch
+: 1726731756:0;nvim
+: 1726733638:0;lg
+: 1726734764:0;cat test
+: 1726734766:0;cat test/
+: 1726734780:0;whatis pkg
+: 1726734783:0;whatis pkg/
+: 1726734804:0;touch file
+: 1726734807:0;touch file/
+: 1726734813:0;ls
+: 1726734827:0;rm file
+: 1726734975:0;lf
+: 1726734983:0;clear
+: 1726737118:0;ls
+: 1726737119:0;bat .linksym.yaml
+: 1726737124:0;rm .linksym.yaml
+: 1726737127:0;go build
+: 1726737131:0;list-size
+: 1726737140:0;go build -o ./bin/linksym 
+: 1726737142:0;list-size
+: 1726742128:0;clear
+: 1726742128:0;lg
+: 1726747506:0;go build -o ./bin/linksym 
+: 1726747509:0;go build
+: 1726747519:0;cat .linksym.yaml
+: 1726747526:0;./linksym remove test/NumbersTest
+: 1726747533:0;./linksym init
+: 1726747534:0;ls
+: 1726747535:0;bat .linksym.yaml
+: 1726747540:0;./linksym add ~/Test/NumbersTest test/
+: 1726747589:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726747816:0;go build
+: 1726747818:0;bat .linksym.yaml
+: 1726747821:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726747848:0;bat .linksym.yaml
+: 1726747891:0;./linksym add ~/Test/LinksymTest/bin/ bin
+: 1726747925:0;./linksym add ~/Test/LinksymTest/bin/ bin/
+: 1726747988:0;go build
+: 1726747990:0;./linksym add ~/Test/LinksymTest/bin/ bin/
+: 1726747996:0;./linksym add ~/Test/LinksymTest/bin/ ./bin
+: 1726748006:0;./linksym add ~/Test/LinksymTest/bin bin
+: 1726748035:0;go build
+: 1726748040:0;./linksym add ~/Test/LinksymTest/bin bin
+: 1726748275:0;go build
+: 1726748277:0;./linksym add ~/Test/LinksymTest/bin bin
+: 1726748283:0;./linksym add ~/Test/LinksymTest/bin/ bin
+: 1726748957:0;nvim
+: 1726756135:0;go build
+: 1726756224:0;./linksym add ~/Test/LinksymTest/bin/ bin
+: 1726756583:0;bat .linksym.yaml
+: 1726756600:0;./linksym remove test/NumbersTest
+: 1726756610:0;./linksym remove bin
+: 1726756624:0;./linksym remove .gitignore
+: 1726756638:0;clear
+: 1726756639:0;lg
+: 1726761234:0;ls
+: 1726761235:0;nvim
+: 1726761579:0;lg
+: 1726761709:0;clear
+: 1726764978:0;cd test
+: 1726764978:0;ls
+: 1726764990:0;../linksym add nested/test.txt 
+: 1726765088:0;go build
+: 1726765091:0;cd ..
+: 1726765093:0;go build
+: 1726766694:0;lg
+: 1726767579:0;nvim
+: 1726767724:0;go build
+: 1726767727:0;go build -o ./bin/linksym 
+: 1726818419:0;clear
+: 1726818421:0;river
+: 1726818502:0;clear
+: 1726818504:0;river
+: 1726819947:0;nvim
+: 1726821443:0;lg
+: 1726824357:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1726824809:0;nvim
+: 1726826893:0;cleanfetch
+: 1726826895:0;nvim
+: 1726829035:0;lg
+: 1726831907:0;up
+: 1726831992:0;yeet nautilus
+: 1726831999:0;up
+: 1726832092:0;paru -S nautilus
+: 1726832106:0;paru -S thunar tumbler
+: 1726832112:0;paru -S thunar
+: 1726832116:0;paru -S thunar tumbler
+: 1726832133:0;paru -Ss dua
+: 1726832148:0;paru -S dua-cli
+: 1726832162:0;\
+
+: 1726832163:0;find /etc -name '*.pacnew' -o -name '*.pacsave'
+: 1726832174:0;sudo find /etc -name '*.pacnew' -o -name '*.pacsave'
+: 1726832196:0;pacdiff
+: 1726832271:0;dua
+: 1726832324:0;clear
+: 1726832326:0;dua i
+: 1726832365:0;dua *
+: 1726832382:0;clear
+: 1726832406:0;go build
+: 1726832433:0;nvim
+: 1726848158:0;go build
+: 1726850017:0;ls
+: 1726850020:0;bat .linksym.yaml
+: 1726850023:0;rm .linksym.yaml
+: 1726850029:0;./linksym init
+: 1726850030:0;ls
+: 1726850032:0;bat .linksym.yaml
+: 1726850199:0;go build
+: 1726850203:0;./linksym init
+: 1726851461:0;go build
+: 1726852349:0;bat .linksym.yaml
+: 1726852350:0;ls
+: 1726852353:0;./linksym init
+: 1726852355:0;bat .linksym.yaml
+: 1726852385:0;go build
+: 1726852388:0;./linksym init
+: 1726852477:0;ls
+: 1726852478:0;bat .linksym.yaml
+: 1726852480:0;cd test
+: 1726852490:0;../linksym add nested/test.txt 
+: 1726852504:0;cd ..
+: 1726853714:0;clear
+: 1726853716:0;cleanfetch
+: 1726853720:0;c.
+: 1726853721:0;lg
+: 1726855985:0;go build
+: 1726855988:0;clear
+: 1726855990:0;./linksym init
+: 1726855992:0;bat .linksym.yaml
+: 1726856016:0;./linksym add ~/Test/LinksymTest/bin/ bin
+: 1726856060:0;./linksym add ~/Test/LinksymTest/file.txt test
+: 1726856068:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726856083:0;nvim
+: 1726856179:0;bat .linksym.yaml
+: 1726856238:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726856438:0;go build
+: 1726856470:0;./linksym add ~/Test/LinksymTest/file.txt test/file.txt
+: 1726856477:0;bat .linksym.yaml
+: 1726856490:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726856500:0;bat .linksym.yaml
+: 1726856700:0;go build
+: 1726856705:0;bat .linksym.yaml
+: 1726856709:0;./linksym init
+: 1726856710:0;bat .linksym.yaml
+: 1726856729:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726856735:0;./linksym add ~/Test/LinksymTest/file.txt test/file.txt
+: 1726856739:0;bat .linksym.yaml
+: 1726856773:0;go build
+: 1726856782:0;./linksym add ~/Test/LinksymTest/file.txt test/file.txt
+: 1726856786:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726857020:0;go build
+: 1726857026:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726857035:0;bat .linksym.yaml
+: 1726857040:0;lf
+: 1726857233:0;go build
+: 1726857238:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726857385:0;go build
+: 1726857395:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726857400:0;./linksym add ~/Test/LinksymTest/file.txt test/file.txt
+: 1726857401:0;bat .linksym.yaml
+: 1726857460:0;./linksym remove .gitignore
+: 1726857465:0;./linksym remove test/file.txt
+: 1726857472:0;clear
+: 1726857474:0;lg
+: 1726906998:0;nvim
+: 1726912030:0;lg
+: 1726912242:0;nvim
+: 1726912813:0;go build
+: 1726912871:0;nvim
+: 1726913127:0;go build
+: 1726914310:0;nvim
+: 1726915183:0;go build
+: 1726916348:0;clear
+: 1726916351:0;go build
+: 1726916354:0;nvim
+: 1726917024:0;go build
+: 1726917026:0;ls
+: 1726917029:0;bat .linksym.yaml
+: 1726917034:0;./linksym add ~/Test/LinksymTest/file.txt test/file.txt
+: 1726917037:0;./linksym add ~/Test/LinksymTest/.gitignore .gitignore
+: 1726917052:0;./linksym add ~/Test/LinksymTest/bin/ bin
+: 1726917061:0;./linksym add ~/Test/NumbersTest test/NumbersTest
+: 1726917070:0;./linksym add ~/Test/NumbersTest test/NumbersTest/
+: 1726917083:0;./linksym add ~/Test/NumbersTest test/
+: 1726917113:0;bat .linksym.yaml
+: 1726917119:0;./linksym source
+: 1726917300:0;ls
+: 1726917301:0;bat 
+: 1726917304:0;bat .linksym.yaml
+: 1726917308:0;go build
+: 1726917318:0;./linksym remove test/NumbersTest
+: 1726917321:0;./linksym remove test/file.txt
+: 1726917337:0;./linksym remove .gitignore
+: 1726917360:0;./linksym remove bin
+: 1726917383:0;bat .linksym.yaml
+: 1726917393:0;./linksym init
+: 1726917492:0;./linksym add ~/Test/NumbersTest test/
+: 1726917493:0;bat 
+: 1726917496:0;bat .linksym.yaml
+: 1726917517:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1726917524:0;./linksym add ~/Test/LinksymTest/bitch.ass test
+: 1726917535:0;./linksym add ~/Test/LinksymTest/text.file test/nested
+: 1726917537:0;bat 
+: 1726917539:0;bat .linksym.yaml
+: 1726934068:0;clear
+: 1726934069:0;up
+: 1726934159:0;bat .linksym.yaml
+: 1726934202:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1726934203:0;ls
+: 1726934207:0;bat .linksym.yaml
+: 1726934445:0;up
+: 1726934864:0;clear
+: 1726934900:0;cleanfetch
+: 1726936493:0;nvim
+: 1726939270:0;go buil
+: 1726939273:0;go build
+: 1726939337:0;clear
+: 1726939341:0;bat .linksym.yaml
+: 1726939354:0;./linksym init
+: 1726939355:0;ls
+: 1726939356:0;bat
+: 1726939359:0;bat .linksym.yaml
+: 1726939365:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1726939398:0;bat .linksym.yaml
+: 1726939416:0;go build
+: 1726939422:0;./linksym add test/nested/test.txt
+: 1726939577:0;go build
+: 1726939580:0;bat .linksym.yaml
+: 1726939583:0;./linksym init
+: 1726939587:0;./linksym add test/nested/test.txt
+: 1726939767:0;go build
+: 1726939771:0;./linksym add test/nested/test.txt
+: 1726939819:0;go build
+: 1726939821:0;./linksym add test/nested/test.txt
+: 1726939845:0;nvim
+: 1726939879:0;bat .linksym.yaml
+: 1726939881:0;go build
+: 1726939889:0;./linksym remove test.txt
+: 1726940120:0;lg
+: 1726987184:0;nmcli dev wifi list
+: 1726987186:0;nmcli dev wifi
+: 1726987189:0;nmcli radio wifi on
+: 1726987192:0;nmcli dev wifi list
+: 1726987938:0;up
+: 1727007842:0;clear
+: 1727007855:0;updategrub
+: 1727007861:0;clear
+: 1727007875:0;lspci -k
+: 1727007933:0;lspci -k | fd network
+: 1727007942:0;lspci -k | rg network
+: 1727007948:0;lspci -k | grep network
+: 1727007962:0;lsusb -v
+: 1727007979:0;lsusb
+: 1727007990:0;lsusb -v
+: 1727007996:0;lsusb -v | rg network
+: 1727008003:0;lsusb -v | grep network
+: 1727008074:0;dmesg
+: 1727008080:0;sudo dmesg
+: 1727008184:0;modprobe -r iwlwifi
+: 1727008210:0;modprobe -h
+: 1727008247:0;ls
+: 1727008272:0;bat .linksym.yaml
+: 1727008282:0;./linksym add ~/Test/LinksymTest
+: 1727008289:0;ls
+: 1727008290:0;bat .linksym.yaml
+: 1727008307:0;./linksym remove LinksymTest
+: 1727008310:0;bat .linksym.yaml
+: 1727008331:0;./linksym add ~/Test/LinksymTest .
+: 1727009561:0;cleanfetch
+: 1727009599:0;dua i
+: 1727009666:0;du -sh -- .*(D) */ | sort -hr\
+
+: 1727009672:0;dua i
+: 1727009690:0;cd
+: 1727009692:0;dua i
+: 1727009707:0;nvim
+: 1727010430:0;go build
+: 1727010431:0;ls
+: 1727010453:0;bat .linksym.yaml
+: 1727010469:0;./linksym init
+: 1727010473:0;./linksym add ~/Test/LinksymTest .
+: 1727010480:0;./linksym add ~/Test/NumbersTest
+: 1727010514:0;./linksym add ~/Test/LinksymTest/Help.file test/nested
+: 1727010516:0;bat .linksym.yaml
+: 1727010558:0;./linksym remove LinksymTest
+: 1727010563:0;./linksym remove NumbersTest
+: 1727010577:0;./linksym remove test/nested/Help.file
+: 1727010581:0;bat .linksym.yaml
+: 1727010639:0;clear
+: 1727010643:0;lg
+: 1727010663:0;lf
+: 1727011006:0;bat .linksym.yaml
+: 1727011011:0;lg
+: 1727012080:0;bat .linksym.yaml
+: 1727012100:0;./linksym add ~/Test/LinksymTest/bitch.ass test
+: 1727012104:0;./linksym add ~/Test/LinksymTest/Help.file test
+: 1727012116:0;./linksym add ~/Test/LinksymTest/text.file test
+: 1727012121:0;./linksym add ~/Test/LinksymTest/file.txt test
+: 1727012123:0;lt
+: 1727012125:0;ls test
+: 1727012128:0;bat .linksym.yaml
+: 1727012135:0;./linksym source
+: 1727013381:0;lg
+: 1727013390:0;go build
+: 1727013396:0;./linksym source
+: 1727013517:0;go build
+: 1727013518:0;ls
+: 1727013547:0;bat .linksym.yaml
+: 1727013555:0;./linksym remove test/bitch.ass
+: 1727013558:0;./linksym remove test/Help.file
+: 1727013561:0;./linksym remove test/file.txt
+: 1727013564:0;./linksym remove test/text.file
+: 1727013608:0;lswt
+: 1727013673:0;ls
+: 1727013676:0;cd LinkTesting
+: 1727013677:0;ls
+: 1727013688:0;./linksym source
+: 1727013777:0;ls
+: 1727013806:0;nvim .linksym.yaml
+: 1727013826:0;ls
+: 1727013830:0;./linksym source
+: 1727013929:0;:q
+: 1727013933:0;./linksym source
+: 1727013980:0;clear
+: 1727013993:0;ls
+: 1727015059:0;bat 
+: 1727015062:0;bat .linksym.yaml
+: 1727015077:0;clear
+: 1727015079:0;go build
+: 1727015082:0;./linksym init
+: 1727015084:0;clear
+: 1727015094:0;./linksym add ~/Test/LinksymTest/bitch.ass test
+: 1727015099:0;./linksym add ~/Test/LinksymTest/file.txt test
+: 1727015103:0;./linksym add ~/Test/LinksymTest/Help.file test
+: 1727015115:0;./linksym add ~/Test/LinksymTest/text.file test
+: 1727015175:0;clear
+: 1727015177:0;cd
+: 1727015182:0;ls
+: 1727015192:0;./linksym source
+: 1727015226:0;bat .linksym.yaml
+: 1727015233:0;./linksym test/bitch.ass
+: 1727015248:0;clear
+: 1727015252:0;./linksym remvoe test/bitch.ass
+: 1727015258:0;./linksym remove test/bitch.ass
+: 1727015261:0;./linksym remove test/file.txt
+: 1727015262:0;./linksym remove test/Help.file
+: 1727015265:0;./linksym remove test/text.file
+: 1727015309:0;clear
+: 1727015310:0;bat .linksym.yaml
+: 1727015351:0;cd
+: 1727015362:0;cd Test/LinkTesting
+: 1727015363:0;ls
+: 1727015367:0;./linksym source
+: 1727015390:0;lg
+: 1727016726:0;ls
+: 1727016729:0;go build
+: 1727016734:0;bat .linksym.yaml
+: 1727016752:0;ls
+: 1727016754:0;bat .linksym.yaml
+: 1727016760:0;./linksym init -u
+: 1727016775:0;ls
+: 1727016776:0;bat .linksym.yaml
+: 1727017023:0;go build
+: 1727017037:0;bat .linksym.yaml
+: 1727017043:0;./linksym init -u
+: 1727017046:0;bat .linksym.yaml
+: 1727017146:0;go build
+: 1727017159:0;bat .linksym.yaml
+: 1727017162:0;./linksym init -u
+: 1727017163:0;bat .linksym.yaml
+: 1727017288:0;go build
+: 1727017290:0;bat .linksym.yaml
+: 1727017305:0;clear
+: 1727017306:0;bat .linksym.yaml
+: 1727017308:0;./linksym init -u
+: 1727017310:0;bat .linksym.yaml
+: 1727017347:0;go build
+: 1727017349:0;clear
+: 1727017351:0;bat .linksym.yaml
+: 1727017352:0;ls
+: 1727017356:0;ls test
+: 1727017380:0;bat .linksym.yaml
+: 1727017382:0;./linksym init -u
+: 1727017384:0;bat .linksym.yaml
+: 1727017507:0;go build
+: 1727017519:0;clear
+: 1727017520:0;bat .linksym.yaml
+: 1727017522:0;./linksym init -u
+: 1727017523:0;bat .linksym.yaml
+: 1727017593:0;go build
+: 1727017607:0;bat .linksym.yaml
+: 1727017608:0;./linksym init -u
+: 1727018846:0;bat .linksym.yaml
+: 1727018848:0;go build
+: 1727018861:0;bat .linksym.yaml
+: 1727018865:0;./linksym init -u
+: 1727018866:0;bat .linksym.yaml
+: 1727019142:0;go build
+: 1727019158:0;bat .linksym.yaml
+: 1727019162:0;./linksym init -u
+: 1727019163:0;bat .linksym.yaml
+: 1727020125:0;go build
+: 1727020287:0;ls
+: 1727020296:0;mv .linksym.yaml test/
+: 1727020298:0;ls
+: 1727020301:0;ls test
+: 1727020305:0;go build
+: 1727020309:0;./linksym init
+: 1727020312:0;./linksym init -u
+: 1727020423:0;go build
+: 1727020426:0;./linksym init -u
+: 1727020428:0;./linksym init
+: 1727020636:0;go build
+: 1727020638:0;ls
+: 1727020639:0;bat .linksym.yaml
+: 1727020642:0;./linksym init
+: 1727020647:0;./linksym init -u
+: 1727020804:0;bat .linksym.yaml
+: 1727020818:0;go build
+: 1727020831:0;bat .linksym.yaml
+: 1727020833:0;./linksym init -u
+: 1727020836:0;bat .linksym.yaml
+: 1727020889:0;./linksym source
+: 1727020904:0;bat .linksym.yaml
+: 1727020913:0;./linksym remove test/bitch.ass
+: 1727020915:0;./linksym remove test/file.txt
+: 1727020918:0;./linksym remove test/Help.file
+: 1727020920:0;./linksym remove test/text.file
+: 1727020922:0;bat 
+: 1727020925:0;bat .linksym.yaml
+: 1727021054:0;clear
+: 1727021054:0;bat .linksym.yaml
+: 1727021059:0;go build
+: 1727021061:0;lg
+: 1727021747:0;go build
+: 1727021749:0;bat .linksym.yaml
+: 1727021752:0;./linksym init
+: 1727021754:0;./linksym init -u
+: 1727021826:0;go build
+: 1727021827:0;./linksym init -u
+: 1727022413:0;go build
+: 1727022414:0;./linksym init -u
+: 1727022429:0;lg
+: 1727023462:0;go build
+: 1727023466:0;./linksym
+: 1727023690:0;go build
+: 1727023692:0;./linksym
+: 1727023737:0;go build
+: 1727023739:0;./linksym
+: 1727023851:0;go build
+: 1727023854:0;./linksym
+: 1727023901:0;go build
+: 1727023903:0;./linksym
+: 1727023916:0;lg
+: 1727024144:0;go build
+: 1727024147:0;./linksym
+: 1727024176:0;go build
+: 1727024178:0;./linksym
+: 1727024218:0;go build
+: 1727024219:0;./linksym
+: 1727024235:0;./linksym --help
+: 1727024240:0;./linksym --h
+: 1727024243:0;./linksym -help
+: 1727024248:0;clear
+: 1727024249:0;lg
+: 1727024330:0;nvim
+: 1727024551:0;go build
+: 1727024558:0;bat .linksym.yaml
+: 1727024563:0;./linksym init jhklajsdfalsd
+: 1727024565:0;bat .linksym.yaml
+: 1727025185:0;go build
+: 1727025188:0;./linksym init
+: 1727025189:0;./linksym init ljasd
+: 1727025912:0;go build
+: 1727025931:0;./linksym add lakjsd lkajsdf alkejfa
+: 1727025936:0;./linksym remove lakjdf alkej
+: 1727025942:0;./linksym source lakdfa
+: 1727025948:0;./linksym
+: 1727026260:0;go build
+: 1727026261:0;./linksym
+: 1727026278:0;lg
+: 1727026388:0;ls
+: 1727026392:0;c.
+: 1727026393:0;clear
+: 1727026393:0;lg
+: 1727026745:0;nvim
+: 1727027054:0;ls
+: 1727027058:0;ls bin
+: 1727027063:0;rm -r bin
+: 1727027063:0;ls
+: 1727027069:0;cd test
+: 1727027070:0;ls
+: 1727027073:0;bat .linksym.yaml
+: 1727027086:0;../linksym init -u
+: 1727027092:0;../linksym init --update
+: 1727027109:0;nvim
+: 1727027112:0;cd ..
+: 1727027119:0;bat test/.linksym.yaml
+: 1727027121:0;nvim
+: 1727027200:0;go build
+: 1727027203:0;cd test
+: 1727027211:0;../linksym init -u
+: 1727027217:0;cd 
+: 1727027219:0;nvim
+: 1727027348:0;go build
+: 1727027350:0;cd test
+: 1727027350:0;ls
+: 1727027355:0;../linksym
+: 1727027359:0;../linksym init -u
+: 1727027770:0;cd ..
+: 1727027771:0;nvim
+: 1727027811:0;go build
+: 1727027814:0;bat test/.linksym.yaml
+: 1727027818:0;bat .linksym.yaml
+: 1727027821:0;./linksym init
+: 1727027823:0;./linksym init -u
+: 1727027875:0;go build
+: 1727027877:0;./linksym init -u
+: 1727028679:0;go build
+: 1727028681:0;./linksym init -u
+: 1727028705:0;go build
+: 1727028706:0;./linksym init -u
+: 1727028948:0;go build
+: 1727028949:0;./linksym init -u
+: 1727028963:0;./linksym init ljasdf
+: 1727028966:0;go build
+: 1727028968:0;./linksym init ljasdf
+: 1727028972:0;./linksym init -u khasdf
+: 1727028997:0;lg
+: 1727029188:0;cd test
+: 1727029189:0;ls
+: 1727029191:0;bat .linksym.yaml
+: 1727029194:0;../linksym init -u
+: 1727029195:0;bat .linksym.yaml
+: 1727029338:0;cd ..
+: 1727029339:0;go build
+: 1727029341:0;cd test
+: 1727029347:0;../linksym init -u
+: 1727029349:0;bat .linksym.yaml
+: 1727029425:0;cd ..
+: 1727029426:0;go build
+: 1727029429:0;cd ..
+: 1727029433:0;cd Linksym
+: 1727029433:0;ls
+: 1727029435:0;cd test
+: 1727029441:0;../linksym init -u
+: 1727029465:0;lg
+: 1727029491:0;go build
+: 1727029494:0;cd ..
+: 1727029495:0;go build
+: 1727029496:0;ls
+: 1727029497:0;bat .linksym.yaml
+: 1727029501:0;./linksym init
+: 1727029503:0;./linksym init ljads
+: 1727029507:0;./linksym init -u lkajsdf
+: 1727029510:0;./linksym init -u
+: 1727029511:0;bat .linksym.yaml
+: 1727029520:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727029523:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1727029527:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1727029530:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727029531:0;ls
+: 1727029534:0;bat .linksym.yaml
+: 1727029600:0;./linksym init -u
+: 1727029601:0;bat .linksym.yaml
+: 1727029638:0;./linksym init
+: 1727029639:0;ls
+: 1727029644:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727029649:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1727029651:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1727029654:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727029655:0;bat .linksym.yaml
+: 1727029707:0;go build
+: 1727029726:0;./linksym init
+: 1727029728:0;bat .linksym.yaml
+: 1727029733:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727029735:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1727029738:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1727029740:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1727029741:0;bat .linksym.yaml
+: 1727029749:0;./linksym init -u
+: 1727029750:0;bat .linksym.yaml
+: 1727077814:0;fastfetch -all
+: 1727077822:0;fastfetch -c all
+: 1727078110:0;ls -alp /etc/ssh/ssh_host_dsa_key.pub | cut -d " " -f6
+: 1727078121:0;command ls -alp /etc/ssh/ssh_host_dsa_key.pub | cut -d " " -f6
+: 1727078152:0;command ls -alp /etc/ssh/ssh_host_rsa_key.pub | cut -d " " -f6
+: 1727078157:0;command ls -alp /etc/ssh/ssh_host_rsa_key.pub |
+: 1727078159:0;command ls -alp /etc/ssh/ssh_host_rsa_key.pub
+: 1727078689:0;clear
+: 1727078691:0;cleanfetch
+: 1727078838:0;ls
+: 1727078847:0;bat .linksym.yaml
+: 1727078855:0;./linksym remove text.file
+: 1727078857:0;./linksym remove bitch.ass
+: 1727078860:0;./linksym remove Help.file
+: 1727078863:0;./linksym remove file.txt
+: 1727078865:0;bat .linksym.yaml
+: 1727078893:0;cd ..
+: 1727078894:0;cd N-Cover-Scraper
+: 1727078894:0;ls
+: 1727078899:0;nvim Numbers.json
+: 1727078936:0;./GoNCoverScraper
+: 1727079030:0;nvim Numbers.json
+: 1727079057:0;./GoNCoverScraper
+: 1727079089:0;lf
+: 1727079102:0;clear
+: 1727079104:0;cd ..
+: 1727079117:0;lg
+: 1727079123:0;cd ..
+: 1727079125:0;lg
+: 1727079156:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1727079208:0;nvim
+: 1727079248:0;ls
+: 1727079249:0;bat .linksym.yaml
+: 1727079252:0;go build
+: 1727079253:0;ls
+: 1727079262:0;./linksym init
+: 1727079266:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1727079270:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1727079274:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727079276:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1727079279:0;bat .linksym.yaml
+: 1727079286:0;./linksym init -u
+: 1727079287:0;bat .linksym.yaml
+: 1727079333:0;go build
+: 1727079335:0;./linksym init -u
+: 1727079336:0;bat .linksym.yaml
+: 1727079371:0;go build
+: 1727079372:0;ls
+: 1727079376:0;./linksym init -u
+: 1727079376:0;bat .linksym.yaml
+: 1727079411:0;cd
+: 1727079414:0;cd Test/CountTest
+: 1727079414:0;ls
+: 1727079417:0;bat .linksym.yaml
+: 1727079422:0;./linksym init -u
+: 1727079423:0;bat .linksym.yaml
+: 1727079430:0;./linksym source lkajdg
+: 1727079431:0;bat .linksym.yaml
+: 1727079445:0;./linksym source 
+: 1727079446:0;ls
+: 1727079483:0;bat .linksym.yaml
+: 1727079515:0;./linksym remove file.txt
+: 1727079518:0;ls
+: 1727079524:0;bat .linksym.yaml
+: 1727080355:0;ls
+: 1727080362:0;go build
+: 1727080396:0;ls
+: 1727080398:0;bat 
+: 1727080401:0;bat .linksym.yaml
+: 1727080407:0;./linksym update
+: 1727080409:0;bat .linksym.yaml
+: 1727080537:0;go build
+: 1727080546:0;ls
+: 1727080548:0;bat .linksym.yaml
+: 1727080550:0;./linksym update
+: 1727080700:0;go build
+: 1727080701:0;la
+: 1727080712:0;bat .linksym.yaml
+: 1727080719:0;./linksym update
+: 1727080741:0;bat .linksym.yaml
+: 1727080948:0;./linksym remove jlakjdsf
+: 1727081070:0;go build
+: 1727081073:0;./linksym update
+: 1727081125:0;go build
+: 1727081129:0;./linksym update
+: 1727081312:0;go build
+: 1727081316:0;bat .linksym.yaml
+: 1727081332:0;./linksym update
+: 1727081334:0;bat .linksym.yaml
+: 1727081347:0;ls
+: 1727081349:0;cd test
+: 1727081350:0;ls
+: 1727081351:0;bat .linksym.yaml
+: 1727081358:0;./linksym update
+: 1727081361:0;../linksym update
+: 1727081365:0;bat .linksym.yaml
+: 1727081432:0;cd ..
+: 1727081433:0;go build
+: 1727081436:0;bat .linksym.yaml
+: 1727081443:0;./linksym update
+: 1727081444:0;bat .linksym.yaml
+: 1727081465:0;go build
+: 1727081467:0;./linksym update
+: 1727081477:0;bat .linksym.yaml
+: 1727081561:0;go build
+: 1727081562:0;.
+: 1727081565:0;./linksym update
+: 1727081887:0;go build
+: 1727081889:0;./linksym update
+: 1727081917:0;go build
+: 1727081919:0;./linksym update
+: 1727081923:0;bat .linksym.yaml
+: 1727081926:0;./linksym update
+: 1727081973:0;go build
+: 1727081975:0;./linksym update
+: 1727081977:0;bat .linksym.yaml
+: 1727081982:0;cd test
+: 1727081982:0;ls
+: 1727081984:0;bat .linksym.yaml
+: 1727081989:0;../linksym update
+: 1727081992:0;bat .linksym.yaml
+: 1727081999:0;cd ..
+: 1727082015:0;bat .linksym.yaml
+: 1727082016:0;./linksym update
+: 1727082018:0;bat .linksym.yaml
+: 1727082027:0;cd test
+: 1727082028:0;./linksym update
+: 1727082030:0;../linksym update
+: 1727082032:0;bat .linksym.yaml
+: 1727082118:0;cd ..
+: 1727082119:0;go build
+: 1727082121:0;bat .linksym.yaml
+: 1727082123:0;./linksym update
+: 1727082125:0;cd test
+: 1727082126:0;bat .linksym.yaml
+: 1727082128:0;./linksym update
+: 1727082130:0;../linksym update
+: 1727082131:0;bat .linksym.yaml
+: 1727082249:0;go build
+: 1727082251:0;cd ..
+: 1727082252:0;go build
+: 1727082253:0;ls
+: 1727082254:0;bat .linksym.yaml
+: 1727082256:0;./linksym update
+: 1727082258:0;bat .linksym.yaml
+: 1727082261:0;cd test
+: 1727082262:0;bat .linksym.yaml
+: 1727082267:0;../linksym update
+: 1727082268:0;bat .linksym.yaml
+: 1727082320:0;ls
+: 1727082321:0;bat .linksym.yaml
+: 1727082326:0;./linksym update
+: 1727082327:0;bat .linksym.yaml
+: 1727082336:0;./linksym remove file.txt
+: 1727082339:0;./linksym remove Help.file
+: 1727082342:0;./linksym remove text.file
+: 1727082349:0;./linksym remove bitch.ass
+: 1727082352:0;bat .linksym.yaml
+: 1727082356:0;./linksym update
+: 1727082357:0;bat .linksym.yaml
+: 1727082389:0;clear
+: 1727082391:0;ls
+: 1727082393:0;bat .linksym.yaml
+: 1727082397:0;cd ..
+: 1727082422:0;ls
+: 1727082423:0;bat .linksym.yaml
+: 1727082427:0;go build
+: 1727082430:0;./linksym update
+: 1727082431:0;bat .linksym.yaml
+: 1727082453:0;cd test
+: 1727082453:0;ls
+: 1727082454:0;bat .linksym.yaml
+: 1727082457:0;../linksym update
+: 1727082458:0;bat .linksym.yaml
+: 1727082470:0;cd ..
+: 1727082471:0;go build
+: 1727082473:0;bat .linksym.yaml
+: 1727082480:0;./linksym init
+: 1727082481:0;bat .linksym.yaml
+: 1727082486:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1727082491:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1727082493:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727082497:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1727082498:0;bat .linksym.yaml
+: 1727082522:0;cd test
+: 1727082523:0;ls
+: 1727082524:0;bat .linksym.yaml
+: 1727082527:0;../linksym update
+: 1727082528:0;bat .linksym.yaml
+: 1727082538:0;../linksym update
+: 1727082539:0;bat .linksym.yaml
+: 1727082555:0;cd ..
+: 1727082557:0;go build
+: 1727082559:0;cd test
+: 1727082560:0;../linksym update
+: 1727082560:0;bat .linksym.yaml
+: 1727082571:0;ls
+: 1727082572:0;bat .linksym.yaml
+: 1727082574:0;../linksym update
+: 1727082575:0;bat .linksym.yaml
+: 1727082870:0;go build
+: 1727082874:0;cd ..
+: 1727082875:0;go build
+: 1727082878:0;lg
+: 1727082884:0;ls
+: 1727082891:0;./linksym update
+: 1727082913:0;bat .linksym.yaml
+: 1727082919:0;cd test
+: 1727082921:0;bat .linksym.yaml
+: 1727082924:0;../linksym update
+: 1727082974:0;go build
+: 1727082977:0;cd ..
+: 1727082978:0;go build
+: 1727082980:0;./linksym update
+: 1727082984:0;cd test
+: 1727082985:0;bat .linksym.yaml
+: 1727082989:0;./linksym update
+: 1727082993:0;../linksym update
+: 1727083114:0;cd ..
+: 1727083115:0;go build
+: 1727083122:0;cd test
+: 1727083125:0;../linksym update
+: 1727083166:0;cd ..
+: 1727083168:0;go build
+: 1727083170:0;./linksym update
+: 1727103035:0;up
+: 1727106361:0;bat .linksym.yaml
+: 1727108780:0;go build
+: 1727108782:0;bat .linksym.yaml
+: 1727108784:0;./linksym update
+: 1727108847:0;go build
+: 1727108848:0;./linksym update
+: 1727108851:0;bat .linksym.yaml
+: 1727109005:0;go build
+: 1727109230:0;lg
+: 1727109361:0;ls
+: 1727109362:0;go build
+: 1727109364:0;bat .linksym.yaml
+: 1727109366:0;ls
+: 1727109371:0;./linksym init
+: 1727109377:0;./linksym add ~/Test/LinksymTest/bitch.ass
+: 1727109382:0;./linksym add ~/Test/LinksymTest/Help.file
+: 1727109384:0;./linksym add ~/Test/LinksymTest/file.txt
+: 1727109387:0;./linksym add ~/Test/LinksymTest/text.file
+: 1727109388:0;ls
+: 1727109389:0;bat .linksym.yaml
+: 1727109414:0;cd test
+: 1727109414:0;ls
+: 1727109418:0;bat .linksym.yaml
+: 1727109423:0;../linksym update
+: 1727109428:0;bat .linksym.yaml
+: 1727109495:0;go build
+: 1727109501:0;ls
+: 1727109502:0;bat .linksym.yaml
+: 1727109511:0;rm ls
+: 1727109515:0;ls
+: 1727109517:0;bat .linksym.yaml
+: 1727109523:0;go build
+: 1727109537:0;../linksym update
+: 1727109540:0;bat .linksym.yaml
+: 1727109595:0;./linksym remove bitch.ass
+: 1727109597:0;./linksym remove Help.file
+: 1727109599:0;./linksym remove file.txt
+: 1727109603:0;./linksym remove text.file
+: 1727109608:0;ls
+: 1727109610:0;bat .linksym.yaml
+: 1727109614:0;../linksym source
+: 1727109642:0;./linksym remove text.file
+: 1727109649:0;../linksym remove file.txt
+: 1727109651:0;../linksym remove text.file
+: 1727109653:0;../linksym remove Help.file
+: 1727109655:0;../linksym remove bitch.ass
+: 1727109699:0;ls
+: 1727109701:0;bat .linksym.yaml
+: 1727109703:0;lg
+: 1727112358:0;go build
+: 1727112364:0;./linksym init
+: 1727112365:0;ls
+: 1727112375:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1727112452:0;go build
+: 1727112453:0;ls
+: 1727112462:0;go build
+: 1727112462:0;bat .linksym.yaml
+: 1727112465:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1727112467:0;ls
+: 1727112484:0;bat .linksym.yaml
+: 1727112495:0;./linksym remove nvim/text.file
+: 1727112500:0;lg
+: 1727113009:0;go build
+: 1727113010:0;ls
+: 1727113012:0;lt
+: 1727113018:0;go build
+: 1727113027:0;./linksym add ~/Test/LinksymTest/text.file file.help
+: 1727113053:0;bat .linksym.yaml
+: 1727113058:0;./linksym remove file.help
+: 1727113071:0;./linksym add ~/Test/LinksymTest/text.file nvim/file.help
+: 1727113281:0;go build
+: 1727113302:0;./linksym add ~/Test/LinksymTest/text.file nvim/file.help
+: 1727113333:0;./linksym add ~/Test/LinksymTest/Help.file test/file.made
+: 1727113348:0;./linksym remove nvim/file.help
+: 1727113353:0;./linksym remove test/file.made
+: 1727113501:0;lg
+: 1727113632:0;clear
+: 1727113638:0;up
+: 1727113663:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1727113682:0;nvim
+: 1727113849:0;c.
+: 1727113851:0;fshow
+: 1727113965:0;nvim
+: 1727114105:0;lg
+: 1727114492:0;clear
+: 1727114510:0;nvim
+: 1727279258:0;up
+: 1727520887:0;ls
+: 1727520888:0;lg
+: 1727520900:0;up
+: 1727520967:0;refresh-mirrors
+: 1727521052:0;nvim
+: 1727521164:0;clear
+: 1727521165:0;up
+: 1727521243:0;nmcli 
+: 1727521245:0;nmcli dev wifi list
+: 1727521264:0;nmcli dev wifi connect Redmi\ 6A
+: 1727521286:0;nmcli dev wifi connect Redmi\ 6A password alskdjfhg
+: 1727521299:0;up
+: 1727521344:0;ls
+: 1727521346:0;go build
+: 1727521348:0;ls
+: 1727521350:0;bat .linksym.yaml
+: 1727521353:0;./linksym init
+: 1727521369:0;go build
+: 1727521370:0;./linksym init
+: 1727521460:0;clear
+: 1727522987:0;go build
+: 1727522989:0;lg
+: 1727523013:0;./linksym remove README.md
+: 1727523090:0;go build
+: 1727523092:0;./linksym remove README.md
+: 1727523129:0;go build
+: 1727523130:0;./linksym remove README.md
+: 1727523544:0;go build
+: 1727523548:0;./linksym remove README.md
+: 1727523595:0;./linksym add test/nested/test.txt
+: 1727523710:0;go build
+: 1727523711:0;./linksym add test/nested/test.txt
+: 1727523754:0;go buil
+: 1727523756:0;go build
+: 1727523758:0;bat .linksym.yaml
+: 1727523762:0;lg
+: 1727523765:0;lf
+: 1727523784:0;./linksym remove test.txt
+: 1727523792:0;bat .linksym.yaml
+: 1727523803:0;lf
+: 1727523871:0;go build
+: 1727523875:0;./linksym add test/nested/test.txt
+: 1727524018:0;bash <(curl -sSL https://spotx-official.github.io/run.sh)
+: 1727524991:0;cleanfetch
+: 1727525143:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1727525157:0;nmcli dev wifi connect Realme\ 7\ Pro password laksjdhfg
+: 1727525265:0;nmcli dev wifi list
+: 1727525274:0;nmcli dev wifi connect Realme\ 7\ Pro
+: 1727525465:0;nmcli dev wifi connect Realme\ 7\ Pro password laksjdhfg
+: 1727525520:0;nmcli dev wifi connect Redmi\ 6A password alskdjfhg
+: 1727525713:0;nmcli dev wifi
+: 1727525721:0;nmcli dev wifi connect Redmi\ 6A
+: 1727525781:0;nmcli radio wifi off
+: 1727525783:0;nmcli radio wifi on
+: 1727525786:0;nmcli dev wifi connect Redmi\ 6A password alskdjfhg
+: 1727526411:0;nvim
+: 1727534452:0;nmcli generak
+: 1727534454:0;nmcli general
+: 1727534461:0;nmcli general status
+: 1727534468:0;nmcli general help
+: 1727534485:0;nmcli general reload 
+: 1727534559:0;sudo systemctl restart NetworkManager.service
+: 1727534574:0;nmcli general status
+: 1727534603:0;rfkill list
+: 1727534635:0;groups
+: 1727534652:0;ls -l /var/run/daemons
+: 1727534659:0;c/
+: 1727534661:0;cd /
+: 1727534663:0;fzf
+: 1727534695:0;fd . --type dir 
+: 1727534702:0;fd . --type dir daemons
+: 1727534705:0;fd . --type dir --name daemons
+: 1727534710:0;fd . --type dir -name daemons
+: 1727534757:0;fd -name *.go
+: 1727534766:0;fd -name daemon
+: 1727534774:0;fd -name *daemon/
+: 1727534776:0;fd -name *daemon*
+: 1727534785:0;fd --type dir | fzf
+: 1727534830:0;cd
+: 1727534834:0;cleanfetch
+: 1727534840:0;sudo nm-applet
+: 1727534848:0;nm-applet
+: 1727534854:0;nm-applet --indicator
+: 1727534888:0;wpa_supplicant
+: 1727534916:0;wpa_supplicant -Diwlwifi -iwlan0 -u
+: 1727534946:0;wicd
+: 1727535019:0;ls -l /var
+: 1727535028:0;ll /var/lib
+: 1727535065:0;sv 
+: 1727535077:0;nmtui
+: 1727535107:0;systemctl status NetworkManager
+: 1727535182:0;sudo journalctl -b
+: 1727535312:0;pacman -Qk wpa_supplicant
+: 1727535319:0;pacman -Qkk wpa_supplicant
+: 1727535357:0;sudo systemctl restart wpa_supplicant.service
+: 1727535364:0;sudo systemctl restart wpa_supplicant.servic??????
+: 1727535379:0;sudo systemctl restart NetworkManager.service
+: 1727535392:0;sudo systemctl restart wpa_supplicant.service
+: 1727535393:0;sudo systemctl restart NetworkManager.service
+: 1727535414:0;systemctl status wpa_supplicant.service
+: 1727535472:0;mkinitcpio -p linux
+: 1727535475:0;sudo mkinitcpio -p linux
+: 1727535528:0;paru -S wpa_supplicant
+: 1727535608:0;systemctl status wpa_supplicant.service
+: 1727535635:0;ip -a
+: 1727535637:0;ip a
+: 1727535678:0;find /etc/systemd -type l -exec test -f {} \; -print | awk -F'/' '{ printf ("%-40s | %s\n", $(NF-0), $(NF-1)) }' | sort -f
+: 1727535734:0;ip link set wlo1 up
+: 1727535753:0;systemctl stop bluetooth.service
+: 1727536637:0;nmcli device disconnect eno1
+: 1727536652:0;nmcli radio wifi on
+: 1727536661:0;nmcli connection
+: 1727536725:0;ls /etc/NetworkManager
+: 1727536734:0;bat /etc/NetworkManager/NetworkManager.conf
+: 1727536745:0;ls -l /etc/NetworkManager
+: 1727536750:0;ls -l /etc/NetworkManager/conf.d
+: 1727536832:0;bat /etc/resolv.conf
+: 1727536891:0;grep -r '^psk=' /etc/NetworkManager/system-connections/
+: 1727536895:0;sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
+: 1727536927:0;nm-connection-editor
+: 1727536987:0;rm /var/lib/NetworkManager/NetworkManager.state
+: 1727536990:0;sudo rm /var/lib/NetworkManager/NetworkManager.state
+: 1727537035:0;rfkill list all
+: 1727537151:0;iw dev
+: 1727537169:0;ip link set wlo1 up
+: 1727537172:0;sudo ip link set wlo1 up
+: 1727537187:0;sudo ip link set wlp3s0 up
+: 1727537209:0;lspci -nn
+: 1727537227:0;lsmod
+: 1727537307:0;stat /lib
+: 1727537324:0;pacman -Qs linux-firmware
+: 1727537372:0;pacPreviewInstalled
+: 1727537415:0;paru -S linux-firmware
+: 1727537466:0;ls /usr/lib
+: 1727537477:0;ls /usr/lib/firmware
+: 1727537593:0;ls /usr/lib/firmware/rtlwifi
+: 1727537773:0;go build
+: 1727537774:0;ls
+: 1727537775:0;bat 
+: 1727537778:0;bat .linksym.yaml
+: 1727537780:0;ls
+: 1727537787:0;./linksym remove test.txt
+: 1727537788:0;ls
+: 1727537789:0;bat .linksym.yaml
+: 1727537823:0;cleanfetch
+: 1727537844:0;systemctl status wpa_supplicant.service
+: 1727537869:0;sudo systemctl restart wpa_supplicant
+: 1727537873:0;systemctl status wpa_supplicant.service
+: 1727537903:0;sudo systemctl disable --now wpa_supplicant.service
+: 1727537909:0;systemctl status wpa_supplicant.service
+: 1727537921:0;systemctl status NetworkManager
+: 1727537940:0;sudo systemctl restart networkmanager
+: 1727537948:0;sudo systemctl restart NetworkManager
+: 1727537958:0;systemctl status NetworkManager
+: 1727537982:0;systemctl status wpa_supplicant.service
+: 1727537995:0;tmux ls
+: 1727538440:0;clear
+: 1727538825:0;inzi
+: 1727538827:0;inxi
+: 1727538831:0;inxi -
+: 1727538840:0;inxi -Fazy
+: 1727538904:0;systemctl status wpa_supplicant.service
+: 1727539001:0;ls /etc/wpa_supplicant
+: 1727539056:0;_dhclient
+: 1727539063:0;paru -Qs dhcpd
+: 1727539070:0;paru -Qs dhcpcd
+: 1727539076:0;paru -S dhcpcd
+: 1727539124:0;sudo systemctl restart NetworkManager
+: 1727539134:0;systemctl status wpa_supplicant.service
+: 1727539140:0;systemctl status NetworkManager
+: 1727539216:0;sudo systemctl enable --now dhcpcd
+: 1727539221:0;sudo systemctl restart NetworkManager
+: 1727539242:0;systemctl status NetworkManager
+: 1727539362:0;paru -Qeq | fzf --height=100% --preview='pacman -Qil {}'
+: 1727539466:0;ll /etc/udev/rules.d
+: 1727539477:0;bat /etc/udev/udev.conf
+: 1727539494:0;sudo lsmod | grep '^iwl.vm'
+: 1727539518:0;lt /etc/NetworkManager
+: 1727539527:0;lt -depth 4 /etc/NetworkManager
+: 1727539531:0;lt --depth 4 /etc/NetworkManager
+: 1727539537:0;which lt
+: 1727539551:0;lt --level=4 /etc/NetworkManager
+: 1727539563:0;lt /etc/NetworkManager
+: 1727539572:0;cd /etc/NetworkManager
+: 1727539572:0;ls
+: 1727539573:0;lt
+: 1727539581:0;lf
+: 1727539600:0;ls
+: 1727539605:0;rm -f NetworkManager.conf
+: 1727539609:0;sudo rm -f NetworkManager.conf
+: 1727539611:0;ls
+: 1727539615:0;systemctl status NetworkManager
+: 1727539660:0;sudo systemctl restart NetworkManager
+: 1727539669:0;cd
+: 1727539750:0;ll /lib/systemd/system/
+: 1727539761:0;la /lib/systemd/system
+: 1727539812:0;systemctl unmask wpa_supplicant.service
+: 1727539844:0;systemctl daemon-reload
+: 1727539889:0;wpa_cli
+: 1727539930:0;ls /etc/NetworkManager/
+: 1727539948:0;nmcli radio
+: 1727539984:0;nmcli dev
+: 1727539997:0;dmesg 
+: 1727540010:0;sudo dmesg | grep wlo1
+: 1727540071:0;systemctl list-unit-files --state=enabled
+: 1727540125:0;sudo systemctl disable wpa_supplicant.service
+: 1727540140:0;systemctl status wpa_supplicant.service
+: 1727540145:0;systemctl stop wpa_supplicant.service
+: 1727540173:0;systemctl stop NetworkManager
+: 1727540191:0;systemctl enable --now NetworkManager
+: 1727540207:0;systemctl status NetworkManager
+: 1727540226:0;systemctl list-unit-files --state=enabled
+: 1727540246:0;sudo systemctl enable dhcpcd.service
+: 1727540249:0;systemctl list-unit-files --state=enabled
+: 1727540313:0;paru -S iwd
+: 1727540327:0;systemctl restart NetworkManager
+: 1727540363:0;lscpi -v
+: 1727540367:0;lspci -v
+: 1727540409:0;dhcpcd wlo1
+: 1727540411:0;sudo dhcpcd wlo1
+: 1727540443:0;systemctl status NetworkManager
+: 1727540489:0;iwctl
+: 1727540546:0;systemctl start iwd.service
+: 1727540550:0;iwctl
+: 1727540610:0;lspci -v
+: 1727540685:0;iwconfig
+: 1727540692:0;ip link set wlo1 up
+: 1727540695:0;sudo ip link set wlo1 up
+: 1727540903:0;sudoedit /etc/NetworkManager/conf.d/wifi_backend.conf
+: 1727540914:0;bat /etc/NetworkManager/conf.d/wifi_backend.conf
+: 1727540928:0;yeet wpa_supplicant
+: 1727540940:0;sudo systemctl restart NetworkManager
+: 1727541195:0;sudo systemctl stop wpa_supplicant.service
+: 1727541203:0;sudo systemctl disable wpa_supplicant.service
+: 1727541226:0;iwctl
+: 1727610468:0;pm
+: 1727610622:0;up
+: 1727610626:0;ls
+: 1727611072:0;nmtui
+: 1727611160:0;nvim
+: 1727611639:0;c.
+: 1727611640:0;lg
+: 1727612088:0;nvim
+: 1727612418:0;cd scripts
+: 1727612419:0;lg
+: 1727612440:0;cd ..
+: 1727612441:0;lg
+: 1727613005:0;nvim
+: 1727613990:0;cleanfetch
+: 1727614003:0;systemctl status NetworkManager
+: 1727614024:0;systemctl status iwd
+: 1727615296:0;nvim
+: 1727617387:0;fg
+: 1727617390:0;lg
+: 1727617397:0;go build
+: 1727617443:0;nvim
+: 1727618896:0;clear
+: 1727618897:0;lg
+: 1727619067:0;nvim
+: 1727621710:0;tmux kill-session -t Go
+: 1727621716:0;go build
+: 1727621717:0;nvim
+: 1727621864:0;tmux kill-session -t Go
+: 1727621869:0;nvim
+: 1727621884:0;tmux kill-session -t Go
+: 1727621887:0;nvim
+: 1727622137:0;cleanfetch
+: 1727623009:0;nvim
+: 1727623194:0;lg
+: 1727626901:0;cleanfetch
+: 1727627360:0;nvim
+: 1727627454:0;go build
+: 1727627455:0;lg
+: 1727628861:0;go build
+: 1727631009:0;nvim
+: 1727631090:0;go build
+: 1727631355:0;D
+: 1727631923:0;nvim
+: 1727631932:0;go build
+: 1727631969:0;lg
+: 1727632112:0;go build
+: 1727632112:0;ls
+: 1727632114:0;bat /etc/NetworkManager/conf.d/wifi_backend.conf
+: 1727632116:0;bat .linksym.yaml
+: 1727632120:0;./linksym init
+: 1727632156:0;go build
+: 1727632159:0;./linksym init
+: 1727632226:0;./linksym add ~/Test/LinksymTest/Help.file ./test/nested
+: 1727632383:0;go build
+: 1727632396:0;./linksym add ~/Test/LinksymTest/bitch.ass ./test
+: 1727632513:0;nvim
+: 1727632608:0;./linksym
+: 1727633832:0;nvim
+: 1727633983:0;go build
+: 1727633989:0;./linksym
+: 1727634011:0;bat .linksym.yaml
+: 1727634018:0;./linksym remove test/bitch.ass
+: 1727634039:0;./linksym remove test/nested/Help.file
+: 1727634042:0;ls
+: 1727634046:0;bat .linksym.yaml 
+: 1727634049:0;./linksym init
+: 1727634178:0;go build
+: 1727634181:0;./linksym
+: 1727634318:0;go build
+: 1727634320:0;./linksym
+: 1727634324:0;./linksym init
+: 1727634329:0;./linksym init -v
+: 1727634336:0;./linksym -v init
+: 1727634492:0;go build
+: 1727634834:0;./linksym init -h
+: 1727634841:0;./linksym -h init
+: 1727634849:0;./linksym -h
+: 1727634885:0;go build
+: 1727634887:0;./linksym -h
+: 1727634925:0;go build
+: 1727634930:0;./linksym -v init
+: 1727634953:0;./linksym -v add ~/Test/LinksymTest/text.file
+: 1727634965:0;bat .linksym.yaml 
+: 1727634977:0;./linksym -v remove text.file
+: 1727634981:0;bat .linksym.yaml 
+: 1727634986:0;./linksym init
+: 1727634990:0;./linksym -v -h
+: 1727634996:0;lg
+: 1727635166:0;go build
+: 1727695446:0;bat .linksym.yaml 
+: 1727695452:0;up
+: 1727695493:0;lg
+: 1727695502:0;ls
+: 1727695507:0;lf
+: 1727695558:0;nvim
+: 1727713803:0;go build
+: 1727715498:0;lg
+: 1727715515:0;ls
+: 1727715516:0;clear
+: 1727715517:0;nvim
+: 1727715529:0;lg
+: 1727715588:0;git switch main
+: 1727715592:0;ls
+: 1727715593:0;lg
+: 1727715637:0;git switch Refactor
+: 1727715640:0;lg
+: 1727715651:0;clear
+: 1727715655:0;cleanfetch
+: 1727715658:0;nvim
+: 1727716685:0;go build
+: 1727716690:0;lg
+: 1727717052:0;go build
+: 1727717056:0;./linksym -h
+: 1727717060:0;./linksym -v
+: 1727717068:0;bat .linksym.yaml 
+: 1727717072:0;./linksym -v init
+: 1727717113:0;go build
+: 1727717116:0;./linksym init
+: 1727717125:0;./linksym add ~/Test/LinksymTest/bitch.ass ./test
+: 1727717148:0;./linksym add ~/Test/LinksymTest/Help.file test/nested
+: 1727717151:0;bat .linksym.yaml 
+: 1727717159:0;lf
+: 1727717179:0;./linksym remove test/bitch.ass
+: 1727717186:0;./linksym remove test/nested/Help.file
+: 1727717191:0;./linksym remove test/nested/test.txt
+: 1727717218:0;cd test
+: 1727717218:0;ls
+: 1727717226:0;../linksym update
+: 1727717227:0;bat 
+: 1727717230:0;bat .linksym.yaml 
+: 1727717248:0;../linksym source
+: 1727717279:0;bat .linksym.yaml 
+: 1727717290:0;../linksym remove test/bitch.ass
+: 1727717294:0;../linksym remove test/nested/Help.file
+: 1727717305:0;bat .linksym.yaml 
+: 1727717321:0;lg
+: 1727717482:0;lf
+: 1727717592:0;lg
+: 1727717594:0;lf
+: 1727717602:0;nvim
+: 1727717994:0;clear
+: 1727717996:0;nvim
+: 1727718099:0;clear
+: 1727718103:0;nvim
+: 1727718142:0;:q
+: 1727718145:0;nvim
+: 1727718231:0;cleanfetch
+: 1727718234:0;lf
+: 1727718235:0;c.
+: 1727718236:0;lg
+: 1727866301:0;up
+: 1727866358:0;paru -S ryujinx
+: 1727866397:0;git switch main
+: 1727866398:0;ls
+: 1727866399:0;lg
+: 1727866401:0;lf
+: 1727866410:0;git switch Refactor
+: 1727866411:0;ls
+: 1727866414:0;nvim
+: 1727866634:0;cleanfetch
+: 1727866636:0;last
+: 1727866716:0;stat -c %W / 
+: 1727866724:0;stat -h -c %W / 
+: 1727866767:0;birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days
+: 1727868336:0;source ~/.zshrc
+: 1727868338:0;age
+: 1727868364:0;nvim
+: 1727877992:0;age
+: 1727877994:0;clear
+: 1727878010:0;command age
+: 1727878024:0;printf
+: 1727878026:0;printf age
+: 1727878046:0;type age
+: 1727878072:0;declare age
+: 1727878081:0;declare -f age
+: 1727878170:0;declare -f most_used
+: 1727878518:0;go build
+: 1727878520:0;./linksym
+: 1727878806:0;lg
+: 1727878857:0;nvim
+: 1727879975:0;vnim
+: 1727879976:0;nvim
+: 1727880228:0;c.
+: 1727880230:0;lf
+: 1727880312:0;lg
+: 1727881673:0;export TERM=xterm
+: 1727882138:0;nvim
+: 1727883062:0;c.
+: 1727883063:0;lg
+: 1727883083:0;gp
+: 1727885772:0;nvim
+: 1727885916:0;lg
+: 1727886658:0;nvim
+: 1727890462:0;lg
+: 1727890817:0;nvim
+: 1727891692:0;lg
+: 1727891696:0;nvim
+: 1727892596:0;nmcli dev wifi connect Nokia\ 6.1 password Pikupiku
+: 1727892601:0;nmcli dev wifi connect Nokia\ 6.1 
+: 1727892623:0;nmcli dev wifi connect Nokia\ 6.1 password Pikupiku
+: 1727892732:0;nmcli dev wifi connect Realme\ 7\ Pro password laksjdhfg
+: 1727955478:0;cleanfetch
+: 1727955484:0;nmcli dev wifi connect Realme\ 7\ Pro password laksjdhfg
+: 1727955491:0;up
+: 1727955913:0;nvim
+: 1727957106:0;lg
+: 1727958173:0;nvim
+: 1727958415:0;go build
+: 1727958416:0;ls
+: 1727958420:0;bat .linksym.yaml 
+: 1727958423:0;rm .linksym.yaml
+: 1727958429:0;go build
+: 1727958431:0;./linksym init
+: 1727966927:0;nmcli dev wifi list
+: 1727966935:0;systemctl status iwd
+: 1727966939:0;systemctl status NetworkManager
+: 1727966946:0;nm-applet
+: 1727967030:0;man NetworkManager.conf
+: 1727967077:0;systemctl restart NetworkManager
+: 1727967085:0;nmcli dev wifi list
+: 1727967906:0;man nm-settings
+: 1727967980:0;man NetworkManager.conf
+: 1727968111:0;rfkill
+: 1727968121:0;modprobe -r rfkill
+: 1727968140:0;pacPreviewInstalledAll
+: 1727968563:0;paru -S tlp
+: 1727968669:0;nmcli dev show
+: 1727968684:0;nm-applet
+: 1727968844:0;man NetworkManager.conf
+: 1727968861:0;man nm-settings
+: 1727969024:0;nmcli connection edit Realme\ 7\ Pro
+: 1727969344:0;nmcli connection show Realme\ 7\ Pro
+: 1727969405:0;paru -S tlp
+: 1727969417:0;tlp 
+: 1727969422:0;tlp  help
+: 1727969437:0;tlp bat 
+: 1727969481:0;nmcli connection reload
+: 1727969485:0;sudo nmcli connection reload
+: 1727969488:0;clear
+: 1727969499:0;man NetworkManager.conf
+: 1727969659:0;iw 
+: 1727969695:0;iw dev wlan0 get power_save
+: 1727969722:0;ls /etc/pm
+: 1727969756:0;sudoedit /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+: 1727969798:0;systemctl restart NetworkManager
+: 1727969946:0;iwconfig
+: 1727969969:0;nvim /etc/tlp.conf
+: 1727970012:0;yeet tlp
+: 1727971273:0;cleanfetch
+: 1727971277:0;clear
+: 1727971282:0;nvim
+: 1727971286:0;bat .linksym.yaml 
+: 1727971298:0;go build
+: 1727971301:0;./linksym init
+: 1727971305:0;bat .linksym.yaml 
+: 1727971577:0;nvim
+: 1727972652:0;lg
+: 1728028657:0;up
+: 1728028661:0;cleanfetch
+: 1728028995:0;lg
+: 1728030032:0;nvim
+: 1728030037:0;cd ..
+: 1728030041:0;cd N-Cover-Scraper
+: 1728030041:0;ls
+: 1728030045:0;./GoNCoverScraper
+: 1728030057:0;clear
+: 1728031272:0;nvim
+: 1728031276:0;go build
+: 1728031277:0;ls
+: 1728031278:0;bat .linksym.yaml 
+: 1728031283:0;go buils
+: 1728031285:0;go build
+: 1728031288:0;rm .linksym.yaml
+: 1728031290:0;./linksym init
+: 1728031293:0;bat .linksym.yaml 
+: 1728031322:0;./linksym add ~/Test/LinksymTest/Help.file test/nested
+: 1728031329:0;./linksym add ~/Test/LinksymTest/bitch.ass ./test
+: 1728031338:0;./linksym -v add ~/Test/LinksymTest/text.file
+: 1728031344:0;./linksym
+: 1728031409:0;./linksym add ~/Test/LinksymTest/file.txt nvim/
+: 1728031411:0;ls
+: 1728031414:0;lf
+: 1728031422:0;bat .linksym.yaml 
+: 1728031441:0;cp -a .linksym.yaml test
+: 1728031445:0;lf
+: 1728031459:0;./linksym remove nvim/file.txt
+: 1728031467:0;./linksym remove test/bitch.ass
+: 1728031490:0;./linksym remove test/nested/test.txt
+: 1728031509:0;./linksym remove test/nested/test.txt 
+: 1728031525:0;ls
+: 1728031555:0;./linksym remove text.file
+: 1728031571:0;./linksym remove test/nested/Help.file
+: 1728031583:0;bat .linksym.yaml 
+: 1728031601:0;cd test
+: 1728031605:0;bat .linksym.yaml 
+: 1728031611:0;../linksym update
+: 1728031614:0;bat .linksym.yaml 
+: 1728031627:0;../linksym source
+: 1728031708:0;go build
+: 1728031710:0;cd ..
+: 1728031713:0;go build
+: 1728031720:0;cd test
+: 1728031727:0;../linksym update
+: 1728031764:0;ls
+: 1728031766:0;bat .linksym.yaml 
+: 1728031780:0;../linksym remove text.file
+: 1728031788:0;../linksym remove nested/test.txt
+: 1728031802:0;../linksym remove test/bitch.ass
+: 1728031809:0;../linksym remove test/nested/Help.file
+: 1728031816:0;../linksym remove nvim/file.txt
+: 1728031821:0;bat .linksym.yaml 
+: 1728031853:0;cd ..
+: 1728031936:0;nvim
+: 1728032872:0;go build
+: 1728032885:0;cleanfetch
+: 1728032890:0;lg
+: 1728033660:0;nvim
+: 1728033662:0;lg
+: 1728038806:0;nvim
+: 1728039153:0;lg
+: 1728039385:0;nvim
+: 1728042879:0;go build
+: 1728042883:0;nvim
+: 1728042885:0;lg
+: 1728053257:0;go get github.com/fatih/color
+: 1728054284:0;go build
+: 1728054377:0;lg
+: 1728054394:0;go build
+: 1728054398:0;./linksym
+: 1728054404:0;bat .linksym.yaml 
+: 1728054407:0;cat .linksym.yaml
+: 1728054418:0;./linksym add test/nested/test.txt
+: 1728054450:0;./linksym update
+: 1728054465:0;./linksym add lkjafsd ljasdf alkjads f
+: 1728054511:0;nvim
+: 1728054855:0;bat .linksym.yaml 
+: 1728054862:0;./linksym remove test.txt
+: 1728055080:0;go build
+: 1728055083:0;./linksym remove test.txt
+: 1728055327:0;go mod tidy
+: 1728055682:0;go build
+: 1728055686:0;nvim
+: 1728055711:0;lg
+: 1728056496:0;go build
+: 1728056498:0;ls
+: 1728056501:0;bat .linksym.yaml
+: 1728056583:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728056608:0;./linksym add ~/Test/LinksymTest/Help.file nvim/nestedDir
+: 1728056646:0;./linksym add ~/Test/LinksymTest/file.txt nvim/
+: 1728056654:0;./linksym add ~/Test/LinksymTest/bitch.ass nvim/nestedDir
+: 1728056663:0;./linksym add ~/Test/LinksymTest/bitch.ass nvim/nestedDir/
+: 1728056671:0;bat .linksym.yaml
+: 1728056696:0;./linksym remove nvim/text.file nvim/nestedDir nvim/file.txt
+: 1728056744:0;go build
+: 1728056747:0;bat .linksym.yaml
+: 1728056749:0;cat .linksym.yaml
+: 1728056762:0;./linksym remove nvim/text.file nvim/nestedDir nvim/file.txt
+: 1728056808:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728056817:0;./linksym add ~/Test/LinksymTest/bitch.ass nvim/nestedDir/
+: 1728056828:0;./linksym add ~/Test/LinksymTest/Help.file nvim/nestedDir
+: 1728056843:0;bat .linksym.yaml
+: 1728056874:0;./linksym remvoe nvim/text.file nvim/nestedDir/bitch.ass nvim/nestedDir/Help.file
+: 1728056883:0;./linksym remove nvim/text.file nvim/nestedDir/bitch.ass nvim/nestedDir/Help.file
+: 1728057081:0;./linksym add ~/Test/LinksymTest/Help.file nvim/nestedDir
+: 1728057090:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728057096:0;./linksym add ~/Test/LinksymTest/file.txt nvim/nestedDir
+: 1728057099:0;bat .linksym.yaml
+: 1728057117:0;./linksym remove nvim/text.file nvim/nestedDir/Help.file nvim/nestedDir/file.txt
+: 1728058660:0;cleanfetch
+: 1728058662:0;ls
+: 1728058663:0;lt
+: 1728058665:0;ll
+: 1728058666:0;la
+: 1728058668:0;ls
+: 1728058672:0;bat .linksym.yaml
+: 1728058675:0;rm .linksym.yaml
+: 1728058682:0;./linksym add ~/Test/LinksymTest/file.txt nvim/nestedDir
+: 1728059817:0;lg
+: 1728060111:0;go build
+: 1728060113:0;bat .linksym.yaml
+: 1728060118:0;./linksym add ~/Test/LinksymTest/file.txt nvim/nestedDir
+: 1728060121:0;./linksym init
+: 1728060177:0;./linksym add ~/Test/LinksymTest/Help.file nvim/nestedDir
+: 1728060184:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728060193:0;./linksym add ~/Test/LinksymTest/file.txt nvim/nestedDir
+: 1728060199:0;lt nvim
+: 1728060213:0;bat .linksym.yaml
+: 1728060225:0;./linksym remove nvim/text.file nvim/nestedDir/Help.file nvim/nestedDir/file.txt
+: 1728060309:0;./linksym -h
+: 1728060327:0;bat -h
+: 1728061185:0;go build
+: 1728061188:0;./linksym -h
+: 1728061284:0;go build
+: 1728061286:0;./linksym
+: 1728061440:0;cat -h
+: 1728061442:0;bat -h
+: 1728061465:0;go build
+: 1728061467:0;bat -h
+: 1728061470:0;./linksym
+: 1728061510:0;go build
+: 1728061511:0;lg
+: 1728061726:0;nvim
+: 1728061795:0;ls
+: 1728061882:0;nvim
+: 1728062933:0;go build
+: 1728063013:0;lg
+: 1728063586:0;tmux kill-session -t Go
+: 1728063593:0;lg
+: 1728063595:0;nvim
+: 1728064703:0;go buld
+: 1728064705:0;go build
+: 1728064729:0;bat -h
+: 1728064733:0;lf
+: 1728064742:0;go build
+: 1728064744:0;./linksym
+: 1728064755:0;./linksym init
+: 1728064759:0;bat .linksym.yaml
+: 1728064772:0;./linksym add ~/Test/LinksymTest/Help.file nvim/nestedDir/
+: 1728064789:0;./linksym add ~/Test/LinksymTest/file.txt nvim/nestedDir
+: 1728064799:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728064800:0;bat .linksym.yaml
+: 1728064808:0;mkdir test
+: 1728064812:0;cp -a .linksym.yaml test
+: 1728064823:0;./linksym remove nvim/text.file nvim/nestedDir/Help.file nvim/nestedDir/file.txt
+: 1728064851:0;bat .linksym.yaml
+: 1728064853:0;rm .linksym.yaml
+: 1728064856:0;cd test
+: 1728064870:0;../linksym update
+: 1728064876:0;bat .linksym.yaml
+: 1728064883:0;../linksym source
+: 1728064895:0;./linksym remove nvim/text.file nvim/nestedDir/Help.file nvim/nestedDir/file.txt
+: 1728064905:0;../linksym remove nvim/text.file nvim/nestedDir/Help.file nvim/nestedDir/file.txt
+: 1728065347:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1728065555:0;paru -Ss cloc
+: 1728065569:0;paru -S clock
+: 1728065572:0;paru -S cloc
+: 1728065584:0;cloc .
+: 1728065664:0;yeet cloc
+: 1728065948:0;nvim specification.txt
+: 1728125375:0;c.
+: 1728125376:0;lg
+: 1728125525:0;nvim
+: 1728125733:0;up
+: 1728128232:0;lg
+: 1728128307:0;go build
+: 1728128309:0;./linksym
+: 1728128314:0;bat .linksym.yaml
+: 1728128317:0;./linksym init
+: 1728128321:0;bat .linksym.yaml
+: 1728128343:0;./linksym record ~/Test/LinksymTest/file.txt nvim/
+: 1728128359:0;bat .linksym.yaml
+: 1728128373:0;./linksym source
+: 1728128400:0;./linksym record ~/Test/LinksymTest/Help.file
+: 1728128401:0;bat .linksym.yaml
+: 1728128404:0;./linksym source
+: 1728128426:0;./linksym remove Help.file nvim/file.txt
+: 1728128445:0;bat .linksym.yaml
+: 1728128458:0;./linksym add ~/Test/LinksymTest
+: 1728128473:0;./linksym remove LinksymTest
+: 1728128533:0;go build
+: 1728128538:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728128574:0;go build
+: 1728128589:0;./linksym record ~/Test/LinksymTest/Help.file
+: 1728128596:0;./linksym source 
+: 1728128623:0;./linksym remove Help.file nvim/file.txt
+: 1728128628:0;bat .linksym.yaml
+: 1728128675:0;ls
+: 1728128685:0;./linksym remove nvim/text.file 
+: 1728128690:0;bat .linksym.yaml
+: 1728128754:0;./linksym init
+: 1728128756:0;bat .linksym.yaml
+: 1728128806:0;lg
+: 1728128808:0;nvim
+: 1728128826:0;lf
+: 1728129258:0;lg
+: 1728129553:0;paru -S cloc
+: 1728129560:0;clock .
+: 1728129562:0;cloc .
+: 1728129573:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1728129598:0;find . -name "*.go" -type f | xargs wc -l | sort -nr\
+
+: 1728129613:0;find . -name "*.go" -type f | xargs wc -l | sort -hr\
+
+: 1728129649:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1728129793:0;clear
+: 1728129812:0;go install github.com/SwayKh/linksym@latest
+: 1728129830:0;go install github.com/SwayKh/Linksym@latest
+: 1728129858:0;go install github.com/SwayKh/linksym@latest
+: 1728129868:0;which linksym
+: 1728129873:0;whatis linksym
+: 1728129878:0;linksym
+: 1728129896:0;linksym record alkdfa lkajsdf aljd
+: 1728129940:0;history | grep gat@latest
+: 1728129949:0;history | nvim
+: 1728130002:0;go build
+: 1728130005:0;./linksym init
+: 1728130010:0;./linksym
+: 1728130021:0;./linksym add alkasdf alkjdf alkjd
+: 1728130048:0;bat -h
+: 1728130125:0;go build
+: 1728130127:0;./linksym
+: 1728130172:0;go build
+: 1728130174:0;./linksym
+: 1728130202:0;go build
+: 1728130205:0;lg
+: 1728130271:0;go clean github.com/SwayKh/linksym@latest
+: 1728130310:0;history | nvim
+: 1728130331:0;go clean github.com/SwayKh/linksym
+: 1728130339:0;go clean -modcache
+: 1728130341:0;go clean github.com/SwayKh/linksym
+: 1728130346:0;linksym
+: 1728130393:0;gat
+: 1728130410:0;go clean -i github.com/Swaykh/linksym
+: 1728130413:0;go clean -i github.com/Swaykh/linksym@latest
+: 1728130451:0;rm -f $(which linksym)
+: 1728130465:0;go clean -modcache
+: 1728130470:0;go install github.com/SwayKh/linksym@latest
+: 1728130480:0;linksym
+: 1728130493:0;ls
+: 1728130542:0;rm -f $(which linksym)
+: 1728130544:0;linksym
+: 1728130547:0;go clean -modcache
+: 1728130551:0;./linksym
+: 1728130560:0;lg
+: 1728130700:0;which linksym
+: 1728130704:0;cleanfetch
+: 1728131472:0;nvim
+: 1728131708:0;lg
+: 1728131712:0;./linksym
+: 1728132094:0;git remote set-url origin https://github.com/SwayKh/linksym
+: 1728132099:0;git remote -v
+: 1728135100:0;ls
+: 1728135104:0;nvim linkdots.sh
+: 1728137468:0;lg
+: 1728137489:0;ls
+: 1728137491:0;rm .conform.3466898.README.md
+: 1728137492:0;ls
+: 1728137495:0;nvim README.md
+: 1728137500:0;ls
+: 1728137502:0;lg
+: 1728137527:0;go build
+: 1728137536:0;glow README.md
+: 1728137549:0;nvim
+: 1728137771:0;go install github.com/SwayKh/linksym@latest
+: 1728137779:0;linksym
+: 1728137786:0;ls
+: 1728137800:0;rm -f $(which linksym)
+: 1728137804:0;lg
+: 1728137922:0;go
+: 1728138336:0;man ln
+: 1728138847:0;go build
+: 1728138849:0;./linksym
+: 1728138872:0;lg
+: 1728139131:0;nm-applet
+: 1728139211:0;systemctl restart NetworkManager
+: 1728139221:0;nmcli connection reload
+: 1728139225:0;sudo nmcli connection reload
+: 1728139235:0;nmcli device wifi list
+: 1728139249:0;journalctl
+: 1728139284:0;journalctl -h
+: 1728139300:0;sudo journalctl -b
+: 1728139369:0;uname -sr
+: 1728139405:0;ipconfig
+: 1728139408:0;iwconfig
+: 1728139409:0;iw
+: 1728139410:0;ls
+: 1728139412:0;ip
+: 1728139416:0;ip addr
+: 1728140518:0;journalctl -k -b -f
+: 1728140524:0;journalctl -k -b
+: 1728140583:0;rfkill
+: 1728140586:0;rfkill -h
+: 1728140610:0;rfkill block wlan
+: 1728140613:0;rfkill
+: 1728140623:0;rfkill unblock wlan
+: 1728140626:0;rfkill
+: 1728140651:0;lg
+: 1728140661:0;ls
+: 1728140664:0;cleanfetch
+: 1728140762:0;rfkill
+: 1728140767:0;nmcli
+: 1728140796:0;modprobe -h
+: 1728140815:0;modprobe
+: 1728140820:0;modprobe -l
+: 1728140823:0;modprobe --list
+: 1728140838:0;nmcli
+: 1728140883:0;rmmod rtw88_8723de
+: 1728140897:0;sudo rmmod rtw88_8723de
+: 1728140901:0;nmcli
+: 1728140932:0;sudo modprobe rtw88_8723de reset=1
+: 1728140936:0;sudo rmmod rtw88_8723de
+: 1728140944:0;modprobe rtw88_8723de
+: 1728140947:0;sudo modprobe rtw88_8723de
+: 1728140950:0;nmcli
+: 1728140977:0;lsmod
+: 1728140995:0;lsmod | grep rtw
+: 1728141008:0;modinfo rtw88_8723de
+: 1728141043:0;sudo modprobe rtw88_8723
+: 1728141047:0;sudo modprobe rtw88_8723x
+: 1728141049:0;sudo modprobe rtw88_8723d
+: 1728141050:0;sudo modprobe rtw88_8723de
+: 1728141057:0;lsmod | grep rtw
+: 1728141090:0;sudo modprobe -r rtw88_8723de
+: 1728141112:0;sudo modprobe rtw88_core
+: 1728141113:0;ls
+: 1728141114:0;nmcli
+: 1728141335:0;find . -name "*.go" -type f | xargs wc -l\
+
+: 1728141340:0;lf
+: 1728141367:0;c.
+: 1728141424:0;nvim
+: 1728141853:0;lg
+: 1728142072:0;cd scripts
+: 1728142073:0;lg
+: 1728142113:0;cd ..
+: 1728142114:0;lg
+: 1728142141:0;clear
+: 1728142756:0;go run
+: 1728143174:0;nvim
+: 1728143225:0;go build
+: 1728143226:0;ls
+: 1728143228:0;bat .linksym.yaml
+: 1728143232:0;rm .linksym.yaml
+: 1728143238:0;./linksym
+: 1728143242:0;./linksym alsjdf
+: 1728143255:0;go build
+: 1728143256:0;./linksym alsjdf
+: 1728143293:0;go build
+: 1728143296:0;./linksym add 
+: 1728143310:0;go build
+: 1728143312:0;./linksym add 
+: 1728143343:0;linksym
+: 1728143358:0;go run github.com/swaykh/linksym@latest init
+: 1728143376:0;go run github.com/SwayKh/linksym@latest init
+: 1728143383:0;bat .linksym.yaml
+: 1728143386:0;rm .linksym.yaml
+: 1728144873:0;go build
+: 1728144880:0;./linksym add gad.jasdg
+: 1728144901:0;./linksym init
+: 1728144903:0;./linksym add gad.jasdg
+: 1728145090:0;bat .linksym.yaml
+: 1728145092:0;rm .linksym.yaml
+: 1728145096:0;rm linksym
+: 1728145097:0;ls
+: 1728145931:0;go build
+: 1728145947:0;./linksym add ~/Test/LinksymTest/file.txt nvim/
+: 1728145950:0;./linksym init
+: 1728145951:0;./linksym add ~/Test/LinksymTest/file.txt nvim/
+: 1728145968:0;./linksym add ~/Test/LinksymTest/Help.file nvim/
+: 1728145972:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728145975:0;bat .linksym.yaml
+: 1728145985:0;./linksym remove nvim/file.txt nvim/Help.file nvim/text.file
+: 1728145990:0;bat .linksym.yaml
+: 1728146182:0;./linksym add ~/Test/LinksymTest/file.txt nvim/
+: 1728146185:0;go build
+: 1728146189:0;./linksym remove nvim/file.txt nvim/Help.file nvim/text.file
+: 1728146191:0;bat .linksym.yaml
+: 1728146240:0;ls
+: 1728146243:0;lf
+: 1728146320:0;lg
+: 1728146341:0;./linksym add ~/Test/LinksymTest/file.txt nvim/
+: 1728146346:0;./linksym add ~/Test/LinksymTest/Help.file nvim/
+: 1728146354:0;./linksym add ~/Test/LinksymTest/text.file nvim/
+: 1728146363:0;./linksym remove nvim/file.txt nvim/Help.file nvim/test.file
+: 1728146365:0;bat .linksym.yaml
+: 1728146373:0;./linksym remove nvim/text.file
+: 1728146374:0;bat .linksym.yaml
+: 1728146381:0;rm linksym .linksym.yaml
+: 1728146382:0;ls
+: 1728146643:0;nvim
+: 1728146984:0;journalctl -xef
+: 1728148163:0;lf
+: 1728148606:0;c.
+: 1728148607:0;l
+: 1728148609:0;lg
+: 1728148615:0;cd
+: 1728148619:0;cd Projects/Go/Linksym
+: 1728148622:0;cd ..
+: 1728148624:0;lg
+: 1728148736:0;cd ..
+: 1728148737:0;cd MyProjects
+: 1728148738:0;ls
+: 1728148741:0;git remote -v
+: 1728148770:0;git submodule add https://github.com/Swaykh/linksym
+: 1728148775:0;lg
+: 1728148796:0;cd 
+: 1728148798:0;ls
+: 1728148800:0;lt
+: 1728148801:0;lf
+: 1728148934:0;cd repos
+: 1728148935:0;ls
+: 1728148936:0;cd kickstart.nvim
+: 1728148939:0;gP
+: 1728148943:0;lf
+: 1728199017:0;nvim
+: 1728199065:0;lg
+: 1728213099:0;go build
+: 1728213111:0;lf
+: 1728213152:0;go install github.com/SwayKh/linksym@latest
+: 1728213164:0;cd testing
+: 1728213165:0;ls
+: 1728213169:0;linksym
+: 1728213173:0;linksym init
+: 1728213175:0;bat .linksym.yaml
+: 1728213195:0;linksym add ~/Test/LinksymTest/file.txt
+: 1728213208:0;linksym add ~/Test/LinksymTest/Help.file testDir/
+: 1728213210:0;bat .linksym.yaml
+: 1728213226:0;linksym add ~/Test/LinksymTest testDir
+: 1728213236:0;bat .linksym.yaml
+: 1728213281:0;linksym add ~/Test/FileTypes
+: 1728213283:0;bat .linksym.yaml
+: 1728213287:0;lf
+: 1728213334:0;linksym remove file.txt FileTypes testDir/Help.file testDir/LinksymTest
+: 1728213347:0;bat .linksym.yaml
+: 1728213350:0;cd ..
+: 1728213353:0;cd testing2
+: 1728213354:0;ls
+: 1728213357:0;linksym update
+: 1728213358:0;bat .linksym.yaml
+: 1728213384:0;linksym source
+: 1728213431:0;lf
+: 1728213451:0;cd ../testing2
+: 1728213459:0;linksym source
+: 1728213463:0;cd ..
+: 1728213464:0;nvim
+: 1728213672:0;go build
+: 1728213674:0;cd ..
+: 1728213676:0;go build
+: 1728213680:0;cd testing2
+: 1728213681:0;ls
+: 1728213687:0;../linksym source
+: 1728213758:0;cd ..
+: 1728213759:0;go build
+: 1728213762:0;cd testing2
+: 1728213764:0;../linksym source
+: 1728213809:0;linksym remove file.txt FileTypes testDir/Help.file testDir/LinksymTest
+: 1728213824:0;cd ..
+: 1728213830:0;cd testing/
+: 1728213838:0;../linksym update
+: 1728213847:0;../linksym source
+: 1728214289:0;ls
+: 1728214306:0;cd ..
+: 1728214309:0;go build
+: 1728214314:0;cd testing2
+: 1728214314:0;ls
+: 1728214319:0;../linksym update
+: 1728214323:0;../linksym source
+: 1728214562:0;go build
+: 1728214566:0;cd ..
+: 1728214567:0;go build
+: 1728214599:0;cd testing
+: 1728214599:0;ls
+: 1728214606:0;../linksym update
+: 1728214611:0;../linksym source
+: 1728214652:0;bat .linksym.yaml
+: 1728214698:0;../linksym remove file.txt FileTypes testDir/Help.file testDir/LinksymTest
+: 1728214709:0;ls
+: 1728214719:0;cd ../testing2
+: 1728214720:0;ls
+: 1728214723:0;../linksym update
+: 1728214727:0;../linksym source
+: 1728214735:0;bat .linksym.yaml
+: 1728214766:0;ls
+: 1728214819:0;cd ..
+: 1728214820:0;go build
+: 1728214825:0;cd testing2
+: 1728214853:0;../linksym add ~/Test/LinksymTest/file.text
+: 1728214855:0;bat .linksym.yaml
+: 1728214880:0;../linksym source
+: 1728214909:0;../linksym remove file.txt FileTypes testDir/Help.file testDir/LinksymTest
+: 1728214919:0;../linksym remove file.text FileTypes testDir/Help.file testDir/LinksymTest
+: 1728214945:0;cd ../testing
+: 1728214946:0;ls
+: 1728214952:0;../linksym update
+: 1728214970:0;../linksym source
+: 1728214980:0;../linksym remove file.text FileTypes testDir/Help.file testDir/LinksymTest
+: 1728214995:0;cleanfetch
+: 1728215007:0;go build
+: 1728215010:0;cleanfetch
+: 1728215013:0;lg
+: 1728215018:0;cd ..
+: 1728215019:0;ls
+: 1728215020:0;lg
+: 1728215070:0;nvim
+: 1728215266:0;mkdir test/
+: 1728215267:0;ls
+: 1728215270:0;cd test
+: 1728215309:0;../linksym init
+: 1728215311:0;ls
+: 1728215319:0;../linksym add ~/Test/LinksymTest
+: 1728215348:0;../linksym remove LinksymTest
+: 1728215380:0;../linksym add ~/Test/LinksymTest
+: 1728215419:0;../linksym remove LinksymTest
+: 1728215439:0;lf
+: 1728215718:0;ls
+: 1728215719:0;clear
+: 1728215750:0;go install github.com/SwayKh/linksym@latest
+: 1728215758:0;linksym 
+: 1728215777:0;linksym add ~/Test/FileTypes test/
+: 1728215781:0;linksym init
+: 1728215783:0;linksym add ~/Test/FileTypes test/
+: 1728215790:0;cd test
+: 1728215791:0;ls
+: 1728215793:0;cd ..
+: 1728215798:0;linksym remove test/FileTypes
+: 1728215801:0;ls
+: 1728215803:0;lf
+: 1728215828:0;rm $(which linksym)
+: 1728215831:0;linksym
+: 1728215833:0;go clean -modcache
+: 1728215841:0;go install github.com/SwayKh/linksym@latest
+: 1728215857:0;linksym init
+: 1728215862:0;linksym add ~/Test/FileTypes test/
+: 1728215871:0;linksym remove test/FileTypes
+: 1728215877:0;rm .linksym.yaml
+: 1728215877:0;ls
+: 1728215878:0;lf
+: 1728216396:0;man ln
+: 1728216801:0;cleanfetch
+: 1728216810:0;ls
+: 1728221871:0;ls $GOPATH/bin
+: 1728221883:0;ls $GOPATH/bin | fzf
+: 1728221896:0;echo $PATH
+: 1728221937:0;export GOPATH=$HOME/go
+: 1728221939:0;ls $GOPATH/bin | fzf
+: 1728221943:0;ls $GOPATH/bi
+: 1728221944:0;ls $GOPATH/bin
+: 1728221955:0;which linksym
+: 1728221960:0;whereis linksym
+: 1728221966:0;rm -f $(which linksym)
+: 1728221969:0;ls $GOPATH/bin
+: 1728222003:0;:q
+: 1728222028:0;cd 
+: 1728222029:0;cd go
+: 1728222031:0;ls
+: 1728222035:0;cd pkg
+: 1728222036:0;ls
+: 1728222038:0;cd mod
+: 1728222039:0;ls
+: 1728222061:0;lt
+: 1728222077:0;sudo rm -rf cache/download/github.com 
+: 1728222095:0;sudo rm -rf github.com/\!sway\!kh
+: 1728222098:0;go install github.com/SwayKh/linksym@latest
+: 1728222107:0;cd
+: 1728226555:0;nvim
+: 1728230721:0;lf
+: 1728230737:0;nvim
+: 1728231326:0;c.
+: 1728231328:0;clear
+: 1728231329:0;lg
+: 1728231365:0;nvim
+: 1728233289:0;lswt | awk '{ print length, $0 }' | sort -n | cut -d' ' -f2-
+: 1728233296:0;lswt | awk '{ print length, $0 }' | sort -n |
+: 1728233297:0;lswt | awk '{ print length, $0 }' | sort -n
+: 1728233756:0;mkdir test/
+: 1728233759:0;cd test
+: 1728233761:0;linksym
+: 1728233832:0;linksym add ~/Test/Templates
+: 1728233836:0;linksym init
+: 1728233839:0;linksym add ~/Test/Templates/
+: 1728233841:0;ls
+: 1728233842:0;lf
+: 1728233882:0;ls
+: 1728233944:0;clear
+: 1728234377:0;up
+: 1728234382:0;nmcli
+: 1728234896:0;up
+: 1728235324:0;nmcli device wifi connect Nokia\ 6.1 password Pikupiku
+: 1728235328:0;nmcli device wifi connect Nokia\ 6.1
+: 1728235335:0;nmcli device wifi connect Nokia\ 6.1 password Pikupiku
+: 1728235339:0;nmcli device wifi connect Nokia\ 6.1 password
+: 1728235342:0;nmcli device wifi connect Nokia\ 6.1 password pikupiku
+: 1728235418:0;nmcli connection delete Nokia\ 6.1
+: 1728235423:0;nmcli device wifi connect Nokia\ 6.1 password Pikupiku
+: 1728235440:0;nmcli device wifi connect Nokia\ 6.1 password Pikupiku ifname wlan0
+: 1728235452:0;nmcli radio wifi off
+: 1728235454:0;nmcli radio wifi oon
+: 1728235457:0;nmcli radio wifi on
+: 1728235466:0;nmcli d w list
+: 1728235471:0;nmcli device wifi connect Nokia\ 6.1 password Pikupiku
+: 1728289642:0;kdeconnect-indicator
+: 1728290287:0;nvim
+: 1728290397:0;kill 836 
+: 1728290406:0;ls
+: 1728290409:0;tmux kill-server
+: 1728290435:0;nvim
+: 1728291200:0;c.
+: 1728291201:0;lg
+: 1728291696:0;cleanfetch
+: 1728291700:0;ls
+: 1728312273:0;nvim
+: 1728312806:0;lg
+: 1728312972:0;lf
+: 1728312974:0;lg
+: 1728323861:0;pm
+: 1728323896:0;paru -S telegram-desktop
+: 1728324625:0;cleanfetch
+: 1728374017:0;nmcli dev wifi connect Realme\ 7\ Pro password laksjdhfg
+: 1728374049:0;clear
+: 1728374172:0;ncdu
+: 1728374186:0;dua i
+: 1728374211:0;c.
+: 1728374212:0;ls
+: 1728374215:0;linksym -h
+: 1728374238:0;lf
+: 1728374263:0;linksym init
+: 1728374265:0;bat .linksym.yaml
+: 1728374281:0;linksym add ~/.config/btop 
+: 1728374291:0;linksym add ~/.config/btop btop
+: 1728374298:0;linksym add ~/.config/btop/ btop
+: 1728374326:0;linksym add ~/.config/cava/ cava
+: 1728374366:0;linksym add ~/.config/dunst/ dunst
+: 1728374378:0;linksym add ~/.config/fastfetch fastfetch
+: 1728374386:0;linksym add ~/.config/fastfetch/ fastfetch
+: 1728374424:0;linksym add ~/.config/foot/ foot
+: 1728374433:0;linksym add ~/.config/hypr/ hypr
+: 1728374440:0;linksym add ~/.config/i3/ i3
+: 1728374486:0;linksym add ~/.config/kitty/ kitty
+: 1728374493:0;linksym add ~/.config/lf/ lf
+: 1728374525:0;linksym add ~/.config/micro/ micro
+: 1728374533:0;linksym add ~/.config/neofetch neofetch
+: 1728374536:0;linksym add ~/.config/neofetch/ neofetch
+: 1728374543:0;linksym add ~/.config/nvim nvim
+: 1728374545:0;linksym add ~/.config/nvim/ nvim
+: 1728374570:0;linksym add ~/.config/polybar/ polybar
+: 1728374582:0;linksym add ~/.config/river/ river
+: 1728374589:0;linksym add ~/.config/rofi/ rofi
+: 1728374635:0;linksym add ~/.config/swayidle swayidle
+: 1728374664:0;bat .linksym.yaml
+: 1728374676:0;nvim .linksym.yaml
+: 1728374714:0;linksym add ~/.config/sway/ sway/
+: 1728374726:0;linksym add ~/.config/swayidle/ swayidle
+: 1728374738:0;linksym add ~/.config/swaylock/ swaylock
+: 1728374763:0;linksym add ~/.config/tmux/ tmux
+: 1728374771:0;linksym add ~/.config/waybar/ waybar
+: 1728374778:0;linksym add ~/.config/wezterm/ wezterm
+: 1728374786:0;linksym add ~/.config/yazi/ yazi
+: 1728374839:0;linksym add ~/.local/share/applications/ .local/share/applications
+: 1728374905:0;linksym add ~/ES-DE/settings/es_settings.xml ES-DE/es_settings.xml
+: 1728374981:0;linksym add ~/.config/retroarch/retroarch.cfg RetroArch/retroarch.cfg
+: 1728374996:0;linksym add ~/.config/retroarch/retroarch-core-options.cfg RetroArch/retroarch-core-options.cfg
+: 1728375039:0;linksym add ~/.config/starship.toml starship.toml
+: 1728375087:0;linksym add ~/.bashrc .bashrc
+: 1728375096:0;linksym add ~/.gitconfig .gitconfig
+: 1728375102:0;linksym add ~/.profile .profile
+: 1728375145:0;linksym add ~/.ripgreprc .ripgreprc
+: 1728375159:0;linksym add ~/.zshrc .zshrc
+: 1728375176:0;linksym add ~/.zsh_history.bak .zsh_history.bak
+: 1728375193:0;linksym add ~/home.gitignore home.gitignore
+: 1728375343:0;nvim .linksym.yaml
+: 1728375424:0;vim
+: 1728375429:0;vi
+: 1728375512:0;nvim .vimrc
+: 1728375586:0;vim
+: 1728375751:0;linksym add ~/.vimrc .vimrc
+: 1728375757:0;vim
+: 1728375847:0;nvim -d ~/.config/mimeapps.list mimeapps.list
+: 1728375889:0;linksym add ~/.config/mimeapps.list mimeapps.list
+: 1728375945:0;nvim -d ~/.config/Code/User/settings.json settings.json
+: 1728375992:0;linksym add ~/.config/Code/User/settings.json settings.json
+: 1728376037:0;linksym remove settings.json
+: 1728376064:0;linksym add ~/.config/Code/User/settings.json Code/settings.json
+: 1728376121:0;nvim .linksym.yaml
+: 1728376167:0;lg
+: 1728376176:0;nvim README.md
+: 1728376707:0;bat .linksym.yaml
+: 1728376737:0;nvim .linksym.yaml
+: 1728377003:0;nvim
+: 1728377531:0;vim
+: 1728377670:0;nvim
+: 1728377672:0;vim
+: 1728380046:0;lg
+: 1728380065:0;clear
+: 1728380082:0;cp -a ~/.zsh_history ~/.zsh_history.bak

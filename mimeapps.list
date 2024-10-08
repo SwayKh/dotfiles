@@ -70,6 +70,7 @@ application/x-extension-shtml=userapp-Floorp-HU1SO2.desktop
 application/xhtml+xml=userapp-Floorp-HU1SO2.desktop
 application/x-extension-xhtml=userapp-Floorp-HU1SO2.desktop
 application/x-extension-xht=userapp-Floorp-HU1SO2.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Floorp-HU1SO2.desktop;
@@ -82,3 +83,4 @@ application/x-extension-shtml=userapp-Floorp-HU1SO2.desktop;
 application/xhtml+xml=userapp-Floorp-HU1SO2.desktop;
 application/x-extension-xhtml=userapp-Floorp-HU1SO2.desktop;
 application/x-extension-xht=userapp-Floorp-HU1SO2.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
