@@ -1,6 +1,9 @@
 syntax on
+set nocompatible
 filetype on
+filetype indent on
 colorscheme slate
+
 
 " set leader
 let mapleader = " "
@@ -90,6 +93,15 @@ set exrc
 set hidden
 highlight ColorColumn ctermbg=white guibg=lightgray
 set backspace=indent,eol,start
+set omnifunc=syntaxcomplete#Complete
+
+" Completion
+" Check :h ins-completion
+imap <C-o> <C-x><C-o>
+imap <C-f> <C-x><C-f>
+imap <C-t> <C-x><C-]>
+imap <C-p> <C-x><C-p>
+cmap <C-o> <C-x><C-v>
 
 " Keybinds from neovim
 nnoremap <Esc> :nohlsearch<CR>
@@ -138,10 +150,10 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 
-nnoremap <M-j> 5j
-vnoremap <M-j> 5j
-nnoremap <M-k> 5k
-vnoremap <M-k> 5k
+nnoremap <A-j> 5j
+vnoremap <A-j> 5j
+nnoremap <A-k> 5k
+vnoremap <A-k> 5k
 
 nnoremap + <C-a>
 nnoremap - <C-x>
@@ -153,15 +165,14 @@ nnoremap <leader>a gg<S-v>G
 nnoremap <leader>y :%y+<CR>
 xnoremap P <Cmd>silent! normal! "_dP<CR>
 
-nnoremap qq <Cmd>%bd<CR><Cmd>quit<CR>
-nnoremap <leader>Q <Cmd>wqa!<CR>
+nnoremap qq <Cmd>%bd<CR>
 nnoremap <C-s> <ESC><Cmd>w!<CR>
 inoremap <C-s> <ESC><Cmd>w!<CR>
 vnoremap <C-s> <ESC><Cmd>w!<CR>
 
-nnoremap <C-q> <ESC><Cmd>q<CR>
-inoremap <C-q> <ESC><Cmd>q<CR>
-vnoremap <C-q> <ESC><Cmd>q<CR>
+nnoremap <C-q> <ESC><Cmd>wqa!<CR>
+inoremap <C-q> <ESC><Cmd>wqa!<CR>
+vnoremap <C-q> <ESC><Cmd>wqa!<CR>
 
 nnoremap <leader>bd <Cmd>bdelete<CR>
 nnoremap <leader>bn <Cmd>bnext<CR>
@@ -229,101 +240,3 @@ if !exists("*ReloadVimrc")
     endfun
 endif
 autocmd! BufWritePost $MYVIMRC call ReloadVimrc()
-
-"colorscheme gruvbox
-"map <leader>u :UndotreeToggle<CR>
-
-"nnoremap <Leader>v :e $MYVIMRC<cr>
-"nnoremap <Leader>e :CocCommand explorer<CR>
-
-"nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-"nmap <C-n> :NERDTreeToggle<CR>
-"map <leader>k <c-w>w
-"autocmd BufEnter * if line2byte('.') == -1 && len(tabpagebuflist()) == 1 | Startify | endif
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-"let NERDTreeShowHidden=1
-"let g:ctrlp_working_path_mode = 0
-"au BufWrite * :Autoformat
-
-"let g:minimap_show='<leader>ms'
-"let g:minimap_update='<leader>mu'
-"let g:minimap_close='<leader>gc'
-"let g:minimap_toggle='<leader>gt'
-
-
-"Paste Code without formatting
-"let &t_SI .= "\<Esc>[?2004h"
-"let &t_EI .= "\<Esc>[?2004l"
-"
-"inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-"
-"function! XTermPasteBegin()
-"    set pastetoggle=<Esc>[201~
-"    set paste
-"    return ""
-"endfunction
-"Paste code with formatting
-
-
-
-"Run Python File by pressing F9
-"autocmd FileType python map <buffer> <F9> :w<CR>:ter python "%"<CR>
-"autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:ter python shellescape(@"%", 1)<CR>
-"
-"Compile cpp file with ctrl+c and execute file with ctrl+x
-"nnoremap <C-c> :ter g++ -o  %:r.out % -std=c++11 && %:r.out<CR>
-"nnoremap <C-x> :!/%:r.out<Enter>
-"nnoremap <C-c> :!g++ -std=c++11 % -Wall -g -o %.out && ./%.out<CR>
-
-
-"VIMINIT="source C:\Users\Parvesh and Sumit\.vim\init.vim"
-" let g:ncm2_pyclang#library_path = 'C:\Program Files\LLVM\bin\libclang
-
-" call plug#begin('~/.vim/plugged')
-
-"Gruvbox theme
-" Plug 'morhetz/gruvbox'
-
-"File explorer trees
-" Plug 'scrooloose/nerdtree'
-
-"For undo
-" Plug 'mbbill/undotree'
-
-"Git Integration
-" Plug 'jreybert/vimagit'
-
-"Most Recently Used Files
-" Plug 'mhinz/vim-startify'
-" Plug 'yegappan/mru'
-
-"Change surrounding brackets/quotes/tags
-" Plug 'tpope/vim-surround'
-" Plug 'raimondi/delimitmate'
-
-"Fuzzy Finder
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'junegunn/fzf'
-
-"AutoFormatter
-" Plug 'chiel92/vim-autoformat'
-
-"Show Commands in popup
-" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-
-"Status bar
-" Plug 'bling/vim-airline'
-
-"Intellisense
-"Plug 'neoclide/coc.nvim'
-
-"Colorizer
-" Plug 'lilydjwg/colorizer'
-
-"Fonts and icon
-"Plug 'ryanoasis/nerd-fonts'
-
-"Minimap
-" Plug 'severin-lemaignan/vim-minimap'
-" call plug#end()
