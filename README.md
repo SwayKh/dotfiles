@@ -115,11 +115,30 @@ sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm sway
 sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf cava jq ncdu sshfs swww
 ```
 
-Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
+#### Symlinks
 
->     git clone https://github.com/SwayKh/dotfiles.git
->     cd dotfiles
->     ./linkdots.sh
+Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
+Git clone this repo and cd into it
+
+```
+git clone https://github.com/SwayKh/dotfiles.git
+cd dotfiles
+```
+
+Next create all symlinks to link the dotfiles.
+If you use [this project](https://github.com/SwayKh/linksym) you can
+link all the dotfiles using
+
+```
+linksym source
+```
+
+or you can use the bash script in the repo, Warning: This script is not up to
+date, so it might not link all the dotfiles.
+
+```
+./linkdots.sh
+```
 
 There's also some configs, I've kept as backup. For eg
 
