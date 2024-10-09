@@ -16,7 +16,7 @@
 - **OS** : [Arch](https://archlinux.org/)
 - **WM/Compositor** : [Hyprland](https://hyprland.org/) / [River](https://codeberg.org/river/river)
 - **Bar** : [Waybar](https://github.com/Alexays/Waybar)
-- **Application Launcher** : [Rofi(wayland fork)](https://github.com/lbonn/rofi)
+- **Application Launcher** : [Rofi-wayland](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
 - **File Manager** : [LF](https://github.com/gokcehan/lf) / [Yazi](https://github.com/sxyazi/yazi)
 - **File Manager(GUI)** : [Nautilus](https://apps.gnome.org/Nautilus/)
@@ -31,7 +31,7 @@
 - **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
 - **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
 - **System Monitor** : [Btop](https://github.com/aristocratos/btop)
-- **System Info viewer** : [Neofetch](https://github.com/dylanaraps/neofetch)
+- **System Info viewer** : [Neofetch](https://github.com/dylanaraps/neofetch) / [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - **Notification daemon** : [Dunst](https://github.com/dunst-project/dunst)
 - **Image Viewer** : [Feh](https://github.com/derf/feh)
 - **Anime Client** : [Ani-cli](https://github.com/pystardust/ani-cli)
@@ -57,7 +57,7 @@
 - **WM/Compositor** : [i3(X11)](https://i3wm.org/) / [Sway(Wayland replacement for i3)](https://swaywm.org/)
 - **Bar(For X11)** : [Polybar](https://github.com/polybar/polybar)
 - **Color Picker** : [xcolor](https://github.com/Soft/xcolor)
-- **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg)
+- **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg) / [feh](https://github.com/derf/feh)
 - **Clipboard** : [xclip](https://github.com/astrand/xclip)
 
 ## Screenshot
@@ -106,13 +106,13 @@ paru -S river lswt swaylock-effects swayidle wlr-randr
 #### Utilities
 
 ```
-sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist
+sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist galculator
 ```
 
 #### Cli tools
 
 ```
-sudo pacman -S --needed zsh neovim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf cava jq ncdu sshfs swww
+sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf cava rsync dua-cli sshfs swww mpv
 ```
 
 #### Symlinks
@@ -130,6 +130,7 @@ If you use [this project](https://github.com/SwayKh/linksym) you can
 link all the dotfiles using
 
 ```
+linksym update
 linksym source
 ```
 
@@ -142,10 +143,10 @@ date, so it might not link all the dotfiles.
 
 There's also some configs, I've kept as backup. For eg
 
-> - [Retroarch Config](./retroarch.cfg)
-> - [Old Vim Config](./init.vim.backup)
+> - [Retroarch Config](./RetroArch/)
+> - [vimrc](./.vimrc)
 > - [KDE shortcuts file](./kde)
-> - [VS Code Settings.json](./settings.json)
+> - [VS Code Settings.json](./Code/settings.json)
 > - [Emulation Station DE](./ES-DE)
 
 ## Hyprland
@@ -223,14 +224,13 @@ go rust perl lua python nvm npm
 wayland/x11
 ```
 
-### List of programs installed(More like a pacman -Qeq)
+### List of other programs I use
 
 #### Base programs to install with Arch
 
 ```
 base base-devel linux linux-firmware linux-headers grub vim amd-ucode net-tools
-git curl wget man-db pacman-contrib openssh networkmanager
-efibootmgr
+git curl wget man-db pacman-contrib openssh networkmanager iwd efibootmgr
 ```
 
 #### Apps
@@ -240,10 +240,8 @@ ani-cli
 citra-canary
 emulationstation-de
 ferdium
-firefox
-foot
-google-chrome
 godot
+google-chrome
 gparted
 kclac
 kdeconnect
@@ -251,8 +249,11 @@ obsidian
 qbittorrent
 retroarch
 rofi-nerdy
-sddm
-nautilus
+ryujinx
+spotify-launcher
+syncthing
+telegram-desktop
+thunar
 ticktick
 uget
 vscode
@@ -263,25 +264,27 @@ yuzu
 #### CLI
 
 ```
-blueman
 birghtnessctl
+dhcpd
 docker
+dunst
+fastfetch
 fwupd
 github-cli
-pacutils
+jq
+ncdu
 network-manager-applet
-pamixer
-pipewire
-pipewire-audio
-pipewire-pulse
-wireplumber
+pacutils
 pavucontrol
 pulseaudio
-playerctl
 reflector
-rsync
 swaync
-swww
 ubsutils
+vulkan-headers
+vulkan-radeon
+wpa_supplicant
 xpadneo-dkms
+yazi
+zathura
+zathura-pdf-mupdf
 ```
