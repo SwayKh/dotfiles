@@ -80,16 +80,8 @@ map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 
 --Select all/Yank all/Custom paste
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
--- Disabling this, for the leader yank keybind, Better to select all and yank
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true })
---
--- Use Leader keybinds to yank to system clipboard, This is after disabling
--- vim.opt.clipboard = "unnamedplus"
--- map({ "n", "v", "x" }, "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
--- map({ "n", "v", "x" }, "<leader>Y", '"+yy', { noremap = true, silent = true, desc = "Yank line to clipboard" })
--- map({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
--- map("x", "<leader>p", '"_dP', { silent = true, desc = "Don't replace paste register when replacing something" })
 
 -- Save, Quit
 map("n", "qq", "<Cmd>%bd<CR>", { silent = true, desc = "Delete all buffers" })
@@ -110,12 +102,6 @@ map("n", "<leader>cn", "<Cmd>cnext<CR>", { desc = "Go to next item in Quickfix l
 map("n", "<leader>cp", "<Cmd>cprev<CR>", { desc = "Go to previous item in Quickfix list" })
 map("n", "<leader>co", "<Cmd>copen<CR>", { desc = "Open Quickfix List" })
 map("n", "<leader>cc", "<Cmd>cclose<CR>", { desc = "Close Quickfix List" })
-
--- Found much better use than disabling the arrow keys
--- map("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
--- map("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
--- map("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
--- map("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- Remap common typos when saving and closing files
 vim.cmd("cnoreabbrev Q  q")
