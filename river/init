@@ -16,7 +16,7 @@ riverctl spawn "swww-daemon --format xrgb"
 riverctl spawn "$HOME/.config/waybar/launch.sh"
 riverctl spawn "dunst"
 riverctl spawn "/usr/lib/kdeconnectd"
-# riverctl spawn "/usr/bin/kdeconnect-indicator"
+riverctl spawn "/usr/bin/kdeconnect-indicator"
 # riverctl spawn "nm-applet --indicator"
 # riverctl spawn "blueman-applet"
 riverctl spawn "wl-clipboard"
@@ -326,6 +326,7 @@ riverctl rule-add -app-id "citra-qt" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "es-de" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "steam" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
+riverctl rule-add -app-id "org.telegram.desktop" tags $((1 << (5 - 1)))
 riverctl rule-add -app-id "WebCord" tags $((1 << (6 - 1)))
 riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
 

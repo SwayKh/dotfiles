@@ -87,7 +87,7 @@ return {
     vim.keymap.set("n", "<leader>sf", fzf.files, { silent = true, desc = "[S]earch [F]iles" }) --find_files
     vim.keymap.set("n", "<leader>sg", fzf.live_grep, { silent = true, desc = "[S]earch by [G]rep" }) --live_grep
     vim.keymap.set("n", "<leader>sh", fzf.help_tags, { silent = true, desc = "[S]earch [H]elp" }) --help_tags
-    vim.keymap.set("n", "<leader>sw", fzf.grep_cWORD, { silent = true, desc = "[S]earch current [W]ord" }) --grep_string
+    vim.keymap.set("n", "<leader>gw", fzf.grep_cWORD, { silent = true, desc = "[G]rep current [W]ord" }) --grep_string
     vim.keymap.set("n", "<leader>sr", fzf.resume, { silent = true, desc = "[S]earch [R]esume" }) --resume
     vim.keymap.set("n", "<leader>sk", fzf.keymaps, { silent = true, desc = "[S]earch [K]eymaps" })
     vim.keymap.set("n", "<leader>sb", fzf.builtin, { silent = true, desc = "[S]earch [B]uiltin FzfLua commands" })

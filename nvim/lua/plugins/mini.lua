@@ -11,7 +11,7 @@ return { -- Collection of various small independent plugins/modules
     require("mini.files").setup()
     require("mini.git").setup()
     require("mini.icons").setup()
-    require("mini.jump").setup({ mappings = { repeat_jump = "," } })
+    -- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
     require("mini.jump2d").setup({ view = { dim = true } })
     require("mini.notify").setup()
     require("mini.pairs").setup()
