@@ -37,6 +37,7 @@ export SUDO_EDITOR=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
 export FZF_DEFAULT_OPTS="\
+  --ansi \
   --layout=reverse \
   --border \
   --height=50% \
