@@ -1,5 +1,4 @@
 syntax on
-set nocompatible
 filetype on
 filetype indent on
 colorscheme slate
@@ -17,32 +16,36 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 let g:netrw_altv = 1
 
-set hlsearch
-set incsearch
+let g:vimsyn_embed = "alpPrj"
+let g:showbreak = "↪"
+
+set term=xterm-256color
+set ttyfast
+set nocompatible
+
 set autowrite
 set autoread
-set colorcolumn=
-set cursorline
-set cursorlineopt=line
-
-set laststatus=3
-set showtabline=2
-set tabline=%t
 set nospell
 set spelllang=en_us
+set path+=**
+set undofile
+set undodir=~/.vim/undodir
 
-set textwidth=80
+"set noshowmode
+set noswapfile
+
+set showcmd
+set noerrorbells
+set exrc
+set hidden
+
 set wrap
 set whichwrap=<,>,[,],l,h
-set termguicolors
-set number
-set relativenumber
 
-set numberwidth=2
-set mouse=a
+set mouse=n
 set clipboard=unnamedplus
-set formatoptions-=o
 
+" Tabs and Indents
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -51,46 +54,52 @@ set expandtab
 set breakindent
 set smartindent
 
-set undofile
-set undodir=~/.vim/undodir
-set ignorecase
-set smartcase
+" Look and feel
+set background=dark
+set hlsearch
+set colorcolumn=
+set signcolumn=yes
+set cursorline
+set cursorlineopt=line
+set ruler
+set number
+set relativenumber
+set numberwidth=2
+set textwidth=80
+set termguicolors
+set cmdheight=1
+set laststatus=0
+set showtabline=2
 set splitbelow
 set splitright
-set scrolloff=0
-set sidescrolloff=5
-set signcolumn=yes
-set pumwidth=30
-set pumheight=15
-set cmdheight=1
-
+set splitkeep=screen
+set shortmess=filnxtToOFs
 set updatetime=250
-set background=dark
 set timeoutlen=300
 set ttimeoutlen=0
 set conceallevel=3
-"set noshowmode
-set noswapfile
-set shortmess=filnxtToOFs
+set scrolloff=0
+set sidescrolloff=5
+set pumwidth=30
+set pumheight=15
+
+"Search
+set ignorecase
+set smartcase
+set showmatch
+set incsearch
+
 
 set completeopt=menuone,menu,noselect
 set list
-set listchars=tab:»\ ,trail:·,nbsp:␣
+set listchars=tab:»·,trail:·,nbsp:␣
 set foldmethod=indent
 set foldlevel=99
 set wildmenu
 set wildmode=longest:full,full
 set wildoptions=pum,fuzzy
-let g:vimsyn_embed = "alpPrj"
-set splitkeep=screen
-let g:showbreak = "↪"
 set confirm
-set showmatch
 
-set showcmd
-set noerrorbells
-set exrc
-set hidden
 highlight ColorColumn ctermbg=white guibg=lightgray
 set backspace=indent,eol,start
 set omnifunc=syntaxcomplete#Complete
@@ -124,20 +133,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 inoremap <C-j> <Down>
-cnoremap <C-j> <Down>
 inoremap <C-k> <Up>
-cnoremap <C-k> <Up>
 inoremap <C-h> <Left>
-cnoremap <C-h> <Left>
 inoremap <C-l> <Right>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
-
-nnoremap <C-S-h> <C-w><
-nnoremap <C-S-l> <C-w>>
-nnoremap <C-S-k> <C-w>+
-nnoremap <C-S-j> <C-w>-
-nnoremap <C-S-Left> :vertical resize +3<CR>
-nnoremap <C-S-Right> :vertical resize -3<CR>
 
 nnoremap <left> :vertical resize +3<CR>
 nnoremap <right> :vertical resize -3<CR>
@@ -150,10 +152,10 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 
-nnoremap <A-j> 5j
-vnoremap <A-j> 5j
-nnoremap <A-k> 5k
-vnoremap <A-k> 5k
+nnoremap <M-j> 5j
+vnoremap <M-j> 5j
+nnoremap <M-k> 5k
+vnoremap <M-k> 5k
 
 nnoremap + <C-a>
 nnoremap - <C-x>
