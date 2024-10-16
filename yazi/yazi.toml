@@ -11,7 +11,7 @@ sort_dir_first = true
 sort_translit  = true
 linemode       = "none"
 show_hidden    = true
-show_symlink   = true
+show_symlink   = false
 scrolloff      = 5
 mouse_event    = [ "touch", "scroll", "click", "move", "drag" ]
 
