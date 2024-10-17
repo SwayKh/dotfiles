@@ -177,7 +177,8 @@ return {
           Lua = {
             runtime = { version = "LuaJIT" },
             workspace = {
-              checkThirdParty = false,
+              library = vim.api.nvim_get_runtime_file("", true),
+              checkThirdParty = true,
             },
             completion = {
               callSnippet = "Replace",
@@ -186,7 +187,7 @@ return {
             },
             diagnostics = {
               globals = { "vim" },
-              disable = { "missing-fields" },
+              disable = { "missing-fields", "undefined-global" },
             },
             codeLens = {
               enable = true,

@@ -20,7 +20,7 @@ return { -- Collection of various small independent plugins/modules
     require("mini.tabline").setup()
 
     -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
-    MiniIcons.mock_nvim_web_devicons()
+    -- MiniIcons.mock_nvim_web_devicons()
 
     vim.keymap.set("n", "-", function()
       local buf_name = vim.api.nvim_buf_get_name(0)
