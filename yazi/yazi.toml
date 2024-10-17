@@ -28,9 +28,9 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
-	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
-	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
+	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true,          for = "unix" },
+	{ run = 'code %*',            orphan = true,    desc = "code",         for = "windows" },
+	{ run = 'code -w %*',         block = true,     desc = "code (block)", for = "windows" },
 ]
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
@@ -38,10 +38,10 @@ open = [
 	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
-	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
-	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
-	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
-	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+	{ run = 'xdg-open "$(dirname "$1")"',                            desc = "Reveal", for = "linux" },
+	{ run = 'open -R "$1"',                                          desc = "Reveal", for = "macos" },
+	{ run = 'explorer /select,                                       "%1"',           orphan = true,      desc = "Reveal", for = "windows" },
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true,    desc = "Show EXIF", for = "unix" },
 ]
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
