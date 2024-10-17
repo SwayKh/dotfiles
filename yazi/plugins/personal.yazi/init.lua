@@ -1,3 +1,19 @@
+--==========================--
+--      Setup Functions      --
+--==========================--
+
+local get_selected = ya.sync(function()
+	local paths = {}
+	local selected = cx.active.selected
+	for _, v in pairs(selected) do
+		paths[#paths + 1] = tostring(v)
+	end
+	if #paths == 0 and tab.current.hovered then
+		paths[1] = tostring(tab.current.hovered.url)
+	end
+	return paths
+end)
+
 local function show_link()
 	function Status:name()
 		local h = self._tab.current.hovered
@@ -22,6 +38,24 @@ local function show_user()
 	end, 500, Header.LEFT)
 end
 
+local function folder_rules()
+	ps.sub("cd", function()
+		local cwd = cx.active.current.cwd
+		if cwd:ends_with("Downloads") then
+			ya.manager_emit("sort", { "modified", reverse = true, dir_first = true })
+		elseif cwd:ends_with("Screenshots") then
+			ya.manager_emit("sort", { "created", reverse = true })
+		else
+			ya.manager_emit("sort", { "natural", reverse = false, dir_first = true })
+		end
+	end)
+end
+
+--==========================--
+--  Keymap/Plugin Functions  --
+--==========================--
+
+local st = {}
 local function resize_pane(args)
 	local a = tonumber(args[2])
 	local b = tonumber(args[3])
@@ -36,15 +70,20 @@ local function resize_pane(args)
 	local pane_b = math.floor((b / total) * 100 + 0.5)
 	local pane_c = math.floor((c / total) * 100 + 0.5)
 
-	Tab.layout = function(self)
-		self._chunks = ui.Layout()
-			:direction(ui.Layout.HORIZONTAL)
-			:constraints({
-				ui.Constraint.Percentage(pane_a),
-				ui.Constraint.Percentage(pane_b),
-				ui.Constraint.Percentage(pane_c),
-			})
-			:split(self._area)
+	if st.old then
+		Tab.layout, st.old = st.old, nil
+	else
+		st.old = Tab.layout
+		Tab.layout = function(self)
+			self._chunks = ui.Layout()
+				:direction(ui.Layout.HORIZONTAL)
+				:constraints({
+					ui.Constraint.Percentage(pane_a),
+					ui.Constraint.Percentage(pane_b),
+					ui.Constraint.Percentage(pane_c),
+				})
+				:split(self._area)
+		end
 	end
 	ya.app_emit("resize", {})
 end
@@ -54,14 +93,22 @@ local function pick_random()
 	ya.manager_emit("reveal", { files[math.random(1, #files)].name })
 end
 
-local get_selected = ya.sync(function()
-	local paths = {}
-	local selected = cx.active.selected
-	for _, v in pairs(selected) do
-		paths[#paths + 1] = tostring(v)
+local function smart_enter()
+	local h = cx.active.current.hovered
+	ya.manager_emit(h and h.cha.is_dir and "enter" or "open", { hovered = true })
+end
+
+local function move_parent(args)
+	local parent = cx.active.parent
+	if not parent then
+		return
 	end
-	return paths
-end)
+
+	local target = parent.files[parent.cursor + 1 + args[2]]
+	if target and target.cha.is_dir then
+		ya.manager_emit("cd", { target.url })
+	end
+end
 
 local function move_to_new_dir()
 	local paths = get_selected()
@@ -71,9 +118,52 @@ local function move_to_new_dir()
 		position = { "top-center", y = 3, w = 40 },
 	})
 	local status, err = Command("mkdir"):args({ "-p", value }):status()
+	if not status or not status.success then
+		ya.notify({
+			title = "Mkdir",
+			content = string.format("Mkdir command failed, exit code %s", status and status.code or err),
+			level = "error",
+			timeout = 5,
+		})
+	end
 
 	for i = 1, #paths do
-		local st, error = Command("mv"):args({ paths[i], value }):status()
+		local stat, err = Command("mv"):args({ paths[i], value }):status()
+		if not stat or not stat.success then
+			ya.notify({
+				title = "Mkdir",
+				content = string.format("Mkdir command failed, exit code %s", status and status.code or err),
+				level = "error",
+				timeout = 5,
+			})
+		end
+	end
+end
+
+local function chmod()
+	ya.manager_emit("escape", { visual = true })
+
+	local urls = selected_or_hovered()
+	if #urls == 0 then
+		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
+	end
+
+	local value, event = ya.input({
+		title = "Chmod:",
+		position = { "top-center", y = 3, w = 40 },
+	})
+	if event ~= 1 then
+		return
+	end
+
+	local status, err = Command("chmod"):arg(value):args(urls):spawn():wait()
+	if not status or not status.success then
+		ya.notify({
+			title = "Chmod",
+			content = string.format("Chmod with selected files failed, exit code %s", status and status.code or err),
+			level = "error",
+			timeout = 5,
+		})
 	end
 end
 
@@ -85,6 +175,12 @@ local function entry(_, args)
 		pick_random()
 	elseif args[1] == "new_dir" then
 		move_to_new_dir()
+	elseif args[1] == "smart_enter" then
+		smart_enter()
+	elseif args[1] == "move_parent" then
+		move_parent(args)
+	elseif args[1] == "chmod" then
+		chmod()
 	end
 end
 
@@ -92,6 +188,7 @@ end
 local function setup(_, opts)
 	show_link()
 	show_user()
+	folder_rules()
 
 	-- Create 2 tabs on startup and switch to first one
 	ya.manager_emit("tab_create", { current = true })
