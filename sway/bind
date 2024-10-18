@@ -23,6 +23,7 @@ bindsym $mod+r exec rofi -show drun
 bindsym $mod+TAB exec rofi -show window
 
 bindsym $mod+l exec $term -e zsh -ic lf #lfMention
+bindsym $mod+Y exec $term -e zsh -ic yazi
 bindsym $mod+m exec $term -e btop
 
 bindsym $mod+Escape exec "$HOME/scripts/rofi-power"

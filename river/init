@@ -100,6 +100,7 @@ riverctl map normal $mod G spawn "retroarch"
 riverctl map normal $mod S spawn "spotify-launcher"
 riverctl map normal $mod I spawn "ticktick"
 riverctl map normal $mod L spawn "$terminal -e zsh -ic lf" #lfMention
+riverctl map normal $mod Y spawn "$terminal -e zsh -ic yazi"
 riverctl map normal $mod M spawn "$terminal -e btop"
 riverctl map normal $mod KP_Add spawn "galculator"
 riverctl map normal $mod P spawn "$goTerm"
@@ -268,10 +269,12 @@ riverctl map normal $mod+Shift Comma send-to-output previous
 #                                                                         █████
 #                                                                        ░░░░░
 
+#LF Mentions
 # Scratchpads
 # Create scratchpad tags for each tag I need
 terminal_tag=$((1 << 11))
 lf_tag=$((1 << 12))
+yazi_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
 docs_tag=$((1 << 15))
@@ -282,7 +285,7 @@ special_tag=$((1 << 18))
 # special3_tag=$((1 << 20))
 #
 all_tags=$(((1 << 32) - 1))
-scratch_tags=$((terminal_tag | lf_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special_tag))
+scratch_tags=$((terminal_tag | lf_tag | yazi_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special_tag))
 all_but_scratch_tag=$((all_tags ^ scratch_tags))
 riverctl spawn-tagmask ${all_but_scratch_tag}
 
@@ -291,6 +294,7 @@ scratchpad="$HOME/.config/river/scratchpads.sh"
 riverctl map normal $mod+Shift T spawn "$scratchpad term"
 riverctl map normal $mod+Shift M spawn "$scratchpad btop"
 riverctl map normal $mod+Shift L spawn "$scratchpad lf"
+riverctl map normal $mod+Shift Y spawn "$scratchpad yazi"
 riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
 
 riverctl map normal $mod+Shift D set-focused-tags $docs_tag
@@ -332,6 +336,7 @@ riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
 
 riverctl rule-add -app-id "special-term" tags $terminal_tag
 riverctl rule-add -app-id "special-lf" tags $lf_tag
+riverctl rule-add -app-id "special-yazi" tags $yazi_tag
 riverctl rule-add -app-id "special-nvim" tags $dots_tag
 riverctl rule-add -app-id "special-btop" tags $monitor_tag
 riverctl rule-add -app-id "ticktick" tags $ticktick_tag

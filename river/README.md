@@ -12,7 +12,7 @@ programs required to make it work
 
 - WM/Compositor: River
 - Terminal: foot
-- File Manager: lf
+- File Manager: lf / (Recently switched to yazi)
 - Browser: floorp
 - Launcher: Rofi-wayland
 - Editor: Neovim

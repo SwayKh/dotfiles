@@ -10,9 +10,11 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+#LF Mentions
 terminal="footclient"
 terminal_tag=$((1 << 11))
 lf_tag=$((1 << 12))
+yazi_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
 
@@ -20,6 +22,7 @@ term="$terminal --app-id special-term -e zsh -ic \"tmux new-session -s Terminal\
 # lf="$terminal --app-id special-lf -e zsh -ic \"tmux new-session -s FileManager 'lf'\"" #lfMention
 btop="$terminal --app-id special-btop -e btop"
 nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\""
+yazi="$terminal --app-id special-yazi -e zsh -ic yazi"
 # Super complicated tmux command to create a new session of tmux with session
 # name FileManager and have 2 window both containing lf. #lfMention
 lf="$terminal --app-id special-lf -e zsh -ic \"tmux new-session -s FileManager -d 'lf'; tmux new-window -t FileManager 'lf'; tmux attach-session -t FileManager\""
@@ -34,6 +37,11 @@ case "$1" in
   search="special-lf"
   tag="$lf_tag"
   cmd="$lf"
+  ;;
+"yazi")
+  search="special-yazi"
+  tag="$yazi_tag"
+  cmd="$yazi"
   ;;
 "btop")
   search="special-btop"

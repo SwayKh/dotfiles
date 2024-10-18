@@ -112,7 +112,7 @@ sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm sway
 #### Cli tools
 
 ```
-sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tldr starship lf cava rsync dua-cli sshfs swww mpv
+sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tldr starship yazi lf cava rsync dua-cli sshfs swww mpv
 ```
 
 #### Symlinks
@@ -199,7 +199,7 @@ ripgrep (Telescope plugin neovim)
 tumbler (For thumbnails in Thunar File Manager)
 wmctrl (Window switching functionality for rofi-wayland-fork)
 cliphist (Rofi as clipboard manager)
-ripdrag (For drag and drop functionality in LF)
+ripdrag (For drag and drop functionality in LF/Yazi)
 wlr-randr (For turning DPMS off when using River)
 vulkan-radeon(Needed for Godot4)
 fuse2 fuse3 gvfs ntfs-3g (Needed to view files on windows from linux/Mounting)
