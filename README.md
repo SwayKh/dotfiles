@@ -18,7 +18,7 @@
 - **Bar** : [Waybar](https://github.com/Alexays/Waybar)
 - **Application Launcher** : [Rofi-wayland](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
-- **File Manager** : [LF](https://github.com/gokcehan/lf) / [Yazi](https://github.com/sxyazi/yazi)
+- **File Manager** : [Yazi](https://github.com/sxyazi/yazi) / [LF](https://github.com/gokcehan/lf)
 - **File Manager(GUI)** : [Nautilus](https://apps.gnome.org/Nautilus/)
 - **Text Editor** : [Neovim](https://neovim.io/)
 - **Browser** : [Floorp](https://floorp.app/en)
@@ -112,7 +112,7 @@ sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm sway
 #### Cli tools
 
 ```
-sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tldr starship yazi lf cava rsync dua-cli sshfs swww mpv
+sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tldr starship yazi cava rsync dua-cli sshfs swww mpv
 ```
 
 #### Symlinks
@@ -284,7 +284,6 @@ vulkan-headers
 vulkan-radeon
 wpa_supplicant
 xpadneo-dkms
-yazi
 zathura
 zathura-pdf-mupdf
 ```
