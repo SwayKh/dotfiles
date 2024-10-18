@@ -2,80 +2,31 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[[manager.prepend_keymap]]
-on = "|"
-run = "plugin --sync personal --args='resize 0 1 2'"
-desc = "Toggle Pane ratio of 0, 1, 2"
-
-[[manager.prepend_keymap]]
-on = "`"
-run = "plugin --sync personal --args='random'"
-desc = "Pick a random file"
-
-[[manager.prepend_keymap]]
-on = "<A-n>"
-run = "plugin personal --args='new_dir'"
-desc = "Move to new directory"
-
-[[manager.prepend_keymap]]
-on = "l"
-run = "plugin --sync personal --args='smart_enter'"
-desc = "Smart enter, Open file or enter directory"
-
-[[manager.prepend_keymap]]
-on = "J"
-run = "plugin --sync personal --args='move_parent 1'"
-desc = "Go to below parent directory"
-
-[[manager.prepend_keymap]]
-on = "K"
-run = "plugin --sync personal --args='move_parent -1'"
-desc = "Go to above parent directory"
-
-[[manager.prepend_keymap]]
-on = "<A-p>"
-run = "plugin personal --args='chmod'"
-desc = "Chmod on selected files"
-
-[[manager.prepend_keymap]]
-on = ["b", "g"]
-run = '''
-    shell '"$HOME"/scripts/set-wall "$1"' --confirm
-'''
-desc = "Set Wallpaper"
-
-[[manager.prepend_keymap]]
-on = ["d", "g"]
-run = '''
-    shell 'ripdrag -x -b -n -t -k -a "$1"' --confirm
-'''
-desc = "Drag and Drop with ripdrag"
-
-
-[[manager.prepend_keymap]]
-on  = "C"
-run = '''
-    shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm
-'''
-desc = "Copy the files to the clipboard"
-
-[[manager.prepend_keymap]]
-on   = "!"
-run  = 'shell "$SHELL" --block --confirm'
-desc = "Open shell here"
-
-# [[manager.prepend_keymap]]
-# on = "<Backspace>"
-# run = "unyank"
-# desc = "Unyank"
-
-[[manager.prepend_keymap]]
-on = "<Esc>"
-run = ["unyank", "escape"]
-desc = "Unyank, Exit visual mode, clear selected, or cancel search"
-
+# on  = "C"
+# run = 'shell "for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list" --confirm'
+# desc = "Copy the files to the clipboard" }
 
 [manager]
+
+# Make all changed keymaps into prepend_keymap, keep the default config as is
+# Easier to share
+prepend_keymap = [
+  { on = "<Backspace>", run = "unyank",                                                         desc = "Unyank" },
+  { on = "<Esc>",       run = ["unyank", "escape"],                                             desc = "Clean Unyank/selected, Exit visual mode, cancel search" },
+  { on = "|",           run = "plugin --sync personal --args='resize 0 1 2'",                   desc = "Toggle Pane ratio of 0, 1, 2" },
+  { on = "`",           run = "plugin --sync personal --args='random'",                         desc = "Pick a random file" },
+  { on = "<A-n>",       run = "plugin personal --args='new_dir'",                               desc = "Move to new directory" },
+  { on = "l",           run = "plugin --sync personal --args='smart_enter'",                    desc = "Smart enter, Open file or enter directory" },
+  { on = "J",           run = "plugin --sync personal --args='move_parent 1'",                  desc = "Go to below parent directory" },
+  { on = "K",           run = "plugin --sync personal --args='move_parent -1'",                 desc = "Go to above parent directory" },
+  { on = ["m", "p"],    run = "plugin personal --args='chmod'",                                 desc = "Chmod on selected files" },
+  { on = ["m", "x"],    run = "plugin personal --args='chmodx'",                                desc = "Chmod on selected files" },
+  { on = ["b", "g"],    run = 'shell "\"$HOME\"/scripts/set-wall \"$1\"" --confirm',            desc = "Set Wallpaper" },
+  { on = ["d", "g"],    run = 'shell "ripdrag -x -b -n -t -k -a \"$1\"" --confirm',             desc = "Drag and Drop with ripdrag" },
+  { on = "!",           run = 'shell "$SHELL" --block --confirm',                               desc = "Open shell here" },
+  # { on = "<A-s>",       run = 'shell "curl -F\"file=@$@\" https://0x0.st | wl-copy" --confirm', desc = "Share selected file with 0x0.st"},
+  { on = "<A-s>",       run = 'plugin personal --args="share"',                          desc = "Share selected file with 0x0.st"},
+]
 
 keymap = [
 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
@@ -90,30 +41,30 @@ keymap = [
 	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
 
 	# Navigation
-	{ on = "h", run = "leave", desc = "Go back to the parent directory" },
-	{ on = "l", run = "enter", desc = "Enter the child directory" },
+	{ on = "h", run = "leave",    desc = "Go back to the parent directory" },
+	{ on = "l", run = "enter",    desc = "Enter the child directory" },
 
 	{ on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-	{ on = "G",          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+  { on = "G",          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
-	{ on = "<Up>",         run = "arrow -1",    desc = "Move cursor up" },
-	{ on = "<Down>",       run = "arrow 1",     desc = "Move cursor down" },
+	{ on = "<Up>",         run = "arrow -1",     desc = "Move cursor up" },
+	{ on = "<Down>",       run = "arrow 1",      desc = "Move cursor down" },
 
-	{ on = "<A-j>",        run = "arrow 5",    desc = "Move cursor 5 up" },
+	{ on = "<A-j>",        run = "arrow 5",      desc = "Move cursor 5 up" },
 	{ on = "<A-k>",        run = "arrow -5",     desc = "Move cursor 5 down" },
 
-	{ on = "<C-u>",        run = "arrow -50%",  desc = "Move cursor up half page" },
-	{ on = "<C-d>",        run = "arrow 50%",   desc = "Move cursor down half page" },
-	{ on = "<C-b>",        run = "arrow -100%", desc = "Move cursor up one page" },
-	{ on = "<C-f>",        run = "arrow 100%",  desc = "Move cursor down one page" },
+	{ on = "<C-u>",        run = "arrow -50%",   desc = "Move cursor up half page" },
+	{ on = "<C-d>",        run = "arrow 50%",    desc = "Move cursor down half page" },
+	{ on = "<C-b>",        run = "arrow -100%",  desc = "Move cursor up one page" },
+	{ on = "<C-f>",        run = "arrow 100%",   desc = "Move cursor down one page" },
 
-	{ on = "<S-PageUp>",   run = "arrow -50%",  desc = "Move cursor up half page" },
-	{ on = "<S-PageDown>", run = "arrow 50%",   desc = "Move cursor down half page" },
-	{ on = "<PageUp>",     run = "arrow -100%", desc = "Move cursor up one page" },
-	{ on = "<PageDown>",   run = "arrow 100%",  desc = "Move cursor down one page" },
+	{ on = "<S-PageUp>",   run = "arrow -50%",   desc = "Move cursor up half page" },
+	{ on = "<S-PageDown>", run = "arrow 50%",    desc = "Move cursor down half page" },
+	{ on = "<PageUp>",     run = "arrow -100%",  desc = "Move cursor up one page" },
+	{ on = "<PageDown>",   run = "arrow 100%",   desc = "Move cursor down one page" },
 
-	{ on = "<Left>",  run = "leave",    desc = "Go back to the parent directory" },
-	{ on = "<Right>", run = "enter",    desc = "Enter the child directory" },
+	{ on = "<Left>",       run = "leave",        desc = "Go back to the parent directory" },
+	{ on = "<Right>",      run = "enter",        desc = "Enter the child directory" },
 
   # The J/K to move parent directory keymaps are defined above
 	# { on = "H", run = "back",    desc = "Go back to the previous directory" },
@@ -141,10 +92,12 @@ keymap = [
 	{ on = "P",           run = "paste --force",                                   desc = "Paste yanked files (overwrite if the destination exists)" },
 	{ on = "L",           run = "link",                                            desc = "Symlink the absolute path of yanked files" },
   { on = "e",           run = "shell --confirm 'bash $@'",                       desc = "Execute the selected file" },
+	{ on = "F",           run = "plugin fzf",                                      desc = "Jump to a directory or reveal a file using fzf" },
 	# { on = "_",          run = "link --relative",                                 desc = "Symlink the relative path of yanked files" },
 	# { on = "<C-->",      run = "hardlink",                                        desc = "Hardlink yanked files" },
 	# { on = "Y",          run = "unyank",                                          desc = "Cancel the yank status" },
 	# { on = "X",          run = "unyank",                                          desc = "Cancel the yank status" },
+  # { on = [ "u", "a"],   run = "ya pub extract --list '$@'",                      desc = "Unarchive" },
 	{ on = [ "d","d" ],   run = "remove",                                          desc = "Trash selected files" },
 	{ on = [ "d","u" ],   run = "shell '$SHELL -c \"dua i\"' --block --confirm",   desc = "Run dua-cli in current directory" },
 	{ on = "D",           run = "remove --permanently",                            desc = "Permanently delete selected files" },
@@ -157,7 +110,6 @@ keymap = [
 	{ on = "S",           run = "search rg",                                       desc = "Search files by content using ripgrep" },
 	{ on = "<C-s>",       run = "escape --search",                                 desc = "Cancel the ongoing search" },
 	{ on = "z",           run = "plugin zoxide",                                   desc = "Jump to a directory using zoxide" },
-	{ on = "Z",           run = "plugin fzf",                                      desc = "Jump to a directory or reveal a file using fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Set linemode to size" },
@@ -199,12 +151,6 @@ keymap = [
 	{ on = [ ",", "S" ], run = [ "sort size --reverse", "linemode size" ],         desc = "Sort by size (reverse)" },
 	{ on = [ ",", "r" ], run = "sort random --reverse=no",                         desc = "Sort randomly" },
 
-	# Goto
-	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
-	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
-
 	# Tabs
 	{ on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },
 
@@ -234,17 +180,18 @@ keymap = [
 	# Goto
 	{ on = [ "g", "<Space>" ], run = "cd --interactive",                        desc = "Go to a directory interactively" },
 	{ on = [ "g", "h" ],       run = "cd ~",                                    desc = "Go to the home directory" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",                            desc = "Go to the config directory" },
-	{ on = [ "g", "s" ],       run = "cd ~/Sync",                               desc = "Go to the Syncthing directory" },
+	{ on = [ "g", "/" ],       run = "cd /",                                    desc = "Go to the root directory" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",                          desc = "Go to the downloads directory" },
 	{ on = [ "g", "D" ],       run = "cd ~/Documents",                          desc = "Go to the documents directory" },
+	{ on = [ "g", "c" ],       run = "cd ~/.config",                            desc = "Go to the config directory" },
 	{ on = [ "g", "t" ],       run = "cd ~/Test/",                              desc = "Go to the test directory" },
+	{ on = [ "g", "T" ],       run = "cd ~/.trash/",                            desc = "Go to the .trash directory" },
 	{ on = [ "g", "." ],       run = "cd ~/dotfiles",                           desc = "Go to the dotfiles directory" },
-	{ on = [ "g", "/" ],       run = "cd /",                                    desc = "Go to the root directory" },
 	{ on = [ "g", "o" ],       run = "cd ~/Obsidian/Vault/",                    desc = "Go to the Obsidian directory" },
   { on = [ "g", "r" ],       run = "cd ~/Roms",                               desc = "Go to the Roms directory" },
 	{ on = [ "g", "w" ],       run = "cd ~/wallpapers/Images/",                 desc = "Go to the wallpapers directory" },
 	{ on = [ "g", "b" ],       run = "cd ~/.local/bin/",                        desc = "Go to the .local/bin directory" },
+	{ on = [ "g", "s" ],       run = "cd ~/Sync",                               desc = "Go to the Syncthing directory" },
 	{ on = [ "g", "l", "s" ],  run = "cd ~/.local/share/",                      desc = "Go to the .local/share directory" },
 	{ on = [ "g", "p", "c" ],  run = "cd ~/Pictures/",                          desc = "Go to the pictures directory" },
   { on = [ "g", "p", "s" ],  run = "cd ~/Pictures/Screenshots/",              desc = "Go to the Screenshots directory" },
@@ -296,12 +243,12 @@ keymap = [
 	{ on = "<F1>",    run = "help",           desc = "Open help" },
 ]
 
-[[input.prepend_keymap]]
-on   = "<Esc>"
-run  = "close"
-desc = "Cancel input"
 
 [input]
+
+prepend_keymap = [
+  { on   = "<Esc>", run  = "close", desc = "Cancel input" },
+]
 
 keymap = [
 	{ on = "<C-c>",   run = "close",          desc = "Cancel input" },

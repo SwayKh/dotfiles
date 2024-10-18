@@ -1,7 +1,3 @@
---==========================--
---      Setup Functions      --
---==========================--
-
 local get_selected = ya.sync(function()
 	local paths = {}
 	local selected = cx.active.selected
@@ -13,6 +9,10 @@ local get_selected = ya.sync(function()
 	end
 	return paths
 end)
+
+--==========================--
+--      Setup Functions      --
+--==========================--
 
 local function show_link()
 	function Status:name()
@@ -256,8 +256,7 @@ local function setup(_, opts)
 	folder_rules()
 
 	-- Create 2 tabs on startup and switch to first one
-	ya.manager_emit("tab_create", {})
-	ya.manager_emit("cd", { tostring(os.getenv("HOME")), interactive = false })
+	ya.manager_emit("tab_create", { os.getenv("HOME") })
 	ya.manager_emit("tab_switch", { 0 })
 end
 
