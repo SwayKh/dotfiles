@@ -50,5 +50,5 @@ cmd convertToPng &{{
 }}
 
 cmd directorySize ${{
-	ncdu "$f"
+	dua i "$f"
 }}
