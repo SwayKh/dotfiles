@@ -39,9 +39,10 @@ export SUDO_EDITOR=nvim
 export FZF_DEFAULT_OPTS="\
   --ansi \
   --layout=reverse \
-  --border \
-  --height=50% \
+  --border=rounded \
+  --height=100% \
   --preview-window=65% \
+  --margin=1% \
   --sort \
   --bind='ctrl-c:abort' \
   --bind='ctrl-b:preview-page-up' \
