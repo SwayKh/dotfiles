@@ -23,6 +23,7 @@ bindsym $mod+KP_Add exec galculator
 bindsym $mod+r exec rofi -show drun
 
 bindsym $mod+l exec $term -e zsh -ic lf #lfMention
+bindsym $mod+y exec $term -e zsh -ic yazi
 bindsym $mod+m exec $term -e btop
 
 bindsym $mod+Escape exec "$HOME/scripts/rofi-power"
