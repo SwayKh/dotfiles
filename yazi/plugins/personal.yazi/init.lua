@@ -140,10 +140,28 @@ local function move_to_new_dir()
 	end
 end
 
+local function chmodx()
+	ya.manager_emit("escape", { visual = true })
+
+	local urls = get_selected()
+	if #urls == 0 then
+		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
+	end
+
+	local status, err = Command("chmod"):arg("+x"):args(urls):spawn():wait()
+	if not status or not status.success then
+		ya.notify({
+			title = "Chmod",
+			content = string.format("Chmod with selected files failed, exit code %s", status and status.code or err),
+			level = "error",
+			timeout = 5,
+		})
+	end
+end
 local function chmod()
 	ya.manager_emit("escape", { visual = true })
 
-	local urls = selected_or_hovered()
+	local urls = get_selected()
 	if #urls == 0 then
 		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
 	end
@@ -181,6 +199,8 @@ local function entry(_, args)
 		move_parent(args)
 	elseif args[1] == "chmod" then
 		chmod()
+	elseif args[1] == "chmodx" then
+		chmodx()
 	end
 end
 
@@ -191,7 +211,8 @@ local function setup(_, opts)
 	folder_rules()
 
 	-- Create 2 tabs on startup and switch to first one
-	ya.manager_emit("tab_create", { current = true })
+	ya.manager_emit("tab_create", {})
+	ya.manager_emit("cd", { tostring(os.getenv("HOME")), interactive = false })
 	ya.manager_emit("tab_switch", { 0 })
 end
 
