@@ -8,8 +8,8 @@ local get_selected = ya.sync(function()
 	for _, v in pairs(selected) do
 		paths[#paths + 1] = tostring(v)
 	end
-	if #paths == 0 and tab.current.hovered then
-		paths[1] = tostring(tab.current.hovered.url)
+	if #paths == 0 and cx.active.current.hovered then
+		paths[1] = tostring(cx.active.current.hovered.url)
 	end
 	return paths
 end)
@@ -112,6 +112,9 @@ end
 
 local function move_to_new_dir()
 	local paths = get_selected()
+	if #paths == 0 then
+		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
+	end
 
 	local value, _ = ya.input({
 		title = "Directory name:",
@@ -128,15 +131,54 @@ local function move_to_new_dir()
 	end
 
 	for i = 1, #paths do
-		local stat, err = Command("mv"):args({ paths[i], value }):status()
+		local stat, error = Command("mv"):args({ paths[i], value }):status()
 		if not stat or not stat.success then
 			ya.notify({
 				title = "Mkdir",
-				content = string.format("Mkdir command failed, exit code %s", status and status.code or err),
+				content = string.format("Mkdir command failed, exit code %s", status and status.code or error),
 				level = "error",
 				timeout = 5,
 			})
 		end
+	end
+end
+
+local function share()
+	local paths = get_selected()
+	if #paths == 0 then
+		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
+	end
+
+	local curl, err =
+		Command("curl"):args({ "-F", "file=@" .. paths[1], "https://0x0.st" }):stdout(Command.PIPED):output()
+
+	if not curl then
+		ya.notify({
+			title = "Share",
+			content = "Cannot spawn git command, error code " .. tostring(err),
+			level = "error",
+			timeout = 5,
+		})
+	end
+
+	local copy, error = Command("wl-copy"):arg(curl.stdout):status()
+
+	if copy or copy.success then
+		ya.notify({
+			title = "Share",
+			content = "File shared, and link copied to clipboard",
+			level = "info",
+			timeout = 5,
+		})
+	end
+
+	if not copy then
+		ya.notify({
+			title = "Share",
+			content = "Cannot spawn wl-copy, error " .. tostring(error),
+			level = "warn",
+			timeout = 5,
+		})
 	end
 end
 
@@ -158,6 +200,7 @@ local function chmodx()
 		})
 	end
 end
+
 local function chmod()
 	ya.manager_emit("escape", { visual = true })
 
@@ -201,6 +244,8 @@ local function entry(_, args)
 		chmod()
 	elseif args[1] == "chmodx" then
 		chmodx()
+	elseif args[1] == "share" then
+		share()
 	end
 end
 
