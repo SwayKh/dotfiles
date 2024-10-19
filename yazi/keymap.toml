@@ -68,6 +68,7 @@ prepend_keymap = [
   { on = ["b", "g"],    run = 'shell "\"$HOME\"/scripts/set-wall \"$1\"" --confirm',            desc = "Set Wallpaper" },
   { on = ["d", "g"],    run = 'shell "ripdrag -x -b -n -t -k -a \"$1\"" --confirm',             desc = "Drag and Drop with ripdrag" },
   { on = "!",           run = 'shell "$SHELL" --block --confirm',                               desc = "Open shell here" },
+  # { on = [ "b", "t" ],  run = 'shell "chmod " --interactive',                                   desc = "Testing interactive shells"}
 ]
 
 # Some disabled keymaps to remove since they cause conflict
@@ -130,9 +131,9 @@ keymap = [
 	{ on = "<Right>", run = "enter", desc = "Enter the child directory" },
 
 	# Toggle
-	{ on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
-	{ on = "<C-a>",   run = "toggle_all on",         desc = "Select all files" },
-	{ on = "<C-r>",   run = "toggle_all",            desc = "Invert selection of all files" },
+	{ on = "<Space>", run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = "<C-a>",   run = "select_all --state=true",            desc = "Select all files" },
+	{ on = "<C-r>",   run = "select_all --state=none",            desc = "Invert selection of all files" },
 
 	# Visual mode
 	{ on = "v", run = "visual_mode",         desc = "Enter visual mode (selection mode)" },
