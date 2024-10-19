@@ -256,6 +256,10 @@ cmd sourceConfig %{{
     lf -remote "send $id source ~/.config/lf/lfrc"
 }}
 
+cmd maps $lf -remote "query $id maps" | $PAGER
+cmd cmaps $lf -remote "query $id cmaps" | $PAGER
+cmd cmds $lf -remote "query $id cmds" | $PAGER
+
 # cmd on-redraw %{{
 #     if [ $lf_width -le 80 ]; then
 #         lf -remote "send $id set ratios 1:2"
