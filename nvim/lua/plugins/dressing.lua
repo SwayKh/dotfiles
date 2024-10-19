@@ -1,7 +1,6 @@
 return {
   "stevearc/dressing.nvim",
-  event = "VeryLazy",
-  enabled = true,
+  event = { "BufReadPost", "BufNewFile" },
   config = function()
     local dressing = require("dressing")
     dressing.setup({

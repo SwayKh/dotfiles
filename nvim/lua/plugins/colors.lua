@@ -2,6 +2,7 @@ return {
   {
     "sainnhe/everforest",
     priority = 1000,
+    event = "VimEnter",
     config = function()
       -- " Available values: 'hard', 'medium'(default), 'soft'
       vim.g.everforest_background = "hard"

@@ -1,9 +1,9 @@
 return {
   -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
-  -- event = "VeryLazy",
-  -- event = { "BufReadPost", "BufNewFile" },
-  event = { "VeryLazy", "BufReadPre", "BufNewFile" },
+  event = { "BufReadPost", "BufNewFile" },
+  cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+  lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
@@ -44,7 +44,7 @@ return {
       auto_install = true,
       autopairs = { enable = true },
       rainbow = { enable = true },
-      indent = { enable = true },
+      indent = { enable = false },
       highlight = {
         enable = true,
         use_languagetree = true,

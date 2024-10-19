@@ -2,7 +2,6 @@ return { -- Collection of various small independent plugins/modules
   "echasnovski/mini.nvim",
   version = false,
   event = "VeryLazy",
-
   config = function()
     -- require("mini.starter").setup() -- Won't work because mini is lazy loaded
     require("mini.align").setup()

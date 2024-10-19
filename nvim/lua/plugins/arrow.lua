@@ -1,6 +1,6 @@
 return {
   "otavioschwanck/arrow.nvim",
-  event = "VeryLazy",
+  keys = { ";", "<Cmd>Arrow open<CR>", desc = "Open Arrow menu" },
   config = function()
     require("arrow").setup({
       show_icons = true,
