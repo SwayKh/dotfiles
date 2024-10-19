@@ -1,7 +1,12 @@
 return {
   "akinsho/toggleterm.nvim",
-  event = "VeryLazy",
   version = "*",
+  keys = {
+    { "<C-,>", "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
+    { "<leader>th", "<Cmd>ToggleTerm direction=horizontal <CR>", desc = "[T]oggleTerm [H]orizontal" },
+    { "<leader>tf", "<Cmd>ToggleTerm direction=float<CR>", desc = "[T]oggleTerm [F]loat" },
+    { "<leader>tv", "<Cmd>ToggleTerm direction=vertical<CR>", desc = "[T]oggleTerm [V]ertical" },
+  },
   config = function()
     require("toggleterm").setup({
       size = 15,
@@ -25,23 +30,5 @@ return {
         WinBarNC = { link = "WinBarNC" },
       },
     })
-    vim.keymap.set(
-      "n",
-      "<leader>th",
-      "<Cmd>ToggleTerm direction=horizontal <CR>",
-      { silent = true, desc = "[T]oggleTerm [H]orizontal" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>tf",
-      "<Cmd>ToggleTerm direction=float<CR>",
-      { silent = true, desc = "[T]oggleTerm [F]loat" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>tv",
-      "<Cmd>ToggleTerm size=60 direction=vertical<CR>",
-      { silent = true, desc = "[T]oggleTerm [V]ertical" }
-    )
   end,
 }

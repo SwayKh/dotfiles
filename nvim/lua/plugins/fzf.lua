@@ -1,8 +1,155 @@
 return {
   "ibhagwan/fzf-lua",
-  event = "VeryLazy",
-  -- optional for icon support
-  dependencies = { "echasnovski/mini.nvim" },
+  keys = {
+    {
+      "<leader>gf",
+      function()
+        require("fzf-lua").git_files()
+      end,
+      desc = "Search [G]it [F]iles",
+    },
+    {
+      "<leader>s?",
+      function()
+        require("fzf-lua").oldfiles()
+      end,
+      desc = "[S]earch Recent Files",
+    },
+    {
+      "<leader>sf",
+      function()
+        require("fzf-lua").files()
+      end,
+      desc = "[S]earch [F]iles",
+    },
+    {
+      "<leader>sg",
+      function()
+        require("fzf-lua").live_grep()
+      end,
+      desc = "[S]earch by [G]rep",
+    },
+    {
+      "<leader>sh",
+      function()
+        require("fzf-lua").help_tags()
+      end,
+      desc = "[S]earch [H]elp",
+    },
+    {
+      "<leader>gw",
+      function()
+        require("fzf-lua").grep_cWORD()
+      end,
+      desc = "[G]rep current [W]ord",
+    },
+    {
+      "<leader>sr",
+      function()
+        require("fzf-lua").resume()
+      end,
+      desc = "[S]earch [R]esume",
+    },
+    {
+      "<leader>sk",
+      function()
+        require("fzf-lua").keymaps()
+      end,
+      desc = "[S]earch [K]eymaps",
+    },
+    {
+      "<leader>sb",
+      function()
+        require("fzf-lua").builtin()
+      end,
+      desc = "[S]earch [B]uiltin FzfLua commands",
+    },
+    {
+      "<leader>st",
+      function()
+        require("fzf-lua").colorschemes()
+      end,
+      desc = "[S]earch [T]hemes/Colorscheme",
+    },
+    {
+      "<leader>sc",
+      function()
+        require("fzf-lua").commands()
+      end,
+      desc = "[S]earch [C]ommands",
+    },
+    {
+      "<leader>sd",
+      function()
+        require("fzf-lua").diagnostics_document()
+      end,
+      desc = "[S]earch [D]iagnostics",
+    },
+    {
+      "<leader><leader>",
+      function()
+        require("fzf-lua").buffers()
+      end,
+      desc = "[ ] Find existing buffers",
+    },
+    {
+      "<leader>sn",
+      function()
+        require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
+      end,
+      silent = true,
+      desc = "[S]earch [N]vim config",
+    },
+    {
+      "<leader>s.",
+      function()
+        require("fzf-lua").files({ cwd = "$HOME/dotfiles" })
+      end,
+      desc = "[S]earch [N]vim config",
+    },
+    {
+      "<leader>s/",
+      function()
+        require("fzf-lua").grep_curbuf({
+          fzf_opts = {
+            ["--layout"] = "reverse",
+          },
+          winopts = {
+            title = " Grep Buffer ",
+            title_pos = "center",
+            preview = { hidden = "hidden" },
+            height = 0.40, -- window height
+            width = vim.api.nvim_win_get_width(0),
+            row = 1, -- window row position (0=top, 1=bottom)
+          },
+        })
+      end,
+      desc = "[S]earch [/] in current buffer",
+    },
+    {
+      "<leader>lr",
+      function()
+        require("fzf-lua").fzf_exec(require("config.utils").pluginNames(), {
+          prompt = "Select a plugin > ",
+          actions = {
+            ["default"] = function(selected)
+              vim.cmd("Lazy reload " .. selected[1])
+            end,
+          },
+          winopts = {
+            title = " Reload Plugins ",
+            title_pos = "center",
+            preview = { hidden = "hidden" },
+            height = 0.50, -- window height
+            width = 0.40, -- window width
+            row = 0.50, -- window row position (0=top, 1=bottom)
+            col = 0.50, -- window col position (0=left, 1=right)
+          },
+        })
+      end,
+      desc = "[L]azy [R]eload plugin of choice",
+    },
+  },
   config = function()
     local fzf = require("fzf-lua")
 
@@ -81,64 +228,5 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<leader>gf", fzf.git_files, { silent = true, desc = "Search [G]it [F]iles" }) --git_files
-    vim.keymap.set("n", "<leader>s?", fzf.oldfiles, { silent = true, desc = "[S]earch Recent Files" })
-    vim.keymap.set("n", "<leader>sf", fzf.files, { silent = true, desc = "[S]earch [F]iles" }) --find_files
-    vim.keymap.set("n", "<leader>sg", fzf.live_grep, { silent = true, desc = "[S]earch by [G]rep" }) --live_grep
-    vim.keymap.set("n", "<leader>sh", fzf.help_tags, { silent = true, desc = "[S]earch [H]elp" }) --help_tags
-    vim.keymap.set("n", "<leader>gw", fzf.grep_cWORD, { silent = true, desc = "[G]rep current [W]ord" }) --grep_string
-    vim.keymap.set("n", "<leader>sr", fzf.resume, { silent = true, desc = "[S]earch [R]esume" }) --resume
-    vim.keymap.set("n", "<leader>sk", fzf.keymaps, { silent = true, desc = "[S]earch [K]eymaps" })
-    vim.keymap.set("n", "<leader>sb", fzf.builtin, { silent = true, desc = "[S]earch [B]uiltin FzfLua commands" })
-    vim.keymap.set("n", "<leader>st", fzf.colorschemes, { silent = true, desc = "[S]earch [T]hemes/Colorscheme" })
-    vim.keymap.set("n", "<leader>sc", fzf.commands, { silent = true, desc = "[S]earch [C]ommands" })
-    vim.keymap.set("n", "<leader>sd", fzf.diagnostics_document, { silent = true, desc = "[S]earch [D]iagnostics" }) --diagnostics
-
-    vim.keymap.set("n", "<leader><leader>", fzf.buffers, { silent = true, desc = "[ ] Find existing buffers" })
-
-    vim.keymap.set("n", "<leader>sn", function()
-      require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
-    end, { silent = true, desc = "[S]earch [N]vim config" })
-
-    vim.keymap.set("n", "<leader>s.", function()
-      require("fzf-lua").files({ cwd = "$HOME/dotfiles" })
-    end, { silent = true, desc = "[S]earch [N]vim config" })
-
-    vim.keymap.set("n", "<leader>s/", function()
-      require("fzf-lua").grep_curbuf({
-        fzf_opts = {
-          ["--layout"] = "reverse",
-        },
-        winopts = {
-          title = " Grep Buffer ",
-          title_pos = "center",
-          preview = { hidden = "hidden" },
-          height = 0.40, -- window height
-          width = vim.api.nvim_win_get_width(0),
-          row = 1, -- window row position (0=top, 1=bottom)
-        },
-      })
-    end, { desc = "[S]earch [/] in current buffer" })
-
-    vim.keymap.set("n", "<leader>lr", function()
-      fzf.fzf_exec(require("config.utils").pluginNames(), {
-        prompt = "Select a plugin > ",
-        actions = {
-          ["default"] = function(selected)
-            vim.cmd("Lazy reload " .. selected[1])
-          end,
-        },
-        winopts = {
-          title = " Reload Plugins ",
-          title_pos = "center",
-          preview = { hidden = "hidden" },
-          height = 0.50, -- window height
-          width = 0.40, -- window width
-          row = 0.50, -- window row position (0=top, 1=bottom)
-          col = 0.50, -- window col position (0=left, 1=right)
-        },
-      })
-    end, { desc = "[L]azy [R]eload plugin of choice" })
   end,
 }

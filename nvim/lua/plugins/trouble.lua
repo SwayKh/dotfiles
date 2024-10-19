@@ -1,7 +1,42 @@
 return {
   "folke/trouble.nvim",
-  event = "VeryLazy",
   cmd = "Trouble",
+  keys = {
+    { "<leader>td", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+    { "<leader>tD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+    { "<leader>tL", "<cmd>Trouble lsp toggle<cr>", desc = "LSP Definitions / references / ... (Trouble)" },
+    { "<leader>tl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+    { "<leader>tq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+    { "<leader>ds", "<cmd>Trouble symbols toggle<cr>", desc = "Document Symbols (Trouble)" },
+    {
+      "[q",
+      function(self)
+        if require("trouble").is_open() then
+          trouble.prev(self, { skip_groups = true, jump = true, focus = false })
+        else
+          local ok, err = pcall(vim.cmd.cprev)
+          if not ok then
+            vim.notify(err, vim.log.levels.ERROR)
+          end
+        end
+      end,
+      desc = "Previous Trouble/Quickfix Item",
+    },
+    {
+      "]q",
+      function(self)
+        if require("trouble").is_open() then
+          trouble.next(self, { skip_groups = true, jump = true, focus = false })
+        else
+          local ok, err = pcall(vim.cmd.cnext)
+          if not ok then
+            vim.notify(err, vim.log.levels.ERROR)
+          end
+        end
+      end,
+      desc = "Next Trouble/Quickfix Item",
+    },
+  },
   config = function()
     local trouble = require("trouble")
     trouble.setup({
@@ -29,62 +64,5 @@ return {
         },
       },
     })
-
-    vim.keymap.set(
-      "n",
-      "<leader>td",
-      "<cmd>Trouble diagnostics toggle<cr>",
-      { silent = true, desc = "Diagnostics (Trouble)" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>tD",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      { silent = true, desc = "Buffer Diagnostics (Trouble)" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>tL",
-      "<cmd>Trouble lsp toggle<cr>",
-      { silent = true, desc = "LSP Definitions / references / ... (Trouble)" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>tl",
-      "<cmd>Trouble loclist toggle<cr>",
-      { silent = true, desc = "Location List (Trouble)" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>tq",
-      "<cmd>Trouble qflist toggle<cr>",
-      { silent = true, desc = "Quickfix List (Trouble)" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>ds",
-      "<cmd>Trouble symbols toggle<cr>",
-      { silent = true, desc = "Document Symbols (Trouble)" }
-    )
-    vim.keymap.set("n", "[q", function(self)
-      if require("trouble").is_open() then
-        trouble.prev(self, { skip_groups = true, jump = true, focus = false })
-      else
-        local ok, err = pcall(vim.cmd.cprev)
-        if not ok then
-          vim.notify(err, vim.log.levels.ERROR)
-        end
-      end
-    end, { silent = true, desc = "Previous Trouble/Quickfix Item" })
-    vim.keymap.set("n", "]q", function(self)
-      if require("trouble").is_open() then
-        trouble.next(self, { skip_groups = true, jump = true, focus = false })
-      else
-        local ok, err = pcall(vim.cmd.cnext)
-        if not ok then
-          vim.notify(err, vim.log.levels.ERROR)
-        end
-      end
-    end, { silent = true, desc = "Next Trouble/Quickfix Item" })
   end,
 }
