@@ -36,8 +36,8 @@ map N newDir
 map a :push %mkdir<space>
 map D $rm -rf -- $fx
 map | :set ratios 1:2
-map ` shell
-map . selectRandom
+# map ` shell
+map ` selectRandom
 map ; find-next
 map , find-prev
 map \% shell-pipe
