@@ -2,7 +2,6 @@ return {
   {
     "sainnhe/everforest",
     priority = 1000,
-    event = "VimEnter",
     config = function()
       -- " Available values: 'hard', 'medium'(default), 'soft'
       vim.g.everforest_background = "hard"
@@ -10,7 +9,7 @@ return {
       vim.g.everforest_ui_contrast = "high"
       vim.g.everforest_diagnostic_text_highlight = 1
       vim.g.everforest_diagnostic_line_highlight = 1
-      -- vim.g.everforest_better_performance = 1
+      vim.g.everforest_better_performance = 1
       vim.g.everforest_transparent_background = 2
       vim.g.everforest_float_style = "dim"
       vim.g.everforest_diagnostic_virtual_text = "colored"
