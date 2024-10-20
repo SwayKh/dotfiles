@@ -150,8 +150,8 @@ return {
     vim.keymap.set("n", "<C-Esc>", function()
       require("noice").cmd("dismiss")
     end, { desc = "Dismiss Noice Notify Message" })
-    vim.keymap.set("n", "<leader>nf", function()
-      require("noice").cmd("fzf")
-    end, { desc = "Open Noice Message history with fzf" })
+    -- vim.keymap.set("n", "<leader>nf", function()
+    --   require("noice").cmd("fzf")
+    -- end, { desc = "Open Noice Message history with fzf" })
   end,
 }

@@ -18,9 +18,145 @@ return { -- Collection of various small independent plugins/modules
     require("mini.surround").setup()
     require("mini.tabline").setup()
 
+    local height = math.floor(0.5 * vim.o.lines)
+    local width = math.floor(0.5 * vim.o.columns)
+
+    require("mini.pick").setup({
+      options = {
+        content_from_bottom = true,
+      },
+      window = {
+        config = {
+          anchor = "NW",
+          height = height,
+          width = width,
+          title = "Pick",
+          border = "rounded",
+          row = math.floor(0.5 * (vim.o.lines - height)),
+          col = math.floor(0.5 * (vim.o.columns - width)),
+        },
+        prompt_prefix = " ❯ ",
+      },
+    })
+
+    vim.keymap.set("n", "<leader>sf", function()
+      MiniPick.builtin.files()
+    end, { desc = "[S]earch [F]iles" })
+
+    vim.keymap.set("n", "<leader>s?", function()
+      MiniExtra.pickers.oldfiles()
+    end, { desc = "[S]earch [O]ldfiles" })
+
+    vim.keymap.set("n", "<leader>gf", function()
+      MiniExtra.pickers.git_files()
+    end, { desc = "[S]earch [G]it files" })
+
+    vim.keymap.set("n", "<leader>gw", function()
+      MiniPick.builtin.grep({ pattern = vim.fn.expand("<cword>") })
+    end, { desc = "[G]rep current [W]ord" })
+
+    vim.keymap.set("n", "<leader>sg", function()
+      MiniPick.builtin.grep_live()
+    end, { desc = "[S]earch by [G]rep" })
+
+    vim.keymap.set("n", "<leader>sr", function()
+      MiniPick.builtin.resume()
+    end, { desc = "[S]earch [R]esume" })
+
+    vim.keymap.set("n", "<leader>sk", function()
+      MiniExtra.pickers.keymaps()
+    end, { desc = "[S]earch [K]eymaps" })
+
+    vim.keymap.set("n", "<leader>sc", function()
+      MiniExtra.pickers.commands()
+    end, { desc = "[S]earch [C]ommands" })
+
+    vim.keymap.set("n", "<leader>sd", function()
+      MiniExtra.pickers.diagnostic()
+    end, { desc = "[S]earch [D]iagnostics" })
+
+    vim.keymap.set("n", "<leader><leader>", function()
+      MiniPick.builtin.buffers()
+    end, { desc = "[ ] Find existing buffers" })
+
+    vim.keymap.set("n", "<leader>sh", function()
+      MiniPick.builtin.help({}, {
+        source = {
+          name = " Help  ",
+        },
+        options = {
+          content_from_bottom = false,
+        },
+        window = {
+          config = {
+            height = math.floor(0.3 * vim.o.lines),
+            width = vim.api.nvim_win_get_width(0),
+            row = math.floor(1.0 * vim.o.lines),
+          },
+        },
+      })
+    end, { desc = "[S]earch [H]elp" })
+
+    vim.keymap.set("n", "<leader>s/", function()
+      MiniExtra.pickers.buf_lines({}, {
+        source = {
+          name = " Grep Buffer ",
+        },
+        options = {
+          content_from_bottom = false,
+        },
+        window = {
+          config = {
+            height = math.floor(0.3 * vim.o.lines),
+            width = vim.api.nvim_win_get_width(0),
+            row = math.floor(1.0 * vim.o.lines),
+          },
+        },
+      })
+    end, { desc = "[S]earch [/] in current buffer" })
+
+    vim.keymap.set("n", "<leader>sn", function()
+      MiniPick.builtin.files({}, {
+        source = {
+          name = "Neovim config",
+          cwd = vim.fn.stdpath("config"),
+        },
+      })
+    end, { desc = "[S]earch [N]vim config" })
+
+    vim.keymap.set("n", "<leader>s.", function()
+      MiniPick.builtin.files({}, {
+        source = {
+          name = "Dotfiles",
+          cwd = os.getenv("HOME") .. "/dotfiles",
+        },
+      })
+    end, { desc = "[S]earch [N]vim config" })
+
+    vim.keymap.set("n", "<leader>lr", function()
+      local plugin = MiniPick.start({
+        source = {
+          name = " Reload Plugins ",
+          items = require("config.utils").pluginNames(),
+        },
+        window = {
+          config = {
+            height = math.floor(0.5 * vim.o.lines),
+            width = math.floor(0.4 * vim.o.columns),
+            row = math.floor(0.5 * (vim.o.lines - math.floor(0.5 * vim.o.lines))),
+            col = math.floor(0.5 * (vim.o.columns - math.floor(0.4 * vim.o.columns))),
+          },
+        },
+      })
+      if plugin ~= nil then
+        vim.cmd("Lazy reload " .. plugin)
+      end
+    end, { desc = "Pick plugins to reload" })
+
     -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
     -- MiniIcons.mock_nvim_web_devicons()
     vim.notify = require("mini.notify").make_notify()
+    vim.ui.select = MiniPick.ui_select
 
     vim.keymap.set("n", "-", function()
       local buf_name = vim.api.nvim_buf_get_name(0)
@@ -29,7 +165,12 @@ return { -- Collection of various small independent plugins/modules
       MiniFiles.reveal_cwd()
     end, { desc = "Open Mini Files" })
 
-    vim.keymap.set({ "n", "x" }, "<leader>gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git Status" })
+    vim.keymap.set(
+      { "n", "x" },
+      "<leader>gs",
+      "<Cmd>lua MiniGit.show_at_cursor()<CR>",
+      { silent = true, desc = "Show Git Status" }
+    )
 
     require("mini.diff").setup({
       view = {
