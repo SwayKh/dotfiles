@@ -44,11 +44,40 @@ return {
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
         map("<leader>rs", ":LspRestart", "LSP [R]e[S]tart")
 
-        map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]definition")
-        map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
-        map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
-        map("gD", require("fzf-lua").lsp_declarations, "[G]oto [D]eclaration")
-        map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]definition")
+        map("gd", function()
+          MiniExtra.pickers.lsp({ scope = "definition" })
+        end, "[G]oto [D]definition")
+
+        map("gr", function()
+          MiniExtra.pickers.lsp({ scope = "references" })
+        end, "[G]oto [R]eferences")
+
+        map("gi", function()
+          MiniExtra.pickers.lsp({ scope = "implementation" })
+        end, "[G]oto [I]mplementation")
+
+        map("gD", function()
+          MiniExtra.pickers.lsp({ scope = "declaration" })
+        end, "[G]oto [D]eclaration")
+
+        map("<leader>D", function()
+          MiniExtra.pickers.lsp({ scope = "type_definition" })
+        end, "Type [D]definition")
+
+        -- map("<leader>ds", function()
+        --   MiniExtra.pickers.lsp({ scope = "document_symbol" })
+        -- end, "[D]ocument [S]symbols")
+        --
+        -- map("<leader>ws", function()
+        --   MiniExtra.pickers.lsp({ scope = "workspace_symbol" })
+        -- end, "[W]orkspace [S]symbols")
+
+        -- map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]definition")
+        -- map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
+        -- map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
+        -- map("gD", require("fzf-lua").lsp_declarations, "[G]oto [D]eclaration")
+        -- map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]definition")
+        --
         -- map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]symbols")
         -- map("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]symbols")
 
@@ -178,8 +207,7 @@ return {
           Lua = {
             runtime = { version = "LuaJIT" },
             workspace = {
-              library = vim.api.nvim_get_runtime_file("", true),
-              checkThirdParty = true,
+              checkThirdParty = false,
             },
             completion = {
               callSnippet = "Replace",
