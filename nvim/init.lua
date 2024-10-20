@@ -3,7 +3,7 @@
 
 require("config.option")
 require("config.keybinds")
-require("config.misc")
+require("config.autocmd")
 require("config.lazy")
 -- require("config.mini-deps")
 
