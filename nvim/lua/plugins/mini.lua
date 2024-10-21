@@ -18,23 +18,11 @@ return { -- Collection of various small independent plugins/modules
     require("mini.surround").setup()
     require("mini.tabline").setup()
 
-    local height = math.floor(0.5 * vim.o.lines)
-    local width = math.floor(0.5 * vim.o.columns)
-
     require("mini.pick").setup({
       options = {
         content_from_bottom = true,
       },
       window = {
-        config = {
-          anchor = "NW",
-          height = height,
-          width = width,
-          title = "Pick",
-          border = "rounded",
-          row = math.floor(0.5 * (vim.o.lines - height)),
-          col = math.floor(0.5 * (vim.o.columns - width)),
-        },
         prompt_prefix = " ❯ ",
       },
     })
@@ -138,14 +126,6 @@ return { -- Collection of various small independent plugins/modules
         source = {
           name = " Reload Plugins ",
           items = require("config.utils").pluginNames(),
-        },
-        window = {
-          config = {
-            height = math.floor(0.5 * vim.o.lines),
-            width = math.floor(0.4 * vim.o.columns),
-            row = math.floor(0.5 * (vim.o.lines - math.floor(0.5 * vim.o.lines))),
-            col = math.floor(0.5 * (vim.o.columns - math.floor(0.4 * vim.o.columns))),
-          },
         },
       })
       if plugin ~= nil then

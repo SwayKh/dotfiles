@@ -12,32 +12,55 @@ return {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-cmdline", -- For cmdline suggestions
-    "onsails/lspkind.nvim", -- vs-code like pictograms
-    {
-      "L3MON4D3/LuaSnip", -- snippet engine
-      build = "make install_jsregexp",
-    },
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    -- "rafamadriz/friendly-snippets", -- useful snippets
   },
   config = function()
     local cmp = require("cmp")
-    local lspkind = require("lspkind")
-
-    local luasnip = require("luasnip")
-    luasnip.config.setup({
-      history = false,
-      updateevents = "TextChanged,TextChangedI",
-    })
-
-    -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-    require("luasnip.loaders.from_vscode").lazy_load()
 
     local border_opts = {
       border = "none",
       winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       scrollbar = false,
     }
+    local max_width = 30
+    local kind_icons = {
+      Supermaven = "",
+      Codeium = "",
+      Array = "󰅪",
+      Boolean = "⊨",
+      Key = "󰌆",
+      Namespace = "󰅪",
+      Null = "NULL",
+      Number = "#",
+      Object = "󰀚",
+      Package = "󰏗",
+      String = "󰀬",
+      TypeParameter = "󰊄",
+      Text = "󰉿",
+      Method = "󰆧",
+      Function = "󰊕",
+      Constructor = "",
+      Field = "󰜢",
+      Variable = "󰀫",
+      Class = "󰠱",
+      Interface = "",
+      Module = "",
+      Property = "󰜢",
+      Unit = "󰑭",
+      Value = "󰎠",
+      Enum = "",
+      Keyword = "󰌋",
+      Snippet = "",
+      Color = "󰏘",
+      File = "󰈙",
+      Reference = "󰈇",
+      Folder = "󰉋",
+      EnumMember = "",
+      Constant = "󰏿",
+      Struct = "󰙅",
+      Event = "",
+      Operator = "󰆕",
+    }
+
     cmp.setup({
       enabled = true,
       completion = {
@@ -76,30 +99,20 @@ return {
           }),
           { "i", "c" }
         ),
-        ["<C-k>"] = cmp.mapping(function()
-          if luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
+        ["<C-k>"] = cmp.mapping(function(fallback)
+          if vim.snippet.active({ direction = 1 }) then
+            vim.snippet.jump(1)
+          else
+            fallback()
           end
         end, { "i", "s" }),
-        ["<C-j>"] = cmp.mapping(function()
-          if luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
+        ["<C-j>"] = cmp.mapping(function(fallback)
+          if vim.snippet.active({ direction = -1 }) then
+            vim.snippet.jump(-1)
+          else
+            fallback()
           end
         end, { "i", "s" }),
-        -- ["<C-k>"] = cmp.mapping(function(fallback)
-        --   if vim.snippet.active({ direction = 1 }) then
-        --     vim.snippet.jump(1)
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
-        -- ["<C-j>"] = cmp.mapping(function(fallback)
-        --   if vim.snippet.active({ direction = -1 }) then
-        --     vim.snippet.jump(-1)
-        --   else
-        --     fallback()
-        --   end
-        -- end, { "i", "s" }),
       }),
 
       -- sources for autocompletion
@@ -116,11 +129,6 @@ return {
       window = {
         completion = cmp.config.window.bordered(border_opts),
         documentation = cmp.config.window.bordered(border_opts),
-        -- documentation = {
-        --   border = "rounded",
-        --   winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
-        --   scrollbar = false,
-        -- },
       },
 
       view = {
@@ -133,64 +141,18 @@ return {
       formatting = {
         fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
-          local kind = lspkind.cmp_format({
-            mode = "symbol_text",
-            maxwidth = 50,
-            show_labelDetails = true,
-            menu = {
-              nvim_lsp = "[Lsp]",
-              nvim_lua = "[Lua]",
-              path = "[Path]",
-              buffer = "[Buffer]",
-              codeium = "[Codeium]",
-              luasnip = "[LuaSnip]",
-            },
-            ellipsis_char = "...",
-            symbol_map = {
-              Supermaven = "",
-              Codeium = "",
-              Array = "󰅪",
-              Boolean = "⊨",
-              Key = "󰌆",
-              Namespace = "󰅪",
-              Null = "NULL",
-              Number = "#",
-              Object = "󰀚",
-              Package = "󰏗",
-              String = "󰀬",
-              TypeParameter = "󰊄",
-              Text = "󰉿",
-              Method = "󰆧",
-              Function = "󰊕",
-              Constructor = "",
-              Field = "󰜢",
-              Variable = "󰀫",
-              Class = "󰠱",
-              Interface = "",
-              Module = "",
-              Property = "󰜢",
-              Unit = "󰑭",
-              Value = "󰎠",
-              Enum = "",
-              Keyword = "󰌋",
-              Snippet = "",
-              Color = "󰏘",
-              File = "󰈙",
-              Reference = "󰈇",
-              Folder = "󰉋",
-              EnumMember = "",
-              Constant = "󰏿",
-              Struct = "󰙅",
-              Event = "",
-              Operator = "󰆕",
-            },
-          })(entry, vim_item)
-          local strings = vim.split(kind.kind, "%s", { trimempty = true })
-          kind.kind = "    " .. (strings[1] or "") .. "    " .. (strings[2] or "") .. ""
-          kind.menu = "    " .. (strings[2] or "") .. ""
-          kind.abbr = string.sub(kind.abbr .. string.rep(" ", 25), 1, 25)
-
-          return kind
+          vim_item.abbr = string.sub(vim_item.abbr .. string.rep(" ", max_width), 1, max_width)
+          vim_item.kind = (kind_icons[vim_item.kind] or "") .. " " .. vim_item.kind
+          vim_item.menu = ({
+            nvim_lsp = "[Lsp]",
+            nvim_lua = "[Lua]",
+            path = "[Path]",
+            buffer = "[Buffer]",
+            codeium = "[Codeium]",
+            supermaven = "[SuperMaven]",
+            luasnip = "[LuaSnip]",
+          })[entry.source.name]
+          return vim_item
         end,
       },
 
