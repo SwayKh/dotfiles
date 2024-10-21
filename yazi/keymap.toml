@@ -47,6 +47,8 @@ prepend_keymap = [
 	{ on = [ "g", "p", "o" ],  run = "cd ~/Projects/Web/TheOdinProject",        desc = "Go to the project directory" },
 	{ on = [ "g", "p", "i" ],  run = "cd ~/Projects/Go/N-Cover-Scraper/Saved",  desc = "Go to the project directory" },
 
+  { on = ["g", "a"], run = "cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/", desc = "Go to the Android directory" },
+
 	{ on = "c",           run = "yank",                                            desc = "Yank selected files (copy)" },
 	{ on = "L",           run = "link",                                            desc = "Symlink the absolute path of yanked files" },
   { on = "e",           run = "shell --confirm 'bash $@'",                       desc = "Execute the selected file" },

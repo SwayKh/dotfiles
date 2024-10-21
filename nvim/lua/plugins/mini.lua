@@ -77,9 +77,8 @@ return { -- Collection of various small independent plugins/modules
         },
         window = {
           config = {
-            height = math.floor(0.3 * vim.o.lines),
+            -- height = math.floor(0.3 * vim.o.lines),
             width = vim.api.nvim_win_get_width(0),
-            row = math.floor(1.0 * vim.o.lines),
           },
         },
       })
@@ -95,9 +94,8 @@ return { -- Collection of various small independent plugins/modules
         },
         window = {
           config = {
-            height = math.floor(0.3 * vim.o.lines),
+            -- height = math.floor(0.3 * vim.o.lines),
             width = vim.api.nvim_win_get_width(0),
-            row = math.floor(1.0 * vim.o.lines),
           },
         },
       })

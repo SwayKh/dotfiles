@@ -21,7 +21,7 @@ return {
       winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
       scrollbar = false,
     }
-    local max_width = 30
+    local cmp_menu_width = 30
     local kind_icons = {
       Supermaven = "",
       Codeium = "",
@@ -118,12 +118,10 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "lazydev", priority = 300, group_index = 0 },
-        { name = "luasnip", priority = 1000, max_item_count = 5 },
         { name = "supermaven", priority = 500, max_item_count = 5 },
         { name = "nvim_lsp", priority = 400, max_item_count = 20 },
         { name = "buffer", priority = 200, max_item_count = 10 },
         { name = "path", priority = 100, max_item_count = 10 },
-        -- { name = "codeium", priority = 1000, max_item_count = 5 },
       }),
 
       window = {
@@ -137,20 +135,17 @@ return {
         },
       },
 
-      -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
-          vim_item.abbr = string.sub(vim_item.abbr .. string.rep(" ", max_width), 1, max_width)
-          vim_item.kind = (kind_icons[vim_item.kind] or "") .. " " .. vim_item.kind
+          vim_item.abbr = string.sub(vim_item.abbr .. string.rep(" ", cmp_menu_width), 1, cmp_menu_width)
+          vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
           vim_item.menu = ({
             nvim_lsp = "[Lsp]",
             nvim_lua = "[Lua]",
             path = "[Path]",
             buffer = "[Buffer]",
-            codeium = "[Codeium]",
             supermaven = "[SuperMaven]",
-            luasnip = "[LuaSnip]",
           })[entry.source.name]
           return vim_item
         end,
