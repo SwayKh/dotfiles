@@ -150,6 +150,7 @@ min_time = 4
 show_milliseconds = false
 disabled = false
 style = "bold italic bright-red"
+format = ' took [$duration]($style)'
 
 [memory_usage]
 symbol = " "

@@ -7,6 +7,9 @@ local get_selected = ya.sync(function()
 	if #paths == 0 and cx.active.current.hovered then
 		paths[1] = tostring(cx.active.current.hovered.url)
 	end
+	if #paths == 0 then
+		return ya.notify({ title = "Selected", content = "No file selected", level = "warn", timeout = 5 })
+	end
 	return paths
 end)
 
@@ -112,9 +115,6 @@ end
 
 local function move_to_new_dir()
 	local paths = get_selected()
-	if #paths == 0 then
-		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
-	end
 
 	local value, _ = ya.input({
 		title = "Directory name:",
@@ -145,9 +145,6 @@ end
 
 local function share()
 	local paths = get_selected()
-	if #paths == 0 then
-		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
-	end
 
 	local curl, err =
 		Command("curl"):args({ "-F", "file=@" .. paths[1], "https://0x0.st" }):stdout(Command.PIPED):output()
@@ -186,9 +183,6 @@ local function chmodx()
 	ya.manager_emit("escape", { visual = true })
 
 	local urls = get_selected()
-	if #urls == 0 then
-		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
-	end
 
 	local status, err = Command("chmod"):arg("+x"):args(urls):spawn():wait()
 	if not status or not status.success then
@@ -205,9 +199,6 @@ local function chmod()
 	ya.manager_emit("escape", { visual = true })
 
 	local urls = get_selected()
-	if #urls == 0 then
-		return ya.notify({ title = "Chmod", content = "No file selected", level = "warn", timeout = 5 })
-	end
 
 	local value, event = ya.input({
 		title = "Chmod:",
