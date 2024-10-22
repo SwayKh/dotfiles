@@ -7,7 +7,12 @@ return { -- Collection of various small independent plugins/modules
     require("mini.align").setup()
     require("mini.bracketed").setup()
     require("mini.extra").setup()
-    require("mini.files").setup()
+    require("mini.files").setup({
+      mappings = {
+        go_in_plus = "<cr>",
+        synchronize = "<c-s>",
+      },
+    })
     require("mini.git").setup()
     require("mini.icons").setup()
     -- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
@@ -24,6 +29,16 @@ return { -- Collection of various small independent plugins/modules
       },
       window = {
         prompt_prefix = " ❯ ",
+      },
+      mappings = {
+        to_quickfix = {
+          char = "<c-q>",
+          func = function()
+            local items = MiniPick.get_picker_items() or {}
+            MiniPick.default_choose_marked(items)
+            MiniPick.stop()
+          end,
+        },
       },
     })
 
