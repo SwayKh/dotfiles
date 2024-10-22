@@ -46,10 +46,6 @@ return {
       shfmt = {
         prepend_args = { "-i", "2" },
       },
-      -- Dealing with old version of prettierd that doesn't support range formatting
-      prettierd = {
-        range_args = false,
-      },
     },
     log_level = vim.log.levels.TRACE,
     format_after_save = { timeout_ms = 500, lsp_fallback = true, async = true, quiet = true },

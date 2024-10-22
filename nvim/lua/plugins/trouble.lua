@@ -38,8 +38,7 @@ return {
     },
   },
   config = function()
-    local trouble = require("trouble")
-    trouble.setup({
+    require("trouble").setup({
       auto_jump = true, -- auto jump to the item when there's only one
       focus = true, -- Focus the window when opened
       auto_preview = true, -- automatically open preview when on an item

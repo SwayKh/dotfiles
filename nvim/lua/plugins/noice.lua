@@ -5,8 +5,7 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    local noice = require("noice")
-    noice.setup({
+    require("noice").setup({
       lsp = {
         progress = {
           enabled = true,
