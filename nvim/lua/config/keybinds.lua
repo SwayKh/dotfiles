@@ -7,7 +7,7 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
-map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source nvim config, and reload all plugins" })
+map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
 map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })
 map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
 
@@ -55,20 +55,6 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- Scroll keybinds
 map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines" })
 map({ "n", "v" }, "<M-k>", "5k", { desc = "Scroll 5 lines" })
--- map({ "n", "v" }, "<M-j>", "5jzzzv", { desc = "Scroll 5 lines" })
--- map({ "n", "v" }, "<M-k>", "5kzzzv", { desc = "Scroll 5 lines" })
--- map({ "n", "v" }, "<C-u>", "<C-u>zzzv", { desc = "Better half up scroll", remap = true })
--- map({ "n", "v" }, "<C-d>", "<C-d>zzzv", { desc = "Better half up scroll", remap = true })
--- map({ "n", "v" }, "<C-f>", "<C-f>zzzv", { desc = "Better down scroll", remap = true })
--- map({ "n", "v" }, "<C-b>", "<C-b>zzzv", { desc = "Better down scroll", remap = true })
--- map({ "n", "v" }, "gg", "ggzzzv", { desc = "Center text when scrolling", silent = true })
--- map({ "n", "v" }, "G", "Gzzzv", { desc = "Center text when scrolling", silent = true })
--- map({ "n", "v" }, "j", "jzzzv", { desc = "Center text when scrolling", silent = true })
--- map({ "n", "v" }, "k", "kzzzv", { desc = "Center text when scrolling", silent = true })
--- map({ "n", "v" }, "n", "nzzzv", { desc = "Center text when searching", silent = true })
--- map({ "n", "v" }, "N", "Nzzzv", { desc = "Center text when searching", silent = true })
--- map({ "n", "v" }, "}", "}zzzv", { desc = "Center text when using }", silent = true })
--- map({ "n", "v" }, "{", "{zzzv", { desc = "Center text when using {", silent = true })
 
 -- Increment/Decreament
 map("n", "+", "<C-a>", { desc = "Increment number" })
@@ -94,7 +80,7 @@ map("n", "<leader>bn", "<Cmd>bnext<CR>", { silent = true, desc = "Run [B]buffer 
 map("n", "<leader>bp", "<Cmd>bprevious<CR>", { silent = true, desc = "Run [B]buffer [P]revious" })
 
 -- Open Lazy/Mason UIs and reload plugins
-map("n", "<leader>ol", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
+-- map("n", "<leader>ol", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
 map("n", "<leader>om", "<Cmd>Mason<CR>", { silent = true, desc = "Open [M]ason" })
 
 -- Quickfix list keybinds

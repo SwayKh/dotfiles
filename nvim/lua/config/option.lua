@@ -184,3 +184,36 @@ vim.g.showbreak = "↪"
 vim.opt.confirm = true
 
 vim.opt.showmatch = true
+
+local function disable_builtin_plugins()
+  local disabled_plugins = {
+    "gzip",
+    "matchit",
+    "matchparen",
+    "netrwPlugin",
+    "rplugin",
+    "tarPlugin",
+    "tutor",
+    "zipPlugin",
+    "2html_plugin",
+    "osc52",
+    "tohtml",
+    "getscript",
+    "getscriptPlugin",
+    "logipat",
+    "netrw",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "tar",
+    "rrhelper",
+    "zip",
+    "syntax",
+    "synmenu",
+    "optwin",
+    "bugreport",
+    "ftplugin",
+  }
+  for i = 1, #disabled_plugins do
+    vim.g["loaded_" .. disabled_plugins[i]] = 1
+  end
+end
