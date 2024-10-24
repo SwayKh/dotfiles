@@ -225,4 +225,9 @@ later(function()
   treesitter()
   trouble()
   vim_navigator()
+
+  -- -- add vim-startuptime plugin
+  -- add({
+  --   source = "dstein64/vim-startuptime",
+  -- })
 end)

@@ -1,21 +1,27 @@
 require("mini.align").setup()
 require("mini.bracketed").setup()
 require("mini.extra").setup()
+require("mini.git").setup()
+require("mini.icons").setup()
+-- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
+require("mini.notify").setup()
+require("mini.pairs").setup()
+require("mini.splitjoin").setup()
+require("mini.surround").setup()
+require("mini.tabline").setup()
+
+require("mini.jump2d").setup({
+  view = {
+    dim = true,
+  },
+})
+
 require("mini.files").setup({
   mappings = {
     go_in_plus = "<cr>",
     synchronize = "<c-s>",
   },
 })
-require("mini.git").setup()
-require("mini.icons").setup()
--- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
-require("mini.jump2d").setup({ view = { dim = true } })
-require("mini.notify").setup()
-require("mini.pairs").setup()
-require("mini.splitjoin").setup()
-require("mini.surround").setup()
-require("mini.tabline").setup()
 
 require("mini.pick").setup({
   options = {
@@ -30,6 +36,14 @@ require("mini.pick").setup({
       func = function()
         local items = MiniPick.get_picker_items() or {}
         MiniPick.default_choose_marked(items)
+        MiniPick.stop()
+      end,
+    },
+    all_to_quickfix = {
+      char = "<A-q>",
+      func = function()
+        local matched_items = MiniPick.get_picker_matches().all or {}
+        MiniPick.default_choose_marked(matched_items)
         MiniPick.stop()
       end,
     },
@@ -51,6 +65,10 @@ end, { desc = "[S]earch [G]it files" })
 vim.keymap.set("n", "<leader>gw", function()
   MiniPick.builtin.grep({ pattern = vim.fn.expand("<cword>") })
 end, { desc = "[G]rep current [W]ord" })
+
+vim.keymap.set("n", "<leader>sw", function()
+  MiniPick.builtin.grep()
+end, { desc = "[S]earch [W]ord" })
 
 vim.keymap.set("n", "<leader>sg", function()
   MiniPick.builtin.grep_live()
@@ -86,7 +104,7 @@ vim.keymap.set("n", "<leader>sh", function()
     },
     window = {
       config = {
-        -- height = math.floor(0.3 * vim.o.lines),
+        height = math.floor(0.35 * vim.o.lines),
         width = vim.api.nvim_win_get_width(0),
       },
     },
@@ -94,7 +112,7 @@ vim.keymap.set("n", "<leader>sh", function()
 end, { desc = "[S]earch [H]elp" })
 
 vim.keymap.set("n", "<leader>s/", function()
-  MiniExtra.pickers.buf_lines({}, {
+  MiniExtra.pickers.buf_lines({ scope = "current", preserve_order = true }, {
     source = {
       name = " Grep Buffer ",
     },
@@ -103,7 +121,7 @@ vim.keymap.set("n", "<leader>s/", function()
     },
     window = {
       config = {
-        -- height = math.floor(0.3 * vim.o.lines),
+        height = math.floor(0.35 * vim.o.lines),
         width = vim.api.nvim_win_get_width(0),
       },
     },
@@ -128,17 +146,30 @@ vim.keymap.set("n", "<leader>s.", function()
   })
 end, { desc = "[S]earch [N]vim config" })
 
-vim.keymap.set("n", "<leader>lr", function()
-  local plugin = MiniPick.start({
+vim.keymap.set("n", "<leader>st", function()
+  local colorscheme = MiniPick.start({
     source = {
-      name = " Reload Plugins ",
-      items = require("config.utils").pluginNames(),
+      name = " Colorscheme ",
+      items = vim.fn.getcompletion("", "color"),
     },
   })
-  if plugin ~= nil then
-    vim.cmd("Lazy reload " .. plugin)
+  if colorscheme ~= nil then
+    vim.cmd("colorscheme " .. colorscheme)
   end
-end, { desc = "Pick plugins to reload" })
+end, { desc = "[S]earch [T]hemes/Colorscheme" })
+
+-- Only works with lazy
+-- vim.keymap.set("n", "<leader>lr", function()
+--   local plugin = MiniPick.start({
+--     source = {
+--       name = " Reload Plugins ",
+--       items = require("config.utils").pluginNames(),
+--     },
+--   })
+--   if plugin ~= nil then
+--     vim.cmd("Lazy reload " .. plugin)
+--   end
+-- end, { desc = "Pick plugins to reload" })
 
 -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
 -- MiniIcons.mock_nvim_web_devicons()
