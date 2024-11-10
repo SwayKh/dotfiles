@@ -1,201 +1,9 @@
-require("mini.align").setup()
-require("mini.bracketed").setup()
-require("mini.extra").setup()
-require("mini.git").setup()
+local later = MiniDeps.later
+
+require("mini.starter").setup()
 require("mini.icons").setup()
--- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
 require("mini.notify").setup()
-require("mini.pairs").setup()
-require("mini.splitjoin").setup()
-require("mini.surround").setup()
 require("mini.tabline").setup()
-
-require("mini.jump2d").setup({
-  view = {
-    dim = true,
-  },
-})
-
-require("mini.files").setup({
-  mappings = {
-    go_in_plus = "<cr>",
-    synchronize = "<c-s>",
-  },
-})
-
-require("mini.pick").setup({
-  options = {
-    content_from_bottom = true,
-  },
-  window = {
-    prompt_prefix = " ❯ ",
-  },
-  mappings = {
-    to_quickfix = {
-      char = "<c-q>",
-      func = function()
-        local items = MiniPick.get_picker_items() or {}
-        MiniPick.default_choose_marked(items)
-        MiniPick.stop()
-      end,
-    },
-    all_to_quickfix = {
-      char = "<A-q>",
-      func = function()
-        local matched_items = MiniPick.get_picker_matches().all or {}
-        MiniPick.default_choose_marked(matched_items)
-        MiniPick.stop()
-      end,
-    },
-  },
-})
-
-vim.keymap.set("n", "<leader>sf", function()
-  MiniPick.builtin.files()
-end, { desc = "[S]earch [F]iles" })
-
-vim.keymap.set("n", "<leader>s?", function()
-  MiniExtra.pickers.oldfiles()
-end, { desc = "[S]earch [O]ldfiles" })
-
-vim.keymap.set("n", "<leader>gf", function()
-  MiniExtra.pickers.git_files()
-end, { desc = "[S]earch [G]it files" })
-
-vim.keymap.set("n", "<leader>gw", function()
-  MiniPick.builtin.grep({ pattern = vim.fn.expand("<cword>") })
-end, { desc = "[G]rep current [W]ord" })
-
-vim.keymap.set("n", "<leader>sw", function()
-  MiniPick.builtin.grep()
-end, { desc = "[S]earch [W]ord" })
-
-vim.keymap.set("n", "<leader>sg", function()
-  MiniPick.builtin.grep_live()
-end, { desc = "[S]earch by [G]rep" })
-
-vim.keymap.set("n", "<leader>sr", function()
-  MiniPick.builtin.resume()
-end, { desc = "[S]earch [R]esume" })
-
-vim.keymap.set("n", "<leader>sk", function()
-  MiniExtra.pickers.keymaps()
-end, { desc = "[S]earch [K]eymaps" })
-
-vim.keymap.set("n", "<leader>sc", function()
-  MiniExtra.pickers.commands()
-end, { desc = "[S]earch [C]ommands" })
-
-vim.keymap.set("n", "<leader>sd", function()
-  MiniExtra.pickers.diagnostic()
-end, { desc = "[S]earch [D]iagnostics" })
-
-vim.keymap.set("n", "<leader><leader>", function()
-  MiniPick.builtin.buffers()
-end, { desc = "[ ] Find existing buffers" })
-
-vim.keymap.set("n", "<leader>sh", function()
-  MiniPick.builtin.help({}, {
-    source = {
-      name = " Help  ",
-    },
-    options = {
-      content_from_bottom = false,
-    },
-    window = {
-      config = {
-        height = math.floor(0.35 * vim.o.lines),
-        width = vim.api.nvim_win_get_width(0),
-      },
-    },
-  })
-end, { desc = "[S]earch [H]elp" })
-
-vim.keymap.set("n", "<leader>s/", function()
-  MiniExtra.pickers.buf_lines({ scope = "current", preserve_order = true }, {
-    source = {
-      name = " Grep Buffer ",
-    },
-    options = {
-      content_from_bottom = false,
-    },
-    window = {
-      config = {
-        height = math.floor(0.35 * vim.o.lines),
-        width = vim.api.nvim_win_get_width(0),
-      },
-    },
-  })
-end, { desc = "[S]earch [/] in current buffer" })
-
-vim.keymap.set("n", "<leader>sn", function()
-  MiniPick.builtin.files({}, {
-    source = {
-      name = "Neovim config",
-      cwd = vim.fn.stdpath("config"),
-    },
-  })
-end, { desc = "[S]earch [N]vim config" })
-
-vim.keymap.set("n", "<leader>s.", function()
-  MiniPick.builtin.files({}, {
-    source = {
-      name = "Dotfiles",
-      cwd = os.getenv("HOME") .. "/dotfiles",
-    },
-  })
-end, { desc = "[S]earch [N]vim config" })
-
-vim.keymap.set("n", "<leader>st", function()
-  local colorscheme = MiniPick.start({
-    source = {
-      name = " Colorscheme ",
-      items = vim.fn.getcompletion("", "color"),
-    },
-  })
-  if colorscheme ~= nil then
-    vim.cmd("colorscheme " .. colorscheme)
-  end
-end, { desc = "[S]earch [T]hemes/Colorscheme" })
-
--- Only works with lazy
--- vim.keymap.set("n", "<leader>lr", function()
---   local plugin = MiniPick.start({
---     source = {
---       name = " Reload Plugins ",
---       items = require("config.utils").pluginNames(),
---     },
---   })
---   if plugin ~= nil then
---     vim.cmd("Lazy reload " .. plugin)
---   end
--- end, { desc = "Pick plugins to reload" })
-
--- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
--- MiniIcons.mock_nvim_web_devicons()
-vim.notify = require("mini.notify").make_notify()
-vim.ui.select = MiniPick.ui_select
-
-vim.keymap.set("n", "-", function()
-  local buf_name = vim.api.nvim_buf_get_name(0)
-  local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-  MiniFiles.open(path)
-  MiniFiles.reveal_cwd()
-end, { desc = "Open Mini Files" })
-
-vim.keymap.set(
-  { "n", "x" },
-  "<leader>gs",
-  "<Cmd>lua MiniGit.show_at_cursor()<CR>",
-  { silent = true, desc = "Show Git Status" }
-)
-
-require("mini.diff").setup({
-  view = {
-    style = "sign",
-    signs = { add = "+", change = "~", delete = "-" },
-  },
-})
 
 require("mini.indentscope").setup({
   symbol = "╎", --  ╎ │
@@ -205,66 +13,6 @@ require("mini.indentscope").setup({
   },
   options = {
     try_as_border = true,
-  },
-})
-
-require("mini.hipatterns").setup({
-  highlighters = {
-    hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
-    todo = require("mini.extra").gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
-    hack = require("mini.extra").gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
-    note = require("mini.extra").gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
-    fixme = require("mini.extra").gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
-  },
-})
-
-require("mini.ai").setup({
-  mappings = {
-    around = "a",
-    inside = "i",
-
-    around_next = "an",
-    inside_next = "in",
-    around_last = "al",
-    inside_last = "il",
-
-    goto_left = "g[",
-    goto_right = "g]",
-  },
-  n_lines = 500,
-  custom_textobjects = {
-    B = require("mini.extra").gen_ai_spec.buffer(),
-    D = require("mini.extra").gen_ai_spec.diagnostic(),
-    I = require("mini.extra").gen_ai_spec.indent(),
-    L = require("mini.extra").gen_ai_spec.line(),
-    N = require("mini.extra").gen_ai_spec.number(),
-    o = require("mini.ai").gen_spec.treesitter({
-      a = { "@block.outer", "@conditional.outer", "@loop.outer" },
-      i = { "@block.inner", "@conditional.inner", "@loop.inner" },
-    }, {}),
-    u = require("mini.ai").gen_spec.function_call(), -- u for "Usage"
-    U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
-    f = require("mini.ai").gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-    c = require("mini.ai").gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
-    t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
-    d = { "%f[%d]%d+" }, -- digits
-    e = { -- Word with case
-      {
-        "%u[%l%d]+%f[^%l%d]",
-        "%f[%S][%l%d]+%f[^%l%d]",
-        "%f[%P][%l%d]+%f[^%l%d]",
-        "^[%l%d]+%f[^%l%d]",
-      },
-      "^().*()$",
-    },
-    g = function() -- Whole buffer, similar to `gg` and 'G' motion
-      local from = { line = 1, col = 1 }
-      local to = {
-        line = vim.fn.line("$"),
-        col = math.max(vim.fn.getline("$"):len(), 1),
-      }
-      return { from = from, to = to }
-    end,
   },
 })
 
@@ -297,65 +45,323 @@ require("mini.statusline").setup({
   },
 })
 
-local miniclue = require("mini.clue")
-miniclue.setup({
-  window = {
-    delay = 300,
-    scroll_down = "<C-d>",
-    scroll_up = "<C-u>",
-    config = {
-      width = "auto",
-      border = "none",
+later(function()
+  require("mini.align").setup()
+  require("mini.bracketed").setup()
+  require("mini.extra").setup()
+  require("mini.git").setup()
+  -- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
+  require("mini.pairs").setup()
+  require("mini.splitjoin").setup()
+  require("mini.surround").setup()
+
+  require("mini.jump2d").setup({
+    view = {
+      dim = true,
     },
-  },
-  triggers = {
-    -- Leader triggers
-    { mode = "n", keys = "<Leader>" },
-    { mode = "x", keys = "<Leader>" },
+  })
 
-    -- Built-in completion
-    { mode = "i", keys = "<C-x>" },
+  require("mini.files").setup({
+    mappings = {
+      go_in_plus = "<cr>",
+      synchronize = "<c-s>",
+    },
+  })
 
-    -- `g` key
-    { mode = "n", keys = "g" },
-    { mode = "x", keys = "g" },
+  require("mini.pick").setup({
+    options = {
+      content_from_bottom = true,
+    },
+    window = {
+      prompt_prefix = " ❯ ",
+    },
+    mappings = {
+      to_quickfix = {
+        char = "<c-q>",
+        func = function()
+          local items = MiniPick.get_picker_items() or {}
+          MiniPick.default_choose_marked(items)
+          MiniPick.stop()
+        end,
+      },
+      all_to_quickfix = {
+        char = "<A-q>",
+        func = function()
+          local matched_items = MiniPick.get_picker_matches().all or {}
+          MiniPick.default_choose_marked(matched_items)
+          MiniPick.stop()
+        end,
+      },
+    },
+  })
 
-    -- Marks
-    { mode = "n", keys = "'" },
-    { mode = "n", keys = "`" },
-    { mode = "x", keys = "'" },
-    { mode = "x", keys = "`" },
+  vim.keymap.set("n", "<leader>sf", function()
+    MiniPick.builtin.files()
+  end, { desc = "[S]earch [F]iles" })
 
-    -- Registers
-    { mode = "n", keys = '"' },
-    { mode = "x", keys = '"' },
-    { mode = "i", keys = "<C-r>" },
-    { mode = "c", keys = "<C-r>" },
+  vim.keymap.set("n", "<leader>s?", function()
+    MiniExtra.pickers.oldfiles()
+  end, { desc = "[S]earch [O]ldfiles" })
 
-    -- Window commands
-    { mode = "n", keys = "<C-w>" },
+  vim.keymap.set("n", "<leader>gf", function()
+    MiniExtra.pickers.git_files()
+  end, { desc = "[S]earch [G]it files" })
 
-    -- `z` key
-    { mode = "n", keys = "z" },
-    { mode = "x", keys = "z" },
+  vim.keymap.set("n", "<leader>gw", function()
+    MiniPick.builtin.grep({ pattern = vim.fn.expand("<cword>") })
+  end, { desc = "[G]rep current [W]ord" })
 
-    -- Bracketed Keybinds
-    { mode = "n", keys = "]" },
-    { mode = "n", keys = "[" },
+  vim.keymap.set("n", "<leader>sw", function()
+    MiniPick.builtin.grep()
+  end, { desc = "[S]earch [W]ord" })
 
-    -- Surround Keybinds
-    { mode = "n", keys = "s" },
-  },
+  vim.keymap.set("n", "<leader>sg", function()
+    MiniPick.builtin.grep_live()
+  end, { desc = "[S]earch by [G]rep" })
 
-  clues = {
-    -- Enhance this by adding descriptions for <Leader> mapping groups
-    miniclue.gen_clues.builtin_completion(),
-    miniclue.gen_clues.g(),
-    miniclue.gen_clues.marks(),
-    miniclue.gen_clues.registers(),
-    miniclue.gen_clues.windows(),
-    miniclue.gen_clues.z(),
-  },
-})
+  vim.keymap.set("n", "<leader>sr", function()
+    MiniPick.builtin.resume()
+  end, { desc = "[S]earch [R]esume" })
+
+  vim.keymap.set("n", "<leader>sk", function()
+    MiniExtra.pickers.keymaps()
+  end, { desc = "[S]earch [K]eymaps" })
+
+  vim.keymap.set("n", "<leader>sc", function()
+    MiniExtra.pickers.commands()
+  end, { desc = "[S]earch [C]ommands" })
+
+  vim.keymap.set("n", "<leader>sd", function()
+    MiniExtra.pickers.diagnostic()
+  end, { desc = "[S]earch [D]iagnostics" })
+
+  vim.keymap.set("n", "<leader><leader>", function()
+    MiniPick.builtin.buffers()
+  end, { desc = "[ ] Find existing buffers" })
+
+  vim.keymap.set("n", "<leader>sh", function()
+    MiniPick.builtin.help({}, {
+      source = {
+        name = " Help  ",
+      },
+      options = {
+        content_from_bottom = false,
+      },
+      window = {
+        config = {
+          height = math.floor(0.35 * vim.o.lines),
+          width = vim.api.nvim_win_get_width(0),
+        },
+      },
+    })
+  end, { desc = "[S]earch [H]elp" })
+
+  vim.keymap.set("n", "<leader>s/", function()
+    MiniExtra.pickers.buf_lines({ scope = "current", preserve_order = true }, {
+      source = {
+        name = " Grep Buffer ",
+      },
+      options = {
+        content_from_bottom = false,
+      },
+      window = {
+        config = {
+          height = math.floor(0.35 * vim.o.lines),
+          width = vim.api.nvim_win_get_width(0),
+        },
+      },
+    })
+  end, { desc = "[S]earch [/] in current buffer" })
+
+  vim.keymap.set("n", "<leader>sn", function()
+    MiniPick.builtin.files({}, {
+      source = {
+        name = "Neovim config",
+        cwd = vim.fn.stdpath("config"),
+      },
+    })
+  end, { desc = "[S]earch [N]vim config" })
+
+  vim.keymap.set("n", "<leader>s.", function()
+    MiniPick.builtin.files({}, {
+      source = {
+        name = "Dotfiles",
+        cwd = os.getenv("HOME") .. "/dotfiles",
+      },
+    })
+  end, { desc = "[S]earch [N]vim config" })
+
+  vim.keymap.set("n", "<leader>st", function()
+    local colorscheme = MiniPick.start({
+      source = {
+        name = " Colorscheme ",
+        items = vim.fn.getcompletion("", "color"),
+      },
+    })
+    if colorscheme ~= nil then
+      vim.cmd("colorscheme " .. colorscheme)
+    end
+  end, { desc = "[S]earch [T]hemes/Colorscheme" })
+
+  -- Only works with lazy
+  -- vim.keymap.set("n", "<leader>lr", function()
+  --   local plugin = MiniPick.start({
+  --     source = {
+  --       name = " Reload Plugins ",
+  --       items = require("config.utils").pluginNames(),
+  --     },
+  --   })
+  --   if plugin ~= nil then
+  --     vim.cmd("Lazy reload " .. plugin)
+  --   end
+  -- end, { desc = "Pick plugins to reload" })
+
+  vim.keymap.set("n", "-", function()
+    local buf_name = vim.api.nvim_buf_get_name(0)
+    local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+    MiniFiles.open(path)
+    MiniFiles.reveal_cwd()
+  end, { desc = "Open Mini Files" })
+
+  vim.keymap.set(
+    { "n", "x" },
+    "<leader>gs",
+    "<Cmd>lua MiniGit.show_at_cursor()<CR>",
+    { silent = true, desc = "Show Git Status" }
+  )
+
+  require("mini.ai").setup({
+    mappings = {
+      around = "a",
+      inside = "i",
+
+      around_next = "an",
+      inside_next = "in",
+      around_last = "al",
+      inside_last = "il",
+
+      goto_left = "g[",
+      goto_right = "g]",
+    },
+    n_lines = 500,
+    custom_textobjects = {
+      B = require("mini.extra").gen_ai_spec.buffer(),
+      D = require("mini.extra").gen_ai_spec.diagnostic(),
+      I = require("mini.extra").gen_ai_spec.indent(),
+      L = require("mini.extra").gen_ai_spec.line(),
+      N = require("mini.extra").gen_ai_spec.number(),
+      o = require("mini.ai").gen_spec.treesitter({
+        a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+        i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+      }, {}),
+      u = require("mini.ai").gen_spec.function_call(), -- u for "Usage"
+      U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
+      f = require("mini.ai").gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+      c = require("mini.ai").gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+      t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
+      d = { "%f[%d]%d+" }, -- digits
+      e = { -- Word with case
+        {
+          "%u[%l%d]+%f[^%l%d]",
+          "%f[%S][%l%d]+%f[^%l%d]",
+          "%f[%P][%l%d]+%f[^%l%d]",
+          "^[%l%d]+%f[^%l%d]",
+        },
+        "^().*()$",
+      },
+      g = function() -- Whole buffer, similar to `gg` and 'G' motion
+        local from = { line = 1, col = 1 }
+        local to = {
+          line = vim.fn.line("$"),
+          col = math.max(vim.fn.getline("$"):len(), 1),
+        }
+        return { from = from, to = to }
+      end,
+    },
+  })
+
+  require("mini.hipatterns").setup({
+    highlighters = {
+      hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+      todo = require("mini.extra").gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
+      hack = require("mini.extra").gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+      note = require("mini.extra").gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
+      fixme = require("mini.extra").gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
+    },
+  })
+
+  require("mini.diff").setup({
+    view = {
+      style = "sign",
+      signs = { add = "+", change = "~", delete = "-" },
+    },
+  })
+
+  local miniclue = require("mini.clue")
+  miniclue.setup({
+    window = {
+      delay = 300,
+      scroll_down = "<C-d>",
+      scroll_up = "<C-u>",
+      config = {
+        width = "auto",
+        border = "none",
+      },
+    },
+    triggers = {
+      -- Leader triggers
+      { mode = "n", keys = "<Leader>" },
+      { mode = "x", keys = "<Leader>" },
+
+      -- Built-in completion
+      { mode = "i", keys = "<C-x>" },
+
+      -- `g` key
+      { mode = "n", keys = "g" },
+      { mode = "x", keys = "g" },
+
+      -- Marks
+      { mode = "n", keys = "'" },
+      { mode = "n", keys = "`" },
+      { mode = "x", keys = "'" },
+      { mode = "x", keys = "`" },
+
+      -- Registers
+      { mode = "n", keys = '"' },
+      { mode = "x", keys = '"' },
+      { mode = "i", keys = "<C-r>" },
+      { mode = "c", keys = "<C-r>" },
+
+      -- Window commands
+      { mode = "n", keys = "<C-w>" },
+
+      -- `z` key
+      { mode = "n", keys = "z" },
+      { mode = "x", keys = "z" },
+
+      -- Bracketed Keybinds
+      { mode = "n", keys = "]" },
+      { mode = "n", keys = "[" },
+
+      -- Surround Keybinds
+      { mode = "n", keys = "s" },
+    },
+
+    clues = {
+      -- Enhance this by adding descriptions for <Leader> mapping groups
+      miniclue.gen_clues.builtin_completion(),
+      miniclue.gen_clues.g(),
+      miniclue.gen_clues.marks(),
+      miniclue.gen_clues.registers(),
+      miniclue.gen_clues.windows(),
+      miniclue.gen_clues.z(),
+    },
+  })
+
+  -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
+  MiniIcons.mock_nvim_web_devicons()
+  vim.notify = require("mini.notify").make_notify()
+  vim.ui.select = MiniPick.ui_select
+end)
 
 return {}

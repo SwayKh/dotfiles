@@ -29,45 +29,6 @@ local function arrow()
   require("plugins.arrow")
 end
 
-local function blink()
-  local function build_blink(params)
-    vim.notify("Building blink.cmp", vim.log.levels.INFO)
-    local obj = vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
-    if obj.code == 0 then
-      vim.notify("Building blink.cmp done", vim.log.levels.INFO)
-    else
-      vim.notify("Building blink.cmp failed", vim.log.levels.ERROR)
-    end
-  end
-
-  add({
-    source = "Saghen/blink.cmp",
-    hooks = {
-      post_install = build_blink,
-      post_checkout = build_blink,
-    },
-  })
-end
-
-local function nvim_cmp()
-  add({
-    -- There's a fork of nvim-cmp for much better performance
-    -- try it out sometime, Here's the PR https://github.com/hrsh7th/nvim-cmp/pull/1980
-    -- "yioneko/nvim-cmp",
-    -- branch = "perf",
-    -- "hrsh7th/nvim-cmp",
-    source = "yioneko/nvim-cmp",
-    checkout = "perf",
-    depends = {
-      "hrsh7th/cmp-buffer", -- source for text in buffer
-      "hrsh7th/cmp-path", -- source for file system paths
-      "hrsh7th/cmp-cmdline", -- For cmdline suggestions
-    },
-  })
-
-  require("plugins.cmp")
-end
-
 local function colorscheme()
   add({
     source = "sainnhe/everforest",
@@ -107,12 +68,6 @@ local function formatter()
   })
 
   require("plugins.format")
-end
-
-local function vim_navigator()
-  add({
-    source = "christoomey/vim-tmux-navigator",
-  })
 end
 
 local function linter()
@@ -167,15 +122,23 @@ local function mini_plugins()
   require("plugins.mini")
 end
 
-local function noice()
+local function nvim_cmp()
   add({
-    source = "folke/noice.nvim",
+    -- There's a fork of nvim-cmp for much better performance
+    -- try it out sometime, Here's the PR https://github.com/hrsh7th/nvim-cmp/pull/1980
+    -- "yioneko/nvim-cmp",
+    -- branch = "perf",
+    -- "hrsh7th/nvim-cmp",
+    source = "yioneko/nvim-cmp",
+    checkout = "perf",
     depends = {
-      "MunifTanjim/nui.nvim",
+      "hrsh7th/cmp-buffer", -- source for text in buffer
+      "hrsh7th/cmp-path", -- source for file system paths
+      "hrsh7th/cmp-cmdline", -- For cmdline suggestions
     },
   })
 
-  require("plugins.noice")
+  require("plugins.cmp")
 end
 
 local function snacks()
@@ -191,14 +154,6 @@ local function supermaven()
   })
 
   require("plugins.supermaven")
-end
-
-local function toggleterm()
-  add({
-    source = "akinsho/toggleterm.nvim",
-  })
-
-  require("plugins.toggleterm")
 end
 
 local function treesitter()
@@ -229,29 +184,31 @@ local function trouble()
   require("plugins.trouble")
 end
 
+local function vim_navigator()
+  add({
+    source = "christoomey/vim-tmux-navigator",
+  })
+end
+
 -- Load everything now
 now(function()
   require("config.option")
   colorscheme()
   snacks()
-  -- require("mini.starter").setup()
+  mini_plugins()
 end)
 
 later(function()
   require("config.keybinds")
   require("config.autocmd")
   arrow()
-  -- blink()
   -- debugger()
   formatter()
   linter()
   lsp()
   markdown_preview()
-  mini_plugins()
-  noice()
   nvim_cmp()
   supermaven()
-  toggleterm()
   treesitter()
   trouble()
   vim_navigator()
