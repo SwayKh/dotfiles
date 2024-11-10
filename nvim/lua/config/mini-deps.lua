@@ -29,6 +29,26 @@ local function arrow()
   require("plugins.arrow")
 end
 
+local function blink()
+  local function build_blink(params)
+    vim.notify("Building blink.cmp", vim.log.levels.INFO)
+    local obj = vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
+    if obj.code == 0 then
+      vim.notify("Building blink.cmp done", vim.log.levels.INFO)
+    else
+      vim.notify("Building blink.cmp failed", vim.log.levels.ERROR)
+    end
+  end
+
+  add({
+    source = "Saghen/blink.cmp",
+    hooks = {
+      post_install = build_blink,
+      post_checkout = build_blink,
+    },
+  })
+end
+
 local function nvim_cmp()
   add({
     -- There's a fork of nvim-cmp for much better performance
@@ -36,7 +56,7 @@ local function nvim_cmp()
     -- "yioneko/nvim-cmp",
     -- branch = "perf",
     -- "hrsh7th/nvim-cmp",
-    source = "hrsh7th/nvim-cmp",
+    source = "yioneko/nvim-cmp",
     checkout = "perf",
     depends = {
       "hrsh7th/cmp-buffer", -- source for text in buffer
@@ -117,6 +137,7 @@ local function lsp()
   })
 
   require("plugins.lsp")
+  vim.cmd("LspStart")
 end
 
 local function markdown_preview()
@@ -155,6 +176,13 @@ local function noice()
   })
 
   require("plugins.noice")
+end
+
+local function snacks()
+  add({
+    source = "folke/snacks.nvim",
+  })
+  require("plugins.snacks")
 end
 
 local function supermaven()
@@ -205,6 +233,7 @@ end
 now(function()
   require("config.option")
   colorscheme()
+  snacks()
   -- require("mini.starter").setup()
 end)
 
@@ -212,6 +241,7 @@ later(function()
   require("config.keybinds")
   require("config.autocmd")
   arrow()
+  -- blink()
   -- debugger()
   formatter()
   linter()
@@ -227,7 +257,7 @@ later(function()
   vim_navigator()
 
   -- -- add vim-startuptime plugin
-  -- add({
-  --   source = "dstein64/vim-startuptime",
-  -- })
+  add({
+    source = "dstein64/vim-startuptime",
+  })
 end)
