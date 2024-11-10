@@ -8,7 +8,8 @@ local get_selected = ya.sync(function()
 		paths[1] = tostring(cx.active.current.hovered.url)
 	end
 	if #paths == 0 then
-		return ya.notify({ title = "Selected", content = "No file selected", level = "warn", timeout = 5 })
+		ya.notify({ title = "Selected", content = "No file selected", level = "warn", timeout = 5 })
+		return paths
 	end
 	return paths
 end)
@@ -146,8 +147,7 @@ end
 local function share()
 	local paths = get_selected()
 
-	local curl, err =
-		Command("curl"):args({ "-F", "file=@" .. paths[1], "https://0x0.st" }):stdout(Command.PIPED):output()
+	local curl, err = Command("curl"):args({ "-F", "file=@" .. paths[1], "https://0x0.st" }):output()
 
 	if not curl then
 		ya.notify({
