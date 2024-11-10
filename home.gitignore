@@ -13,6 +13,7 @@
 .goful
 .lexaloffle
 .local
+!.local/share/applications/
 .mono
 .mozilla
 .npm

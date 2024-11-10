@@ -87,6 +87,10 @@ alias cleanfetch='clear && fastfetch'
 alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias ls='eza --all --icons=always --color=always --group-directories-first'
 alias lt='eza --all --tree --color-scale --level=2 --icons=always --color=always --group-directories-first'
 alias ll='eza -al --no-time --no-user --no-permissions --no-filesize --icons=always --color=always --group-directories-first'
