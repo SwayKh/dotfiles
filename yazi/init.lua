@@ -20,37 +20,37 @@ require("personal"):setup()
 require("yatline"):setup({
 	section_separator = { open = "", close = "" },
 	part_separator = { open = "", close = "" },
-	inverse_separator = { open = "", close = "" },
+	-- inverse_separator = { open = "", close = "" },
 
 	style_a = {
-		fg = "black",
+		fg = "#1e2030",
 		bg_mode = {
-			normal = "#a89984",
-			select = "#d79921",
-			un_set = "#d65d0e",
+			normal = "#8aadf4",
+			select = "#c6a0f6",
+			un_set = "#ed8796",
 		},
 	},
-	style_b = { bg = "#665c54", fg = "#ebdbb2" },
-	style_c = { bg = "#3c3836", fg = "#a89984" },
+	style_b = { bg = "#363a4f", fg = "#cad3f5" },
+	style_c = { bg = "#24273a", fg = "#cad3f5" },
 
-	permissions_t_fg = "green",
-	permissions_r_fg = "yellow",
-	permissions_w_fg = "red",
-	permissions_x_fg = "cyan",
-	permissions_s_fg = "darkgray",
+	permissions_t_fg = "#a6da95",
+	permissions_r_fg = "#eed49f",
+	permissions_w_fg = "#ed8796",
+	permissions_x_fg = "#91d7e3",
+	permissions_s_fg = "#b7bdf8",
 
-	tab_width = 2,
+	tab_width = 20,
 	tab_use_inverse = false,
 
-	selected = { icon = "󰻭", fg = "yellow" },
-	copied = { icon = "", fg = "green" },
-	cut = { icon = "", fg = "red" },
+	selected = { icon = "󰻭", fg = "#eed49f" },
+	copied = { icon = "", fg = "#a6da95" },
+	cut = { icon = "", fg = "#ed8796" },
 
-	total = { icon = "󰮍", fg = "yellow" },
-	succ = { icon = "", fg = "green" },
-	fail = { icon = "", fg = "red" },
-	found = { icon = "󰮕", fg = "blue" },
-	processed = { icon = "󰐍", fg = "green" },
+	total = { icon = "", fg = "#eed49f" },
+	succ = { icon = "", fg = "#a6da95" },
+	fail = { icon = "", fg = "#ed8796" },
+	found = { icon = "", fg = "#8aadf4" },
+	processed = { icon = "", fg = "#a6da95" },
 
 	show_background = false,
 
