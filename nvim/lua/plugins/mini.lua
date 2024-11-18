@@ -74,6 +74,9 @@ later(function()
     },
     window = {
       prompt_prefix = " ❯ ",
+      config = {
+        border = vim.g.border_style,
+      },
     },
     mappings = {
       to_quickfix = {
@@ -305,7 +308,7 @@ later(function()
       scroll_up = "<C-u>",
       config = {
         width = "auto",
-        border = "none",
+        border = vim.g.border_style,
       },
     },
     triggers = {

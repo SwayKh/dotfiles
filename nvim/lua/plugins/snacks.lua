@@ -5,7 +5,11 @@ require("snacks").setup({
   words = { enabled = true },
   styles = {
     notification = {
+      border = vim.g.border_style,
       wo = { wrap = true }, -- Wrap notifications
+      history = {
+        border = vim.g.border_style,
+      },
     },
   },
 })

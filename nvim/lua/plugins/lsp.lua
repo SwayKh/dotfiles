@@ -12,7 +12,7 @@ require("lazydev").setup({
     { path = "luvit-meta/library", words = { "vim%.uv" } },
   },
 })
-lspui.default_options.border = "none"
+lspui.default_options.border = vim.g.border_style
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       float = {
         focusable = true,
         style = "minimal",
-        border = "none",
+        border = vim.g.border_style,
         source = "always",
         header = "",
         prefix = "",
@@ -231,7 +231,7 @@ local border = {
 
 mason.setup({
   ui = {
-    border = "none",
+    border = vim.g.border_style,
     width = 0.8,
     height = 0.8,
     icons = {

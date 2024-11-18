@@ -13,6 +13,9 @@ vim.g.netrw_altv = 1
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Global variable to control borders for every plugins
+vim.g.border_style = "rounded"
+
 -- Set highlight on search
 vim.opt.hlsearch = true
 

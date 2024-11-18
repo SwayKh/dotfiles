@@ -1,7 +1,7 @@
 local cmp = require("cmp")
 
 local border_opts = {
-  border = "none",
+  border = vim.g.border_style,
   winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
   scrollbar = false,
 }

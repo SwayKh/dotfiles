@@ -9,7 +9,7 @@ require("trouble").setup({
     scratch = true,
   },
   win = {
-    border = "none",
+    border = vim.g.border_style,
     size = 0.38, -- This weird size makes sense with the resize autocmd
   },
   modes = {

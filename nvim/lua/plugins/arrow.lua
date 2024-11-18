@@ -4,7 +4,7 @@ require("arrow").setup({
   buffer_leader_key = "m", -- Per Buffer Mappings
   global_bookmarks = false,
   window = {
-    border = "none",
+    border = vim.g.border_style,
   },
 })
 
