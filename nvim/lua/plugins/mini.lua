@@ -1,19 +1,7 @@
 local later = MiniDeps.later
 
 require("mini.icons").setup()
--- require("mini.notify").setup()
 require("mini.tabline").setup()
-
-require("mini.indentscope").setup({
-  symbol = "╎", --  ╎ │
-  draw = {
-    delay = 50,
-    animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
-  },
-  options = {
-    try_as_border = true,
-  },
-})
 
 require("mini.statusline").setup({
   use_icons = vim.g.have_nerd_font,
@@ -49,7 +37,6 @@ later(function()
   require("mini.bracketed").setup()
   require("mini.extra").setup()
   require("mini.git").setup()
-  -- require("mini.jump").setup({ mappings = { repeat_jump = "," } })
   require("mini.pairs").setup()
   require("mini.splitjoin").setup()
   require("mini.surround").setup()
@@ -57,6 +44,17 @@ later(function()
   require("mini.jump2d").setup({
     view = {
       dim = true,
+    },
+  })
+
+  require("mini.indentscope").setup({
+    symbol = "╎", --  ╎ │
+    draw = {
+      delay = 50,
+      animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
+    },
+    options = {
+      try_as_border = true,
     },
   })
 
@@ -222,19 +220,6 @@ later(function()
     end
   end, { desc = "[S]earch [T]hemes/Colorscheme" })
 
-  -- Only works with lazy
-  -- vim.keymap.set("n", "<leader>lr", function()
-  --   local plugin = MiniPick.start({
-  --     source = {
-  --       name = " Reload Plugins ",
-  --       items = require("config.utils").pluginNames(),
-  --     },
-  --   })
-  --   if plugin ~= nil then
-  --     vim.cmd("Lazy reload " .. plugin)
-  --   end
-  -- end, { desc = "Pick plugins to reload" })
-
   vim.keymap.set("n", "-", function()
     local buf_name = vim.api.nvim_buf_get_name(0)
     local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
@@ -379,7 +364,6 @@ later(function()
 
   -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
   MiniIcons.mock_nvim_web_devicons()
-  -- vim.notify = require("mini.notify").make_notify()
   vim.ui.select = MiniPick.ui_select
 end)
 

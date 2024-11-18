@@ -5,7 +5,8 @@ require("blink.cmp").setup({
     },
   },
   highlight = {
-    use_nvim_cmp_as_default = true,
+    ns = vim.api.nvim_create_namespace("blink_cmp"),
+    use_nvim_cmp_as_default = false,
   },
   nerd_font_variant = "normal",
   keymap = "default",
