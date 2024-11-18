@@ -18,7 +18,7 @@ monitor_tag=$((1 << 14))
 
 term="$terminal --app-id special-term -e zsh -ic \"tmux new-session -s Terminal\""
 btop="$terminal --app-id special-btop -e btop"
-nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim'\""
+nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim && zsh'\""
 files="$terminal --app-id special-files -e zsh -ic yazi"
 
 case "$1" in
