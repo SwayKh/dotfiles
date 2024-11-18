@@ -29,6 +29,14 @@ local function arrow()
   require("plugins.arrow")
 end
 
+local function blink()
+  add({
+    source = "Saghen/blink.cmp",
+    checkout = "v0.*",
+  })
+  require("plugins.blink")
+end
+
 local function colorscheme()
   add({
     source = "neanias/everforest-nvim",
@@ -86,7 +94,7 @@ local function lsp()
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
-      "hrsh7th/cmp-nvim-lsp", -- for autocompletion
+      -- "hrsh7th/cmp-nvim-lsp", -- for autocompletion
       "nvim-lua/plenary.nvim",
       "folke/lazydev.nvim",
     },
@@ -123,38 +131,11 @@ local function mini_plugins()
   require("plugins.mini")
 end
 
-local function nvim_cmp()
-  add({
-    -- There's a fork of nvim-cmp for much better performance
-    -- try it out sometime, Here's the PR https://github.com/hrsh7th/nvim-cmp/pull/1980
-    -- "yioneko/nvim-cmp",
-    -- branch = "perf",
-    -- "hrsh7th/nvim-cmp",
-    source = "yioneko/nvim-cmp",
-    checkout = "perf",
-    depends = {
-      "hrsh7th/cmp-buffer", -- source for text in buffer
-      "hrsh7th/cmp-path", -- source for file system paths
-      "hrsh7th/cmp-cmdline", -- For cmdline suggestions
-    },
-  })
-
-  require("plugins.cmp")
-end
-
 local function snacks()
   add({
     source = "folke/snacks.nvim",
   })
   require("plugins.snacks")
-end
-
-local function supermaven()
-  add({
-    source = "supermaven-inc/supermaven-nvim",
-  })
-
-  require("plugins.supermaven")
 end
 
 local function treesitter()
@@ -203,13 +184,12 @@ later(function()
   require("config.keybinds")
   require("config.autocmd")
   arrow()
+  blink()
   -- debugger()
   formatter()
   linter()
   lsp()
   markdown_preview()
-  nvim_cmp()
-  supermaven()
   treesitter()
   trouble()
   vim_navigator()

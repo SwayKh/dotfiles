@@ -2,7 +2,6 @@ local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local mason_tool_installer = require("mason-tool-installer")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local util = require("lspconfig.util")
 local lspui = require("lspconfig.ui.windows")
 
@@ -52,15 +51,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- map("<leader>ws", function()
     --   MiniExtra.pickers.lsp({ scope = "workspace_symbol" })
     -- end, "[W]orkspace [S]symbols")
-
-    -- map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]definition")
-    -- map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
-    -- map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
-    -- map("gD", require("fzf-lua").lsp_declarations, "[G]oto [D]eclaration")
-    -- map("<leader>D", require("fzf-lua").lsp_typedefs, "Type [D]definition")
-    --
-    -- map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]symbols")
-    -- map("<leader>ws", require("fzf-lua").lsp_workspace_symbols, "[W]orkspace [S]symbols")
 
     -- See `:help K` for why this keymap
     map("K", vim.lsp.buf.hover, "Hover Documentation")
@@ -148,7 +138,7 @@ for type, icon in pairs(signs) do
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend("force", capabilities, cmp_nvim_lsp.default_capabilities())
+capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities(capabilities))
 
 local servers = {
   -- bashls = {}, -- Bash
