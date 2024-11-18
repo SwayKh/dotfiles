@@ -1,8 +1,7 @@
 local later = MiniDeps.later
 
-require("mini.starter").setup()
 require("mini.icons").setup()
-require("mini.notify").setup()
+-- require("mini.notify").setup()
 require("mini.tabline").setup()
 
 require("mini.indentscope").setup({
@@ -66,6 +65,23 @@ later(function()
       go_in_plus = "<cr>",
       synchronize = "<c-s>",
     },
+    windows = {
+      preview = true,
+      width_focus = 40,
+      width_preview = 80,
+    },
+  })
+
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "MiniFilesWindowOpen",
+    callback = function(args)
+      local win_id = args.data.win_id
+
+      -- Customize window-local settings
+      local config = vim.api.nvim_win_get_config(win_id)
+      config.border = vim.g.border_style
+      vim.api.nvim_win_set_config(win_id, config)
+    end,
   })
 
   require("mini.pick").setup({
@@ -363,7 +379,7 @@ later(function()
 
   -- Mocks nvim-web-devicons, for plugins that don't support Mini.Icons
   MiniIcons.mock_nvim_web_devicons()
-  vim.notify = require("mini.notify").make_notify()
+  -- vim.notify = require("mini.notify").make_notify()
   vim.ui.select = MiniPick.ui_select
 end)
 
