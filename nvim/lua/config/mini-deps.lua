@@ -31,20 +31,21 @@ end
 
 local function colorscheme()
   add({
-    source = "sainnhe/everforest",
+    source = "neanias/everforest-nvim",
   })
-  -- " Available values: 'hard', 'medium'(default), 'soft'
-  vim.g.everforest_background = "hard"
-  vim.g.everforest_enable_italic = 1
-  vim.g.everforest_ui_contrast = "high"
-  vim.g.everforest_diagnostic_text_highlight = 1
-  vim.g.everforest_diagnostic_line_highlight = 1
-  vim.g.everforest_better_performance = 1
-  vim.g.everforest_transparent_background = 2
-  vim.g.everforest_float_style = "dim"
-  vim.g.everforest_diagnostic_virtual_text = "colored"
-  vim.g.everforest_dim_inactive_windows = 1
+
+  require("everforest").setup({
+    background = "hard",
+    transparent_background_level = 2,
+    italics = true,
+    ui_contrast = "high",
+    float_style = "dim",
+    inlay_hints_background = "dimmed",
+  })
   vim.cmd.colorscheme("everforest")
+  -- vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
+  -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+  -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 end
 
 local function debugger()

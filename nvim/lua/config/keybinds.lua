@@ -12,8 +12,8 @@ map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true
 map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
 
 -- This overrides to <C-i> function of the jumplist(Which I don't use)
-map("n", "<tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
-map("n", "<S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
+map("n", "<leader><tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
+map("n", "<leader><S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
 
 -- Go to Beginning or End of line
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
@@ -57,8 +57,8 @@ map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines" })
 map({ "n", "v" }, "<M-k>", "5k", { desc = "Scroll 5 lines" })
 
 -- Increment/Decreament
-map("n", "+", "<C-a>", { desc = "Increment number" })
-map("n", "-", "<C-x>", { desc = "Decreament number" })
+-- map("n", "+", "<C-a>", { desc = "Increment number" })
+-- map("n", "-", "<C-x>", { desc = "Decreament number" })
 
 -- Split keybinds, Need to figure out a better system
 map("n", "<leader>V", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
@@ -68,6 +68,9 @@ map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
 map("n", "<leader>y", "<Cmd>%y+<CR>", { silent = true, desc = "Copy whole file" })
 map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true })
+
+-- Search and replace word under the cursor.
+map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "[R]eplace [W]ord under cursor" })
 
 -- Save, Quit
 map("n", "qq", "<Cmd>%bd<CR>", { silent = true, desc = "Delete all buffers" })

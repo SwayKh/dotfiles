@@ -1,14 +1,4 @@
 -- {
---   vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" }),
---   vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" }),
---   vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" }),
---
---   vim.api.nvim_set_hl(0, "Normal", { bg = "none" }),
---   vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" }),
---   vim.cmd.hi("Comment gui=none"),
---   vim.cmd.hi("Normal guibg=#222222"),
--- },
--- {
 --   "olimorris/onedarkpro.nvim",
 --   require("onedarkpro").setup({
 --     options = {
@@ -90,6 +80,19 @@
 --     vim.cmd.colorscheme("earlysummer")
 --   end,
 -- },
+-- {
+--   "neanias/everforest-nvim",
+--   config = function()
+--     require("everforest").setup({
+--       background = "hard",
+--       transparent_background_level = 1,
+--       italics = true,
+--       ui_contrast = "high",
+--       float_style = "dim",
+--       inlay_hints_background = "dimmed",
+--     })
+--   end,
+-- }
 -- {
 --   "sainnhe/everforest",
 --   config = function()
