@@ -1,6 +1,7 @@
 local later = MiniDeps.later
 
 require("mini.icons").setup()
+-- require("mini.notify").setup()
 require("mini.tabline").setup()
 
 require("mini.statusline").setup({
@@ -41,12 +42,6 @@ later(function()
   require("mini.splitjoin").setup()
   require("mini.surround").setup()
 
-  require("mini.jump2d").setup({
-    view = {
-      dim = true,
-    },
-  })
-
   require("mini.indentscope").setup({
     symbol = "╎", --  ╎ │
     draw = {
@@ -64,20 +59,24 @@ later(function()
       synchronize = "<c-s>",
     },
     windows = {
+      max_number = 3,
       preview = true,
-      width_focus = 40,
-      width_preview = 80,
+      width_nofocus = math.floor((vim.o.columns - 5) * 0.25), -- 25% of screen minus border+padding
+      width_focus = math.floor((vim.o.columns - 5) * 0.25), -- 25% of screen minus border+padding
+      width_preview = math.floor((vim.o.columns - 3) * 0.5), -- 50% of screen minus border+padding,
     },
   })
 
   vim.api.nvim_create_autocmd("User", {
-    pattern = "MiniFilesWindowOpen",
+    pattern = { "MiniFilesWindowOpen", "MiniFilesWindowUpdate" },
     callback = function(args)
       local win_id = args.data.win_id
 
       -- Customize window-local settings
       local config = vim.api.nvim_win_get_config(win_id)
       config.border = vim.g.border_style
+      -- Make window full height to make it look TUI File manager
+      -- config.height = vim.o.lines
       vim.api.nvim_win_set_config(win_id, config)
     end,
   })
@@ -219,6 +218,19 @@ later(function()
       vim.cmd("colorscheme " .. colorscheme)
     end
   end, { desc = "[S]earch [T]hemes/Colorscheme" })
+
+  -- Only works with lazy
+  -- vim.keymap.set("n", "<leader>lr", function()
+  --   local plugin = MiniPick.start({
+  --     source = {
+  --       name = " Reload Plugins ",
+  --       items = require("config.utils").pluginNames(),
+  --     },
+  --   })
+  --   if plugin ~= nil then
+  --     vim.cmd("Lazy reload " .. plugin)
+  --   end
+  -- end, { desc = "Pick plugins to reload" })
 
   vim.keymap.set("n", "-", function()
     local buf_name = vim.api.nvim_buf_get_name(0)

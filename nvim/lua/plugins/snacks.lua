@@ -1,5 +1,24 @@
 require("snacks").setup({
   bigfile = { enabled = true },
+  dashboard = {
+    enabled = true,
+    preset = {
+      keys = {
+        { icon = " ", key = "f", desc = "Find File", action = "<leader>sf" },
+        { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+        { icon = " ", key = "g", desc = "Find Text", action = "<leader>sg" },
+        { icon = " ", key = "r", desc = "Recent Files", action = "<leader>s?" },
+        { icon = " ", key = "c", desc = "Config", action = "<leader>sn" },
+        { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+      },
+    },
+    sections = {
+      { section = "header" },
+      { icon = " ", title = "Keymaps", section = "keys", padding = 1 },
+      { icon = " ", title = "Recent Files", section = "recent_files", padding = 1 },
+      { icon = " ", title = "Projects", section = "projects", padding = 1 },
+    },
+  },
   notifier = {
     enabled = true,
     timeout = 3000,

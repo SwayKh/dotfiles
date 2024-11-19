@@ -19,6 +19,7 @@ end
 
 -- Set up 'mini.deps' (customize to your liking)
 require("mini.deps").setup({ path = { package = path_package } })
+
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 local function arrow()
@@ -69,6 +70,13 @@ local function debugger()
   })
 
   require("plugins.debug")
+end
+
+local function flash()
+  add({
+    source = "folke/flash.nvim",
+  })
+  require("plugins.flash")
 end
 
 local function formatter()
@@ -175,6 +183,7 @@ end
 now(function()
   require("config.option")
   colorscheme()
+  snacks()
   mini_plugins()
 end)
 
@@ -184,10 +193,10 @@ later(function()
   arrow()
   blink()
   -- debugger()
+  flash()
   formatter()
   linter()
   lsp()
-  snacks()
   trouble()
   markdown_preview()
   treesitter()

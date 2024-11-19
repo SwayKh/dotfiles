@@ -77,6 +77,7 @@ autocmd("FileType", {
     "nocie",
     "toggleterm",
     "lazyterm",
+    "snacks_dashboard",
   },
   desc = "Disable Mini Indentline for some filetype, similar to IndentBlankLine",
   callback = function()
