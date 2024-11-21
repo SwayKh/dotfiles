@@ -84,7 +84,7 @@ alias lg=lazygit
 alias yeet="sudo pacman -Rns"
 alias up='paru -Syu'
 alias cleanfetch='clear && fastfetch'
-alias pyActivate='source $HOME/Projects/Python/venv/bin/activate'
+alias pyActivate='source $HOME/.venv/bin/activate'
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
 
 alias ..='cd ..'
