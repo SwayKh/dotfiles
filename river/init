@@ -98,6 +98,7 @@ riverctl map normal $mod W spawn "ferdium"
 riverctl map normal $mod D spawn "webcord"
 riverctl map normal $mod G spawn "retroarch"
 riverctl map normal $mod S spawn "spotify-launcher"
+riverctl map normal $mod Y spawn "youtube-music"
 riverctl map normal $mod I spawn "ticktick"
 riverctl map normal $mod E spawn "$terminal -e zsh -ic yazi"
 riverctl map normal $mod M spawn "$terminal -e btop"
@@ -338,6 +339,7 @@ riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
 riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
 riverctl rule-add -app-id "Spotify" tags $spotify_tag
+riverctl rule-add -app-id "YouTube Music" tags $spotify_tag
 riverctl rule-add -app-id "org.qbittorrent.qBittorrent" tags $special_tag
 
 riverctl rule-add -title "Brawlhalla" fullscreen
