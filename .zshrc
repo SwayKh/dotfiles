@@ -1,11 +1,11 @@
 export ZSH=$HOME/.oh-my-zsh
 plugins=(git
-    extract
-    web-search
-    yum
-    git-extras
+    # extract
+    # web-search
+    # yum
+    # git-extras
     # docker
-    vagrant
+    # vagrant
     zsh-autosuggestions)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999999'
@@ -19,7 +19,6 @@ setopt SHARE_HISTORY
 source "$HOME"/dotfiles/scripts/function.sh
 source "$HOME/.config/river/environment.sh"
 source $ZSH/oh-my-zsh.sh
-source /usr/share/nvm/init-nvm.sh
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -38,7 +37,7 @@ export SUDO_EDITOR=nvim
 
 export FZF_DEFAULT_OPTS="\
   --ansi \
-  --layout=reverse \
+  --layout=default \
   --border=rounded \
   --height=100% \
   --preview-window=65% \
@@ -52,14 +51,14 @@ export FZF_DEFAULT_OPTS="\
   " # --inline-info
 # Use fd instead of find
 export FZF_DEFAULT_COMMAND='\
-  fd --type f -L \
+  fd --type d -L \
   --strip-cwd-prefix \
   --hidden \
   --no-ignore \
   --exclude .git \
   --ignore-file ~/home.gitignore\
   '
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --type f"
 export FZF_CTRL_T_OPTS="
   --preview '~/scripts/preview.sh {}' \
   --height=100% \

@@ -86,7 +86,7 @@ terminal="footclient"
 filemanager="thunar"
 browser="floorp"
 mod="Mod4"
-goTerm="footclient -e --app-id special-go --working-directory=$HOME/Projects/Go/Linksym/ zsh -ic 'tmux new-session -s Go'"
+goTerm="footclient -e --app-id special-go --working-directory=$HOME/Projects/Go/ zsh -ic 'tmux new-session -s Go'"
 
 # My Mappings
 riverctl map normal $mod T spawn "$terminal -e tmux"

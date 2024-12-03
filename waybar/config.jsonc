@@ -19,6 +19,7 @@
   "modules-right": [
     "network",
     "cpu",
+    "memory",
     "temperature",
     "backlight",
     "wireplumber",
@@ -100,7 +101,6 @@
   "cpu": {
     "interval": 2,
     "format": " {usage:>2}%",
-    "tooltip": false,
     "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 

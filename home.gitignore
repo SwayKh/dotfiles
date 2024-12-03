@@ -1,11 +1,11 @@
+# Ignore these directories
 .android
 .cache
 .cargo
 .cmake
 .codeium
-#.config
-.config/retroarch/
 .config/discord/
+.config/retroarch/
 .floorp
 .gervill
 .git
@@ -14,6 +14,7 @@
 .lexaloffle
 .local
 !.local/share/applications/
+.minecraft
 .mono
 .mozilla
 .npm
@@ -24,11 +25,14 @@
 .steam
 .trash
 *venv*
-.vscode
 .vim
+.vscode
 ES-DE
 GameDev
 Games
-go
-#Roms
 Themes
+go
+
+# Don't Ignore these directories
+#.config
+#Roms
