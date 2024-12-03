@@ -33,7 +33,10 @@ end
 local function blink()
   add({
     source = "Saghen/blink.cmp",
-    checkout = "v0.*",
+    checkout = "v0.7.1",
+    depends = {
+      "rafamadriz/friendly-snippets",
+    },
   })
   require("plugins.blink")
 end
@@ -150,7 +153,7 @@ local function treesitter()
     source = "nvim-treesitter/nvim-treesitter",
     -- Use 'master' while monitoring updates in 'main'
     checkout = "master",
-    monitor = "main",
+    -- monitor = "main",
     -- Perform action after every checkout
     hooks = {
       post_checkout = function()

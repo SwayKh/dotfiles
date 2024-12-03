@@ -73,7 +73,7 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "[R]eplace [W]ord under cursor" })
 
 -- Save, Quit
-map("n", "qq", "<Cmd>%bd<CR>", { silent = true, desc = "Delete all buffers" })
+map("n", "qq", "<Cmd>%bd<CR><Cmd>lua Snacks.dashboard()<CR>", { silent = true, desc = "Delete all buffers" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave all files" })
 map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "Save all file and [Q]uit" })
 
