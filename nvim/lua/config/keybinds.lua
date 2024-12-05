@@ -11,7 +11,6 @@ map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source curr
 map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })
 map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
 
--- This overrides to <C-i> function of the jumplist(Which I don't use)
 map("n", "<leader><tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
 map("n", "<leader><S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
 

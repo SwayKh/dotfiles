@@ -219,6 +219,30 @@ later(function()
     end
   end, { desc = "[S]earch [T]hemes/Colorscheme" })
 
+  vim.keymap.set("n", "<leader>gc", function()
+    local git_commands = MiniPick.start({
+      source = {
+        name = " Git ",
+        items = vim.fn.getcompletion("Git ", "cmdline"),
+      },
+    })
+    if git_commands ~= nil then
+      vim.cmd("Git " .. git_commands)
+    end
+  end, { desc = "Search [G]it [C]ommands" })
+
+  vim.keymap.set("n", "<leader>sb", function()
+    local builtin = MiniPick.start({
+      source = {
+        name = " Pick ",
+        items = vim.fn.getcompletion("Pick ", "cmdline"),
+      },
+    })
+    if builtin ~= nil then
+      vim.cmd("Pick " .. builtin)
+    end
+  end, { desc = "[S]earch [B]uiltin Pick Commands" })
+
   -- Only works with lazy
   -- vim.keymap.set("n", "<leader>lr", function()
   --   local plugin = MiniPick.start({

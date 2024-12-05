@@ -26,7 +26,6 @@ local function arrow()
   add({
     source = "otavioschwanck/arrow.nvim",
   })
-
   require("plugins.arrow")
 end
 
@@ -45,7 +44,6 @@ local function colorscheme()
   add({
     source = "neanias/everforest-nvim",
   })
-
   require("everforest").setup({
     background = "hard",
     transparent_background_level = 2,
@@ -55,6 +53,7 @@ local function colorscheme()
     inlay_hints_background = "dimmed",
   })
   vim.cmd.colorscheme("everforest")
+
   -- vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
   -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
@@ -71,7 +70,6 @@ local function debugger()
       "mfussenegger/nvim-dap-python",
     },
   })
-
   require("plugins.debug")
 end
 
@@ -86,7 +84,6 @@ local function formatter()
   add({
     source = "stevearc/conform.nvim",
   })
-
   require("plugins.format")
 end
 
@@ -94,7 +91,6 @@ local function linter()
   add({
     source = "mfussenegger/nvim-lint",
   })
-
   require("plugins.lint")
 end
 
@@ -137,7 +133,6 @@ local function mini_plugins()
   add({
     source = "echasnovski/mini.nvim",
   })
-
   require("plugins.mini")
 end
 
@@ -164,7 +159,6 @@ local function treesitter()
       "windwp/nvim-ts-autotag",
     },
   })
-
   require("plugins.treesitter")
 end
 
@@ -172,7 +166,6 @@ local function trouble()
   add({
     source = "folke/trouble.nvim",
   })
-
   require("plugins.trouble")
 end
 
@@ -200,13 +193,13 @@ later(function()
   formatter()
   linter()
   lsp()
-  trouble()
   markdown_preview()
   treesitter()
+  trouble()
   vim_navigator()
 
   -- -- add vim-startuptime plugin
-  add({
-    source = "dstein64/vim-startuptime",
-  })
+  -- add({
+  --   source = "dstein64/vim-startuptime",
+  -- })
 end)

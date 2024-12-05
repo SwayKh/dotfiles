@@ -16,6 +16,17 @@ vim.g.have_nerd_font = true
 -- Global variable to control borders for every plugins
 vim.g.border_style = "rounded"
 
+vim.g.border = {
+  { "╭", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╮", "FloatBorder" },
+  { "│", "FloatBorder" },
+  { "╯", "FloatBorder" },
+  { "─", "FloatBorder" },
+  { "╰", "FloatBorder" },
+  { "│", "FloatBorder" },
+}
+
 -- Set highlight on search
 vim.opt.hlsearch = true
 

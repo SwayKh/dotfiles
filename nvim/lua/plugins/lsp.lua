@@ -208,17 +208,6 @@ local servers = {
   },
 }
 
-local border = {
-  { "╭", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "╮", "FloatBorder" },
-  { "│", "FloatBorder" },
-  { "╯", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "╰", "FloatBorder" },
-  { "│", "FloatBorder" },
-}
-
 mason.setup({
   ui = {
     border = vim.g.border_style,
@@ -265,7 +254,7 @@ mason_tool_installer.setup({
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
-  opts.border = opts.border or border
+  opts.border = opts.border or vim.g.border_style
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
