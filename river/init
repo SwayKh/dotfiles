@@ -96,6 +96,7 @@ riverctl map normal $mod R spawn "rofi -show drun"
 riverctl map normal $mod O spawn "obsidian"
 riverctl map normal $mod W spawn "ferdium"
 riverctl map normal $mod D spawn "webcord"
+riverctl map normal $mod D spawn "vesktop"
 riverctl map normal $mod G spawn "retroarch"
 riverctl map normal $mod S spawn "spotify-launcher"
 riverctl map normal $mod Y spawn "youtube-music"
@@ -329,6 +330,7 @@ riverctl rule-add -app-id "steam" tags $((1 << (4 - 1)))
 riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
 riverctl rule-add -app-id "org.telegram.desktop" tags $((1 << (5 - 1)))
 riverctl rule-add -app-id "WebCord" tags $((1 << (6 - 1)))
+riverctl rule-add -app-id "vesktop" tags $((1 << (6 - 1)))
 riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
 
 riverctl rule-add -app-id "special-term" tags $terminal_tag
