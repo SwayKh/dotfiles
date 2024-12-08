@@ -8,8 +8,13 @@ map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
-map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })
 map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
+
+-- Reload all lua files under neovim config
+-- map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })
+-- map("n", "<leader><CR>", function()
+--  require("config.utils").reloadConfig()
+-- end, { silent = true, desc = "Source nvim config" })
 
 map("n", "<leader><tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
 map("n", "<leader><S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })

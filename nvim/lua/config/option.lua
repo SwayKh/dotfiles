@@ -123,7 +123,7 @@ vim.opt.pumheight = 15
 vim.opt.pumblend = 0
 
 -- Max items to show in command menu
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 -- Decrease update time, (Time before swap file is writter)
 vim.opt.updatetime = 250

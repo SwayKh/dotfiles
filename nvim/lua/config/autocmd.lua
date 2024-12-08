@@ -159,6 +159,17 @@ autocmd({ "FileType" }, {
 --   end,
 -- })
 
+autocmd("BufRead", {
+  callback = function(ev)
+    if vim.bo[ev.buf].buftype == "quickfix" then
+      vim.schedule(function()
+        vim.cmd([[cclose]])
+        vim.cmd([[Trouble qflist open]])
+      end)
+    end
+  end,
+})
+
 autocmd("QuickFixCmdPost", {
   callback = function()
     vim.cmd([[Trouble qflist open]])
