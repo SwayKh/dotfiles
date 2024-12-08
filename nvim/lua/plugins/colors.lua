@@ -85,11 +85,18 @@
 --   config = function()
 --     require("everforest").setup({
 --       background = "hard",
---       transparent_background_level = 1,
+--       transparent_background_level = 0,
 --       italics = true,
---       ui_contrast = "high",
---       float_style = "dim",
+--       ui_contrast = "low",
+--       float_style = "bright",
 --       inlay_hints_background = "dimmed",
+--       show_eob = true,
+--       sign_column_background = "none",
+--       disable_italic_comments = false,
+--       dim_inactive_windows = true,
+--       diagnostic_line_highlight = true,
+--       diagnostic_text_highlight = true,
+--       diagnostic_virtual_text = "coloured",
 --     })
 --   end,
 -- }

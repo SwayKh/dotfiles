@@ -42,17 +42,23 @@ end
 
 local function colorscheme()
   add({
-    source = "neanias/everforest-nvim",
+    source = "rebelot/kanagawa.nvim",
   })
-  require("everforest").setup({
-    background = "hard",
-    transparent_background_level = 2,
-    italics = true,
-    ui_contrast = "high",
-    float_style = "dim",
-    inlay_hints_background = "dimmed",
+  require("kanagawa").setup({
+    compile = false, -- enable compiling the colorscheme
+    undercurl = true, -- enable undercurls
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true },
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = false, -- do not set background color
+    dimInactive = true, -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true,
+    -- Remove background color of sign column
+    colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
   })
-  vim.cmd.colorscheme("everforest")
+  vim.cmd.colorscheme("kanagawa")
 
   -- vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
@@ -71,13 +77,6 @@ local function debugger()
     },
   })
   require("plugins.debug")
-end
-
-local function flash()
-  add({
-    source = "folke/flash.nvim",
-  })
-  require("plugins.flash")
 end
 
 local function formatter()
@@ -189,7 +188,6 @@ later(function()
   arrow()
   blink()
   -- debugger()
-  flash()
   formatter()
   linter()
   lsp()

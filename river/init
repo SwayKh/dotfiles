@@ -47,7 +47,7 @@ riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image
 # Set background and border color
 riverctl background-color 0x002B36
 riverctl border-width 2
-riverctl border-color-focused 0xA7C080
+riverctl border-color-focused 0xC8C093
 riverctl border-color-unfocused 0xA5A5A5
 
 riverctl set-repeat 30 300
