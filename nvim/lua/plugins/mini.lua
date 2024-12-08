@@ -38,6 +38,8 @@ later(function()
   require("mini.bracketed").setup()
   require("mini.extra").setup()
   require("mini.git").setup()
+  require("mini.jump").setup()
+  require("mini.jump2d").setup()
   require("mini.pairs").setup()
   require("mini.splitjoin").setup()
   require("mini.surround").setup()
@@ -92,10 +94,10 @@ later(function()
       },
     },
     mappings = {
-      to_quickfix = {
-        char = "<c-q>",
+      marked_to_quickfix = {
+        char = "<C-q>",
         func = function()
-          local items = MiniPick.get_picker_items() or {}
+          local items = MiniPick.get_picker_matches().marked or {}
           MiniPick.default_choose_marked(items)
           MiniPick.stop()
         end,

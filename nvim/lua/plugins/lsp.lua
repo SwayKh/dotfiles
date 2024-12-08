@@ -154,7 +154,7 @@ local servers = {
   -- tailwindcss = {}, -- Tailwind CSS
   -- templ = {}, -- Templ
   pyright = {}, -- Python
-  gopls = { -- Golang
+  gopls = {     -- Golang
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -224,14 +224,14 @@ mason.setup({
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   -- FORMATTERS
-  { "gofumpt" }, -- GO
+  { "gofumpt" },   -- GO
   { "goimports" }, -- GO
-  { "black" }, -- Python
-  { "isort" }, -- Python
+  { "black" },     -- Python
+  { "isort" },     -- Python
   { "prettierd" }, -- JS and Many More
-  { "prettier" }, -- JS and Many More
-  { "shfmt" }, -- Shell Script
-  { "stylua" }, -- Lua
+  { "prettier" },  -- JS and Many More
+  { "shfmt" },     -- Shell Script
+  { "stylua" },    -- Lua
 
   -- LINTERS
   { "codespell" },
@@ -240,8 +240,8 @@ vim.list_extend(ensure_installed, {
   { "shellcheck" },
 
   --DAP
-  { "delve" },
-  { "debugpy" },
+  -- { "delve" },
+  -- { "debugpy" },
 })
 mason_tool_installer.setup({
   ensure_installed = ensure_installed,
