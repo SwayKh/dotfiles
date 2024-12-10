@@ -14,7 +14,7 @@ window {
   anchor: center;
   x-offset: 0px;
   y-offset: 0px;
-  margin: 0px;
+  margin: 5px;
   padding: 5px;
   border: 2px;
   border-radius: 0px;

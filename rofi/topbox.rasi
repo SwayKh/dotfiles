@@ -6,6 +6,7 @@ configuration {
   icon-theme:           "Papirus";
   terminal:             "footclient";
   window-format:        "{w} · {c} · {t}";
+  drun-display-format:  "{name}";
   disable-history:      false;
   max-history-size:     50;
 
@@ -83,7 +84,8 @@ button {
 }
 
 listview {
-  lines: 7;
+  lines: 8;
+  columns: 2;
   spacing: 3px;
   scrollbar: false;
   cycle: false;
