@@ -32,6 +32,7 @@ export PATH=$PATH:"$HOME/.cargo/bin"
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export EDITOR=nvim
 export VISUAL=nvim
+export MANPAGER='nvim +Man!'
 export SUDO_EDITOR=nvim
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
