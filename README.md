@@ -112,7 +112,7 @@ sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm sway
 #### Cli tools
 
 ```
-sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tldr starship yazi cava rsync dua-cli sshfs swww mpv
+sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tealdeer starship yazi cava rsync dua-cli sshfs swww mpv
 ```
 
 #### Symlinks
