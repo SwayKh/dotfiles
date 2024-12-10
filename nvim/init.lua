@@ -177,14 +177,14 @@ end
 -- Load everything now
 now(function()
   require("config.option")
+  require("config.autocmd")
+  require("config.keybinds")
   colorscheme()
   snacks()
   mini_plugins()
 end)
 
 later(function()
-  require("config.keybinds")
-  require("config.autocmd")
   arrow()
   blink()
   -- debugger()
@@ -197,7 +197,7 @@ later(function()
   vim_navigator()
 
   -- -- add vim-startuptime plugin
-  -- add({
-  --   source = "dstein64/vim-startuptime",
-  -- })
+  add({
+    source = "dstein64/vim-startuptime",
+  })
 end)

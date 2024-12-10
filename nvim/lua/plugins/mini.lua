@@ -1,5 +1,3 @@
-local later = MiniDeps.later
-
 require("mini.icons").setup()
 -- require("mini.notify").setup()
 require("mini.tabline").setup()
@@ -33,6 +31,7 @@ require("mini.statusline").setup({
   },
 })
 
+local later = MiniDeps.later
 later(function()
   require("mini.align").setup()
   require("mini.bracketed").setup()
@@ -43,17 +42,6 @@ later(function()
   require("mini.pairs").setup()
   require("mini.splitjoin").setup()
   require("mini.surround").setup()
-
-  require("mini.indentscope").setup({
-    symbol = "╎", --  ╎ │
-    draw = {
-      delay = 50,
-      animation = require("mini.indentscope").gen_animation.none(), --<function: implements constant 20ms between steps>,
-    },
-    options = {
-      try_as_border = true,
-    },
-  })
 
   require("mini.files").setup({
     mappings = {

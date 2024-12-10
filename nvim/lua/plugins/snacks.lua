@@ -1,5 +1,11 @@
 require("snacks").setup({
-  bigfile = { enabled = true },
+  animate = {
+    enabled = true,
+    duration = 20, -- ms per step
+    easing = "linear",
+    fps = 60, -- frames per second. Global setting for all animations
+  },
+  bigfile = { enabled = false },
   dashboard = {
     enabled = true,
     preset = {
@@ -20,17 +26,17 @@ require("snacks").setup({
       { icon = " ", title = "Projects", section = "projects", padding = 1 },
     },
   },
+  indent = { enabled = true },
+  input = { enabled = true },
   notifier = {
     enabled = true,
     timeout = 3000,
     style = "fancy",
   },
+  profiler = { enabled = false },
   quickfile = { enabled = true },
+  scroll = { enabled = true },
   statuscolumn = { enabled = true },
-  words = { enabled = true },
-  profiler = {
-    enabled = false,
-  },
   terminal = {
     enabled = true,
     win = {
@@ -41,6 +47,7 @@ require("snacks").setup({
       width = 0.8,
     },
   },
+  words = { enabled = true },
   styles = {
     notification = {
       border = vim.g.border_style,
@@ -56,9 +63,11 @@ require("snacks").setup({
 })
 
 -- stylua: ignore start
-vim.keymap.set("n", "<leader>.",  function() Snacks.scratch() end, { desc = "Toggle Scratch Buffer" })
-vim.keymap.set("n", "<leader>S",  function() Snacks.scratch.select() end, { desc = "Select Scratch Buffer" })
-vim.keymap.set("n", "<leader>n",  function() Snacks.notifier.show_history() end, { desc = "Notification History" })
+vim.keymap.set("n", "<leader>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
+vim.keymap.set("n", "<leader>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom" })
+vim.keymap.set("n", "<leader>.", function() Snacks.scratch() end, { desc = "Toggle Scratch Buffer" })
+vim.keymap.set("n", "<leader>S", function() Snacks.scratch.select() end, { desc = "Select Scratch Buffer" })
+vim.keymap.set("n", "<leader>n", function() Snacks.notifier.show_history() end, { desc = "Notification History" })
 vim.keymap.set("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notifications" })
 vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
 vim.keymap.set("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "Lazygit" })
@@ -67,7 +76,7 @@ vim.keymap.set("n", "<leader>gB", function() Snacks.gitbrowse() end, { desc = "G
 vim.keymap.set("n", "<leader>lf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
 vim.keymap.set("n", "<leader>gl", function() Snacks.lazygit.log() end, { desc = "Lazygit Log (cwd)" })
 vim.keymap.set("n", "<leader>cr", function() Snacks.rename() end, { desc = "Rename File" })
-vim.keymap.set("n", "<leader>ps", function() Snacks.profiler.scratch() end, {desc = "Profiler Scratch Buffer" })
+vim.keymap.set("n", "<leader>ps", function() Snacks.profiler.scratch() end, { desc = "Profiler Scratch Buffer" })
 vim.keymap.set({"n", "t"}, "<c-,>", function() Snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
 vim.keymap.set({ "n", "t" }, "]]", function() Snacks.words.jump(vim.v.count1) end, { desc = "Next Reference" })
 vim.keymap.set({ "n", "t" }, "[[", function() Snacks.words.jump(-vim.v.count1) end, { desc = "Prev Reference" })
@@ -110,6 +119,8 @@ Snacks.toggle
 Snacks.toggle.treesitter():map("<leader>uT")
 Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
 Snacks.toggle.inlay_hints():map("<leader>uh")
+Snacks.toggle.indent():map("<leader>ug")
+Snacks.toggle.dim():map("<leader>uD")
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesActionRename",

@@ -40,6 +40,16 @@ autocmd("FileType", {
   end,
 })
 
+-- Clear cmdline messages after 1 sec
+autocmd("CmdlineLeave", {
+  group = vim.api.nvim_create_augroup("clearcmdline", { clear = true }),
+  callback = function()
+    vim.defer_fn(function()
+      vim.cmd('echo ""')
+    end, 1000) -- 1000ms delay
+  end,
+})
+
 -- create directories when needed, when saving a file
 autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("auto_create_dir", { clear = true }),
@@ -50,38 +60,6 @@ autocmd("BufWritePre", {
     local backup = vim.fn.fnamemodify(file, ":p:~:h")
     backup = backup:gsub("[/\\]", "%%")
     vim.go.backupext = backup
-  end,
-})
-
-autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("disable_mini_indentline", {}),
-  pattern = {
-    "",
-    "man",
-    "help",
-    "alpha",
-    "nofile",
-    "dashboard",
-    "neo-tree",
-    "Trouble",
-    "trouble",
-    "lazy",
-    "lspinfo",
-    "netrw",
-    "oil",
-    "oil_preview",
-    "mason",
-    "minifiles",
-    "fzf",
-    "notify",
-    "nocie",
-    "toggleterm",
-    "lazyterm",
-    "snacks_dashboard",
-  },
-  desc = "Disable Mini Indentline for some filetype, similar to IndentBlankLine",
-  callback = function()
-    vim.b.miniindentscope_disable = true
   end,
 })
 
