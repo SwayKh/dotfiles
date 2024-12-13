@@ -1,7 +1,7 @@
 [plugin]
 deps = [
-  { use = "imsi32/yatline", rev = "e255f5c" },
-  { use = "yazi-rs/plugins:full-border", rev = "4a6edc3" },
+  { use = "imsi32/yatline", rev = "1b4a9a1" },
+  { use = "yazi-rs/plugins:full-border", rev = "62f0789" },
 ]
 
 [flavor]

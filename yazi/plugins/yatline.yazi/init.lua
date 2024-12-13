@@ -228,7 +228,7 @@ end
 function Yatline.string.get:hovered_size()
 	local hovered = cx.active.current.hovered
 	if hovered then
-		return ya.readable_size(hovered:size() or hovered.cha.length)
+		return ya.readable_size(hovered:size() or hovered.cha.len)
 	else
 		return ""
 	end
@@ -522,7 +522,7 @@ function Yatline.coloreds.get:permissions()
 	local hovered = cx.active.current.hovered
 
 	if hovered then
-		local perm = hovered.cha:permissions()
+		local perm = hovered.cha:perm()
 
 		if perm then
 			local coloreds = {}
@@ -826,9 +826,9 @@ end
 local function config_paragraph(area, line)
 	local line_array = { line } or {}
 	if show_background then
-		return ui.Paragraph(area, line_array):style(style_c)
+		return ui.Text(line_array):area(area):style(style_c)
 	else
-		return ui.Paragraph(area, line_array)
+		return ui.Text(line_array):area(area)
 	end
 end
 
@@ -976,7 +976,7 @@ return {
 				return { config_paragraph(self._area) }
 			end
 
-			local gauge = ui.Gauge(self._area)
+			local gauge = ui.Gauge():area(self._area)
 			if progress.fail == 0 then
 				gauge = gauge:gauge_style(THEME.status.progress_normal)
 			else
@@ -998,13 +998,13 @@ return {
 
 		if display_header_line then
 			if show_line(header_line) then
-				Header.render = function(self)
+				Header.redraw = function(self)
 					local left_line = config_line(header_line.left, Side.LEFT)
 					local right_line = config_line(header_line.right, Side.RIGHT)
 
 					return {
 						config_paragraph(self._area, left_line),
-						ui.Paragraph(self._area, { right_line }):align(ui.Paragraph.RIGHT)
+						ui.Text(right_line):area(self._area):align(ui.Text.RIGHT)
 					}
 				end
 
@@ -1012,19 +1012,20 @@ return {
 				Header.children_remove = function() return {} end
 			end
 		else
-			Header.render = function() return {} end
+			Header.redraw = function() return {} end
 		end
 
 		if display_status_line then
 			if show_line(status_line) then
-				Status.render = function(self)
+				Status.redraw = function(self)
 					local left_line = config_line(status_line.left, Side.LEFT)
 					local right_line = config_line(status_line.right, Side.RIGHT)
+					local right_width = right_line:width()
 
 					return {
 						config_paragraph(self._area, left_line),
-						ui.Paragraph(self._area, { right_line }):align(ui.Paragraph.RIGHT),
-						table.unpack(Progress:render(self._area, right_line:width())),
+						ui.Text(right_line):area(self._area):align(ui.Text.RIGHT),
+						table.unpack(Progress:new(self._area, right_width):redraw()),
 					}
 				end
 
@@ -1032,7 +1033,7 @@ return {
 				Status.children_remove = function() return {} end
 			end
 		else
-			Status.render = function() return {} end
+			Status.redraw = function() return {} end
 		end
 
 		Root.layout = function(self)

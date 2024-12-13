@@ -18,7 +18,7 @@ end)
 --      Setup Functions      --
 --==========================--
 
-local function show_link()
+local show_link = ya.sync(function()
 	function Status:name()
 		local h = self._tab.current.hovered
 		if not h then
@@ -31,18 +31,18 @@ local function show_link()
 		end
 		return ui.Line(" " .. h.name .. linked)
 	end
-end
+end)
 
-local function show_user()
+local show_user = ya.sync(function()
 	Header:children_add(function()
 		if ya.target_family() ~= "unix" then
 			return ui.Line({})
 		end
 		return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
 	end, 500, Header.LEFT)
-end
+end)
 
-local function folder_rules()
+local folder_rules = ya.sync(function()
 	ps.sub("cd", function()
 		local cwd = cx.active.current.cwd
 		if cwd:ends_with("Downloads") then
@@ -53,14 +53,13 @@ local function folder_rules()
 			ya.manager_emit("sort", { "natural", reverse = false, dir_first = true })
 		end
 	end)
-end
+end)
 
 --==========================--
 --  Keymap/Plugin Functions  --
 --==========================--
 
-local st = {}
-local function resize_pane(args)
+local resize_pane = ya.sync(function(st, args)
 	local a = tonumber(args[2])
 	local b = tonumber(args[3])
 	local c = tonumber(args[4])
@@ -90,19 +89,19 @@ local function resize_pane(args)
 		end
 	end
 	ya.app_emit("resize", {})
-end
+end)
 
-local function pick_random()
+local pick_random = ya.sync(function()
 	local files = cx.active.current.files
 	ya.manager_emit("reveal", { files[math.random(1, #files)].name })
-end
+end)
 
-local function smart_enter()
+local smart_enter = ya.sync(function()
 	local h = cx.active.current.hovered
 	ya.manager_emit(h and h.cha.is_dir and "enter" or "open", { hovered = true })
-end
+end)
 
-local function move_parent(args)
+local move_parent = ya.sync(function(args)
 	local parent = cx.active.parent
 	if not parent then
 		return
@@ -112,7 +111,7 @@ local function move_parent(args)
 	if target and target.cha.is_dir then
 		ya.manager_emit("cd", { target.url })
 	end
-end
+end)
 
 local function move_to_new_dir()
 	local paths = get_selected()
@@ -220,28 +219,29 @@ local function chmod()
 end
 
 -- Entry function decides which function to call based on first arg
-local function entry(_, args)
-	if args[1] == "resize" then
-		resize_pane(args)
-	elseif args[1] == "random" then
+---@sync entry
+local function entry(_, job)
+	if job.args[1] == "resize" then
+		resize_pane(job.args)
+	elseif job.args[1] == "random" then
 		pick_random()
-	elseif args[1] == "new_dir" then
+	elseif job.args[1] == "new_dir" then
 		move_to_new_dir()
-	elseif args[1] == "smart_enter" then
+	elseif job.args[1] == "smart_enter" then
 		smart_enter()
-	elseif args[1] == "move_parent" then
-		move_parent(args)
-	elseif args[1] == "chmod" then
+	elseif job.args[1] == "move_parent" then
+		move_parent(job.args)
+	elseif job.args[1] == "chmod" then
 		chmod()
-	elseif args[1] == "chmodx" then
+	elseif job.args[1] == "chmodx" then
 		chmodx()
-	elseif args[1] == "share" then
+	elseif job.args[1] == "share" then
 		share()
 	end
 end
 
 -- Setup function to call all UI Change functions
-local function setup(_, opts)
+local function setup(_)
 	show_link()
 	show_user()
 	folder_rules()

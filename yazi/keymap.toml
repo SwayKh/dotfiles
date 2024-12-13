@@ -58,17 +58,17 @@ prepend_keymap = [
 
   { on = "<Backspace>", run = "unyank",                                                         desc = "Unyank" },
   { on = "<Esc>",       run = ["unyank", "escape"],                                             desc = "Clean Unyank/selected, Exit visual mode, cancel search" },
-  { on = "|",           run = "plugin --sync personal --args='resize 0 1 2'",                   desc = "Toggle Pane ratio of 0, 1, 2" },
-  { on = "`",           run = "plugin --sync personal --args='random'",                         desc = "Pick a random file" },
-  { on = "l",           run = "plugin --sync personal --args='smart_enter'",                    desc = "Smart enter, Open file or enter directory" },
-  { on = "J",           run = "plugin --sync personal --args='move_parent 1'",                  desc = "Go to below parent directory" },
-  { on = "K",           run = "plugin --sync personal --args='move_parent -1'",                 desc = "Go to above parent directory" },
+  { on = "|",           run = "plugin  personal --args='resize 0 1 2'",                   desc = "Toggle Pane ratio of 0, 1, 2" },
+  { on = "`",           run = "plugin  personal --args='random'",                         desc = "Pick a random file" },
+  { on = "l",           run = "plugin  personal --args='smart_enter'",                    desc = "Smart enter, Open file or enter directory" },
+  { on = "J",           run = "plugin  personal --args='move_parent 1'",                  desc = "Go to below parent directory" },
+  { on = "K",           run = "plugin  personal --args='move_parent -1'",                 desc = "Go to above parent directory" },
   { on = "<A-n>",       run = "plugin personal --args='new_dir'",                               desc = "Move to new directory" },
   { on = "<A-p>",       run = "plugin personal --args='chmod'",                                 desc = "Chmod on selected files" },
   { on = "<A-x>",       run = "plugin personal --args='chmodx'",                                desc = "Chmod on selected files" },
   { on = "<A-s>",       run = 'plugin personal --args="share"',                                 desc = "Share selected file with 0x0.st"},
-  { on = ["b", "g"],    run = 'shell "\"$HOME\"/scripts/set-wall \"$1\"" --confirm',            desc = "Set Wallpaper" },
-  { on = ["d", "g"],    run = 'shell "ripdrag -x -b -n -t -k -a \"$1\"" --confirm',             desc = "Drag and Drop with ripdrag" },
+  { on = ["b", "g"],    run = 'shell "\"$HOME\"/scripts/set-wall \"$1\""',                      desc = "Set Wallpaper" },
+  { on = ["d", "g"],    run = 'shell "ripdrag -x -b -n -t -k -a \"$@\""',                       desc = "Drag and Drop with ripdrag" },
   { on = "!",           run = 'shell "$SHELL" --block --confirm',                               desc = "Open shell here" },
   # { on = [ "b", "t" ],  run = 'shell "chmod " --interactive',                                   desc = "Testing interactive shells"}
 ]
@@ -123,7 +123,7 @@ keymap = [
 	{ on = "<PageDown>",   run = "arrow 100%",  desc = "Move cursor down one page" },
 
 	{ on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-  { on = "G",          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+	{ on = "G",          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
 	# Navigation
 	{ on = "h", run = "leave", desc = "Go back to the parent directory" },
@@ -132,31 +132,48 @@ keymap = [
 	{ on = "<Left>",  run = "leave", desc = "Go back to the parent directory" },
 	{ on = "<Right>", run = "enter", desc = "Enter the child directory" },
 
+	{ on = "H", run = "back",    desc = "Go back to the previous directory" },
+	{ on = "L", run = "forward", desc = "Go forward to the next directory" },
+
 	# Toggle
-	{ on = "<Space>", run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
-	{ on = "<C-a>",   run = "select_all --state=true",            desc = "Select all files" },
-	{ on = "<C-r>",   run = "select_all --state=none",            desc = "Invert selection of all files" },
+	{ on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = "<C-a>",   run = "toggle_all --state=on", desc = "Select all files" },
+	{ on = "<C-r>",   run = "toggle_all",            desc = "Invert selection of all files" },
 
 	# Visual mode
 	{ on = "v", run = "visual_mode",         desc = "Enter visual mode (selection mode)" },
 	{ on = "V", run = "visual_mode --unset", desc = "Enter visual mode (unset mode)" },
+
+	# Seeking
+	{ on = "K", run = "seek -5", desc = "Seek up 5 units in the preview" },
+	{ on = "J", run = "seek 5",  desc = "Seek down 5 units in the preview" },
+
+	# Spotting
+	{ on = "<Tab>", run = "spot", desc = "Spot hovered file" },
 
 	# Operation
 	{ on = "o",         run = "open",                        desc = "Open selected files" },
 	{ on = "O",         run = "open --interactive",          desc = "Open selected files interactively" },
 	{ on = "<Enter>",   run = "open",                        desc = "Open selected files" },
 	{ on = "<S-Enter>", run = "open --interactive",          desc = "Open selected files interactively" },
+	{ on = "y",         run = "yank",                        desc = "Yank selected files (copy)" },
 	{ on = "x",         run = "yank --cut",                  desc = "Yank selected files (cut)" },
 	{ on = "p",         run = "paste",                       desc = "Paste yanked files" },
 	{ on = "P",         run = "paste --force",               desc = "Paste yanked files (overwrite if the destination exists)" },
+	{ on = "-",         run = "link",                        desc = "Symlink the absolute path of yanked files" },
+	{ on = "_",         run = "link --relative",             desc = "Symlink the relative path of yanked files" },
+	{ on = "<C-->",     run = "hardlink",                    desc = "Hardlink yanked files" },
+	{ on = "Y",         run = "unyank",                      desc = "Cancel the yank status" },
+	{ on = "X",         run = "unyank",                      desc = "Cancel the yank status" },
+	{ on = "d",         run = "remove",                      desc = "Trash selected files" },
 	{ on = "D",         run = "remove --permanently",        desc = "Permanently delete selected files" },
 	{ on = "a",         run = "create",                      desc = "Create a file (ends with / for directories)" },
 	{ on = "r",         run = "rename --cursor=before_ext",  desc = "Rename selected file(s)" },
 	{ on = ";",         run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",         run = "shell --block --interactive", desc = "Run a shell command (block until finishes)" },
 	{ on = ".",         run = "hidden toggle",               desc = "Toggle the visibility of hidden files" },
-	{ on = "s",         run = "search fd",                   desc = "Search files by name via fd" },
-	{ on = "S",         run = "search rg",                   desc = "Search files by content via ripgrep" },
+	{ on = "s",         run = "search --via=fd",             desc = "Search files by name via fd" },
+	{ on = "S",         run = "search --via=rg",             desc = "Search files by content via ripgrep" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
 	{ on = "Z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
@@ -168,6 +185,12 @@ keymap = [
 	{ on = [ "m", "m" ], run = "linemode mtime",       desc = "Linemode: mtime" },
 	{ on = [ "m", "o" ], run = "linemode owner",       desc = "Linemode: owner" },
 	{ on = [ "m", "n" ], run = "linemode none",        desc = "Linemode: none" },
+
+	# Copy
+	{ on = [ "c", "c" ], run = "copy path",             desc = "Copy the file path" },
+	{ on = [ "c", "d" ], run = "copy dirname",          desc = "Copy the directory path" },
+	{ on = [ "c", "f" ], run = "copy filename",         desc = "Copy the filename" },
+	{ on = [ "c", "n" ], run = "copy name_without_ext", desc = "Copy the filename without extension" },
 
 	# Filter
 	{ on = "f", run = "filter --smart", desc = "Filter files" },
@@ -248,6 +271,32 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 ]
 
+[spot]
+
+keymap = [
+	{ on = "<Esc>", run = "close", desc = "Close the spot" },
+	{ on = "<C-[>", run = "close", desc = "Close the spot" },
+	{ on = "<C-c>", run = "close", desc = "Close the spot" },
+	{ on = "<Tab>", run = "close", desc = "Close the spot" },
+
+	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "h", run = "swipe -1", desc = "Swipe to the next file" },
+	{ on = "l", run = "swipe 1",  desc = "Swipe to the previous file" },
+
+	{ on = "<Up>",    run = "arrow -1", desc = "Move cursor up" },
+	{ on = "<Down>",  run = "arrow 1",  desc = "Move cursor down" },
+	{ on = "<Left>",  run = "swipe -1", desc = "Swipe to the next file" },
+	{ on = "<Right>", run = "swipe 1",  desc = "Swipe to the previous file" },
+
+	# Copy
+	{ on = [ "c", "c" ], run = "copy cell", desc = "Copy selected cell" },
+
+	# Help
+	{ on = "~",    run = "help", desc = "Open help" },
+	{ on = "<F1>", run = "help", desc = "Open help" },
+]
+
 [pick]
 
 keymap = [
@@ -268,10 +317,6 @@ keymap = [
 ]
 
 [input]
-
-prepend_keymap = [
-  { on   = "<Esc>", run  = "close", desc = "Cancel input" },
-]
 
 keymap = [
 	{ on = "<C-c>",   run = "close",          desc = "Cancel input" },

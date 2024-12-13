@@ -14,23 +14,26 @@ show_hidden    = true
 show_symlink   = false
 scrolloff      = 5
 mouse_event    = [ "touch", "scroll", "click", "move", "drag" ]
+title_format   = "Yazi: {cwd}"
 
 [preview]
+wrap            = "no"
 tab_size        = 2
-max_width       = 900
-max_height      = 1350
+max_width       = 600
+max_height      = 900
 cache_dir       = ""
+image_delay     = 30
 image_filter    = "triangle"
-image_quality   = 65
+image_quality   = 75
 sixel_fraction  = 15
 ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true,          for = "unix" },
-	{ run = 'code %*',            orphan = true,    desc = "code",         for = "windows" },
-	{ run = 'code -w %*',         block = true,     desc = "code (block)", for = "windows" },
+	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
+	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
 ]
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
@@ -38,10 +41,10 @@ open = [
 	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
-	{ run = 'xdg-open "$(dirname "$1")"',                            desc = "Reveal", for = "linux" },
-	{ run = 'open -R "$1"',                                          desc = "Reveal", for = "macos" },
-	{ run = 'explorer /select,                                       "%1"',           orphan = true,      desc = "Reveal", for = "windows" },
-	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true,    desc = "Show EXIF", for = "unix" },
+	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
+	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
+	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
@@ -65,12 +68,12 @@ rules = [
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive
 	{ mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
+	{ mime = "application/{tar,bzip*,7z*,xz,rar}", use = [ "extract", "reveal" ] },
 	# JSON
-	{ mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
+	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
 	# Empty file
-	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
+	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
 ]
@@ -89,6 +92,19 @@ fetchers = [
 	# Mimetype
 	{ id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
 ]
+spotters = [
+	{ name = "*/", run = "folder" },
+	# Code
+	{ mime = "text/*", run = "code" },
+	{ mime = "*/{xml,javascript,wine-extension-ini}", run = "code" },
+	# Image
+	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+	{ mime = "image/*", run = "image" },
+	# Video
+	{ mime = "video/*", run = "video" },
+	# Fallback
+	{ name = "*", run = "file" },
+]
 preloaders = [
 	# Image
 	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
@@ -99,15 +115,15 @@ preloaders = [
 	{ mime = "application/pdf", run = "pdf" },
 	# Font
 	{ mime = "font/*", run = "font" },
-	{ mime = "application/vnd.ms-opentype", run = "font" },
+	{ mime = "application/ms-opentype", run = "font" },
 ]
 previewers = [
 	{ name = "*/", run = "folder", sync = true },
 	# Code
 	{ mime = "text/*", run = "code" },
-	{ mime = "*/{xml,javascript,x-wine-extension-ini}", run = "code" },
+	{ mime = "*/{xml,javascript,wine-extension-ini}", run = "code" },
 	# JSON
-	{ mime = "application/{json,x-ndjson}", run = "json" },
+	{ mime = "application/{json,ndjson}", run = "json" },
 	# Image
 	{ mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
 	{ mime = "image/*", run = "image" },
@@ -117,12 +133,12 @@ previewers = [
 	{ mime = "application/pdf", run = "pdf" },
 	# Archive
 	{ mime = "application/{,g}zip", run = "archive" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar,iso9660-image}", run = "archive" },
+	{ mime = "application/{tar,bzip*,7z*,xz,rar,iso9660-image}", run = "archive" },
 	# Font
 	{ mime = "font/*", run = "font" },
-	{ mime = "application/vnd.ms-opentype", run = "font" },
+	{ mime = "application/ms-opentype", run = "font" },
 	# Empty file
-	{ mime = "inode/x-empty", run = "empty" },
+	{ mime = "inode/empty", run = "empty" },
 	# Fallback
 	{ name = "*", run = "file" },
 ]
@@ -136,7 +152,7 @@ cd_origin = "top-center"
 cd_offset = [ 0, 2, 50, 3 ]
 
 # create
-create_title  = "Create:"
+create_title  = [ "Create:", "Create (dir):" ]
 create_origin = "top-center"
 create_offset = [ 0, 2, 50, 3 ]
 
@@ -188,7 +204,7 @@ quit_content = "The following task is still running, are you sure you want to qu
 quit_origin  = "center"
 quit_offset  = [ 0, 0, 50, 15 ]
 
-[select]
+[pick]
 open_title  = "Open with:"
 open_origin = "hovered"
 open_offset = [ 0, 1, 50, 7 ]
@@ -198,6 +214,3 @@ sort_by      	 = "none"
 sort_sensitive = false
 sort_reverse 	 = false
 sort_translit  = false
-
-[log]
-enabled = false
