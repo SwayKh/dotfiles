@@ -105,7 +105,7 @@ later(function()
     MiniPick.builtin.files()
   end, { desc = "[S]earch [F]iles" })
 
-  vim.keymap.set("n", "<leader>s?", function()
+  vim.keymap.set("n", "<leader>so", function()
     MiniExtra.pickers.oldfiles()
   end, { desc = "[S]earch [O]ldfiles" })
 
@@ -195,7 +195,7 @@ later(function()
         cwd = os.getenv("HOME") .. "/dotfiles",
       },
     })
-  end, { desc = "[S]earch [N]vim config" })
+  end, { desc = "[S]earch [Dot]files directory" })
 
   vim.keymap.set("n", "<leader>st", function()
     local colorscheme = MiniPick.start({
@@ -209,18 +209,6 @@ later(function()
     end
   end, { desc = "[S]earch [T]hemes/Colorscheme" })
 
-  vim.keymap.set("n", "<leader>gc", function()
-    local git_commands = MiniPick.start({
-      source = {
-        name = " Git ",
-        items = vim.fn.getcompletion("Git ", "cmdline"),
-      },
-    })
-    if git_commands ~= nil then
-      vim.cmd("Git " .. git_commands)
-    end
-  end, { desc = "Search [G]it [C]ommands" })
-
   vim.keymap.set("n", "<leader>sb", function()
     local builtin = MiniPick.start({
       source = {
@@ -232,6 +220,18 @@ later(function()
       vim.cmd("Pick " .. builtin)
     end
   end, { desc = "[S]earch [B]uiltin Pick Commands" })
+
+  vim.keymap.set("n", "<leader>gc", function()
+    local git_commands = MiniPick.start({
+      source = {
+        name = " Git ",
+        items = vim.fn.getcompletion("Git ", "cmdline"),
+      },
+    })
+    if git_commands ~= nil then
+      vim.cmd("Git " .. git_commands)
+    end
+  end, { desc = "Search [G]it [C]ommands" })
 
   -- Only works with lazy
   -- vim.keymap.set("n", "<leader>lr", function()

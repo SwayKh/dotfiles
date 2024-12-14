@@ -107,7 +107,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 0
+vim.opt.scrolloff = 999
 vim.opt.sidescrolloff = 5
 
 -- Keep signcolumn on by default

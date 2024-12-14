@@ -5,7 +5,9 @@ require("snacks").setup({
     easing = "linear",
     fps = 60, -- frames per second. Global setting for all animations
   },
+
   bigfile = { enabled = false },
+
   dashboard = {
     enabled = true,
     preset = {
@@ -26,17 +28,52 @@ require("snacks").setup({
       { icon = " ", title = "Projects", section = "projects", padding = 1 },
     },
   },
-  indent = { enabled = true },
+
+  indent = {
+    enabled = true,
+    only_scope = true,
+    only_current = true,
+    indent = {
+      hl = {
+        "SnacksIndent1",
+        "SnacksIndent2",
+        "SnacksIndent3",
+        "SnacksIndent4",
+        "SnacksIndent5",
+        "SnacksIndent6",
+        "SnacksIndent7",
+        "SnacksIndent8",
+      },
+    },
+    scope = {
+      enabled = false,
+      underline = true,
+    },
+  },
+
   input = { enabled = true },
+
   notifier = {
     enabled = true,
     timeout = 3000,
     style = "fancy",
   },
+
   profiler = { enabled = false },
+
   quickfile = { enabled = true },
-  scroll = { enabled = true },
+
+  scroll = {
+    enabled = true,
+    animate = {
+      duration = { step = 10, total = 150 },
+      easing = "linear",
+    },
+    spamming = 10, -- threshold for spamming detection
+  },
+
   statuscolumn = { enabled = true },
+
   terminal = {
     enabled = true,
     win = {
@@ -47,7 +84,9 @@ require("snacks").setup({
       width = 0.8,
     },
   },
+
   words = { enabled = true },
+
   styles = {
     notification = {
       border = vim.g.border_style,
@@ -63,23 +102,23 @@ require("snacks").setup({
 })
 
 -- stylua: ignore start
-vim.keymap.set("n", "<leader>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
-vim.keymap.set("n", "<leader>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom" })
-vim.keymap.set("n", "<leader>.", function() Snacks.scratch() end, { desc = "Toggle Scratch Buffer" })
-vim.keymap.set("n", "<leader>S", function() Snacks.scratch.select() end, { desc = "Select Scratch Buffer" })
-vim.keymap.set("n", "<leader>n", function() Snacks.notifier.show_history() end, { desc = "Notification History" })
-vim.keymap.set("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notifications" })
-vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
-vim.keymap.set("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "Lazygit" })
-vim.keymap.set("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git Blame Line" })
-vim.keymap.set("n", "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
-vim.keymap.set("n", "<leader>lf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
-vim.keymap.set("n", "<leader>gl", function() Snacks.lazygit.log() end, { desc = "Lazygit Log (cwd)" })
-vim.keymap.set("n", "<leader>cr", function() Snacks.rename() end, { desc = "Rename File" })
-vim.keymap.set("n", "<leader>ps", function() Snacks.profiler.scratch() end, { desc = "Profiler Scratch Buffer" })
-vim.keymap.set({"n", "t"}, "<c-,>", function() Snacks.terminal.toggle() end, { desc = "Toggle Terminal" })
-vim.keymap.set({ "n", "t" }, "]]", function() Snacks.words.jump(vim.v.count1) end, { desc = "Next Reference" })
-vim.keymap.set({ "n", "t" }, "[[", function() Snacks.words.jump(-vim.v.count1) end, { desc = "Prev Reference" })
+vim.keymap.set("n", "<leader>z",    function() Snacks.zen() end,                     { desc = "Toggle Zen Mode" })
+vim.keymap.set("n", "<leader>Z",    function() Snacks.zen.zoom() end,                { desc = "Toggle Zoom" })
+vim.keymap.set("n", "<leader>.",    function() Snacks.scratch() end,                 { desc = "Toggle Scratch Buffer" })
+vim.keymap.set("n", "<leader>S",    function() Snacks.scratch.select() end,          { desc = "Select Scratch Buffer" })
+vim.keymap.set("n", "<leader>n",    function() Snacks.notifier.show_history() end,   { desc = "Notification History" })
+vim.keymap.set("n", "<leader>un",   function() Snacks.notifier.hide() end,           { desc = "Dismiss All Notifications" })
+vim.keymap.set("n", "<leader>bd",   function() Snacks.bufdelete() end,               { desc = "Delete Buffer" })
+vim.keymap.set("n", "<leader>lg",   function() Snacks.lazygit() end,                 { desc = "Lazygit" })
+vim.keymap.set("n", "<leader>gb",   function() Snacks.git.blame_line() end,          { desc = "Git Blame Line" })
+vim.keymap.set("n", "<leader>gB",   function() Snacks.gitbrowse() end,               { desc = "Git Browse" })
+vim.keymap.set("n", "<leader>lf",   function() Snacks.lazygit.log_file() end,        { desc = "Lazygit Current File History" })
+vim.keymap.set("n", "<leader>gl",   function() Snacks.lazygit.log() end,             { desc = "Lazygit Log (cwd)" })
+vim.keymap.set("n", "<leader>cr",   function() Snacks.rename() end,                  { desc = "Rename File" })
+vim.keymap.set("n", "<leader>ps",   function() Snacks.profiler.scratch() end,        { desc = "Profiler Scratch Buffer" })
+vim.keymap.set({"n", "t"}, "<c-,>", function() Snacks.terminal.toggle() end,         { desc = "Toggle Terminal" })
+vim.keymap.set({ "n", "t" }, "]]",  function() Snacks.words.jump(vim.v.count1) end,  { desc = "Next Reference" })
+vim.keymap.set({ "n", "t" }, "[[",  function() Snacks.words.jump(-vim.v.count1) end, { desc = "Prev Reference" })
 -- stylua: ignore end
 
 vim.keymap.set("n", "<leader>N", function()
@@ -106,7 +145,7 @@ end
 vim.print = _G.dd -- Override print to use snacks for `:=` command
 
 -- Create some toggle mappings
-Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>uS")
 Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
 Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
 Snacks.toggle.diagnostics():map("<leader>ud")
@@ -121,6 +160,7 @@ Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Ba
 Snacks.toggle.inlay_hints():map("<leader>uh")
 Snacks.toggle.indent():map("<leader>ug")
 Snacks.toggle.dim():map("<leader>uD")
+Snacks.toggle.scroll():map("<leader>us")
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesActionRename",

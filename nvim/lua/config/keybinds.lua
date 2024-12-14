@@ -7,14 +7,17 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
-map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
 map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
+
+map("n", "<leader>X", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
+map("n", "<space>x", "<Cmd>.lua<CR>", { desc = "Execute selected lua lines" })
+map("v", "<space>x", "<Cmd>lua<CR>", { desc = "Execute selected lua lines" })
 
 -- Reload all lua files under neovim config
 -- map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })
--- map("n", "<leader><CR>", function()
---  require("config.utils").reloadConfig()
--- end, { silent = true, desc = "Source nvim config" })
+map("n", "<leader>rc", function()
+  require("config.utils").reloadConfig()
+end, { silent = true, desc = "Source nvim config" })
 
 map("n", "<leader><tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
 map("n", "<leader><S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
@@ -57,8 +60,8 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Scroll keybinds
-map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines" })
-map({ "n", "v" }, "<M-k>", "5k", { desc = "Scroll 5 lines" })
+map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines down" })
+map({ "n", "v" }, "<M-k>", "5k", { desc = "Scroll 5 lines up" })
 
 -- Increment/Decreament
 -- map("n", "+", "<C-a>", { desc = "Increment number" })

@@ -63,14 +63,14 @@ autocmd("BufWritePre", {
   end,
 })
 
-autocmd({ "CursorMoved", "BufEnter" }, {
-  pattern = "*",
-  desc = "Center cursor on CursorMoved event",
-  callback = function()
-    -- vim.api.nvim_feedkeys("zz", "n", false)
-    vim.cmd("norm! zz")
-  end,
-})
+-- autocmd({ "CursorMoved", "BufEnter" }, {
+--   pattern = "*",
+--   desc = "Center cursor on CursorMoved event",
+--   callback = function()
+--     -- vim.api.nvim_feedkeys("zz", "n", false)
+--     vim.cmd("norm! zz")
+--   end,
+-- })
 
 autocmd("CursorMoved", {
   pattern = "*",
@@ -94,22 +94,6 @@ autocmd("CursorMoved", {
   end,
 })
 
--- autocmd({ "CursorMoved", "CursorMovedI", "BufEnter" }, {
---   desc = "Keep the Cursor in the middle of the screen",
---   group = vim.api.nvim_create_augroup("Keep Cursor centered", {}),
---   callback = function()
---     local win_h = vim.api.nvim_win_get_height(0)
---     local off = math.min(vim.o.scrolloff, math.floor(win_h / 2))
---     local dist = vim.fn.line("$") - vim.fn.line(".")
---     local rem = vim.fn.line("w$") - vim.fn.line("w0") + 1
---     if dist < off and win_h - rem + dist < off then
---       local view = vim.fn.winsaveview()
---       view.topline = view.topline + off - (win_h - rem + dist)
---       vim.fn.winrestview(view)
---     end
---   end,
--- })
-
 autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown" },
   callback = function()
@@ -117,25 +101,6 @@ autocmd({ "FileType" }, {
     vim.opt_local.spell = true
   end,
 })
-
--- Replace the default qf window with trouble.nvim
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "qf",
---   callback = function()
---     -- vim.cmd([[Trouble qflist open]])
---     if vim.fn.getloclist(0, { filewinid = 1 }).filewinid ~= 0 then
---       vim.defer_fn(function()
---         vim.cmd.lclose()
---         require("trouble").open("loclist")
---       end, 0)
---     else
---       vim.defer_fn(function()
---         vim.cmd.cclose()
---         require("trouble").open("quickfix")
---       end, 0)
---     end
---   end,
--- })
 
 autocmd("BufRead", {
   callback = function(ev)
@@ -192,7 +157,7 @@ autocmd("BufReadPost", {
   end,
 })
 
-autocmd("VimEnter", {
+autocmd("BufReadPre", {
   desc = "clear the last used search pattern",
   pattern = "*",
   callback = function()

@@ -98,12 +98,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
       end,
     })
 
-    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-      vim.lsp.inlay_hint.enable(true, { event.buf })
-      map("<leader>ti", function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-      end, "[T]oggle [I]nlay Hints")
-    end
+    -- Inlay Hint toggles are handled by snacks.nvim toggle modules
+    -- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+    --   vim.lsp.inlay_hint.enable(true, { event.buf })
+    --   map("<leader>ti", function()
+    --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+    --   end, "[T]oggle [I]nlay Hints")
+    -- end
 
     vim.diagnostic.config({
       signs = {
