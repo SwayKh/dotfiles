@@ -15,47 +15,6 @@ local get_selected = ya.sync(function()
 end)
 
 --==========================--
---      Setup Functions      --
---==========================--
-
-local show_link = ya.sync(function()
-	function Status:name()
-		local h = self._tab.current.hovered
-		if not h then
-			return ui.Line({})
-		end
-
-		local linked = ""
-		if h.link_to ~= nil then
-			linked = " -> " .. tostring(h.link_to)
-		end
-		return ui.Line(" " .. h.name .. linked)
-	end
-end)
-
-local show_user = ya.sync(function()
-	Header:children_add(function()
-		if ya.target_family() ~= "unix" then
-			return ui.Line({})
-		end
-		return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
-	end, 500, Header.LEFT)
-end)
-
-local folder_rules = ya.sync(function()
-	ps.sub("cd", function()
-		local cwd = cx.active.current.cwd
-		if cwd:ends_with("Downloads") then
-			ya.manager_emit("sort", { "modified", reverse = true, dir_first = true })
-		elseif cwd:ends_with("Screenshots") then
-			ya.manager_emit("sort", { "created", reverse = true })
-		else
-			ya.manager_emit("sort", { "natural", reverse = false, dir_first = true })
-		end
-	end)
-end)
-
---==========================--
 --  Keymap/Plugin Functions  --
 --==========================--
 
@@ -91,6 +50,11 @@ local resize_pane = ya.sync(function(st, args)
 	ya.app_emit("resize", {})
 end)
 
+local directory_tab = ya.sync(function()
+	local h = cx.active.current.hovered
+	ya.manager_emit("tab_create", h and h.cha.is_dir and { h.url } or { current = true })
+end)
+
 local pick_random = ya.sync(function()
 	local files = cx.active.current.files
 	ya.manager_emit("reveal", { files[math.random(1, #files)].name })
@@ -101,7 +65,7 @@ local smart_enter = ya.sync(function()
 	ya.manager_emit(h and h.cha.is_dir and "enter" or "open", { hovered = true })
 end)
 
-local move_parent = ya.sync(function(args)
+local move_parent = ya.sync(function(state, args)
 	local parent = cx.active.parent
 	if not parent then
 		return
@@ -218,6 +182,51 @@ local function chmod()
 	end
 end
 
+--==========================--
+--      Setup Functions      --
+--==========================--
+
+local show_link = ya.sync(function()
+	function Status:name()
+		local h = self._tab.current.hovered
+		if not h then
+			return ui.Line({})
+		end
+
+		local linked = ""
+		if h.link_to ~= nil then
+			linked = " -> " .. tostring(h.link_to)
+		end
+		return ui.Line(" " .. h.name .. linked)
+	end
+end)
+
+local show_user = ya.sync(function()
+	Header:children_add(function()
+		if ya.target_family() ~= "unix" then
+			return ui.Line({})
+		end
+		return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
+	end, 500, Header.LEFT)
+end)
+
+local folder_rules = ya.sync(function()
+	ps.sub("cd", function()
+		local cwd = cx.active.current.cwd
+		if cwd:ends_with("Downloads") then
+			ya.manager_emit("sort", { "modified", reverse = true, dir_first = true })
+		elseif cwd:ends_with("Screenshots") then
+			ya.manager_emit("sort", { "created", reverse = true })
+		else
+			ya.manager_emit("sort", { "natural", reverse = false, dir_first = true })
+		end
+	end)
+end)
+
+--==========================--
+--      Entry/Setup Functions      --
+--==========================--
+
 -- Entry function decides which function to call based on first arg
 ---@sync entry
 local function entry(_, job)
@@ -231,6 +240,8 @@ local function entry(_, job)
 		smart_enter()
 	elseif job.args[1] == "move_parent" then
 		move_parent(job.args)
+	elseif job.args[1] == "directory_tab" then
+		directory_tab()
 	elseif job.args[1] == "chmod" then
 		chmod()
 	elseif job.args[1] == "chmodx" then
@@ -241,6 +252,7 @@ local function entry(_, job)
 end
 
 -- Setup function to call all UI Change functions
+--- @sync setup
 local function setup(_)
 	show_link()
 	show_user()

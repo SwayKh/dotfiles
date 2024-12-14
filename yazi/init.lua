@@ -20,7 +20,7 @@ require("personal"):setup()
 require("yatline"):setup({
 	section_separator = { open = "", close = "" },
 	part_separator = { open = "", close = "" },
-	-- inverse_separator = { open = "", close = "" },
+	inverse_separator = { open = "", close = "" },
 
 	style_a = {
 		fg = "#1e2030",
