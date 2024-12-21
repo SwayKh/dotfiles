@@ -210,18 +210,18 @@ local show_user = ya.sync(function()
 	end, 500, Header.LEFT)
 end)
 
-local folder_rules = ya.sync(function()
+local folder_rules = function()
 	ps.sub("cd", function()
 		local cwd = cx.active.current.cwd
 		if cwd:ends_with("Downloads") then
-			ya.manager_emit("sort", { "modified", reverse = true, dir_first = true })
+			ya.manager_emit("sort", { "mtime", reverse = true, dir_first = true })
 		elseif cwd:ends_with("Screenshots") then
-			ya.manager_emit("sort", { "created", reverse = true })
+			ya.manager_emit("sort", { "btime", reverse = true })
 		else
 			ya.manager_emit("sort", { "natural", reverse = false, dir_first = true })
 		end
 	end)
-end)
+end
 
 --==========================--
 --      Entry/Setup Functions      --
