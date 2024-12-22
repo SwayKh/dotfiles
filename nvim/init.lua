@@ -32,7 +32,7 @@ end
 local function blink()
   add({
     source = "Saghen/blink.cmp",
-    checkout = "v0.7.1",
+    checkout = "v0.8.1",
     depends = {
       "rafamadriz/friendly-snippets",
     },
@@ -174,20 +174,31 @@ local function vim_navigator()
   })
 end
 
+local function hardtime()
+  add({
+    source = "m4xshen/hardtime.nvim",
+    depends = {
+      "MunifTanjim/nui.nvim",
+    },
+  })
+  require("hardtime").setup()
+end
+
 -- Load everything now
 now(function()
   require("config.option")
   require("config.autocmd")
   require("config.keybinds")
   colorscheme()
-  snacks()
   mini_plugins()
+  snacks()
 end)
 
 later(function()
   arrow()
   blink()
   -- debugger()
+  hardtime()
   formatter()
   linter()
   lsp()

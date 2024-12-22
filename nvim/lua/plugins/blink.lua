@@ -2,18 +2,21 @@ require("blink.cmp").setup({
   fuzzy = {
     prebuilt_binaries = {
       download = true,
-      force_version = "v0.7.1",
+      force_version = "v0.8.1",
     },
   },
 
   keymap = {
     preset = "default",
+    cmdline = {
+      preset = "super-tab",
+    },
   },
 
   appearance = {
     highlight_ns = vim.api.nvim_create_namespace("blink_cmp"),
     use_nvim_cmp_as_default = false,
-    nerd_font_variant = "normal",
+    nerd_font_variant = "mono",
     kind_icons = {
       Supermaven = "",
       Codeium = "",
@@ -62,14 +65,18 @@ require("blink.cmp").setup({
       border = vim.g.border_style,
       scrolloff = 2,
       scrollbar = false,
-      gap = 1,
       draw = {
-        columns = { { "kind_icon" }, { "label", "label_description", "kind", gap = 1 } },
+        columns = { { "kind_icon" }, { "label", "kind", "source_name", gap = 1 } },
         components = {
-          label = { width = { min = 25, fill = false } }, -- default is true
-          label_description = { width = { fill = false } },
-          kind = { width = { fill = false } },
-          source_name = { width = { fill = false } },
+          label = { width = { min = 20, fill = true } }, -- default is true
+          label_description = { width = { fill = true } },
+          kind = { width = { fill = true } },
+          source_name = {
+            width = { fill = true },
+            text = function(ctx)
+              return "[" .. ctx.source_name .. "]"
+            end,
+          },
         },
       },
     },
@@ -96,12 +103,22 @@ require("blink.cmp").setup({
   },
 
   sources = {
-    completion = {
-      enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
-    },
+    default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+    cmdline = function()
+      local type = vim.fn.getcmdtype()
+      -- Search forward and backward
+      if type == "/" or type == "?" then
+        return { "buffer" }
+      end
+      -- Commands
+      if type == ":" then
+        return { "cmdline" }
+      end
+      return {}
+    end,
+    min_keyword_length = 0,
     providers = {
-      lsp = { fallback_for = { "lazydev" } },
-      lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+      lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100, fallbacks = { "lsp" } },
     },
   },
 
@@ -120,11 +137,7 @@ require("blink.cmp").setup({
     end,
   },
 
-  opts_extend = { "sources.completion.enabled_providers" },
+  -- opts_extend = { "sources.default" },
 })
 
--- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { link = "NormalFloat" })
--- vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = "NormalFloat" })
--- vim.api.nvim_set_hl(0, "BlinkCmpLabel", { link = "NormalFloat" })
--- vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { link = "NormalFloat" })
 return {}

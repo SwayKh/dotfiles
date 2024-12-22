@@ -29,3 +29,9 @@ btop++ needs an interactive shell to run.
 2024/11/30 (16:19:55) | ===> btop++ v.1.4.0
 2024/11/30 (16:19:55) | ERROR: Stall in Runner thread, restarting!
 2024/12/01 (20:37:14) | WARNING: Failed to join _runner thread on exit!
+
+2024/12/16 (21:19:48) | ===> btop++ v.1.4.0
+2024/12/16 (21:19:48) | ERROR: Stall in Runner thread, restarting!
+
+2024/12/20 (15:16:07) | ===> btop++ v.1.4.0
+2024/12/20 (15:16:07) | ERROR: Stall in Runner thread, restarting!

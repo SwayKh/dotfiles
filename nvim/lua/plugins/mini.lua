@@ -57,6 +57,11 @@ later(function()
     },
   })
 
+  vim.keymap.set("n", "-", function()
+    MiniFiles.open(vim.api.nvim_buf_get_name(0))
+    MiniFiles.reveal_cwd()
+  end, { desc = "Open Mini Files" })
+
   vim.api.nvim_create_autocmd("User", {
     pattern = { "MiniFilesWindowOpen", "MiniFilesWindowUpdate" },
     callback = function(args)
@@ -232,26 +237,6 @@ later(function()
       vim.cmd("Git " .. git_commands)
     end
   end, { desc = "Search [G]it [C]ommands" })
-
-  -- Only works with lazy
-  -- vim.keymap.set("n", "<leader>lr", function()
-  --   local plugin = MiniPick.start({
-  --     source = {
-  --       name = " Reload Plugins ",
-  --       items = require("config.utils").pluginNames(),
-  --     },
-  --   })
-  --   if plugin ~= nil then
-  --     vim.cmd("Lazy reload " .. plugin)
-  --   end
-  -- end, { desc = "Pick plugins to reload" })
-
-  vim.keymap.set("n", "-", function()
-    local buf_name = vim.api.nvim_buf_get_name(0)
-    local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-    MiniFiles.open(path)
-    MiniFiles.reveal_cwd()
-  end, { desc = "Open Mini Files" })
 
   vim.keymap.set(
     { "n", "x" },

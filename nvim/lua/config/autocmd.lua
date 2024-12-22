@@ -41,14 +41,14 @@ autocmd("FileType", {
 })
 
 -- Clear cmdline messages after 1 sec
-autocmd("CmdlineLeave", {
-  group = vim.api.nvim_create_augroup("clearcmdline", { clear = true }),
-  callback = function()
-    vim.defer_fn(function()
-      vim.cmd('echo ""')
-    end, 1000) -- 1000ms delay
-  end,
-})
+-- autocmd("CmdlineLeave", {
+--   group = vim.api.nvim_create_augroup("clearcmdline", { clear = true }),
+--   callback = function()
+--     vim.defer_fn(function()
+--       vim.cmd('echo ""')
+--     end, 1000) -- 1000ms delay
+--   end,
+-- })
 
 -- create directories when needed, when saving a file
 autocmd("BufWritePre", {
