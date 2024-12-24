@@ -32,7 +32,7 @@ end
 local function blink()
   add({
     source = "Saghen/blink.cmp",
-    checkout = "v0.8.1",
+    checkout = "v0.8.2",
     depends = {
       "rafamadriz/friendly-snippets",
     },
@@ -59,10 +59,6 @@ local function colorscheme()
     colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
   })
   vim.cmd.colorscheme("kanagawa")
-
-  -- vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
-  -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-  -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 end
 
 local function debugger()
@@ -99,7 +95,7 @@ local function lsp()
     depends = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      -- "WhoIsSethDaniel/mason-tool-installer.nvim",
       "nvim-lua/plenary.nvim",
       "folke/lazydev.nvim",
     },
@@ -174,16 +170,6 @@ local function vim_navigator()
   })
 end
 
-local function hardtime()
-  add({
-    source = "m4xshen/hardtime.nvim",
-    depends = {
-      "MunifTanjim/nui.nvim",
-    },
-  })
-  require("hardtime").setup()
-end
-
 -- Load everything now
 now(function()
   require("config.option")
@@ -198,7 +184,6 @@ later(function()
   arrow()
   blink()
   -- debugger()
-  hardtime()
   formatter()
   linter()
   lsp()
@@ -207,8 +192,8 @@ later(function()
   trouble()
   vim_navigator()
 
-  -- -- add vim-startuptime plugin
-  add({
-    source = "dstein64/vim-startuptime",
-  })
+  -- add vim-startuptime plugin
+  -- add({
+  --   source = "dstein64/vim-startuptime",
+  -- })
 end)

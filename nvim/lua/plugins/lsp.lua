@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
-local mason_tool_installer = require("mason-tool-installer")
+-- local mason_tool_installer = require("mason-tool-installer")
 local util = require("lspconfig.util")
 local lspui = require("lspconfig.ui.windows")
 
@@ -97,14 +97,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
       end,
     })
-
-    -- Inlay Hint toggles are handled by snacks.nvim toggle modules
-    -- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-    --   vim.lsp.inlay_hint.enable(true, { event.buf })
-    --   map("<leader>ti", function()
-    --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-    --   end, "[T]oggle [I]nlay Hints")
-    -- end
 
     vim.diagnostic.config({
       signs = {
@@ -222,35 +214,36 @@ mason.setup({
   },
 })
 
-local ensure_installed = vim.tbl_keys(servers or {})
-vim.list_extend(ensure_installed, {
-  -- FORMATTERS
-  { "gofumpt" }, -- GO
-  { "goimports" }, -- GO
-  { "black" }, -- Python
-  { "isort" }, -- Python
-  { "prettierd" }, -- JS and Many More
-  { "prettier" }, -- JS and Many More
-  { "shfmt" }, -- Shell Script
-  { "stylua" }, -- Lua
-
-  -- LINTERS
-  { "codespell" },
-  -- { "eslint_d" },
-  { "pylint" },
-  { "shellcheck" },
-
-  --DAP
-  -- { "delve" },
-  -- { "debugpy" },
-})
-mason_tool_installer.setup({
-  ensure_installed = ensure_installed,
-
-  auto_update = false,
-  run_on_start = false,
-  start_delay = 3000, -- 3 second delay
-})
+-- local ensure_installed = vim.tbl_keys(servers or {})
+-- vim.list_extend(ensure_installed, {
+--   -- FORMATTERS
+--   { "gofumpt" }, -- GO
+--   { "goimports" }, -- GO
+--   { "golangci-lint" }, -- GO
+--   { "black" }, -- Python
+--   { "isort" }, -- Python
+--   { "prettierd" }, -- JS and Many More
+--   { "prettier" }, -- JS and Many More
+--   { "shfmt" }, -- Shell Script
+--   { "stylua" }, -- Lua
+--
+--   -- LINTERS
+--   { "codespell" },
+--   -- { "eslint_d" },
+--   { "pylint" },
+--   { "shellcheck" },
+--
+--   --DAP
+--   -- { "delve" },
+--   -- { "debugpy" },
+-- })
+-- mason_tool_installer.setup({
+--   ensure_installed = ensure_installed,
+--
+--   auto_update = false,
+--   run_on_start = false,
+--   start_delay = 3000, -- 3 second delay
+-- })
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
