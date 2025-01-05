@@ -58,6 +58,9 @@ riverctl hide-cursor when-typing enabled
 riverctl set-cursor-warp on-focus-change
 riverctl xcursor-theme "Bibata-Modern-Classic" 18
 
+riverctl keyboard-layout -options "ctrl:nocaps" us # Map capslock to ctrl
+# riverctl keyboard-layout -options "caps:escape" us # Map capslock to escape
+
 # Touchpad Settings
 # Get device name from riverctl list-inputs
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" tap enabled
