@@ -2,7 +2,7 @@ require("blink.cmp").setup({
   fuzzy = {
     prebuilt_binaries = {
       download = true,
-      force_version = "v0.8.2",
+      force_version = "v0.9.2",
     },
   },
 
@@ -58,7 +58,11 @@ require("blink.cmp").setup({
   },
 
   completion = {
-    list = { selection = "auto_insert" },
+    list = {
+      selection = function(ctx)
+        return ctx.mode == "cmdline" and "auto_insert" or "preselect"
+      end,
+    },
     accept = { auto_brackets = { enabled = true } },
     menu = {
       min_width = 35,
@@ -67,6 +71,7 @@ require("blink.cmp").setup({
       scrollbar = false,
       draw = {
         columns = { { "kind_icon" }, { "label", "kind", "source_name", gap = 1 } },
+        align_to = "cursor",
         components = {
           label = { width = { min = 20, fill = true } }, -- default is true
           label_description = { width = { fill = true } },
