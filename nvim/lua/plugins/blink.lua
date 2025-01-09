@@ -2,14 +2,14 @@ require("blink.cmp").setup({
   fuzzy = {
     prebuilt_binaries = {
       download = true,
-      force_version = "v0.9.2",
+      force_version = "v0.10.0",
     },
   },
 
   keymap = {
     preset = "default",
     cmdline = {
-      preset = "super-tab",
+      preset = "default",
     },
   },
 
@@ -17,51 +17,12 @@ require("blink.cmp").setup({
     highlight_ns = vim.api.nvim_create_namespace("blink_cmp"),
     use_nvim_cmp_as_default = false,
     nerd_font_variant = "mono",
-    kind_icons = {
-      Supermaven = "",
-      Codeium = "",
-      Array = "󰅪",
-      Boolean = "⊨",
-      Key = "󰌆",
-      Namespace = "󰅪",
-      Null = "NULL",
-      Number = "#",
-      Object = "󰀚",
-      Package = "󰏗",
-      String = "󰀬",
-      TypeParameter = "󰊄",
-      Text = "󰉿",
-      Method = "󰆧",
-      Function = "󰊕",
-      Constructor = "",
-      Field = "󰜢",
-      Variable = "󰀫",
-      Class = "󰠱",
-      Interface = "",
-      Module = "",
-      Property = "󰜢",
-      Unit = "󰑭",
-      Value = "󰎠",
-      Enum = "",
-      Keyword = "󰌋",
-      Snippet = "",
-      Color = "󰏘",
-      File = "󰈙",
-      Reference = "󰈇",
-      Folder = "󰉋",
-      EnumMember = "",
-      Constant = "󰏿",
-      Struct = "󰙅",
-      Event = "",
-      Operator = "󰆕",
-    },
+    kind_icons = vim.g.kind_icons,
   },
 
   completion = {
     list = {
-      selection = function(ctx)
-        return ctx.mode == "cmdline" and "auto_insert" or "preselect"
-      end,
+      selection = { preselect = true, auto_insert = true },
     },
     accept = { auto_brackets = { enabled = true } },
     menu = {
@@ -71,11 +32,16 @@ require("blink.cmp").setup({
       scrollbar = false,
       draw = {
         columns = { { "kind_icon" }, { "label", "kind", "source_name", gap = 1 } },
-        align_to = "cursor",
+        align_to = "none",
         components = {
           label = { width = { min = 20, fill = true } }, -- default is true
           label_description = { width = { fill = true } },
-          kind = { width = { fill = true } },
+          kind = {
+            width = { fill = true },
+            text = function(ctx)
+              return "" .. ctx.kind .. ""
+            end,
+          },
           source_name = {
             width = { fill = true },
             text = function(ctx)
