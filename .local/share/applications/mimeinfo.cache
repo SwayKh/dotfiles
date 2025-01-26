@@ -1,4 +1,6 @@
 [MIME Cache]
+application/vnd.mozilla.xul+xml=floorp.desktop;
+application/xhtml+xml=floorp.desktop;
 image/bmp=feh.desktop;
 image/gif=feh.desktop;
 image/heic=feh.desktop;
@@ -17,5 +19,11 @@ image/x-portable-graymap=feh.desktop;
 image/x-portable-pixmap=feh.desktop;
 image/x-tga=feh.desktop;
 image/x-xbitmap=feh.desktop;
+text/html=floorp.desktop;
+text/mml=floorp.desktop;
+text/xml=floorp.desktop;
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop;
 x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop;
+x-scheme-handler/discord-831593107883032657=discord-831593107883032657.desktop;
+x-scheme-handler/http=floorp.desktop;
+x-scheme-handler/https=floorp.desktop;

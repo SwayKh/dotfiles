@@ -344,7 +344,7 @@ riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
 riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
 riverctl rule-add -app-id "Spotify" tags $spotify_tag
-riverctl rule-add -app-id "YouTube Music" tags $spotify_tag
+riverctl rule-add -title "YouTube Music" tags $spotify_tag
 riverctl rule-add -app-id "org.qbittorrent.qBittorrent" tags $special_tag
 
 riverctl rule-add -title "Brawlhalla" fullscreen

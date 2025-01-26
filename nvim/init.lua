@@ -32,7 +32,7 @@ end
 local function blink()
   add({
     source = "Saghen/blink.cmp",
-    checkout = "v0.10.0",
+    checkout = "v0.11.0",
     depends = {
       "rafamadriz/friendly-snippets",
     },
