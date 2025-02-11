@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+# Variables
+terminal="footclient"
+filemanager="thunar"
+browser="floorp"
+mod="Mod4"
+
 # The Figlet font is DOS Rebel from https://github.com/xero/figlet-fonts/blob/master/Examples.md
 
 #    █████████               █████                      █████                         █████
@@ -74,6 +80,55 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpoint
 riverctl default-layout rivertile
 rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
 
+#   █████████                                █████             █████                              █████
+#  ███░░░░░███                              ░░███             ░░███                              ░░███
+# ░███    ░░░   ██████  ████████   ██████   ███████    ██████  ░███████   ████████   ██████    ███████
+# ░░█████████  ███░░███░░███░░███ ░░░░░███ ░░░███░    ███░░███ ░███░░███ ░░███░░███ ░░░░░███  ███░░███
+#  ░░░░░░░░███░███ ░░░  ░███ ░░░   ███████   ░███    ░███ ░░░  ░███ ░███  ░███ ░███  ███████ ░███ ░███
+#  ███    ░███░███  ███ ░███      ███░░███   ░███ ███░███  ███ ░███ ░███  ░███ ░███ ███░░███ ░███ ░███
+# ░░█████████ ░░██████  █████    ░░████████  ░░█████ ░░██████  ████ █████ ░███████ ░░████████░░████████
+#  ░░░░░░░░░   ░░░░░░  ░░░░░      ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░ ░░░░░  ░███░░░   ░░░░░░░░  ░░░░░░░░
+#                                                                         ░███
+#                                                                         █████
+#                                                                        ░░░░░
+# Scratchpads
+terminal_tag=$((1 << 11))
+files_tag=$((1 << 12))
+dots_tag=$((1 << 13))
+monitor_tag=$((1 << 14))
+docs_tag=$((1 << 15))
+ticktick_tag=$((1 << 16))
+spotify_tag=$((1 << 17))
+special_tag=$((1 << 18))
+project_tag=$((1 << 19))
+# special3_tag=$((1 << 20))
+
+all_tags=$(((1 << 32) - 1))
+sticky_tag=$((1 << 31))
+scratch_tags=$((terminal_tag | files_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special_tag | sticky_tag))
+
+all_but_scratch_tag=$((all_tags ^ scratch_tags))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+scratchpad="$HOME/.config/river/scratchpads.sh"
+
+riverctl map normal $mod+Shift T spawn "$scratchpad term"
+riverctl map normal $mod+Shift M spawn "$scratchpad btop"
+riverctl map normal $mod+Shift E spawn "$scratchpad files"
+riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
+riverctl map normal $mod+Shift P spawn "$scratchpad project"
+
+# Mapping for sending to stickypad
+riverctl map normal $mod Slash toggle-view-tags $sticky_tag
+
+# mapping for sending to special_tag (Scratchpad)
+riverctl map normal $mod Space set-view-tags $special_tag
+riverctl map normal $mod+Shift Space set-focused-tags $special_tag
+
+riverctl map normal $mod+Shift D set-focused-tags $docs_tag
+riverctl map normal $mod+Shift S set-focused-tags $spotify_tag
+riverctl map normal $mod+Shift I set-focused-tags $ticktick_tag
+
 #  ███████████   ███                 █████
 # ░░███░░░░░███ ░░░                 ░░███
 #  ░███    ░███ ████  ████████    ███████   █████
@@ -84,12 +139,6 @@ rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
 # ░░░░░░░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░░
 
 # Binds
-# Variables
-terminal="footclient"
-filemanager="thunar"
-browser="floorp"
-mod="Mod4"
-goTerm="footclient -e --app-id special-go --working-directory=$HOME/Projects/Go/ zsh -ic 'tmux new-session -s Go'"
 
 # My Mappings
 riverctl map normal $mod T spawn "$terminal -e tmux"
@@ -107,7 +156,6 @@ riverctl map normal $mod I spawn "ticktick"
 riverctl map normal $mod E spawn "$terminal -e zsh -ic yazi"
 riverctl map normal $mod M spawn "$terminal -e btop"
 riverctl map normal $mod KP_Add spawn "galculator"
-riverctl map normal $mod P spawn "$goTerm"
 
 riverctl map normal $mod Q close
 riverctl map normal $mod+Shift Q exit
@@ -135,7 +183,7 @@ for i in $(seq 1 9); do
   # Tags are basically workspaces, but different
   tags=$((1 << ("$i" - 1)))
   # Move focus to Tag(Workspace)
-  riverctl map normal $mod "$i" set-focused-tags $tags
+  riverctl map normal $mod "$i" set-focused-tags $(($sticky_tag + $tags))
   # Move view(window) to Tag(Workspace)
   riverctl map normal $mod+Shift "$i" set-view-tags $tags
   # Show view(window) from specified tag on current tag(workspace)
@@ -170,7 +218,6 @@ riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
 
 # $mod+0 to focus all tags
 # $mod+Shift+0 to tag focused view with all tags
-all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod 0 set-focused-tags $all_tags
 riverctl map normal $mod+Shift 0 set-view-tags $all_tags
 
@@ -261,50 +308,6 @@ riverctl map normal $mod Comma focus-output previous
 riverctl map normal $mod+Shift Period send-to-output next
 riverctl map normal $mod+Shift Comma send-to-output previous
 
-#   █████████                                █████             █████                              █████
-#  ███░░░░░███                              ░░███             ░░███                              ░░███
-# ░███    ░░░   ██████  ████████   ██████   ███████    ██████  ░███████   ████████   ██████    ███████
-# ░░█████████  ███░░███░░███░░███ ░░░░░███ ░░░███░    ███░░███ ░███░░███ ░░███░░███ ░░░░░███  ███░░███
-#  ░░░░░░░░███░███ ░░░  ░███ ░░░   ███████   ░███    ░███ ░░░  ░███ ░███  ░███ ░███  ███████ ░███ ░███
-#  ███    ░███░███  ███ ░███      ███░░███   ░███ ███░███  ███ ░███ ░███  ░███ ░███ ███░░███ ░███ ░███
-# ░░█████████ ░░██████  █████    ░░████████  ░░█████ ░░██████  ████ █████ ░███████ ░░████████░░████████
-#  ░░░░░░░░░   ░░░░░░  ░░░░░      ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░ ░░░░░  ░███░░░   ░░░░░░░░  ░░░░░░░░
-#                                                                         ░███
-#                                                                         █████
-#                                                                        ░░░░░
-
-# Scratchpads
-# Create scratchpad tags for each tag I need
-terminal_tag=$((1 << 11))
-files_tag=$((1 << 12))
-dots_tag=$((1 << 13))
-monitor_tag=$((1 << 14))
-docs_tag=$((1 << 15))
-ticktick_tag=$((1 << 16))
-spotify_tag=$((1 << 17))
-special_tag=$((1 << 18))
-# special2_tag=$((1 << 19))
-# special3_tag=$((1 << 20))
-#
-all_tags=$(((1 << 32) - 1))
-scratch_tags=$((terminal_tag | files_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special_tag))
-all_but_scratch_tag=$((all_tags ^ scratch_tags))
-riverctl spawn-tagmask ${all_but_scratch_tag}
-
-scratchpad="$HOME/.config/river/scratchpads.sh"
-
-riverctl map normal $mod+Shift T spawn "$scratchpad term"
-riverctl map normal $mod+Shift M spawn "$scratchpad btop"
-riverctl map normal $mod+Shift E spawn "$scratchpad files"
-riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
-# mapping for sending to special_tag (Scratchpad)
-riverctl map normal $mod Space set-view-tags $special_tag
-riverctl map normal $mod+Shift Space set-focused-tags $special_tag
-
-riverctl map normal $mod+Shift D set-focused-tags $docs_tag
-riverctl map normal $mod+Shift S set-focused-tags $spotify_tag
-riverctl map normal $mod+Shift I set-focused-tags $ticktick_tag
-
 #  ███████████              ████
 # ░░███░░░░░███            ░░███
 #  ░███    ░███  █████ ████ ░███   ██████   █████
@@ -342,6 +345,7 @@ riverctl rule-add -app-id "special-term" tags $terminal_tag
 riverctl rule-add -app-id "special-files" tags $files_tag
 riverctl rule-add -app-id "special-nvim" tags $dots_tag
 riverctl rule-add -app-id "special-btop" tags $monitor_tag
+riverctl rule-add -app-id "special-project" tags $project_tag
 riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "mpv" tags $docs_tag
 riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
@@ -360,6 +364,8 @@ riverctl rule-add -app-id "special-term" fullscreen
 riverctl rule-add -app-id "special-files" fullscreen
 riverctl rule-add -app-id "special-nvim" fullscreen
 riverctl rule-add -app-id "special-btop" fullscreen
+riverctl rule-add -app-id "special-project" fullscreen
+
 riverctl rule-add -title "Special Offers" float # Steam
 riverctl rule-add -title "Friends List" float   # Steam
 riverctl rule-add -title "Steam Settings" float # Steam
