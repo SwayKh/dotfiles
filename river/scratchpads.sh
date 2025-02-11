@@ -15,7 +15,7 @@ terminal_tag=$((1 << 11))
 files_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
-project_tag=$((1 << 19))
+project_tag=$((1 << 18))
 
 term="$terminal --app-id special-term -e zsh -ic \"tmux new-session -s Terminal\""
 btop="$terminal --app-id special-btop -e btop"

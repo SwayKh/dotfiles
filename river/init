@@ -106,7 +106,7 @@ spotify_tag=$((1 << 17))
 project_tag=$((1 << 18))
 # special3_tag=$((1 << 19))
 
-scratch_tags=$((terminal_tag | files_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | special_tag | sticky_tag))
+scratch_tags=$((special_tag | sticky_tag | terminal_tag | files_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | project_tag))
 
 all_but_scratch_tag=$((all_tags ^ scratch_tags))
 riverctl spawn-tagmask ${all_but_scratch_tag}
