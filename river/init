@@ -118,7 +118,7 @@ riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null &&
 
 #Scripts
 riverctl map normal $mod C spawn "$HOME/scripts/colorpicker"
-riverctl map normal $mod Space spawn "$HOME/scripts/random-swwwbg"
+riverctl map normal $mod Tab spawn "$HOME/scripts/random-swwwbg"
 riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
 riverctl map normal $mod Escape spawn "$HOME/scripts/rofi-power"
 riverctl map normal $mod+Control W spawn "$HOME/scripts/rofi-wifi"
@@ -297,11 +297,13 @@ riverctl map normal $mod+Shift T spawn "$scratchpad term"
 riverctl map normal $mod+Shift M spawn "$scratchpad btop"
 riverctl map normal $mod+Shift E spawn "$scratchpad files"
 riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
+# mapping for sending to special_tag (Scratchpad)
+riverctl map normal $mod Space set-view-tags $special_tag
+riverctl map normal $mod+Shift Space set-focused-tags $special_tag
 
 riverctl map normal $mod+Shift D set-focused-tags $docs_tag
 riverctl map normal $mod+Shift S set-focused-tags $spotify_tag
 riverctl map normal $mod+Shift I set-focused-tags $ticktick_tag
-riverctl map normal $mod+Shift Space set-focused-tags $special_tag
 
 #  ███████████              ████
 # ░░███░░░░░███            ░░███
@@ -354,6 +356,10 @@ riverctl rule-add -app-id "feh" fullscreen
 riverctl rule-add -app-id "org.libretro.RetroArch" fullscreen
 riverctl rule-add -app-id "es-de" fullscreen
 
+riverctl rule-add -app-id "special-term" fullscreen
+riverctl rule-add -app-id "special-files" fullscreen
+riverctl rule-add -app-id "special-nvim" fullscreen
+riverctl rule-add -app-id "special-btop" fullscreen
 riverctl rule-add -title "Special Offers" float # Steam
 riverctl rule-add -title "Friends List" float   # Steam
 riverctl rule-add -title "Steam Settings" float # Steam
