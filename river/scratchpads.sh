@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 #
 # Riverctl script to open scratchpads, and open programs if Scratchpads are
-# empty. Usage "./scratchpads.sh <term|btop|lf|nvim>"
+# empty. Usage "./scratchpads.sh <term|btop|lf|nvim|project>"
 #
 
 # Check if an argument is provided
@@ -15,11 +15,14 @@ terminal_tag=$((1 << 11))
 files_tag=$((1 << 12))
 dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
+project_tag=$((1 << 19))
 
 term="$terminal --app-id special-term -e zsh -ic \"tmux new-session -s Terminal\""
 btop="$terminal --app-id special-btop -e btop"
 nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim && zsh'\""
 files="$terminal --app-id special-files -e zsh -ic yazi"
+
+projectTerm="footclient --app-id special-project -e zsh -ic '$HOME/scripts/tmux-project'"
 
 case "$1" in
 "term")
@@ -41,6 +44,11 @@ case "$1" in
   search="special-nvim"
   tag="$dots_tag"
   cmd="$nvim"
+  ;;
+"project")
+  search="special-project"
+  tag="$project_tag"
+  cmd="$projectTerm"
   ;;
 esac
 
