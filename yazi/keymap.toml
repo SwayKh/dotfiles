@@ -24,6 +24,7 @@ prepend_keymap = [
 	{ on = [ "y", "f" ],   run = "copy filename",           desc = "Yank the filename" },
 	{ on = [ "y", "n" ],   run = "copy name_without_ext",   desc = "Yank the filename without extension" },
 
+	{ on = [ "g", "-" ],       run = "back",                                    desc = "Go to previous directory " },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive",                        desc = "Go to a directory interactively" },
 	{ on = [ "g", "h" ],       run = "cd ~",                                    desc = "Go to the home directory" },
 	{ on = [ "g", "/" ],       run = "cd /",                                    desc = "Go to the root directory" },
