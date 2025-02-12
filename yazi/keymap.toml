@@ -57,10 +57,10 @@ prepend_keymap = [
 
 	{ on = "c",           run = "yank",                                            desc = "Yank selected files (copy)" },
 	{ on = "L",           run = "link",                                            desc = "Symlink the absolute path of yanked files" },
-  { on = "e",           run = "shell --confirm 'bash $@'",                       desc = "Execute the selected file" },
+  { on = "e",           run = "shell -- bash '$@'",                              desc = "Execute the selected file" },
 	{ on = "F",           run = "plugin fzf",                                      desc = "Jump to a directory or reveal a file using fzf" },
 	{ on = [ "d","d" ],   run = "remove",                                          desc = "Trash selected files" },
-	{ on = [ "d","u" ],   run = "shell '$SHELL -c \"dua i\"' --block --confirm",   desc = "Run dua-cli in current directory" },
+	{ on = [ "d","u" ],   run = "shell --block -- $SHELL -c 'dua i'",              desc = "Run dua-cli in current directory" },
 
   { on = "<Backspace>", run = "unyank",                                          desc = "Unyank" },
   { on = "<Esc>",       run = ["unyank", "escape"],                              desc = "Clean Unyank/selected, cancel search" },
@@ -73,11 +73,11 @@ prepend_keymap = [
   { on = "<C-t>",       run = "plugin personal 'directory_tab'",                 desc = "Open selected directory in a tab" },
   { on = "<A-p>",       run = "plugin personal 'chmod'",                         desc = "Chmod on selected files" },
   { on = "<A-x>",       run = "plugin personal 'chmodx'",                        desc = "Chmod to executable selected files" },
-  { on = "<A-s>",       run = 'plugin personal "share"',                         desc = "Share selected file with 0x0.st"},
-  { on = ["b", "g"],    run = 'shell "\"$HOME\"/scripts/set-wall \"$1\""',       desc = "Set Wallpaper" },
-  { on = ["d", "g"],    run = 'shell "ripdrag -x -b -n -t -k -a \"$@\""',        desc = "Drag and Drop with ripdrag" },
-  { on = "!",           run = 'shell "$SHELL" --block',                          desc = "Open shell here" },
-  # { on = [ "b", "t" ],  run = 'shell "chmod " --interactive',                                   desc = "Testing interactive shells"}
+  { on = "<A-s>",       run = "plugin personal 'share'",                         desc = "Share selected file with 0x0.st"},
+  { on = ["b", "g"],    run = "shell -- '$HOME'/scripts/set-wall '$1'",          desc = "Set Wallpaper" },
+  { on = ["d", "g"],    run = "shell -- ripdrag -x -b -n -t -k -a '$@'",         desc = "Drag and Drop with ripdrag" },
+  { on = "!",           run = "shell --block -- $SHELL",                         desc = "Open shell here" },
+  # { on = [ "b", "t" ],  run = "shell --interactive -- chmod",                    desc = "Testing interactive shells"}
 ]
 
 # Some disabled keymaps to remove since they cause conflict
