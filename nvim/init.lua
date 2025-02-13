@@ -105,23 +105,14 @@ local function lsp()
   vim.cmd("LspStart")
 end
 
-local function markdown_preview()
-  local build = function()
-    vim.fn["mkdp#util#install"]()
-  end
+local function markdown()
   add({
-    source = "iamcco/markdown-preview.nvim",
-    hooks = {
-      post_install = function()
-        later(build)
-      end,
-      post_checkout = build,
-    },
+    source = "OXY2DEV/markview.nvim",
   })
 
+  require("markview").setup()
   -- Do not close the preview tab when switching to other buffers
-  vim.g.mkdp_auto_close = 0
-  vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Preview Markdown" })
+  vim.keymap.set("n", "<leader>mp", ":Markview<CR>", { desc = "Preview Markdown" })
 end
 
 local function mini_plugins()
@@ -187,7 +178,7 @@ later(function()
   formatter()
   linter()
   lsp()
-  markdown_preview()
+  markdown()
   treesitter()
   trouble()
   vim_navigator()
