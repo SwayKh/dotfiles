@@ -110,7 +110,17 @@ local function markdown()
     source = "OXY2DEV/markview.nvim",
   })
 
-  require("markview").setup()
+  local presets = require("markview.presets")
+  require("markview").setup({
+    markdown = {
+      headings = presets.headings.arrowed,
+      horizontal_rules = presets.horizontal_rules.thick,
+      tables = presets.tables.rounded,
+    },
+    preview = {
+      icon_provider = "mini", -- "mini" or "devicons"
+    },
+  })
   -- Do not close the preview tab when switching to other buffers
   vim.keymap.set("n", "<leader>mp", ":Markview<CR>", { desc = "Preview Markdown" })
 end
