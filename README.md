@@ -81,37 +81,37 @@ The scripts I use for setting wallpapers and the Power Menu using rofi are in th
 
 #### Important
 
-```
+```bash
 sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
 ```
 
 #### Pipewire and stuff
 
-```
+```bash
 sudo pacman -S pipewire wireplumber pamixer pipewire-pulse pipewire-audio
 ```
 
 #### Hyprland Stuff
 
-```
+```bash
 sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
 ```
 
 #### Or River Stuff
 
-```
+```bash
 paru -S river lswt swaylock-effects swayidle wlr-randr
 ```
 
 #### Utilities
 
-```
+```bash
 sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist galculator
 ```
 
 #### Cli tools
 
-```
+```bash
 sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tealdeer starship yazi cava rsync dua-cli sshfs swww mpv
 ```
 
@@ -120,7 +120,7 @@ sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux 
 Follow these steps (Beware that this will remove all your old configs. So prepare a back-up beforehand)
 Git clone this repo and cd into it
 
-```
+```bash
 git clone https://github.com/SwayKh/dotfiles.git
 cd dotfiles
 ```
@@ -129,7 +129,7 @@ Next create all symlinks to link the dotfiles.
 If you use [this project](https://github.com/SwayKh/linksym) you can
 link all the dotfiles using
 
-```
+```bash
 linksym update
 linksym source
 ```
@@ -137,7 +137,7 @@ linksym source
 or you can use the bash script in the repo, Warning: This script is not up to
 date, so it might not link all the dotfiles.
 
-```
+```bash
 ./linkdots.sh
 ```
 
@@ -172,7 +172,7 @@ Dependencies required for River are listed above.
 
 Dependencies for LF Preview script or Yazi preview
 
-```
+```bash
 bat
 chafa
 glow
@@ -193,7 +193,7 @@ p7zip
 
 Other Dependencies
 
-```
+```bash
 fd (Telescope plugin neovim)
 ripgrep (Telescope plugin neovim)
 tumbler (For thumbnails in Thunar File Manager)
@@ -228,14 +228,14 @@ wayland/x11
 
 #### Base programs to install with Arch
 
-```
+```bash
 base base-devel linux linux-firmware linux-headers grub vim amd-ucode net-tools
 git curl wget man-db pacman-contrib openssh networkmanager iwd efibootmgr
 ```
 
 #### Apps
 
-```
+```bash
 ani-cli
 citra-canary
 emulationstation-de
@@ -263,7 +263,7 @@ yuzu
 
 #### CLI
 
-```
+```bash
 birghtnessctl
 dhcpd
 docker
