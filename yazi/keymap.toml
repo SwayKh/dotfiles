@@ -47,11 +47,11 @@ prepend_keymap = [
 	{ on = [ "g", "l", "s" ],  run = "cd ~/.local/share/",                      desc = "Go to the .local/share directory" },
 	{ on = [ "g", "p", "c" ],  run = "cd ~/Pictures/",                          desc = "Go to the pictures directory" },
   { on = [ "g", "p", "s" ],  run = "cd ~/Pictures/Screenshots/",              desc = "Go to the Screenshots directory" },
-	{ on = [ "g", "p", "p" ],  run = "cd ~/Projects/Python",                    desc = "Go to the project directory" },
-	{ on = [ "g", "p", "w" ],  run = "cd ~/Projects/Web",                       desc = "Go to the project directory" },
-	{ on = [ "g", "p", "g" ],  run = "cd ~/Projects/Go",                        desc = "Go to the project directory" },
-	{ on = [ "g", "p", "o" ],  run = "cd ~/Projects/Web/TheOdinProject",        desc = "Go to the project directory" },
-	{ on = [ "g", "p", "i" ],  run = "cd ~/Projects/Go/N-Cover-Scraper/Saved",  desc = "Go to the project directory" },
+	{ on = [ "g", "p", "p" ],  run = "cd ~/Projects/Python",                    desc = "Go to the python project directory" },
+	{ on = [ "g", "p", "w" ],  run = "cd ~/Projects/Web",                       desc = "Go to the web project directory" },
+	{ on = [ "g", "p", "g" ],  run = "cd ~/Projects/Go",                        desc = "Go to the golang project directory" },
+	{ on = [ "g", "p", "o" ],  run = "cd ~/Projects/Web/TheOdinProject",        desc = "Go to the odin project directory" },
+	{ on = [ "g", "p", "i" ],  run = "cd ~/Projects/Go/N-Cover-Scraper/Saved",  desc = "Go to the special project directory" },
 
   { on = ["g", "a"], run = "cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/", desc = "Go to the Android directory" },
 
