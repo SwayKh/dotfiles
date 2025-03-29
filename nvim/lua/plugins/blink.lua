@@ -1,18 +1,4 @@
 require("blink.cmp").setup({
-  fuzzy = {
-    prebuilt_binaries = {
-      download = true,
-      force_version = "v0.11.0",
-    },
-  },
-
-  keymap = {
-    preset = "default",
-    cmdline = {
-      preset = "default",
-    },
-  },
-
   appearance = {
     highlight_ns = vim.api.nvim_create_namespace("blink_cmp"),
     use_nvim_cmp_as_default = false,
@@ -20,11 +6,64 @@ require("blink.cmp").setup({
     kind_icons = vim.g.kind_icons,
   },
 
+  fuzzy = {
+    sorts = {
+      "exact",
+      "score",
+      "sort_text",
+    },
+    prebuilt_binaries = {
+      download = true,
+      force_version = "v1.0.0",
+    },
+  },
+
+  cmdline = {
+    keymap = {
+      preset = "cmdline",
+      ["<CR>"] = { "accept_and_enter", "fallback" },
+    },
+  },
+  keymap = {
+    preset = "default",
+  },
+
+  signature = {
+    enabled = true,
+    window = {
+      direction_priority = { "n", "s" },
+      border = vim.g.border_style,
+    },
+  },
+
+  sources = {
+    default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+    min_keyword_length = 0,
+    providers = {
+      lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100, fallbacks = { "lsp" } },
+    },
+  },
+
+  snippets = {
+    -- Function to use when expanding LSP provided snippets
+    expand = function(snippet)
+      vim.snippet.expand(snippet)
+    end,
+    -- Function to use when checking if a snippet is active
+    active = function(filter)
+      return vim.snippet.active(filter)
+    end,
+    -- Function to use when jumping between tab stops in a snippet, where direction can be negative or positive
+    jump = function(direction)
+      vim.snippet.jump(direction)
+    end,
+  },
+
   completion = {
+    accept = { auto_brackets = { enabled = true } },
     list = {
       selection = { preselect = true, auto_insert = true },
     },
-    accept = { auto_brackets = { enabled = true } },
     menu = {
       min_width = 35,
       border = vim.g.border_style,
@@ -32,7 +71,7 @@ require("blink.cmp").setup({
       scrollbar = false,
       draw = {
         columns = { { "kind_icon" }, { "label", "kind", "source_name", gap = 1 } },
-        align_to = "none",
+        align_to = "cursor",
         components = {
           label = { width = { min = 20, fill = true } }, -- default is true
           label_description = { width = { fill = true } },
@@ -63,49 +102,6 @@ require("blink.cmp").setup({
       },
     },
     ghost_text = { enabled = false },
-  },
-
-  signature = {
-    enabled = true,
-    window = {
-      direction_priority = { "n", "s" },
-      border = vim.g.border_style,
-    },
-  },
-
-  sources = {
-    default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-    cmdline = function()
-      local type = vim.fn.getcmdtype()
-      -- Search forward and backward
-      if type == "/" or type == "?" then
-        return { "buffer" }
-      end
-      -- Commands
-      if type == ":" then
-        return { "cmdline" }
-      end
-      return {}
-    end,
-    min_keyword_length = 0,
-    providers = {
-      lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100, fallbacks = { "lsp" } },
-    },
-  },
-
-  snippets = {
-    -- Function to use when expanding LSP provided snippets
-    expand = function(snippet)
-      vim.snippet.expand(snippet)
-    end,
-    -- Function to use when checking if a snippet is active
-    active = function(filter)
-      return vim.snippet.active(filter)
-    end,
-    -- Function to use when jumping between tab stops in a snippet, where direction can be negative or positive
-    jump = function(direction)
-      vim.snippet.jump(direction)
-    end,
   },
 
   -- opts_extend = { "sources.default" },
