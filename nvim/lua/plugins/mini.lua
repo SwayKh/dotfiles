@@ -35,6 +35,7 @@ local later = MiniDeps.later
 later(function()
   require("mini.align").setup()
   require("mini.bracketed").setup()
+  require("mini.comment").setup()
   require("mini.extra").setup()
   require("mini.git").setup()
   require("mini.jump").setup()
