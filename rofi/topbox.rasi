@@ -1,4 +1,5 @@
 // vim:ft=rasi
+
 configuration {
   modi:                 "drun,run,filebrowser,window";
   dpi:                  90;
@@ -105,3 +106,16 @@ element {
   border-radius: 5px;
   padding: 3px;
 }
+
+/* element {*/
+  /*children: [ element-icon, element-text ];*/
+  /*orientation: vertical;*/
+/*} */
+
+/*element-text {*/
+/*  horizontal-align: 0.5;*/
+/*}*/
+/**/
+/*element-icon {*/
+/*    size: 3em;*/
+/*}*/
