@@ -32,7 +32,7 @@ end
 local function blink()
   add({
     source = "Saghen/blink.cmp",
-    checkout = "v0.11.0",
+    checkout = "v1.0.0",
     depends = {
       "rafamadriz/friendly-snippets",
     },
@@ -59,20 +59,6 @@ local function colorscheme()
     colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
   })
   vim.cmd.colorscheme("kanagawa")
-end
-
-local function debugger()
-  add({
-    source = "mfussenegger/nvim-dap",
-    depends = {
-      "rcarriga/nvim-dap-ui",
-      "williamboman/mason.nvim",
-      "jay-babu/mason-nvim-dap.nvim",
-      "leoluz/nvim-dap-go",
-      "mfussenegger/nvim-dap-python",
-    },
-  })
-  require("plugins.debug")
 end
 
 local function formatter()
@@ -184,7 +170,6 @@ end)
 later(function()
   arrow()
   blink()
-  -- debugger()
   formatter()
   linter()
   lsp()
@@ -194,7 +179,7 @@ later(function()
   vim_navigator()
 
   -- add vim-startuptime plugin
-  -- add({
-  --   source = "dstein64/vim-startuptime",
-  -- })
+  add({
+    source = "dstein64/vim-startuptime",
+  })
 end)
