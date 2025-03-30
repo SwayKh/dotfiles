@@ -23,6 +23,17 @@ require("blink.cmp").setup({
       preset = "cmdline",
       ["<CR>"] = { "accept_and_enter", "fallback" },
     },
+    completion = {
+      list = {
+        selection = {
+          auto_insert = true,
+          preselect = false,
+        },
+      },
+      menu = {
+        auto_show = true,
+      },
+    },
   },
   keymap = {
     preset = "default",
@@ -44,28 +55,13 @@ require("blink.cmp").setup({
     },
   },
 
-  snippets = {
-    -- Function to use when expanding LSP provided snippets
-    expand = function(snippet)
-      vim.snippet.expand(snippet)
-    end,
-    -- Function to use when checking if a snippet is active
-    active = function(filter)
-      return vim.snippet.active(filter)
-    end,
-    -- Function to use when jumping between tab stops in a snippet, where direction can be negative or positive
-    jump = function(direction)
-      vim.snippet.jump(direction)
-    end,
-  },
-
   completion = {
     accept = { auto_brackets = { enabled = true } },
     list = {
       selection = { preselect = true, auto_insert = true },
     },
     menu = {
-      min_width = 35,
+      min_width = 40,
       border = vim.g.border_style,
       scrolloff = 2,
       scrollbar = false,
@@ -76,13 +72,13 @@ require("blink.cmp").setup({
           label = { width = { min = 20, fill = true } }, -- default is true
           label_description = { width = { fill = true } },
           kind = {
-            width = { fill = true },
+            width = { fill = false },
             text = function(ctx)
               return "" .. ctx.kind .. ""
             end,
           },
           source_name = {
-            width = { fill = true },
+            width = { fill = false },
             text = function(ctx)
               return "[" .. ctx.source_name .. "]"
             end,
@@ -103,8 +99,4 @@ require("blink.cmp").setup({
     },
     ghost_text = { enabled = false },
   },
-
-  -- opts_extend = { "sources.default" },
 })
-
-return {}
