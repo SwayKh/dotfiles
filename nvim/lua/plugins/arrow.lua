@@ -7,5 +7,3 @@ require("arrow").setup({
     border = vim.g.border_style,
   },
 })
-
-return {}

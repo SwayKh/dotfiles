@@ -378,5 +378,3 @@ later(function()
   MiniIcons.mock_nvim_web_devicons()
   vim.ui.select = MiniPick.ui_select
 end)
-
-return {}

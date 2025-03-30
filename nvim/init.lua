@@ -22,6 +22,11 @@ require("mini.deps").setup({ path = { package = path_package } })
 
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
+require("config.option")
+require("config.globals")
+require("config.autocmd")
+require("config.keybinds")
+
 local function arrow()
   add({
     source = "otavioschwanck/arrow.nvim",
@@ -159,9 +164,6 @@ end
 
 -- Load everything now
 now(function()
-  require("config.option")
-  require("config.autocmd")
-  require("config.keybinds")
   colorscheme()
   mini_plugins()
   snacks()

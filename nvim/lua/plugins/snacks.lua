@@ -171,6 +171,7 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 local progress = vim.defaulttable()
+
 vim.api.nvim_create_autocmd("LspProgress", {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
@@ -211,5 +212,3 @@ vim.api.nvim_create_autocmd("LspProgress", {
     })
   end,
 })
-
-return {}

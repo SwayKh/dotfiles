@@ -67,5 +67,3 @@ require("nvim-ts-autotag").setup({
     "markdown",
   },
 })
-
-return {}

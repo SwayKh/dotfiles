@@ -40,5 +40,3 @@ vim.keymap.set("n", "=", function()
     end
   end)
 end, { desc = "Format buffer" })
-
-return {}

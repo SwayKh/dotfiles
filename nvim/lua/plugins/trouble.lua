@@ -30,18 +30,21 @@ vim.keymap.set(
   "<cmd>Trouble diagnostics toggle<cr>",
   { silent = true, desc = "Diagnostics (Trouble)" }
 )
+
 vim.keymap.set(
   "n",
   "<leader>tD",
   "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
   { silent = true, desc = "Buffer Diagnostics (Trouble)" }
 )
+
 vim.keymap.set(
   "n",
   "<leader>tL",
   "<cmd>Trouble lsp toggle<cr>",
   { silent = true, desc = "LSP Definitions / references / ... (Trouble)" }
 )
+
 vim.keymap.set(
   "n",
   "<leader>tl",
@@ -49,12 +52,14 @@ vim.keymap.set(
   { silent = true, desc = "Location List (Trouble)" }
 )
 vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", { silent = true, desc = "Quickfix List (Trouble)" })
+
 vim.keymap.set(
   "n",
   "<leader>ds",
   "<cmd>Trouble symbols toggle<cr>",
   { silent = true, desc = "Document Symbols (Trouble)" }
 )
+
 vim.keymap.set("n", "[q", function(self)
   if require("trouble").is_open() then
     require("trouble").prev(self, { skip_groups = true, jump = true, focus = false })
@@ -65,6 +70,7 @@ vim.keymap.set("n", "[q", function(self)
     end
   end
 end, { silent = true, desc = "Previous Trouble/Quickfix Item" })
+
 vim.keymap.set("n", "]q", function(self)
   if require("trouble").is_open() then
     trouble.next(self, { skip_groups = true, jump = true, focus = false })
@@ -75,5 +81,3 @@ vim.keymap.set("n", "]q", function(self)
     end
   end
 end, { silent = true, desc = "Next Trouble/Quickfix Item" })
-
-return {}
