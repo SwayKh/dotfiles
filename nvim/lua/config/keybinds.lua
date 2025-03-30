@@ -6,6 +6,7 @@ local map = vim.keymap.set
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
 map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
 
@@ -18,9 +19,6 @@ map("v", "<space>x", "<Cmd>lua<CR>", { desc = "Execute selected lua lines" })
 map("n", "<leader>rc", function()
   require("config.utils").reloadConfig()
 end, { silent = true, desc = "Source nvim config" })
-
-map("n", "<leader><tab>", "<cmd>bn<cr>", { desc = "Switch to next buffer" })
-map("n", "<leader><S-tab>", "<cmd>bp<cr>", { desc = "Switch to previous buffer" })
 
 -- Go to Beginning or End of line
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
@@ -38,19 +36,6 @@ map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
 map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
 map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
 
--- Split Resize
-map("n", "<C-S-h>", "<C-w>>") -- resize window to left
-map("n", "<C-S-l>", "<C-w><") -- resize window to right
-map("n", "<C-S-k>", "<C-w>+") -- resize window to up
-map("n", "<C-S-j>", "<C-w>-") -- resize window to down
-map("n", "<C-S-Left>", "<Cmd>vertical resize +3<CR>") -- Control+Left resizes vertical split +
-map("n", "<C-S-Right>", "<Cmd>vertical resize -3<CR>") -- Control+Right resizes vertical split -
-
-map("n", "<left>", "<Cmd>vertical resize +3<CR>", { desc = "Resize vertical split with left" })
-map("n", "<right>", "<Cmd>vertical resize -3<CR>", { desc = "Resize vertical split with right" })
-map("n", "<down>", "<Cmd>resize -3<CR>", { desc = "Resize split with down" })
-map("n", "<up>", "<Cmd>resize +3<CR>", { desc = "Resize split with up" })
-
 -- Move selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
@@ -62,10 +47,6 @@ map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- Scroll keybinds
 map({ "n", "v" }, "<M-j>", "5j", { desc = "Scroll 5 lines down" })
 map({ "n", "v" }, "<M-k>", "5k", { desc = "Scroll 5 lines up" })
-
--- Increment/Decreament
--- map("n", "+", "<C-a>", { desc = "Increment number" })
--- map("n", "-", "<C-x>", { desc = "Decreament number" })
 
 -- Split keybinds, Need to figure out a better system
 map("n", "<leader>V", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })

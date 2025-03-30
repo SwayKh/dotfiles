@@ -3,73 +3,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Netrw settings
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
-vim.g.netrw_browse_split = 4
-vim.g.netrw_winsize = 25
-vim.g.netrw_altv = 1
-
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
-
--- Global variable to control borders for every plugins
-vim.g.border_style = "rounded"
-
-vim.g.border = {
-  { "╭", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "╮", "FloatBorder" },
-  { "│", "FloatBorder" },
-  { "╯", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "╰", "FloatBorder" },
-  { "│", "FloatBorder" },
-}
-vim.g.kind_icons = {
-  Supermaven = "",
-  Codeium = "",
-  Array = "󰅪",
-  Boolean = "⊨",
-  Key = "󰌆",
-  Namespace = "󰅪",
-  Null = "NULL",
-  Number = "#",
-  Object = "󰀚",
-  Package = "󰏗",
-  String = "󰀬",
-  TypeParameter = "󰊄",
-  Text = "󰉿",
-  Method = "󰆧",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "󰜢",
-  Variable = "󰀫",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "󰑭",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈙",
-  Reference = "󰈇",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "󰙅",
-  Event = "",
-  Operator = "󰆕",
-}
-
--- Set highlight on search
-vim.opt.hlsearch = true
-
--- Show highlighted search terms as you type
-vim.opt.incsearch = true
+vim.o.winborder = "rounded"
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -92,7 +26,7 @@ vim.opt.showtabline = 2
 vim.opt.tabline = " %t"
 
 -- set spell on
-vim.opt.spell = false
+vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 
 -- Automatically set the file, used for filetype autocmd
@@ -100,8 +34,6 @@ vim.opt.filetype = "on"
 
 -- Set textwidth to Automatically wrap text at that length
 vim.opt.textwidth = 80
--- enable text wrapping, Wrap text at 80 characters
-vim.opt.wrap = true
 -- Which characters can go through wrap on a line
 vim.opt.whichwrap = "<,>,[,],l,h"
 
@@ -114,9 +46,6 @@ vim.opt.relativenumber = true
 
 -- Width of numberline column
 vim.opt.numberwidth = 2
-
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
@@ -148,11 +77,8 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 999
 vim.opt.sidescrolloff = 5
 
--- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
-
 -- Width of popup menu, like cmp menu
-vim.opt.pumwidth = 30
+vim.opt.pumwidth = 80
 
 -- Max items to show in pop up menu
 vim.opt.pumheight = 15
@@ -187,15 +113,19 @@ vim.opt.swapfile = false
 vim.opt.shortmess = "filnxtToOFs" -- I for Intro screen
 
 -- Option for insert mode completion
-vim.opt.completeopt = "menuone,menu,noselect"
+vim.opt.completeopt = "fuzzy,menuone,menu,noselect"
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.foldmethod = "indent"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevel = 99
+-- Nice and simple folding:
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
 
 -- Something related to search
 vim.opt.wildmenu = true
@@ -222,50 +152,10 @@ vim.opt.fillchars = {
 
 vim.opt.jumpoptions = "stack,view"
 
--- Syntax highlighting in strings for augroups, lua, perl, python, javascript. Useful if you are doing stuff like
--- generating SQL/HTML/XML in strings
-vim.g.vimsyn_embed = "alpPrj"
-
 -- Where to keep the cursor when opening a horizontal split
 vim.opt.splitkeep = "screen"
-
--- Tells me if there is the line is wrapped
-vim.g.showbreak = "↪"
 
 -- Useful when buffers aren't written and I do :wq
 vim.opt.confirm = true
 
 vim.opt.showmatch = true
-
-local function disable_builtin_plugins()
-  local disabled_plugins = {
-    "gzip",
-    "matchit",
-    "matchparen",
-    "netrwPlugin",
-    "rplugin",
-    "tarPlugin",
-    "tutor",
-    "zipPlugin",
-    "2html_plugin",
-    "osc52",
-    "tohtml",
-    "getscript",
-    "getscriptPlugin",
-    "logipat",
-    "netrw",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "tar",
-    "rrhelper",
-    "zip",
-    "syntax",
-    "synmenu",
-    "optwin",
-    "bugreport",
-    "ftplugin",
-  }
-  for i = 1, #disabled_plugins do
-    vim.g["loaded_" .. disabled_plugins[i]] = 1
-  end
-end
