@@ -67,7 +67,7 @@ require("blink.cmp").setup({
       scrollbar = false,
       draw = {
         columns = { { "kind_icon" }, { "label", "kind", "source_name", gap = 1 } },
-        align_to = "cursor",
+        align_to = "none",
         components = {
           label = { width = { min = 20, fill = true } }, -- default is true
           label_description = { width = { fill = true } },

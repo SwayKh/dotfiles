@@ -1,7 +1,5 @@
 require("mini.icons").setup()
--- require("mini.notify").setup()
 require("mini.tabline").setup()
-
 require("mini.statusline").setup({
   use_icons = vim.g.have_nerd_font,
   content = {
@@ -246,7 +244,8 @@ later(function()
     { silent = true, desc = "Show Git Status" }
   )
 
-  require("mini.ai").setup({
+  local miniai = require("mini.ai")
+  miniai.setup({
     mappings = {
       around = "a",
       inside = "i",
@@ -261,19 +260,19 @@ later(function()
     },
     n_lines = 500,
     custom_textobjects = {
-      B = require("mini.extra").gen_ai_spec.buffer(),
-      D = require("mini.extra").gen_ai_spec.diagnostic(),
-      I = require("mini.extra").gen_ai_spec.indent(),
-      L = require("mini.extra").gen_ai_spec.line(),
-      N = require("mini.extra").gen_ai_spec.number(),
-      o = require("mini.ai").gen_spec.treesitter({
+      B = MiniExtra.gen_ai_spec.buffer(),
+      D = MiniExtra.gen_ai_spec.diagnostic(),
+      I = MiniExtra.gen_ai_spec.indent(),
+      L = MiniExtra.gen_ai_spec.line(),
+      N = MiniExtra.gen_ai_spec.number(),
+      o = miniai.gen_spec.treesitter({
         a = { "@block.outer", "@conditional.outer", "@loop.outer" },
         i = { "@block.inner", "@conditional.inner", "@loop.inner" },
       }, {}),
-      u = require("mini.ai").gen_spec.function_call(), -- u for "Usage"
-      U = require("mini.ai").gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
-      f = require("mini.ai").gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-      c = require("mini.ai").gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+      u = miniai.gen_spec.function_call(), -- u for "Usage"
+      U = miniai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
+      f = miniai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+      c = miniai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
       t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
       d = { "%f[%d]%d+" }, -- digits
       e = { -- Word with case
@@ -296,13 +295,14 @@ later(function()
     },
   })
 
-  require("mini.hipatterns").setup({
+  local minihipatterns = require("mini.hipatterns")
+  minihipatterns.setup({
     highlighters = {
-      hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
-      todo = require("mini.extra").gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
-      hack = require("mini.extra").gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
-      note = require("mini.extra").gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
-      fixme = require("mini.extra").gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
+      hex_color = minihipatterns.gen_highlighter.hex_color(),
+      todo = MiniExtra.gen_highlighter.words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
+      hack = MiniExtra.gen_highlighter.words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+      note = MiniExtra.gen_highlighter.words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
+      fixme = MiniExtra.gen_highlighter.words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
     },
   })
 

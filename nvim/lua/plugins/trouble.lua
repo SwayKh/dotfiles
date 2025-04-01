@@ -24,60 +24,13 @@ require("trouble").setup({
   },
 })
 
-vim.keymap.set(
-  "n",
-  "<leader>td",
-  "<cmd>Trouble diagnostics toggle<cr>",
-  { silent = true, desc = "Diagnostics (Trouble)" }
-)
+local map = function(keys, func, desc)
+  vim.keymap.set("n", keys, func, { silent = true, desc = "Trouble: " .. desc })
+end
 
-vim.keymap.set(
-  "n",
-  "<leader>tD",
-  "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-  { silent = true, desc = "Buffer Diagnostics (Trouble)" }
-)
-
-vim.keymap.set(
-  "n",
-  "<leader>tL",
-  "<cmd>Trouble lsp toggle<cr>",
-  { silent = true, desc = "LSP Definitions / references / ... (Trouble)" }
-)
-
-vim.keymap.set(
-  "n",
-  "<leader>tl",
-  "<cmd>Trouble loclist toggle<cr>",
-  { silent = true, desc = "Location List (Trouble)" }
-)
-vim.keymap.set("n", "<leader>tq", "<cmd>Trouble qflist toggle<cr>", { silent = true, desc = "Quickfix List (Trouble)" })
-
-vim.keymap.set(
-  "n",
-  "<leader>ds",
-  "<cmd>Trouble symbols toggle<cr>",
-  { silent = true, desc = "Document Symbols (Trouble)" }
-)
-
-vim.keymap.set("n", "[q", function(self)
-  if require("trouble").is_open() then
-    require("trouble").prev(self, { skip_groups = true, jump = true, focus = false })
-  else
-    local ok, err = pcall(vim.cmd.cprev)
-    if not ok then
-      vim.notify(err, vim.log.levels.ERROR)
-    end
-  end
-end, { silent = true, desc = "Previous Trouble/Quickfix Item" })
-
-vim.keymap.set("n", "]q", function(self)
-  if require("trouble").is_open() then
-    trouble.next(self, { skip_groups = true, jump = true, focus = false })
-  else
-    local ok, err = pcall(vim.cmd.cnext)
-    if not ok then
-      vim.notify(err, vim.log.levels.ERROR)
-    end
-  end
-end, { silent = true, desc = "Next Trouble/Quickfix Item" })
+map("<leader>td", "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics")
+map("<leader>tD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Buffer Diagnostics")
+map("<leader>tL", "<cmd>Trouble lsp toggle<cr>", "LSP Definitions / references / ... ")
+map("<leader>tl", "<cmd>Trouble loclist toggle<cr>", "Location List ")
+map("<leader>tq", "<cmd>Trouble qflist toggle<cr>", "Quickfix List ")
+map("<leader>ds", "<cmd>Trouble symbols toggle<cr>", "Document Symbols ")
