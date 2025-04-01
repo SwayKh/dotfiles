@@ -19,28 +19,35 @@ vim.diagnostic.config({
     border = vim.g.border_style,
   },
   underline = { severity = vim.diagnostic.severity.ERROR },
-  signs = vim.g.have_nerd_font
-      and {
-        text = {
-          [vim.diagnostic.severity.ERROR] = " ", -- 󰅚
-          [vim.diagnostic.severity.WARN] = " ", -- 󰀪
-          [vim.diagnostic.severity.INFO] = " ", -- 󰋽
-          [vim.diagnostic.severity.HINT] = "󰠠 ", -- 󰌶
-        },
-      }
-    or {},
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ", -- 󰅚
+      [vim.diagnostic.severity.WARN] = " ", -- 󰀪
+      [vim.diagnostic.severity.INFO] = " ", -- 󰋽
+      [vim.diagnostic.severity.HINT] = "󰠠 ", -- 󰌶
+    } or {},
+  },
   virtual_text = {
     source = "if_many",
     spacing = 2,
+    prefix = "",
     format = function(diagnostic)
       local diagnostic_message = {
-        [vim.diagnostic.severity.ERROR] = diagnostic.message,
-        [vim.diagnostic.severity.WARN] = diagnostic.message,
-        [vim.diagnostic.severity.INFO] = diagnostic.message,
-        [vim.diagnostic.severity.HINT] = diagnostic.message,
+        [vim.diagnostic.severity.ERROR] = "󰅚 " .. diagnostic.message,
+        [vim.diagnostic.severity.WARN] = "󰀪 " .. diagnostic.message,
+        [vim.diagnostic.severity.INFO] = "󰋽 " .. diagnostic.message,
+        [vim.diagnostic.severity.HINT] = "󰌶 " .. diagnostic.message,
       }
       return diagnostic_message[diagnostic.severity]
     end,
+    severity = {
+      max = vim.diagnostic.severity.WARN,
+    },
+  },
+  virtual_lines = {
+    severity = {
+      min = vim.diagnostic.severity.ERROR,
+    },
   },
 })
 
