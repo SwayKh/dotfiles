@@ -148,3 +148,7 @@ records:
       paths:
         - ~/.config/Code/User/settings.json
         - $init_directory/Code/settings.json
+    - name: dotfiles/zsh
+      paths:
+        - ~/.config/zsh
+        - $init_directory/zsh
