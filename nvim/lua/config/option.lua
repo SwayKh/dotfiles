@@ -26,7 +26,7 @@ vim.opt.showtabline = 2
 vim.opt.tabline = " %t"
 
 -- set spell on
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = "en_us"
 
 -- Automatically set the file, used for filetype autocmd
