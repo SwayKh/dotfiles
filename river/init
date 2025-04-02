@@ -78,7 +78,7 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpoint
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
+rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.5 -main-count 1 &
 
 #   █████████                                █████             █████                              █████
 #  ███░░░░░███                              ░░███             ░░███                              ░░███
@@ -144,7 +144,7 @@ riverctl map normal $mod+Shift I set-focused-tags $ticktick_tag
 # Binds
 
 # My Mappings
-riverctl map normal $mod T spawn "$terminal -e tmux"
+riverctl map normal $mod T spawn "$terminal"
 riverctl map normal $mod F spawn "$filemanager"
 riverctl map normal $mod B spawn "$browser"
 riverctl map normal $mod R spawn "rofi -show drun"
