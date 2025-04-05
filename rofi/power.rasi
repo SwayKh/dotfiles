@@ -17,7 +17,7 @@ window {
   margin: 5px;
   padding: 5px;
   border: 2px;
-  border-radius: 0px;
+  border-radius: 10px;
   spacing: 0px;
   children: [ mainbox ];
 }
@@ -62,6 +62,6 @@ listview {
 
 element {
   border: 0px;
-  border-radius: 0px;
+  border-radius: 10px;
   padding: 5px;
 }

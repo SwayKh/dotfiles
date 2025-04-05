@@ -18,6 +18,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   border: 2px solid @bordercolor;
+  border-radius: 10px;
 }
 
 button {

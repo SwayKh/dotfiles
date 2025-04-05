@@ -29,7 +29,7 @@
 
     width = 400
     alignment = center
-    corner_radius = 5
+    corner_radius = 10
     startup_notification = true
     separator_color = frame
     frame_color = "#C8C093"
