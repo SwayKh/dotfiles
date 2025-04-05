@@ -12,10 +12,7 @@ require("blink.cmp").setup({
       "score",
       "sort_text",
     },
-    prebuilt_binaries = {
-      download = true,
-      force_version = "v1.0.0",
-    },
+    prebuilt_binaries = { download = true },
   },
 
   cmdline = {
@@ -30,14 +27,10 @@ require("blink.cmp").setup({
           preselect = false,
         },
       },
-      menu = {
-        auto_show = true,
-      },
+      menu = { auto_show = true },
     },
   },
-  keymap = {
-    preset = "default",
-  },
+  keymap = { preset = "default" },
 
   signature = {
     enabled = true,
@@ -57,11 +50,10 @@ require("blink.cmp").setup({
 
   completion = {
     accept = { auto_brackets = { enabled = true } },
-    list = {
-      selection = { preselect = true, auto_insert = true },
-    },
+    list = { selection = { preselect = true, auto_insert = true } },
     menu = {
       min_width = 40,
+      max_height = 20,
       border = vim.g.border_style,
       scrolloff = 2,
       scrollbar = false,
