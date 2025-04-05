@@ -42,17 +42,17 @@ y() {
 
 # Package Manager
 pm() {
-  pacman -Slq | fzf -m --preview='pacman -Si {}' --height 100% --bind='enter:execute(paru -S {+})+abort'
+  pacman -Slq | fzf -m --preview='pacman -Si {}' --border=rounded --margin=1% --height 100% --layout=reverse --bind='enter:execute(paru -S {+})+abort'
 }
 
 # Pacman Preview Explicitly Installed
 ppi() {
-  pacman -Qeq | fzf --preview 'pacman -Qil {}' --height 100% --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+  pacman -Qeq | fzf --preview 'pacman -Qil {}' --border=rounded --margin=1% --height 100% --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
 
 # Pacman Preview All Installed
 ppa() {
-  pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+  pacman -Qq | fzf --preview 'pacman -Qil {}' --border=rounded --margin=1% --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 }
 
 # Taken from a reddit post of fastfetch config

@@ -20,7 +20,7 @@ unsetopt AUTO_MENU
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -C
 _comp_options+=(globdots)
 
 # Remove duplicates from $PATH

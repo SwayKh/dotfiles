@@ -25,6 +25,7 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
+# Set plugin installation directory
 export ZCONF="$XDG_DATA_HOME/zsh"
 
 # Use fd instead of find
