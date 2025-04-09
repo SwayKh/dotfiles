@@ -62,10 +62,14 @@ local tab_width
 local selected_icon
 local copied_icon
 local cut_icon
+local files_icon
+local filtereds_icon
 
 local selected_fg
 local copied_fg
 local cut_fg
+local files_fg
+local filtereds_fg
 
 local task_total_icon
 local task_succ_icon
@@ -748,11 +752,13 @@ function Yatline.coloreds.get:permissions()
 	end
 end
 
---- Gets the number of selected and yanked files of the active tab.
---- @return Coloreds coloreds Active tab's number of selected and yanked files.
-function Yatline.coloreds.get:count()
+--- Gets the number of selected and yanked files and also number of files or filtered files of the active tab.
+--- @param filter? boolean Whether or not number of files (or filtered files) will be shown.
+--- @return Coloreds coloreds Active tab's number of selected and yanked files and also number of files or filtered files
+function Yatline.coloreds.get:count(filter)
 	local num_yanked = #cx.yanked
 	local num_selected = #cx.active.selected
+	local num_files = #cx.active.current.files
 
 	local yanked_fg, yanked_icon
 	if cx.yanked.is_cut then
@@ -763,10 +769,28 @@ function Yatline.coloreds.get:count()
 		yanked_icon = copied_icon
 	end
 
-	local coloreds = {
-		{ string.format(" %s %d ", selected_icon, num_selected), selected_fg },
-		{ string.format(" %s %d ", yanked_icon, num_yanked), yanked_fg },
-	}
+	local files_count_fg, files_count_icon
+	if cx.active.current.files.filter or cx.active.current.cwd.is_search then
+		files_count_icon = filtereds_icon
+		files_count_fg = filtereds_fg
+	else
+		files_count_icon = files_icon
+		files_count_fg = files_fg
+	end
+
+	local coloreds
+	if filter then
+		coloreds = {
+			{ string.format(" %s %d ", files_count_icon, num_files), files_count_fg },
+			{ string.format(" %s %d ", selected_icon, num_selected), selected_fg },
+			{ string.format(" %s %d ", yanked_icon, num_yanked), yanked_fg },
+		}
+	else
+		coloreds = {
+			{ string.format(" %s %d ", selected_icon, num_selected), selected_fg },
+			{ string.format(" %s %d ", yanked_icon, num_yanked), yanked_fg },
+		}
+	end
 
 	return coloreds
 end
@@ -1082,7 +1106,11 @@ return {
 			}
 
 		if config.theme then
-			config = config.theme
+			for key, value in pairs(config.theme) do
+				if not config[key] then
+					config[key] = value
+				end
+			end
 		end
 
 		if config.section_separator then
@@ -1156,6 +1184,22 @@ return {
 			cut_fg = "red"
 		end
 
+		if config.files then
+			files_icon = config.files.icon
+			files_fg = config.files.fg
+		else
+			files_icon = ""
+			files_fg = "blue"
+		end
+
+		if config.filtereds then
+			filtereds_icon = config.filtereds.icon
+			filtereds_fg = config.filtereds.fg
+		else
+			filtereds_icon = ""
+			filtereds_fg = "magenta"
+		end
+
 		if config.total then
 			task_total_icon = config.total.icon
 			task_total_fg = config.total.fg
@@ -1196,6 +1240,8 @@ return {
 			task_processed_fg = "green"
 		end
 
+		config = nil
+
 		Progress.partial_render = function(self)
 			local progress = cx.tasks.progress
 			if progress.total == 0 then
@@ -1204,9 +1250,9 @@ return {
 
 			local gauge = ui.Gauge():area(self._area)
 			if progress.fail == 0 then
-				gauge = gauge:gauge_style(THEME.status.progress_normal)
+				gauge = gauge:gauge_style(th.status.progress_normal)
 			else
-				gauge = gauge:gauge_style(THEME.status.progress_error)
+				gauge = gauge:gauge_style(th.status.progress_error)
 			end
 
 			local percent = 99
@@ -1218,7 +1264,7 @@ return {
 			return {
 				gauge
 					:percent(percent)
-					:label(ui.Span(string.format("%3d%%, %d left", percent, left)):style(THEME.status.progress_label)),
+					:label(ui.Span(string.format("%3d%%, %d left", percent, left)):style(th.status.progress_label)),
 			}
 		end
 
