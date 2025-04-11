@@ -211,8 +211,7 @@
 ; waveform = 0
 
 [color]
-foreground = "#A7C080"
-gradient = 0
+gradient = 1
 gradient_count = 4
 
 
