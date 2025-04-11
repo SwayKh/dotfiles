@@ -1,4 +1,3 @@
-// vim:ft=rasi
 configuration {
   dpi:                  120;
   show-icons:           false;

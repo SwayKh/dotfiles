@@ -1,4 +1,3 @@
-// vim:ft=rasi
 configuration {
   modi:                 "drun,run,,filebrowser,window";
   dpi:                  90;

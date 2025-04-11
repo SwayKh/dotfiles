@@ -1,5 +1,3 @@
-// vim:ft=rasi
-
 configuration {
   modi:                 "drun,run,filebrowser,window";
   dpi:                  90;
@@ -53,25 +51,25 @@ inputbar {
   spacing: 3px;
   /*padding: top right bottom left*/
   padding: 0px;
-  children: [ "textbox-prompt-colon", entry ];
+  children: [ textbox-prompt-colon, entry ];
 }
 
 prompt {
   padding: 3px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 textbox-prompt-colon {
   expand: false;
   padding: 3px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   str: " "; /* */
 }
 
 entry {
-  placeholder:  "Search...";
-  padding: 0px;
-  border-radius: 5px;
+  placeholder:  " Search...";
+  padding: 5px;
+  border-radius: 10px;
 }
 
 mode-switcher {
@@ -81,7 +79,7 @@ mode-switcher {
 
 button {
   padding: 3px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 listview {
@@ -98,12 +96,12 @@ listview {
   margin: 0px;
   padding: 5px;
   border: 1px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 element {
   border: 0px;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 3px;
 }
 

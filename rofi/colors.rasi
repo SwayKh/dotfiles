@@ -1,4 +1,3 @@
-// vim:ft=rasi
 * {
   font:                   "JetBrainsMono Nerd Font 10";
   foreground:             #C8C093;
@@ -122,3 +121,5 @@ element alternate.active {
   background-color: @background;
   text-color:       @foreground;
 }
+
+@import "~/.cache/hellwal/rofi.rasi"
