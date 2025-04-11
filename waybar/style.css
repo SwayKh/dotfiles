@@ -1,10 +1,12 @@
-@define-color fg #F5F5F5;
-@define-color bg #1F1F28;
-@define-color bordercolor #C8C093;
-@define-color highlight #D59C5C;
+@import '/home/sumit/.cache/hellwal/waybar-colors.css';
+
+/* Use hellwal colors  */
+@define-color bordercolor alpha(@color14, 1.0);
+@define-color bg alpha(@color8, 1.0);
+@define-color fg alpha(@foreground, 1.0);
+@define-color highlight alpha(@color15, 1.0);
+@define-color alert alpha(@color11, 1.0);
 @define-color disabled #A5A5A5;
-@define-color alert #E67E80;
-@define-color activegreen #26A65B;
 
 * {
   min-height: 0;

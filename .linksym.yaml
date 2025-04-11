@@ -152,3 +152,7 @@ records:
       paths:
         - ~/.config/zsh
         - $init_directory/zsh
+    - name: dotfiles/hellwal
+      paths:
+        - ~/.config/hellwal
+        - $init_directory/hellwal
