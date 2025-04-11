@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+# Load environment variables
+source "$HOME/.config/river/environment.sh"
+
+# Load hellwal colors to apply to borders
+source "$HOME/.cache/hellwal/variables.sh"
+
 # Variables
 terminal="footclient"
 filemanager="thunar"
@@ -20,7 +26,7 @@ mod="Mod4"
 # Autostart
 riverctl spawn "swww-daemon --format xrgb"
 riverctl spawn "$HOME/.config/waybar/launch.sh"
-riverctl spawn "dunst"
+riverctl spawn "$HOME/.config/dunst/launch-dunst.sh"
 riverctl spawn "/usr/lib/kdeconnectd"
 riverctl spawn "/usr/bin/kdeconnect-indicator"
 # riverctl spawn "nm-applet --indicator"
@@ -50,11 +56,12 @@ riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image
 #                                                            ░░░░░░
 
 # Settings
+
 # Set background and border color
-riverctl background-color 0x002B36
+riverctl background-color "0x${color8}"
 riverctl border-width 2
-riverctl border-color-focused 0xC8C093
-riverctl border-color-unfocused 0xA5A5A5
+riverctl border-color-focused "0x${color6}"
+riverctl border-color-unfocused "0x${color1}"
 
 riverctl set-repeat 30 300
 riverctl default-attach-mode bottom
@@ -74,6 +81,9 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" accel-profile flat
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
+
+# Disable touchpad
+riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 #
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
@@ -153,7 +163,7 @@ riverctl map normal $mod W spawn "ferdium"
 riverctl map normal $mod D spawn "webcord"
 riverctl map normal $mod D spawn "vesktop"
 riverctl map normal $mod G spawn "retroarch"
-riverctl map normal $mod S spawn "spotify-launcher"
+riverctl map normal $mod S spawn "spotify"
 riverctl map normal $mod Y spawn "youtube-music"
 riverctl map normal $mod I spawn "ticktick"
 riverctl map normal $mod E spawn "$terminal -e zsh -ic yazi"
