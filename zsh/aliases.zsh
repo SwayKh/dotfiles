@@ -19,9 +19,11 @@ alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'
 alias pipes='pipes.sh -R -p 4 -t 0'
 alias cleanfetch='clear && fastfetch'
+alias cls='cleanfetch'
 alias lf=lfcd
 alias yazi=y
 alias lg=lazygit
+alias hw='hellwal --no-cache --neon-mode'
 
 # cd Aliases
 alias ..='cd ..'

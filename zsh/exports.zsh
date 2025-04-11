@@ -25,12 +25,9 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-# Set plugin installation directory
-export ZCONF="$XDG_DATA_HOME/zsh"
-
 # Use fd instead of find
 export FZF_DEFAULT_COMMAND='\
-  fd -L \
+  fd -L -c never \
   --strip-cwd-prefix \
   --hidden \
   --no-ignore \
@@ -55,3 +52,5 @@ export FZF_CTRL_T_OPTS="\
   --preview-window=65% \
   --preview '~/scripts/preview.sh {}' \
   "
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+export FZF_ALT_C_OPTS=$FZF_CTRL_T_OPTS

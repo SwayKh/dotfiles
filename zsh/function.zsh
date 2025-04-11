@@ -1,10 +1,13 @@
+# Set plugin installation directory
+ZCONF="$HOME/.local/share/zsh"
+
 # Function to source files if they exist
-function source_file() {
+source_file() {
     [ -f "$ZCONF/$1" ] && source "$ZCONF/$1"
 }
 
 # Plugin Manager function, credit to Chris@Machine
-function zplug() {
+zplug() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
     if [ -d "$ZCONF/plugins/$PLUGIN_NAME" ]; then
         # For plugins
