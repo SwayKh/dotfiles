@@ -63,13 +63,8 @@ require("blink.cmp").setup({
         align_to = "none",
         components = {
           label = { width = { min = 20, fill = true } }, -- default is true
+          kind = { width = { fill = false } },
           label_description = { width = { fill = true } },
-          kind = {
-            width = { fill = false },
-            text = function(ctx)
-              return "" .. ctx.kind .. ""
-            end,
-          },
           source_name = {
             width = { fill = false },
             text = function(ctx)

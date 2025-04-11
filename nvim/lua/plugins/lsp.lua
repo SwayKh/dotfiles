@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-local util = require("lspconfig.util")
 
 require("lazydev").setup({
   library = {
@@ -134,17 +133,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-local mason = require("mason")
-local mason_lspconfig = require("mason-lspconfig")
--- local mason_tool_installer = require("mason-tool-installer")
-
 local servers = {
   emmet_language_server = {}, -- HTML
   pyright = {}, -- Python
   gopls = { -- Golang
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
       gopls = {
         completeUnimported = true,
@@ -166,6 +161,10 @@ local servers = {
         runtime = { version = "LuaJIT" },
         workspace = {
           checkThirdParty = false,
+          library = {
+            vim.env.VIMRUNTIME,
+            -- "${3rd}/luv/library",
+          },
         },
         completion = {
           callSnippet = "Replace",
@@ -195,7 +194,7 @@ local servers = {
   },
 }
 
-mason.setup({
+require("mason").setup({
   ui = {
     border = vim.g.border_style,
     width = 0.8,
@@ -211,7 +210,7 @@ mason.setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities(capabilities))
 
-mason_lspconfig.setup({
+require("mason-lspconfig").setup({
   handlers = {
     function(server_name)
       local server = servers[server_name] or {}

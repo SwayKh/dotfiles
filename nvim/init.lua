@@ -46,24 +46,8 @@ local function blink()
 end
 
 local function colorscheme()
-  add({
-    source = "rebelot/kanagawa.nvim",
-  })
-  require("kanagawa").setup({
-    compile = false, -- enable compiling the colorscheme
-    undercurl = true, -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true },
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false, -- do not set background color
-    dimInactive = true, -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,
-    -- Remove background color of sign column
-    colors = { theme = { all = { ui = { bg_gutter = "none" } } } },
-  })
-  vim.cmd.colorscheme("kanagawa")
+  vim.cmd.colorscheme("default")
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 end
 
 local function formatter()
