@@ -1,0 +1,21 @@
+@define-color background #%%background%%;
+@define-color foreground #%%foreground%%;
+@define-color cursor #%%cursor%%;
+@define-color border #%%border%%;
+
+@define-color color0 #%%color0.hex%%;
+@define-color color1 #%%color1.hex%%;
+@define-color color2 #%%color2.hex%%;
+@define-color color3 #%%color3.hex%%;
+@define-color color4 #%%color4.hex%%;
+@define-color color5 #%%color5.hex%%;
+@define-color color6 #%%color6.hex%%;
+@define-color color7 #%%color7.hex%%;
+@define-color color8 #%%color8.hex%%;
+@define-color color9 #%%color9.hex%%;
+@define-color color10 #%%color10.hex%%;
+@define-color color11 #%%color11.hex%%;
+@define-color color12 #%%color12.hex%%;
+@define-color color13 #%%color13.hex%%;
+@define-color color14 #%%color14.hex%%;
+@define-color color15 #%%color15.hex%%;
