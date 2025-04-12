@@ -23,7 +23,7 @@ alias cls='cleanfetch'
 alias lf=lfcd
 alias yazi=y
 alias lg=lazygit
-alias hw='hellwal --no-cache --neon-mode'
+alias hw='hellwal --no-cache --neon-mode -i $HOME/.config/wall.png'
 
 # cd Aliases
 alias ..='cd ..'
