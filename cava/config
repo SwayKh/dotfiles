@@ -211,7 +211,7 @@
 ; waveform = 0
 
 [color]
-gradient = 1
+gradient = 0
 gradient_count = 4
 
 
