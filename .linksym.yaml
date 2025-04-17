@@ -140,10 +140,6 @@ records:
       paths:
         - ~/.vimrc
         - $init_directory/.vimrc
-    - name: dotfiles/mimeapps.list
-      paths:
-        - ~/.config/mimeapps.list
-        - $init_directory/mimeapps.list
     - name: Code/settings.json
       paths:
         - ~/.config/Code/User/settings.json

@@ -136,11 +136,13 @@ riverctl map normal $mod Slash toggle-view-tags $(($sticky_tag | $scratch_tags))
 
 # mapping for sending to special_tag (Scratchpad)
 riverctl map normal $mod Space set-view-tags $special_tag
-riverctl map normal $mod+Shift Space set-focused-tags $special_tag
+riverctl map normal $mod+Shift Space toggle-focused-tags $special_tag
 
-riverctl map normal $mod+Shift D set-focused-tags $docs_tag
-riverctl map normal $mod+Shift S set-focused-tags $spotify_tag
-riverctl map normal $mod+Shift I set-focused-tags $ticktick_tag
+# Make this tags toggle with same keybind, and set rule for apps to be
+# fullscreen, or else they till with active apps.
+riverctl map normal $mod+Shift D toggle-focused-tags $docs_tag
+riverctl map normal $mod+Shift S toggle-focused-tags $spotify_tag
+riverctl map normal $mod+Shift I toggle-focused-tags $ticktick_tag
 
 #  ███████████   ███                 █████
 # ░░███░░░░░███ ░░░                 ░░███
@@ -184,6 +186,7 @@ riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
 riverctl map normal $mod Escape spawn "$HOME/scripts/rofi-power"
 riverctl map normal $mod+Control W spawn "$HOME/scripts/rofi-wifi"
 riverctl map normal $mod+Control B spawn "$HOME/scripts/rofi-bluetooth"
+riverctl map normal $mod+Control S spawn "$HOME/scripts/rofi-wall"
 
 # Screenshots
 riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
@@ -211,17 +214,17 @@ for mode in normal locked; do
   # Eject the optical drive (well if you still have one that is)
   riverctl map $mode None XF86Eject spawn 'eject -T'
 
-  riverctl map $mode None XF86AudioRaiseVolume spawn "pamixer -i 5 && sh -c 'dunstify -i /lol -t 300 -r 2593 \"Volume: \$(pamixer --get-volume)%\"'"
-  riverctl map $mode None XF86AudioLowerVolume spawn "pamixer -d 5 && sh -c 'dunstify -i /lol -t 300 -r 2593 \"Volume: \$(pamixer --get-volume)%\"'"
-  riverctl map $mode None XF86AudioMute spawn 'pamixer --toggle-mute && dunstify -i /lol -t 300 -r 2593 "Toggle Mute"'
-
   riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
   riverctl map $mode None XF86AudioPlay spawn 'playerctl play-pause'
   riverctl map $mode None XF86AudioPrev spawn 'playerctl previous'
   riverctl map $mode None XF86AudioNext spawn 'playerctl next'
 
-  riverctl map $mode None XF86MonBrightnessUp spawn "brightnessctl set +10% && sh -c 'dunstify -i /lol -t 300 -r 2593 \"Brightness: \$(brightnessctl -m | cut -d, -f4 | tr -d '%')%\"'"
-  riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 10%- && sh -c 'dunstify -i /lol -t 300 -r 2593 \"Brightness: \$(brightnessctl -m | cut -d, -f4 | tr -d '%')%\"'"
+  riverctl map $mode None XF86AudioRaiseVolume spawn "$HOME/scripts/volume up"
+  riverctl map $mode None XF86AudioLowerVolume spawn "$HOME/scripts/volume down"
+  riverctl map $mode None XF86AudioMute spawn "$HOME/scripts/volume mute"
+
+  riverctl map $mode None XF86MonBrightnessUp spawn "$HOME/scripts/brightness up"
+  riverctl map $mode None XF86MonBrightnessDown spawn "$HOME/scripts/brightness down"
 done
 
 # Mouse binds
@@ -369,6 +372,8 @@ riverctl rule-add -app-id "org.qbittorrent.qBittorrent" tags $special_tag
 riverctl rule-add -title "Brawlhalla" fullscreen
 riverctl rule-add -app-id "org.pwmt.zathura" fullscreen
 riverctl rule-add -app-id "mpv" fullscreen
+riverctl rule-add -app-id "Spotify" fullscreen
+riverctl rule-add -app-id "ticktick" fullscreen
 riverctl rule-add -app-id "feh" fullscreen
 riverctl rule-add -app-id "org.libretro.RetroArch" fullscreen
 riverctl rule-add -app-id "es-de" fullscreen
