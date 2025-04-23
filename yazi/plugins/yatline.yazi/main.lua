@@ -607,7 +607,11 @@ function Yatline.line.get:tabs(side)
 				if show_background then
 					separator_style.bg = style_c.bg
 				end
-
+				-- HERE
+				if i == 1 then
+					lines[#lines + 1] = connect_separator(ui.Span(""), Side.RIGHT, SeparatorType.OUTER)
+				end
+				--
 				lines[#lines + 1] = connect_separator(span, in_side, SeparatorType.OUTER)
 			else
 				separator_style.fg = style_a.fg
