@@ -6,13 +6,14 @@ alias fvim='fzf --print0 | xargs -0 -o nvim'
 alias yeet="sudo pacman -Rns"
 alias up='paru -Syu'
 alias pyActivate='source $HOME/.venv/bin/activate'
+alias serve='python -m http.server'
 
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
 
 # confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp="cp -i -v"
+alias mv='mv -i -v'
+alias rm='rm -i -v'
 
 # Program Aliases
 alias pokescript='pokemon-colorscripts -r'
