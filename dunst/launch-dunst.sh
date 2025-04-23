@@ -9,4 +9,4 @@ sed -i '/background = /s|.*|    background = "#'"$color8"'"|' "$conf"
 sed -i '/foreground = /s|.*|    foreground = "#'"$color6"'"|' "$conf"
 sed -i '/frame_color = /s|.*|    frame_color = "#'"$color6"'"|' "$conf"
 
-pkill dunst && dunst &
+pkill dunst && notify-send "Updated colors!"
