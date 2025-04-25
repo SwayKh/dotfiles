@@ -126,9 +126,9 @@
     "format-wifi": "  {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
     "format-ethernet": " {bandwidthTotalBytes:>2}",
     "tooltip-format-ethernet": "󰈀 {ipaddr}",
-    "tooltip-format-wifi": " {ipaddr} ({signalStrength}%)",
-    "tooltip-format": "{ifname} via {gwaddr} 󰤯",
-    "format-linked": "{ifname} (No IP) 󰀦",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+    "tooltip-format": "󰤯 {ifname} via {gwaddr}",
+    "format-linked": "󰀦 {ifname} (No IP)",
     "format-disconnected": "󰀦 Disconnected", //Disconnected ⚠
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
@@ -156,8 +156,6 @@
   "wireplumber": {
     "format": "{icon} {volume:>3}%",
     "format-muted": "󰖁 {volume:>3}%",
-    // "format-bluetooth": "{icon} {volume:>2}% 󰂯", //{format_source}",
-    // "format-bluetooth-muted": "󰖁 {icon} 󰂯", //{format_source}",
     "format-icons": ["", "", ""],
   },
 
