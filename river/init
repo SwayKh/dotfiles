@@ -242,6 +242,33 @@ riverctl map-switch normal lid close "swaylock -f"
 # $mod+Return to bump the focused view to the top of the layout stack
 riverctl map normal $mod Return zoom
 
+# Focus windows with $mod h/j/k/l
+riverctl map normal $mod+Control H focus-view left
+riverctl map normal $mod+Control J focus-view down
+riverctl map normal $mod+Control K focus-view up
+riverctl map normal $mod+Control L focus-view right
+
+#Focus windows with $mod Arrow keys
+riverctl map normal $mod Left focus-view left
+riverctl map normal $mod Down focus-view down
+riverctl map normal $mod Up focus-view up
+riverctl map normal $mod Right focus-view right
+
+# Swap views(windows) with $mod+Shift h/j/k/l
+riverctl map normal $mod+Control Left swap left
+riverctl map normal $mod+Control Down swap down
+riverctl map normal $mod+Control Up swap up
+riverctl map normal $mod+Control Right swap right
+
+# $mod+Period and Super+Comma to focus the next/previous output(Monitor/Screen)
+riverctl map normal $mod Period focus-output next
+riverctl map normal $mod Comma focus-output previous
+
+# $mod+Shift+{Period,Comma} to send the focused view to the next/previous output
+riverctl map normal $mod+Shift Period send-to-output next
+riverctl map normal $mod+Shift Comma send-to-output previous
+
+# FLOATING MAPS
 # Move all these binds to a floating mode, since that's where the work
 riverctl declare-mode floating
 riverctl map normal Alt F enter-mode floating
@@ -267,62 +294,32 @@ riverctl map floating Shift L snap right
 
 riverctl map floating None Escape enter-mode normal
 
-# Focus windows with $mod h/j/k/l
-riverctl map normal $mod+Control H focus-view left
-riverctl map normal $mod+Control J focus-view down
-riverctl map normal $mod+Control K focus-view up
-riverctl map normal $mod+Control L focus-view right
+# RESIZE MAPS
+riverctl declare-mode resize
+riverctl map normal Alt R enter-mode resize
 
-#Focus windows with $mod Arrow keys
-riverctl map normal $mod Left focus-view left
-riverctl map normal $mod Down focus-view down
-riverctl map normal $mod Up focus-view up
-riverctl map normal $mod Right focus-view right
+# $mod+H and Super+L to decrease/increase the main ratio of rivertile(1)
+riverctl map resize None H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map resize None L send-layout-cmd rivertile "main-ratio +0.05"
 
-# $mod+J and Super+K to focus the next/previous view in the layout stack
-riverctl map normal $mod+Control N focus-view next
-riverctl map normal $mod+Control P focus-view previous
+riverctl map resize Control K send-layout-cmd rivertile "main-location top"
+riverctl map resize Control L send-layout-cmd rivertile "main-location right"
+riverctl map resize Control J send-layout-cmd rivertile "main-location bottom"
+riverctl map resize Control H send-layout-cmd rivertile "main-location left"
 
-# Swap views(windows) with $mod+Shift h/j/k/l
-riverctl map normal $mod+Shift Left swap left
-riverctl map normal $mod+Shift Down swap down
-riverctl map normal $mod+Shift Up swap up
-riverctl map normal $mod+Shift Right swap right
+# Shift+H and Shift+L to increment/decrement the main count of rivertile(1)
+riverctl map resize Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map resize Shift L send-layout-cmd rivertile "main-count -1"
+riverctl map resize None Escape enter-mode normal
 
+# PASSTHROUGH MAP
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
 riverctl declare-mode passthrough
-
 # $mod+F11 to enter passthrough mode
 riverctl map normal $mod F11 enter-mode passthrough
-
 # $mod+F11 to return to normal mode
 riverctl map passthrough $mod F11 enter-mode normal
-
-riverctl declare-mode resize
-riverctl map normal Alt R enter-mode resize
-# {Up,Right,Down,Left} to change layout orientation
-riverctl map resize None Up send-layout-cmd rivertile "main-location top"
-riverctl map resize None Right send-layout-cmd rivertile "main-location right"
-riverctl map resize None Down send-layout-cmd rivertile "main-location bottom"
-riverctl map resize None Left send-layout-cmd rivertile "main-location left"
-#
-# $mod+H and Super+L to decrease/increase the main ratio of rivertile(1)
-riverctl map resize $mod H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map resize $mod L send-layout-cmd rivertile "main-ratio +0.05"
-
-# $mod+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
-riverctl map resize $mod+Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map resize $mod+Shift L send-layout-cmd rivertile "main-count -1"
-riverctl map resize None Escape enter-mode normal
-#
-# $mod+Period and Super+Comma to focus the next/previous output(Monitor/Screen)
-riverctl map normal $mod Period focus-output next
-riverctl map normal $mod Comma focus-output previous
-
-# $mod+Shift+{Period,Comma} to send the focused view to the next/previous output
-riverctl map normal $mod+Shift Period send-to-output next
-riverctl map normal $mod+Shift Comma send-to-output previous
 
 #  ███████████              ████
 # ░░███░░░░░███            ░░███
