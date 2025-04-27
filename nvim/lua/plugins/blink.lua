@@ -46,6 +46,15 @@ require("blink.cmp").setup({
     providers = {
       lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100, fallbacks = { "lsp" } },
       path = { opts = { show_hidden_files_by_default = true } },
+      buffer = {
+        opts = {
+          get_bufnrs = function()
+            return vim.tbl_filter(function(bufnr)
+              return vim.bo[bufnr].buftype == ""
+            end, vim.api.nvim_list_bufs())
+          end,
+        },
+      },
     },
   },
 
