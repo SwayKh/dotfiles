@@ -12,7 +12,7 @@ map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw 
 
 map("n", "<leader>X", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
 map("n", "<space>x", "<Cmd>.lua<CR>", { desc = "Execute selected lua lines" })
-map("v", "<space>x", "<Cmd>lua<CR>", { desc = "Execute selected lua lines" })
+map("v", "<space>x", ":lua<CR>", { desc = "Execute selected lua lines" })
 
 -- Reload all lua files under neovim config
 -- map("n", "<leader>.", "<Cmd>source ~/.config/nvim/init.lua<CR>", { silent = true, desc = "Source nvim config" })

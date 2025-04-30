@@ -40,6 +40,21 @@ autocmd("FileType", {
   end,
 })
 
+autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.opt.background = "dark"
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+  end,
+})
+
 -- Clear cmdline messages after 1 sec
 -- autocmd("CmdlineLeave", {
 --   group = vim.api.nvim_create_augroup("clearcmdline", { clear = true }),

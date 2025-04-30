@@ -46,8 +46,9 @@ local function blink()
 end
 
 local function colorscheme()
-  vim.cmd.colorscheme("default")
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  -- Nice default color scheme:
+  -- default, habamax, retrobox, sorbet, wildcharm, unokai, slate
+  vim.cmd.colorscheme("slate")
 end
 
 local function formatter()
