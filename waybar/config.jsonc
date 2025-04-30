@@ -25,9 +25,7 @@
     "wireplumber",
     "clock",
     "custom/separator",
-    "group/custom-group",
-    "custom/separator",
-    "custom/power",
+    "group/custom-group"
   ],
 
   "group/custom-group": {
@@ -37,38 +35,11 @@
       "custom/bluetooth",
       "custom/kdeconnect",
       "custom/wifi",
+      "custom/power"
     ],
   },
 
   // Modules configuration
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    //"active-only": false,
-    "all-outputs": true,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "", // 󰈹
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "󰠮",
-      "8": "",
-      "9": "",
-      "10": "",
-      // "","",
-      // "urgent": "",
-      // "active": "",
-      // "default": ""
-    },
-  },
-
-  "hyprland/window": {
-    "format": "{}",
-    "separate-outputs": true,
-  },
-
   "river/tags": {
     "num-tags": 7,
     "tag-labels": ["󰈹", "", "", "", "", "", "󰠮", "", "", ""],
@@ -184,6 +155,21 @@
     },
   },
 
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""],
+  },
+
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -194,7 +180,7 @@
 
   "custom/power": {
     "format": "{icon}",
-    "format-icons": " ", //  
+    "format-icons": "", //  
     "exec-on-event": "true",
     "on-click": "$HOME/scripts/rofi-power",
     "tooltip-format": "Power Menu",
@@ -258,46 +244,5 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true,
-  },
-
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": "",
-    },
-  },
-
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["kitty", "wezterm", "foot", "footclient"],
-  },
-
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15,
-    },
-    "format": "{capacity}% {icon}",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": ["", "", "", "", ""],
-  },
-
-  "backlight/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal",
-    "device": "intel_backlight",
   },
 }

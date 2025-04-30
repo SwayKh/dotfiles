@@ -143,10 +143,6 @@ button:hover {
   color: @disabled;
 }
 
-#custom-power {
-  color: @alert;
-}
-
 #tray {
   /*background-color: @bordercolor;*/
   border: 1px solid @bordercolor;
