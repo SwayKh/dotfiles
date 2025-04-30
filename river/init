@@ -114,7 +114,6 @@ docs_tag=$((1 << 15))
 ticktick_tag=$((1 << 16))
 spotify_tag=$((1 << 17))
 project_tag=$((1 << 18))
-# special3_tag=$((1 << 19))
 
 scratch_tags=$((special_tag | sticky_tag | terminal_tag | files_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | project_tag))
 
@@ -130,7 +129,6 @@ riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
 riverctl map normal $mod+Shift P spawn "$scratchpad project"
 
 # Mapping for sending to stickypad
-# riverctl map normal $mod Slash toggle-view-tags $sticky_tag
 # Show sticky windows on scratch_tags too
 riverctl map normal $mod Slash toggle-view-tags $(($sticky_tag | $scratch_tags))
 
@@ -254,11 +252,11 @@ riverctl map normal $mod Down focus-view down
 riverctl map normal $mod Up focus-view up
 riverctl map normal $mod Right focus-view right
 
-# Swap views(windows) with $mod+Shift h/j/k/l
-riverctl map normal $mod+Control Left swap left
-riverctl map normal $mod+Control Down swap down
-riverctl map normal $mod+Control Up swap up
-riverctl map normal $mod+Control Right swap right
+# Swap views(windows) with Alt left/right/up/down
+riverctl map normal Mod1 Left swap left
+riverctl map normal Mod1 Down swap down
+riverctl map normal Mod1 Up swap up
+riverctl map normal Mod1 Right swap right
 
 # $mod+Period and Super+Comma to focus the next/previous output(Monitor/Screen)
 riverctl map normal $mod Period focus-output next
@@ -295,22 +293,18 @@ riverctl map floating Shift L snap right
 riverctl map floating None Escape enter-mode normal
 
 # RESIZE MAPS
-riverctl declare-mode resize
-riverctl map normal Alt R enter-mode resize
+# Alt+H and Alt+L to decrease/increase the main ratio of rivertile(1)
+riverctl map -repeat normal Mod1 H send-layout-cmd rivertile "main-ratio -0.01"
+riverctl map -repeat normal Mod1 L send-layout-cmd rivertile "main-ratio +0.01"
 
-# $mod+H and Super+L to decrease/increase the main ratio of rivertile(1)
-riverctl map resize None H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map resize None L send-layout-cmd rivertile "main-ratio +0.05"
-
-riverctl map resize Control K send-layout-cmd rivertile "main-location top"
-riverctl map resize Control L send-layout-cmd rivertile "main-location right"
-riverctl map resize Control J send-layout-cmd rivertile "main-location bottom"
-riverctl map resize Control H send-layout-cmd rivertile "main-location left"
+riverctl map normal Mod1+Control K send-layout-cmd rivertile "main-location top"
+riverctl map normal Mod1+Control L send-layout-cmd rivertile "main-location right"
+riverctl map normal Mod1+Control J send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Mod1+Control H send-layout-cmd rivertile "main-location left"
 
 # Shift+H and Shift+L to increment/decrement the main count of rivertile(1)
-riverctl map resize Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map resize Shift L send-layout-cmd rivertile "main-count -1"
-riverctl map resize None Escape enter-mode normal
+riverctl map normal Mod1+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map normal Mod1+Shift L send-layout-cmd rivertile "main-count -1"
 
 # PASSTHROUGH MAP
 # Declare a passthrough mode. This mode has only a single mapping to return to
