@@ -1,17 +1,5 @@
 #! /usr/bin/env bash
 
-# Load environment variables
-source "$HOME/.config/river/environment.sh"
-
-# Load hellwal colors to apply to borders
-source "$HOME/.cache/hellwal/variables.sh"
-
-# Variables
-terminal="footclient"
-filemanager="thunar"
-browser="floorp"
-mod="Mod4"
-
 # The Figlet font is DOS Rebel from https://github.com/xero/figlet-fonts/blob/master/Examples.md
 
 #    █████████               █████                      █████                         █████
@@ -22,6 +10,11 @@ mod="Mod4"
 #  ░███    ░███  ░███ ░███   ░███ ███░███ ░███ ░░░░███  ░███ ███ ███░░███  ░███       ░███ ███
 #  █████   █████ ░░████████  ░░█████ ░░██████  ██████   ░░█████ ░░████████ █████      ░░█████
 # ░░░░░   ░░░░░   ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░░░     ░░░░░   ░░░░░░░░ ░░░░░        ░░░░░
+
+# Load environment variables
+source "$HOME/.config/river/environment.sh"
+# Load hellwal colors to apply to borders
+source "$HOME/.cache/hellwal/variables.sh"
 
 # Autostart
 riverctl spawn "swww-daemon --format xrgb"
@@ -56,7 +49,6 @@ riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image
 #                                                            ░░░░░░
 
 # Settings
-
 # Set background and border color
 riverctl background-color "0x${color8}"
 riverctl border-width 2
@@ -90,6 +82,43 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 riverctl default-layout rivertile
 rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.5 -main-count 1 &
 
+#  █████   █████                      ███            █████     ████
+# ░░███   ░░███                      ░░░            ░░███     ░░███
+#  ░███    ░███   ██████   ████████  ████   ██████   ░███████  ░███   ██████   █████
+#  ░███    ░███  ░░░░░███ ░░███░░███░░███  ░░░░░███  ░███░░███ ░███  ███░░███ ███░░
+#  ░░███   ███    ███████  ░███ ░░░  ░███   ███████  ░███ ░███ ░███ ░███████ ░░█████
+#   ░░░█████░    ███░░███  ░███      ░███  ███░░███  ░███ ░███ ░███ ░███░░░   ░░░░███
+#     ░░███     ░░████████ █████     █████░░████████ ████████  █████░░██████  ██████
+#      ░░░       ░░░░░░░░ ░░░░░     ░░░░░  ░░░░░░░░ ░░░░░░░░  ░░░░░  ░░░░░░  ░░░░░░
+# Variables
+terminal="footclient"
+filemanager="thunar"
+browser="floorp"
+mod="Mod4"
+
+# Tags
+all_tags=$(((1 << 32) - 1))
+
+sticky_tag=$((1 << 31))
+special_tag=$((1 << 30))
+
+browser_tag=$((1 << 0))
+code_tag=$((1 << 1))
+file_browser_tag=$((1 << 2))
+games_tag=$((1 << 3))
+socials_tag=$((1 << 4))
+discord_tag=$((1 << 5))
+obsidian_tag=$((1 << 6))
+
+terminal_tag=$((1 << 11))
+files_tag=$((1 << 12))
+dots_tag=$((1 << 13))
+monitor_tag=$((1 << 14))
+docs_tag=$((1 << 15))
+ticktick_tag=$((1 << 16))
+spotify_tag=$((1 << 17))
+project_tag=$((1 << 18))
+
 #   █████████                                █████             █████                              █████
 #  ███░░░░░███                              ░░███             ░░███                              ░░███
 # ░███    ░░░   ██████  ████████   ██████   ███████    ██████  ░███████   ████████   ██████    ███████
@@ -102,19 +131,6 @@ rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.5 -main-count 1 &
 #                                                                         █████
 #                                                                        ░░░░░
 # Scratchpads
-all_tags=$(((1 << 32) - 1))
-sticky_tag=$((1 << 31))
-special_tag=$((1 << 30))
-
-terminal_tag=$((1 << 11))
-files_tag=$((1 << 12))
-dots_tag=$((1 << 13))
-monitor_tag=$((1 << 14))
-docs_tag=$((1 << 15))
-ticktick_tag=$((1 << 16))
-spotify_tag=$((1 << 17))
-project_tag=$((1 << 18))
-
 scratch_tags=$((special_tag | sticky_tag | terminal_tag | files_tag | dots_tag | monitor_tag | docs_tag | ticktick_tag | spotify_tag | project_tag))
 
 all_but_scratch_tag=$((all_tags ^ scratch_tags))
@@ -328,25 +344,25 @@ riverctl map passthrough $mod F11 enter-mode normal
 # Make all views with app-id "bar" and any title use client-side decorations
 riverctl rule-add ssd
 
-riverctl rule-add -app-id "floorp" tags $((1 << (1 - 1)))
-riverctl rule-add -app-id "firefox" tags $((1 << (1 - 1)))
-riverctl rule-add -app-id "Code" tags $((1 << (2 - 1)))
-riverctl rule-add -app-id "special-go" tags $((1 << (2 - 1)))
-riverctl rule-add -app-id "dev.zed.Zed" tags $((1 << (2 - 1)))
-riverctl rule-add -app-id "org.gnome.Nautilus" tags $((1 << (3 - 1)))
-riverctl rule-add -app-id "thunar" tags $((1 << (3 - 1)))
-riverctl rule-add -app-id "org.libretro.RetroArch" tags $((1 << (4 - 1)))
-riverctl rule-add -app-id "Celeste.bin.x86_64" tags $((1 << (4 - 1)))
-riverctl rule-add -app-id "hollow_knight.x86_64" tags $((1 << (4 - 1)))
-riverctl rule-add -title "Brawlhalla" tags $((1 << (4 - 1)))
-riverctl rule-add -app-id "citra-qt" tags $((1 << (4 - 1)))
-riverctl rule-add -app-id "es-de" tags $((1 << (4 - 1)))
-riverctl rule-add -app-id "steam" tags $((1 << (4 - 1)))
-riverctl rule-add -app-id "Ferdium" tags $((1 << (5 - 1)))
-riverctl rule-add -app-id "org.telegram.desktop" tags $((1 << (5 - 1)))
-riverctl rule-add -app-id "WebCord" tags $((1 << (6 - 1)))
-riverctl rule-add -app-id "vesktop" tags $((1 << (6 - 1)))
-riverctl rule-add -app-id "obsidian" tags $((1 << (7 - 1)))
+riverctl rule-add -app-id "floorp" tags $browser_tag
+riverctl rule-add -app-id "firefox" tags $browser_tag
+riverctl rule-add -app-id "Code" tags $code_tag
+riverctl rule-add -app-id "special-go" tags $code_tag
+riverctl rule-add -app-id "dev.zed.Zed" tags $code_tag
+riverctl rule-add -app-id "org.gnome.Nautilus" tags $file_browser_tag
+riverctl rule-add -app-id "thunar" tags $file_browser_tag
+riverctl rule-add -app-id "com.libretro.RetroArch" tags $games_tag
+riverctl rule-add -app-id "Celeste.bin.x86_64" tags $games_tag
+riverctl rule-add -app-id "hollow_knight.x86_64" tags $games_tag
+riverctl rule-add -title "Brawlhalla" tags $games_tag
+riverctl rule-add -app-id "citra-qt" tags $games_tag
+riverctl rule-add -app-id "es-de" tags $games_tag
+riverctl rule-add -app-id "steam" tags $games_tag
+riverctl rule-add -app-id "Ferdium" tags $socials_tag
+riverctl rule-add -app-id "org.telegram.desktop" tags $socials_tag
+riverctl rule-add -app-id "WebCord" tags $discord_tag
+riverctl rule-add -app-id "vesktop" tags $discord_tag
+riverctl rule-add -app-id "obsidian" tags $obsidian_tag
 
 riverctl rule-add -app-id "special-term" tags $terminal_tag
 riverctl rule-add -app-id "special-files" tags $files_tag
@@ -366,7 +382,7 @@ riverctl rule-add -app-id "mpv" fullscreen
 riverctl rule-add -app-id "Spotify" fullscreen
 riverctl rule-add -app-id "ticktick" fullscreen
 riverctl rule-add -app-id "feh" fullscreen
-riverctl rule-add -app-id "org.libretro.RetroArch" fullscreen
+riverctl rule-add -app-id "com.libretro.RetroArch" fullscreen
 riverctl rule-add -app-id "es-de" fullscreen
 
 riverctl rule-add -title "Special Offers" float # Steam
