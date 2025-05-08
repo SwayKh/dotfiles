@@ -136,62 +136,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local servers = {
   emmet_language_server = {}, -- HTML
   pyright = {}, -- Python
-  gopls = { -- Golang
-    cmd = { "gopls" },
-    filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
-    settings = {
-      gopls = {
-        completeUnimported = true,
-        usePlaceholders = false,
-        analyses = {
-          unusedparams = true,
-          unreachable = true,
-        },
-        -- report vulnerabilities
-        vulncheck = "Imports",
-        staticcheck = true,
-        gofumpt = true,
-      },
-    },
-  },
-  lua_ls = {
-    settings = {
-      Lua = {
-        runtime = { version = "LuaJIT" },
-        workspace = {
-          checkThirdParty = false,
-          library = {
-            vim.env.VIMRUNTIME,
-            -- "${3rd}/luv/library",
-          },
-        },
-        completion = {
-          callSnippet = "Replace",
-          displayContext = 10,
-          keywordSnippet = "Both",
-        },
-        diagnostics = {
-          globals = { "vim" },
-          disable = { "missing-fields", "undefined-global" },
-        },
-        codeLens = {
-          enable = true,
-        },
-        doc = {
-          privateName = { "^_" },
-        },
-        hint = {
-          enable = true,
-          setType = false,
-          paramType = true,
-          paramName = "Disable",
-          semicolon = "Disable",
-          arrayIndex = "Disable",
-        },
-      },
-    },
-  },
+  gopls = {},
+  lua_ls = {},
 }
 
 require("mason").setup({
@@ -211,6 +157,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities(capabilities))
 
 require("mason-lspconfig").setup({
+  ensure_installed = servers,
   handlers = {
     function(server_name)
       local server = servers[server_name] or {}
@@ -218,4 +165,5 @@ require("mason-lspconfig").setup({
       lspconfig[server_name].setup(server)
     end,
   },
+  automatic_enable = true,
 })
