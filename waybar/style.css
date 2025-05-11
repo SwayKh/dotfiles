@@ -1,4 +1,5 @@
-@import '/home/sumit/.cache/hellwal/waybar-colors.css';
+/* fragile file path */
+@import url("../../.cache/hellwal/waybar-colors.css"); 
 
 /* Use hellwal colors  */
 @define-color bordercolor alpha(@color14, 1.0);
@@ -11,7 +12,7 @@
 * {
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 window#waybar {
@@ -19,24 +20,21 @@ window#waybar {
   background: @bg;
   transition-property: background-color;
   transition-duration: 0.5s;
-  border: 2px solid @bordercolor;
-  border-radius: 10px;
+  border: 0.15rem solid @bordercolor;
+  border-radius: 0.8rem;
 }
 
 button {
-  /* Use box-shadow instead of border so the text isn't offset */
-  box-shadow: inset 0 -3px transparent;
   /* Avoid rounded borders under each button name */
   border: none;
-  border-radius: 0px;
-  padding: 0px 5px;
-  margin: 5px 0px;
+  border-radius: 0rem;
+  padding: 0rem 0.4rem;
+  margin: 0.4rem 0rem;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px transparent;
 }
 
 #workspaces button {
@@ -57,8 +55,8 @@ button:hover {
 /*River Tags/Workspaces*/
 #tags {
   background-color: transparent;
-  border-radius: 0px;
-  padding: 0px 5px;
+  border-radius: 0rem;
+  padding: 0rem 0.4rem;
 }
 
 #tags button {
@@ -66,9 +64,9 @@ button:hover {
   background: @bg;
 
   /*If you need round border icons*/
-  border-radius: 0px;
-  padding: 0px 0px;
-  margin: 5px 0px;
+  border-radius: 0rem;
+  padding: 0rem 0rem;
+  margin: 0.4rem 0rem;
 }
 
 #tags button.occupied {
@@ -114,8 +112,8 @@ button:hover {
 #idle_inhibitor,
 #window,
 #mpd {
-  padding: 0px 5px;
-  margin: 0px 5px;
+  padding: 0rem 0.4rem;
+  margin: 0rem 0.4rem;
   color: @bordercolor;
 }
 
@@ -132,23 +130,23 @@ button:hover {
 #custom-group {
   color: @bg;
   background-color: @bordercolor;
-  margin: 5px;
-  padding: 0px 5px;
-  border-radius: 5px;
+  margin: 0.4rem;
+  padding: 0rem 0.4rem;
+  border-radius: 0.4rem;
 }
 
 #custom-separator {
-  padding: 0px;
-  margin: 0px;
+  padding: 0rem;
+  margin: 0rem;
   color: @disabled;
 }
 
 #tray {
   /*background-color: @bordercolor;*/
-  border: 1px solid @bordercolor;
-  margin: 5px;
-  padding: 0px 15px;
-  border-radius: 5px;
+  border: 0.1rem solid @bordercolor;
+  margin: 0.4rem;
+  padding: 0rem 1.25rem;
+  border-radius: 0.4rem;
 }
 
 #network.disconnected,
