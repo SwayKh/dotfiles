@@ -74,6 +74,12 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" natural-scroll enabled
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-typing enabled
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" disable-while-trackpointing enabled
 
+riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" tap enabled
+riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" accel-profile flat
+riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" natural-scroll enabled
+riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" disable-while-typing enabled
+riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" disable-while-trackpointing enabled
+
 # Disable touchpad
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 #
@@ -353,7 +359,7 @@ riverctl rule-add -app-id "special-go" tags $code_tag
 riverctl rule-add -app-id "dev.zed.Zed" tags $code_tag
 riverctl rule-add -app-id "org.gnome.Nautilus" tags $file_browser_tag
 riverctl rule-add -app-id "thunar" tags $file_browser_tag
-riverctl rule-add -app-id "org.kde.dolphine" tags $file_browser_tag
+riverctl rule-add -app-id "org.kde.dolphin" tags $file_browser_tag
 riverctl rule-add -app-id "com.libretro.RetroArch" tags $games_tag
 riverctl rule-add -app-id "Celeste.bin.x86_64" tags $games_tag
 riverctl rule-add -app-id "hollow_knight.x86_64" tags $games_tag
