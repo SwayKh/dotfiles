@@ -65,7 +65,7 @@ button:hover {
 
   /*If you need round border icons*/
   border-radius: 0rem;
-  padding: 0rem 0rem;
+  padding: 0rem 0.4rem;
   margin: 0.4rem 0rem;
 }
 
