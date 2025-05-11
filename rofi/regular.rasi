@@ -16,10 +16,6 @@ configuration {
   display-filebrowser:  " Files";
 	display-ssh:          "󰣀 SSH";
 	display-keys:         " Keys";
-
-  filebrowser {
-    directory: "/home/sumit/";
-  }
 }
 
 @import "colors"

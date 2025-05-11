@@ -16,11 +16,6 @@ configuration {
   display-filebrowser:  " Files";
 	display-ssh:          "󰣀 SSH";
 	display-keys:         " Keys";
-
-  filebrowser {
-    /*Reset directory to home every time*/
-    directory: "/home/sumit/";
-  }
 }
 
 @import "colors"
