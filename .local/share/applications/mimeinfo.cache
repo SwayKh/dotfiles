@@ -22,6 +22,7 @@ image/x-xbitmap=feh.desktop;
 text/html=floorp.desktop;
 text/mml=floorp.desktop;
 text/xml=floorp.desktop;
+x-scheme-handler/discord-1345366770436800533=discord-1345366770436800533.desktop;
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop;
 x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop;
 x-scheme-handler/discord-831593107883032657=discord-831593107883032657.desktop;
