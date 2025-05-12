@@ -385,6 +385,8 @@ riverctl rule-add -app-id "Spotify" tags $spotify_tag
 riverctl rule-add -title "YouTube Music" tags $spotify_tag
 riverctl rule-add -app-id "org.qbittorrent.qBittorrent" tags $special_tag
 
+riverctl rule-add -app-id "anki" csd
+
 riverctl rule-add -title "Brawlhalla" fullscreen
 riverctl rule-add -app-id "org.pwmt.zathura" fullscreen
 riverctl rule-add -app-id "mpv" fullscreen
