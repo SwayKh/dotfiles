@@ -86,7 +86,7 @@ riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.5 -main-count 1 &
+rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
 
 #  █████   █████                      ███            █████     ████
 # ░░███   ░░███                      ░░░            ░░███     ░░███
@@ -98,7 +98,7 @@ rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.5 -main-count 1 &
 #      ░░░       ░░░░░░░░ ░░░░░     ░░░░░  ░░░░░░░░ ░░░░░░░░  ░░░░░  ░░░░░░  ░░░░░░
 # Variables
 terminal="footclient"
-filemanager="dolphin"
+filemanager="thunar"
 browser="floorp"
 mod="Mod4"
 

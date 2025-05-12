@@ -21,7 +21,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   border: 0.15rem solid @bordercolor;
-  border-radius: 0.8rem;
+  border-radius: 0.0rem;
 }
 
 button {
@@ -132,7 +132,7 @@ button:hover {
   background-color: @bordercolor;
   margin: 0.4rem;
   padding: 0rem 0.4rem;
-  border-radius: 0.4rem;
+  border-radius: 0.0rem;
 }
 
 #custom-separator {
@@ -146,7 +146,7 @@ button:hover {
   border: 0.1rem solid @bordercolor;
   margin: 0.4rem;
   padding: 0rem 1.25rem;
-  border-radius: 0.4rem;
+  border-radius: 0rem;
 }
 
 #network.disconnected,
