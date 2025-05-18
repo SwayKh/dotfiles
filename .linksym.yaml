@@ -156,3 +156,7 @@ records:
       paths:
         - ~/scripts
         - $init_directory/scripts
+    - name: dotfiles/gtklock
+      paths:
+        - ~/.config/gtklock
+        - $init_directory/gtklock

@@ -1,0 +1,13 @@
+window {
+  background-image: url("../wall.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  opacity: 0.8;
+}
+
+#date-label,
+#clock-label {
+  color: white;
+}

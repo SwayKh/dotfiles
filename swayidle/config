@@ -1,2 +1,2 @@
-timeout 600 'swaylock -f'
-before-sleep 'swaylock -f'
+timeout 600 'gtklock -d'
+before-sleep 'gtklock -d'
