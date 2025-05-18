@@ -37,7 +37,7 @@ end
 local function blink()
   add({
     source = "Saghen/blink.cmp",
-    checkout = "v1.2.0",
+    checkout = "v1.3.1",
     depends = {
       "rafamadriz/friendly-snippets",
     },
@@ -56,6 +56,24 @@ local function formatter()
     source = "stevearc/conform.nvim",
   })
   require("plugins.format")
+end
+
+local function hardtime()
+  add({
+    source = "m4xshen/hardtime.nvim",
+    depends = {
+      "MunifTanjim/nui.nvim",
+    },
+  })
+  require("hardtime").setup({
+    max_time = 1000,
+    max_count = 3,
+    disable_mouse = true,
+    hint = true,
+    timeout = 3000,
+    notification = true,
+    allow_different_key = true,
+  })
 end
 
 local function linter()
@@ -158,6 +176,7 @@ later(function()
   arrow()
   blink()
   formatter()
+  hardtime()
   linter()
   lsp()
   markdown()
