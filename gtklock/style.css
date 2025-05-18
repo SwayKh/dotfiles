@@ -8,6 +8,7 @@ window {
 }
 
 #date-label,
+#input-label,
 #clock-label {
   color: white;
 }
