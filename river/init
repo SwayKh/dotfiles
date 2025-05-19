@@ -99,7 +99,7 @@ rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 -main-count 1 &
 # Variables
 terminal="footclient"
 filemanager="thunar"
-browser="floorp"
+browser="zen"
 mod="Mod4"
 
 # Tags
@@ -277,10 +277,10 @@ riverctl map normal $mod Up focus-view up
 riverctl map normal $mod Right focus-view right
 
 # Swap views(windows) with Alt left/right/up/down
-riverctl map normal Mod1 Left swap left
-riverctl map normal Mod1 Down swap down
-riverctl map normal Mod1 Up swap up
-riverctl map normal Mod1 Right swap right
+riverctl map normal Mod1+Control Left swap left
+riverctl map normal Mod1+Control Down swap down
+riverctl map normal Mod1+Control Up swap up
+riverctl map normal Mod1+Control Right swap right
 
 # $mod+Period and Super+Comma to focus the next/previous output(Monitor/Screen)
 riverctl map normal $mod Period focus-output next
@@ -353,6 +353,7 @@ riverctl map passthrough $mod F11 enter-mode normal
 riverctl rule-add ssd
 
 riverctl rule-add -app-id "floorp" tags $browser_tag
+riverctl rule-add -app-id "zen" tags $browser_tag
 riverctl rule-add -app-id "firefox" tags $browser_tag
 riverctl rule-add -app-id "Code" tags $code_tag
 riverctl rule-add -app-id "anki" tags $code_tag
@@ -415,6 +416,7 @@ riverctl rule-add -app-id 'GParted' float
 riverctl rule-add -app-id 'nwg-look' float
 riverctl rule-add -app-id 'firefox' -title 'Picture-in-Picture' float
 riverctl rule-add -app-id 'floorp' -title 'Picture-in-Picture' float
+riverctl rule-add -app-id 'zen' -title 'Picture-in-Picture' float
 riverctl rule-add -title 'gtk*' float
 riverctl rule-add -app-id 'xdg-desktop-portal-gtk' float
 
