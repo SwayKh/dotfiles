@@ -7,3 +7,5 @@ source "$HOME/.config/zsh/exports.zsh"
 # And zopts need to sourced before vim.zsh to setup vim-keybinds
 source "$HOME/.config/zsh/sources.zsh"
 source "$HOME/.config/zsh/vim.zsh"
+
+export PATH=$PATH:/home/sumit/.spicetify
