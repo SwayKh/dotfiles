@@ -107,7 +107,7 @@
     "tooltip-format": "󰤯 {ifname} via {gwaddr}",
     "format-linked": "󰀦 {ifname} (No IP)",
     "format-disconnected": "󰀦 Disconnected", //Disconnected ⚠
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-alt": "{ifname}: {gwaddr}/{cidr}",
   },
 
   "pulseaudio": {

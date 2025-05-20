@@ -23,45 +23,26 @@ window#waybar {
 button {
   /* Avoid rounded borders under each button name */
   border: none;
-  border-radius: 0rem;
+  border-radius: 5rem;
   padding: 0rem 0.4rem;
   margin: 0rem 0.4rem;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-  background: inherit;
-}
-
-#workspaces button {
-  color: @fg;
-}
-
-#workspaces button.urgent {
-  color: @alert;
-}
-#workspaces button.empty {
-  color: @bordercolor;
-}
-
-#workspaces button.active {
-  color: @highlight;
 }
 
 /*River Tags/Workspaces*/
 #tags {
   background-color: @bg;
   color: @bordercolor;
-  border: 0.05rem solid @bordercolor;
-  border-radius: 0rem;
+  border: 0.1rem solid @bordercolor;
+  border-radius: 5rem;
   padding: 0rem 1rem;
 }
 
-#window {
-  border: 0.05rem solid @bordercolor;
+#window.focused {
   color: @bordercolor;
-  padding: 0rem 1rem;
   background-color: @bg;
+  border-radius: 5rem;
+  border: 0.1rem solid @bordercolor;
+  padding: 0rem 1rem;
 }
 
 #tags button {
@@ -117,9 +98,9 @@ button:hover {
 #mpd {
   color: @fg;
   background-color: @bg;
-  border-radius: 0rem;
-  border: 0.05rem solid @bordercolor;
-  padding: 0rem 0.4rem;
+  border-radius: 5rem;
+  border: 0.1rem solid @bordercolor;
+  padding: 0rem 0.8rem;
   margin: 0rem 0.4rem;
 }
 
@@ -134,8 +115,8 @@ button:hover {
 #custom-bluetooth,
 #custom-power,
 #idle_inhibitor {
-  /* color: @bg; */
-  /* background-color: @bordercolor; */
+  padding: 0rem 0.4rem;
+  margin: 0rem 0.4rem;
   border: 0rem solid @bordercolor;
 }
 
