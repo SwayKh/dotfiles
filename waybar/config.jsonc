@@ -20,7 +20,8 @@
     "network",
     // "cpu",
     // "memory",
-    "temperature",
+    // "temperature",
+    "custom/temp",
     "backlight",
     "wireplumber",
     "battery",
@@ -220,6 +221,15 @@
     "format": "{icon}",
     "format-icons": "|",
     "tooltip": false,
+  },
+
+  "custom/temp": {
+    "format": "{}",
+    "interval": 1,
+    "exec": "$HOME/scripts/temp",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "riverctl spawn '~/.config/river/scratchpads.sh btop'",
   },
 
   "custom/pacman": {

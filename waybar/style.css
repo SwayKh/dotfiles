@@ -23,7 +23,7 @@ window#waybar {
 button {
   /* Avoid rounded borders under each button name */
   border: none;
-  border-radius: 5rem;
+  border-radius: 1rem;
   padding: 0rem 0.4rem;
   margin: 0rem 0.4rem;
 }
@@ -33,14 +33,14 @@ button {
   background-color: @bg;
   color: @bordercolor;
   border: 0.1rem solid @bordercolor;
-  border-radius: 5rem;
+  border-radius: 1rem;
   padding: 0rem 1rem;
 }
 
 #window.focused {
   color: @bordercolor;
   background-color: @bg;
-  border-radius: 5rem;
+  border-radius: 1rem;
   border: 0.1rem solid @bordercolor;
   padding: 0rem 1rem;
 }
@@ -87,6 +87,7 @@ button {
 #mode,
 #scratchpad,
 #custom-notification,
+#custom-temp,
 #custom-wifi,
 #custom-kdeconnect,
 #custom-bluetooth,
@@ -98,7 +99,7 @@ button {
 #mpd {
   color: @fg;
   background-color: @bg;
-  border-radius: 5rem;
+  border-radius: 1rem;
   border: 0.1rem solid @bordercolor;
   padding: 0rem 0.8rem;
   margin: 0rem 0.4rem;
