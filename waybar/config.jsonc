@@ -2,7 +2,6 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 25,
   "margin-left": 4,
   "margin-right": 4,
   "margin-top": 4,
@@ -163,17 +162,8 @@
   },
 
   "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15,
-    },
-    "format": "{capacity}% {icon}",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-alt": "{icon} {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": ["", "", "", "", ""],
   },
 

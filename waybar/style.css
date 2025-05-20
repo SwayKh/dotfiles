@@ -20,14 +20,6 @@ window#waybar {
   background: none;
 }
 
-button {
-  /* Avoid rounded borders under each button name */
-  border: none;
-  border-radius: 1rem;
-  padding: 0rem 0.4rem;
-  margin: 0rem 0.4rem;
-}
-
 /*River Tags/Workspaces*/
 #tags {
   background-color: @bg;
@@ -122,6 +114,7 @@ button {
 }
 
 #custom-group {
+  padding: 0.4rem 1rem;
   margin-right: 0rem;
 }
 
