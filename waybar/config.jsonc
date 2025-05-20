@@ -12,77 +12,83 @@
 
   // Choose the order of the modules
 
-  "modules-left": ["hyprland/workspaces", "river/tags", "tray"],
+  "modules-left": ["river/tags", "river/window"],
 
-  //"modules-center": ["clock"],
+  "modules-center": ["clock"],
 
   "modules-right": [
     "network",
-    "cpu",
-    "memory",
+    // "cpu",
+    // "memory",
     "temperature",
     "backlight",
     "wireplumber",
-    "clock",
-    "custom/separator",
-    "group/custom-group"
+    "battery",
+    "group/custom-group",
   ],
 
   "group/custom-group": {
     "orientation": "horizontal",
     "modules": [
+      "tray",
       "idle_inhibitor",
       "custom/bluetooth",
       "custom/kdeconnect",
       "custom/wifi",
-      "custom/power"
+      "custom/power",
     ],
   },
 
   // Modules configuration
   "river/tags": {
-    "num-tags": 7,
+    // "num-tags": 10,
     "tag-labels": ["󰈹", "", "", "", "", "", "󰠮", "", "", ""],
+    "hide-vacant": true,
+  },
+
+  "river/window": {
+    "format": "{}",
+    "max-length": 35,
   },
 
   "tray": {
     "icon-size": 16,
-    "spacing": 5,
+    "spacing": 10,
     "show-passive-items": true,
   },
 
   "clock": {
     "interval": 60,
-    "format": "  {:%a %b %d    %I:%M %p}", // %b %d %Y  --Date formatting
+    "format": " {:%a %b %d    %I:%M %p}", // %b %d %Y  --Date formatting
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d %H:%M:%S  }",
+    "format-alt": "{:%a %b %d}",
   },
 
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    // "format-critical": "{temperatureC}°C {icon}",
+    // "thermal-zone": 4,
     "critical-threshold": 80,
     "interval": 2,
     "format": " {temperatureC:>2}°C",
     "format-icons": ["", "", ""],
-    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
+    "on-click": "riverctl spawn '~/.config/river/scratchpads.sh btop'",
   },
 
   "cpu": {
     "interval": 2,
     "format": " {usage:>2}%",
-    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
+    "on-click": "riverctl spawn '~/.config/river/scratchpads.sh btop'",
   },
 
   "memory": {
     "interval": 2,
     "format": " {:>2}%",
+    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 
   "disk": {
     "interval": 15,
     "format": "󰋊 {percentage_used:>2}%",
+    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 
   "backlight": {
@@ -94,7 +100,7 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "interval": 1,
-    "format-wifi": "  {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
+    "format-wifi": " {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
     "format-ethernet": " {bandwidthTotalBytes:>2}",
     "tooltip-format-ethernet": "󰈀 {ipaddr}",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
@@ -180,7 +186,7 @@
 
   "custom/power": {
     "format": "{icon}",
-    "format-icons": "", //  
+    "format-icons": " ", //  
     "exec-on-event": "true",
     "on-click": "$HOME/scripts/rofi-power",
     "tooltip-format": "Power Menu",

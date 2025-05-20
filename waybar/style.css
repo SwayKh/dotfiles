@@ -1,5 +1,5 @@
 /* fragile file path */
-@import url("../../.cache/hellwal/waybar-colors.css"); 
+@import url("../../.cache/hellwal/waybar-colors.css");
 
 /* Use hellwal colors  */
 @define-color bordercolor alpha(@color14, 1.0);
@@ -17,11 +17,7 @@
 
 window#waybar {
   color: @fg;
-  background: @bg;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  border: 0.15rem solid @bordercolor;
-  border-radius: 0.0rem;
+  background: none;
 }
 
 button {
@@ -29,7 +25,7 @@ button {
   border: none;
   border-radius: 0rem;
   padding: 0rem 0.4rem;
-  margin: 0.4rem 0rem;
+  margin: 0rem 0.4rem;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -54,19 +50,25 @@ button:hover {
 
 /*River Tags/Workspaces*/
 #tags {
-  background-color: transparent;
+  background-color: @bg;
+  color: @bordercolor;
+  border: 0.05rem solid @bordercolor;
   border-radius: 0rem;
-  padding: 0rem 0.4rem;
+  padding: 0rem 1rem;
+}
+
+#window {
+  border: 0.05rem solid @bordercolor;
+  color: @bordercolor;
+  padding: 0rem 1rem;
+  background-color: @bg;
 }
 
 #tags button {
   color: @bordercolor;
   background: @bg;
-
-  /*If you need round border icons*/
-  border-radius: 0rem;
   padding: 0rem 0.4rem;
-  margin: 0.4rem 0rem;
+  margin: 0rem 0.4rem;
 }
 
 #tags button.occupied {
@@ -109,44 +111,40 @@ button:hover {
 #custom-bluetooth,
 #custom-power,
 #custom-separator,
+#custom-group,
 #idle_inhibitor,
 #window,
 #mpd {
+  color: @fg;
+  background-color: @bg;
+  border-radius: 0rem;
+  border: 0.05rem solid @bordercolor;
   padding: 0rem 0.4rem;
   margin: 0rem 0.4rem;
-  color: @bordercolor;
 }
 
+#tray menu,
+#tray > .needs-attention,
+#tray > .passive,
+#tray > .active,
+#tray,
 #custom-notification,
 #custom-wifi,
 #custom-kdeconnect,
 #custom-bluetooth,
 #custom-power,
 #idle_inhibitor {
-  color: @bg;
+  /* color: @bg; */
+  /* background-color: @bordercolor; */
+  border: 0rem solid @bordercolor;
 }
 
-#clock,
 #custom-group {
-  color: @bg;
-  background-color: @bordercolor;
-  margin: 0.4rem;
-  padding: 0rem 0.4rem;
-  border-radius: 0.0rem;
+  margin-right: 0rem;
 }
 
 #custom-separator {
-  padding: 0rem;
-  margin: 0rem;
   color: @disabled;
-}
-
-#tray {
-  /*background-color: @bordercolor;*/
-  border: 0.1rem solid @bordercolor;
-  margin: 0.4rem;
-  padding: 0rem 1.25rem;
-  border-radius: 0rem;
 }
 
 #network.disconnected,
@@ -162,14 +160,4 @@ button:hover {
 
 label:focus {
   background-color: @bg;
-}
-
-#battery.critical:not(.charging) {
-  background-color: @alert;
-  color: @fg;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
