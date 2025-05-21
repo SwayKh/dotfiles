@@ -32,9 +32,9 @@
     "modules": [
       "tray",
       "idle_inhibitor",
-      "custom/bluetooth",
-      "custom/kdeconnect",
-      "custom/wifi",
+      // "custom/bluetooth",
+      // "custom/kdeconnect",
+      // "custom/wifi",
       "custom/power",
     ],
   },
@@ -61,7 +61,7 @@
     "interval": 60,
     "format": " {:%a %b %d    %I:%M %p}", // %b %d %Y  --Date formatting
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%a %b %d}",
+    "format-alt": " {:%a %b %d}",
   },
 
   "temperature": {
@@ -100,7 +100,7 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "interval": 1,
-    "format-wifi": " {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
+    "format-wifi": "  {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
     "format-ethernet": " {bandwidthTotalBytes:>2}",
     "tooltip-format-ethernet": "󰈀 {ipaddr}",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
