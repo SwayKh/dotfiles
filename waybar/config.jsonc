@@ -55,6 +55,7 @@
     "icon-size": 16,
     "spacing": 10,
     "show-passive-items": true,
+    "reverse-direction": true,
   },
 
   "clock": {
