@@ -160,3 +160,7 @@ records:
       paths:
         - ~/.config/gtklock
         - $init_directory/gtklock
+    - name: dotfiles/lazygit
+      paths:
+        - ~/.config/lazygit
+        - $init_directory/lazygit
