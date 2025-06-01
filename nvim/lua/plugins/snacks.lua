@@ -80,8 +80,8 @@ require("snacks").setup({
       style = "terminal",
       border = vim.g.border_style,
       position = "float",
-      height = 0.8,
-      width = 0.8,
+      height = 0.9,
+      width = 0.9,
     },
   },
 
