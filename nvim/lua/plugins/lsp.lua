@@ -1,4 +1,23 @@
-local lspconfig = require("lspconfig")
+local servers = {
+  "emmet_language_server", -- HTML
+  "clangd", -- C/C++
+  "pyright", -- Python
+  "gopls", -- Golang
+  "lua_ls", -- Lua
+}
+
+vim.lsp.enable(servers)
+
+vim.lsp.config("*", {
+  capabilities = require("blink.cmp").get_lsp_capabilities(nil, true),
+  root_markers = { ".git" },
+})
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = servers,
+  automatic_enable = true,
+})
 
 require("lazydev").setup({
   library = {
@@ -6,8 +25,6 @@ require("lazydev").setup({
     { path = "${3rd}/luv/library", words = { "vim%.uv" } },
   },
 })
-
-require("lspconfig.ui.windows").default_options.border = vim.g.border_style
 
 vim.diagnostic.config({
   severity_sort = true,
@@ -53,60 +70,6 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
   callback = function(event)
-    local map = function(keys, func, desc)
-      vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-    end
-
-    map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-    map("<leader>rs", ":LspRestart<CR>", "LSP [R]e[S]tart")
-
-    map("gd", function()
-      MiniExtra.pickers.lsp({ scope = "definition" })
-    end, "[G]oto [D]definition")
-
-    map("gr", function()
-      MiniExtra.pickers.lsp({ scope = "references" })
-    end, "[G]oto [R]eferences")
-
-    map("gi", function()
-      MiniExtra.pickers.lsp({ scope = "implementation" })
-    end, "[G]oto [I]mplementation")
-
-    map("gD", function()
-      MiniExtra.pickers.lsp({ scope = "declaration" })
-    end, "[G]oto [D]eclaration")
-
-    map("<leader>D", function()
-      MiniExtra.pickers.lsp({ scope = "type_definition" })
-    end, "Type [D]definition")
-
-    -- map("<leader>ds", function()
-    --   MiniExtra.pickers.lsp({ scope = "document_symbol" })
-    -- end, "[D]ocument [S]symbols")
-    --
-    -- map("<leader>ws", function()
-    --   MiniExtra.pickers.lsp({ scope = "workspace_symbol" })
-    -- end, "[W]orkspace [S]symbols")
-
-    -- See `:help K` for why this keymap
-    map("K", vim.lsp.buf.hover, "Hover Documentation")
-
-    -- Diagnostic keymaps
-    map("<leader>e", vim.diagnostic.open_float, "Open floating diagnostic message")
-    map("<leader>q", vim.diagnostic.setloclist, "Open diagnostics list")
-
-    -- Lesser used LSP functionality
-    map("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-    map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
-    map("<leader>wl", function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, "[W]orkspace [L]ist Folders")
-
-    vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
-      vim.lsp.buf.format()
-    end, { desc = "Format current buffer with LSP" })
-
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.server_capabilities.documentHighlightProvider then
       local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
@@ -130,40 +93,51 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })
       end,
     })
+
+    vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
+      vim.lsp.buf.format()
+    end, { desc = "Format current buffer with LSP" })
+
+    local map = function(keys, func, desc, mode)
+      mode = mode or "n"
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+    end
+
+    map("K", vim.lsp.buf.hover, "Hover Documentation")
+    map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
+    map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
+    map("grs", ":LspRestart<CR>", "LSP [R]e[S]tart")
+    map("grr", function()
+      MiniExtra.pickers.lsp({ scope = "references" })
+    end, "[G]oto [R]eferences")
+    map("gri", function()
+      MiniExtra.pickers.lsp({ scope = "implementation" })
+    end, "[G]oto [I]mplementation")
+    map("grd", function()
+      MiniExtra.pickers.lsp({ scope = "definition" })
+    end, "[G]oto [D]definition")
+    map("grD", function()
+      MiniExtra.pickers.lsp({ scope = "declaration" })
+    end, "[G]oto [D]eclaration")
+    map("grt", function()
+      MiniExtra.pickers.lsp({ scope = "type_definition" })
+    end, "Type [D]definition")
+    map("gO", function()
+      MiniExtra.pickers.lsp({ scope = "document_symbol" })
+    end, "[D]ocument [S]symbols")
+    map("gW", function()
+      MiniExtra.pickers.lsp({ scope = "workspace_symbol" })
+    end, "[W]orkspace [S]symbols")
+
+    -- Diagnostic keymaps
+    map("<leader>e", vim.diagnostic.open_float, "Open floating diagnostic message")
+    map("<leader>q", vim.diagnostic.setloclist, "Open diagnostics list")
+
+    -- Lesser used LSP functionality
+    map("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
+    map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+    map("<leader>wl", function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, "[W]orkspace [L]ist Folders")
   end,
-})
-
-local servers = {
-  emmet_language_server = {}, -- HTML
-  pyright = {}, -- Python
-  gopls = {},
-  lua_ls = {},
-}
-
-require("mason").setup({
-  ui = {
-    border = vim.g.border_style,
-    width = 0.8,
-    height = 0.8,
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗",
-    },
-  },
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities(capabilities))
-
-require("mason-lspconfig").setup({
-  ensure_installed = servers,
-  handlers = {
-    function(server_name)
-      local server = servers[server_name] or {}
-      server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-      lspconfig[server_name].setup(server)
-    end,
-  },
-  automatic_enable = true,
 })
