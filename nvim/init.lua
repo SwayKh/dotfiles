@@ -159,12 +159,6 @@ local function trouble()
   require("plugins.trouble")
 end
 
-local function vim_navigator()
-  add({
-    source = "christoomey/vim-tmux-navigator",
-  })
-end
-
 -- Load everything now
 now(function()
   colorscheme()
@@ -182,7 +176,6 @@ later(function()
   markdown()
   treesitter()
   trouble()
-  vim_navigator()
 
   -- add vim-startuptime plugin
   add({
