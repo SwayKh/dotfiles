@@ -1,8 +1,6 @@
--- Golang
-vim.lsp.config("gopls", {
+return {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
-  -- root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
       completeUnimported = true,
@@ -17,4 +15,4 @@ vim.lsp.config("gopls", {
       gofumpt = true,
     },
   },
-})
+}
