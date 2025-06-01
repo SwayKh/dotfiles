@@ -85,13 +85,13 @@ end
 
 local function lsp()
   add({
-    source = "neovim/nvim-lspconfig",
+    source = "mason-org/mason.nvim",
     depends = {
-      "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
-      -- "WhoIsSethDaniel/mason-tool-installer.nvim",
       "nvim-lua/plenary.nvim",
       "folke/lazydev.nvim",
+      -- "neovim/nvim-lspconfig",
+      -- "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
   })
 
