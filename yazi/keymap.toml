@@ -11,7 +11,7 @@ prepend_keymap = [
   { on = '<Esc>',        run  = 'close',                  desc = 'Cancel input'}
 ]
 
-[manager]
+[mgr]
 # Make all changed keymaps into prepend_keymap, keep the default config as is
 # Easier to Maintain and keep track of
 prepend_keymap = [

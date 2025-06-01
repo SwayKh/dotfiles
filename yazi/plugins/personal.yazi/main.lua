@@ -47,22 +47,22 @@ local resize_pane = ya.sync(function(st, args)
 				:split(self._area)
 		end
 	end
-	ya.app_emit("resize", {})
+	ya.emit("app:resize", {})
 end)
 
 local directory_tab = ya.sync(function()
 	local h = cx.active.current.hovered
-	ya.manager_emit("tab_create", h and h.cha.is_dir and { h.url } or { current = true })
+	ya.emit("tab_create", h and h.cha.is_dir and { h.url } or { current = true })
 end)
 
 local pick_random = ya.sync(function()
 	local files = cx.active.current.files
-	ya.manager_emit("reveal", { files[math.random(1, #files)].name })
+	ya.emit("reveal", { files[math.random(1, #files)].name })
 end)
 
 local smart_enter = ya.sync(function()
 	local h = cx.active.current.hovered
-	ya.manager_emit(h and h.cha.is_dir and "enter" or "open", { hovered = true })
+	ya.emit(h and h.cha.is_dir and "enter" or "open", { hovered = true })
 end)
 
 local move_parent = ya.sync(function(state, args)
@@ -73,7 +73,7 @@ local move_parent = ya.sync(function(state, args)
 
 	local target = parent.files[parent.cursor + 1 + args[2]]
 	if target and target.cha.is_dir then
-		ya.manager_emit("cd", { target.url })
+		ya.emit("cd", { target.url })
 	end
 end)
 
@@ -84,7 +84,7 @@ local function move_to_new_dir()
 		title = "Directory name:",
 		position = { "top-center", y = 3, w = 40 },
 	})
-	local status, err = Command("mkdir"):args({ "-p", value }):status()
+	local status, err = Command("mkdir"):arg({ "-p", value }):status()
 	if not status or not status.success then
 		ya.notify({
 			title = "Mkdir",
@@ -95,7 +95,7 @@ local function move_to_new_dir()
 	end
 
 	for i = 1, #paths do
-		local stat, error = Command("mv"):args({ paths[i], value }):status()
+		local stat, error = Command("mv"):arg({ paths[i], value }):status()
 		if not stat or not stat.success then
 			ya.notify({
 				title = "Mkdir",
@@ -110,7 +110,7 @@ end
 local function share()
 	local paths = get_selected()
 
-	local curl, err = Command("curl"):args({ "-F", "file=@" .. paths[1], "https://0x0.st" }):output()
+	local curl, err = Command("curl"):arg({ "-F", "file=@" .. paths[1], "https://0x0.st" }):output()
 
 	if not curl then
 		ya.notify({
@@ -143,11 +143,11 @@ local function share()
 end
 
 local function chmodx()
-	ya.manager_emit("escape", { visual = true })
+	ya.emit("escape", { visual = true })
 
 	local urls = get_selected()
 
-	local status, err = Command("chmod"):arg("+x"):args(urls):spawn():wait()
+	local status, err = Command("chmod"):arg("+x"):arg(urls):spawn():wait()
 	if not status or not status.success then
 		ya.notify({
 			title = "Chmod",
@@ -159,7 +159,7 @@ local function chmodx()
 end
 
 local function chmod()
-	ya.manager_emit("escape", { visual = true })
+	ya.emit("escape", { visual = true })
 
 	local urls = get_selected()
 
@@ -171,7 +171,7 @@ local function chmod()
 		return
 	end
 
-	local status, err = Command("chmod"):arg(value):args(urls):spawn():wait()
+	local status, err = Command("chmod"):arg(value):arg(urls):spawn():wait()
 	if not status or not status.success then
 		ya.notify({
 			title = "Chmod",
@@ -214,14 +214,32 @@ local folder_rules = function()
 	ps.sub("cd", function()
 		local cwd = cx.active.current.cwd
 		if cwd:ends_with("Downloads") then
-			ya.manager_emit("sort", { "mtime", reverse = true, dir_first = true })
+			ya.emit("sort", { "mtime", reverse = true, dir_first = true })
 		elseif cwd:ends_with("Screenshots") then
-			ya.manager_emit("sort", { "btime", reverse = true })
+			ya.emit("sort", { "btime", reverse = true })
 		else
-			ya.manager_emit("sort", { "natural", reverse = false, dir_first = true })
+			ya.emit("sort", { "natural", reverse = false, dir_first = true })
 		end
 	end)
 end
+
+local old_tab_layout = ya.sync(function()
+	function Tabs.height()
+		return 0
+	end
+
+	Header:children_add(function()
+		if #cx.tabs == 1 then
+			return ""
+		end
+		local spans = {}
+		for i = 1, #cx.tabs do
+			spans[#spans + 1] = ui.Span(" " .. i .. " ")
+		end
+		spans[cx.tabs.idx]:reverse()
+		return ui.Line(spans)
+	end, 9000, Header.RIGHT)
+end)
 
 --==========================--
 --      Entry/Setup Functions      --
@@ -257,10 +275,11 @@ local function setup(_)
 	show_link()
 	show_user()
 	folder_rules()
+	old_tab_layout()
 
 	-- Create 2 tabs on startup and switch to first one
-	ya.manager_emit("tab_create", { os.getenv("HOME") })
-	ya.manager_emit("tab_switch", { 0 })
+	ya.emit("tab_create", { os.getenv("HOME") })
+	ya.emit("tab_switch", { 0 })
 end
 
 return { entry = entry, setup = setup }
