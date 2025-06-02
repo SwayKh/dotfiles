@@ -1,0 +1,38 @@
+
+# Apply Hellwal colorscheme
+include ../../.cache/hellwal/zathura-colors
+
+# Options
+set guioptions "s"
+set adjust-open width
+set selection-clipboard clipboard
+set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+set window-title-basename "true"
+set window-title-home-tilde true
+set statusbar-home-tilde true
+set scroll-step 80
+set recolor false
+set recolor-keephue "true"
+
+# Maps
+map f toggle_fullscreen
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map i recolor
+map p print
+
+map [fullscreen] f toggle_fullscreen
+
+map [fullscreen] u scroll half-up
+map [fullscreen] d scroll half-down
+map [fullscreen] D toggle_page_mode
+map [fullscreen] r reload
+map [fullscreen] R rotate
+map [fullscreen] i recolor
+map [fullscreen] p print
