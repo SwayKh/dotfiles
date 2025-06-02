@@ -390,6 +390,7 @@ riverctl rule-add -app-id "special-project" tags $project_tag
 riverctl rule-add -app-id "ticktick" tags $ticktick_tag
 riverctl rule-add -app-id "Spotify" tags $spotify_tag
 riverctl rule-add -title "YouTube Music" tags $spotify_tag
+riverctl rule-add -title "uGet" tags $special_tag
 riverctl rule-add -app-id "org.qbittorrent.qBittorrent" tags $special_tag
 # riverctl rule-add -app-id "mpv" tags $docs_tag
 # riverctl rule-add -app-id "org.pwmt.zathura" tags $docs_tag
@@ -420,14 +421,14 @@ riverctl rule-add -app-id "org.kde.polkit-kde-authentication-agent-1" float
 riverctl rule-add -app-id "polkit-gnome-authentication-agent-1" float
 riverctl rule-add -app-id "org.qbittorrent.qBittorrent" float
 
-riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
+riverctl rule-add -title 'gtk*' float
 riverctl rule-add -app-id 'GParted' float
 riverctl rule-add -app-id 'nwg-look' float
 riverctl rule-add -app-id 'firefox' -title 'Picture-in-Picture' float
 riverctl rule-add -app-id 'floorp' -title 'Picture-in-Picture' float
 riverctl rule-add -app-id 'zen' -title 'Picture-in-Picture' float
-riverctl rule-add -title 'gtk*' float
 riverctl rule-add -app-id 'xdg-desktop-portal-gtk' float
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
 
 riverctl rule-add -app-id float float
 riverctl rule-add -title "popup title with spaces" float
