@@ -105,8 +105,8 @@ mod="Mod4"
 # Grab the largest resolution from wlr-randr output
 res=$(wlr-randr | grep -oP '\d{3,4}x\d{3,4}' | awk -F'x' '{print $1*$2,$0}' | sort -nr | head -1 | awk '{print $2}')
 
-width=$(((echo "$res" | cut -d'x' -f1) * 80 / 100))
-height=$(((echo "$res" | cut -d'x' -f2) * 80 / 100))
+width=$(($(echo "$res" | cut -d'x' -f1) * 80 / 100))
+height=$(($(echo "$res" | cut -d'x' -f2) * 80 / 100))
 
 # Tags
 all_tags=$(((1 << 32) - 1))
