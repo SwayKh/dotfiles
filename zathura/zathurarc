@@ -3,19 +3,28 @@
 include ../../.cache/hellwal/zathura-colors
 
 # Options
-set guioptions "s"
-set adjust-open width
-set selection-clipboard clipboard
-set sandbox none
-set statusbar-h-padding 0
-set statusbar-v-padding 0
+set guioptions none
+set nohlsearch false
 set page-padding 1
-set window-title-basename "true"
-set window-title-home-tilde true
-set statusbar-home-tilde true
-set scroll-step 80
+set scroll-step 50
+set adjust-open "best-fit"
 set recolor false
 set recolor-keephue "true"
+set selection-clipboard clipboard
+set database "sqlite"
+set abort-clear-search true
+set incremental-search true
+set show-directories true
+set show-recent 0
+set selection-notification true
+
+set statusbar-v-padding 5
+set statusbar-h-padding 10
+set statusbar-home-tilde true
+set statusbar-page-percent true
+set window-title-page true
+set window-title-basename "true"
+set window-title-home-tilde true
 
 # Maps
 map f toggle_fullscreen
@@ -26,9 +35,13 @@ map r reload
 map R rotate
 map i recolor
 map p print
+map P snap_to_page
+map <C-f> follow
+map v toggle_statusbar
+map [ zoom out
+map ] zoom in
 
 map [fullscreen] f toggle_fullscreen
-
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
 map [fullscreen] D toggle_page_mode
@@ -36,3 +49,8 @@ map [fullscreen] r reload
 map [fullscreen] R rotate
 map [fullscreen] i recolor
 map [fullscreen] p print
+map [fullscreen] P snap_to_page
+map [fullscreen] <C-f> follow
+map [fullscreen] v toggle_statusbar
+map [fullscreen] [ zoom out
+map [fullscreen] ] zoom in
