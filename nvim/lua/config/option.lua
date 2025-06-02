@@ -15,6 +15,7 @@ vim.opt.tabline = " %t" -- Only show file name in tabline, not abbreviated path
 vim.opt.spell = false -- set spell on
 vim.opt.spelllang = "en_us"
 vim.opt.filetype = "on" -- Automatically set the file, used for filetype autocmd
+vim.opt.wrap = false
 vim.opt.textwidth = 80 -- Set textwidth to Automatically wrap text at that length
 vim.opt.whichwrap = "<,>,[,],l,h" -- Which characters can go through wrap on a line
 vim.opt.termguicolors = true -- Set terminal colors to 24bit, needed for colorschemes
