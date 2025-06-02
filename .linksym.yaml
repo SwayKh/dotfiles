@@ -164,3 +164,7 @@ records:
       paths:
         - ~/.config/lazygit
         - $init_directory/lazygit
+    - name: dotfiles/zathura
+      paths:
+        - ~/.config/zathura
+        - $init_directory/zathura
