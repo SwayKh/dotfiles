@@ -215,6 +215,7 @@ riverctl map normal $mod+Control W spawn "$HOME/scripts/rofi-wifi"
 riverctl map normal $mod+Control B spawn "$HOME/scripts/rofi-bluetooth"
 riverctl map normal $mod+Control S spawn "$HOME/scripts/rofi-wall"
 riverctl map normal $mod+Control C spawn "$HOME/scripts/text-picker"
+riverctl map normal $mod+Control D spawn "$HOME/scripts/rofi-docs"
 
 # Screenshots
 riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
