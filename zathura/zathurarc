@@ -1,6 +1,6 @@
 
-# Apply Hellwal colorscheme
-include ../../.cache/hellwal/zathura-colors
+# Apply Pywal16 colorscheme
+include ../../.cache/wal/colors-zathura
 
 # Options
 set guioptions "s"

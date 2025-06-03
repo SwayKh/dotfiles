@@ -1,7 +1,7 @@
 /* fragile file path */
-@import url("../../.cache/hellwal/waybar-colors.css");
+@import url("../../.cache/wal/colors-waybar.css");
 
-/* Use hellwal colors  */
+/* Use Pywal16 colors  */
 @define-color bordercolor alpha(@color14, 1.0);
 @define-color bg alpha(@color8, 1.0);
 @define-color fg alpha(@foreground, 1.0);

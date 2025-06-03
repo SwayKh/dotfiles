@@ -16,6 +16,7 @@ alias mv='mv -i -v'
 alias rm='rm -i -v'
 
 # Program Aliases
+alias v=nvim
 alias pokescript='pokemon-colorscripts -r'
 alias color='colorscript -r'
 alias pipes='pipes.sh -R -p 4 -t 0'
@@ -25,6 +26,7 @@ alias lf=lfcd
 alias yazi=y
 alias lg=lazygit
 alias hw='hellwal --no-cache -i $HOME/.config/wall.png --bright-offset 0.3'
+alias pw='wal -n -a 80 -i $HOME/.config/wall.png'
 
 # cd Aliases
 alias ..='cd ..'

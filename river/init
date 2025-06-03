@@ -13,10 +13,11 @@
 
 # Load environment variables
 source "$HOME/.config/river/environment.sh"
-# Load hellwal colors to apply to borders
-source "$HOME/.cache/hellwal/variables.sh"
+# Load Pywal16 colors to apply to borders
+source "$HOME/.cache/wal/colors.sh"
 
 # Autostart
+riverctl spawn "wal -R"
 riverctl spawn "swww-daemon --format xrgb"
 riverctl spawn "$HOME/.config/waybar/launch.sh"
 riverctl spawn "$HOME/.config/dunst/launch-dunst.sh"
