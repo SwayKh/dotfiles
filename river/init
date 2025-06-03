@@ -198,7 +198,7 @@ riverctl map normal $mod Y spawn "youtube-music"
 riverctl map normal $mod A spawn "anki"
 riverctl map normal $mod I spawn "ticktick"
 riverctl map normal $mod E spawn "$terminal -e zsh -ic yazi"
-riverctl map normal $mod M spawn "$terminal -e btop"
+riverctl map normal $mod M spawn "$terminal -e zsh -ic btop"
 riverctl map normal $mod KP_Add spawn "galculator"
 
 riverctl map normal $mod Q close
