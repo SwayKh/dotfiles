@@ -1,174 +1,170 @@
 init_directory: ~/dotfiles
 records:
-    - name: dotfiles/btop
-      paths:
-        - ~/.config/btop
-        - $init_directory/btop
-    - name: dotfiles/cava
-      paths:
-        - ~/.config/cava
-        - $init_directory/cava
-    - name: dotfiles/dunst
-      paths:
-        - ~/.config/dunst
-        - $init_directory/dunst
-    - name: dotfiles/fastfetch
-      paths:
-        - ~/.config/fastfetch
-        - $init_directory/fastfetch
-    - name: dotfiles/foot
-      paths:
-        - ~/.config/foot
-        - $init_directory/foot
-    - name: dotfiles/hypr
-      paths:
-        - ~/.config/hypr
-        - $init_directory/hypr
-    - name: dotfiles/i3
-      paths:
-        - ~/.config/i3
-        - $init_directory/i3
-    - name: dotfiles/kitty
-      paths:
-        - ~/.config/kitty
-        - $init_directory/kitty
-    - name: dotfiles/lf
-      paths:
-        - ~/.config/lf
-        - $init_directory/lf
-    - name: dotfiles/micro
-      paths:
-        - ~/.config/micro
-        - $init_directory/micro
-    - name: dotfiles/neofetch
-      paths:
-        - ~/.config/neofetch
-        - $init_directory/neofetch
-    - name: dotfiles/nvim
-      paths:
-        - ~/.config/nvim
-        - $init_directory/nvim
-    - name: dotfiles/polybar
-      paths:
-        - ~/.config/polybar
-        - $init_directory/polybar
-    - name: dotfiles/river
-      paths:
-        - ~/.config/river
-        - $init_directory/river
-    - name: dotfiles/rofi
-      paths:
-        - ~/.config/rofi
-        - $init_directory/rofi
-    - name: dotfiles/sway
-      paths:
-        - ~/.config/sway
-        - $init_directory/sway
-    - name: dotfiles/swayidle
-      paths:
-        - ~/.config/swayidle
-        - $init_directory/swayidle
-    - name: dotfiles/swaylock
-      paths:
-        - ~/.config/swaylock
-        - $init_directory/swaylock
-    - name: dotfiles/tmux
-      paths:
-        - ~/.config/tmux
-        - $init_directory/tmux
-    - name: dotfiles/waybar
-      paths:
-        - ~/.config/waybar
-        - $init_directory/waybar
-    - name: dotfiles/wezterm
-      paths:
-        - ~/.config/wezterm
-        - $init_directory/wezterm
-    - name: dotfiles/yazi
-      paths:
-        - ~/.config/yazi
-        - $init_directory/yazi
-    - name: share/applications
-      paths:
-        - ~/.local/share/applications
-        - $init_directory/.local/share/applications
-    - name: ES-DE/es_settings.xml
-      paths:
-        - ~/ES-DE/settings/es_settings.xml
-        - $init_directory/ES-DE/es_settings.xml
-    - name: RetroArch/retroarch.cfg
-      paths:
-        - ~/.config/retroarch/retroarch.cfg
-        - $init_directory/RetroArch/retroarch.cfg
-    - name: RetroArch/retroarch-core-options.cfg
-      paths:
-        - ~/.config/retroarch/retroarch-core-options.cfg
-        - $init_directory/RetroArch/retroarch-core-options.cfg
-    - name: dotfiles/starship.toml
-      paths:
-        - ~/.config/starship.toml
-        - $init_directory/starship.toml
-    - name: dotfiles/.bashrc
-      paths:
-        - ~/.bashrc
-        - $init_directory/.bashrc
-    - name: dotfiles/.gitconfig
-      paths:
-        - ~/.gitconfig
-        - $init_directory/.gitconfig
-    - name: dotfiles/.profile
-      paths:
-        - ~/.profile
-        - $init_directory/.profile
-    - name: dotfiles/.ripgreprc
-      paths:
-        - ~/.ripgreprc
-        - $init_directory/.ripgreprc
-    - name: dotfiles/.zshrc
-      paths:
-        - ~/.zshrc
-        - $init_directory/.zshrc
-    - name: dotfiles/.zsh_history.bak
-      paths:
-        - ~/.zsh_history.bak
-        - $init_directory/.zsh_history.bak
-    - name: dotfiles/home.gitignore
-      paths:
-        - ~/home.gitignore
-        - $init_directory/home.gitignore
-    - name: dotfiles/.vimrc
-      paths:
-        - ~/.vimrc
-        - $init_directory/.vimrc
-    - name: Code/settings.json
-      paths:
-        - ~/.config/Code/User/settings.json
-        - $init_directory/Code/settings.json
-    - name: dotfiles/zsh
-      paths:
-        - ~/.config/zsh
-        - $init_directory/zsh
-    - name: dotfiles/hellwal
-      paths:
-        - ~/.config/hellwal
-        - $init_directory/hellwal
-    - name: dotfiles/scripts
-      paths:
-        - ~/scripts
-        - $init_directory/scripts
-    - name: dotfiles/gtklock
-      paths:
-        - ~/.config/gtklock
-        - $init_directory/gtklock
-    - name: dotfiles/lazygit
-      paths:
-        - ~/.config/lazygit
-        - $init_directory/lazygit
-    - name: dotfiles/zathura
-      paths:
-        - ~/.config/zathura
-        - $init_directory/zathura
-    - name: dotfiles/wal
-      paths:
-        - ~/.config/wal
-        - $init_directory/wal
+  - name: dotfiles/btop
+    paths:
+      - ~/.config/btop
+      - $init_directory/btop
+  - name: dotfiles/cava
+    paths:
+      - ~/.config/cava
+      - $init_directory/cava
+  - name: dotfiles/dunst
+    paths:
+      - ~/.config/dunst
+      - $init_directory/dunst
+  - name: dotfiles/fastfetch
+    paths:
+      - ~/.config/fastfetch
+      - $init_directory/fastfetch
+  - name: dotfiles/foot
+    paths:
+      - ~/.config/foot
+      - $init_directory/foot
+  - name: dotfiles/hypr
+    paths:
+      - ~/.config/hypr
+      - $init_directory/hypr
+  - name: dotfiles/i3
+    paths:
+      - ~/.config/i3
+      - $init_directory/i3
+  - name: dotfiles/kitty
+    paths:
+      - ~/.config/kitty
+      - $init_directory/kitty
+  - name: dotfiles/lf
+    paths:
+      - ~/.config/lf
+      - $init_directory/lf
+  - name: dotfiles/micro
+    paths:
+      - ~/.config/micro
+      - $init_directory/micro
+  - name: dotfiles/neofetch
+    paths:
+      - ~/.config/neofetch
+      - $init_directory/neofetch
+  - name: dotfiles/nvim
+    paths:
+      - ~/.config/nvim
+      - $init_directory/nvim
+  - name: dotfiles/polybar
+    paths:
+      - ~/.config/polybar
+      - $init_directory/polybar
+  - name: dotfiles/river
+    paths:
+      - ~/.config/river
+      - $init_directory/river
+  - name: dotfiles/rofi
+    paths:
+      - ~/.config/rofi
+      - $init_directory/rofi
+  - name: dotfiles/sway
+    paths:
+      - ~/.config/sway
+      - $init_directory/sway
+  - name: dotfiles/swayidle
+    paths:
+      - ~/.config/swayidle
+      - $init_directory/swayidle
+  - name: dotfiles/swaylock
+    paths:
+      - ~/.config/swaylock
+      - $init_directory/swaylock
+  - name: dotfiles/tmux
+    paths:
+      - ~/.config/tmux
+      - $init_directory/tmux
+  - name: dotfiles/waybar
+    paths:
+      - ~/.config/waybar
+      - $init_directory/waybar
+  - name: dotfiles/wezterm
+    paths:
+      - ~/.config/wezterm
+      - $init_directory/wezterm
+  - name: dotfiles/yazi
+    paths:
+      - ~/.config/yazi
+      - $init_directory/yazi
+  - name: share/applications
+    paths:
+      - ~/.local/share/applications
+      - $init_directory/.local/share/applications
+  - name: ES-DE/es_settings.xml
+    paths:
+      - ~/ES-DE/settings/es_settings.xml
+      - $init_directory/ES-DE/es_settings.xml
+  - name: RetroArch/retroarch.cfg
+    paths:
+      - ~/.config/retroarch/retroarch.cfg
+      - $init_directory/RetroArch/retroarch.cfg
+  - name: RetroArch/retroarch-core-options.cfg
+    paths:
+      - ~/.config/retroarch/retroarch-core-options.cfg
+      - $init_directory/RetroArch/retroarch-core-options.cfg
+  - name: dotfiles/starship.toml
+    paths:
+      - ~/.config/starship.toml
+      - $init_directory/starship.toml
+  - name: dotfiles/.bashrc
+    paths:
+      - ~/.bashrc
+      - $init_directory/.bashrc
+  - name: dotfiles/.gitconfig
+    paths:
+      - ~/.gitconfig
+      - $init_directory/.gitconfig
+  - name: dotfiles/.profile
+    paths:
+      - ~/.profile
+      - $init_directory/.profile
+  - name: dotfiles/.ripgreprc
+    paths:
+      - ~/.ripgreprc
+      - $init_directory/.ripgreprc
+  - name: dotfiles/.zshrc
+    paths:
+      - ~/.zshrc
+      - $init_directory/.zshrc
+  - name: dotfiles/home.gitignore
+    paths:
+      - ~/home.gitignore
+      - $init_directory/home.gitignore
+  - name: dotfiles/.vimrc
+    paths:
+      - ~/.vimrc
+      - $init_directory/.vimrc
+  - name: Code/settings.json
+    paths:
+      - ~/.config/Code/User/settings.json
+      - $init_directory/Code/settings.json
+  - name: dotfiles/zsh
+    paths:
+      - ~/.config/zsh
+      - $init_directory/zsh
+  - name: dotfiles/hellwal
+    paths:
+      - ~/.config/hellwal
+      - $init_directory/hellwal
+  - name: dotfiles/scripts
+    paths:
+      - ~/scripts
+      - $init_directory/scripts
+  - name: dotfiles/gtklock
+    paths:
+      - ~/.config/gtklock
+      - $init_directory/gtklock
+  - name: dotfiles/lazygit
+    paths:
+      - ~/.config/lazygit
+      - $init_directory/lazygit
+  - name: dotfiles/zathura
+    paths:
+      - ~/.config/zathura
+      - $init_directory/zathura
+  - name: dotfiles/wal
+    paths:
+      - ~/.config/wal
+      - $init_directory/wal
