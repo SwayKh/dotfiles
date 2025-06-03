@@ -26,7 +26,7 @@ alias lf=lfcd
 alias yazi=y
 alias lg=lazygit
 alias hw='hellwal --no-cache -i $HOME/.config/wall.png --bright-offset 0.3'
-alias pw='wal -n -a 80 -i $HOME/.config/wall.png'
+alias pw='wal -n -e -c -a 80 -i $HOME/.config/wall.png'
 
 # cd Aliases
 alias ..='cd ..'
