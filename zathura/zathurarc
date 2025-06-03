@@ -3,7 +3,7 @@
 include ../../.cache/hellwal/zathura-colors
 
 # Options
-set guioptions none
+set guioptions "s"
 set nohlsearch false
 set page-padding 1
 set scroll-step 50
@@ -20,11 +20,6 @@ set selection-notification true
 
 set statusbar-v-padding 5
 set statusbar-h-padding 10
-set statusbar-home-tilde true
-set statusbar-page-percent true
-set window-title-page true
-set window-title-basename "true"
-set window-title-home-tilde true
 
 # Maps
 map f toggle_fullscreen
@@ -54,3 +49,8 @@ map [fullscreen] <C-f> follow
 map [fullscreen] v toggle_statusbar
 map [fullscreen] [ zoom out
 map [fullscreen] ] zoom in
+
+unmap <C-r>
+unmap [fullscreen] <C-r>
+unmap <C-b>
+unmap [fullscreen] <C-b>
