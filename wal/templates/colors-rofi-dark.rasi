@@ -58,7 +58,7 @@
     expand: false;
     str: ":";
     margin: 0px 0.3em 0em 0em;
-    text-color: @normal-foreground;
+    text-color: @active-foreground;
     background-color: @active-background;
 }}
 
@@ -165,6 +165,6 @@
 
 #prompt {{
     spacing: 0;
-    text-color: @normal-foreground;
+    text-color: @active-foreground;
     background-color: @active-background;
 }}

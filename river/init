@@ -17,7 +17,7 @@ source "$HOME/.config/river/environment.sh"
 source "$HOME/.cache/wal/colors.sh"
 
 # Autostart
-riverctl spawn "wal -R"
+# riverctl spawn "wal -R"
 riverctl spawn "swww-daemon --format xrgb"
 riverctl spawn "$HOME/.config/waybar/launch.sh"
 riverctl spawn "$HOME/.config/dunst/launch-dunst.sh"
@@ -210,7 +210,7 @@ riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null &&
 
 #Scripts
 riverctl map normal $mod C spawn "$HOME/scripts/colorpicker"
-riverctl map normal $mod Tab spawn "$HOME/scripts/wallchange.sh"
+riverctl map normal $mod Tab spawn "$HOME/scripts/random-swwwbg"
 riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
 riverctl map normal $mod Escape spawn "$HOME/scripts/rofi-power"
 riverctl map normal $mod+Control W spawn "$HOME/scripts/rofi-wifi"
