@@ -168,3 +168,7 @@ records:
       paths:
         - ~/.config/zathura
         - $init_directory/zathura
+    - name: dotfiles/wal
+      paths:
+        - ~/.config/wal
+        - $init_directory/wal
