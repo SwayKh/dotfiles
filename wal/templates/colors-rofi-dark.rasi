@@ -23,13 +23,15 @@
     background-color: @background;
     background: {background};
     foreground: {foreground};
-    border-color: @background;
+    border-color: @active-background;
     spacing: 2;
 }}
 
+
 #window {{
     background-color: @background;
-    border: 0;
+    border-color: @active-background;
+    border: 3;
     padding: 2.5ch;
 }}
 
@@ -57,6 +59,7 @@
     str: ":";
     margin: 0px 0.3em 0em 0em;
     text-color: @normal-foreground;
+    background-color: @active-background;
 }}
 
 #listview {{
@@ -69,7 +72,7 @@
 }}
 
 #element {{
-    border: 0;
+    order: 0;
     padding: 1px;
 }}
 
@@ -163,4 +166,5 @@
 #prompt {{
     spacing: 0;
     text-color: @normal-foreground;
+    background-color: @active-background;
 }}
