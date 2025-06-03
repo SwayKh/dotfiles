@@ -68,7 +68,7 @@ listview {
   dynamic: false; // Shrinks windows to occupy search result
   margin: 0px;
   padding: 0px;
-  border: 0px;
+  border: 1px;
   border-radius: 0px;
 }
 
@@ -76,4 +76,5 @@ element {
   border: 0px;
   border-radius: 0px;
   padding: 3px;
+  margin: 3px;
 }
