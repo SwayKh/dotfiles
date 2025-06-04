@@ -22,7 +22,7 @@ btop="$terminal --app-id special-btop -e zsh -ic btop"
 nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim && zsh'\""
 files="$terminal --app-id special-files -e zsh -ic yazi"
 
-projectTerm="footclient --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"
+projectTerm="$terminal --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"
 
 case "$1" in
 "term")
