@@ -209,6 +209,7 @@ riverctl map normal $mod+Shift F toggle-fullscreen
 riverctl map normal $mod+Control R spawn "$HOME/.config/river/init >/dev/null && notify-send 'Refreshed River'"
 
 #Scripts
+riverctl map normal $mod V spawn "$HOME/scripts/rofi-clipboard"
 riverctl map normal $mod C spawn "$HOME/scripts/colorpicker"
 riverctl map normal $mod Tab spawn "$HOME/scripts/random-swwwbg"
 riverctl map normal $mod Grave spawn "$HOME/scripts/list-river-window"
@@ -223,8 +224,6 @@ riverctl map normal $mod+Control D spawn "$HOME/scripts/rofi-docs"
 riverctl map normal None Print spawn "$HOME/scripts/screenshots/captureAll.sh"
 riverctl map normal Control Print spawn "$HOME/scripts/screenshots/captureScreen.sh"
 riverctl map normal Control+Shift Print spawn "$HOME/scripts/screenshots/captureArea.sh"
-
-riverctl map normal $mod V spawn "cliphist list | rofi -dmenu -p 'Clipboard' -config $HOME/.config/rofi/regular.rasi | cliphist decode | wl-copy"
 
 for i in $(seq 1 9); do
   # Tags are basically workspaces, but different
