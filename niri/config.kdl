@@ -1,23 +1,16 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
-
-// Input device configuration.
-// Find the full list of options on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
     keyboard {
         xkb {
-            // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
-
-            // For example:
-            // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            layout "us"
+            options "ctrl:nocaps"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
+        repeat-delay 300
+        repeat-rate 30
         numlock
     }
 
@@ -26,235 +19,120 @@ input {
     touchpad {
         // off
         tap
-        // dwt
-        // dwtp
-        // drag false
-        // drag-lock
+        dwt // Disable when typing
+        drag true
+        drag-lock
         natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "two-finger"
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-method "two-finger"
+        middle-emulation
         // disabled-on-external-mouse
     }
 
     mouse {
         // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "no-scroll"
+        accel-speed 0.0
+        accel-profile "flat"
+        middle-emulation
     }
 
-    trackpoint {
-        // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "on-button-down"
-        // scroll-button 273
-        // middle-emulation
-    }
-
-    // Uncomment this to make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
-
-    // Focus windows and outputs automatically when moving the mouse into them.
-    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    warp-mouse-to-focus mode="center-xy"
+    focus-follows-mouse max-scroll-amount="10%"
+    workspace-auto-back-and-forth
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
-    // Uncomment this line to disable this output.
     // off
-
-    // Resolution and, optionally, refresh rate of the output.
-    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    // mode "1920x1080@120.030"
-
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1.0
-
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
-
-    // Position of the output in the global coordinate space.
-    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
-    // The cursor can only move between directly adjacent outputs.
-    // Output scale and rotation has to be taken into account for positioning:
-    // outputs are sized in logical, or scaled, pixels.
-    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
-    // so to put another output directly adjacent to it on the right, set its x to 1920.
-    // If the position is unset or results in an overlap, the output is instead placed
-    // automatically.
-    // position x=1280 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
-    // Set gaps around windows in logical pixels.
     gaps 8
+    center-focused-column "never" // options are: "never", "always", "on-overflow"
+    background-color "transparent" // Needed to show swww-daemon from the background
+    default-column-display "normal"
+    always-center-single-column
+    // empty-workspace-above-first
 
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "always", the focused column will always be centered.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.
-    center-focused-column "on-overflow"
-
-    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
-        // Proportion sets the width as a fraction of the output width, taking gaps into account.
-        // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
-        // The default preset widths are 1/3, 1/2 and 2/3 of the output.
         proportion 0.25
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
         proportion 1.0
-
-        // Fixed sets the width in logical pixels exactly.
-        // fixed 1920
+    }
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
     }
 
-    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
-
-    // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
-
-    // By default focus ring and border are rendered as a solid background rectangle
-    // behind windows. That is, they will show up through semitransparent windows.
-    // This is because windows using client-side decorations can have an arbitrary shape.
-    //
-    // If you don't like that, you should uncomment `prefer-no-csd` below.
-    // Niri will draw focus ring and border *around* windows that agree to omit their
-    // client-side decorations.
-    //
-    // Alternatively, you can override it with a window rule called
-    // `draw-border-with-background`.
-
-    // You can change how the focus ring looks.
+    default-column-width { proportion 0.5; }
     focus-ring {
-        // Uncomment this line to disable the focus ring.
         // off
-
-        // How many logical pixels the ring extends out from the windows.
         width 2
-
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
         active-color "#7fc8ff"
-
-        // Color of the ring on inactive monitors.
         inactive-color "#505050"
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
         // active-gradient from="#80c8ff" to="#bbddff" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
-    // You can also add a border. It's similar to the focus ring, but always visible.
     border {
-        // The settings are the same as for the focus ring.
-        // If you enable the border, you probably want to disable the focus ring.
         off
-
-        width 4
+        width 2
         active-color "#ffc87f"
         inactive-color "#505050"
-
-        // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
-
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
-    // You can enable drop shadows for windows.
     shadow {
-        // Uncomment the next line to enable shadows.
         // on
-
-        // By default, the shadow draws only around its window, and not behind it.
-        // Uncomment this setting to make the shadow draw behind its window.
-        //
-        // Note that niri has no way of knowing about the CSD window corner
-        // radius. It has to assume that windows have square corners, leading to
-        // shadow artifacts inside the CSD rounded corners. This setting fixes
-        // those artifacts.
-        //
-        // However, instead you may want to set prefer-no-csd and/or
-        // geometry-corner-radius. Then, niri will know the corner radius and
-        // draw the shadow correctly, without having to draw it behind the
-        // window. These will also remove client-side shadows if the window
-        // draws any.
-        //
         // draw-behind-window true
-
-        // You can change how shadows look. The values below are in logical
-        // pixels and match the CSS box-shadow properties.
-
-        // Softness controls the shadow blur radius.
         softness 30
-
-        // Spread expands the shadow.
         spread 5
-
-        // Offset moves the shadow relative to the window.
         offset x=0 y=5
-
-        // You can also change the shadow color and opacity.
         color "#0007"
     }
+    tab-indicator {
+        // off
+        hide-when-single-tab
+        place-within-column
+        gap 5
+        width 4
+        length total-proportion=1.0
+        position "right"
+        gaps-between-tabs 2
+        corner-radius 8
+        active-color "red"
+        inactive-color "gray"
+        urgent-color "blue"
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        // urgent-gradient from="#800" to="#a33" angle=45
+    }
+    insert-hint {
+        // off
+        color "#ffc87f80"
+        // gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
+    }
 
-    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
-    // You can think of them as a kind of outer gaps. They are set in logical pixels.
-    // Left and right struts will cause the next window to the side to always be visible.
-    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
-    // layer-shell panels and regular gaps.
     struts {
+        // Gaps around a window in a workspace
         // left 64
         // right 64
         // top 64
         // bottom 64
     }
 }
-
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon" "--format" "xrgb"
@@ -273,33 +151,20 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 // spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
 // spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
 
-
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
+workspace "Scratchpad"
+workspace "Main"
+workspace "Media"
 prefer-no-csd
-
-// You can change the path where screenshots are saved.
-// A ~ at the front will be expanded to the home directory.
-// The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-// You can also set this to null to disable saving screenshots to disk.
-// screenshot-path null
-
 // Animation settings.
-// The wiki explains how to configure individual animations:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
-    // Uncomment to turn off all animations.
     // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 1.0
 }
+
 environment {
+    DISPLAY ":0"
     XCURSOR_THEME "Bibata-Modern-Classic"
     XCURSOR_SIZE "18"
     XDG_CURRENT_DESKTOP "Niri"
@@ -321,6 +186,59 @@ environment {
     WLR_NO_HARDWARE_CURSORS "1"
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 18
+    hide-when-typing
+    hide-after-inactive-ms 10000
+}
+
+overview {
+    zoom 0.5
+    backdrop-color "#333333"
+
+    workspace-shadow {
+        // off
+        softness 20
+        spread 20
+        offset x=0 y=10
+        color "#00000080"
+    }
+}
+
+layer-rule {
+    // Send swww wallpaper to backdrop, show behind overview too
+    // Set backdrop-color to transparent in layout
+    match namespace="swww-daemon"
+    place-within-backdrop true
+}
+
+clipboard {
+    disable-primary // Disable the middle click paste clipboard
+}
+
+hotkey-overlay {
+    // hide-not-bound
+    skip-at-startup
+}
+
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 30
+        delay-ms 100
+        max-speed 1500
+    }
+
+    dnd-edge-workspace-switch {
+        trigger-height 50
+        delay-ms 100
+        max-speed 1500
+    }
+
+    hot-corners {
+        // off
+    }
+}
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -363,6 +281,17 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+  match app-id=r#"^special*"#
+  default-column-width { proportion 1.0; }
+  open-on-workspace "Scratchpad"
+}
+
+switch-events {
+    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
+    lid-open { spawn "notify-send" "The laptop lid is open!"; }
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -383,7 +312,7 @@ binds {
     Mod+R hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "drun"; }
     Mod+F hotkey-overlay-title="Open File Manager" {  spawn "thunar"; }
     Mod+B hotkey-overlay-title="Open Browser" { spawn "zen-browser"; }
-    Mod+N hotkey-overlay-title="Open Notes: Obsidian" { spawn "obsidian"; }
+    Mod+O hotkey-overlay-title="Open Notes: Obsidian" { spawn "obsidian"; }
     Mod+W hotkey-overlay-title="Open Whatsapp" { spawn "ferdium"; }
     Mod+D hotkey-overlay-title="Open Discord" { spawn "vesktop"; }
     Mod+G hotkey-overlay-title="Open Retroarch" { spawn "retroarch"; }
@@ -392,6 +321,13 @@ binds {
     Mod+I hotkey-overlay-title="Open Ticktick" { spawn "ticktick"; }
     Mod+E hotkey-overlay-title="Open Yazi" { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
     Mod+M hotkey-overlay-title="Open Btop" { spawn "foot" "-e" "zsh" "-ic" "btop"; }
+
+    Mod+Shift+T { spawn "sh" "-c" "footclient --app-id special-term -e zsh -ic 'tmux new-session -s Terminal'"; }
+    Mod+Shift+M { spawn "sh" "-c" "footclient --app-id special-btop -e zsh -ic btop"; }
+    Mod+Shift+N { spawn "sh" "-c" "footclient --app-id special-nvim --working-directory=~/dotfiles/ -e zsh -ic 'tmux new-session -s Editor nvim '"; }
+    Mod+Shift+E { spawn "sh" "-c" "footclient --app-id special-files -e zsh -ic yazi"; }
+    Mod+Shift+P { spawn "sh" "-c" "footclient --app-id special-project -e zsh -ic '~/scripts/project.tmux'"; }
+
     Mod+C { spawn "~/scripts/colorpicker"; }
     Mod+Tab { spawn "~/scripts/random-swwwbg"; }
     Mod+Grave { spawn "~/scripts/list-river-window"; }
@@ -426,9 +362,11 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Space repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
+
+    Mod+Ctrl+T { toggle-column-tabbed-display; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-or-workspace-down; }
@@ -470,24 +408,25 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-    Mod+Shift+1 { move-window-to-workspace 1; }
-    Mod+Shift+2 { move-window-to-workspace 2; }
-    Mod+Shift+3 { move-window-to-workspace 3; }
-    Mod+Shift+4 { move-window-to-workspace 4; }
-    Mod+Shift+5 { move-window-to-workspace 5; }
-    Mod+Shift+6 { move-window-to-workspace 6; }
-    Mod+Shift+7 { move-window-to-workspace 7; }
-    Mod+Shift+8 { move-window-to-workspace 8; }
-    Mod+Shift+9 { move-window-to-workspace 9; }
+    Mod+0 { focus-workspace 1; }
+    Mod+1 { focus-workspace 2; }
+    Mod+2 { focus-workspace 3; }
+    Mod+3 { focus-workspace 4; }
+    Mod+4 { focus-workspace 5; }
+    Mod+5 { focus-workspace 6; }
+    Mod+6 { focus-workspace 7; }
+    Mod+7 { focus-workspace 8; }
+    Mod+8 { focus-workspace 9; }
+    Mod+9 { focus-workspace 10; }
+    Mod+Shift+1 { move-window-to-workspace 2; }
+    Mod+Shift+2 { move-window-to-workspace 3; }
+    Mod+Shift+3 { move-window-to-workspace 4; }
+    Mod+Shift+4 { move-window-to-workspace 5; }
+    Mod+Shift+5 { move-window-to-workspace 6; }
+    Mod+Shift+6 { move-window-to-workspace 7; }
+    Mod+Shift+7 { move-window-to-workspace 8; }
+    Mod+Shift+8 { move-window-to-workspace 9; }
+    Mod+Shift+9 { move-window-to-workspace 10; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
@@ -557,12 +496,12 @@ binds {
     //
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
-    // Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+F11 allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+Q { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    // Mod+Shift+P { power-off-monitors; }
 }
