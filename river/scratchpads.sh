@@ -19,7 +19,7 @@ project_tag=$((1 << 18))
 
 term="$terminal --app-id special-term -e zsh -ic \"tmux new-session -s Terminal\""
 btop="$terminal --app-id special-btop -e zsh -ic btop"
-nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor 'nvim && zsh'\""
+nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor nvim\""
 files="$terminal --app-id special-files -e zsh -ic yazi"
 
 projectTerm="$terminal --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"
