@@ -54,7 +54,7 @@ output "eDP-1" {
 // Settings that influence how windows are positioned and sized.
 layout {
     gaps 8
-    center-focused-column "never" // options are: "never", "always", "on-overflow"
+    center-focused-column "on-overflow" // options are: "never", "always", "on-overflow"
     background-color "transparent" // Needed to show swww-daemon from the background
     default-column-display "normal"
     always-center-single-column
@@ -283,7 +283,7 @@ window-rule {
 
 window-rule {
   match app-id=r#"^special*"#
-  default-column-width { proportion 1.0; }
+  default-column-width { proportion 0.8; }
   open-on-workspace "Scratchpad"
 }
 
@@ -322,11 +322,11 @@ binds {
     Mod+E hotkey-overlay-title="Open Yazi" { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
     Mod+M hotkey-overlay-title="Open Btop" { spawn "foot" "-e" "zsh" "-ic" "btop"; }
 
-    Mod+Shift+T { spawn "sh" "-c" "footclient --app-id special-term -e zsh -ic 'tmux new-session -s Terminal'"; }
     Mod+Shift+M { spawn "sh" "-c" "footclient --app-id special-btop -e zsh -ic btop"; }
-    Mod+Shift+N { spawn "sh" "-c" "footclient --app-id special-nvim --working-directory=~/dotfiles/ -e zsh -ic 'tmux new-session -s Editor nvim '"; }
     Mod+Shift+E { spawn "sh" "-c" "footclient --app-id special-files -e zsh -ic yazi"; }
-    Mod+Shift+P { spawn "sh" "-c" "footclient --app-id special-project -e zsh -ic '~/scripts/project.tmux'"; }
+    Mod+Shift+T { spawn "sh" "-c" "footclient --app-id special-term -e zsh -ic 'tmux new-session -s Terminal'"; }
+    Mod+Shift+N { spawn "sh" "-c" "footclient --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic 'tmux new-session -s Editor nvim'"; }
+    Mod+Shift+P { spawn "sh" "-c" "footclient --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"; }
 
     Mod+C { spawn "~/scripts/colorpicker"; }
     Mod+Tab { spawn "~/scripts/random-swwwbg"; }
