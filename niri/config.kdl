@@ -269,7 +269,7 @@ window-rule {
 // Scratchpad rule
 window-rule {
     match app-id=r#"^special*"#
-    default-column-width { proportion 0.8; }
+    default-column-width { proportion 0.9; }
     open-on-workspace "Scratchpad"
 }
 
@@ -286,15 +286,14 @@ window-rule {
     match app-id="Spotify"
     match title="YouTube Music"
 
-    default-column-width { }
+    default-column-width { proportion 0.9; }
     open-on-workspace "Media"
-    open-maximized true
+    open-focused true
+    // open-maximized true
 }
 
 // Float rule
 window-rule {
-    match app-id="Spotify"
-    match app-id="ticktick"
     match title="Special Offers"
     match title="Friends List"
     match title="Steam Settings"
@@ -320,6 +319,7 @@ window-rule {
     match title="Picture-in-Picture"
 
     open-floating true
+    open-focused true
     default-column-width { }
     default-window-height { }
 }
@@ -332,6 +332,7 @@ window-rule {
     match app-id="com.libretro.RetroArch"
     match app-id="es-de"
 
+    open-focused true
     open-fullscreen true
 }
 
