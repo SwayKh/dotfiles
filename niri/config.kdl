@@ -260,26 +260,79 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 //  █████   █████ ░░████████ █████░░██████  ██████
 // ░░░░░   ░░░░░   ░░░░░░░░ ░░░░░  ░░░░░░  ░░░░░░
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
 // Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
 window-rule {
     geometry-corner-radius 15
     clip-to-geometry true
 }
 
+// Scratchpad rule
 window-rule {
-  match app-id=r#"^special*"#
-  default-column-width { proportion 0.8; }
-  open-on-workspace "Scratchpad"
+    match app-id=r#"^special*"#
+    default-column-width { proportion 0.8; }
+    open-on-workspace "Scratchpad"
+}
+
+// Open on Media workspace
+window-rule {
+    match app-id="com.libretro.RetroArch"
+    match app-id="Celeste.bin.x86_64"
+    match app-id="hollow_knight.x86_64"
+    match title="Brawlhalla"
+    match app-id="citra-qt"
+    match app-id="es-de"
+    match app-id="steam"
+    match app-id="ticktick"
+    match app-id="Spotify"
+    match title="YouTube Music"
+
+    default-column-width { }
+    open-on-workspace "Media"
+    open-maximized true
+}
+
+// Float rule
+window-rule {
+    match app-id="Spotify"
+    match app-id="ticktick"
+    match title="Special Offers"
+    match title="Friends List"
+    match title="Steam Settings"
+    match app-id="steam" title="Brawlhalla"
+    match app-id="galculator"
+    match app-id="org.kde.kcalc"
+    match app-id="blueman-manager"
+    match app-id="org.kde.kdeconnect.app"
+    match app-id="nm-connection-editor"
+    match app-id="org.kde.polkit-kde-authentication-agent-1"
+    match app-id="polkit-gnome-authentication-agent-1"
+    match app-id="org.qbittorrent.qBittorrent"
+    match title="gtk*"
+    match app-id="GParted"
+    match app-id="nwg-look"
+    match app-id="firefox" title="Picture-in-Picture"
+    match app-id="floorp" title="Picture-in-Picture"
+    match app-id="zen" title="Picture-in-Picture"
+    match app-id="xdg-desktop-portal-gtk"
+    match app-id="org.pulseaudio.pavucontrol"
+    match title="popup title with spaces"
+    match title="zoom"
+    match title="Picture-in-Picture"
+
+    open-floating true
+    default-column-width { }
+    default-window-height { }
+}
+
+// Fullscreen rule
+window-rule {
+    match title="Brawlhalla"
+    match app-id="mpv"
+    match app-id="feh"
+    match app-id="com.libretro.RetroArch"
+    match app-id="es-de"
+
+    open-fullscreen true
 }
 
 //  ███████████   ███                 █████
