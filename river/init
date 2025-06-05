@@ -81,6 +81,8 @@ riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" natural-scrol
 riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" disable-while-typing enabled
 riverctl input "pointer-1267-12484-DELL0979:00_04F3:30C4_Touchpad" disable-while-trackpointing enabled
 
+riverctl input "pointer-7119-5-USB_Optical_Mouse" middle-emulation enabled
+
 # Disable touchpad
 riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
 #
