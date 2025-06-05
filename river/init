@@ -151,11 +151,11 @@ riverctl spawn-tagmask ${all_but_scratch_tag}
 
 scratchpad="$HOME/.config/river/scratchpads.sh"
 
-riverctl map normal $mod+Shift T spawn "$scratchpad term"
-riverctl map normal $mod+Shift M spawn "$scratchpad btop"
-riverctl map normal $mod+Shift E spawn "$scratchpad files"
-riverctl map normal $mod+Shift N spawn "$scratchpad nvim"
-riverctl map normal $mod+Shift P spawn "$scratchpad project"
+riverctl map normal $mod+Shift T spawn "$scratchpad special-term"
+riverctl map normal $mod+Shift M spawn "$scratchpad special-btop"
+riverctl map normal $mod+Shift E spawn "$scratchpad special-files"
+riverctl map normal $mod+Shift N spawn "$scratchpad special-nvim"
+riverctl map normal $mod+Shift P spawn "$scratchpad special-project"
 
 # Mapping for sending to stickypad
 # Show sticky windows on scratch_tags too

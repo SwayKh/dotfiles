@@ -17,42 +17,40 @@ dots_tag=$((1 << 13))
 monitor_tag=$((1 << 14))
 project_tag=$((1 << 18))
 
-term="$terminal --app-id special-term -e zsh -ic \"tmux new-session -s Terminal\""
+term="$terminal --app-id special-term -e zsh -ic 'tmux new-session -s Terminal'"
 btop="$terminal --app-id special-btop -e zsh -ic btop"
-nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic \"tmux new-session -s Editor nvim\""
+nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic 'tmux new-session -s Editor nvim'"
 files="$terminal --app-id special-files -e zsh -ic yazi"
-
 projectTerm="$terminal --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"
 
 case "$1" in
-"term")
-  search="special-term"
+"special-term")
   tag="$terminal_tag"
   cmd="$term"
   ;;
-"files")
-  search="special-files"
+"special-files")
   tag="$files_tag"
   cmd="$files"
   ;;
-"btop")
-  search="special-btop"
+"special-btop")
   tag="$monitor_tag"
   cmd="$btop"
   ;;
-"nvim")
-  search="special-nvim"
+"special-nvim")
   tag="$dots_tag"
   cmd="$nvim"
   ;;
-"project")
-  search="special-project"
+"special-project")
   tag="$project_tag"
   cmd="$projectTerm"
   ;;
+*)
+  echo "Unhandled case provided. Exiting"
+  exit 1
+  ;;
 esac
 
-if lswt | grep -q "$search"; then
+if lswt | grep -q "$1"; then
   riverctl set-focused-tags "$tag"
 else
   riverctl spawn "$cmd"
