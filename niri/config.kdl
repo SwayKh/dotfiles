@@ -63,8 +63,8 @@ layout {
     // empty-workspace-above-first
 
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width { proportion 0.66667; }
-    default-column-width { }
+    default-column-width { proportion 0.9; }
+    // default-column-width { }
 
     preset-column-widths {
         proportion 0.33333
@@ -137,7 +137,7 @@ layout {
 // Animation settings.
 animations {
     // off
-    slowdown 1.0
+    slowdown 2.0
 }
 
 environment {
