@@ -275,10 +275,10 @@ riverctl map-switch normal lid close "swaylock -f"
 riverctl map normal $mod Return zoom
 
 # Focus windows with $mod h/j/k/l
-riverctl map normal $mod+Control H focus-view left
-riverctl map normal $mod+Control J focus-view down
-riverctl map normal $mod+Control K focus-view up
-riverctl map normal $mod+Control L focus-view right
+riverctl map normal $mod H focus-view left
+riverctl map normal $mod J focus-view down
+riverctl map normal $mod K focus-view up
+riverctl map normal $mod L focus-view right
 
 #Focus windows with $mod Arrow keys
 riverctl map normal $mod Left focus-view left
@@ -367,7 +367,6 @@ riverctl rule-add -app-id "zen" tags $browser_tag
 riverctl rule-add -app-id "firefox" tags $browser_tag
 riverctl rule-add -app-id "Code" tags $code_tag
 riverctl rule-add -app-id "anki" tags $code_tag
-riverctl rule-add -app-id "special-go" tags $code_tag
 riverctl rule-add -app-id "dev.zed.Zed" tags $code_tag
 riverctl rule-add -app-id "org.gnome.Nautilus" tags $file_browser_tag
 riverctl rule-add -app-id "thunar" tags $file_browser_tag
