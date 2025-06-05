@@ -56,7 +56,7 @@ output "eDP-1" {
 // Settings that influence how windows are positioned and sized.
 layout {
     gaps 8
-    center-focused-column "on-overflow" // options are: "never", "always", "on-overflow"
+    center-focused-column "never" // options are: "never", "always", "on-overflow"
     background-color "transparent" // Needed to show swww-daemon from the background
     default-column-display "normal"
     always-center-single-column
@@ -147,6 +147,7 @@ environment {
     XDG_CURRENT_DESKTOP "Niri"
     XDG_SESSION_DESKTOP "Niri"
     XDG_SESSION_TYPE "wayland"
+    DESKTOP_SESSION "niri"
     MOZ_ENABLE_WAYLAND "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     BEMENU_BACKEND "wayland"
@@ -190,7 +191,7 @@ layer-rule {
 }
 
 clipboard {
-    disable-primary // Disable the middle click paste clipboard
+    // disable-primary // Disable the middle click paste clipboard
 }
 
 hotkey-overlay {
@@ -232,18 +233,17 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon" "--format" "xrgb"
 spawn-at-startup "~/.config/waybar/launch.sh"
 spawn-at-startup "~/.config/dunst/launch-dunst.sh"
-spawn-at-startup "/usr/lib/kdeconnectd"
+spawn-at-startup "/usr/bin/kdeconnectd"
 spawn-at-startup "/usr/bin/kdeconnect-indicator"
 spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "blueman-applet"
-spawn-at-startup "wl-clipboard"
 spawn-at-startup "foot" "--server"
 spawn-at-startup "swayidle" "-w"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-// spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
-// spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
 
 workspace "Scratchpad"
 workspace "Main"
