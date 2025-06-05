@@ -250,6 +250,7 @@ workspace "Main"
 workspace "Media"
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+spawn-at-startup "niri" "msg" "action" "focus-workspace" "Main"
 
 
 //  ███████████              ████
