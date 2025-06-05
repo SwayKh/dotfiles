@@ -1,5 +1,15 @@
-// Check the wiki for a full description of the configuration:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+//   █████████            █████     █████     ███
+//  ███░░░░░███          ░░███     ░░███     ░░░
+// ░███    ░░░   ██████  ███████   ███████   ████  ████████    ███████  █████
+// ░░█████████  ███░░███░░░███░   ░░░███░   ░░███ ░░███░░███  ███░░███ ███░░
+//  ░░░░░░░░███░███████   ░███      ░███     ░███  ░███ ░███ ░███ ░███░░█████
+//  ███    ░███░███░░░    ░███ ███  ░███ ███ ░███  ░███ ░███ ░███ ░███ ░░░░███
+// ░░█████████ ░░██████   ░░█████   ░░█████  █████ ████ █████░░███████ ██████
+//  ░░░░░░░░░   ░░░░░░     ░░░░░     ░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░███░░░░░░
+//                                                            ███ ░███
+//                                                           ░░██████
+//                                                            ░░░░░░
+
 input {
     keyboard {
         xkb {
@@ -7,14 +17,11 @@ input {
             layout "us"
             options "ctrl:nocaps"
         }
-
-        // Enable numlock on startup, omitting this setting disables it.
         repeat-delay 300
         repeat-rate 30
+        // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
-
-    // Next sections include libinput settings.
     // Omitting settings disables them, or leaves them at their default values.
     touchpad {
         // off
@@ -29,14 +36,12 @@ input {
         middle-emulation
         // disabled-on-external-mouse
     }
-
     mouse {
         // off
         accel-speed 0.0
         accel-profile "flat"
         middle-emulation
     }
-
     warp-mouse-to-focus mode="center-xy"
     focus-follows-mouse max-scroll-amount="10%"
     // workspace-auto-back-and-forth // Very disorienting
@@ -44,8 +49,7 @@ input {
 
 output "eDP-1" {
     // off
-    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.0
+    scale 1.0 // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     transform "normal" // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
 }
 
@@ -57,6 +61,9 @@ layout {
     default-column-display "normal"
     always-center-single-column
     // empty-workspace-above-first
+
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    default-column-width { proportion 0.5; }
 
     preset-column-widths {
         proportion 0.25
@@ -70,9 +77,6 @@ layout {
         proportion 0.5
         proportion 0.66667
     }
-
-    // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width { proportion 0.5; }
     focus-ring {
         // off
         width 2
@@ -81,7 +85,6 @@ layout {
         // active-gradient from="#80c8ff" to="#bbddff" angle=45
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
-
     border {
         off
         width 2
@@ -91,7 +94,6 @@ layout {
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
-
     shadow {
         // on
         // draw-behind-window true
@@ -122,7 +124,6 @@ layout {
         color "#ffc87f80"
         // gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
     }
-
     struts {
         // Gaps around a window in a workspace
         // left 64
@@ -131,29 +132,6 @@ layout {
         // bottom 64
     }
 }
-
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swww-daemon" "--format" "xrgb"
-spawn-at-startup "~/.config/waybar/launch.sh"
-spawn-at-startup "~/.config/dunst/launch-dunst.sh"
-spawn-at-startup "/usr/lib/kdeconnectd"
-spawn-at-startup "/usr/bin/kdeconnect-indicator"
-spawn-at-startup "nm-applet" "--indicator"
-spawn-at-startup "blueman-applet"
-spawn-at-startup "wl-clipboard"
-spawn-at-startup "foot" "--server"
-spawn-at-startup "swayidle" "-w"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
-spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-// spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
-// spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
-
-workspace "Scratchpad"
-workspace "Main"
-workspace "Media"
-prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // Animation settings.
 animations {
@@ -194,7 +172,6 @@ cursor {
 overview {
     zoom 0.5
     backdrop-color "#333333"
-
     workspace-shadow {
         // off
         softness 20
@@ -226,21 +203,62 @@ gestures {
         delay-ms 100
         max-speed 1500
     }
-
     dnd-edge-workspace-switch {
         trigger-height 50
         delay-ms 100
         max-speed 1500
     }
-
     hot-corners {
         // off
     }
 }
-// Window rules let you adjust behavior for individual windows.
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
+/- switch-events {
+    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
+    lid-open { spawn "notify-send" "The laptop lid is open!"; }
+}
+
+//    █████████               █████                      █████                         █████
+//   ███░░░░░███             ░░███                      ░░███                         ░░███
+//  ░███    ░███  █████ ████ ███████    ██████   █████  ███████    ██████   ████████  ███████
+//  ░███████████ ░░███ ░███ ░░░███░    ███░░███ ███░░  ░░░███░    ░░░░░███ ░░███░░███░░░███░
+//  ░███░░░░░███  ░███ ░███   ░███    ░███ ░███░░█████   ░███      ███████  ░███ ░░░   ░███
+//  ░███    ░███  ░███ ░███   ░███ ███░███ ░███ ░░░░███  ░███ ███ ███░░███  ░███       ░███ ███
+//  █████   █████ ░░████████  ░░█████ ░░██████  ██████   ░░█████ ░░████████ █████      ░░█████
+// ░░░░░   ░░░░░   ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░░░     ░░░░░   ░░░░░░░░ ░░░░░        ░░░░░
+
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "swww-daemon" "--format" "xrgb"
+spawn-at-startup "~/.config/waybar/launch.sh"
+spawn-at-startup "~/.config/dunst/launch-dunst.sh"
+spawn-at-startup "/usr/lib/kdeconnectd"
+spawn-at-startup "/usr/bin/kdeconnect-indicator"
+spawn-at-startup "nm-applet" "--indicator"
+spawn-at-startup "blueman-applet"
+spawn-at-startup "wl-clipboard"
+spawn-at-startup "foot" "--server"
+spawn-at-startup "swayidle" "-w"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+// spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
+// spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
+
+workspace "Scratchpad"
+workspace "Main"
+workspace "Media"
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+
+//  ███████████              ████
+// ░░███░░░░░███            ░░███
+//  ░███    ░███  █████ ████ ░███   ██████   █████
+//  ░██████████  ░░███ ░███  ░███  ███░░███ ███░░
+//  ░███░░░░░███  ░███ ░███  ░███ ░███████ ░░█████
+//  ░███    ░███  ░███ ░███  ░███ ░███░░░   ░░░░███
+//  █████   █████ ░░████████ █████░░██████  ██████
+// ░░░░░   ░░░░░   ░░░░░░░░ ░░░░░  ░░░░░░  ░░░░░░
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -264,10 +282,14 @@ window-rule {
   open-on-workspace "Scratchpad"
 }
 
-/- switch-events {
-    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
-    lid-open { spawn "notify-send" "The laptop lid is open!"; }
-}
+//  ███████████   ███                 █████
+// ░░███░░░░░███ ░░░                 ░░███
+//  ░███    ░███ ████  ████████    ███████   █████
+//  ░██████████ ░░███ ░░███░░███  ███░░███  ███░░
+//  ░███░░░░░███ ░███  ░███ ░███ ░███ ░███ ░░█████
+//  ░███    ░███ ░███  ░███ ░███ ░███ ░███  ░░░░███
+//  ███████████  █████ ████ █████░░████████ ██████
+// ░░░░░░░░░░░  ░░░░░ ░░░░ ░░░░░  ░░░░░░░░ ░░░░░░
 
 binds {
     // shows a list of important hotkeys.
