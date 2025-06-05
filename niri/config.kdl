@@ -39,16 +39,14 @@ input {
 
     warp-mouse-to-focus mode="center-xy"
     focus-follows-mouse max-scroll-amount="10%"
-    workspace-auto-back-and-forth
+    // workspace-auto-back-and-forth // Very disorienting
 }
 
 output "eDP-1" {
     // off
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1.0
-    // Transform allows to rotate the output counter-clockwise, valid values are:
-    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    transform "normal"
+    transform "normal" // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -243,15 +241,6 @@ gestures {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -262,22 +251,10 @@ window-rule {
     open-floating true
 }
 
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
-}
-
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
@@ -287,23 +264,12 @@ window-rule {
   open-on-workspace "Scratchpad"
 }
 
-switch-events {
+/- switch-events {
     lid-close { spawn "notify-send" "The laptop lid is closed!"; }
     lid-open { spawn "notify-send" "The laptop lid is open!"; }
 }
 
 binds {
-    // Keys consist of modifiers separated by + signs, followed by an XKB key name
-    // in the end. To find an XKB name for a particular key, you may use a program
-    // like wev.
-    //
-    // "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
-    // when running as a winit window.
-    //
-    // Most actions that you can bind here can also be invoked programmatically with
-    // `niri msg action do-something`.
-
-    // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -322,11 +288,11 @@ binds {
     Mod+E hotkey-overlay-title="Open Yazi" { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
     Mod+M hotkey-overlay-title="Open Btop" { spawn "foot" "-e" "zsh" "-ic" "btop"; }
 
-    Mod+Shift+M { spawn "sh" "-c" "footclient --app-id special-btop -e zsh -ic btop"; }
-    Mod+Shift+E { spawn "sh" "-c" "footclient --app-id special-files -e zsh -ic yazi"; }
-    Mod+Shift+T { spawn "sh" "-c" "footclient --app-id special-term -e zsh -ic 'tmux new-session -s Terminal'"; }
-    Mod+Shift+N { spawn "sh" "-c" "footclient --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic 'tmux new-session -s Editor nvim'"; }
-    Mod+Shift+P { spawn "sh" "-c" "footclient --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"; }
+    Mod+Shift+M { spawn "~/.config/niri/spawn-or-focus.sh" "special-btop"; }
+    Mod+Shift+E { spawn "~/.config/niri/spawn-or-focus.sh" "special-files"; }
+    Mod+Shift+T { spawn "~/.config/niri/spawn-or-focus.sh" "special-term"; }
+    Mod+Shift+N { spawn "~/.config/niri/spawn-or-focus.sh" "special-nvim"; }
+    Mod+Shift+P { spawn "~/.config/niri/spawn-or-focus.sh" "special-project"; }
 
     Mod+C { spawn "~/scripts/colorpicker"; }
     Mod+Tab { spawn "~/scripts/random-swwwbg"; }
@@ -341,12 +307,6 @@ binds {
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
 
-    // You can also use a shell. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument in the end.
-    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
-
-    // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume allow-when-locked=true { spawn "~/scripts/volume" "up"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "~/scripts/volume" "down"; }
     XF86AudioMute        allow-when-locked=true { spawn "~/scripts/volume" "mute"; }
@@ -365,6 +325,7 @@ binds {
     Mod+Space repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
+    Mod+Shift+Q { quit; }
 
     Mod+Ctrl+T { toggle-column-tabbed-display; }
 
@@ -400,6 +361,12 @@ binds {
     // Mod+TouchpadScrollDown { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
     // Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
 
+    Mod+TouchpadScrollDown allow-when-locked=true { spawn "~/scripts/volume" "up"; }
+    Mod+TouchpadScrollUp allow-when-locked=true { spawn "~/scripts/volume" "down"; }
+
+    Mod+TouchpadScrollLeft { spawn "~/scripts/brightness" "up"; }
+    Mod+TouchpadScrollRight { spawn "~/scripts/brightness" "down"; }
+
     // You can refer to workspaces by index. However, keep in mind that
     // niri is a dynamic workspace system, so these commands are kind of
     // "best effort". Trying to refer to a workspace index bigger than
@@ -418,6 +385,7 @@ binds {
     Mod+7 { focus-workspace 8; }
     Mod+8 { focus-workspace 9; }
     Mod+9 { focus-workspace 10; }
+    Mod+Shift+0 { move-window-to-workspace 1; }
     Mod+Shift+1 { move-window-to-workspace 2; }
     Mod+Shift+2 { move-window-to-workspace 3; }
     Mod+Shift+3 { move-window-to-workspace 4; }
@@ -462,10 +430,11 @@ binds {
     // set-column-width "100" will make the column occupy 200 physical screen pixels.
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
+    Mod+Plus { set-column-width "100%"; }
 
     // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    // Mod+Shift+Minus { set-window-height "-10%"; }
+    // Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
     // Mod+V       { toggle-window-floating; }
@@ -498,8 +467,6 @@ binds {
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+F11 allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+Q { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
