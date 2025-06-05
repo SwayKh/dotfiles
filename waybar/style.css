@@ -2,8 +2,8 @@
 @import url("../../.cache/wal/colors-waybar.css");
 
 /* Use Pywal16 colors  */
-@define-color bordercolor alpha(@color14, 1.0);
-@define-color bg alpha(@color8, 1.0);
+@define-color bordercolor alpha(@color0, 1.0);
+@define-color bg alpha(@color2, 1.0);
 @define-color fg alpha(@foreground, 1.0);
 @define-color highlight alpha(@color15, 1.0);
 @define-color alert alpha(@color11, 1.0);
@@ -17,10 +17,12 @@
 
 window#waybar {
   color: @fg;
+  background-color: @bg;
   background: none;
 }
 
 /*River Tags/Workspaces*/
+#workspaces,
 #tags {
   background-color: @bg;
   color: @bordercolor;
@@ -37,6 +39,7 @@ window#waybar {
   padding: 0rem 1rem;
 }
 
+#workspaces button,
 #tags button {
   color: @bordercolor;
   background: @bg;
@@ -45,7 +48,7 @@ window#waybar {
 }
 
 #tags button.occupied {
-  color: @fg;
+  color: @bordercolor;
 }
 
 #tags button.focused {
@@ -89,7 +92,7 @@ window#waybar {
 #idle_inhibitor,
 #window,
 #mpd {
-  color: @fg;
+  color: @bordercolor;
   background-color: @bg;
   border-radius: 1rem;
   border: 0.1rem solid @bordercolor;

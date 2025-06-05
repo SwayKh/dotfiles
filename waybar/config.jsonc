@@ -11,7 +11,7 @@
 
   // Choose the order of the modules
 
-  "modules-left": ["river/tags", "river/window"],
+  "modules-left": ["niri/workspaces", "niri/window"],
 
   "modules-center": ["clock"],
 
@@ -49,6 +49,19 @@
   "river/window": {
     "format": "{}",
     "max-length": 35,
+  },
+
+  "niri/workspaces": {
+    "format": "{value}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+    },
+    "current-only": true,
+  },
+
+  "niri/window": {
+    "format": "{title}",
   },
 
   "tray": {
