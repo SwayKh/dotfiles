@@ -14,9 +14,9 @@ window {
   x-offset: 0px;
   y-offset: 0px;
   margin: 5px;
-  padding: 5px;
+  padding: 0px;
   border: 2px;
-  border-radius: 15px;
+  border-radius: 1em;
   spacing: 0px;
   children: [ mainbox ];
 }
@@ -35,14 +35,14 @@ inputbar {
 textbox-prompt-colon {
   expand: false;
   padding: 0px 5px;
-  border-radius: 15px;
+  border-radius: 1em;
   str: " "; /* */
 }
 
 entry {
   placeholder:  "Search...";
   padding: 0px 5px;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 listview {
@@ -56,11 +56,12 @@ listview {
   margin: 0px;
   /* List view has the dash border, Remove it here */
   border: 0px;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 element {
   border: 0px;
-  border-radius: 15px;
+  border-radius: 1em;
   padding: 5px;
+  margin: 5px;
 }

@@ -31,7 +31,7 @@ window {
   padding: 5px;
   margin: 0px;
   border: 2px;
-  border-radius: 15px;
+  border-radius: 1em;
   spacing: 0px;
   children: [ mainbox ];
 }
@@ -50,13 +50,13 @@ inputbar {
 
 prompt {
   padding: 3px;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 entry {
   placeholder:  "Search...";
   padding: 3px;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 listview {
@@ -69,12 +69,12 @@ listview {
   margin: 0px;
   padding: 0px;
   border: 1px;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 element {
   border: 0px;
-  border-radius: 15px;
+  border-radius: 1em;
   padding: 3px;
   margin: 3px;
 }
