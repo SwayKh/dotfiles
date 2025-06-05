@@ -31,7 +31,7 @@ window {
   margin: 5px;
   padding: 5px;
   border: 2px;
-  border-radius: 0px;
+  border-radius: 15px;
   spacing: 0px;
   children: [ mainbox ];
 }
@@ -55,18 +55,18 @@ inputbar {
 entry {
   placeholder:  "Search...";
   padding: 3px;
-  border-radius: 0px;
+  border-radius: 15px;
 }
 
 prompt {
   padding: 3px;
-  border-radius: 0px;
+  border-radius: 15px;
 }
 
 textbox-prompt-colon {
   expand: false;
   padding: 0px 5px;
-  border-radius: 0px;
+  border-radius: 15px;
   str: " "; /* */
 }
 
@@ -81,12 +81,12 @@ listview {
   margin: 0px;
   padding: 0px;
   border: 0px;
-  border-radius: 0px;
+  border-radius: 15px;
 }
 
 element {
   border: 0px;
-  border-radius: 0px;
+  border-radius: 15px;
   padding: 3px;
 }
 
@@ -97,5 +97,5 @@ mode-switcher {
 
 button {
   padding: 3px;
-  border-radius: 0px;
+  border-radius: 15px;
 }
