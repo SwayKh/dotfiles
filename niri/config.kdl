@@ -63,13 +63,14 @@ layout {
     // empty-workspace-above-first
 
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width { proportion 0.5; }
+    // default-column-width { proportion 0.66667; }
+    default-column-width { }
 
     preset-column-widths {
-        proportion 0.25
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 0.9
         proportion 1.0
     }
     preset-window-heights {
@@ -197,6 +198,11 @@ hotkey-overlay {
     skip-at-startup
 }
 
+/- switch-events {
+    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
+    lid-open { spawn "notify-send" "The laptop lid is open!"; }
+}
+
 gestures {
     dnd-edge-view-scroll {
         trigger-width 30
@@ -211,11 +217,6 @@ gestures {
     hot-corners {
         // off
     }
-}
-
-/- switch-events {
-    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
-    lid-open { spawn "notify-send" "The laptop lid is open!"; }
 }
 
 //    █████████               █████                      █████                         █████
@@ -349,13 +350,35 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    // You can also move the mouse into the top-left hot corner,
+    // or do a four-finger swipe up on a touchpad.
+    Mod+Space repeat=false { toggle-overview; }
+
+    Mod+Q { close-window; }
+    Mod+Shift+Q { quit; }
+
+    Mod+Ctrl+F { toggle-window-floating; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+W { switch-preset-column-width; }
+    Mod+Return { maximize-column; }
+
+    Mod+Alt+P { power-off-monitors; }
+    Mod+Alt+C { toggle-column-tabbed-display; }
+    Mod+Alt+F { switch-focus-between-floating-and-tiling; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
+
+    // Center all fully visible columns on screen.
+    // Mod+Alt+C { center-column; }
+    // Mod+Ctrl+C { center-visible-columns; }
+
+    // Mod+Return { expand-column-to-available-width; }
+
+    // Program binds
     Mod+T hotkey-overlay-title="Open a Terminal: Foot" { spawn "footclient"; }
     Mod+R hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "drun"; }
     Mod+F hotkey-overlay-title="Open File Manager" {  spawn "thunar"; }
     Mod+B hotkey-overlay-title="Open Browser" { spawn "zen-browser"; }
     Mod+O hotkey-overlay-title="Open Notes: Obsidian" { spawn "obsidian"; }
-    Mod+W hotkey-overlay-title="Open Whatsapp" { spawn "ferdium"; }
     Mod+D hotkey-overlay-title="Open Discord" { spawn "vesktop"; }
     Mod+G hotkey-overlay-title="Open Retroarch" { spawn "retroarch"; }
     Mod+S hotkey-overlay-title="Open Spotify" { spawn "spotify"; }
@@ -363,25 +386,26 @@ binds {
     Mod+I hotkey-overlay-title="Open Ticktick" { spawn "ticktick"; }
     Mod+E hotkey-overlay-title="Open Yazi" { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
     Mod+M hotkey-overlay-title="Open Btop" { spawn "foot" "-e" "zsh" "-ic" "btop"; }
+    Mod+KP_ADD hotkey-overlay-title="Calculator" { spawn "galculator"; }
 
-    Mod+Shift+M { spawn "~/.config/niri/spawn-or-focus.sh" "special-btop"; }
-    Mod+Shift+E { spawn "~/.config/niri/spawn-or-focus.sh" "special-files"; }
-    Mod+Shift+T { spawn "~/.config/niri/spawn-or-focus.sh" "special-term"; }
-    Mod+Shift+N { spawn "~/.config/niri/spawn-or-focus.sh" "special-nvim"; }
-    Mod+Shift+P { spawn "~/.config/niri/spawn-or-focus.sh" "special-project"; }
+    // Scratchpads
+    Mod+Shift+M hotkey-overlay-title="Btop scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-btop"; }
+    Mod+Shift+E hotkey-overlay-title="Files scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-files"; }
+    Mod+Shift+T hotkey-overlay-title="Term scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-term"; }
+    Mod+Shift+N hotkey-overlay-title="Nvim scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-nvim"; }
+    Mod+Shift+P hotkey-overlay-title="Project scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-project"; }
 
+    // Scripts
+    Mod+V { spawn "~/scripts/rofi-clipboard"; }
     Mod+C { spawn "~/scripts/colorpicker"; }
     Mod+Tab { spawn "~/scripts/random-swwwbg"; }
     Mod+Grave { spawn "~/scripts/list-river-window"; }
-    Mod+V { spawn "~/scripts/rofi-clipboard"; }
     Mod+Escape { spawn "~/scripts/rofi-power"; }
     Mod+Ctrl+W { spawn "~/scripts/rofi-wifi"; }
     Mod+Ctrl+B { spawn "~/scripts/rofi-bluetooth"; }
     Mod+Ctrl+S { spawn "~/scripts/rofi-wall"; }
     Mod+Ctrl+C { spawn "~/scripts/text-picker"; }
     Mod+Ctrl+D { spawn "~/scripts/rofi-docs"; }
-
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "~/scripts/volume" "up"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "~/scripts/volume" "down"; }
@@ -395,62 +419,20 @@ binds {
     XF86AudioPrev { spawn "playerctl" "previous"; }
     XF86AudioNext {spawn "playerctl" "next"; }
 
-    // Open/close the Overview: a zoomed-out view of workspaces and windows.
-    // You can also move the mouse into the top-left hot corner,
-    // or do a four-finger swipe up on a touchpad.
-    Mod+Space repeat=false { toggle-overview; }
-
-    Mod+Q { close-window; }
-    Mod+Shift+Q { quit; }
-
-    Mod+Ctrl+T { toggle-column-tabbed-display; }
-
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-or-workspace-down; }
-    Mod+Up    { focus-window-or-workspace-up; }
-    Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-or-workspace-down; }
-    Mod+K     { focus-window-or-workspace-up; }
-    Mod+L     { focus-column-right; }
-
-    Mod+Ctrl+Left  { move-column-left; }
-    Mod+Ctrl+Down  { move-window-down; }
-    Mod+Ctrl+Up    { move-window-up; }
-    Mod+Ctrl+Right { move-column-right; }
-    Mod+Ctrl+H     { move-column-left; }
-    Mod+Ctrl+J     { move-window-down; }
-    Mod+Ctrl+K     { move-window-up; }
-    Mod+Ctrl+L     { move-column-right; }
-
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-column-right; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
-
     // Similarly, you can bind touchpad scroll "ticks".
-    // Touchpad scrolling is continuous, so for these binds it is split into
-    // discrete intervals.
-    // These binds are also affected by touchpad's natural-scroll, so these
-    // example binds are "inverted", since we have natural-scroll enabled for
-    // touchpads by default.
-    // Mod+TouchpadScrollDown { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
-    // Mod+TouchpadScrollUp   { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
+    // Mod+TouchpadScrollDown allow-when-locked=true { spawn "~/scripts/volume" "up"; }
+    // Mod+TouchpadScrollUp allow-when-locked=true { spawn "~/scripts/volume" "down"; }
 
-    Mod+TouchpadScrollDown allow-when-locked=true { spawn "~/scripts/volume" "up"; }
-    Mod+TouchpadScrollUp allow-when-locked=true { spawn "~/scripts/volume" "down"; }
+    // Mod+TouchpadScrollLeft { spawn "~/scripts/brightness" "up"; }
+    // Mod+TouchpadScrollRight { spawn "~/scripts/brightness" "down"; }
 
-    Mod+TouchpadScrollLeft { spawn "~/scripts/brightness" "up"; }
-    Mod+TouchpadScrollRight { spawn "~/scripts/brightness" "down"; }
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
 
-    // You can refer to workspaces by index. However, keep in mind that
-    // niri is a dynamic workspace system, so these commands are kind of
-    // "best effort". Trying to refer to a workspace index bigger than
-    // the current workspace count will instead refer to the bottommost
-    // (empty) workspace.
-    //
-    // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
-    // will all refer to the 3rd workspace.
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
     Mod+0 { focus-workspace 1; }
     Mod+1 { focus-workspace 2; }
     Mod+2 { focus-workspace 3; }
@@ -461,90 +443,35 @@ binds {
     Mod+7 { focus-workspace 8; }
     Mod+8 { focus-workspace 9; }
     Mod+9 { focus-workspace 10; }
-    Mod+Shift+0 { move-window-to-workspace 1; }
-    Mod+Shift+1 { move-window-to-workspace 2; }
-    Mod+Shift+2 { move-window-to-workspace 3; }
-    Mod+Shift+3 { move-window-to-workspace 4; }
-    Mod+Shift+4 { move-window-to-workspace 5; }
-    Mod+Shift+5 { move-window-to-workspace 6; }
-    Mod+Shift+6 { move-window-to-workspace 7; }
-    Mod+Shift+7 { move-window-to-workspace 8; }
-    Mod+Shift+8 { move-window-to-workspace 9; }
-    Mod+Shift+9 { move-window-to-workspace 10; }
+    Mod+Shift+0 { move-column-to-workspace 1; }
+    Mod+Shift+1 { move-column-to-workspace 2; }
+    Mod+Shift+2 { move-column-to-workspace 3; }
+    Mod+Shift+3 { move-column-to-workspace 4; }
+    Mod+Shift+4 { move-column-to-workspace 5; }
+    Mod+Shift+5 { move-column-to-workspace 6; }
+    Mod+Shift+6 { move-column-to-workspace 7; }
+    Mod+Shift+7 { move-column-to-workspace 8; }
+    Mod+Shift+8 { move-column-to-workspace 9; }
+    Mod+Shift+9 { move-column-to-workspace 10; }
+
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Ctrl+H     { move-column-left; }
+    Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    Mod+Ctrl+L     { move-column-right; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
-    // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
-
-    // Mod+R { switch-preset-column-width; }
-    // Mod+Shift+R { switch-preset-window-height; }
-    // Mod+Ctrl+R { reset-window-height; }
-    // Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
-    Mod+Ctrl+F { toggle-window-floating; }
-
-    // Expand the focused column to space not taken up by other fully visible columns.
-    // Makes the column "fill the rest of the space".
-    // Mod+Ctrl+F { expand-column-to-available-width; }
-
-    // Mod+C { center-column; }
-
-    // Center all fully visible columns on screen.
-    // Mod+Ctrl+C { center-visible-columns; }
-
-    // Finer width adjustments.
-    // This command can also:
-    // * set width in pixels: "1000"
-    // * adjust width in pixels: "-5" or "+5"
-    // * set width as a percentage of screen width: "25%"
-    // * adjust width as a percentage of screen width: "-10%" or "+10%"
-    // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
-    // set-column-width "100" will make the column occupy 200 physical screen pixels.
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
-    Mod+Plus { set-column-width "100%"; }
-
-    // Finer height adjustments when in column with other windows.
-    // Mod+Shift+Minus { set-window-height "-10%"; }
-    // Mod+Shift+Equal { set-window-height "+10%"; }
-
-    // Move the focused window between the floating and the tiling layout.
-    // Mod+V       { toggle-window-floating; }
-    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-
-    // Toggle tabbed column display mode.
-    // Windows in this column will appear as vertical tabs,
-    // rather than stacked on top of each other.
-    // Mod+W { toggle-column-tabbed-display; }
-
-    // Actions to switch layouts.
-    // Note: if you uncomment these, make sure you do NOT have
-    // a matching layout switch hotkey configured in xkb options above.
-    // Having both at once on the same hotkey will break the switching,
-    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
-    // Mod+Shift+Space { switch-layout "prev"; }
-
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
-
-    // Applications such as remote-desktop clients and software KVM switches may
-    // request that niri stops processing the keyboard shortcuts defined here
-    // so they may, for example, forward the key presses as-is to a remote machine.
-    // It's a good idea to bind an escape hatch to toggle the inhibitor,
-    // so a buggy application can't hold your session hostage.
-    //
-    // The allow-inhibiting=false property can be applied to other binds as well,
-    // which ensures niri always processes them, even when an inhibitor is active.
-    Mod+F11 allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    // Mod+Shift+P { power-off-monitors; }
 }
