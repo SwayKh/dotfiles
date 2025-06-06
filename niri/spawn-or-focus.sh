@@ -70,7 +70,7 @@ IS_FOCUSED=$(echo "$WIN_INFO" | jq -r '.is_focused // empty')
 if [ -z "$ID" ]; then
   niri msg action spawn -- "sh" "-c" "$cmd"
 elif [ "$IS_FOCUSED" = "true" ]; then
-  niri msg action focus-workspace-previous
+  niri msg action focus-window-previous
 else
   niri msg action focus-window --id "$ID"
 fi
