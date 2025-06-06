@@ -396,6 +396,8 @@ binds {
     Mod+Shift+T hotkey-overlay-title="Term scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-term"; }
     Mod+Shift+N hotkey-overlay-title="Nvim scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-nvim"; }
     Mod+Shift+P hotkey-overlay-title="Project scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-project"; }
+    Mod+Shift+S hotkey-overlay-title="Spotify scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "Spotify"; }
+    Mod+Shift+I hotkey-overlay-title="Ticktick scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "ticktick"; }
 
     // Scripts
     Mod+V { spawn "~/scripts/rofi-clipboard"; }

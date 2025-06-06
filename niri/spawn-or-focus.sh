@@ -22,12 +22,16 @@ fi
 
 terminal="footclient"
 
+# Commands to run the programs
 term="$terminal --app-id special-term -e zsh -ic 'tmux new-session -As Terminal'"
 btop="$terminal --app-id special-btop -e zsh -ic btop"
 nvim="$terminal --app-id special-nvim --working-directory=$HOME/dotfiles/ -e zsh -ic 'tmux new-session -As Editor nvim'"
 files="$terminal --app-id special-files -e zsh -ic yazi"
 projectTerm="$terminal --app-id special-project -e zsh -ic '$HOME/scripts/project.tmux'"
+spotify="spotify"
+ticktick="ticktick"
 
+# The case statements need the app-id of the program.
 case "$1" in
 "special-term")
   cmd="$term"
@@ -43,6 +47,12 @@ case "$1" in
   ;;
 "special-project")
   cmd="$projectTerm"
+  ;;
+"ticktick")
+  cmd="$ticktick"
+  ;;
+"Spotify")
+  cmd="$spotify"
   ;;
 *)
   echo "Unhandled case provided. Exiting"
