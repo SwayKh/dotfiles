@@ -49,13 +49,13 @@ inputbar {
 }
 
 prompt {
-  padding: 3px;
+  padding: 3px 6px;
   border-radius: 1em;
 }
 
 entry {
   placeholder:  "Search...";
-  padding: 3px;
+  padding: 3px 6px;
   border-radius: 1em;
 }
 
@@ -75,6 +75,6 @@ listview {
 element {
   border: 0px;
   border-radius: 1em;
-  padding: 3px;
+  padding: 3px 6px;
   margin: 3px;
 }

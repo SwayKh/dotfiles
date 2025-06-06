@@ -51,20 +51,20 @@ inputbar {
 }
 
 prompt {
-  padding: 3px;
+  padding: 3px 6px;
   border-radius: 1em;
 }
 
 textbox-prompt-colon {
   expand: false;
-  padding: 3px 15px;
+  padding: 3px 18px;
   border-radius: 1em;
   str: " "; /* */
 }
 
 entry {
   placeholder:  " Search...";
-  padding: 5px;
+  padding: 3px 6px;
   border-radius: 1em;
 }
 
@@ -74,7 +74,7 @@ mode-switcher {
 }
 
 button {
-  padding: 3px;
+  padding: 3px 6px;
   border-radius: 1em;
 }
 
@@ -98,7 +98,7 @@ listview {
 element {
   border: 0px;
   border-radius: 1em;
-  padding: 3px;
+  padding: 3px 6px;
 }
 
 /* element {*/
