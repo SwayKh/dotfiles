@@ -45,17 +45,34 @@ y() {
 
 # Package Manager
 pm() {
-  pacman -Slq | fzf -m --preview='pacman -Si {}' --border=rounded --margin=1% --height 100% --layout=reverse --bind='enter:execute(paru -S {+})+abort'
+  pacman -Slq |
+    fzf -m --preview='pacman -Si {}' \
+    --border=rounded \
+    --margin=1% \
+    --height 100% \
+    --layout=reverse \
+    --bind='enter:execute(echo "Selected: "{+}; sudo pacman -S {+})+abort'
 }
 
 # Pacman Preview Explicitly Installed
 ppi() {
-  pacman -Qeq | fzf --preview 'pacman -Qil {}' --border=rounded --margin=1% --height 100% --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+  pacman -Qeq |
+    fzf -m --preview 'pacman -Qil {}' \
+    --border=rounded \
+    --margin=1% \
+    --height 100% \
+    --layout=reverse \
+    --bind 'enter:execute(echo "Selected: "{+}; sudo pacman -Rns {+})+abort'
 }
 
 # Pacman Preview All Installed
 ppa() {
-  pacman -Qq | fzf --preview 'pacman -Qil {}' --border=rounded --margin=1% --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+  pacman -Qq |
+    fzf -m --preview 'pacman -Qil {}' \
+    --border=rounded \
+    --margin=1% \
+    --layout=reverse \
+    --bind 'enter:execute(echo "Selected: "{+}; sudo pacman -Rns {+})+abort'
 }
 
 # Taken from a reddit post of fastfetch config
@@ -68,8 +85,8 @@ age() {
 }
 
 most_used() {
-  history |
-    awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' |
+  cat "$HOME/.zsh_history" |
+    awk '{CMD[$1]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' |
     grep -v "./" |
     column -c3 -s " " -t |
     sort -nr |
