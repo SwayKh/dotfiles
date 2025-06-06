@@ -1,9 +1,11 @@
 local servers = {
+  "bashls", -- Bash
   "emmet_language_server", -- HTML
   "clangd", -- C/C++
   "pyright", -- Python
   "gopls", -- Golang
   "lua_ls", -- Lua
+  "ts_ls", -- Typescript/javascript
 }
 
 vim.lsp.enable(servers)
