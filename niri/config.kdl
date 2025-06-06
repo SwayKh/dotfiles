@@ -56,7 +56,7 @@ output "eDP-1" {
 // Settings that influence how windows are positioned and sized.
 layout {
     gaps 8
-    center-focused-column "never" // options are: "never", "always", "on-overflow"
+    center-focused-column "on-overflow" // options are: "never", "always", "on-overflow"
     background-color "transparent" // Needed to show swww-daemon from the background
     default-column-display "normal"
     always-center-single-column
