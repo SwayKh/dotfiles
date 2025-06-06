@@ -9,4 +9,10 @@ sed -i '/background = /s|.*|    background = "'$color2'"|' "$conf"
 sed -i '/foreground = /s|.*|    foreground = "'$color0'"|' "$conf"
 sed -i '/frame_color = /s|.*|    frame_color = "'$color0'"|' "$conf"
 
-pkill dunst && notify-send "Wallpaper and colorscheme changed; setting RGB value"
+pkill dunst
+
+dunst &
+DUNST_PID=$!
+disown "$DUNST_PID"
+
+notify-send "Colorscheme applied"
