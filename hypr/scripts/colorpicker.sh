@@ -2,6 +2,11 @@
 
 color=$(hyprpicker)
 
+if [ -z "$color" ]; then
+  notify-send "No color selected."
+  exit 1
+fi
+
 echo -n "$color" | wl-copy
 
-dunstify "Color: $color"
+notify-send "Color: $color"
