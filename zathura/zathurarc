@@ -8,7 +8,7 @@ set nohlsearch false
 set page-padding 1
 set scroll-step 50
 set adjust-open "best-fit"
-set recolor false
+set recolor true
 set recolor-keephue "true"
 set selection-clipboard clipboard
 set database "sqlite"
