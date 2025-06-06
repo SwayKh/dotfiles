@@ -319,6 +319,7 @@ window-rule {
     match title="popup title with spaces"
     match title="zoom"
     match title="Picture-in-Picture"
+    match app-id="anki" title="Profile Name"
 
     open-floating true
     open-focused true
