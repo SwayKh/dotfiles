@@ -28,6 +28,7 @@ map d scroll half-down
 map D toggle_page_mode
 map r reload
 map R rotate
+map <C-r> feedkeys ":source<Return>"
 map i recolor
 map p print
 map P snap_to_page
@@ -42,6 +43,7 @@ map [fullscreen] d scroll half-down
 map [fullscreen] D toggle_page_mode
 map [fullscreen] r reload
 map [fullscreen] R rotate
+map [fullscreen] <C-r> feedkeys ":source<Return>"
 map [fullscreen] i recolor
 map [fullscreen] p print
 map [fullscreen] P snap_to_page
@@ -50,7 +52,5 @@ map [fullscreen] v toggle_statusbar
 map [fullscreen] [ zoom out
 map [fullscreen] ] zoom in
 
-unmap <C-r>
-unmap [fullscreen] <C-r>
 unmap <C-b>
 unmap [fullscreen] <C-b>
