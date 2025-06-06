@@ -401,7 +401,7 @@ binds {
     Mod+V { spawn "~/scripts/rofi-clipboard"; }
     Mod+C { spawn "~/scripts/colorpicker"; }
     Mod+Tab { spawn "~/scripts/random-swwwbg"; }
-    Mod+Grave { spawn "~/scripts/list-river-window"; }
+    Mod+Grave { spawn "~/scripts/list-niri-window"; }
     Mod+Escape { spawn "~/scripts/rofi-power"; }
     Mod+Ctrl+W { spawn "~/scripts/rofi-wifi"; }
     Mod+Ctrl+B { spawn "~/scripts/rofi-bluetooth"; }
