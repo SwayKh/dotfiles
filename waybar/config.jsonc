@@ -19,8 +19,8 @@
     "network",
     // "cpu",
     // "memory",
-    // "temperature",
-    "custom/temp",
+    "temperature",
+    // "custom/temp",
     "backlight",
     "wireplumber",
     "battery",
@@ -79,30 +79,25 @@
   },
 
   "temperature": {
-    // "thermal-zone": 4,
     "critical-threshold": 80,
     "interval": 2,
     "format": " {temperatureC:>2}°C",
     "format-icons": ["", "", ""],
-    "on-click": "riverctl spawn '~/.config/river/scratchpads.sh btop'",
   },
 
   "cpu": {
     "interval": 2,
     "format": " {usage:>2}%",
-    "on-click": "riverctl spawn '~/.config/river/scratchpads.sh btop'",
   },
 
   "memory": {
     "interval": 2,
     "format": " {:>2}%",
-    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 
   "disk": {
     "interval": 15,
     "format": "󰋊 {percentage_used:>2}%",
-    "on-click": "hyprctl dispatcher togglespecialworkspace monitor",
   },
 
   "backlight": {
@@ -233,7 +228,6 @@
     "exec": "$HOME/scripts/temp",
     "return-type": "json",
     "tooltip": true,
-    "on-click": "riverctl spawn '~/.config/river/scratchpads.sh btop'",
   },
 
   "custom/pacman": {
