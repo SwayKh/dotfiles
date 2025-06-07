@@ -4,6 +4,7 @@
 .cargo
 .cmake
 .codeium
+!.config
 .config/discord/
 .config/retroarch/
 .floorp
@@ -30,9 +31,6 @@
 ES-DE
 GameDev
 Games
+!Roms
 Themes
 go
-
-# Don't Ignore these directories
-#.config
-#Roms
