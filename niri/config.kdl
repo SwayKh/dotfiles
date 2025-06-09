@@ -366,14 +366,11 @@ binds {
     Mod+W { switch-preset-column-width; }
     Mod+Return { maximize-column; }
 
+    Mod+Alt+C { center-column; }
     Mod+Alt+P { power-off-monitors; }
-    Mod+Alt+C { toggle-column-tabbed-display; }
+    Mod+Alt+T { toggle-column-tabbed-display; }
     Mod+Alt+F { switch-focus-between-floating-and-tiling; }
     Mod+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
-
-    // Center all fully visible columns on screen.
-    // Mod+Alt+C { center-column; }
-    // Mod+Ctrl+C { center-visible-columns; }
 
     // Mod+Return { expand-column-to-available-width; }
 
