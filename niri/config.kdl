@@ -281,6 +281,7 @@ window-rule {
     match app-id="Celeste.bin.x86_64"
     match app-id="hollow_knight.x86_64"
     match title="Brawlhalla"
+    match app-id="Minecraft"
     match app-id="citra-qt"
     match app-id="es-de"
     match app-id="steam"
@@ -330,6 +331,7 @@ window-rule {
 // Fullscreen rule
 window-rule {
     match title="Brawlhalla"
+    match title="Minecraft"
     match app-id="mpv"
     match app-id="feh"
     match app-id="com.libretro.RetroArch"
@@ -367,7 +369,7 @@ binds {
     Mod+Alt+P { power-off-monitors; }
     Mod+Alt+C { toggle-column-tabbed-display; }
     Mod+Alt+F { switch-focus-between-floating-and-tiling; }
-    Mod+Alt+L hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
+    Mod+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
 
     // Center all fully visible columns on screen.
     // Mod+Alt+C { center-column; }
