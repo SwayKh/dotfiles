@@ -26,7 +26,7 @@ alias lf=lfcd
 alias yazi=y
 alias lg=lazygit
 alias hw='hellwal --no-cache -i $HOME/.config/wall.png --bright-offset 0.3'
-alias pw='wal -n -e -a 80 -i $HOME/.config/wall.png -o $HOME/scripts/wallchange.sh'
+alias pw='wal -n -e -a 80 -i $HOME/.config/wall.png -o $HOME/.config/dunst/launch-dunst.sh'
 
 # cd Aliases
 alias ..='cd ..'
