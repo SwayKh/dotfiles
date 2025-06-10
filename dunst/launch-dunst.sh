@@ -10,6 +10,5 @@ sed -i '/foreground = /s|.*|    foreground = "'$color0'"|' "$conf"
 sed -i '/frame_color = /s|.*|    frame_color = "'$color0'"|' "$conf"
 
 killall dunst
-dunst &
 sleep 0.5
-notify-send "Colorscheme applied"
+dunst &
