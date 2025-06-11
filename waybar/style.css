@@ -43,8 +43,8 @@ window#waybar {
 #tags button {
   color: @bordercolor;
   background: @bg;
-  padding: 0rem 0.4rem;
-  margin: 0rem 0.4rem;
+  padding: 0rem 0.2rem;
+  margin: 0rem 0.2rem;
 }
 
 #tags button.occupied {
@@ -97,7 +97,7 @@ window#waybar {
   border-radius: 1rem;
   border: 0.1rem solid @bordercolor;
   padding: 0rem 0.8rem;
-  margin: 0rem 0.4rem;
+  margin: 0rem 0.2rem;
 }
 
 #tray menu,
@@ -111,13 +111,13 @@ window#waybar {
 #custom-bluetooth,
 #custom-power,
 #idle_inhibitor {
-  padding: 0rem 0.4rem;
-  margin: 0rem 0.4rem;
+  padding: 0rem 0.2rem;
+  margin: 0rem 0.2rem;
   border: 0rem solid @bordercolor;
 }
 
 #custom-group {
-  padding: 0.4rem 1rem;
+  padding: 0.2rem 1rem;
   margin-right: 0rem;
 }
 
