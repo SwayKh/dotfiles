@@ -83,8 +83,6 @@ layout {
         width 2
         active-color "#7fc8ff"
         inactive-color "#505050"
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
     border {
         off
@@ -92,8 +90,6 @@ layout {
         active-color "#ffc87f"
         inactive-color "#505050"
         urgent-color "#9b0000"
-        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
     shadow {
         // on
@@ -116,21 +112,10 @@ layout {
         active-color "red"
         inactive-color "gray"
         urgent-color "blue"
-        // active-gradient from="#80c8ff" to="#bbddff" angle=45
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-        // urgent-gradient from="#800" to="#a33" angle=45
     }
     insert-hint {
         // off
         color "#ffc87f80"
-        // gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
-    }
-    struts {
-        // Gaps around a window in a workspace
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
     }
 }
 
@@ -176,10 +161,10 @@ overview {
     backdrop-color "#333333"
     workspace-shadow {
         // off
-        softness 20
+        softness 60
         spread 20
         offset x=0 y=10
-        color "#00000080"
+        color "#00000090"
     }
 }
 
@@ -197,11 +182,6 @@ clipboard {
 hotkey-overlay {
     // hide-not-bound
     skip-at-startup
-}
-
-switch-events {
-    lid-close { spawn "notify-send" "The laptop lid is closed!"; }
-    lid-open { spawn "notify-send" "The laptop lid is open!"; }
 }
 
 gestures {
