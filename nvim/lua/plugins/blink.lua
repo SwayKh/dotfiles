@@ -12,7 +12,8 @@ require("blink.cmp").setup({
       "score",
       "sort_text",
     },
-    prebuilt_binaries = { download = true },
+    implementation = "lua",
+    prebuilt_binaries = { download = false },
   },
 
   cmdline = {
