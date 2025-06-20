@@ -57,24 +57,6 @@ local function formatter()
   require("plugins.format")
 end
 
-local function hardtime()
-  add({
-    source = "m4xshen/hardtime.nvim",
-    depends = {
-      "MunifTanjim/nui.nvim",
-    },
-  })
-  require("hardtime").setup({
-    max_time = 1000,
-    max_count = 3,
-    disable_mouse = true,
-    hint = true,
-    timeout = 3000,
-    notification = true,
-    allow_different_key = true,
-  })
-end
-
 local function linter()
   add({
     source = "mfussenegger/nvim-lint",
@@ -169,14 +151,13 @@ end)
 later(function()
   arrow()
   formatter()
-  hardtime()
   linter()
   markdown()
   treesitter()
   trouble()
 
   -- add vim-startuptime plugin
-  add({
-    source = "dstein64/vim-startuptime",
-  })
+  -- add({
+  --   source = "dstein64/vim-startuptime",
+  -- })
 end)
