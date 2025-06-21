@@ -255,26 +255,6 @@ window-rule {
     open-on-workspace "Scratchpad"
 }
 
-// Open on Media workspace
-window-rule {
-    match app-id="com.libretro.RetroArch"
-    match app-id="Celeste.bin.x86_64"
-    match app-id="hollow_knight.x86_64"
-    match title="Brawlhalla"
-    match app-id="Minecraft"
-    match app-id="citra-qt"
-    match app-id="es-de"
-    match app-id="steam"
-    match app-id="ticktick"
-    match app-id="Spotify"
-    match title="YouTube Music"
-
-    default-column-width { proportion 0.9; }
-    open-on-workspace "Media"
-    open-focused true
-    // open-maximized true
-}
-
 // Float rule
 window-rule {
     match title="Special Offers"
@@ -288,10 +268,11 @@ window-rule {
     match app-id="nm-connection-editor"
     match app-id="org.kde.polkit-kde-authentication-agent-1"
     match app-id="polkit-gnome-authentication-agent-1"
-    match app-id="org.qbittorrent.qBittorrent"
     match title="gtk*"
     match app-id="GParted"
     match app-id="nwg-look"
+    match app-id="qt6ct"
+    match app-id="qt5ct"
     match app-id="firefox" title="Picture-in-Picture"
     match app-id="floorp" title="Picture-in-Picture"
     match app-id="zen" title="Picture-in-Picture"
@@ -308,17 +289,52 @@ window-rule {
     default-window-height { }
 }
 
+// Open on Media workspace
+window-rule {
+    match app-id="com.libretro.RetroArch"
+    match app-id="Celeste.bin.x86_64"
+    match app-id="hollow_knight.x86_64"
+    match title="Brawlhalla"
+    match app-id="Minecraft"
+    match app-id="citra-qt"
+    match app-id="Ryujinx"
+    match app-id="es-de"
+    match app-id="steam"
+    match app-id="ticktick"
+    match app-id="Spotify"
+    match title="YouTube Music"
+
+    open-on-workspace "Media"
+}
+
 // Fullscreen rule
 window-rule {
+    match app-id="com.libretro.RetroArch"
+    match app-id="Celeste.bin.x86_64"
+    match app-id="hollow_knight.x86_64"
     match title="Brawlhalla"
-    match title="Minecraft"
+    match app-id="Minecraft"
+    match app-id="citra-qt"
+    match app-id="Ryujinx"
+    match app-id="es-de"
     match app-id="mpv"
     match app-id="feh"
-    match app-id="com.libretro.RetroArch"
-    match app-id="es-de"
 
     open-focused true
     open-fullscreen true
+}
+
+window-rule {
+    match app-id="anki"
+    match app-id="org.pwmt.zathura"
+    match app-id="obsidian"
+    match app-id="ticktick"
+    match app-id="Spotify"
+    match title="YouTube Music"
+    match app-id="uget-gtk"
+    match app-id="org.qbittorrent.qBittorrent"
+
+    default-column-width { proportion 0.66667; }
 }
 
 //  ███████████   ███                 █████
