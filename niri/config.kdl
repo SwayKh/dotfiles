@@ -42,6 +42,7 @@ input {
         accel-profile "flat"
         middle-emulation
     }
+    // disable-power-key-handling
     warp-mouse-to-focus mode="center-xy"
     focus-follows-mouse max-scroll-amount="10%"
     // workspace-auto-back-and-forth // Very disorienting
@@ -63,7 +64,7 @@ layout {
     // empty-workspace-above-first
 
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width { proportion 0.9; }
+    default-column-width { proportion 0.5; }
     // default-column-width { }
 
     preset-column-widths {
@@ -71,12 +72,12 @@ layout {
         proportion 0.5
         proportion 0.66667
         proportion 0.9
-        proportion 1.0
     }
     preset-window-heights {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 1.0
     }
     focus-ring {
         // off
@@ -115,7 +116,7 @@ layout {
     }
     insert-hint {
         // off
-        color "#ffc87f80"
+        color "#ffc87f50"
     }
 }
 
@@ -158,7 +159,6 @@ cursor {
 
 overview {
     zoom 0.5
-    backdrop-color "#333333"
     workspace-shadow {
         // off
         softness 60
@@ -344,13 +344,14 @@ binds {
     Mod+Ctrl+F { toggle-window-floating; }
     Mod+Shift+F { fullscreen-window; }
     Mod+W { switch-preset-column-width; }
+    Mod+Shift+W { switch-preset-window-height; }
     Mod+Return { maximize-column; }
 
     Mod+Alt+C { center-column; }
     Mod+Alt+P { power-off-monitors; }
     Mod+Alt+T { toggle-column-tabbed-display; }
     Mod+Alt+F { switch-focus-between-floating-and-tiling; }
-    Mod+Alt+L allow-when-locked=true hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen: Gtklock" { spawn "gtklock"; }
 
     // Mod+Return { expand-column-to-available-width; }
 
@@ -403,11 +404,11 @@ binds {
     XF86AudioNext {spawn "playerctl" "next"; }
 
     // Similarly, you can bind touchpad scroll "ticks".
-    // Mod+TouchpadScrollDown allow-when-locked=true { spawn "~/scripts/volume" "up"; }
-    // Mod+TouchpadScrollUp allow-when-locked=true { spawn "~/scripts/volume" "down"; }
+    Mod+TouchpadScrollDown cooldown-ms=150 { spawn "~/scripts/volume" "up"; }
+    Mod+TouchpadScrollUp cooldown-ms=150 { spawn "~/scripts/volume" "down"; }
 
-    // Mod+TouchpadScrollLeft { spawn "~/scripts/brightness" "up"; }
-    // Mod+TouchpadScrollRight { spawn "~/scripts/brightness" "down"; }
+    Mod+TouchpadScrollLeft cooldown-ms=150 { spawn "~/scripts/brightness" "up"; }
+    Mod+TouchpadScrollRight cooldown-ms=150 { spawn "~/scripts/brightness" "down"; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
@@ -451,6 +452,9 @@ binds {
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-column-right; }
     Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
+
+    Mod+MouseForward { focus-column-right; }
+    Mod+MouseBack    { focus-column-left; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
