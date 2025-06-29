@@ -5,7 +5,7 @@ alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias fvim='fzf --print0 | xargs -0 -o nvim'
 alias yeet="sudo pacman -Rns"
 alias up='paru -Syu'
-alias pyActivate='source $HOME/.venv/bin/activate'
+alias venv='source $HOME/venv/bin/activate'
 alias serve='python -m http.server'
 
 alias androidfs='sshfs -o follow_symlinks,IdentityFile=/home/sumit/.ssh/id_rsa u0a533@192.168.29.199:/data/data/com.termux/files/home/storage/shared/ -p 8022 /home/sumit/Android'
