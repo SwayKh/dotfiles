@@ -14,16 +14,16 @@
 ---
 
 - **OS** : [Arch](https://archlinux.org/)
-- **WM/Compositor** : [Hyprland](https://hyprland.org/) / [River](https://codeberg.org/river/river)
+- **WM/Compositor** : [Niri](https://github.com/YaLTeR/niri)
 - **Bar** : [Waybar](https://github.com/Alexays/Waybar)
 - **Application Launcher** : [Rofi-wayland](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
 - **File Manager** : [Yazi](https://github.com/sxyazi/yazi) / [LF](https://github.com/gokcehan/lf)
-- **File Manager(GUI)** : [Nautilus](https://apps.gnome.org/Nautilus/)
+- **File Manager(GUI)** : [Thunar](https://docs.xfce.org/xfce/thunar/start)
 - **Text Editor** : [Neovim](https://neovim.io/)
-- **Browser** : [Floorp](https://floorp.app/en)
-- **Idle daemon** : [Hypridle](https://github.com/hyprwm/hypridle)
-- **Screen Locking Utility** : [Hyprlock](https://github.com/hyprwm/hyprlock)
+- **Browser** : [Zen](https://zen-browser.app/)
+- **Idle daemon** : [Swayidle](https://github.com/swaywm/swayidle)
+- **Screen Locking Utility** : [Gtklock](https://github.com/jovanlanik/gtklock)
 - **Terminal Multiplexer** : [Tmux](https://github.com/tmux/tmux)
 - **Shell** : [Zsh](https://www.zsh.org/)
 - **Shell Prompt** : [Starship](https://starship.rs/)
@@ -31,17 +31,16 @@
 - **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
 - **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
 - **System Monitor** : [Btop](https://github.com/aristocratos/btop)
-- **System Info viewer** : [Neofetch](https://github.com/dylanaraps/neofetch) / [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
+- **System Info viewer** : [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - **Notification daemon** : [Dunst](https://github.com/dunst-project/dunst)
 - **Image Viewer** : [Feh](https://github.com/derf/feh)
 - **Anime Client** : [Ani-cli](https://github.com/pystardust/ani-cli)
 - **Local Sync Client** : [Syncthing](https://syncthing.net/)
-- **Color Picker** : [Hyprpicker](https://github.com/hyprwm/hyprpicker)
+- **Color Picker** : [script](https://github.com/SwayKh/Scripts/blob/main/colorpicker)
 - **Clipboard** : [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
 - **Screenshot**: [Grim+Slurp](https://sr.ht/~emersion/grim/)
 - **Emulation Frontend** : [Retroarch](https://www.retroarch.com/) / [ES-DE](https://es-de.org/)
-- **Customization** : [Nwg-look](https://github.com/nwg-piotr/nwg-look)
-  / [Qt6ct](https://github.com/trialuser02/qt6ct)
+- **Customization** : [Nwg-look](https://github.com/nwg-piotr/nwg-look) / [Qt6ct](https://github.com/trialuser02/qt6ct)
 - **Font** : JetBrainsMono Nerd Font
 - [Scripts](https://github.com/swaykh/scripts)
 - [Wallpapers](https://github.com/swaykh/wallpapers)
@@ -50,11 +49,10 @@
 
 - **Terminal** : [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor** : [Micro](https://micro-editor.github.io/)
-- **File Manager(GUI)** : [Thunar](https://docs.xfce.org/xfce/thunar/start)
-- **Screenlock Util** : [Swaylock-effects](https://github.com/mortie/swaylock-effects)
+- **File Manager(GUI)** : [Nautilus](https://apps.gnome.org/Nautilus/)- **Screenlock Util** : [Swaylock-effects](https://github.com/mortie/swaylock-effects)
 - **Idle daemon** : [Swayidle](https://github.com/swaywm/swayidle)
 - **Notification daemon** : [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
-- **WM/Compositor** : [i3(X11)](https://i3wm.org/) / [Sway(Wayland replacement for i3)](https://swaywm.org/)
+- **WM/Compositor** : [i3(X11)](https://i3wm.org/) / [Sway(Wayland replacement for i3)](https://swaywm.org/) / [Hyprland](https://hyprland.org/) / [River](https://codeberg.org/river/river)
 - **Bar(For X11)** : [Polybar](https://github.com/polybar/polybar)
 - **Color Picker** : [xcolor](https://github.com/Soft/xcolor)
 - **Wallpaper Utility** : [Swaybg](https://github.com/swaywm/swaybg) / [feh](https://github.com/derf/feh)
@@ -100,7 +98,13 @@ sudo pacman -S --needed hyprland hyprlock hypridle hyprpicker hyprcursor
 #### Or River Stuff
 
 ```bash
-paru -S river lswt swaylock-effects swayidle wlr-randr
+sudo pacman -S --needed river lswt swaylock-effects swayidle wlr-randr
+```
+
+#### Niri Stuff
+
+```bash
+sudo pacman -S --needed niri gtklock swayidle
 ```
 
 #### Utilities
@@ -148,6 +152,14 @@ There's also some configs, I've kept as backup. For eg
 > - [KDE shortcuts file](./kde)
 > - [VS Code Settings.json](./Code/settings.json)
 > - [Emulation Station DE](./ES-DE)
+
+## Niri
+
+I've recently switched to Niri as my wayland compositor, after using River for
+quite some time, and hyprland before that. Niri has an excellent IPC, and quite
+a lot of in-built functionality, not requiring xrandr-like utility, or a open
+window listing utility like river. But it also has some eye candy, not as
+customisable as hyprland, but still very feature rich.
 
 ## Hyprland
 
