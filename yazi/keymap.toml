@@ -43,6 +43,7 @@ prepend_keymap = [
   { on = [ 'g', 'r' ],       run = 'cd ~/Roms',                               desc = 'Go to the Roms directory' },
 	{ on = [ 'g', 'w' ],       run = 'cd ~/wallpapers/Images/',                 desc = 'Go to the wallpapers directory' },
 	{ on = [ 'g', 'b' ],       run = 'cd ~/.local/bin/',                        desc = 'Go to the .local/bin directory' },
+	{ on = [ 'g', 'B' ],       run = 'cd ~/Books/',                             desc = 'Go to the Books directory' },
 	{ on = [ 'g', 's' ],       run = 'cd ~/Sync',                               desc = 'Go to the Syncthing directory' },
 	{ on = [ 'g', 'l', 's' ],  run = 'cd ~/.local/share/',                      desc = 'Go to the .local/share directory' },
 	{ on = [ 'g', 'p', 'c' ],  run = 'cd ~/Pictures/',                          desc = 'Go to the pictures directory' },
