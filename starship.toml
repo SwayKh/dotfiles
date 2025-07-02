@@ -38,15 +38,17 @@ $swift\
 $typst\
 $zig\
 $buf\
-$cmd_duration\
 $fill\
-$jobs \
+$cmd_duration\
+$time\
+$jobs\
 $line_break\
 $character
 """
 
 command_timeout = 500
 scan_timeout = 30
+add_newline = true
 
 [os]
 disabled = false
@@ -55,7 +57,7 @@ disabled = false
 Arch = "  "
 
 [fill]
-symbol = " "
+symbol = "·"
 
 [username]
 style_user = "green bold"
@@ -145,5 +147,7 @@ symbol = " "
 
 [time]
 disabled = false
-style = "bold white"
-format = "[$time]($style)"
+style = "bold cyan"
+format = ' [\[$time\]]($style)'
+time_format = '%I:%M %p'
+utc_time_offset = '+5.5'
