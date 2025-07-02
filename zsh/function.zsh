@@ -3,19 +3,28 @@ ZCONF="$HOME/.local/share/zsh"
 
 # Function to source files if they exist
 source_file() {
-    [ -f "$ZCONF/$1" ] && source "$ZCONF/$1"
+  [ -f "$ZCONF/$1" ] && source "$ZCONF/$1"
 }
 
 # Plugin Manager function, credit to Chris@Machine
 zplug() {
-    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-    if [ -d "$ZCONF/plugins/$PLUGIN_NAME" ]; then
-        # For plugins
-        source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-        source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
-    else
-        git clone "https://github.com/$1.git" "$ZCONF/plugins/$PLUGIN_NAME"
+  PLUGIN_NAME="${1##*/}"
+  if [ -d "$ZCONF/plugins/$PLUGIN_NAME" ]; then
+    # For plugins
+    source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+    source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+  else
+    git clone "https://github.com/$1.git" "$ZCONF/plugins/$PLUGIN_NAME" && zplug "$1"
+  fi
+}
+
+uplug() {
+  for dir in "$ZCONF/plugins"/*; do
+    if [ -d "$dir/.git" ]; then
+      echo "Updating $(basename "$dir")..."
+      git -C "$dir" pull --quiet || echo "Failed to update $(basename "$dir")"
     fi
+  done
 }
 
 # Can't put this in ~/scripts/function.sh, The shell exits with lf
