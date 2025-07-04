@@ -1,10 +1,14 @@
 local servers = {
   "bashls", -- Bash
-  "emmet_language_server", -- HTML
   "clangd", -- C/C++
-  "pyright", -- Python
   "gopls", -- Golang
   "lua_ls", -- Lua
+  "pyright", -- Python
+  -- Web Dev LSPs
+  "cssls", -- CSS
+  "emmet_language_server", -- HTML
+  "htmx", -- HTMX
+  "tailwindcss", -- Tailwind
   "ts_ls", -- Typescript/javascript
 }
 
