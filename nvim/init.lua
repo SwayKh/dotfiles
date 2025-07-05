@@ -139,6 +139,13 @@ local function trouble()
   require("plugins.trouble")
 end
 
+local function undotree()
+  add({
+    source = "mbbill/undotree",
+  })
+  vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle)
+end
+
 -- Load everything now
 now(function()
   colorscheme()
@@ -155,6 +162,7 @@ later(function()
   markdown()
   treesitter()
   trouble()
+  undotree()
 
   -- add vim-startuptime plugin
   -- add({
