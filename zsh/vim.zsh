@@ -15,6 +15,9 @@ bindkey -M menuselect '^n' expand-or-complete
 bindkey -M menuselect '^p' reverse-menu-complete
 bindkey -v '^?' backward-delete-char
 
+# Close completion menu with esacpe
+bindkey -M menuselect '^[' send-break
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
