@@ -3,35 +3,9 @@
   foreground:             #C8C093;
   background:             #1F1F28;
   highlight:              #F1EDEE;
-
-  pink:                   #D99887;
-  old-highlight:          #F1594F;
-  red:                    #973D46;
-  darkred:                #973D46;
-  yellow:                 #F2C395;
-  darkyellow:             #E0AE4A;
-  lightblue:              #888CA7;
-  oldforeground:          #87A2AA;
-  altblue:                #ACBAF9;
-  altwhite:               #F1D8D4;
-  white:                  #F5F5F5;
-
-  b5:                     #1B1E25;
-  b4:                     #04142D;
-  b3:                     #091F2D;
-  b2:                     #1F1E2E;
-  b1:                     #333333;
-
-  lightgray:              #777777;
-  mediumgray:             #454545;
-  darkgray:               #232323;
-  black:                  #111111;
-  darkblack:              #000000;
 }
 
 element-icon {
-  /*Better to increase the whole element size with dpi*/
-  /* Or Maybe Not, Just have a unified icon size for all scheme */
   size: 18;
 }
 
