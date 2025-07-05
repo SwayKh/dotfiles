@@ -21,6 +21,13 @@ configuration {
 
 @import "colors"
 
+* {
+  spacing:       0.2em;
+  padding:       0.2em 0.4em;
+  margin:        0px;
+  border-radius: 1em;
+}
+
 window {
   /*Removing height make the window height equal to num of opts*/
   /*height: 40%;*/
@@ -30,86 +37,69 @@ window {
   anchor: center;
   x-offset: 0px;
   y-offset: 0px;
-  margin: 5px;
-  padding: 5px;
+  margin: @margin;
+  padding: @padding;
   border: 2px;
-  border-radius: 1em;
-  spacing: 0px;
+  border-radius: @border-radius;
+  spacing: @spacing;
   children: [ mainbox ];
 }
 
 mainbox {
-  spacing: 5px;
+  spacing: @spacing;
   children: [ inputbar, mode-switcher, listview ];
 }
 
 inputbar {
-  spacing: 3px;
-  /*padding: top right bottom left*/
-  padding: 0px;
+  spacing: @spacing;
+  padding: @padding;
   children: [ textbox-prompt-colon, entry ];
 }
 
 prompt {
-  padding: 3px 6px;
-  border-radius: 1em;
+  padding: @padding;
+  border-radius: @border-radius;
 }
 
 textbox-prompt-colon {
   expand: false;
-  padding: 3px 18px;
-  border-radius: 1em;
+  padding: @padding;
+  border-radius: @border-radius;
   str: " "; /* */
 }
 
 entry {
   placeholder:  " Search...";
-  padding: 3px 6px;
-  border-radius: 1em;
+  padding: @padding;
+  border-radius: @border-radius;
 }
 
 mode-switcher {
-  spacing: 3px;
+  spacing: @spacing;
   orientation: horizontal;
 }
 
 button {
-  padding: 3px 6px;
-  border-radius: 1em;
+  padding: @padding;
+  border-radius: @border-radius;
 }
 
 listview {
   lines: 8;
   columns: 2;
-  spacing: 3px;
+  spacing: @spacing;
   scrollbar: false;
   cycle: false;
   dynamic: false;
   fixed-height: false;
-  spacing: 0px;
-  /* List view has the dash border, Remove it here */
-  /*border: 0px;*/
-  margin: 0px;
-  padding: 5px;
+  margin: @margin;
+  padding: @padding;
   border: 1px;
-  border-radius: 1em;
+  border-radius: @border-radius;
 }
 
 element {
   border: 0px;
-  border-radius: 1em;
-  padding: 3px 6px;
+  border-radius: @border-radius;
+  padding: @padding;
 }
-
-/* element {*/
-  /*children: [ element-icon, element-text ];*/
-  /*orientation: vertical;*/
-/*} */
-
-/*element-text {*/
-/*  horizontal-align: 0.5;*/
-/*}*/
-/**/
-/*element-icon {*/
-/*    size: 3em;*/
-/*}*/

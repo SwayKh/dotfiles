@@ -1,5 +1,5 @@
 configuration {
-  modi:                 "drun,run,,filebrowser,window";
+  modi:                 "drun,run,filebrowser,window";
   dpi:                  90;
   show-icons:           true;
   icon-theme:           "Papirus";
@@ -20,82 +20,82 @@ configuration {
 
 @import "colors"
 
-window {
-  /* If you change this, change padding on inputbar(Messed ratios) */
-  width: 25%;
-  height: 100%;
-  location: west;
-  anchor: west;
-  x-offset: 0px;
-  y-offset: 0px;
-  margin: 5px;
-  padding: 5px;
-  border: 2px;
+* {
+  spacing:       0.2em;
+  padding:       0.2em 0.4em;
+  margin:        0px;
   border-radius: 1em;
-  spacing: 0px;
-  children: [ mainbox ];
+}
+
+window {
+  /*             If you change this, change padding on inputbar(Messed ratios) */
+  width:         25%;
+  height:        100%;
+  location:      west;
+  anchor:        west;
+  margin:        @margin;
+  padding:       @padding;
+  border:        2px;
+  border-radius: @border-radius;
+  spacing:       @spacing;
+  children:      [  mainbox ];
 }
 
 mainbox {
-  spacing: 3px;
+  spacing:  @spacing;
   children: [ inputbar, listview, mode-switcher];
 }
 
 inputbar {
-  // padding: top right bottom left
-  // 3 padding value: top left+right bottom
-
-  // padding: 150px 10px 10px 10px;
-  padding: 150px 5px 5px;
-  spacing: 3px;
+  padding:          10em 0.4em   0.4em;
+  spacing:          @spacing;
   background-image: url("~/.config/wall.png", height);
-  children: [ prompt, entry ];
+  children:         [ prompt, entry ];
 }
 
 entry {
-  placeholder:  "Search...";
-  padding: 3px 6px;
-  border-radius: 1em;
+  placeholder:   "Search...";
+  padding:       @padding;
+  border-radius: @border-radius;
 }
 
 prompt {
-  padding: 3px 6px;
-  border-radius: 1em;
+  padding:       @padding;
+  border-radius: @border-radius;
 }
 
 textbox-prompt-colon {
-  expand: false;
-  padding: 3px 6px;
-  border-radius: 1em;
-  str: " "; /* */
+  expand:        false;
+  padding:       @padding;
+  border-radius: @border-radius;
+  str:           " "; /* */
 }
 
 listview {
-  // List view has the dash border, Remove it here
-  lines: 12;
-  spacing: 3px;
-  scrollbar: false;
-  cycle: false;
-  fixed-height: false;
-  dynamic: false; // Shrinks windows to occupy search result
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  border-radius: 1em;
+  lines:         12;
+  spacing:       @spacing;
+  scrollbar:     false;
+  cycle:         false;
+  fixed-height:  false;
+  dynamic:       false; // Shrinks windows to  occupy search result
+  margin:        @margin;
+  padding:       @padding;
+  border:        0px;   // List    view    has the    dash   border, Remove it here
+  border-radius: @border-radius;
 }
 
 element {
-  border: 0px;
-  border-radius: 1em;
-  padding: 3px 6px;
+  border:        0px;
+  border-radius: @border-radius;
+  padding:       @padding;
 }
 
 mode-switcher {
-  spacing: 3px;
+  spacing:     @spacing;
   orientation: horizontal;
 }
 
 button {
-  padding: 3px 6px;
-  border-radius: 1em;
+  padding:       @padding;
+  border-radius: @border-radius;
 }

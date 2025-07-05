@@ -1,67 +1,70 @@
 configuration {
-  dpi:                  120;
-  show-icons:           false;
-  disable-history:      true;
+  dpi:             90;
+  show-icons:      false;
+  disable-history: true;
 }
 
 @import "colors.rasi"
 
-window {
-  width: 15%;
-  orientation: vertical;
-  location: center;
-  anchor: center;
-  x-offset: 0px;
-  y-offset: 0px;
-  margin: 5px;
-  padding: 0px;
-  border: 2px;
+* {
+  spacing:       0.2em;
+  padding:       0.2em 0.4em;
+  margin:        0px;
   border-radius: 1em;
-  spacing: 0px;
-  children: [ mainbox ];
+  font:          "JetBrainsMono Nerd Font 12";
+}
+
+window {
+  width:         15%;
+  orientation:   vertical;
+  location:      center;
+  anchor:        center;
+  margin:        @margin;
+  padding:       @padding;
+  border:        2px;
+  border-radius: @border-radius;
+  spacing:       @spacing;
+  children:      [ mainbox ];
 }
 
 mainbox {
-  spacing: 3px;
+  spacing:  @spacing;
   children: [ listview ];
 }
 inputbar {
-  spacing: 3px;
-  /*padding: top right bottom left*/
-  padding: 0px;
-  children: [ "textbox-prompt-colon", entry ];
+  spacing:   @spacing;
+  padding:   @padding;
+  children:  [   "textbox-prompt-colon", entry  ];
 }
 
 textbox-prompt-colon {
-  expand: false;
-  padding: 0px 5px;
-  border-radius: 1em;
-  str: " "; /* */
+  expand:        false;
+  padding:       @padding;
+  border-radius: @border-radius;
+  str:           " "; /* */
 }
 
 entry {
-  placeholder:  "Search...";
-  padding: 0px 5px;
-  border-radius: 1em;
+  placeholder:   "Search...";
+  padding:       @padding;
+  border-radius: @border-radius;
 }
 
 listview {
-  lines: 5;
-  spacing: 3px;
-  scrollbar: false;
-  cycle: false;
-  fixed-height: true;
-  dynamic: false; // Shrinks windows to occupy search result
-  padding: 0px;
-  margin: 0px;
-  /* List view has the dash border, Remove it here */
-  border: 0px;
-  border-radius: 1em;
+  lines:         5;
+  spacing:       @spacing;
+  scrollbar:     false;
+  cycle:         false;
+  fixed-height:  true;
+  dynamic:       false; // Shrinks windows to  occupy search result
+  padding:       @padding;
+  margin:        @margin;
+  border:        0px;   // List    view    has the    dash   border, Remove it here
+  border-radius: @border-radius;
 }
 
 element {
-  border: 0px;
-  border-radius: 1em;
-  padding: 5px;
-  margin: 5px;
+  border-radius: @border-radius;
+  padding:       @padding;
+  margin:        @margin;
 }

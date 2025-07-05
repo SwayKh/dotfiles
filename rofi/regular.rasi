@@ -20,61 +20,64 @@ configuration {
 
 @import "colors"
 
-window {
-  //height: 50%;
-  width: 40%;
-  orientation: vertical;
-  location: center;
-  anchor: center;
-  x-offset: 0px;
-  y-offset: 0px;
-  padding: 5px;
-  margin: 0px;
-  border: 2px;
+* {
+  spacing:       0.2em;
+  padding:       0.2em 0.4em;
+  margin:        0px;
   border-radius: 1em;
-  spacing: 0px;
-  children: [ mainbox ];
+}
+
+window {
+  //height:      50%;
+  width:         40%;
+  orientation:   vertical;
+  location:      center;
+  anchor:        center;
+  padding:       @padding;
+  margin:        @margin;
+  border:        2px;
+  border-radius: @border-radius;
+  spacing:       @spacing;
+  children:      [ mainbox ];
 }
 
 mainbox {
-  spacing: 3px;
+  spacing:  @spacing;
   children: [ inputbar, listview ];
 }
 
 inputbar {
-  spacing: 3px;
-  /*padding: top right bottom left*/
-  padding: 0px;
+  spacing:  @spacing;
+  padding:  @padding;
   children: [ prompt, entry ];
 }
 
 prompt {
-  padding: 3px 6px;
-  border-radius: 1em;
+  padding:       @padding;
+  border-radius: @border-radius;
 }
 
 entry {
-  placeholder:  "Search...";
-  padding: 3px 6px;
-  border-radius: 1em;
+  placeholder:   "Search...";
+  padding:       @padding;
+  border-radius: @border-radius;
 }
 
 listview {
-  lines: 12;
-  spacing: 3px;
-  scrollbar: false;
-  cycle: false;
-  fixed-height: false;
-  dynamic: false; // Shrinks windows to occupy search result
-  margin: 0px;
-  padding: 0px;
-  border: 1px;
-  border-radius: 1em;
+  lines:         12;
+  spacing:       @spacing;
+  scrollbar:     false;
+  cycle:         false;
+  fixed-height:  false;
+  dynamic:       false; // Shrinks windows to occupy search result
+  margin:        @margin;
+  padding:       @padding;
+  border:        1px;
+  border-radius: @border-radius;
 }
 
 element {
-  border: 0px;
-  border-radius: 1em;
-  padding: 3px 6px;
-  margin: 3px;
+  border-radius: @border-radius;
+  padding:       @padding;
+  margin:        @margin;
 }
