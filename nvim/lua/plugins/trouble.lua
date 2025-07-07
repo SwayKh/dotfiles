@@ -1,7 +1,7 @@
 require("trouble").setup({
   auto_jump = true, -- auto jump to the item when there's only one
   focus = true, -- Focus the window when opened
-  auto_preview = true, -- automatically open preview when on an item
+  auto_preview = false, -- automatically open preview when on an item
   auto_refresh = true, -- auto refresh when open
   preview = {
     type = "main",
@@ -11,16 +11,6 @@ require("trouble").setup({
   win = {
     border = vim.g.border_style,
     size = 0.38, -- This weird size makes sense with the resize autocmd
-  },
-  modes = {
-    symbols = {
-      win = { position = "right" },
-      focus = true,
-    },
-    diagnostics = {
-      win = { position = "right" },
-      focus = true,
-    },
   },
 })
 
