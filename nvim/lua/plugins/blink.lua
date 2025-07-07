@@ -1,36 +1,18 @@
 require("blink.cmp").setup({
-  appearance = {
-    highlight_ns = vim.api.nvim_create_namespace("blink_cmp"),
-    use_nvim_cmp_as_default = false,
-    nerd_font_variant = "mono",
-    kind_icons = vim.g.kind_icons,
-  },
-
   fuzzy = {
-    sorts = {
-      "exact",
-      "score",
-      "sort_text",
-    },
     implementation = "lua",
     prebuilt_binaries = { download = false },
   },
 
+  appearance = { nerd_font_variant = "normal" },
+
   cmdline = {
-    keymap = {
-      preset = "cmdline",
-      ["<CR>"] = { "accept_and_enter", "fallback" },
-    },
     completion = {
-      list = {
-        selection = {
-          auto_insert = true,
-          preselect = false,
-        },
-      },
+      list = { selection = { auto_insert = true, preselect = false } },
       menu = { auto_show = true },
     },
   },
+
   keymap = { preset = "default" },
 
   signature = {
@@ -43,9 +25,9 @@ require("blink.cmp").setup({
 
   sources = {
     default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-    min_keyword_length = 0,
     providers = {
       lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100, fallbacks = { "lsp" } },
+      lsp = { max_items = 100 },
       path = { opts = { show_hidden_files_by_default = true } },
       buffer = {
         opts = {
@@ -61,40 +43,69 @@ require("blink.cmp").setup({
 
   completion = {
     accept = { auto_brackets = { enabled = true } },
-    list = { selection = { preselect = true, auto_insert = true } },
-    menu = {
-      min_width = 40,
-      max_height = 20,
-      border = vim.g.border_style,
-      scrolloff = 2,
-      scrollbar = false,
-      draw = {
-        columns = { { "kind_icon" }, { "label", "kind", "source_name", gap = 1 } },
-        align_to = "none",
-        components = {
-          label = { width = { min = 20, fill = true } }, -- default is true
-          kind = { width = { fill = false } },
-          label_description = { width = { fill = true } },
-          source_name = {
-            width = { fill = false },
-            text = function(ctx)
-              return "[" .. ctx.source_name .. "]"
-            end,
-          },
-        },
-      },
-    },
+    list = { max_items = 100, selection = { preselect = true, auto_insert = true } },
+    ghost_text = { enabled = true },
     documentation = {
       auto_show = true,
+      treesitter_highlighting = false,
       window = {
         border = vim.g.border_style,
-        min_width = 35,
+        min_width = 40,
         direction_priority = {
           menu_north = { "e", "w" },
           menu_south = { "e", "w" },
         },
       },
     },
-    ghost_text = { enabled = false },
+    menu = {
+      min_width = 40,
+      max_height = 30,
+      border = vim.g.border_style,
+      scrolloff = 0,
+      scrollbar = false,
+      draw = {
+        align_to = "label",
+        padding = { 0, 1 },
+        cursorline_priority = 0,
+        gap = 10,
+        columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind", "source_name", gap = 1 } },
+        components = {
+          source_name = {
+            text = function(ctx)
+              return "[" .. ctx.source_name .. "]"
+            end,
+            highlight = function(ctx)
+              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+              return hl
+            end,
+          },
+          label = {
+            text = function(ctx)
+              return ctx.label .. ctx.label_detail
+            end,
+            highlight = function(ctx)
+              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+              return hl
+            end,
+          },
+          kind = {
+            highlight = function(ctx)
+              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+              return hl
+            end,
+          },
+          kind_icons = {
+            text = function(ctx)
+              local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+              return ctx.icon_gap .. kind_icon
+            end,
+            highlight = function(ctx)
+              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+              return hl
+            end,
+          },
+        },
+      },
+    },
   },
 })
