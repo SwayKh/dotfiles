@@ -324,7 +324,7 @@ window-rule {
     open-fullscreen true
 }
 
-window-rule {
+/- window-rule {
     match app-id="firefox"
     match app-id="floorp"
     match app-id="zen"
