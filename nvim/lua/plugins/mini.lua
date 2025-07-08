@@ -1,7 +1,7 @@
 require("mini.icons").setup()
 require("mini.tabline").setup()
 require("mini.statusline").setup({
-  use_icons = vim.g.have_nerd_font,
+  use_icons = true,
   content = {
     active = function()
       local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })

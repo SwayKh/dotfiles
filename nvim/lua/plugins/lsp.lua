@@ -7,7 +7,6 @@ local servers = {
   -- Web Dev LSPs
   "cssls", -- CSS
   "emmet_language_server", -- HTML
-  "htmx", -- HTMX
   "tailwindcss", -- Tailwind
   "ts_ls", -- Typescript/javascript
 }
@@ -34,20 +33,21 @@ require("lazydev").setup({
 
 vim.diagnostic.config({
   severity_sort = true,
+  update_in_insert = true,
+  underline = { severity = vim.diagnostic.severity.ERROR },
   float = {
     source = "if_many",
     focusable = true,
     style = "minimal",
     border = vim.g.border_style,
   },
-  underline = { severity = vim.diagnostic.severity.ERROR },
-  signs = vim.g.have_nerd_font and {
+  signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = " ", -- 󰅚
       [vim.diagnostic.severity.WARN] = " ", -- 󰀪
       [vim.diagnostic.severity.INFO] = " ", -- 󰋽
       [vim.diagnostic.severity.HINT] = "󰠠 ", -- 󰌶
-    } or {},
+    },
   },
   virtual_text = {
     source = "if_many",
@@ -62,14 +62,6 @@ vim.diagnostic.config({
       }
       return diagnostic_message[diagnostic.severity]
     end,
-    severity = {
-      max = vim.diagnostic.severity.WARN,
-    },
-  },
-  virtual_lines = {
-    severity = {
-      min = vim.diagnostic.severity.ERROR,
-    },
   },
 })
 

@@ -29,6 +29,7 @@ require("blink.cmp").setup({
       lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100, fallbacks = { "lsp" } },
       lsp = { max_items = 100 },
       path = { opts = { show_hidden_files_by_default = true } },
+      snippets = { score_offset = 0, min_keyword_length = 2 },
       buffer = {
         opts = {
           get_bufnrs = function()
@@ -44,7 +45,7 @@ require("blink.cmp").setup({
   completion = {
     accept = { auto_brackets = { enabled = true } },
     list = { max_items = 100, selection = { preselect = true, auto_insert = true } },
-    ghost_text = { enabled = true },
+    ghost_text = { enabled = false },
     documentation = {
       auto_show = true,
       treesitter_highlighting = false,
