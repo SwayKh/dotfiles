@@ -43,6 +43,12 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 -- Search and replace word under the cursor.
 map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "[R]eplace [W]ord under cursor" })
 
+-- Move in insert mode, And Command-line mode
+map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
+map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
+map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
+map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
+
 -- Save, Quit
 map("n", "qq", "<Cmd>%bd<CR><Cmd>lua Snacks.dashboard()<CR>", { silent = true, desc = "Delete all buffers" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave all files" })
