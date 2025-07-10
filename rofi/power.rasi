@@ -7,7 +7,7 @@ configuration {
 @import "colors.rasi"
 
 * {
-  spacing:       0.2em;
+  spacing:       0.1em;
   padding:       0.2em 0.4em;
   margin:        0px;
   border-radius: 1em;
