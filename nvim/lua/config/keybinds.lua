@@ -6,12 +6,9 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
-map("n", "<leader>fe", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
-
-map("n", "<leader>X", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
-map("n", "<space>x", "<Cmd>.lua<CR>", { desc = "Execute selected lua lines" })
 map("v", "<space>x", ":lua<CR>", { desc = "Execute selected lua lines" })
+map("n", "<space>x", "<Cmd>.lua<CR>", { desc = "Execute selected lua lines" })
+map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
 
 map("n", "<C-c>", "<Cmd>close<CR>", { silent = true, desc = "Close window" })
 
@@ -24,6 +21,12 @@ map("n", "<C-j>", "<C-w>j", { desc = "Move Between splits with HJKL" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move Between splits with HJKL" })
 map("n", "<C-h>", "<C-w>h", { desc = "Move Between splits with HJKL" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Between splits with HJKL" })
+
+-- Move in insert mode, And Command-line mode
+map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
+map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
+map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
+map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
 
 -- Move selected text up/down
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -45,20 +48,10 @@ map("x", "P", [[<Cmd>silent! normal! "_dP<CR>]], { noremap = true, silent = true
 -- Search and replace word under the cursor.
 map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "[R]eplace [W]ord under cursor" })
 
--- Move in insert mode, And Command-line mode
-map({ "i", "c" }, "<C-j>", "<Down>", { desc = "Move Down in insert mode" })
-map({ "i", "c" }, "<C-k>", "<Up>", { desc = "Move Up in insert mode" })
-map({ "i", "c" }, "<C-h>", "<Left>", { desc = "Move Left in insert mode" })
-map({ "i", "c" }, "<C-l>", "<Right>", { desc = "Move Right in insert mode" })
-
 -- Save, Quit
 map("n", "qq", "<Cmd>%bd<CR><Cmd>lua Snacks.dashboard()<CR>", { silent = true, desc = "Delete all buffers" })
 map({ "n", "i", "v" }, "<C-s>", "<ESC><Cmd>w!<CR>", { silent = true, desc = "[S]ave all files" })
 map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "Save all file and [Q]uit" })
-
--- Open Lazy/Mason UIs and reload plugins
--- map("n", "<leader>ol", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
--- map("n", "<leader>om", "<Cmd>Mason<CR>", { silent = true, desc = "Open [M]ason" })
 
 -- Quickfix list keybinds
 map("n", "<leader>cn", "<Cmd>cnext<CR>", { desc = "Go to next item in Quickfix list" })
