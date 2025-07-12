@@ -42,7 +42,7 @@ local function blink()
     },
   })
   require("plugins.blink")
-  require("config.cmpHighlight") -- Modify the kind icon hightlight colors
+  require("config.utils").fixCmpHighlight() -- Modify the kind icon hightlight colors
 end
 
 local function colorscheme()
@@ -146,7 +146,6 @@ local function undotree()
   })
   vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle)
 end
-
 
 -- Load everything now
 now(function()
