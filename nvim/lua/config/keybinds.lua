@@ -7,11 +7,13 @@ map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 map("n", "<leader>m.", "@@", { silent = true, desc = "Run last [M]acro, @@ is awkward" })
-map("n", "<leader>f", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
+map("n", "<leader>fe", "<Cmd>Lexplore!<CR>", { silent = true, desc = "Open netrw on right side" }) -- Try Vex or Vex! to open in a split
 
 map("n", "<leader>X", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
 map("n", "<space>x", "<Cmd>.lua<CR>", { desc = "Execute selected lua lines" })
 map("v", "<space>x", ":lua<CR>", { desc = "Execute selected lua lines" })
+
+map("n", "<C-c>", "<Cmd>close<CR>", { silent = true, desc = "Close window" })
 
 -- Go to Beginning or End of line
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
@@ -32,8 +34,8 @@ map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Split keybinds, Need to figure out a better system
-map("n", "<leader>V", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
-map("n", "<leader>H", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
+map("n", "<leader>sv", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
+map("n", "<leader>sh", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
 
 --Select all/Yank all/Custom paste
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select all", remap = true })
@@ -56,7 +58,7 @@ map({ "n", "i", "v" }, "<C-q>", "<ESC><Cmd>wqa!<CR>", { silent = true, desc = "S
 
 -- Open Lazy/Mason UIs and reload plugins
 -- map("n", "<leader>ol", "<Cmd>Lazy<CR>", { silent = true, desc = "Open [L]azy" })
-map("n", "<leader>om", "<Cmd>Mason<CR>", { silent = true, desc = "Open [M]ason" })
+-- map("n", "<leader>om", "<Cmd>Mason<CR>", { silent = true, desc = "Open [M]ason" })
 
 -- Quickfix list keybinds
 map("n", "<leader>cn", "<Cmd>cnext<CR>", { desc = "Go to next item in Quickfix list" })
