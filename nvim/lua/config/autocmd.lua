@@ -46,46 +46,23 @@ autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
     vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
-    -- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-    -- vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "none" })
-    -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
   end,
 })
-
--- Clear cmdline messages after 1 sec
--- autocmd("CmdlineLeave", {
---   group = vim.api.nvim_create_augroup("clearcmdline", { clear = true }),
---   callback = function()
---     vim.defer_fn(function()
---       vim.cmd('echo ""')
---     end, 1000) -- 1000ms delay
---   end,
--- })
 
 -- create directories when needed, when saving a file
 autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("auto_create_dir", { clear = true }),
   callback = function(event)
-    local file = vim.loop.fs_realpath(event.match) or event.match
-
-    vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
-    local backup = vim.fn.fnamemodify(file, ":p:~:h")
-    backup = backup:gsub("[/\\]", "%%")
-    vim.go.backupext = backup
+    local dir = vim.fn.expand("<afile>:p:h")
+    if vim.fn.isdirectory(dir) == 0 then
+      vim.fn.mkdir(dir, "p")
+    end
   end,
 })
-
--- autocmd({ "CursorMoved", "BufEnter" }, {
---   pattern = "*",
---   desc = "Center cursor on CursorMoved event",
---   callback = function()
---     -- vim.api.nvim_feedkeys("zz", "n", false)
---     vim.cmd("norm! zz")
---   end,
--- })
 
 autocmd("CursorMoved", {
   pattern = "*",
@@ -117,17 +94,6 @@ autocmd({ "FileType" }, {
   end,
 })
 
-autocmd("BufRead", {
-  callback = function(ev)
-    if vim.bo[ev.buf].buftype == "quickfix" then
-      vim.schedule(function()
-        vim.cmd([[cclose]])
-        vim.cmd([[Trouble qflist open]])
-      end)
-    end
-  end,
-})
-
 autocmd("QuickFixCmdPost", {
   callback = function()
     vim.cmd([[Trouble qflist open]])
@@ -153,8 +119,6 @@ autocmd("RecordingLeave", {
   end,
 })
 
--- [[ Highlight on yank ]]
--- See `:help vim.hl.on_yank()`
 autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
@@ -180,10 +144,3 @@ autocmd("BufReadPre", {
     vim.cmd('let @/ = ""') -- Clear the search register using Vim command
   end,
 })
-
--- autocmd("Redir", function(ctx)
---   local lines = vim.split(vim.api.nvim_exec(ctx.args, true), "\n", { plain = true })
---   vim.cmd("new")
---   vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
---   vim.opt_local.modified = false
--- end, { nargs = "+", complete = "command" })

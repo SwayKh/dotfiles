@@ -36,6 +36,10 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Indenting keeps selections
+map("v", "<", "<gv", { desc = "Indent left and reselect" })
+map("v", ">", ">gv", { desc = "Indent right and reselect" })
+
 -- Split keybinds, Need to figure out a better system
 map("n", "<leader>sv", "<Cmd>vsplit<CR>", { desc = "Split [V]ertically" })
 map("n", "<leader>sh", "<Cmd>split<CR>", { desc = "Split [H]orizontally" })
