@@ -25,7 +25,6 @@ autocmd("FileType", {
     "fugitive*",
     "git",
     "help",
-    "man",
     "lspinfo",
     "netrw",
     "notify",
