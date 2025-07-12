@@ -105,51 +105,51 @@ later(function()
     },
   })
 
-  vim.keymap.set("n", "<leader>sf", function()
+  vim.keymap.set("n", "<leader>ff", function()
     MiniPick.builtin.files()
-  end, { desc = "[S]earch [F]iles" })
+  end, { desc = "[F]ind [F]iles" })
 
-  vim.keymap.set("n", "<leader>so", function()
+  vim.keymap.set("n", "<leader>fo", function()
     MiniExtra.pickers.oldfiles()
-  end, { desc = "[S]earch [O]ldfiles" })
+  end, { desc = "[F]ind [O]ldfiles" })
 
   vim.keymap.set("n", "<leader>gf", function()
     MiniExtra.pickers.git_files()
-  end, { desc = "[S]earch [G]it files" })
+  end, { desc = "[F]ind [G]it files" })
 
   vim.keymap.set("n", "<leader>gw", function()
     MiniPick.builtin.grep({ pattern = vim.fn.expand("<cword>") })
   end, { desc = "[G]rep current [W]ord" })
 
-  vim.keymap.set("n", "<leader>sw", function()
+  vim.keymap.set("n", "<leader>fw", function()
     MiniPick.builtin.grep()
-  end, { desc = "[S]earch [W]ord" })
+  end, { desc = "[F]ind [W]ord" })
 
-  vim.keymap.set("n", "<leader>sg", function()
+  vim.keymap.set("n", "<leader>fg", function()
     MiniPick.builtin.grep_live()
-  end, { desc = "[S]earch by [G]rep" })
+  end, { desc = "[F]ind by [G]rep" })
 
-  vim.keymap.set("n", "<leader>sr", function()
+  vim.keymap.set("n", "<leader>fr", function()
     MiniPick.builtin.resume()
-  end, { desc = "[S]earch [R]esume" })
+  end, { desc = "[F]ind [R]esume" })
 
-  vim.keymap.set("n", "<leader>sk", function()
+  vim.keymap.set("n", "<leader>fk", function()
     MiniExtra.pickers.keymaps()
-  end, { desc = "[S]earch [K]eymaps" })
+  end, { desc = "[F]ind [K]eymaps" })
 
-  vim.keymap.set("n", "<leader>sc", function()
+  vim.keymap.set("n", "<leader>fc", function()
     MiniExtra.pickers.commands()
-  end, { desc = "[S]earch [C]ommands" })
+  end, { desc = "[F]ind [C]ommands" })
 
-  vim.keymap.set("n", "<leader>sd", function()
+  vim.keymap.set("n", "<leader>fd", function()
     MiniExtra.pickers.diagnostic()
-  end, { desc = "[S]earch [D]iagnostics" })
+  end, { desc = "[F]ind [D]iagnostics" })
 
   vim.keymap.set("n", "<leader><leader>", function()
     MiniPick.builtin.buffers()
   end, { desc = "[ ] Find existing buffers" })
 
-  vim.keymap.set("n", "<leader>sh", function()
+  vim.keymap.set("n", "<leader>fh", function()
     MiniPick.builtin.help({}, {
       source = {
         name = " Help  ",
@@ -164,9 +164,9 @@ later(function()
         },
       },
     })
-  end, { desc = "[S]earch [H]elp" })
+  end, { desc = "[F]ind [H]elp" })
 
-  vim.keymap.set("n", "<leader>s/", function()
+  vim.keymap.set("n", "<leader>f/", function()
     MiniExtra.pickers.buf_lines({ scope = "current", preserve_order = true }, {
       source = {
         name = " Grep Buffer ",
@@ -181,27 +181,27 @@ later(function()
         },
       },
     })
-  end, { desc = "[S]earch [/] in current buffer" })
+  end, { desc = "[F]ind [/] in current buffer" })
 
-  vim.keymap.set("n", "<leader>sn", function()
+  vim.keymap.set("n", "<leader>fn", function()
     MiniPick.builtin.files({}, {
       source = {
         name = "Neovim config",
         cwd = vim.fn.stdpath("config"),
       },
     })
-  end, { desc = "[S]earch [N]vim config" })
+  end, { desc = "[F]ind [N]vim config" })
 
-  vim.keymap.set("n", "<leader>s.", function()
+  vim.keymap.set("n", "<leader>f.", function()
     MiniPick.builtin.files({}, {
       source = {
         name = "Dotfiles",
         cwd = os.getenv("HOME") .. "/dotfiles",
       },
     })
-  end, { desc = "[S]earch [Dot]files directory" })
+  end, { desc = "[F]ind [Dot]files directory" })
 
-  vim.keymap.set("n", "<leader>st", function()
+  vim.keymap.set("n", "<leader>ft", function()
     local colorscheme = MiniPick.start({
       source = {
         name = " Colorscheme ",
@@ -211,9 +211,9 @@ later(function()
     if colorscheme ~= nil then
       vim.cmd("colorscheme " .. colorscheme)
     end
-  end, { desc = "[S]earch [T]hemes/Colorscheme" })
+  end, { desc = "[F]ind [T]hemes/Colorscheme" })
 
-  vim.keymap.set("n", "<leader>sb", function()
+  vim.keymap.set("n", "<leader>fb", function()
     local builtin = MiniPick.start({
       source = {
         name = " Pick ",
@@ -223,7 +223,7 @@ later(function()
     if builtin ~= nil then
       vim.cmd("Pick " .. builtin)
     end
-  end, { desc = "[S]earch [B]uiltin Pick Commands" })
+  end, { desc = "[F]ind [B]uiltin Pick Commands" })
 
   vim.keymap.set("n", "<leader>gc", function()
     local git_commands = MiniPick.start({
@@ -235,7 +235,7 @@ later(function()
     if git_commands ~= nil then
       vim.cmd("Git " .. git_commands)
     end
-  end, { desc = "Search [G]it [C]ommands" })
+  end, { desc = "Find [G]it [C]ommands" })
 
   vim.keymap.set(
     { "n", "x" },

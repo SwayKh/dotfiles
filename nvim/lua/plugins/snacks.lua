@@ -13,11 +13,11 @@ require("snacks").setup({
     preset = {
       pick = "mini.pick",
       keys = {
-        { icon = " ", key = "f", desc = "Find File", action = "<leader>sf" },
+        { icon = " ", key = "f", desc = "Find File", action = "<leader>ff" },
         { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-        { icon = " ", key = "g", desc = "Find Text", action = "<leader>sg" },
-        { icon = " ", key = "r", desc = "Recent Files", action = "<leader>s?" },
-        { icon = " ", key = "c", desc = "Config", action = "<leader>sn" },
+        { icon = " ", key = "g", desc = "Find Text", action = "<leader>fg" },
+        { icon = " ", key = "r", desc = "Recent Files", action = "<leader>f?" },
+        { icon = " ", key = "c", desc = "Config", action = "<leader>fn" },
         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
       },
     },
