@@ -6,9 +6,9 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-map("v", "<space>x", ":lua<CR>", { desc = "Execute selected lua lines" })
-map("n", "<space>x", "<Cmd>.lua<CR>", { desc = "Execute selected lua lines" })
-map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "Source current file" })
+map("v", "<space>sl", ":lua<CR>", { desc = "Execute [S]elected lua lines" })
+map("n", "<space>sl", "<Cmd>.lua<CR>", { desc = "Execute [S]elected lua lines" })
+map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "[So]urce current file" })
 
 map("n", "<C-c>", "<Cmd>close<CR>", { silent = true, desc = "Close window" })
 

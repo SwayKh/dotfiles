@@ -20,7 +20,7 @@ end
 
 map("<leader>td", "<cmd>Trouble diagnostics toggle<cr>", "Diagnostics")
 map("<leader>tD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Buffer Diagnostics")
-map("<leader>tL", "<cmd>Trouble lsp toggle<cr>", "LSP Definitions / references / ... ")
-map("<leader>tl", "<cmd>Trouble loclist toggle<cr>", "Location List ")
-map("<leader>tq", "<cmd>Trouble qflist toggle<cr>", "Quickfix List ")
-map("<leader>ds", "<cmd>Trouble symbols toggle<cr>", "Document Symbols ")
+map("<leader>tL", "<cmd>Trouble lsp toggle<cr>", "LSP Definitions / references / ...")
+map("<leader>tl", "<cmd>Trouble loclist toggle<cr>", "Location List")
+map("<leader>tq", "<cmd>Trouble qflist toggle<cr>", "Quickfix List")
+map("<leader>ds", "<cmd>Trouble symbols toggle<cr>", "Document Symbols")
