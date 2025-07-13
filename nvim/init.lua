@@ -131,7 +131,7 @@ local function undotree()
   add({
     source = "mbbill/undotree",
   })
-  vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle)
+  vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
 end
 
 -- Load everything now

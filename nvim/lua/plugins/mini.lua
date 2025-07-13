@@ -75,15 +75,26 @@ later(function()
     end,
   })
 
+  local win_config = function()
+    local height = math.floor(0.618 * vim.o.lines)
+    local width = math.floor(0.618 * vim.o.columns)
+    return {
+      anchor = "NW",
+      height = height,
+      width = width,
+      row = math.floor(0.5 * (vim.o.lines - height)),
+      col = math.floor(0.5 * (vim.o.columns - width)),
+      border = vim.g.border_style,
+    }
+  end
+
   require("mini.pick").setup({
     options = {
       content_from_bottom = true,
     },
     window = {
       prompt_prefix = " ❯ ",
-      config = {
-        border = vim.g.border_style,
-      },
+      config = win_config,
     },
     mappings = {
       marked_to_quickfix = {
@@ -246,19 +257,6 @@ later(function()
 
   local miniai = require("mini.ai")
   miniai.setup({
-    mappings = {
-      around = "a",
-      inside = "i",
-
-      around_next = "an",
-      inside_next = "in",
-      around_last = "al",
-      inside_last = "il",
-
-      goto_left = "g[",
-      goto_right = "g]",
-    },
-    n_lines = 500,
     custom_textobjects = {
       B = MiniExtra.gen_ai_spec.buffer(),
       D = MiniExtra.gen_ai_spec.diagnostic(),
@@ -312,6 +310,7 @@ later(function()
       signs = { add = "+", change = "~", delete = "-" },
     },
   })
+  vim.keymap.set("n", "<leader>gd", MiniDiff.toggle_overlay, { desc = "Toggle Diff Overlay" })
 
   local miniclue = require("mini.clue")
   miniclue.setup({
