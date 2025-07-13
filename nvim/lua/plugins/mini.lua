@@ -37,10 +37,29 @@ later(function()
   require("mini.extra").setup()
   require("mini.git").setup()
   require("mini.jump").setup()
-  require("mini.jump2d").setup()
   require("mini.pairs").setup()
   require("mini.splitjoin").setup()
   require("mini.surround").setup()
+
+  vim.keymap.set(
+    { "n", "x" },
+    "<leader>gs",
+    "<Cmd>lua MiniGit.show_at_cursor()<CR>",
+    { silent = true, desc = "Show Git Status" }
+  )
+
+  require("mini.jump2d").setup({
+    spotter = require("mini.jump2d").builtin_opts.word_start.spotter,
+    labels = "asdfghjkl",
+    view = {
+      dim = true,
+      n_steps_ahead = 3,
+    },
+    allowed_windows = {
+      current = true,
+      not_current = false,
+    },
+  })
 
   require("mini.files").setup({
     mappings = {
@@ -156,6 +175,10 @@ later(function()
     MiniExtra.pickers.diagnostic()
   end, { desc = "[F]ind [D]iagnostics" })
 
+  vim.keymap.set("n", "<leader>ft", function()
+    MiniExtra.pickers.colorschemes()
+  end, { desc = "[F]ind [T]hemes/Colorscheme" })
+
   vim.keymap.set("n", "<leader><leader>", function()
     MiniPick.builtin.buffers()
   end, { desc = "[ ] Find existing buffers" })
@@ -194,6 +217,25 @@ later(function()
     })
   end, { desc = "[F]ind [/] in current buffer" })
 
+  vim.keymap.set("n", "<leader>fe", function()
+    MiniExtra.pickers.explorer({}, {
+      source = {
+        name = " Explorer ",
+      },
+      options = {
+        content_from_bottom = false,
+      },
+      window = {
+        config = {
+          anchor = "SE",
+          height = vim.api.nvim_win_get_height(0),
+          width = math.floor(0.2 * vim.o.columns),
+          col = vim.o.columns,
+        },
+      },
+    })
+  end, { desc = "[F]ind in Mini [E]xplorer" })
+
   vim.keymap.set("n", "<leader>fn", function()
     MiniPick.builtin.files({}, {
       source = {
@@ -211,18 +253,6 @@ later(function()
       },
     })
   end, { desc = "[F]ind [Dot]files directory" })
-
-  vim.keymap.set("n", "<leader>ft", function()
-    local colorscheme = MiniPick.start({
-      source = {
-        name = " Colorscheme ",
-        items = vim.fn.getcompletion("", "color"),
-      },
-    })
-    if colorscheme ~= nil then
-      vim.cmd("colorscheme " .. colorscheme)
-    end
-  end, { desc = "[F]ind [T]hemes/Colorscheme" })
 
   vim.keymap.set("n", "<leader>fb", function()
     local builtin = MiniPick.start({
@@ -247,13 +277,6 @@ later(function()
       vim.cmd("Git " .. git_commands)
     end
   end, { desc = "Find [G]it [C]ommands" })
-
-  vim.keymap.set(
-    { "n", "x" },
-    "<leader>gs",
-    "<Cmd>lua MiniGit.show_at_cursor()<CR>",
-    { silent = true, desc = "Show Git Status" }
-  )
 
   local miniai = require("mini.ai")
   miniai.setup({
