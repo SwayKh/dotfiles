@@ -42,6 +42,7 @@ vim.diagnostic.config({
     border = vim.g.border_style,
   },
   signs = {
+    priority = 300,
     text = {
       [vim.diagnostic.severity.ERROR] = " ", -- 󰅚
       [vim.diagnostic.severity.WARN] = " ", -- 󰀪

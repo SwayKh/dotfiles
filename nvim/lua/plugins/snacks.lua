@@ -1,12 +1,20 @@
 require("snacks").setup({
+  bigfile = { enabled = false },
+  explorer = { enabled = false },
+  image = { enabled = false },
+  picker = { enabled = false },
+  profiler = { enabled = false },
+  quickfile = { enabled = false },
+  scope = { enabled = false },
+  statuscolumn = { enabled = false },
+  words = { enabled = false },
+
   animate = {
     enabled = true,
     duration = 20, -- ms per step
     easing = "linear",
     fps = 60, -- frames per second. Global setting for all animations
   },
-
-  bigfile = { enabled = false },
 
   dashboard = {
     enabled = true,
@@ -59,10 +67,6 @@ require("snacks").setup({
     style = "fancy",
   },
 
-  profiler = { enabled = false },
-
-  quickfile = { enabled = true },
-
   scroll = {
     enabled = true,
     animate = {
@@ -71,8 +75,6 @@ require("snacks").setup({
     },
     spamming = 10, -- threshold for spamming detection
   },
-
-  statuscolumn = { enabled = true },
 
   terminal = {
     enabled = true,
@@ -84,8 +86,6 @@ require("snacks").setup({
       width = 0.9,
     },
   },
-
-  words = { enabled = true },
 
   styles = {
     notification = {
