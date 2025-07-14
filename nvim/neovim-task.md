@@ -6,6 +6,7 @@ I have too many ways to navigate now. Need to improve the workflow
 2. MiniPick (Fuzzy finder)
 3. Also have Snacks.Picker
 4. Arrow.nvim (Barely use it nowadays)
+5. Use just made a MiniPick explorer keybind/window
 
 ### Git
 
