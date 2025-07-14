@@ -2,7 +2,7 @@
 alias c.='cd ~/dotfiles'
 alias :q='exit'
 alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias fvim='fzf --print0 | xargs -0 -o nvim'
+alias fvim='fzf --print0 | xargs -0 -o -r nvim'
 alias yeet="sudo pacman -Rns"
 alias up='paru -Syu'
 alias venv='source $HOME/venv/bin/activate'
