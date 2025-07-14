@@ -1,4 +1,4 @@
-notARepository: "quit"
+# notARepository: "quit"
 git:
   overrideGpg: true
 os:
