@@ -2,17 +2,18 @@
 @import url("../../.cache/wal/colors-waybar.css");
 
 /* Use Pywal16 colors  */
-@define-color bordercolor alpha(@color0, 1.0);
-@define-color bg alpha(@color2, 1.0);
-@define-color fg alpha(@foreground, 1.0);
-@define-color highlight alpha(@color15, 1.0);
-@define-color alert alpha(@color11, 1.0);
+@define-color fg alpha(@background, 1.0);
+@define-color bg alpha(@foreground, 1.0);
+@define-color bordercolor alpha(@background, 1.0);
+@define-color alert #F14241;
 @define-color disabled #A5A5A5;
+@define-color highlight #D49621;
+@define-color activegreen #26A65B;
 
 * {
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 1rem; /* Adjust font using gtk-font size, like nwg-look or lxappearance */
 }
 
 window#waybar {
@@ -20,43 +21,26 @@ window#waybar {
   background-color: @bg;
   background: none;
 }
-
-/*River Tags/Workspaces*/
-#workspaces,
-#tags {
-  background-color: @bg;
-  color: @bordercolor;
-  border: 0.1rem solid @bordercolor;
-  border-radius: 1rem;
-  padding: 0rem 1rem;
-}
-
-#window.focused {
+#workspaces button {
   color: @bordercolor;
   background-color: @bg;
-  border-radius: 1rem;
+  border: 0;
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+#workspaces {
+  color: @bordercolor;
+  background-color: @bg;
   border: 0.1rem solid @bordercolor;
+  border-radius: 0.5rem;
   padding: 0rem 1rem;
 }
-
-#workspaces button,
-#tags button {
+#window {
   color: @bordercolor;
-  background: @bg;
-  padding: 0rem 0.2rem;
-  margin: 0rem 0.2rem;
-}
-
-#tags button.occupied {
-  color: @bordercolor;
-}
-
-#tags button.focused {
-  color: @highlight;
-}
-
-#tags button.urgent {
-  color: @alert;
+  background-color: @bg;
+  border: 0.1rem solid @bordercolor;
+  border-radius: 0.5rem;
+  padding: 0rem 1rem;
 }
 
 #clock,
@@ -95,31 +79,64 @@ window#waybar {
 #mpd {
   color: @bordercolor;
   background-color: @bg;
-  border-radius: 1rem;
   border: 0.1rem solid @bordercolor;
-  padding: 0rem 0.8rem;
-  margin: 0rem 0.2rem;
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+  margin: 0rem 0.1em;
 }
 
+#tray,
 #tray menu,
 #tray > .needs-attention,
 #tray > .passive,
 #tray > .active,
-#tray,
 #custom-notification,
 #custom-wifi,
 #custom-kdeconnect,
 #custom-bluetooth,
 #custom-power,
 #idle_inhibitor {
-  padding: 0rem 0.2rem;
-  margin: 0rem 0.2rem;
+  color: @bordercolor;
+  background-color: @color3;
   border: 0rem solid @bordercolor;
 }
 
-#custom-group {
-  padding: 0.2rem 1rem;
-  margin-right: 0rem;
+#bluetooth {
+  color: @bordercolor;
+  background-color: @color1;
+}
+#workspaces,
+#workspaces button,
+#network {
+  color: @bordercolor;
+  background-color: @color2;
+}
+#custom-group,
+#cpu {
+  color: @bordercolor;
+  background-color: @color3;
+}
+#window,
+#memory {
+  color: @bordercolor;
+  background-color: @color4;
+}
+#temperature {
+  color: @bordercolor;
+  background-color: @color5;
+}
+#backlight {
+  color: @bordercolor;
+  background-color: @color6;
+}
+#pulseaudio,
+#wireplumber {
+  color: @bordercolor;
+  background-color: @color7;
+}
+#clock {
+  color: @bordercolor;
+  background-color: @color8;
 }
 
 #custom-separator {
