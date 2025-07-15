@@ -2,6 +2,7 @@
 .tmp
 lazy-lock.json
 theme.txt
+neovim-task.md
 foot/themes/*
 micro/plug/*
 
