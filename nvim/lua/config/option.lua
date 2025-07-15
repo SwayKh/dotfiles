@@ -21,7 +21,7 @@ vim.opt.whichwrap = "<,>,[,],l,h" -- Which characters can go through wrap on a l
 vim.opt.termguicolors = true -- Set terminal colors to 24bit, needed for colorschemes
 vim.opt.number = true -- Make line numbers default
 vim.opt.relativenumber = true -- Use relativenumber
-vim.opt.numberwidth = 3 -- Width of numberline column
+vim.opt.numberwidth = 4 -- Width of numberline column
 vim.opt.signcolumn = "yes:1"
 vim.opt.statuscolumn = "%s%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%="
 vim.schedule(function()
