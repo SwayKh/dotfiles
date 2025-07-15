@@ -21,13 +21,7 @@ window#waybar {
   background-color: @bg;
   background: none;
 }
-#workspaces button {
-  color: @bordercolor;
-  background-color: @bg;
-  border: 0;
-  padding: 0.2rem;
-  margin: 0.2rem;
-}
+#window,
 #workspaces {
   color: @bordercolor;
   background-color: @bg;
@@ -35,12 +29,12 @@ window#waybar {
   border-radius: 0.5rem;
   padding: 0rem 1rem;
 }
-#window {
+#workspaces button {
   color: @bordercolor;
   background-color: @bg;
-  border: 0.1rem solid @bordercolor;
-  border-radius: 0.5rem;
-  padding: 0rem 1rem;
+  border: 0rem solid @bordercolor;
+  padding: 0.2rem;
+  margin: 0.2rem;
 }
 
 #clock,
@@ -156,12 +150,12 @@ window#waybar {
 #network.disconnected,
 #pulseaudio.muted,
 #wireplumber.muted {
-  color: @alert;
+  background-color: @alert;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: @activegreen;
+  background-color: @activegreen;
 }
 
 label:focus {
