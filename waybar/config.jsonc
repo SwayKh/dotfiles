@@ -41,17 +41,6 @@
   },
 
   // Modules configuration
-  "river/tags": {
-    // "num-tags": 10,
-    "tag-labels": ["󰈹", "", "", "", "", "", "󰠮", "", "", ""],
-    "hide-vacant": true,
-  },
-
-  "river/window": {
-    "format": "{}",
-    "max-length": 35,
-  },
-
   "niri/workspaces": {
     "format": "{value}",
     "format-icons": {
@@ -185,6 +174,7 @@
     "format": "{icon} {capacity}%",
     "format-alt": "{icon} {time}",
     "format-icons": ["", "", "", "", ""],
+    "interval": 2,
   },
 
   "idle_inhibitor": {
