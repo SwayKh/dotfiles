@@ -11,20 +11,21 @@
 
   // Choose the order of the modules
 
-  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-left": ["niri/workspaces", "group/custom-group", "niri/window"],
 
-  "modules-center": ["clock"],
+  "modules-center": [],
 
   "modules-right": [
+    "bluetooth",
     "network",
-    // "cpu",
-    // "memory",
+    "cpu",
+    "memory",
     "temperature",
     // "custom/temp",
     "backlight",
     "wireplumber",
     "battery",
-    "group/custom-group",
+    "clock",
   ],
 
   "group/custom-group": {
@@ -73,7 +74,7 @@
 
   "clock": {
     "interval": 60,
-    "format": " {:%a %b %d    %I:%M %p}", // %b %d %Y  --Date formatting
+    "format": "  {:%I:%M %p}", // %b %d %Y  --Date formatting
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": " {:%a %b %d}",
   },
@@ -87,12 +88,12 @@
 
   "cpu": {
     "interval": 2,
-    "format": " {usage:>2}%",
+    "format": "  {usage:>2}%",
   },
 
   "memory": {
     "interval": 2,
-    "format": " {:>2}%",
+    "format": "  {used:0.1f}G/{total:0.1f}G",
   },
 
   "disk": {
@@ -109,7 +110,7 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "interval": 1,
-    "format-wifi": "  {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
+    "format-wifi": " {bandwidthTotalBytes:>2}", //({essid} {signalStrength}%)
     "format-ethernet": " {bandwidthTotalBytes:>2}",
     "tooltip-format-ethernet": "󰈀 {ipaddr}",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
@@ -143,6 +144,16 @@
     "format": "{icon} {volume:>3}%",
     "format-muted": "󰖁 {volume:>3}%",
     "format-icons": ["", "", ""],
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
   },
 
   // This waybar build doesn't have support for cava.
