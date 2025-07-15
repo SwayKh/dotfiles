@@ -85,38 +85,18 @@ window#waybar {
   margin: 0rem 0.1em;
 }
 
-#tray,
-#tray menu,
-#tray > .needs-attention,
-#tray > .passive,
-#tray > .active,
-#custom-notification,
-#custom-wifi,
-#custom-kdeconnect,
-#custom-bluetooth,
-#custom-power,
-#idle_inhibitor {
-  color: @bordercolor;
-  background-color: @color3;
-  border: 0rem solid @bordercolor;
-}
-
 #bluetooth {
   color: @bordercolor;
   background-color: @color1;
 }
-#workspaces,
-#workspaces button,
 #network {
   color: @bordercolor;
   background-color: @color2;
 }
-#custom-group,
 #cpu {
   color: @bordercolor;
   background-color: @color3;
 }
-#window,
 #memory {
   color: @bordercolor;
   background-color: @color4;
@@ -137,6 +117,36 @@ window#waybar {
 #clock {
   color: @bordercolor;
   background-color: @color8;
+}
+
+#workspaces,
+#workspaces button {
+  color: @bordercolor;
+  background-color: @color4;
+}
+#tray,
+#tray menu,
+#tray > .needs-attention,
+#tray > .passive,
+#tray > .active,
+#custom-notification,
+#custom-wifi,
+#custom-kdeconnect,
+#custom-bluetooth,
+#custom-power,
+#custom-group,
+#idle_inhibitor {
+  color: @bordercolor;
+  background-color: @color5;
+  border: 0rem solid @bordercolor;
+}
+#window {
+  color: @bordercolor;
+  background-color: @color6;
+}
+
+#custom-group {
+  border: 0.1rem solid @bordercolor;
 }
 
 #custom-separator {
