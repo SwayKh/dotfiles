@@ -27,14 +27,15 @@ window#waybar {
   background-color: @bg;
   border: 0.1rem solid @bordercolor;
   border-radius: 0.5rem;
-  padding: 0rem 1rem;
+  padding: 0.1rem 0.5rem;
+  margin: 0.1rem;
 }
 #workspaces button {
   color: @bordercolor;
   background-color: @bg;
   border: 0rem solid @bordercolor;
-  padding: 0.2rem;
-  margin: 0.2rem;
+  padding: 0.1rem;
+  margin: 0.1rem;
 }
 
 #clock,
@@ -75,8 +76,8 @@ window#waybar {
   background-color: @bg;
   border: 0.1rem solid @bordercolor;
   border-radius: 0.5rem;
-  padding: 0rem 0.5rem;
-  margin: 0rem 0.1em;
+  padding: 0.1rem 0.5rem;
+  margin: 0.1rem;
 }
 
 #bluetooth {
