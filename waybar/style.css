@@ -109,7 +109,7 @@ window#waybar {
 #pulseaudio,
 #wireplumber {
   color: @bordercolor;
-  background-color: @color8;
+  background-color: @color3;
 }
 #clock {
   color: @bordercolor;
