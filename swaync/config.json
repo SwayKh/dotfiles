@@ -112,16 +112,16 @@
         {
           "label": " ",
           "type": "toggle",
-          "active": true,
+          "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update-command": "sh -c '[[ $(rofi-wifi status) =~ \"enabled\" ]] && echo true || echo false'"
+          "update-command": "sh -c '[ $(rofi-wifi status) = \"enabled\" ] && echo true || echo false'"
         },
         {
           "label": " ",
           "type": "toggle",
-          "active": true,
+          "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power on || bluetoothctl power off'",
-          "update-command": "sh -c '[[ $(rofi-bluetooth status) =~ \"enabled\" ]] && echo true || echo false'"
+          "update-command": "sh -c '[ $(rofi-bluetooth status) = \"enabled\" ] && echo true || echo false'"
         },
         {
           "label": "󰖁 ",
