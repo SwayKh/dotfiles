@@ -84,6 +84,7 @@ window#waybar {
   color: @bordercolor;
   background-color: @color1;
 }
+#battery,
 #network {
   color: @bordercolor;
   background-color: @color2;
@@ -100,6 +101,7 @@ window#waybar {
   color: @bordercolor;
   background-color: @color5;
 }
+#custom-notification,
 #backlight {
   color: @bordercolor;
   background-color: @color6;
@@ -124,7 +126,6 @@ window#waybar {
 #tray > .needs-attention,
 #tray > .passive,
 #tray > .active,
-#custom-notification,
 #custom-wifi,
 #custom-kdeconnect,
 #custom-bluetooth,

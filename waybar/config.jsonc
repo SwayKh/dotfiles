@@ -16,6 +16,7 @@
   "modules-center": [],
 
   "modules-right": [
+    "custom/notification",
     "bluetooth",
     "network",
     "cpu",
