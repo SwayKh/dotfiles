@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+swaync-client -rs
 source "$HOME/.cache/wal/colors.sh"
 
 conf="$HOME/.config/dunst/dunstrc"
