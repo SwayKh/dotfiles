@@ -109,11 +109,11 @@ window#waybar {
 #pulseaudio,
 #wireplumber {
   color: @bordercolor;
-  background-color: @color7;
+  background-color: @color8;
 }
 #clock {
   color: @bordercolor;
-  background-color: @color8;
+  background-color: @color9;
 }
 
 #workspaces,
