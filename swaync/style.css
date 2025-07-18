@@ -3,198 +3,142 @@
 :root {
   font-family: "JetBrainsMono Nerd Font", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
-  --noti-bg-alpha: 1;
-  --cc-bg: var(--color9);
+  --cc-bg: var(--color4);
   --noti-bg: var(--color9);
-  --noti-border-color: var(--color9);
-  --noti-bg-darker: var(--color8);
-  --noti-bg-hover: var(--color2);
-  --noti-bg-focus: var(--color3);
-  --noti-close-bg: var(--color4);
-  --noti-close-bg-hover: var(--color5);
+  --border-color: var(--color9);
   --text-color: var(--background);
-  --text-color-disabled: rgb(150, 150, 150);
-  --bg-selected: var(--color9);
-  --notification-icon-size: 64px;
-  --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
-  --notification-group-icon-size: 32px;
-  --widget-volume-row-icon-size: 24px;
+  --text-color-disabled: #828282;
+  --blue: #7e9cd8;
+  --green: #26a65b;
+  --alert: #f14241;
+  --disabled: #a5a5a5;
+  --highlight: #d49621;
 }
 
-.close-button {
-  /* The notification Close Button */
-  background: var(--noti-close-bg);
-  color: var(--text-color);
-  text-shadow: none;
-  padding: 0;
-  border-radius: 100%;
-  margin-top: 8px;
-  margin-right: 8px;
-  box-shadow: none;
-  border: none;
-  min-width: 24px;
-  min-height: 24px;
-}
-
-.close-button:hover {
-  box-shadow: none;
-  background: var(--noti-close-bg-hover);
-  transition: background 0.15s ease-in-out;
-  border: none;
-}
-
-.notification-row {
-  background: none;
-  outline: none;
-}
-
-.notification-row:focus {
-  background: var(--noti-bg-focus);
-}
-
-.notification-row .notification-background {
-  padding: 6px 12px;
-}
-
-.notification-row .notification-background .notification {
-  /* The actual notification */
-  border-radius: 12px;
-  border: 1px solid var(--noti-border-color);
-  padding: 0;
-  transition: background 0.15s ease-in-out;
-  background: var(--noti-bg);
-}
-
-.control-center {
-  /* The Control Center which contains the old notifications + widgets */
-  background: var(--cc-bg);
-  border-color: var(--noti-border-color);
-  color: var(--text-color);
-  border-radius: 12px;
-}
-
-.control-center .control-center-list-placeholder {
-  /* The placeholder when there are no notifications */
-  opacity: 0.5;
-}
-
-.control-center .control-center-list {
-  /* List of notifications */
-  background: transparent;
-}
-
-.control-center .control-center-list .notification {
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.3),
-    0 1px 3px 1px rgba(0, 0, 0, 0.7),
-    0 2px 6px 2px rgba(0, 0, 0, 0.3);
-}
-
-.control-center .control-center-list .notification .notification-default-action,
-.control-center .control-center-list .notification .notification-action {
-  transition:
-    opacity 400ms ease-in-out,
-    background 0.15s ease-in-out;
-}
-
-.control-center
-  .control-center-list
-  .notification
-  .notification-default-action:hover,
-.control-center .control-center-list .notification .notification-action:hover {
-  background-color: var(--noti-bg-hover);
-}
-
-.blank-window,
-.floating-notifications {
-  background: transparent;
-}
-
-.floating-notifications .notification {
-  box-shadow: none;
-}
-
-/* Each row app icon */
-.widget-volume row image {
-  -gtk-icon-size: var(--widget-volume-row-icon-size);
-}
-
-.widget-label,
-.widget-title > label,
-.widget-label > label,
-.widget-dnd label,
-.widget-dnd switch,
-.widget-dnd switch slider,
-.widget-title > button,
-.widget-buttons-grid flowboxchild > button,
-.widget-buttons-grid,
-.widget-slider,
-.widget-volume,
-.widget-backlight {
+* {
   font-size: 1rem;
+}
+
+/* .blank-window, */
+/* .floating-notifications, */
+/* .notification, */
+/* .notification-row, */
+/* .notification-content, */
+/* .notification-action, */
+/* .notification-default-action, */
+/* .notification-row, */
+/* .notification-background, */
+/* .inline-reply-entry, */
+/* .inline-reply-button, */
+/* .widget-title, */
+/* .widget-title > button, */
+/* .widget-title > label, */
+/* .widget-dnd, */
+/* .widget-dnd label, */
+/* .widget-dnd > switch, */
+/* .widget-dnd > switch slider, */
+/* .widget-label, */
+/* .widget-label > label, */
+/* .widget-buttons-grid, */
+/* .widget-buttons-grid > flowbox > flowboxchild > button, */
+/* .widget-slider, */
+/* .widget-volume, */
+/* .widget-backlight, */
+/* .widget-mpris, */
+/* .widget-mpris > box > button, */
+/* .widget-mpris-player, */
+/* .widget-mpris-album-art { */
+/*   font-size: 1rem; */
+/*   color: var(--text-color); */
+/*   padding: 0.5rem; */
+/*   margin: 0.5rem; */
+/*   border: 1px solid var(--text-color); */
+/*   border-radius: 0.75rem; */
+/* } */
+/**/
+/* Different color for text in mpris widge */
+.widget-mpris,
+.widget-mpris > box > button,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  color: var(--color7);
+}
+
+/* For notification outside of control center */
+.notification-row .notification-background .notification {
   color: var(--text-color);
+  background: var(--noti-bg);
+  transition: background 0.2s ease-in-out;
   padding: 0.5rem;
-  margin: 0.5rem;
+  border: 2px solid var(--text-color);
   border-radius: 0.75rem;
 }
 
-.widget-slider,
-.widget-volume,
-.widget-backlight {
-  background-color: var(--color2);
+.control-center {
+  color: var(--text-color);
+  background: var(--cc-bg);
+  border-color: var(--border-color);
+  border-radius: 0.75rem;
 }
 
-.widget-buttons-grid flowboxchild > button.toggle:checked {
-  background-color: var(--color4);
+/* Notification background in control-center list */
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
+  background-color: var(--color6);
 }
 
-/* Mpris widget */
-:root {
-  --mpris-album-art-overlay: rgba(0, 0, 0, 0.55);
-  --mpris-button-hover: rgba(0, 0, 0, 0.5);
-  --mpris-album-art-icon-size: 96px;
+/* close button on notifications in control center */
+.close-button,
+.close-button:hover {
+  background: var(--alert);
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 100%;
+  transition: background 0.15s ease-in-out;
+  box-shadow: none;
 }
 
-.widget-mpris {
-  margin: 8px;
-  /* The parent to all players */
+.notification-default-action:hover,
+.notification-action:hover {
+  color: var(--text-color);
+  background: var(--color2);
 }
 
-.widget-mpris .widget-mpris-player {
-  margin: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
-}
+/* .widget-buttons-grid > flowbox > flowboxchild > button:hover { */
+/*   color: var(--cc-bg); */
+/*   background: var(--color3); */
+/* } */
+/**/
+/* .widget-buttons-grid flowboxchild > button.toggle:checked { */
+/*   background-color: var(--color3); */
+/*   color: var(--cc-bg); */
+/* } */
+/**/
 
-.widget-mpris .widget-mpris-player .mpris-background {
-  filter: blur(10px);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay {
-  padding: 16px;
-  background-color: var(--mpris-album-art-overlay);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay button:hover {
-  /* The media player buttons (play, pause, next, etc...) */
-  background: var(--noti-bg-hover);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
-  border-radius: 12px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
-  -gtk-icon-size: var(--mpris-album-art-icon-size);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
-  font-size: 1.1rem;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
-  background-color: var(--mpris-button-hover);
-}
+/* .inline-reply-entry { */
+/*   background: var(--noti-bg-darker); */
+/*   color: var(--text-color); */
+/*   caret-color: var(--text-color); */
+/*   border: 1px solid var(--noti-border-color); */
+/* } */
+/**/
+/* .inline-reply-button { */
+/*   margin-top: 4px; */
+/*   margin-left: 4px; */
+/*   background: var(--noti-bg); */
+/*   border: 1px solid var(--noti-border-color); */
+/*   color: var(--text-color); */
+/* } */
+/**/
+/* .inline-reply-button:disabled { */
+/*   background: transparent; */
+/*   color: var(--text-color-disabled); */
+/*   border: 1px solid transparent; */
+/* } */
+/**/
+/* .inline-reply-button:hover { */
+/*   background: var(--noti-bg-hover); */
+/* } */
