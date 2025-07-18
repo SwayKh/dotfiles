@@ -2,7 +2,7 @@
 
 :root {
   --cc-bg: var(--background);
-  --noti-border-color: var(--background);
+  --noti-border-color: var(--color8);
   --noti-bg: var(--background);
   --noti-bg-alpha: 1;
   --noti-bg-darker: var(--color1);
@@ -10,7 +10,7 @@
   --noti-bg-focus: var(--color3);
   --noti-close-bg: var(--color4);
   --noti-close-bg-hover: var(--color5);
-  --text-color: var(--foreground);
+  --text-color: var(--color8);
   --text-color-disabled: rgb(150, 150, 150);
   --bg-selected: var(--color6);
   --notification-icon-size: 64px;
@@ -391,6 +391,7 @@
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
   background: var(--cc-bg);
+  border-color: var(--noti-border-color);
   color: var(--text-color);
   border-radius: 12px;
 }

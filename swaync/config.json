@@ -8,10 +8,10 @@
   "layer-shell": true,
   "layer-shell-cover-screen": true,
   "cssPriority": "highest",
-  "control-center-margin-top": 2,
-  "control-center-margin-bottom": 2,
-  "control-center-margin-right": 2,
-  "control-center-margin-left": 2,
+  "control-center-margin-top": 5,
+  "control-center-margin-bottom": 5,
+  "control-center-margin-right": 5,
+  "control-center-margin-left": 5,
   "notification-2fa-action": true,
   "notification-inline-replies": false,
   "notification-body-image-height": 100,
@@ -32,32 +32,15 @@
   "hide-on-action": true,
   "text-empty": "No Notifications",
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
+  "scripts": {},
+  "notification-visibility": {},
   "widgets": [
-    "inhibitors",
     "title",
+    "buttons-grid",
     "backlight",
     "volume",
-    "notifications",
     "mpris",
-    "buttons-grid"
+    "notifications"
   ],
   "widget-config": {
     "inhibitors": {
@@ -66,16 +49,16 @@
       "clear-all-button": true
     },
     "title": {
-      "text": "Notifications",
+      "text": "Notification Center",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": "󰆴 Clear"
     },
     "dnd": {
       "text": "Do Not Disturb"
     },
     "label": {
-      "max-lines": 5,
-      "text": "Label Text"
+      "max-lines": 1,
+      "text": "Notification Center"
     },
     "mpris": {
       "blacklist": [],
@@ -93,22 +76,6 @@
     "buttons-grid": {
       "buttons-per-row": 4,
       "actions": [
-        {
-          "label": "󰐥 ",
-          "command": "systemctl poweroff"
-        },
-        {
-          "label": " ",
-          "command": "systemctl reboot"
-        },
-        {
-          "label": " ",
-          "command": "gtklock"
-        },
-        {
-          "label": "󰍂 ",
-          "command": "niri msg action quit"
-        },
         {
           "label": " ",
           "type": "toggle",
@@ -136,6 +103,22 @@
           "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && swaync-client --dnd-on || swaync-client --dnd-off'",
           "update-command": "sh -c '$(swaync-client --get-dnd | grep -q \"false\" ) && echo false || echo true'"
+        },
+        {
+          "label": " ",
+          "command": "systemctl poweroff"
+        },
+        {
+          "label": " ",
+          "command": "systemctl reboot"
+        },
+        {
+          "label": " ",
+          "command": "gtklock"
+        },
+        {
+          "label": "󰍂 ",
+          "command": "niri msg action quit"
         }
       ]
     }
