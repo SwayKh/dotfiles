@@ -172,3 +172,7 @@ records:
       paths:
         - ~/.config/niri
         - $init_directory/niri
+    - name: dotfiles/swaync
+      paths:
+        - ~/.config/swaync
+        - $init_directory/swaync
