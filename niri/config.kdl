@@ -196,7 +196,7 @@ gestures {
         max-speed 1500
     }
     hot-corners {
-        // off
+        off
     }
 }
 
@@ -212,7 +212,8 @@ gestures {
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww-daemon" "--format" "xrgb"
 spawn-at-startup "~/.config/waybar/launch.sh"
-spawn-at-startup "~/.config/dunst/launch-dunst.sh"
+spawn-at-startup "swaync"
+// spawn-at-startup "~/.config/dunst/launch-dunst.sh"
 spawn-at-startup "/usr/bin/kdeconnectd"
 spawn-at-startup "/usr/bin/kdeconnect-indicator"
 spawn-at-startup "nm-applet" "--indicator"
@@ -394,6 +395,7 @@ binds {
     Mod+S hotkey-overlay-title="Open Spotify" { spawn "spotify"; }
     Mod+A hotkey-overlay-title="Open Anki" { spawn "anki"; }
     Mod+I hotkey-overlay-title="Open Ticktick" { spawn "ticktick"; }
+    Mod+N hotkey-overlay-title="Open Notification Center" { spawn "swaync-client" "-t" "-sw"; }
     Mod+E hotkey-overlay-title="Open Yazi" { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
     Mod+M hotkey-overlay-title="Open Btop" { spawn "foot" "-e" "zsh" "-ic" "btop"; }
     Mod+KP_ADD hotkey-overlay-title="Calculator" { spawn "galculator"; }
