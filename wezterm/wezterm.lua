@@ -6,7 +6,7 @@ config = {
 	color_scheme = "carbonfox",
 	-- Tabs are enabled by default
 	enable_tab_bar = false,
-	font_size = 10.0,
+	font_size = 12.0,
 	-- Disable wayland support, Somewhat broken on hyprland, Works with -git
 	enable_wayland = false,
 	font = wezterm.font("JetBrainsMono Nerd Font"),
