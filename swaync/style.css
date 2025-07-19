@@ -3,65 +3,109 @@
 :root {
   font-family: "JetBrainsMono Nerd Font", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
-  --cc-bg: var(--color4);
-  --noti-bg: var(--color9);
-  --border-color: var(--color9);
-  --text-color: var(--background);
-  --text-color-disabled: #828282;
+  --red: #f14241;
   --blue: #7e9cd8;
   --green: #26a65b;
-  --alert: #f14241;
-  --disabled: #a5a5a5;
+  --disabled: #828282;
   --highlight: #d49621;
+  --white: var(--color7);
+  --text-color: var(--background);
+  --active: var(--color6);
+  --noti-bg: var(--color9);
+  --cc-bg: var(--color4);
+  --cc-bg-lighter: var(--color2);
+  --border-color: var(--blue);
 }
 
 * {
   font-size: 1rem;
 }
 
-/* .blank-window, */
-/* .floating-notifications, */
-/* .notification, */
-/* .notification-row, */
-/* .notification-content, */
-/* .notification-action, */
-/* .notification-default-action, */
-/* .notification-row, */
-/* .notification-background, */
-/* .inline-reply-entry, */
-/* .inline-reply-button, */
-/* .widget-title, */
-/* .widget-title > button, */
-/* .widget-title > label, */
-/* .widget-dnd, */
-/* .widget-dnd label, */
-/* .widget-dnd > switch, */
-/* .widget-dnd > switch slider, */
-/* .widget-label, */
-/* .widget-label > label, */
-/* .widget-buttons-grid, */
-/* .widget-buttons-grid > flowbox > flowboxchild > button, */
-/* .widget-slider, */
-/* .widget-volume, */
-/* .widget-backlight, */
-/* .widget-mpris, */
-/* .widget-mpris > box > button, */
-/* .widget-mpris-player, */
-/* .widget-mpris-album-art { */
-/*   font-size: 1rem; */
-/*   color: var(--text-color); */
-/*   padding: 0.5rem; */
-/*   margin: 0.5rem; */
-/*   border: 1px solid var(--text-color); */
-/*   border-radius: 0.75rem; */
-/* } */
-/**/
+.blank-window,
+.floating-notifications,
+.notification,
+.notification-row,
+.notification-content,
+.notification-action,
+.notification-default-action,
+.notification-row,
+.notification-background,
+.inline-reply-entry,
+.inline-reply-button,
+.widget-title,
+.widget-title > button,
+.widget-title > label,
+.widget-dnd,
+.widget-dnd label,
+.widget-dnd > switch,
+.widget-dnd > switch slider,
+.widget-label,
+.widget-label > label,
+.widget-buttons-grid,
+.widget-buttons-grid > flowbox > flowboxchild > button,
+.widget-slider,
+.widget-volume,
+.widget-backlight,
+.widget-mpris,
+.widget-mpris > box > button,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  font-size: 1rem;
+  color: var(--text-color);
+  border-radius: 0.75rem;
+  /* padding: 0.5rem; */
+  /* margin: 0.5rem; */
+  /* border: 1px solid var(--text-color); */
+}
+
+/* Control centre label */
+.widget-title > label {
+  font-size: 1.5rem;
+}
+/* Clear button in Control center title */
+.widget-title > button {
+  font-weight: 900;
+  background: var(--active);
+  color: var(--text-color);
+}
+.widget-title > button:hover {
+  background: var(--red);
+  color: var(--text-color);
+}
+
+/* Button grid icons */
+.widget-buttons-grid {
+  background: var(--noti-bg);
+}
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  color: var(--text-color);
+  background: var(--active);
+}
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  color: var(--text-color);
+  background: var(--blue);
+}
+.widget-buttons-grid flowboxchild > button.toggle:checked {
+  color: var(--text-color);
+  background: var(--blue);
+}
+
+/* Volume and Backlight sliders */
+.widget-slider,
+.widget-volume,
+.widget-backlight {
+  font-size: larger;
+  background: var(--noti-bg);
+  border: 1px solid var(--cc-bg-lighter);
+}
+
 /* Different color for text in mpris widge */
 .widget-mpris,
 .widget-mpris > box > button,
 .widget-mpris-player,
 .widget-mpris-album-art {
-  color: var(--color7);
+  color: var(--white);
+  background: var(--disabled);
 }
 
 /* For notification outside of control center */
@@ -72,26 +116,42 @@
   padding: 0.5rem;
   border: 2px solid var(--text-color);
   border-radius: 0.75rem;
+  /* box-shadow: none; */
 }
 
 .control-center {
   color: var(--text-color);
   background: var(--cc-bg);
-  border-color: var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: 0.75rem;
 }
 
 /* Notification background in control-center list */
+.control-center .notification-row,
+.control-center .notification-row {
+  opacity: 1;
+  background-color: var(--noti-bg-selected);
+  box-shadow: none;
+}
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
-  background-color: var(--color6);
+  background-color: var(--highlight);
+}
+
+.notification-group {
+  background: var(--noti-bg);
+  transition: opacity 200ms ease-in-out;
+}
+
+.notification-group:focus {
+  background: var(--noti-bg-lighter);
 }
 
 /* close button on notifications in control center */
 .close-button,
 .close-button:hover {
-  background: var(--alert);
+  background: var(--red);
   color: var(--text-color);
   padding: 0;
   margin: 0;
@@ -104,41 +164,27 @@
 .notification-default-action:hover,
 .notification-action:hover {
   color: var(--text-color);
-  background: var(--color2);
+  background: var(--active);
 }
 
-/* .widget-buttons-grid > flowbox > flowboxchild > button:hover { */
-/*   color: var(--cc-bg); */
-/*   background: var(--color3); */
-/* } */
-/**/
-/* .widget-buttons-grid flowboxchild > button.toggle:checked { */
-/*   background-color: var(--color3); */
-/*   color: var(--cc-bg); */
-/* } */
-/**/
+.inline-reply-entry {
+  color: var(--text-color);
+  background: var(--noti-bg-darker);
+  caret-color: var(--text-color);
+  border: 1px solid var(--noti-border-color);
+}
 
-/* .inline-reply-entry { */
-/*   background: var(--noti-bg-darker); */
-/*   color: var(--text-color); */
-/*   caret-color: var(--text-color); */
-/*   border: 1px solid var(--noti-border-color); */
-/* } */
-/**/
-/* .inline-reply-button { */
-/*   margin-top: 4px; */
-/*   margin-left: 4px; */
-/*   background: var(--noti-bg); */
-/*   border: 1px solid var(--noti-border-color); */
-/*   color: var(--text-color); */
-/* } */
-/**/
-/* .inline-reply-button:disabled { */
-/*   background: transparent; */
-/*   color: var(--text-color-disabled); */
-/*   border: 1px solid transparent; */
-/* } */
-/**/
-/* .inline-reply-button:hover { */
-/*   background: var(--noti-bg-hover); */
-/* } */
+.inline-reply-button {
+  color: var(--text-color);
+  background: var(--noti-bg);
+  border: 1px solid var(--noti-border-color);
+}
+
+.inline-reply-button:hover {
+  background: var(--noti-bg-hover);
+}
+
+.inline-reply-button:disabled {
+  color: var(--text-color);
+  background: var(--disabled);
+}
