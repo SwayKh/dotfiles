@@ -325,31 +325,6 @@ window-rule {
     open-fullscreen true
 }
 
-/- window-rule {
-    match app-id="firefox"
-    match app-id="floorp"
-    match app-id="zen"
-    match app-id="google-chrome"
-    match app-id="anki"
-    match app-id="org.pwmt.zathura"
-    match app-id="obsidian"
-    match app-id="ticktick"
-    match app-id="Spotify"
-    match title="YouTube Music"
-    match app-id="uget-gtk"
-    match app-id="org.qbittorrent.qBittorrent"
-
-    default-column-width { proportion 0.66667; }
-}
-
-window-rule {
-    match app-id="foot"
-    match app-id="footclient"
-    match app-id="Alacritty"
-
-    default-column-width { proportion 0.5; }
-}
-
 //  ███████████   ███                 █████
 // ░░███░░░░░███ ░░░                 ░░███
 //  ░███    ░███ ████  ████████    ███████   █████
