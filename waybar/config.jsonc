@@ -16,38 +16,26 @@
   "modules-center": [],
 
   "modules-right": [
+    "custom/notification",
     "bluetooth",
     "network",
     "cpu",
     "memory",
     "temperature",
-    // "custom/temp",
     "backlight",
     "wireplumber",
     "battery",
     "clock",
-    "custom/notification",
   ],
 
   "group/custom-group": {
     "orientation": "horizontal",
-    "modules": [
-      "tray",
-      "idle_inhibitor",
-      // "custom/bluetooth",
-      // "custom/kdeconnect",
-      // "custom/wifi",
-      "custom/power",
-    ],
+    "modules": ["tray", "idle_inhibitor", "custom/power"],
   },
 
   // Modules configuration
   "niri/workspaces": {
     "format": "{value}",
-    "format-icons": {
-      "active": "",
-      "default": "",
-    },
     "current-only": true,
   },
 
