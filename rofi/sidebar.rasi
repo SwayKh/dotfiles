@@ -22,7 +22,7 @@ configuration {
 
 * {
   spacing:       0.1em;
-  padding:       0.2em 0.4em;
+  padding:       0.2em;
   margin:        0px;
   border-radius: 1em;
 }
