@@ -22,7 +22,7 @@
   "fit-to-screen": true,
   "relative-timestamps": true,
   "control-center-width": 500,
-  "control-center-height": 600,
+  "control-center-height": 1000,
   "notification-window-width": 500,
   "keyboard-shortcuts": true,
   "notification-grouping": true,
@@ -67,10 +67,10 @@
       "loop-carousel": false
     },
     "volume": {
-      "label": "󰕾"
+      "label": "󰕾 "
     },
     "backlight": {
-      "label": "󰃟",
+      "label": "󰃟 ",
       "device": "amdgpu_bl1"
     },
     "buttons-grid": {

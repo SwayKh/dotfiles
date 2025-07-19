@@ -4,43 +4,30 @@
   font-family: "JetBrainsMono Nerd Font", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   --red: #f14241;
-  --blue: #7e9cd8;
-  --green: #26a65b;
+  --blue: #7e7cd8;
   --disabled: #828282;
-  --highlight: #d49621;
   --white: var(--color7);
   --text-color: var(--background);
-  --active: var(--color6);
-  --noti-bg: var(--color9);
-  --cc-bg: var(--color4);
-  --cc-bg-lighter: var(--color2);
   --border-color: var(--blue);
+  --noti-bg: var(--color1);
+  --active: var(--color2);
 }
 
-* {
-  font-size: 1rem;
-}
-
-.blank-window,
-.floating-notifications,
+.control-center,
 .notification,
 .notification-row,
 .notification-content,
+.notification-group,
+.notification-background,
 .notification-action,
 .notification-default-action,
-.notification-row,
-.notification-background,
+.floating-notifications,
+.notification-row .notification-background .notification,
 .inline-reply-entry,
 .inline-reply-button,
 .widget-title,
 .widget-title > button,
 .widget-title > label,
-.widget-dnd,
-.widget-dnd label,
-.widget-dnd > switch,
-.widget-dnd > switch slider,
-.widget-label,
-.widget-label > label,
 .widget-buttons-grid,
 .widget-buttons-grid > flowbox > flowboxchild > button,
 .widget-slider,
@@ -49,28 +36,31 @@
 .widget-mpris,
 .widget-mpris > box > button,
 .widget-mpris-player,
-.widget-mpris-album-art {
+.widget-mpris-album-art,
+.close-button,
+.close-button:hover {
   font-size: 1rem;
   color: var(--text-color);
   border-radius: 0.75rem;
-  /* padding: 0.5rem; */
-  /* margin: 0.5rem; */
-  /* border: 1px solid var(--text-color); */
+  box-shadow: none;
 }
 
-/* Control centre label */
+/* Control center window */
+.control-center {
+  background: var(--noti-bg);
+  border: 2px solid var(--border-color);
+}
+
+/* Control centre label and Clear Button */
 .widget-title > label {
   font-size: 1.5rem;
 }
-/* Clear button in Control center title */
 .widget-title > button {
   font-weight: 900;
   background: var(--active);
-  color: var(--text-color);
 }
 .widget-title > button:hover {
   background: var(--red);
-  color: var(--text-color);
 }
 
 /* Button grid icons */
@@ -78,15 +68,12 @@
   background: var(--noti-bg);
 }
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  color: var(--text-color);
   background: var(--active);
 }
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  color: var(--text-color);
-  background: var(--blue);
+  background: var(--disabled);
 }
 .widget-buttons-grid flowboxchild > button.toggle:checked {
-  color: var(--text-color);
   background: var(--blue);
 }
 
@@ -94,9 +81,9 @@
 .widget-slider,
 .widget-volume,
 .widget-backlight {
-  font-size: larger;
+  padding: 0rem;
+  margin: 0.5rem;
   background: var(--noti-bg);
-  border: 1px solid var(--cc-bg-lighter);
 }
 
 /* Different color for text in mpris widge */
@@ -105,86 +92,79 @@
 .widget-mpris-player,
 .widget-mpris-album-art {
   color: var(--white);
-  background: var(--disabled);
-}
-
-/* For notification outside of control center */
-.notification-row .notification-background .notification {
-  color: var(--text-color);
-  background: var(--noti-bg);
-  transition: background 0.2s ease-in-out;
-  padding: 0.5rem;
-  border: 2px solid var(--text-color);
-  border-radius: 0.75rem;
-  /* box-shadow: none; */
-}
-
-.control-center {
-  color: var(--text-color);
-  background: var(--cc-bg);
-  border: 2px solid var(--border-color);
-  border-radius: 0.75rem;
-}
-
-/* Notification background in control-center list */
-.control-center .notification-row,
-.control-center .notification-row {
-  opacity: 1;
-  background-color: var(--noti-bg-selected);
-  box-shadow: none;
-}
-.control-center .notification-row:focus,
-.control-center .notification-row:hover {
-  opacity: 1;
-  background-color: var(--highlight);
-}
-
-.notification-group {
-  background: var(--noti-bg);
-  transition: opacity 200ms ease-in-out;
-}
-
-.notification-group:focus {
-  background: var(--noti-bg-lighter);
+  background: var(--active);
 }
 
 /* close button on notifications in control center */
 .close-button,
 .close-button:hover {
   background: var(--red);
-  color: var(--text-color);
   padding: 0;
   margin: 0;
-  border: none;
   border-radius: 100%;
   transition: background 0.15s ease-in-out;
-  box-shadow: none;
-}
-
-.notification-default-action:hover,
-.notification-action:hover {
-  color: var(--text-color);
-  background: var(--active);
 }
 
 .inline-reply-entry {
-  color: var(--text-color);
-  background: var(--noti-bg-darker);
-  caret-color: var(--text-color);
-  border: 1px solid var(--noti-border-color);
-}
-
-.inline-reply-button {
-  color: var(--text-color);
   background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
+  caret-color: var(--text-color);
+  border: 1px solid var(--active);
 }
-
+.inline-reply-button {
+  background: var(--noti-bg);
+  border: 1px solid var(--active);
+}
 .inline-reply-button:hover {
-  background: var(--noti-bg-hover);
+  background: var(--active);
 }
-
 .inline-reply-button:disabled {
   color: var(--text-color);
   background: var(--disabled);
+}
+
+/* For notification outside of control center */
+.notification-row .notification-background .notification {
+  background: var(--noti-bg);
+  padding: 0.5rem;
+  border: 2px solid var(--text-color);
+}
+
+.notification-action:hover,
+.notification-default-action:hover {
+  background: var(--noti-bg);
+}
+
+/* Space around the notification widget */
+.notification-background,
+.notification-row {
+  padding: 0;
+  background: none;
+  outline: none;
+  margin: 0;
+}
+
+/* Notification background in control-center list */
+.control-center .notification-row,
+.control-center .notification-row {
+  background-color: var(--active);
+}
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  background-color: var(--noti-bg);
+}
+
+/* Group of notifications from same source */
+.notification-group {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background: var(--noti-bg);
+}
+.notification-group:focus {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background: var(--active);
+}
+.notification-group > .notification {
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
