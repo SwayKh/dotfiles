@@ -82,7 +82,7 @@
 .widget-volume,
 .widget-backlight {
   padding: 0rem;
-  margin: 0.5rem;
+  margin: 0rem 0.5rem;
   background: var(--noti-bg);
 }
 
@@ -156,12 +156,10 @@
 /* Group of notifications from same source */
 .notification-group {
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: 0rem 0.5rem;
   background: var(--noti-bg);
 }
 .notification-group:focus {
-  padding: 0.5rem;
-  margin: 0.5rem;
   background: var(--active);
 }
 .notification-group > .notification {
