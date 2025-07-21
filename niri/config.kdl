@@ -361,14 +361,14 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+Space repeat=false { toggle-overview; }
 
-    Mod+Q { close-window; }
-    Mod+Shift+Q { quit; }
+    Mod+Q       { close-window;                }
+    Mod+Shift+Q { quit;                        }
 
-    Mod+Ctrl+F { toggle-window-floating; }
-    Mod+Shift+F { fullscreen-window; }
-    Mod+W { switch-preset-column-width; }
+    Mod+Ctrl+F  { toggle-window-floating;      }
+    Mod+Shift+F { fullscreen-window;           }
+    Mod+W       { switch-preset-column-width;  }
     Mod+Shift+W { switch-preset-window-height; }
-    Mod+Return { maximize-column; }
+    Mod+Return  { maximize-column;             }
 
     Mod+Alt+C { center-column; }
     Mod+Alt+P { power-off-monitors; }
@@ -379,67 +379,67 @@ binds {
     // Mod+Return { expand-column-to-available-width; }
 
     // Program binds
-    Mod+T hotkey-overlay-title="Open a Terminal: Foot" { spawn "footclient"; }
-    Mod+R hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "drun"; }
-    Mod+F hotkey-overlay-title="Open File Manager" {  spawn "thunar"; }
-    Mod+B hotkey-overlay-title="Open Browser" { spawn "zen-browser"; }
-    Mod+O hotkey-overlay-title="Open Notes: Obsidian" { spawn "obsidian"; }
-    Mod+D hotkey-overlay-title="Open Discord" { spawn "vesktop"; }
-    Mod+G hotkey-overlay-title="Open Retroarch" { spawn "retroarch"; }
-    Mod+S hotkey-overlay-title="Open Spotify" { spawn "spotify"; }
-    Mod+A hotkey-overlay-title="Open Anki" { spawn "anki"; }
-    Mod+I hotkey-overlay-title="Open Ticktick" { spawn "ticktick"; }
-    Mod+N hotkey-overlay-title="Open Notification Center" { spawn "swaync-client" "-t" "-sw"; }
-    Mod+E hotkey-overlay-title="Open Yazi" { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
-    Mod+M hotkey-overlay-title="Open Btop" { spawn "foot" "-e" "zsh" "-ic" "btop"; }
-    Mod+KP_ADD hotkey-overlay-title="Calculator" { spawn "galculator"; }
+    Mod+T      hotkey-overlay-title="Open a Terminal: Foot"    { spawn "footclient"; }
+    Mod+R      hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "drun"; }
+    Mod+F      hotkey-overlay-title="Open File Manager"        {  spawn "thunar"; }
+    Mod+B      hotkey-overlay-title="Open Browser"             { spawn "zen-browser"; }
+    Mod+O      hotkey-overlay-title="Open Notes: Obsidian"     { spawn "obsidian"; }
+    Mod+D      hotkey-overlay-title="Open Discord"             { spawn "vesktop"; }
+    Mod+G      hotkey-overlay-title="Open Retroarch"           { spawn "retroarch"; }
+    Mod+S      hotkey-overlay-title="Open Spotify"             { spawn "spotify"; }
+    Mod+A      hotkey-overlay-title="Open Anki"                { spawn "anki"; }
+    Mod+I      hotkey-overlay-title="Open Ticktick"            { spawn "ticktick"; }
+    Mod+N      hotkey-overlay-title="Open Notification Center" { spawn "swaync-client" "-t" "-sw"; }
+    Mod+E      hotkey-overlay-title="Open Yazi"                { spawn "foot" "-e" "zsh" "-ic" "yazi"; }
+    Mod+M      hotkey-overlay-title="Open Btop"                { spawn "foot" "-e" "zsh" "-ic" "btop"; }
+    Mod+KP_ADD hotkey-overlay-title="Calculator"               { spawn "galculator"; }
 
     // Scratchpads
-    Mod+Shift+M hotkey-overlay-title="Btop scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-btop"; }
-    Mod+Shift+E hotkey-overlay-title="Files scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-files"; }
-    Mod+Shift+T hotkey-overlay-title="Term scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-term"; }
-    Mod+Shift+N hotkey-overlay-title="Nvim scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-nvim"; }
-    Mod+Shift+P hotkey-overlay-title="Project scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "special-project"; }
-    Mod+Shift+S hotkey-overlay-title="Spotify scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "Spotify"; }
-    Mod+Shift+I hotkey-overlay-title="Ticktick scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "ticktick"; }
+    Mod+Shift+M hotkey-overlay-title="Btop scratchpad"     { spawn "~/.config/niri/spawn-or-focus.sh" "special-btop";    }
+    Mod+Shift+E hotkey-overlay-title="Files scratchpad"    { spawn "~/.config/niri/spawn-or-focus.sh" "special-files";   }
+    Mod+Shift+T hotkey-overlay-title="Term scratchpad"     { spawn "~/.config/niri/spawn-or-focus.sh" "special-term";    }
+    Mod+Shift+N hotkey-overlay-title="Nvim scratchpad"     { spawn "~/.config/niri/spawn-or-focus.sh" "special-nvim";    }
+    Mod+Shift+P hotkey-overlay-title="Project scratchpad"  { spawn "~/.config/niri/spawn-or-focus.sh" "special-project"; }
+    Mod+Shift+S hotkey-overlay-title="Spotify scratchpad"  { spawn "~/.config/niri/spawn-or-focus.sh" "Spotify";         }
+    Mod+Shift+I hotkey-overlay-title="Ticktick scratchpad" { spawn "~/.config/niri/spawn-or-focus.sh" "ticktick";        }
 
     // Scripts
-    Mod+V { spawn "~/scripts/rofi-clipboard"; }
-    Mod+C { spawn "~/scripts/colorpicker"; }
-    Mod+Tab { spawn "~/scripts/random-swwwbg"; }
-    Mod+Grave { spawn "~/scripts/list-niri-window"; }
-    Mod+Escape { spawn "~/scripts/rofi-power"; }
-    Mod+Ctrl+W { spawn "~/scripts/rofi-wifi"; }
-    Mod+Ctrl+B { spawn "~/scripts/rofi-bluetooth"; }
-    Mod+Ctrl+S { spawn "~/scripts/rofi-wall"; }
-    Mod+Ctrl+C { spawn "~/scripts/text-picker"; }
-    Mod+Ctrl+D { spawn "~/scripts/rofi-docs"; }
+    Mod+V      { spawn "~/scripts/rofi-clipboard";   }
+    Mod+C      { spawn "~/scripts/colorpicker";      }
+    Mod+Tab    { spawn "~/scripts/random-swwwbg";    }
+    Mod+Grave  { spawn "~/scripts/list-niri-window"; }
+    Mod+Escape { spawn "~/scripts/rofi-power";       }
+    Mod+Ctrl+W { spawn "~/scripts/rofi-wifi";        }
+    Mod+Ctrl+B { spawn "~/scripts/rofi-bluetooth";   }
+    Mod+Ctrl+S { spawn "~/scripts/rofi-wall";        }
+    Mod+Ctrl+C { spawn "~/scripts/text-picker";      }
+    Mod+Ctrl+D { spawn "~/scripts/rofi-docs";        }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "~/scripts/volume" "up"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "~/scripts/volume" "down"; }
-    XF86AudioMute        allow-when-locked=true { spawn "~/scripts/volume" "mute"; }
+    XF86AudioRaiseVolume cooldown-ms=150 allow-when-locked=true { spawn "~/scripts/volume" "up";   }
+    XF86AudioLowerVolume cooldown-ms=150 allow-when-locked=true { spawn "~/scripts/volume" "down"; }
+    XF86AudioMute        cooldown-ms=150 allow-when-locked=true { spawn "~/scripts/volume" "mute"; }
 
-    XF86MonBrightnessUp { spawn "~/scripts/brightness" "up"; }
-    XF86MonBrightnessDown { spawn "~/scripts/brightness" "down"; }
+    XF86MonBrightnessUp   cooldown-ms=150 { spawn "~/scripts/brightness" "up";   }
+    XF86MonBrightnessDown cooldown-ms=150 { spawn "~/scripts/brightness" "down"; }
 
     XF86AudioMedia { spawn "playerctl" "play-pause"; }
-    XF86AudioPlay { spawn "playerctl" "play-pause"; }
-    XF86AudioPrev { spawn "playerctl" "previous"; }
-    XF86AudioNext {spawn "playerctl" "next"; }
+    XF86AudioPlay  { spawn "playerctl" "play-pause"; }
+    XF86AudioPrev  { spawn "playerctl" "previous";   }
+    XF86AudioNext  { spawn "playerctl" "next";       }
 
     // Similarly, you can bind touchpad scroll "ticks".
-    Mod+TouchpadScrollDown cooldown-ms=150 { spawn "~/scripts/volume" "up"; }
-    Mod+TouchpadScrollUp cooldown-ms=150 { spawn "~/scripts/volume" "down"; }
+    Mod+TouchpadScrollDown  cooldown-ms=150 { spawn "~/scripts/volume"     "up";   }
+    Mod+TouchpadScrollUp    cooldown-ms=150 { spawn "~/scripts/volume"     "down"; }
 
-    Mod+TouchpadScrollLeft cooldown-ms=150 { spawn "~/scripts/brightness" "up"; }
+    Mod+TouchpadScrollLeft  cooldown-ms=150 { spawn "~/scripts/brightness" "up";   }
     Mod+TouchpadScrollRight cooldown-ms=150 { spawn "~/scripts/brightness" "down"; }
 
-    Print { screenshot; }
+    Print      { screenshot;        }
     Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Alt+Print  { screenshot-window; }
 
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Mod+Minus       { set-column-width  "-10%"; }
+    Mod+Equal       { set-column-width  "+10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
 
@@ -464,27 +464,27 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 9; }
     Mod+Shift+9 { move-column-to-workspace 10; }
 
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-or-workspace-down; }
-    Mod+K     { focus-window-or-workspace-up; }
-    Mod+L     { focus-column-right; }
+    Mod+H { focus-column-left;              }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up;   }
+    Mod+L { focus-column-right;             }
 
-    Mod+Ctrl+H     { move-column-left; }
-    Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
-    Mod+Ctrl+L     { move-column-right; }
+    Mod+Ctrl+H { move-column-left;                      }
+    Mod+Ctrl+J { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+K { move-window-up-or-to-workspace-up;     }
+    Mod+Ctrl+L { move-column-right;                     }
 
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-column-right; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up;   }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-column-right;   }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { focus-column-left;    }
 
-    Mod+MouseForward { focus-column-right; }
-    Mod+MouseBack    { focus-column-left; }
+    Mod+MouseForward { focus-column-right;            }
+    Mod+MouseBack    { focus-column-left;             }
 
-    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketLeft  { consume-or-expel-window-left;  }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    Mod+Comma  { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
+    Mod+Comma        { consume-window-into-column;    }
+    Mod+Period       { expel-window-from-column;      }
 }
