@@ -55,6 +55,10 @@ vim.diagnostic.config({
     spacing = 2,
     prefix = "",
   },
+  virtual_lines = {
+    current_line = true,
+    severity = vim.diagnostic.severity.ERROR,
+  },
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
