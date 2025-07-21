@@ -98,6 +98,7 @@ layout {
         softness 30
         spread 5
         offset x=0 y=5
+        color "#00000070"
     }
     tab-indicator {
         // off
@@ -254,6 +255,25 @@ window-rule {
     default-column-width { proportion 0.9; }
     open-on-workspace "Scratchpad"
 }
+
+ window-rule {
+  match app-id="foot"
+  match app-id="footclient"
+  match title="foot"
+
+  draw-border-with-background false
+  opacity 1.0
+  shadow {
+    on
+    draw-behind-window true
+    softness 0
+    spread 0
+    offset x=0 y=0
+    color "#000000"
+    inactive-color "#000000"
+  }
+}
+
 
 // Float rule
 window-rule {
