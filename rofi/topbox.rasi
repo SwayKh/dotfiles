@@ -33,7 +33,7 @@ window {
   /*height: 40%;*/
   width: 40%;
   orientation: vertical;
-  location: north;
+  location: center;
   anchor: center;
   x-offset: 0px;
   y-offset: 0px;
