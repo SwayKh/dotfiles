@@ -152,7 +152,7 @@ environment {
 
 cursor {
     xcursor-theme "Bibata-Modern-Classic"
-    xcursor-size 18
+    xcursor-size 24
     hide-when-typing
     hide-after-inactive-ms 10000
 }
@@ -198,6 +198,11 @@ gestures {
     hot-corners {
         off
     }
+}
+
+switch-events {
+  lid-close { spawn "gtklock"; }
+  // lid-open  { spawn "notify-send" "Screen is locked!"; }
 }
 
 //    █████████               █████                      █████                         █████
