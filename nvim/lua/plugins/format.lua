@@ -20,6 +20,7 @@ require("conform").setup({
     sh = { "beautysh", "shfmt" },
     python = { "isort", "ruff" },
     zig = { "zigfmt" },
+    cpp = { "clang-format" },
     ["_"] = { "trim_whitespace", "trim_newlines" },
     ["*"] = { "codespell" },
   },

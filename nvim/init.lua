@@ -47,8 +47,8 @@ end
 
 local function colorscheme()
   -- Nice default color scheme:
-  -- default, habamax, retrobox, sorbet, wildcharm, unokai, slate
-  vim.cmd.colorscheme("slate")
+  -- default, habamax, retrobox, sorbet, wildcharm, unokai, slate, shint
+  vim.cmd.colorscheme("habamax")
 end
 
 local function formatter()
