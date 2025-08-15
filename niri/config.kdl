@@ -289,6 +289,8 @@ window-rule {
     match app-id="galculator"
     match app-id="org.kde.kcalc"
     match app-id="blueman-manager"
+    match title="Bluetooth"
+    match app-id=r#"^blueberry*"#
     match app-id="org.kde.kdeconnect.app"
     match app-id="nm-connection-editor"
     match app-id="org.kde.polkit-kde-authentication-agent-1"
@@ -317,6 +319,7 @@ window-rule {
 // Open on Media workspace
 window-rule {
     match app-id="com.libretro.RetroArch"
+    match app-id="org.telegram.desktop"
     match app-id="Celeste.bin.x86_64"
     match app-id="hollow_knight.x86_64"
     match title="Brawlhalla"
