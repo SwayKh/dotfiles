@@ -176,3 +176,7 @@ records:
       paths:
         - ~/.config/swaync
         - $init_directory/swaync
+    - name: dotfiles/mpv
+      paths:
+        - ~/.config/mpv
+        - $init_directory/mpv
