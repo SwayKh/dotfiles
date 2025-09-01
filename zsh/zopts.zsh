@@ -29,7 +29,7 @@ _comp_options+=(globdots)
 # Completion menu options
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "~/.zcompcache"
+zstyle ':completion:*' cache-path "$HOME/.zcompcache"
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' keep-prefix true
 zstyle ':completion:*' complete true
