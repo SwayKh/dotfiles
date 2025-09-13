@@ -38,6 +38,7 @@ alias ls='eza --all --icons=always --color=always --group-directories-first'
 alias lt='eza --all --tree --color-scale --level=2 --icons=always --color=always --group-directories-first'
 alias ll='eza -al --no-time --no-user --no-permissions --no-filesize --icons=always --color=always --group-directories-first'
 alias la='eza -alh --git --icons=always --color=always --group-directories-first'
+alias tree='eza --tree --all --group-directories-first'
 
 # Git Aliases
 alias gs='git status'
