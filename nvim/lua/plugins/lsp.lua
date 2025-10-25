@@ -5,10 +5,30 @@ local servers = {
   "lua_ls", -- Lua
   "pyright", -- Python
   -- Web Dev LSPs
+  "html", -- HTML
+  "emmet_ls", -- HTML
   "cssls", -- CSS
-  "emmet_language_server", -- HTML
   "tailwindcss", -- Tailwind
   "ts_ls", -- Typescript/javascript
+  "eslint", -- Typescript/javascript
+
+  -- Extras(linters/formatters/debuggers)
+  --
+  -- FORMATTERS
+  -- "clang-format",
+  -- "gofumpt",
+  -- "goimports",
+  -- "prettier",
+  -- "prettierd",
+  -- "shfmt",
+  -- "stylua",
+  --
+  -- LINTERS
+  -- "cpplint",
+  -- "eslint_d",
+  -- "golangci-lint",
+  -- "pylint",
+  -- "shellcheck",
 }
 
 vim.lsp.enable(servers)
@@ -21,7 +41,7 @@ vim.lsp.config("*", {
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = servers,
-  automatic_enable = true,
+  automatic_enable = false, -- Does the same thing as vim.lsp.enable()
 })
 
 require("lazydev").setup({
@@ -31,10 +51,12 @@ require("lazydev").setup({
   },
 })
 
+local severity = vim.diagnostic.severity
+
 vim.diagnostic.config({
   severity_sort = true,
   update_in_insert = true,
-  underline = { severity = vim.diagnostic.severity.ERROR },
+  underline = { severity = severity.ERROR },
   float = {
     source = "if_many",
     focusable = true,
@@ -44,10 +66,10 @@ vim.diagnostic.config({
   signs = {
     priority = 300,
     text = {
-      [vim.diagnostic.severity.ERROR] = " ", -- 󰅚
-      [vim.diagnostic.severity.WARN] = " ", -- 󰀪
-      [vim.diagnostic.severity.INFO] = " ", -- 󰋽
-      [vim.diagnostic.severity.HINT] = "󰠠 ", -- 󰌶
+      [severity.ERROR] = " ", -- 󰅚
+      [severity.WARN] = " ", -- 󰀪
+      [severity.INFO] = " ", -- 󰋽
+      [severity.HINT] = "󰠠 ", -- 󰌶
     },
   },
   virtual_text = {
@@ -57,7 +79,7 @@ vim.diagnostic.config({
   },
   virtual_lines = {
     current_line = true,
-    severity = vim.diagnostic.severity.ERROR,
+    severity = severity.ERROR,
   },
 })
 
