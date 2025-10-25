@@ -482,6 +482,16 @@ binds {
     Mod+Ctrl+K { move-window-up-or-to-workspace-up;     }
     Mod+Ctrl+L { move-column-right;                     }
 
+    Mod+Shift+H { focus-monitor-left;  }
+    Mod+Shift+J { focus-monitor-down;  }
+    Mod+Shift+K { focus-monitor-up;    }
+    Mod+Shift+L { focus-monitor-right; }
+
+    Mod+Ctrl+Shift+H { move-column-to-monitor-left;  }
+    Mod+Ctrl+Shift+J { move-column-to-monitor-down;  }
+    Mod+Ctrl+Shift+K { move-column-to-monitor-up;    }
+    Mod+Ctrl+Shift+L { move-column-to-monitor-right; }
+
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up;   }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-column-right;   }
