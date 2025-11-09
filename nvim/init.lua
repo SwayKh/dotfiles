@@ -78,6 +78,7 @@ local function lsp()
   })
 
   require("plugins.lsp")
+  vim.cmd("LspStart")
 end
 
 local function markdown()
