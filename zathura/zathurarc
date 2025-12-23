@@ -5,7 +5,7 @@ include ../../.cache/wal/colors-zathura
 # Options
 set guioptions "s"
 set nohlsearch false
-set page-padding 1
+# set page-padding 1
 set scroll-step 50
 set adjust-open "best-fit"
 set recolor false
