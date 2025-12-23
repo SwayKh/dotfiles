@@ -1,9 +1,14 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 * {
   font:                   "JetBrainsMono Nerd Font 12";
-  foreground:             #C8C093;
-  background:             #1F1F28;
   highlight:              #F1EDEE;
+  /* foreground:             #C8C093; */
+  /* background:             #1F1F28; */
+  text:                   @background;
+  light:                  @active-background;
+  dark:                   @urgent-background;
 }
+
 
 element-icon {
   size: 18;
@@ -14,86 +19,95 @@ element-text {
 }
 
 window {
-  border-color:     @foreground;
+  border-color:     @light;
+  background-color: @dark;
+  text-color:       @text;
+}
+
+mainbox {
+  border-color:     @light;
+  background-color: @dark;
+  text-color:       @text;
 }
 
 inputbar {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:       @text;
+  background-color: @light;
 }
 
 prompt {
-  text-color:       @background;
-  background-color: @foreground;
+  text-color:       @dark;
+  background-color: @light;
 }
 
 textbox-prompt-colon {
-  text-color:       @background;
-  background-color: @foreground;
-}
-
-message {
-  text-color: @foreground;
-  background-color: @background;
+  text-color:       @text;
+  background-color: @light;
 }
 
 entry {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:        @text;
+  background-color:  @light;
+  placeholder-color: @dark;
+}
+
+message {
+  text-color: @text;
+  background-color: @light;
 }
 
 listview {
-  background-color: @background;
+  background-color: @dark;
+  text-color:       @light;
 }
 
 mode-switcher {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:       @text;
+  background-color: @dark;
 }
 
 button {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:       @text;
+  background-color: @dark;
 }
 
 button selected {
-  text-color:       @background;
-  background-color: @foreground;
+  text-color:       @text;
+  background-color: @light;
 }
 
 element {
-  text-color:       @foreground;
-  background-color: @background;
+  text-color:       @text;
+  background-color: @light;
 }
 
 element normal.normal {
-  background-color: @background;
-  text-color:       @foreground;
+  text-color:       @text;
+  background-color: @dark;
 }
 
 element normal.active {
-  background-color: @background;
-  text-color:       @foreground;
+  text-color:       @text;
+  background-color: @light;
 }
 
 element selected.normal {
-  text-color:       @background;
-  background-color: @foreground;
+  text-color:       @text;
+  background-color: @light;
 }
 
 element selected.active {
-  background-color: @foreground;
-  text-color:       @background;
+  text-color:       @text;
+  background-color: @light;
 }
 
 element alternate.normal {
-  background-color: @background;
-  text-color:       @foreground;
+  text-color:       @text;
+  background-color: @dark;
 }
 
 element alternate.active {
-  background-color: @background;
-  text-color:       @foreground;
+  text-color:       @text;
+  background-color: @light;
 }
 
-@import "~/.cache/wal/colors-rofi-dark.rasi"

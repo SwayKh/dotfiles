@@ -43,6 +43,7 @@ window {
 
 mainbox {
   spacing:  @spacing;
+  border:        2px;
   children: [ inputbar, listview ];
 }
 
@@ -72,7 +73,7 @@ listview {
   dynamic:       false; // Shrinks windows to occupy search result
   margin:        @margin;
   padding:       @padding;
-  border:        1px;
+  border:        2px;
   border-radius: @border-radius;
 }
 
