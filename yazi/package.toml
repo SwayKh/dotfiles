@@ -1,7 +1,27 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b886025"
+rev = "230b9c6"
 hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "cb6e8ec"
+hash = "424ada4807b20ccd4fc85d1d7c26d1e4"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:types"
+rev = "230b9c6"
+hash = "83b5b82b595c39a660bf2b170987e5e7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "230b9c6"
+hash = "9ad20d763df07ce40fd09de549d914b0"
+
+[[plugin.deps]]
+use = "grappas/wl-clipboard"
+rev = "e9a38e4"
+hash = "6b8e5d6b09626facec713923d3ddb54b"
 
 [flavor]
 deps = []

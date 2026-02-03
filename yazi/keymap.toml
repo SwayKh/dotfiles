@@ -58,28 +58,41 @@ prepend_keymap = [
 
   { on = ['g', 'a'], run = 'cd /run/user/1001/07b84bc3_33cd_4b24_a7ac_af034681c2a5/storage/emulated/0/', desc = 'Go to the Android directory' },
 
-	{ on = 'c',           run = 'yank',                                            desc = 'Yank selected files (copy)' },
+	# { on = 'c',           run = 'yank',                                            desc = 'Yank selected files (copy)' },
+	{ on = ['y', 'y'],    run = 'yank',                                            desc = 'Yank selected files (copy)' },
 	{ on = 'L',           run = 'link',                                            desc = 'Symlink the absolute path of yanked files' },
   { on = 'e',           run = 'shell -- bash "$@"',                              desc = 'Execute the selected file' },
 	{ on = 'F',           run = 'plugin fzf',                                      desc = 'Jump to a directory or reveal a file using fzf' },
 	{ on = [ 'd','d' ],   run = 'remove',                                          desc = 'Trash selected files' },
 	{ on = [ 'd','u' ],   run = 'shell --block -- $SHELL -c "dua i"',              desc = 'Run dua-cli in current directory' },
-
-  { on = '<Backspace>', run = 'unyank',                                          desc = 'Unyank' },
-  { on = '<Esc>',       run = ['unyank', 'escape'],                              desc = 'Clean Unyank/selected, cancel search' },
-  { on = '|',           run = 'plugin personal "resize 0 1 2"',                  desc = 'Toggle Pane ratio of 0, 1, 2' },
-  { on = '`',           run = 'plugin personal "random"',                        desc = 'Pick a random file' },
-  { on = 'l',           run = 'plugin personal "smart_enter"',                   desc = 'Smart enter, Open file or enter directory' },
-  { on = 'J',           run = 'plugin personal "move_parent 1"',                 desc = 'Go to below parent directory' },
-  { on = 'K',           run = 'plugin personal "move_parent -1"',                desc = 'Go to above parent directory' },
-  { on = '<A-n>',       run = 'plugin personal "new_dir"',                       desc = 'Move to new directory' },
-  { on = '<C-t>',       run = 'plugin personal "directory_tab"',                 desc = 'Open selected directory in a tab' },
-  { on = '<A-p>',       run = 'plugin personal "chmod"',                         desc = 'Chmod on selected files' },
-  { on = '<A-x>',       run = 'plugin personal "chmodx"',                        desc = 'Chmod to executable selected files' },
-  { on = '<A-s>',       run = 'plugin personal "share"',                         desc = 'Share selected file with 0x0.st'},
   { on = ['b', 'g'],    run = 'shell -- "$HOME"/scripts/set-wall "$0"',          desc = 'Set Wallpaper' },
   { on = ['d', 'g'],    run = 'shell -- ripdrag -x -b -n -t -k -a "$@"',         desc = 'Drag and Drop with ripdrag' },
   { on = '!',           run = 'shell --block -- $SHELL',                         desc = 'Open shell here' },
+
+  { on = '<Backspace>',     run = 'unyank',                                        desc = 'Unyank' },
+  { on = '<Esc>',           run = ['unyank', 'escape'],                            desc = 'Clean Unyank/selected, cancel search' },
+  { on = '|',               run = 'plugin personal "resize 0 1 2"',                desc = 'Toggle Pane ratio of 0, 1, 2' },
+  { on = '`',               run = 'plugin personal "random"',                      desc = 'Pick a random file' },
+  { on = 'l',               run = 'plugin personal "smart_enter"',                 desc = 'Smart enter, Open file or enter directory' },
+  { on = '<Enter>',         run = 'plugin personal "smart_enter"',                 desc = 'Smart enter, Open file or enter directory' },
+  { on = 'J',               run = 'plugin personal "move_parent 1"',               desc = 'Go to below parent directory' },
+  { on = 'K',               run = 'plugin personal "move_parent -1"',              desc = 'Go to above parent directory' },
+  { on = '<A-n>',           run = 'plugin personal "new_dir"',                     desc = 'Move to new directory' },
+  { on = '<C-t>',           run = 'plugin personal "directory_tab"',               desc = 'Open selected directory in a tab' },
+  { on = '<A-p>',           run = 'plugin personal "chmod"',                       desc = 'Chmod on selected files' },
+  { on = '<A-x>',           run = 'plugin personal "chmodx"',                      desc = 'Chmod to executable selected files' },
+  { on = '<A-s>',           run = 'plugin personal "share"',                       desc = 'Share selected file with 0x0.st'},
+  { on = 'o',               run = 'plugin personal "openWithCmd"',                 desc = 'Open Selected file with Cmd'},
+
+  { on  = "M",              run = "plugin mount",                                  desc = "Mount plugin" },
+  { on = "<C-y>",           run = "plugin wl-clipboard",                           desc = "Yank files to system clipboard" },
+
+  { on = [ "c", "a", "a" ], run  = "plugin compress",                              desc = "Archive selected files"},
+  { on = [ "c", "a", "p" ], run  = "plugin compress -p",                           desc = "Archive selected files (password)"},
+  { on = [ "c", "a", "h" ], run  = "plugin compress -ph",                          desc = "Archive selected files (password+header)"},
+  { on = [ "c", "a", "l" ], run  = "plugin compress -l",                           desc = "Archive selected files (compression level)"},
+  { on = [ "c", "a", "u" ], run  = "plugin compress -phl",                         desc = "Archive selected files (password+header+level)"},
+
   # { on = [ 'b', 't' ],  run = 'shell --interactive -- chmod',                    desc = 'Testing interactive shells'}
 ]
 
