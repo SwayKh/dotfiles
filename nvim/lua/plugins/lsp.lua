@@ -55,8 +55,9 @@ local severity = vim.diagnostic.severity
 
 vim.diagnostic.config({
   severity_sort = true,
-  update_in_insert = true,
+  update_in_insert = false,
   underline = { severity = severity.ERROR },
+  jump = { float = true },
   float = {
     source = "if_many",
     focusable = true,
@@ -77,10 +78,11 @@ vim.diagnostic.config({
     spacing = 2,
     prefix = "",
   },
-  virtual_lines = {
-    current_line = true,
-    severity = severity.ERROR,
-  },
+  virtual_lines = false,
+  -- virtual_lines = {
+  --   current_line = true,
+  --   severity = severity.ERROR,
+  -- },
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
