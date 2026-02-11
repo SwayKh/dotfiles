@@ -6,6 +6,10 @@ source_file() {
   [ -f "$ZCONF/$1" ] && source "$ZCONF/$1"
 }
 
+fix_hdmi() {
+  wlr-randr --output eDP-1 --mode 1920x1200 --pos 0,0 --output HDMI-A-1 --mode 1920x1200 --pos 0,0
+}
+
 # Plugin Manager function, credit to Chris@Machine
 zplug() {
   PLUGIN_NAME="${1##*/}"
