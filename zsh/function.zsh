@@ -7,7 +7,7 @@ source_file() {
 }
 
 fix_hdmi() {
-  wlr-randr --output eDP-1 --mode 1920x1200 --pos 0,0 --output HDMI-A-1 --mode 1920x1200 --pos 0,0
+  wlr-randr --output eDP-1 --mode 1920x1200 --pos 0,0 --output HDMI-A-1 --mode 1920x1080 --pos 0,0
 }
 
 # Plugin Manager function, credit to Chris@Machine
