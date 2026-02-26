@@ -24,6 +24,19 @@ window {
   text-color:       @text;
 }
 
+
+listview-split {
+  border-color:     @light;
+  background-color: @dark;
+  text-color:       @text;
+}
+
+wrap {
+  border-color:     @light;
+  background-color: @dark;
+  text-color:       @text;
+}
+
 mainbox {
   border-color:     @light;
   background-color: @dark;

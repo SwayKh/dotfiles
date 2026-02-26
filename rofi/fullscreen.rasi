@@ -1,0 +1,111 @@
+/* Inpired by fullscreen-preview theme by user: Dave Davenport */
+
+configuration {
+  modi:                 "drun";
+  dpi:                  90;
+  show-icons:           true;
+  terminal:             "footclient";
+  window-format:        "{w} · {c} · {t}";
+  disable-history:      false;
+  max-history-size:     15;
+}
+
+@import "colors"
+
+* {
+  spacing:          0.2em;
+  padding:          0.2em;
+  margin:           0px; //0.4em
+  border-radius:    0.4em;
+	horizontal-align: 0.5;
+	vertical-align:   0.5;
+  border:           0px;
+}
+
+window {
+	fullscreen:       true;
+	padding:          0.5em;
+	spacing:          @spacing;
+  children:         [ wrap, listview-split];
+}
+
+
+/** We add an extra child to this if PREVIEW=true */
+listview-split {
+  expand: true;
+  orientation: horizontal;
+  spacing: @spacing;
+  padding: @padding;
+  children: [listview];
+}
+
+/* Inputbar element */
+wrap {
+	expand: false;
+	orientation: vertical;
+	border: 3px;
+  padding: @padding;
+  spacing: @spacing;
+  border-radius: @border-radius;
+	children: [ inputbar, message ];
+}
+
+inputbar {
+	spacing: @spacing;
+  padding: @padding;
+  border-radius: @border-radius;
+	children: [ entry ];
+}
+
+entry {
+  placeholder:   "Search";
+}
+
+listview {
+  expand: true;
+  dynamic: true;
+	flow: horizontal;
+	fixed-columns: true;
+	columns: 7;
+	lines: 5;
+	spacing: @spacing;
+  padding: @padding;
+  border: 3px;
+  scrollbar: false;
+}
+
+element {
+	orientation: vertical;
+	border: 3px;
+  border-radius: @border-radius;
+  padding:       @padding;
+  margin:        @margin;
+
+  children: [element-icon, element-text];
+}
+
+element-icon {
+	size: calc(((100% - 3.5em) / 7 ));// manually configured
+}
+
+element-text {
+  padding: @padding;
+}
+
+/**
+ * Launching rofi with environment PREVIEW set to true
+ * will split the screen and show a preview widget.
+ */
+@media ( enabled: env(PREVIEW, false)) {
+  /** preview widget */
+  icon-current-entry {
+    expand:          true;
+    size:            80%;
+  }
+  listview-split {
+    children: [listview, icon-current-entry];
+  }
+  listview {
+  columns: 4;
+  }
+}
