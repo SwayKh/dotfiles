@@ -16,7 +16,7 @@
 - **OS** : [Arch](https://archlinux.org/)
 - **WM/Compositor** : [Niri](https://github.com/YaLTeR/niri)
 - **Bar** : [Waybar](https://github.com/Alexays/Waybar)
-- **Application Launcher** : [Rofi-wayland](https://github.com/lbonn/rofi)
+- **Application Launcher** : [Rofi](https://github.com/lbonn/rofi)
 - **Terminal** : [Foot](https://codeberg.org/dnkl/foot)
 - **File Manager** : [Yazi](https://github.com/sxyazi/yazi) / [LF](https://github.com/gokcehan/lf)
 - **File Manager(GUI)** : [Thunar](https://docs.xfce.org/xfce/thunar/start)
@@ -32,7 +32,7 @@
 - **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
 - **System Monitor** : [Btop](https://github.com/aristocratos/btop)
 - **System Info viewer** : [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- **Notification daemon** : [Dunst](https://github.com/dunst-project/dunst)
+- **Notification daemon** : [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - **Image Viewer** : [Feh](https://github.com/derf/feh)
 - **Anime Client** : [Ani-cli](https://github.com/pystardust/ani-cli)
 - **Local Sync Client** : [Syncthing](https://syncthing.net/)
@@ -51,7 +51,7 @@
 - **Text Editor** : [Micro](https://micro-editor.github.io/)
 - **File Manager(GUI)** : [Nautilus](https://apps.gnome.org/Nautilus/)- **Screenlock Util** : [Swaylock-effects](https://github.com/mortie/swaylock-effects)
 - **Idle daemon** : [Swayidle](https://github.com/swaywm/swayidle)
-- **Notification daemon** : [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
+- **Notification daemon** : [Dunst](https://github.com/dunst-project/dunst)
 - **WM/Compositor** : [i3(X11)](https://i3wm.org/) / [Sway(Wayland replacement for i3)](https://swaywm.org/) / [Hyprland](https://hyprland.org/) / [River](https://codeberg.org/river/river)
 - **Bar(For X11)** : [Polybar](https://github.com/polybar/polybar)
 - **Color Picker** : [xcolor](https://github.com/Soft/xcolor)
@@ -80,7 +80,7 @@ The scripts I use for setting wallpapers and the Power Menu using rofi are in th
 #### Important
 
 ```bash
-sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
+sudo pacman -S xdg-desktop-portal-gtk brightnessctl playerctl polkit-gnome
 ```
 
 #### Pipewire and stuff
@@ -110,7 +110,7 @@ sudo pacman -S --needed niri gtklock swayidle
 #### Utilities
 
 ```bash
-sudo pacman -S --needed floorp foot rofi-wayland dunst waybar nautilus sddm swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist galculator
+sudo pacman -S --needed zen-browser foot rofi swaync waybar thunar ly swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist galculator
 ```
 
 #### Cli tools
@@ -251,16 +251,13 @@ git curl wget man-db pacman-contrib openssh networkmanager iwd efibootmgr
 ani-cli
 citra-canary
 emulationstation-de
-ferdium
 godot
 google-chrome
 gparted
-kclac
 kdeconnect
 obsidian
 qbittorrent
 retroarch
-rofi-nerdy
 ryujinx
 spotify-launcher
 syncthing
@@ -271,6 +268,7 @@ uget
 vscode
 webcord
 yuzu
+zen-browser
 ```
 
 #### CLI
@@ -284,13 +282,12 @@ fastfetch
 fwupd
 github-cli
 jq
-ncdu
+dua-cli
 network-manager-applet
 pacutils
 pavucontrol
 pulseaudio
 reflector
-swaync
 ubsutils
 vulkan-headers
 vulkan-radeon
