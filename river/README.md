@@ -20,7 +20,7 @@ programs required to make it work
 - Idle Daemon: Swayidle
 - Lock Screen: Swaylock-effects
 - Notification Daemon: dunst
-- Wallpaper: Swww
+- Wallpaper: Awww
 - Image Viewer: feh
 - Document Viewer: zathura
 - Clipboard: wl-clipboard
@@ -43,7 +43,7 @@ sudo pacman -S xdg-desktop-portal-wlr brightnessctl playerctl polkit-gnome
 ### Utilities
 
 ```
-sudo pacman -S --needed river foot rofi-wayland dunst waybar swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist wlr-randr
+sudo pacman -S --needed river foot rofi-wayland dunst waybar swayidle awww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist wlr-randr
 ```
 
 ### Cli tools

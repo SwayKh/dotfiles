@@ -28,7 +28,7 @@
 - **Shell** : [Zsh](https://www.zsh.org/)
 - **Shell Prompt** : [Starship](https://starship.rs/)
 - **Login Manager** : [ly](https://github.com/fairyglade/ly)
-- **Wallpaper Utility** : [Swww](https://github.com/LGFae/swww)
+- **Wallpaper Utility** : [Awww](https://codeberg.org/LGFae/awww)
 - **PDF Reader** : [Zathura](https://github.com/pwmt/zathura)
 - **System Monitor** : [Btop](https://github.com/aristocratos/btop)
 - **System Info viewer** : [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
@@ -110,13 +110,13 @@ sudo pacman -S --needed niri gtklock swayidle
 #### Utilities
 
 ```bash
-sudo pacman -S --needed zen-browser foot rofi swaync waybar thunar ly swayidle swww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist galculator
+sudo pacman -S --needed zen-browser foot rofi swaync waybar thunar ly swayidle awww feh zathura grim slurp blueman nm-applet wl-clipboard cliphist galculator
 ```
 
 #### Cli tools
 
 ```bash
-sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tealdeer starship yazi cava rsync dua-cli sshfs swww mpv
+sudo pacman -S --needed zsh neovim vim fzf eza bat btop fd ripgrep lazygit tmux tealdeer starship yazi cava rsync dua-cli sshfs awww mpv
 ```
 
 #### Symlinks

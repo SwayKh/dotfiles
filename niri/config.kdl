@@ -18,7 +18,7 @@ input {
             options "ctrl:nocaps"
         }
         repeat-delay 300
-        repeat-rate 30
+        repeat-rate 50
         // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
@@ -59,7 +59,7 @@ output "eDP-1" {
 
 output "HDMI-A-1" {
     // off
-    mode "1920x1200@60.002"
+    mode "1920x1080@60.002"
     scale 1.00 // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     transform "normal" // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     position x=0 y=0
@@ -69,7 +69,7 @@ output "HDMI-A-1" {
 layout {
     gaps 8
     center-focused-column "on-overflow" // options are: "never", "always", "on-overflow"
-    background-color "transparent" // Needed to show swww-daemon from the background
+    background-color "transparent" // Needed to show awww-daemon from the background
     default-column-display "normal"
     always-center-single-column
     // empty-workspace-above-first
@@ -180,9 +180,9 @@ overview {
 }
 
 layer-rule {
-    // Send swww wallpaper to backdrop, show behind overview too
+    // Send awww wallpaper to backdrop, show behind overview too
     // Set backdrop-color to transparent in layout
-    match namespace="swww-daemon"
+    match namespace="awww-daemon"
     place-within-backdrop true
 }
 
@@ -226,7 +226,7 @@ switch-events {
 // ░░░░░   ░░░░░   ░░░░░░░░    ░░░░░   ░░░░░░  ░░░░░░     ░░░░░   ░░░░░░░░ ░░░░░        ░░░░░
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swww-daemon" "--format" "xrgb"
+spawn-at-startup "awww-daemon" "--format" "xrgb"
 spawn-at-startup "~/.config/waybar/launch.sh"
 spawn-at-startup "swaync"
 // spawn-at-startup "~/.config/dunst/launch-dunst.sh"
@@ -425,7 +425,7 @@ binds {
     // Scripts
     Mod+V      { spawn "~/scripts/rofi-clipboard";   }
     Mod+C      { spawn "~/scripts/colorpicker";      }
-    Mod+Tab    { spawn "~/scripts/random-swwwbg";    }
+    Mod+Tab    { spawn "~/scripts/random-awwwbg";    }
     Mod+Grave  { spawn "~/scripts/list-niri-window"; }
     Mod+Escape { spawn "~/scripts/rofi-power";       }
     Mod+Ctrl+W { spawn "~/scripts/rofi-wifi";        }
