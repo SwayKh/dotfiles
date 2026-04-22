@@ -65,28 +65,20 @@ require("blink.cmp").setup({
       scrolloff = 0,
       scrollbar = false,
       draw = {
-        align_to = "label",
+        align_to = "kind_icon",
         padding = { 0, 1 },
         cursorline_priority = 0,
-        gap = 10,
+        gap = 20,
         columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind", "source_name", gap = 1 } },
         components = {
           source_name = {
             text = function(ctx)
               return "[" .. ctx.source_name .. "]"
             end,
-            highlight = function(ctx)
-              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-              return hl
-            end,
           },
           label = {
             text = function(ctx)
               return ctx.label .. ctx.label_detail
-            end,
-            highlight = function(ctx)
-              local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-              return hl
             end,
           },
           kind = {
