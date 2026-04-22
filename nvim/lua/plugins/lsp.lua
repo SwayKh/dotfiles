@@ -88,6 +88,13 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
   callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    if client and client:supports_method("textDocument/documentColor") then
+      vim.lsp.document_color.enable(true, {
+        bufnr = event.buf,
+      })
+    end
+
     vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
       vim.lsp.buf.format()
     end, { desc = "Format current buffer with LSP" })
