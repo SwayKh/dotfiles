@@ -13,6 +13,39 @@ autocmd("BufWinEnter", {
   end,
 })
 
+autocmd("PackChanged", {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == "nvim-treesitter" and kind == "update" then
+      if not ev.data.active then
+        vim.cmd.packadd("nvim-treesitter")
+      end
+      vim.cmd("TSUpdate")
+    end
+  end,
+})
+
+autocmd("LspProgress", {
+  callback = function(ev)
+    local value = ev.data.params.value or {}
+    if not value.kind then
+      return
+    end
+
+    local status = value.kind == "end" and 0 or 1
+    local percent = value.percentage or 0
+
+    local osc_seq = string.format("\27]9;4;%d;%d\a", status, percent)
+
+    if os.getenv("TMUX") then
+      osc_seq = string.format("\27Ptmux;\27%s\27\\", osc_seq)
+    end
+
+    io.stdout:write(osc_seq)
+    io.stdout:flush()
+  end,
+})
+
 autocmd({ "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, {
   desc = "Autosave",
   pattern = "*",
