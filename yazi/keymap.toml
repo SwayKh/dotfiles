@@ -37,7 +37,7 @@ prepend_keymap = [
 	{ on = [ 'g', 'D' ],       run = 'cd ~/Documents',                          desc = 'Go to the documents directory' },
 	{ on = [ 'g', 'c' ],       run = 'cd ~/.config',                            desc = 'Go to the config directory' },
 	{ on = [ 'g', 't' ],       run = 'cd ~/Test/',                              desc = 'Go to the test directory' },
-	{ on = [ 'g', 'T' ],       run = 'cd ~/.trash/',                            desc = 'Go to the .trash directory' },
+	{ on = [ 'g', 'T' ],       run = 'cd ~/.local/share/Trash/',                desc = 'Go to the .trash directory' },
 	{ on = [ 'g', '.' ],       run = 'cd ~/dotfiles',                           desc = 'Go to the dotfiles directory' },
 	{ on = [ 'g', 'o' ],       run = 'cd ~/Obsidian/Vault/',                    desc = 'Go to the Obsidian directory' },
   { on = [ 'g', 'r' ],       run = 'cd ~/Roms',                               desc = 'Go to the Roms directory' },
