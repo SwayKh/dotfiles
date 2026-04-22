@@ -1,6 +1,7 @@
 .log
 .tmp
 lazy-lock.json
+nvim-pack-lock.json
 theme.txt
 neovim-task.md
 foot/themes/*
