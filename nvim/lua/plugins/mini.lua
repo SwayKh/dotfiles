@@ -29,8 +29,7 @@ require("mini.statusline").setup({
   },
 })
 
-local later = MiniDeps.later
-later(function()
+vim.schedule(function()
   require("mini.align").setup()
   require("mini.bracketed").setup()
   require("mini.comment").setup()

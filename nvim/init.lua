@@ -1,48 +1,29 @@
 vim.loader.enable()
 
--- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
-local path_package = vim.fn.stdpath("data") .. "/site/"
-local mini_path = path_package .. "pack/deps/start/mini.nvim"
-if not vim.loop.fs_stat(mini_path) then
-  vim.cmd('echo "Installing `mini.nvim`" | redraw')
-  local clone_cmd = {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/echasnovski/mini.nvim",
-    mini_path,
-  }
-  vim.fn.system(clone_cmd)
-  vim.cmd("packadd mini.nvim | helptags ALL")
-  vim.cmd('echo "Installed `mini.nvim`" | redraw')
-end
-
--- Set up 'mini.deps' (customize to your liking)
-require("mini.deps").setup({ path = { package = path_package } })
-
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-
+-- Load everything now
 require("config.globals")
 require("config.option")
 require("config.autocmd")
+require("config.usercmd")
 require("config.keybinds")
 
 local function arrow()
-  add({
-    source = "otavioschwanck/arrow.nvim",
+  vim.pack.add({
+    { src = "https://github.com/otavioschwanck/arrow.nvim" },
   })
   require("plugins.arrow")
 end
 
 local function blink()
-  add({
-    source = "Saghen/blink.cmp",
-    depends = {
-      "rafamadriz/friendly-snippets",
+  vim.pack.add({
+    {
+      src = "https://github.com/Saghen/blink.cmp",
+      version = vim.version.range("^1"),
     },
+    { src = "https://github.com/rafamadriz/friendly-snippets" },
   })
   require("plugins.blink")
-  require("config.utils").fixCmpHighlight() -- Modify the kind icon hightlight colors
+  require("config.utils").fixCmpHighlight() -- dify the kind icon hightlight colors
 end
 
 local function colorscheme()
@@ -52,109 +33,100 @@ local function colorscheme()
 end
 
 local function formatter()
-  add({
-    source = "stevearc/conform.nvim",
+  vim.pack.add({
+    { src = "https://github.com/stevearc/conform.nvim" },
   })
   require("plugins.format")
 end
 
 local function linter()
-  add({
-    source = "mfussenegger/nvim-lint",
+  vim.pack.add({
+    { src = "https://github.com/mfussenegger/nvim-lint" },
   })
   require("plugins.lint")
 end
 
 local function lsp()
-  add({
-    source = "neovim/nvim-lspconfig",
-    depends = {
-      "mason-org/mason.nvim",
-      "mason-org/mason-lspconfig.nvim",
-      -- "WhoIsSethDaniel/mason-tool-installer.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/lazydev.nvim",
-    },
+  vim.pack.add({
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+
+    { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+    { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+    { src = "https://github.com/nvim-lua/plenary.nvim" },
+    { src = "https://github.com/folke/lazydev.nvim" },
   })
 
   require("plugins.lsp")
-  vim.cmd("LspStart")
 end
 
 local function markdown()
-  add({
-    source = "OXY2DEV/markview.nvim",
+  vim.pack.add({
+    { src = "https://github.com/OXY2DEV/markview.nvim" },
   })
   require("plugins.markdown")
 end
 
 local function mini_plugins()
-  add({
-    source = "echasnovski/mini.nvim",
+  vim.pack.add({
+    { src = "https://github.com/nvim-mini/mini.nvim" },
   })
   require("plugins.mini")
 end
 
 local function snacks()
-  add({
-    source = "folke/snacks.nvim",
+  vim.pack.add({
+    { src = "https://github.com/folke/snacks.nvim" },
   })
   require("plugins.snacks")
 end
 
 local function treesitter()
-  add({
-    source = "nvim-treesitter/nvim-treesitter",
-    -- Use 'master' while monitoring updates in 'main'
-    checkout = "master",
-    -- monitor = "main",
-    -- Perform action after every checkout
-    hooks = {
-      post_checkout = function()
-        vim.cmd("TSUpdate")
-      end,
-    },
-    depends = {
-      "windwp/nvim-ts-autotag",
-    },
-  })
-  require("plugins.treesitter")
+  vim.pack.add({
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    { src = "https://github.com/windwp/nvim-ts-autotag" },
+  }, { load = true })
+  vim.schedule(function()
+    require("plugins.treesitter")
+  end)
 end
 
 local function trouble()
-  add({
-    source = "folke/trouble.nvim",
+  vim.pack.add({
+    { src = "https://github.com/folke/trouble.nvim" },
   })
   require("plugins.trouble")
 end
 
 local function undotree()
-  add({
-    source = "mbbill/undotree",
-  })
-  vim.keymap.set("n", "<leader>U", vim.cmd.UndotreeToggle, { desc = "Undo Tree" })
+  vim.cmd("packadd nvim.undotree")
+
+  vim.cmd("packadd nvim.undotree")
+  vim.keymap.set("n", "<leader>U", require("undotree").open, { desc = "Undotree" })
 end
 
--- Load everything now
-now(function()
-  colorscheme()
-  mini_plugins()
-  snacks()
-end)
-
-later(function()
+-- Load these now
+colorscheme()
+mini_plugins()
+snacks()
+-- Lazily Loading, kind of
+vim.schedule(function()
   arrow()
   blink()
   formatter()
   linter()
   lsp()
   markdown()
-  treesitter()
+  -- treesitter()
   trouble()
   undotree()
 
+  vim.cmd("packadd nvim.difftool")
+  -- New UI opt-in
+  require("vim._core.ui2").enable()
+
   -- add vim-startuptime plugin
-  -- add({
-  --   source = "dstein64/vim-startuptime",
+  -- vim.pack.add({
+  --   { src = "https://github.com/dstein64/vim-startuptime" },
   -- })
 end)
