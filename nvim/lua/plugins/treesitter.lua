@@ -1,4 +1,4 @@
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
   sync_install = true,
   auto_install = true,
   autopairs = { enable = true },

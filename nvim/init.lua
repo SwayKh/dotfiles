@@ -117,7 +117,7 @@ vim.schedule(function()
   linter()
   lsp()
   markdown()
-  -- treesitter()
+  treesitter()
   trouble()
   undotree()
 
