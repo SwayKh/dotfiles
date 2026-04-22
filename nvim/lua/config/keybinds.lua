@@ -12,6 +12,12 @@ map("n", "<leader>so", "<Cmd>source %<CR>", { silent = true, desc = "[So]urce cu
 
 map("n", "<C-c>", "<Cmd>close<CR>", { silent = true, desc = "Close window" })
 
+map("n", "<leader>R", function()
+  local session = vim.fn.stdpath("state") .. "/restart_session.vim"
+  vim.cmd("mksession! " .. vim.fn.fnameescape(session))
+  vim.cmd("restart source " .. vim.fn.fnameescape(session))
+end, { desc = "Restart Neovim" })
+
 -- Go to Beginning or End of line
 map({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 map({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })

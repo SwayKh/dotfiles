@@ -326,6 +326,11 @@ vim.schedule(function()
     },
   })
 
+  require("mini.sessions").setup()
+  vim.keymap.set("n", "<leader>rn", function()
+    MiniSessions.restart()
+  end, { desc = "[R]estart [N]eovim" })
+
   require("mini.diff").setup({
     view = {
       style = "sign",
