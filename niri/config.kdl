@@ -92,23 +92,23 @@ layout {
     }
     focus-ring {
         // off
-        width 2
+        width 1
         active-color "#7fc8ff"
         inactive-color "#505050"
     }
     border {
         off
-        width 2
+        width 1
         active-color "#ffc87f"
         inactive-color "#505050"
         urgent-color "#9b0000"
     }
     shadow {
-        // on
+        on
         // draw-behind-window true
-        softness 30
-        spread 5
-        offset x=0 y=5
+        softness 15
+        spread 15
+        // offset x=5 y=5
         color "#00000070"
     }
     tab-indicator {
@@ -184,6 +184,15 @@ layer-rule {
     // Set backdrop-color to transparent in layout
     match namespace="awww-daemon"
     place-within-backdrop true
+}
+
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+
+    background-effect {
+        xray false
+    }
 }
 
 clipboard {
@@ -272,22 +281,16 @@ window-rule {
     open-on-workspace "Scratchpad"
 }
 
- window-rule {
+window-rule {
   match app-id="foot"
   match app-id="footclient"
   match title="foot"
 
-  draw-border-with-background false
-  opacity 1.0
-  shadow {
-    on
-    draw-behind-window true
-    softness 0
-    spread 0
-    offset x=0 y=0
-    color "#000000"
-    inactive-color "#000000"
-  }
+  opacity 0.8
+    background-effect {
+        xray false
+        blur true
+    }
 }
 
 
