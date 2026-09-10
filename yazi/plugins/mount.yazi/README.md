@@ -25,7 +25,7 @@ on  = "M"
 run = "plugin mount"
 ```
 
-Note that, the keybindings above are just examples, please tune them up as needed to ensure they don't conflict with your other commands/plugins.
+Note that, the keybindings above are just examples, please tune them up as needed to ensure they don't conflict with your other actions/plugins.
 
 ## Actions
 
@@ -44,6 +44,10 @@ Note that, the keybindings above are just examples, please tune them up as neede
 - Custom keybindings
 - Windows support (I don't use Windows myself, PRs welcome!)
 - Support mount, unmount, and eject the entire disk
+
+## Related projects
+
+- [lsblk-mount.yazi](https://github.com/PHONE1X/lsblk-mount.yazi) - A fork of mount.yazi using lsblk's JSON device tree for more reliable discovery, plus a mountpoint column and error notifications.
 
 ## License
 

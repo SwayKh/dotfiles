@@ -1,11 +1,16 @@
---- @since 25.12.29
+--- @since 26.5.6
 
 -- Check for windows
 local is_windows = ya.target_family() == "windows"
 
 -- Define default flags and strings
-local is_password, is_encrypted, is_level = false, false, false
+local is_password, is_encrypted, is_level, is_silent_success = false, false, false, false
 local default_extension = "zip"
+
+-- Allow dots when matching file extension arguments
+local function extension_pattern(ext)
+	return "%." .. ext:gsub("%.", "%%.") .. "$"
+end
 
 -- Function to check valid filename
 local function is_valid_filename(name)
@@ -74,7 +79,7 @@ local selected_or_hovered = ya.sync(function()
 	local path_fnames = {}
 
 	for _, u in pairs(tab.selected) do
-		paths[#paths + 1] = tostring(u.parent)
+		paths[#paths + 1] = tostring(u.url.parent)
 		names[#names + 1] = tostring(u.name)
 	end
 
@@ -342,11 +347,13 @@ return {
 							is_encrypted = true
 						elseif flag == "l" then
 							is_level = true
+						elseif flag == "s" then
+							is_silent_success = true
 						end
 					end
 				elseif arg:match("^[%w%.]+$") then
 					-- Handle default extension (e.g., 7z, zip)
-					if archive_commands["%." .. arg .. "$"] then
+					if archive_commands[extension_pattern(arg)] then
 						default_extension = arg
 					else
 						notify(string.format("Unsupported extension: %s", arg), "warn")
@@ -453,7 +460,7 @@ return {
 		-- Create a temporary directory for intermediate files
 		local temp_dir_name = ".tmp_compress"
 		local temp_dir = combine_url(output_dir, temp_dir_name)
-		temp_dir = tostring(fs.unique_name(Url(temp_dir)))
+		temp_dir = tostring(fs.unique("dir", Url(temp_dir)))
 
 		-- Attempt to create the temporary directory
 		local temp_dir_status, temp_dir_err = fs.create("dir_all", Url(temp_dir))
@@ -525,7 +532,7 @@ return {
 		-- Move the final file from the temporary directory to the output directory
 		local final_output_url = combine_url(output_dir, original_name)
 		local temp_url_processed = combine_url(temp_dir, original_name)
-		final_output_url = tostring(fs.unique_name(Url(final_output_url)))
+		final_output_url = tostring(fs.unique("file", Url(final_output_url)))
 		local from, to = Url(temp_url_processed), Url(final_output_url)
 		local move_status, move_err = fs.rename(from, to)
 		if not move_status then
@@ -563,6 +570,8 @@ return {
 		cleanup_temp_dir(temp_dir)
 
 		-- Notify user of success
-		notify(string.format("Successfully created archive: %s", ya.quote(to.name)), "info")
+		if not is_silent_success then
+			notify(string.format("Successfully created archive: %s", ya.quote(to.name)), "info")
+		end
 	end,
 }

@@ -3,7 +3,7 @@
 
 # If you want to dynamically override their content based on dark/light mode, you can specify two different flavors
 # for dark and light modes under `[flavor]`, and do so in those flavors instead.
-"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+# "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 # vim:fileencoding=utf-8:foldmethod=marker
 
@@ -239,16 +239,16 @@ rules = [
 	# { mime = "inode/empty", fg = "red" },
 
 	# Special files
-	{ name = "*", is = "orphan", bg = "red" },
-	{ name = "*", is = "exec"  , fg = "green" },
+	# { name = "*", is = "orphan", bg = "red" },
+	# { name = "*", is = "exec"  , fg = "green" },
 
 	# Dummy files
-	{ name = "*", is = "dummy", bg = "red" },
-	{ name = "*/", is = "dummy", bg = "red" },
+	# { name = "*", is = "dummy", bg = "red" },
+	# { name = "*/", is = "dummy", bg = "red" },
 
 	# Fallback
 	# { name = "*", fg = "white" },
-	{ name = "*/", fg = "blue" }
+	# { name = "*/", fg = "blue" }
 ]
 
 # : }}}
